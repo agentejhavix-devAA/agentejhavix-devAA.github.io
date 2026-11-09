@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitácora — los ficheros que hacen que Google y las IA…</title>
+<meta name="description" content="El 96,55% de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas).">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#FAF3E3">
+<link rel="canonical" href="https://www.attenciona.com/negocios/bitacora/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23241A08'/%3E%3Crect x='8' y='6' width='16' height='21' rx='3' fill='none' stroke='%23F5A623' stroke-width='2'/%3E%3Cpath d='M12 16h8M12 20h5' stroke='%23F5A623' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M17 26l4-4M21 26l-4-4' stroke='%236EE7B7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   Bitácora · los ficheros de tu web para Google y las IA
+   Identidad: bitácora / cuaderno de ruta del robot de búsqueda
+   (JetBrains Mono + Inter), indexación y GEO:
+   fondo papel crema #FAF3E3 + ámbar de bitácora #F5A623 + verde señal #0B9E6B
+   (verde = listo), ámbar = atención, rojo = pendiente.
+   Firma funcional: el Index Stamp — tu sello de indexación
+   (verificación DNS TXT / robots / sitemap / llms.txt)
+   con el estado de tu web y la próxima fecha límite.
+   Todos los botones: ámbar con letra oscura. Fuentes autohosteadas.
+   Cero emojis.
+   ============================================================ */
+  @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/jetbrainsmono-var.woff2') format('woff2');}
+  :root{
+    --paper:#FAF3E3;        /* fondo papel crema hipersuave */
+    --surface:#FFFFFF; --surface-2:#F5EDDA;
+    --ink:#241A08; --ink-2:#6B5A38; --line:#EADFC4; --line-2:#D3C294;
+    --brand:#F5A623;        /* ámbar de bitácora: botones / confianza */
+    --brand-2:#E8960F; --brand-wash:#FBE9C6;
+    --steel:#B26A00;        /* ámbar profundo: acentos y números */
+    --steel-2:#8F5200; --steel-wash:#FAEED3;
+    --signal:#0B9E6B;       /* verde señal: listo */
+    --ok:#1E8A57; --ok-wash:#E2F6EC;
+    --warn:#B37A08; --warn-wash:#FDF3D8;
+    --bad:#D64545; --bad-wash:#FDEBEB;
+    --shadow:0 1px 2px rgba(36,26,8,.06), 0 14px 34px rgba(36,26,8,.12);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:'JetBrains Mono','SFMono-Regular',ui-monospace,'Cascadia Mono',Menlo,Consolas,monospace;
+    --mono:'JetBrains Mono','SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.14; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2rem,4.4vw,3.1rem); letter-spacing:-.015em}
+  h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
+  h3{font-size:1.15rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0 0 12px}
+  a{color:inherit}
+  img,svg{display:block}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--steel-2); background:var(--brand-wash); border:1px solid #EBD39A; padding:7px 13px; border-radius:999px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; text-decoration:none; font-family:var(--sans)}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand); color:#241A08; box-shadow:0 1px 2px rgba(194,132,16,.35), 0 8px 22px rgba(245,166,35,.28)}
+  .btn-brand:hover{background:var(--brand-2)}
+  .btn-steel{background:var(--brand); color:#241A08}
+  .btn-steel:hover{background:var(--brand-2)}
+  .btn-ghost{background:var(--brand); color:#241A08}
+  .btn-ghost:hover{background:var(--brand-2)}
+  .btn-sm{height:40px; padding:0 16px; font-size:var(--t-sm)}
+  .btn-xs{height:32px; padding:0 12px; font-size:12px}
+  .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+  .skip:focus{position:fixed; left:12px; top:12px; width:auto; height:auto; z-index:100; background:var(--surface); color:var(--ink); padding:10px 14px; border-radius:8px; box-shadow:var(--shadow)}
+  :focus-visible{outline:2px solid var(--steel); outline-offset:2px}
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+
+  /* ---- Nav ---- */
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(250,243,227,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--disp); font-weight:700; font-size:19px; text-decoration:none; color:var(--ink)}
+  .brand .mark{width:30px; height:30px; border-radius:8px; background:var(--surface-2); display:grid; place-items:center; border:1px solid var(--line-2)}
+  .brand .mark svg{width:18px; height:18px}
+  nav.links{display:flex; align-items:center; gap:4px}
+  nav.links a{color:var(--ink-2); text-decoration:none; font-size:14px; font-weight:500; padding:8px 12px; border-radius:999px; transition:background .12s,color .12s}
+  nav.links a:hover{color:var(--ink); background:var(--surface-2)}
+  .langsel{background:var(--surface-2); color:var(--ink); border:1px solid var(--line-2); border-radius:999px; font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.04em; padding:7px 10px; cursor:pointer}
+  .langsel:focus-visible{outline:2px solid var(--brand); outline-offset:2px}
+  @media (max-width:900px){ nav.links a:not(.btn){display:none} }
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .hero h1{margin:18px 0 16px}
+  .hero h1 .rd{color:var(--steel)}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6; max-width:54ch}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:20px; font-size:var(--t-sm); color:var(--ink-2)}
+  .hero-meta .hm{display:inline-flex; align-items:center; gap:6px}
+  .hero-meta .dot{width:8px; height:8px; border-radius:50%; background:var(--ok); flex:none}
+  .hero-meta .dot.red{background:var(--brand)}
+
+  /* ---- Stamp visual ---- */
+  .stamp-wrap{display:grid; place-items:center; padding:8px 0}
+  .stamp{transform:rotate(-3deg); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:18px 20px; max-width:330px; width:100%}
+  .stamp .top{display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px}
+  .stamp .ring{border:2.5px solid var(--steel); border-radius:10px; padding:16px 16px; text-align:center; background:var(--steel-wash)}
+  .stamp .ring .chip{display:inline-flex; align-items:center; gap:7px; background:#FFFFFF; border:1px solid var(--line-2); border-radius:999px; padding:4px 11px; margin-bottom:12px}
+  .stamp .ring .chip .blink{width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 10px var(--signal)}
+  .stamp .ring .chip span{font-family:var(--mono); font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--signal)}
+  .stamp .ring .l1{font-family:var(--disp); font-weight:700; font-size:1.25rem; color:var(--ink); letter-spacing:.02em}
+  .stamp .ring .l2{font-family:var(--mono); font-size:.95rem; color:var(--steel); margin:7px 0 3px; letter-spacing:.03em}
+  .stamp .ring .l3{font-size:var(--t-xs); color:var(--ink-2); text-transform:uppercase; letter-spacing:.1em}
+  .stamp .foot{display:flex; justify-content:space-between; margin-top:12px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2)}
+  .stamp .foot .chk{display:inline-flex; align-items:center; gap:5px}
+  .stamp .foot .chk.on{color:var(--ok); font-weight:600}
+  .stamp .chip.good .blink{background:var(--ok); box-shadow:0 0 10px var(--ok)}
+  .stamp .chip.good span{color:var(--ok)}
+  .stamp .chip.mid .blink{background:var(--warn); box-shadow:0 0 10px var(--warn)}
+  .stamp .chip.mid span{color:var(--warn)}
+  .stamp .chip.bad .blink{background:var(--bad); box-shadow:0 0 10px var(--bad)}
+  .stamp .chip.bad span{color:var(--bad)}
+
+  /* ---- Bands ---- */
+  .band{padding:72px 0}
+  .band.tint{background:var(--surface)}
+  .band.grey{background:var(--surface-2)}
+  .sec-head{margin-bottom:34px; max-width:760px}
+  .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+  .sec-head h2{margin:12px 0 8px}
+  .sec-head .lead{font-size:var(--t-md); margin:0}
+
+  /* ---- Rule: timeline ---- */
+  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+  @media (max-width:860px){ .timeline{grid-template-columns:repeat(2,1fr)} }
+  .t-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px}
+  .t-item .t-date{font-family:var(--mono); font-size:var(--t-sm); font-weight:700; color:var(--steel); letter-spacing:.02em}
+  .t-item.done .t-date{color:var(--ok)}
+  .t-item.next .t-date{color:var(--steel)}
+  .t-item h3{font-size:1rem; margin:10px 0 6px}
+  .t-item p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .t-item .tag{display:inline-block; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-top:12px; padding:4px 10px; border-radius:999px}
+  .tag.live{background:var(--ok-wash); color:var(--ok)}
+  .tag.warn{background:var(--brand-wash); color:var(--steel-2)}
+  .tag.soon{background:var(--steel-wash); color:var(--steel)}
+
+  /* ---- Countdown ---- */
+  .count-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:860px; margin:0 auto}
+  @media (max-width:760px){ .count-grid{grid-template-columns:1fr} }
+  .count-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:32px 24px; text-align:center}
+  .count-card .who{font-family:var(--mono); font-size:var(--t-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2)}
+  .count-card .big{font-family:var(--disp); font-size:clamp(3rem,7vw,4.4rem); font-weight:700; color:var(--steel); line-height:1; margin:14px 0 6px; font-variant-numeric:tabular-nums}
+  .count-card .big small{font-size:var(--t-lg); color:var(--ink-2); font-weight:500}
+  .count-card .live{font-family:var(--mono); font-size:var(--t-md); color:var(--steel-2); font-variant-numeric:tabular-nums; margin-bottom:6px}
+  .count-card .date{font-family:var(--mono); font-size:var(--t-sm); color:var(--ink-2)}
+  .count-card .note{font-size:var(--t-sm); color:var(--ink-2); margin-top:12px}
+
+  /* ---- Tool ---- */
+  .toolbox{background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:30px; max-width:860px; margin:0 auto}
+  .domainfield{margin-bottom:24px}
+  .domainfield label{display:block; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--steel); margin-bottom:8px}
+  .domain-row{display:flex; gap:10px}
+  .domain-row input{flex:1; height:50px; background:var(--paper); border:1.5px solid var(--line-2); border-radius:var(--r-sm); color:var(--ink); font-family:var(--mono); font-size:var(--t-md); padding:0 16px}
+  .domain-row input:focus{outline:none; border-color:var(--brand); box-shadow:0 0 0 3px rgba(245,166,35,.18)}
+  .domain-note{font-size:var(--t-sm); color:var(--ink-2); margin:10px 0 0}
+  .domain-note.ready{color:var(--ok)}
+  .domain-note.err{color:var(--bad)}
+  .steps-row{display:flex; align-items:center; gap:8px; margin-bottom:26px}
+  .step-dot{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-family:var(--disp); font-weight:700; font-size:var(--t-sm); background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line); transition:all .2s}
+  .step-dot.on{background:var(--steel); color:#FFF6E5; border-color:var(--steel)}
+  .step-dot.ok{background:var(--ok); color:#04251A; border-color:var(--ok)}
+  .step-line{flex:1; height:2px; background:var(--line-2); border-radius:2px}
+  .step-line.ok{background:var(--ok)}
+  .qhead{margin-bottom:22px}
+  .qhead .qk{font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--steel); margin-bottom:8px}
+  .qhead h3{font-size:1.3rem}
+  .toolstep{display:none}
+  .toolstep.on{display:block; animation:fade .25s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  .opts{display:grid; gap:10px; margin-top:6px}
+  .opt{display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border:1.5px solid var(--line-2); border-radius:var(--r-sm); cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s; text-align:left; width:100%; font:inherit; color:var(--ink)}
+  .opt:hover{border-color:var(--steel)}
+  .opt.sel{border-color:var(--steel); background:var(--steel-wash)}
+  .opt .o-radio{width:18px; height:18px; border-radius:50%; border:2px solid var(--line-2); flex:none; margin-top:3px; display:grid; place-items:center; transition:border-color .15s}
+  .opt.sel .o-radio{border-color:var(--steel)}
+  .opt.sel .o-radio::after{content:''; width:8px; height:8px; border-radius:50%; background:var(--steel)}
+  .opt b{display:block; font-weight:600}
+  .opt small{color:var(--ink-2); font-size:var(--t-sm)}
+  .qnav{display:flex; justify-content:space-between; align-items:center; margin-top:26px; gap:12px}
+  .qnav .side{display:flex; gap:10px}
+  .hint{font-size:var(--t-sm); color:var(--ink-2)}
+  #restart{background:none; border:none; color:var(--ink-2); font-size:var(--t-sm); cursor:pointer; text-decoration:underline; padding:6px}
+
+  /* ---- Verdict ---- */
+  .verdict{border:1px solid var(--line); border-radius:var(--r); padding:24px; margin-top:20px; background:var(--paper)}
+  .vcat{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .vcat.need{background:var(--brand-wash); color:var(--steel-2)}
+  .vcat.ok{background:var(--ok-wash); color:var(--ok)}
+  .vcat.warn{background:var(--warn-wash); color:var(--warn)}
+  .vcat.bad{background:var(--bad-wash); color:var(--bad)}
+  .verdict h3{font-size:1.3rem; margin-bottom:8px}
+  .vtable{margin-top:14px; border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  .vrow{display:flex; justify-content:space-between; gap:14px; padding:13px 16px; border-top:1px solid var(--line); background:var(--surface)}
+  .vrow:first-child{border-top:0}
+  .vrow .k{color:var(--ink-2); font-size:var(--t-sm)}
+  .vrow .v{font-weight:600; text-align:right; font-size:var(--t-sm)}
+  .vrow.due .v{color:var(--steel)}
+  .vrow.ok .v{color:var(--ok)}
+  .vrow.warn .v{color:var(--warn)}
+  .vrow.bad .v{color:var(--bad)}
+  .vlist{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:9px}
+  .vlist li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink)}
+  .vlist li .i{width:17px; height:17px; flex:none; margin-top:3px; color:var(--ok); stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .vlist li.w .i{color:var(--warn)}
+  .vlist li.w{color:var(--warn)}
+  .vlist li.b .i{color:var(--bad)}
+  .vlist li.b{color:var(--bad)}
+  .vnote{background:var(--warn-wash); border:1px solid #EAD08E; border-radius:var(--r-sm); padding:13px 15px; font-size:var(--t-sm); color:#7A5A10; margin-top:16px}
+  .vnote.bad{background:var(--bad-wash); border-color:#F0C1C1; color:#A63A3A}
+  .vprint{display:flex; justify-content:flex-end; margin-top:18px}
+  .footnote{font-size:var(--t-xs); color:var(--ink-2); margin-top:14px}
+
+  /* ---- Generated files ---- */
+  .files-head{font-family:var(--mono); font-size:var(--t-sm); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--steel); margin:22px 0 12px}
+  .files{display:grid; gap:12px}
+  .file{border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden; background:var(--surface)}
+  .file .fhead{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 14px; background:var(--surface-2); border-bottom:1px solid var(--line)}
+  .file .fname{font-family:var(--mono); font-weight:700; font-size:var(--t-sm); color:var(--steel)}
+  .file pre{margin:0; padding:14px; overflow-x:auto; font-family:var(--mono); font-size:12.5px; line-height:1.55; color:var(--ink); white-space:pre; background:var(--surface)}
+  .file .fwhere{font-size:var(--t-sm); color:var(--ink-2); padding:10px 14px; border-top:1px solid var(--line); background:var(--surface)}
+  .file .fwhere b{color:var(--ink)}
+
+  /* ---- Interactive checklist ---- */
+  .checks{display:flex; flex-wrap:wrap; gap:10px; max-width:860px; margin:0 auto}
+  .pill{display:inline-flex; align-items:center; gap:10px; padding:12px 17px; border:1.5px solid var(--line-2); border-radius:999px; cursor:pointer; background:var(--surface); color:var(--ink); font-size:var(--t-sm); font-weight:500; transition:border-color .15s, background .15s; user-select:none; font-family:var(--sans)}
+  .pill:hover{border-color:var(--steel)}
+  .pill .b{width:18px; height:18px; border-radius:6px; border:2px solid var(--line-2); flex:none; display:grid; place-items:center; transition:background .15s,border-color .15s}
+  .pill .b svg{width:11px; height:11px; color:#04251A; opacity:0; stroke:currentColor; fill:none; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round}
+  .pill.done{border-color:var(--ok); background:var(--ok-wash)}
+  .pill.done .b{background:var(--ok); border-color:var(--ok)}
+  .pill.done .b svg{opacity:1}
+  .checks-hint{text-align:center; font-size:var(--t-sm); color:var(--ink-2); margin-top:16px}
+
+  /* ---- Steps / pricing ---- */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px}
+  .step .num-b{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#241A08; display:grid; place-items:center; font-family:var(--disp); font-weight:700; margin-bottom:16px}
+  .step h3{margin-bottom:8px; font-size:1.05rem}
+  .step p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .price-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:860px; margin:0 auto}
+  @media (max-width:760px){ .price-grid{grid-template-columns:1fr} }
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; position:relative}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand), var(--shadow)}
+  .plan .badge{position:absolute; top:-12px; left:24px; background:var(--brand); color:#241A08; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 12px; border-radius:999px}
+  .plan h3{margin-bottom:4px}
+  .plan .amt{font-family:var(--disp); font-size:2.3rem; font-weight:700; margin:10px 0 18px}
+  .plan .amt small{font-size:var(--t-sm); color:var(--ink-2); font-weight:500}
+  .plan ul{list-style:none; padding:0; margin:0 0 22px; display:grid; gap:10px}
+  .plan li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm)}
+  .plan li .i{width:17px; height:17px; flex:none; margin-top:3px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .plan li.y .i{color:var(--ok)}
+  .plan li.n .i{color:var(--line-2)}
+  .plan li.n{color:var(--ink-2)}
+  .plan .btn{width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); text-align:center; margin:12px 0 0}
+
+  /* ---- FAQ ---- */
+  .faq{max-width:820px; margin:0 auto; display:grid; gap:10px}
+  details.faq-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  details.faq-item summary{list-style:none; cursor:pointer; padding:17px 20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary .chev{width:18px; height:18px; flex:none; color:var(--ink-2); transition:transform .2s; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  details.faq-item[open] summary .chev{transform:rotate(180deg)}
+  details.faq-item .a{padding:0 20px 18px; font-size:var(--t-sm); color:var(--ink-2)}
+  details.faq-item .a a{color:var(--signal); text-decoration:underline}
+
+  /* ---- Sources ---- */
+  .sources{display:grid; gap:12px}
+  .source{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:16px 18px}
+  .source .sn{width:28px; height:28px; border-radius:8px; background:var(--steel); color:#FFF6E5; display:grid; place-items:center; font-family:var(--mono); font-size:var(--t-sm); font-weight:700; flex:none; margin-top:2px}
+  .source a{font-weight:600; color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+  .source a:hover{color:var(--steel)}
+  .source small{display:block; color:var(--ink-2); font-size:var(--t-sm); margin-top:3px}
+
+  /* ---- CTA ---- */
+  .cta-final{background:linear-gradient(120deg,var(--steel-2) 0%,var(--steel) 45%,var(--brand-2) 100%); border-radius:18px; padding:52px 40px; text-align:center; color:#FFF6E5; position:relative; overflow:hidden}
+  .cta-final::after{content:''; position:absolute; inset:auto -40px -70px auto; width:280px; height:280px; border:38px solid rgba(36,26,8,.12); border-radius:50%}
+  .cta-final h2{color:#FFF6E5; font-size:clamp(1.6rem,3.2vw,2.3rem); margin-bottom:12px; position:relative}
+  .cta-final p{color:rgba(255,246,229,.85); max-width:56ch; margin:0 auto 26px; position:relative}
+  .cta-final .btn{position:relative}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:52px 0 40px; margin-top:40px}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:34px}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr} }
+  .foot-brand p{font-size:var(--t-sm); color:var(--ink-2); margin-top:14px; max-width:38ch}
+  .foot-seal{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:600; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-bottom:16px}
+  .foot-seal svg{width:15px; height:15px; color:var(--signal)}
+  footer h4{font-family:var(--mono); font-size:var(--t-sm); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:14px}
+  footer ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}
+  footer ul a{color:var(--ink); text-decoration:none; font-size:var(--t-sm); font-weight:500}
+  footer ul a:hover{text-decoration:underline}
+  .foot-legal{border-top:1px solid var(--line); padding-top:22px; font-size:var(--t-sm); color:var(--ink-2)}
+  .foot-legal strong{color:var(--ink)}
+
+  /* ---- Consent ---- */
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  /* ---- Print ---- */
+  @media print{
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip,.vprint,.domainfield,.fhead .btn{display:none !important}
+    body{background:#fff; color:#000}
+    .band{padding:16px 0}
+    .toolbox{box-shadow:none; border-color:#999}
+    .stamp{transform:none; border-color:#000}
+    .file{break-inside:avoid}
+    a{color:#000; text-decoration:underline}
+  }
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Bitácora","item":"https://www.attenciona.com/negocios/bitacora/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bitácora","url":"https://www.attenciona.com/negocios/bitacora/","datePublished":"2026-08-28","dateModified":"2026-08-28"}</script>
+<!--/BUILD:fase4-schema-->
+<link rel="stylesheet" href="/sello-ia.css">
+<meta property="og:title" content="Bitácora — los ficheros que hacen que Google y las IA…">
+<meta property="og:description" content="El 96,55% de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas).">
+<meta property="og:url" content="https://www.attenciona.com/negocios/bitacora/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bitácora — los ficheros que hacen que Google y las IA…">
+<meta name="twitter:description" content="El 96,55% de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas).">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body id="top">
+<a class="skip" href="#check">Saltar al generador de bitácora</a>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a class="brand" href="#top" aria-label="Bitácora — Inicio">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2.5" stroke="#F5A623" stroke-width="2"/><path d="M9 10h6M9 14h4" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/><path d="M14 18l2.5-2.5M16.5 18l-2.5-2.5" stroke="#0B9E6B" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span>Bitácora</span>
+    </a>
+    <nav class="links" aria-label="Navegación principal">
+      <a href="#check" data-i18n="n_check">Generador</a>
+      <a href="#regla" data-i18n="n_regla">La regla</a>
+      <a href="#cuenta" data-i18n="n_cuenta">Cuenta atrás</a>
+      <a href="#pricing" data-i18n="n_pricing">Precio</a>
+      <a href="#faq" data-i18n="n_faq">FAQ</a>
+      <a href="#fuentes" data-i18n="n_sources">Fuentes</a>
+      <select id="langSel" class="langsel" aria-label="Idioma">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="it">IT</option>
+        <option value="pt">PT</option>
+      </select>
+      <a class="btn btn-brand btn-sm" href="#check" data-i18n="n_cta">Generar bitácora</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="hero_ey">Verificación · Indexación · SEO · GEO · Global</span>
+          <h1 data-i18n="hero_h1">El robot de Google no encuentra tu web. <span class="rd">Dale una bitácora.</span></h1>
+          <p class="lead" data-i18n="hero_lead">El <b>96,55%</b> de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas). Para que el robot te rastree, te indexe y las IA te citen hace falta más que publicar: verificación <b>DNS TXT</b> (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> y <b>llms.txt</b>. Bitácora genera los ficheros en tu navegador y te dice dónde pegar cada uno. <b>5 $ pago único</b>, sin cuenta.</p>
+          <div class="hero-actions">
+            <a class="btn btn-brand" href="#check"><svg class="i" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2.5"/><path d="M9 10h6M9 14h4"/></svg><span data-i18n="hero_cta1">Generar mis ficheros</span></a>
+            <a class="btn btn-ghost" href="#regla" data-i18n="hero_cta2">Ver la regla</a>
+          </div>
+          <div class="hero-meta">
+            <span class="hm"><span class="dot red"></span><span data-i18n="hero_m1">96,55% de páginas con 0 visitas</span></span>
+            <span class="hm"><span class="dot"></span><span data-i18n="hero_m2">3 ficheros · robots + sitemap + llms.txt</span></span>
+            <span class="hm"><span class="dot"></span><span data-i18n="hero_m3">DNS TXT · Search Console · GA4</span></span>
+            <span class="hm"><span class="dot"></span><span data-i18n="hero_m4">5 $ pago único · sin cuenta</span></span>
+          </div>
+        </div>
+        <div class="stamp-wrap" aria-hidden="true">
+          <div class="stamp">
+            <div class="top"><span>Bitácora · Index Stamp</span><span>SEO · GEO</span></div>
+            <div class="ring">
+              <span class="chip good"><span class="blink"></span><span data-i18n="stamp_chip_hero">robot de google</span></span>
+              <div class="l1" data-i18n="stamp_l1_hero">EN EL ÍNDICE</div>
+              <div class="l2" data-i18n="stamp_l2_hero">tuweb.com · bitácora</div>
+              <div class="l3" data-i18n="stamp_l3_hero">sitemap + robots + llms.txt</div>
+            </div>
+            <div class="foot">
+              <span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="stamp_foot_hero">DNS TXT verificado</span></span>
+              <span class="num" data-i18n="stamp_date_hero">Verificado 14.08.2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE RULE ================= -->
+  <section class="band" id="regla">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="sec_regla_ey">La regla</span>
+        <h2 data-i18n="sec_regla_h2">Google indexa lo que encuentra: la regla son los ficheros y la verificación</h2>
+        <p class="lead" data-i18n="sec_regla_lead">Desde 2005 el rastreo se apoya en ficheros estándar. Hoy se suman las IA: indexar ya no basta, hay que estar citado. Estos son los hitos que definen la bitácora de tu web.</p>
+      </div>
+      <div class="timeline">
+        <div class="t-item done reveal">
+          <div class="t-date">Jun 2005</div>
+          <h3 data-i18n="t1_h3">Nace Sitemaps 0.84</h3>
+          <p data-i18n="t1_p">Google presenta el protocolo <b>sitemap</b> para listar las URLs de un sitio.</p>
+          <span class="tag live" data-i18n="tag_live">en vigor</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">20/05/2015</div>
+          <h3 data-i18n="t2_h3">Nace Search Console</h3>
+          <p data-i18n="t2_p">Webmaster Tools se rebautiza y añade la <b>verificación de propiedad</b>.</p>
+          <span class="tag live" data-i18n="tag_live2">en vigor</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">Sep 2022</div>
+          <h3 data-i18n="t3_h3">robots.txt es estándar</h3>
+          <p data-i18n="t3_p">El protocolo de exclusión se publica como <b>RFC 9309</b> (IETF).</p>
+          <span class="tag live" data-i18n="tag_live3">en vigor</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">01/07/2023</div>
+          <h3 data-i18n="t4_h3">Fin de Universal Analytics</h3>
+          <p data-i18n="t4_p">Solo queda <b>GA4</b>: si no mides, no sabes si te indexan.</p>
+          <span class="tag live" data-i18n="tag_live4">en vigor</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">03/09/2024</div>
+          <h3 data-i18n="t5_h3">Propuesta de /llms.txt</h3>
+          <p data-i18n="t5_p">Jeremy Howard (Answer.AI) propone el fichero para que <b>las IA lean tu web</b>.</p>
+          <span class="tag live" data-i18n="tag_live5">en vigor</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">2025</div>
+          <h3 data-i18n="t6_h3">AI Overviews recorta clics</h3>
+          <p data-i18n="t6_p">Las respuestas IA reducen los clics del top <b>~34-58%</b> (Ahrefs): entra el GEO.</p>
+          <span class="tag live" data-i18n="tag_live6">en vigor</span>
+        </div>
+        <div class="t-item next reveal">
+          <div class="t-date">Oct 2026</div>
+          <h3 data-i18n="t7_h3">Chrome 154: HTTPS por defecto</h3>
+          <p data-i18n="t7_p">Sin HTTPS, Chrome pide confirmación antes de abrir tu web.</p>
+          <span class="tag warn" data-i18n="tag_next">próximo</span>
+        </div>
+        <div class="t-item next reveal">
+          <div class="t-date">15/03/2027</div>
+          <h3 data-i18n="t8_h3">Certificados: 100 días</h3>
+          <p data-i18n="t8_p">Si tu certificado caduca, tu web se cae y <b>sale del índice</b>.</p>
+          <span class="tag warn" data-i18n="tag_next2">próximo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COUNTDOWN ================= -->
+  <section class="band tint" id="cuenta">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" data-i18n="sec_cuenta_ey">Cuenta atrás</span>
+        <h2 data-i18n="sec_cuenta_h2">Las dos fechas que pueden sacarte del índice</h2>
+        <p class="lead" data-i18n="sec_cuenta_lead">La cuenta se calcula en tu navegador, en vivo, contra las fechas reales citadas.</p>
+      </div>
+      <div class="count-grid">
+        <div class="count-card reveal">
+          <div class="who" data-i18n="cd1_who">Chrome 154 · HTTPS por defecto</div>
+          <div class="big"><span class="num" id="cd1d">—</span> <small data-i18n="days_word">días</small></div>
+          <div class="live num" id="cd1t">—:—:—</div>
+          <div class="date" data-i18n="cd1_date">despliegue durante octubre de 2026</div>
+          <p class="note" data-i18n="cd1_note">El robot de Google prioriza HTTPS; con Chrome 154, una web sin HTTPS pierde visibilidad y credibilidad.</p>
+        </div>
+        <div class="count-card reveal">
+          <div class="who" data-i18n="cd2_who">Certificados · 100 días</div>
+          <div class="big"><span class="num" id="cd2d">—</span> <small data-i18n="days_word2">días</small></div>
+          <div class="live num" id="cd2t">—:—:—</div>
+          <div class="date" data-i18n="cd2_date">hasta el 15/03/2027</div>
+          <p class="note" data-i18n="cd2_note">CA/Browser Forum SC-081: renovar a mano ya no es viable. Una web caída no se indexa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOOL ================= -->
+  <section class="band" id="check">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" data-i18n="sec_check_ey">Generador de bitácora</span>
+        <h2 data-i18n="sec_check_h2">Tu dominio, 3 preguntas, tus ficheros listos</h2>
+        <p class="lead" data-i18n="sec_check_lead">Todo corre en tu navegador: genera robots.txt, sitemap.xml, llms.txt y el registro DNS TXT, con el botón copiar y el sitio exacto donde pegarlos.</p>
+      </div>
+      <div class="toolbox reveal">
+        <div class="domainfield">
+          <label for="domain" data-i18n="domain_label">Tu dominio</label>
+          <div class="domain-row">
+            <input id="domain" type="text" inputmode="url" autocomplete="off" spellcheck="false" data-i18n-ph="domain_ph" placeholder="tudominio.com">
+            <button class="btn btn-steel" id="domainGo" type="button" data-i18n="domain_go">Generar</button>
+          </div>
+          <p class="domain-note" id="domainNote" data-i18n="domain_note">Opcional: se valida aquí mismo. Los ficheros se generan con tu dominio al estampar el veredicto.</p>
+        </div>
+
+        <div class="steps-row" id="stepsrow" aria-hidden="true">
+          <span class="step-dot on" id="sd0">1</span><span class="step-line" id="sl1"></span>
+          <span class="step-dot" id="sd1">2</span><span class="step-line" id="sl2"></span>
+          <span class="step-dot" id="sd2">3</span><span class="step-line" id="sl3"></span>
+          <span class="step-dot" id="sd3">✓</span>
+        </div>
+
+        <div class="toolstep on" data-step="0">
+          <div class="qhead"><div class="qk" data-i18n="qk1">Pregunta 1 de 3</div><h3 data-i18n="q1">¿Tu web ya está publicada?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="propia"><span class="o-radio"></span><span><b data-i18n="q1_o1_b">Sí, con dominio propio</b><small data-i18n="q1_o1_s">Ej. mitienda.com — la URL que el robot debe rastrear.</small></span></button>
+            <button class="opt" data-val="sub"><span class="o-radio"></span><span><b data-i18n="q1_o2_b">Sí, en subdominio o plan gratis</b><small data-i18n="q1_o2_s">Ej. mitienda.wordpress.com o similar.</small></span></button>
+            <button class="opt" data-val="sinweb"><span class="o-radio"></span><span><b data-i18n="q1_o3_b">Todavía no está en línea</b><small data-i18n="q1_o3_s">La estoy montando o todavía no existe.</small></span></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="1">
+          <div class="qhead"><div class="qk" data-i18n="qk2">Pregunta 2 de 3</div><h3 data-i18n="q2">¿Quién gestiona tu DNS?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="host"><span class="o-radio"></span><span><b data-i18n="q2_o1_b">El hosting</b><small data-i18n="q2_o1_s">cPanel, Plesk o el panel de tu proveedor.</small></span></button>
+            <button class="opt" data-val="cf"><span class="o-radio"></span><span><b data-i18n="q2_o2_b">Cloudflare</b><small data-i18n="q2_o2_s">Mi DNS o proxy pasa por Cloudflare.</small></span></button>
+            <button class="opt" data-val="me"><span class="o-radio"></span><span><b data-i18n="q2_o3_b">Yo mismo</b><small data-i18n="q2_o3_s">Registrar o servidor que administro.</small></span></button>
+            <button class="opt" data-val="nose"><span class="o-radio"></span><span><b data-i18n="q2_o4_b">No lo sé</b><small data-i18n="q2_o4_s">La guía Pro te dice dónde mirar.</small></span></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="2">
+          <div class="qhead"><div class="qk" data-i18n="qk3">Pregunta 3 de 3</div><h3 data-i18n="q3">¿Qué quieres conseguir primero?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="index"><span class="o-radio"></span><span><b data-i18n="q3_o1_b">Que Google me indexe</b><small data-i18n="q3_o1_s">Rastreo + sitemap en Search Console.</small></span></button>
+            <button class="opt" data-val="ga"><span class="o-radio"></span><span><b data-i18n="q3_o2_b">Medir con GA4</b><small data-i18n="q3_o2_s">Google Analytics 4 + snippet gtag.js.</small></span></button>
+            <button class="opt" data-val="geo"><span class="o-radio"></span><span><b data-i18n="q3_o3_b">Que las IA me citen</b><small data-i18n="q3_o3_s">llms.txt + datos estructurados (GEO).</small></span></button>
+            <button class="opt" data-val="todo"><span class="o-radio"></span><span><b data-i18n="q3_o4_b">Todo</b><small data-i18n="q3_o4_s">El pack completo, en orden.</small></span></button>
+          </div>
+        </div>
+
+        <div class="qnav" id="qnav">
+          <button id="restart" type="button" data-i18n="restart_btn">Empezar de nuevo</button>
+          <div class="side">
+            <button class="btn btn-ghost" id="prev" type="button" data-i18n="prev_btn">Atrás</button>
+            <button class="btn btn-steel" id="next" type="button" data-i18n="next_btn">Siguiente</button>
+          </div>
+        </div>
+
+        <div id="verdict" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE CHECKLIST ================= -->
+  <section class="band tint" id="checklist">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" data-i18n="sec_chk_ey">Checklist</span>
+        <h2 data-i18n="sec_chk_h2">Marca lo que ya tienes controlado</h2>
+        <p class="lead" data-i18n="sec_chk_lead">Los términos del sector — SEO y GEO — en píldoras que se guardan en tu dispositivo.</p>
+      </div>
+      <div class="checks reveal">
+        <button class="pill" data-k="k1"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk1">robots.txt en la raíz</span></button>
+        <button class="pill" data-k="k2"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk2">sitemap.xml en la raíz</span></button>
+        <button class="pill" data-k="k3"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk3">Sitemap enviado en Search Console</span></button>
+        <button class="pill" data-k="k4"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk4">Verificación DNS TXT hecha</span></button>
+        <button class="pill" data-k="k5"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk5">llms.txt para las IA</span></button>
+        <button class="pill" data-k="k6"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk6">GA4 con gtag.js instalado</span></button>
+        <button class="pill" data-k="k7"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk7">HTTPS + redirección 301</span></button>
+        <button class="pill" data-k="k8"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk8">Datos estructurados JSON-LD</span></button>
+        <button class="pill" data-k="k9"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk9">Core Web Vitals en verde</span></button>
+        <button class="pill" data-k="k10"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk10">Metadatos OG/Twitter</span></button>
+        <button class="pill" data-k="k11"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk11">Canonical + meta robots</span></button>
+        <button class="pill" data-k="k12"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk12">Bing Webmaster + IndexNow</span></button>
+        <button class="pill" data-k="k13"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk13">SPF / DKIM / DMARC</span></button>
+        <button class="pill" data-k="k14"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk14">Sello IA art. 50.4 en el footer</span></button>
+        <button class="pill" data-k="k15"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk15">lastmod actualizado en el sitemap</span></button>
+        <button class="pill" data-k="k16"><span class="b"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="chk16">Google Business Profile (local)</span></button>
+      </div>
+      <p class="checks-hint" data-i18n="checks_hint">Toca una píldora para marcarla. Tu progreso queda guardado solo en este dispositivo.</p>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="band grey">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="sec_how_ey">Cómo funciona</span>
+        <h2 data-i18n="sec_how_h2">Del dominio a la indexación verificada</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num-b">1</span><h3 data-i18n="how1_h">Introduce tu dominio</h3><p data-i18n="how1_p">Bitácora valida el dominio y genera los ficheros en tu navegador según tus 3 respuestas.</p></div>
+        <div class="step reveal"><span class="num-b">2</span><h3 data-i18n="how2_h">Copia y pega donde toca</h3><p data-i18n="how2_p">robots.txt, sitemap.xml y llms.txt van a la raíz de tu web; el registro TXT va a tu DNS (guía por proveedor: Cloudflare, cPanel, hosting) y el snippet a GA4.</p></div>
+        <div class="step reveal"><span class="num-b">3</span><h3 data-i18n="how3_h">Verifica y deja rastro</h3><p data-i18n="how3_p">Confirma la propiedad en Search Console y vigila la cobertura; las IA leen tu llms.txt. Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="band" id="pricing">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" data-i18n="sec_price_ey">Precio</span>
+        <h2 data-i18n="sec_price_h2">Diagnóstico gratis. Bitácora completa por 5 $.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <h3 data-i18n="plan_free">Gratis</h3>
+          <div class="amt">0 $</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free1">Tu estado en 3 preguntas</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free2">Publicada / en subdominio / sin web</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free3">Un fichero generado (llms.txt)</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free4">Cuenta atrás a Chrome 154</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free5">Checklist interactivo</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_free6">Fuentes oficiales citadas</span></li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span data-i18n="p_free7">Pack completo + guía por proveedor</span></li>
+          </ul>
+          <a class="btn btn-ghost" href="#check" data-i18n="p_free_cta">Generar gratis</a>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge" data-i18n="plan_badge">Recomendado</span>
+          <h3 data-i18n="plan_pro">Pro</h3>
+          <div class="amt">5 $ <small data-i18n="plan_pro_unit">pago único</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro1">Todo lo de Gratis</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro2">Pack completo: robots.txt + sitemap.xml + llms.txt</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro3">Registro DNS TXT (Search Console + GA4) + snippet gtag.js</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro4">Guía paso a paso por proveedor (Cloudflare, cPanel, hosting)</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro5">Verificación final de indexación</span></li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="p_pro6">Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC</span></li>
+          </ul>
+          <button class="btn btn-brand" onclick="ProWidget.checkout('bitacora',5)" data-i18n="p_pro_cta">Desbloquear Pro — 5 $</button>
+          <p class="fiscal" data-i18n="p_pro_fiscal">Pago único en USDT/USDC. Precio en USD; impuestos según tu país al pagar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow" data-i18n="sec_faq_ey">FAQ</span>
+        <h2 data-i18n="sec_faq_h2">Lo que pregunta quien quiere que el robot le encuentre</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item reveal" open>
+          <summary><span data-i18n="faq1">¿Qué necesito exactamente para que Google indexe mi web?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Publica con HTTPS, verifica la propiedad (registro DNS TXT en Search Console), sube <code>robots.txt</code> y <code>sitemap.xml</code> a la raíz y envía el sitemap en Search Console. Google tarda de unos días a unas semanas en indexar; el sitemap y la verificación lo aceleran. Ojo: indexar no es rankear — el 96,55% de las páginas reciben 0 visitas (Ahrefs). <a href="#fuentes">[1][2][7]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq2">¿Qué es el registro DNS TXT de verificación? ¿Es seguro?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Search Console y GA4 te piden probar que eres el dueño de la web. El registro TXT es una marca de verificación: la añades en tu zona DNS, confirmas en Google y luego puedes borrarla. No da acceso a nadie: solo acredita la propiedad. <a href="#fuentes">[3][5]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq3">¿robots.txt y sitemap.xml son lo mismo?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. <code>robots.txt</code> dice al robot qué <b>no</b> rastrear (y dónde está el sitemap); <code>sitemap.xml</code> enumera las URLs que quieres que indexe. Los dos viven en la raíz y se complementan. <a href="#fuentes">[1][4]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq4">¿Qué es llms.txt y por qué importa ahora?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Un fichero markdown propuesto por Jeremy Howard (Answer.AI, 2024) que da a los buscadores de IA (ChatGPT, Perplexity, AI Overviews) el contenido limpio de tu web. Con AI Overviews recortando los clics del top, estar citado por las IA ya es parte del SEO: es el <b>GEO</b> (Generative Engine Optimization). <a href="#fuentes">[6][8]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq5">¿Google usa IndexNow?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. IndexNow es un protocolo de Bing + Yandex (2021) que soportan Bing, Yandex, Naver, Seznam y Yep. Google no lo usa: su vía son los sitemaps y la Indexing API. IndexNow es gratis y no molesta — configúralo igualmente. <a href="#fuentes">[9]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq6">¿Esto garantiza salir en el puesto 1?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No, y desconfía de quien lo prometa. Indexar es aparecer en el índice de Google; rankear es competir por la posición. Bitácora se encarga de la parte que controlas tú — verificación y ficheros —; el resto es contenido, autoridad y velocidad.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary><span data-i18n="faq7">¿Y las cookies de terceros?</span><svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Google abandonó en julio de 2024 su plan de eliminarlas en Chrome, así que no hay fecha límite. Para medir bien en GA4 conviene Consent Mode v2, que ajusta el rastreo según el consentimiento del visitante. <a href="#fuentes">[5]</a></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOURCES ================= -->
+  <section class="band" id="fuentes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow" data-i18n="sec_src_ey">Fuentes</span>
+        <h2 data-i18n="sec_src_h2">De dónde salen los datos</h2>
+        <p class="lead" data-i18n="sec_src_lead">Cada afirmación enlaza a su fuente. Verificado el 14 de agosto de 2026.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="sn">1</span><div><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview" target="_blank" rel="noopener">Google Search Central — Sitemaps (documentación oficial)</a><small>Cómo ayuda el sitemap al rastreo inteligente de Google y cómo enviarlo en Search Console.</small></div></div>
+        <div class="source"><span class="sn">2</span><div><a href="https://en.wikipedia.org/wiki/Sitemaps" target="_blank" rel="noopener">Wikipedia — Sitemaps</a><small>Google introduce Sitemaps 0.84 en junio de 2005.</small></div></div>
+        <div class="source"><span class="sn">3</span><div><a href="https://developers.google.com/search/blog/2015/05/announcing-google-search-console-new" target="_blank" rel="noopener">Google — Announcing Google Search Console (20/05/2015)</a><small>Webmaster Tools se rebautiza como Google Search Console.</small></div></div>
+        <div class="source"><span class="sn">4</span><div><a href="https://datatracker.ietf.org/doc/html/rfc9309" target="_blank" rel="noopener">RFC 9309 — Robots Exclusion Protocol (IETF, septiembre de 2022)</a><small>El protocolo de robots.txt se estandariza como Proposed Standard.</small></div></div>
+        <div class="source"><span class="sn">5</span><div><a href="https://blog.google/products/ads-commerce/upgrade-to-google-analytics-4-before-july-1/" target="_blank" rel="noopener">Google — Upgrade to Google Analytics 4 before July 1 (2023)</a><small>Universal Analytics deja de procesar datos el 01/07/2023; solo queda GA4.</small></div></div>
+        <div class="source"><span class="sn">6</span><div><a href="https://www.answer.ai/posts/2024-09-03-llmstxt.html" target="_blank" rel="noopener">Answer.AI — /llms.txt, una propuesta para webs amigables con LLMs (03/09/2024)</a><small>Jeremy Howard propone el fichero markdown para que las IA lean tu web.</small></div></div>
+        <div class="source"><span class="sn">7</span><div><a href="https://ahrefs.com/blog/search-traffic-study/" target="_blank" rel="noopener">Ahrefs — 96.55% of Content Gets No Traffic From Google (dic 2023)</a><small>Estudio sobre ~14.000 millones de páginas del índice de Ahrefs.</small></div></div>
+        <div class="source"><span class="sn">8</span><div><a href="https://ahrefs.com/blog/ai-overviews-reduce-clicks-update/" target="_blank" rel="noopener">Ahrefs — AI Overviews Reduce Clicks by 58% (feb 2026)</a><small>Las respuestas IA reducen los clics del top: del -34,5% (abr 2025) al -58%.</small></div></div>
+        <div class="source"><span class="sn">9</span><div><a href="https://www.bing.com/indexnow" target="_blank" rel="noopener">Bing — IndexNow</a><small>Protocolo de indexación instantánea soportado por Bing, Yandex, Naver, Seznam y Yep (Google no lo usa).</small></div></div>
+        <div class="source"><span class="sn">10</span><div><a href="https://www.infosecurity-magazine.com/news/chrome-https-mandatory-2026/" target="_blank" rel="noopener">Infosecurity Magazine — Chrome to Make HTTPS Mandatory by Default in 2026 (29/10/2025)</a><small>Chrome 154 (octubre de 2026) activa Always Use Secure Connections por defecto.</small></div></div>
+        <div class="source"><span class="sn">11</span><div><a href="https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/" target="_blank" rel="noopener">CA/Browser Forum — Ballot SC081v3 (11/04/2025)</a><small>Validez de certificados: 200 días (15/03/2026), 100 días (15/03/2027), 47 días (15/03/2029).</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2 data-i18n="cta_h2">Publica, verifica y deja que el robot te encuentre.</h2>
+        <p data-i18n="cta_p">Genera tu bitácora gratis: 3 preguntas y los ficheros listos para copiar. 5 $ pago único para el pack completo con la guía paso a paso por proveedor y la verificación final. Sin cuenta, sin cookies de terceros.</p>
+        <a class="btn btn-brand" href="#check"><svg class="i" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2.5"/><path d="M9 10h6M9 14h4"/></svg><span data-i18n="cta_btn">Generar mis ficheros</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2.5"/><path d="M9 10h6M9 14h4"/></svg>Contenido asistido por IA, revisado antes de publicar — art. 50.4 del Reglamento de IA (UE)</span>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2.5" stroke="#F5A623" stroke-width="2"/><path d="M9 10h6M9 14h4" stroke="#F5A623" stroke-width="2" stroke-linecap="round"/><path d="M14 18l2.5-2.5M16.5 18l-2.5-2.5" stroke="#0B9E6B" stroke-width="2" stroke-linecap="round"/></svg></span>Bitácora</a>
+        <p>Los ficheros de tu web para Google y las IA, estampados. Herramienta divulgativa — no sustituye la revisión de tu desarrollador, hosting o agencia SEO.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#check" data-i18n="n_check2">Generador</a></li>
+          <li><a href="#regla" data-i18n="n_regla2">La regla</a></li>
+          <li><a href="#cuenta" data-i18n="n_cuenta2">Cuenta atrás</a></li>
+          <li><a href="#checklist" data-i18n="n_chk2">Checklist</a></li>
+          <li><a href="#pricing" data-i18n="n_pricing2">Precio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../../aviso-legal.html" target="_blank" rel="noopener">Aviso legal</a></li>
+          <li><a href="../../privacidad.html" target="_blank" rel="noopener">Privacidad</a></li>
+          <li><a href="https://www.attenciona.com" target="_blank" rel="noopener">attenciona.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Responsabilidad editorial:</strong> attenciona (Holding). Contenido asistido por IA, revisado por humanos antes de publicar (Reglamento de IA UE, art. 50.4). &nbsp;·&nbsp; <strong>No es asesoramiento:</strong> Bitácora es una herramienta divulgativa basada en Google Search Central, RFC 9309, Answer.AI, Ahrefs y Bing; la indexación depende también de contenido, autoridad y velocidad. &nbsp;·&nbsp; <strong>Última verificación:</strong> 14 de agosto de 2026. &nbsp;·&nbsp; <strong>Privacidad:</strong> el generador corre en tu navegador; sin cookies de terceros ni seguimiento. &nbsp;·&nbsp; pagos en cripto con identificación del comprador (AML). &nbsp;·&nbsp; <strong>Idiomas:</strong> interfaz completa en ES y EN; FR, DE, IT y PT en la interfaz y el diagnóstico. &nbsp;·&nbsp; © 2026 Bitácora · attenciona.</p>
+    </div>
+  </div>
+
+<div style="text-align:center;padding:20px 24px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=6941c8dda0" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <p><strong>Sin seguimiento.</strong> Esta página corre entera en tu navegador: sin cookies de terceros, sin analítica, y tus respuestas nunca salen de tu dispositivo. Solo guardamos localmente si ya has visto este aviso.</p>
+  <div class="row">
+    <button class="btn btn-brand" id="consentOk">Entendido</button>
+    <a class="btn btn-ghost" href="#faq">Más información</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"Bitácora","applicationCategory":"WebApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/bitacora/","description":"Generador de los ficheros que una web necesita para ser encontrada por Google y las IA: verificación DNS TXT (Search Console + GA4), robots.txt, sitemap.xml y llms.txt, con la guia exacta de donde pegarlos. 5 dolares pago unico, funciona integramente en el navegador.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Gratis"},{"@type":"Offer","price":"5","priceCurrency":"USD","name":"Pro (pago unico)"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿Qué necesito exactamente para que Google indexe mi web?","acceptedAnswer":{"@type":"Answer","text":"Publica con HTTPS, verifica la propiedad (registro DNS TXT), sube robots.txt y sitemap.xml y envía el sitemap en Search Console. Google tarda de unos días a unas semanas; indexar no es rankear (96,55% de páginas con 0 visitas, Ahrefs)."}},
+      {"@type":"Question","name":"¿Qué es el registro DNS TXT de verificación?","acceptedAnswer":{"@type":"Answer","text":"Search Console y GA4 piden probar que eres el dueño. El TXT es una marca de verificación que se añade a la zona DNS, se confirma y se puede borrar. No da acceso a nadie."}},
+      {"@type":"Question","name":"¿Google usa IndexNow?","acceptedAnswer":{"@type":"Answer","text":"No. IndexNow es un protocolo de Bing + Yandex (2021) que soportan Bing, Yandex, Naver, Seznam y Yep. Google usa sitemaps y la Indexing API."}},
+      {"@type":"Question","name":"¿Qué es llms.txt?","acceptedAnswer":{"@type":"Answer","text":"Un fichero markdown propuesto por Jeremy Howard (Answer.AI, 2024) que da a los buscadores de IA (ChatGPT, Perplexity, AI Overviews) el contenido limpio de tu web."}}
+    ]}
+  ]
+}</script>
+
+<script>
+  var I18N = {
+    es: {
+      title:'Bitácora — los ficheros que hacen que Google y las IA encuentren tu web',
+      n_check:'Generador', n_regla:'La regla', n_cuenta:'Cuenta atrás', n_pricing:'Precio', n_faq:'FAQ', n_sources:'Fuentes', n_cta:'Generar bitácora',
+      n_check2:'Generador', n_regla2:'La regla', n_cuenta2:'Cuenta atrás', n_chk2:'Checklist', n_pricing2:'Precio',
+      hero_ey:'Verificación · Indexación · SEO · GEO · Global',
+      hero_h1:'El robot de Google no encuentra tu web. <span class="rd">Dale una bitácora.</span>',
+      hero_lead:'El <b>96,55%</b> de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas). Para que el robot te rastree, te indexe y las IA te citen hace falta más que publicar: verificación <b>DNS TXT</b> (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> y <b>llms.txt</b>. Bitácora genera los ficheros en tu navegador y te dice dónde pegar cada uno. <b>5 $ pago único</b>, sin cuenta.',
+      hero_cta1:'Generar mis ficheros', hero_cta2:'Ver la regla',
+      hero_m1:'96,55% de páginas con 0 visitas', hero_m2:'3 ficheros · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'5 $ pago único · sin cuenta',
+      stamp_chip_hero:'robot de google', stamp_l1_hero:'EN EL ÍNDICE', stamp_l2_hero:'tuweb.com · bitácora', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT verificado', stamp_date_hero:'Verificado 14.08.2026',
+      sec_regla_ey:'La regla', sec_regla_h2:'Google indexa lo que encuentra: la regla son los ficheros y la verificación', sec_regla_lead:'Desde 2005 el rastreo se apoya en ficheros estándar. Hoy se suman las IA: indexar ya no basta, hay que estar citado. Estos son los hitos que definen la bitácora de tu web.',
+      t1_h3:'Nace Sitemaps 0.84', t1_p:'Google presenta el protocolo <b>sitemap</b> para listar las URLs de un sitio.',
+      t2_h3:'Nace Search Console', t2_p:'Webmaster Tools se rebautiza y añade la <b>verificación de propiedad</b>.',
+      t3_h3:'robots.txt es estándar', t3_p:'El protocolo de exclusión se publica como <b>RFC 9309</b> (IETF).',
+      t4_h3:'Fin de Universal Analytics', t4_p:'Solo queda <b>GA4</b>: si no mides, no sabes si te indexan.',
+      t5_h3:'Propuesta de /llms.txt', t5_p:'Jeremy Howard (Answer.AI) propone el fichero para que <b>las IA lean tu web</b>.',
+      t6_h3:'AI Overviews recorta clics', t6_p:'Las respuestas IA reducen los clics del top <b>~34-58%</b> (Ahrefs): entra el GEO.',
+      t7_h3:'Chrome 154: HTTPS por defecto', t7_p:'Sin HTTPS, Chrome pide confirmación antes de abrir tu web.',
+      t8_h3:'Certificados: 100 días', t8_p:'Si tu certificado caduca, tu web se cae y <b>sale del índice</b>.',
+      tag_live:'en vigor', tag_live2:'en vigor', tag_live3:'en vigor', tag_live4:'en vigor', tag_live5:'en vigor', tag_live6:'en vigor', tag_next:'próximo', tag_next2:'próximo',
+      sec_cuenta_ey:'Cuenta atrás', sec_cuenta_h2:'Las dos fechas que pueden sacarte del índice', sec_cuenta_lead:'La cuenta se calcula en tu navegador, en vivo, contra las fechas reales citadas.',
+      cd1_who:'Chrome 154 · HTTPS por defecto', days_word:'días', cd1_date:'despliegue durante octubre de 2026', cd1_note:'El robot de Google prioriza HTTPS; con Chrome 154, una web sin HTTPS pierde visibilidad y credibilidad.',
+      cd2_who:'Certificados · 100 días', days_word2:'días', cd2_date:'hasta el 15/03/2027', cd2_note:'CA/Browser Forum SC-081: renovar a mano ya no es viable. Una web caída no se indexa.',
+      sec_check_ey:'Generador de bitácora', sec_check_h2:'Tu dominio, 3 preguntas, tus ficheros listos', sec_check_lead:'Todo corre en tu navegador: genera robots.txt, sitemap.xml, llms.txt y el registro DNS TXT, con el botón copiar y el sitio exacto donde pegarlos.',
+      domain_label:'Tu dominio', domain_ph:'tudominio.com', domain_go:'Generar', domain_note:'Opcional: se valida aquí mismo. Los ficheros se generan con tu dominio al estampar el veredicto.',
+      domain_ready:'Listo para generar con:', domain_err:'Introduce un dominio válido, p. ej. mitienda.com',
+      qk1:'Pregunta 1 de 3', q1:'¿Tu web ya está publicada?',
+      q1_o1_b:'Sí, con dominio propio', q1_o1_s:'Ej. mitienda.com — la URL que el robot debe rastrear.',
+      q1_o2_b:'Sí, en subdominio o plan gratis', q1_o2_s:'Ej. mitienda.wordpress.com o similar.',
+      q1_o3_b:'Todavía no está en línea', q1_o3_s:'La estoy montando o todavía no existe.',
+      qk2:'Pregunta 2 de 3', q2:'¿Quién gestiona tu DNS?',
+      q2_o1_b:'El hosting', q2_o1_s:'cPanel, Plesk o el panel de tu proveedor.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'Mi DNS o proxy pasa por Cloudflare.',
+      q2_o3_b:'Yo mismo', q2_o3_s:'Registrar o servidor que administro.',
+      q2_o4_b:'No lo sé', q2_o4_s:'La guía Pro te dice dónde mirar.',
+      qk3:'Pregunta 3 de 3', q3:'¿Qué quieres conseguir primero?',
+      q3_o1_b:'Que Google me indexe', q3_o1_s:'Rastreo + sitemap en Search Console.',
+      q3_o2_b:'Medir con GA4', q3_o2_s:'Google Analytics 4 + snippet gtag.js.',
+      q3_o3_b:'Que las IA me citen', q3_o3_s:'llms.txt + datos estructurados (GEO).',
+      q3_o4_b:'Todo', q3_o4_s:'El pack completo, en orden.',
+      restart_btn:'Empezar de nuevo', prev_btn:'Atrás', next_btn:'Siguiente', next_final:'Estampar mi bitácora',
+      v_domain:'Dominio', v_status:'Estado', v_env:'DNS', v_svc:'Objetivo', v_files:'Ficheros', v_chrome:'Chrome 154',
+      st_ok:'Publicada', st_warn:'En subdominio', st_bad:'Sin web',
+      env_host:'El hosting', env_cf:'Cloudflare', env_me:'Yo mismo', env_detect:'Por detectar',
+      obj_index:'Que Google me indexe', obj_ga:'Medir con GA4', obj_geo:'Que las IA me citen', obj_all:'Todo',
+      stamp_ok_label:'WEB PUBLICADA', stamp_warn_label:'EN SUBDOMINIO', stamp_bad_label:'SIN WEB AÚN',
+      chip_ok:'el robot puede indexar', chip_warn:'revisar subdominio', chip_bad:'publica primero',
+      print_btn:'Imprimir mi sello', copy_btn:'Copiar', copied:'¡Copiado!',
+      files_head:'Tu pack de ficheros', files_hint:'Cada fichero lleva el botón copiar y el sitio exacto donde pegarlo. La guía Pro añade pasos por proveedor (Cloudflare, cPanel, hosting) y la verificación final.',
+      file_where_robots:'<b>Dónde:</b> guarda este archivo como robots.txt en la raíz de tu web (public/, htdocs/ o la carpeta raíz de tu hosting).',
+      file_where_sitemap:'<b>Dónde:</b> guarda como sitemap.xml junto a robots.txt y envíalo en Search Console (Índice → Sitemaps).',
+      file_where_llms:'<b>Dónde:</b> guarda como llms.txt en la raíz, al lado de robots.txt. Es el fichero que leen ChatGPT, Perplexity y AI Overviews.',
+      file_where_txt:'<b>Dónde:</b> en el panel de tu DNS (Cloudflare → DNS → Registros, o Registros TXT de tu hosting). Lo pide Search Console al verificar.',
+      file_where_gtag:'<b>Dónde:</b> pega este snippet en el &lt;head&gt; de todas las páginas (o usa el asistente de GA4). Sustituye G-XXXXXXXXXX por tu ID.',
+      llms_desc:'Describe este sitio para los buscadores de IA (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'Qué es este sitio', llms_about_txt:'Pon aquí en 2-3 frases qué ofrece {domain} y a quién.',
+      llms_pages:'Páginas principales', llms_home:'Inicio',
+      v_ok_title:'Tu web está en línea — deja la bitácora para que el robot te encuentre',
+      v_warn_title:'Estás en un subdominio — Google lo trata peor, planifica migrar',
+      v_bad_title:'Todavía no hay web — deja preparada la bitácora para el lanzamiento',
+      v_ok_l1:'Verifica la propiedad: añade el registro TXT en tu DNS y confirma en Search Console',
+      v_ok_l2:'Sube robots.txt y sitemap.xml a la raíz y envía el sitemap en Search Console',
+      v_ok_l3:'Publica el llms.txt en la raíz para que las IA te lean',
+      v_ok_l4:'Vigila la cobertura: «Página indexada» llega en días o semanas',
+      v_warn_l1:'Google trata mejor los dominios propios: planifica migrar de subdominio a tu dominio',
+      v_warn_l2:'Verifica el dominio con el registro TXT y sube los 3 ficheros a la raíz',
+      v_warn_l3:'Activa HTTPS y la redirección 301 antes de pedir la indexación',
+      v_warn_l4:'Envía el sitemap en Search Console y vigila la cobertura',
+      v_bad_l1:'Publica tu web con HTTPS (dominio propio si puedes)',
+      v_bad_l2:'Deja preparados los ficheros de esta bitácora para el día del lanzamiento',
+      v_bad_l3:'Añade el registro TXT a tu DNS cuando tengas el dominio',
+      v_bad_l4:'Al publicar, verifica en Search Console y envía el sitemap: Google indexa en días o semanas',
+      v_ok_note:'<b>Bien:</b> tu web está en línea. Indexar no es rankear: el 96,55% de las páginas reciben 0 visitas de Google. Con verificación + sitemap + contenido real, el robot te rastrea; la posición depende de lo demás.',
+      v_warn_note:'<b>Antes de escalar:</b> publica en dominio propio. Un subdominio de plan gratis se indexa, pero Google lo trata peor y no es tuyo. Mientras, deja la verificación y los ficheros listos.',
+      v_bad_note:'<b>Tu próximo hito:</b> salir en línea. Quedan {days} para Chrome 154 (octubre de 2026): publica ya con HTTPS y esta bitácora lista, y el robot empezará a rastrearte el primer día.',
+      sec_chk_ey:'Checklist', sec_chk_h2:'Marca lo que ya tienes controlado', sec_chk_lead:'Los términos del sector — SEO y GEO — en píldoras que se guardan en tu dispositivo.',
+      chk1:'robots.txt en la raíz', chk2:'sitemap.xml en la raíz', chk3:'Sitemap enviado en Search Console', chk4:'Verificación DNS TXT hecha', chk5:'llms.txt para las IA', chk6:'GA4 con gtag.js instalado', chk7:'HTTPS + redirección 301', chk8:'Datos estructurados JSON-LD', chk9:'Core Web Vitals en verde', chk10:'Metadatos OG/Twitter', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'Sello IA art. 50.4 en el footer', chk15:'lastmod actualizado en el sitemap', chk16:'Google Business Profile (local)',
+      checks_hint:'Toca una píldora para marcarla. Tu progreso queda guardado solo en este dispositivo.',
+      sec_how_ey:'Cómo funciona', sec_how_h2:'Del dominio a la indexación verificada',
+      how1_h:'Introduce tu dominio', how1_p:'Bitácora valida el dominio y genera los ficheros en tu navegador según tus 3 respuestas.',
+      how2_h:'Copia y pega donde toca', how2_p:'robots.txt, sitemap.xml y llms.txt van a la raíz de tu web; el registro TXT va a tu DNS (guía por proveedor: Cloudflare, cPanel, hosting) y el snippet a GA4.',
+      how3_h:'Verifica y deja rastro', how3_p:'Confirma la propiedad en Search Console y vigila la cobertura; las IA leen tu llms.txt. Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC.',
+      sec_price_ey:'Precio', sec_price_h2:'Diagnóstico gratis. Bitácora completa por 5 $.',
+      plan_free:'Gratis', plan_pro:'Pro', plan_badge:'Recomendado', plan_pro_unit:'pago único',
+      p_free1:'Tu estado en 3 preguntas', p_free2:'Publicada / en subdominio / sin web', p_free3:'Un fichero generado (llms.txt)', p_free4:'Cuenta atrás a Chrome 154', p_free5:'Checklist interactivo', p_free6:'Fuentes oficiales citadas', p_free7:'Pack completo + guía por proveedor', p_free_cta:'Generar gratis',
+      p_pro1:'Todo lo de Gratis', p_pro2:'Pack completo: robots.txt + sitemap.xml + llms.txt', p_pro3:'Registro DNS TXT (Search Console + GA4) + snippet gtag.js', p_pro4:'Guía paso a paso por proveedor (Cloudflare, cPanel, hosting)', p_pro5:'Verificación final de indexación', p_pro6:'Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC', p_pro_cta:'Desbloquear Pro — 5 $', p_pro_fiscal:'Pago único en USDT/USDC. Precio en USD; impuestos según tu país al pagar.',
+      sec_faq_ey:'FAQ', sec_faq_h2:'Lo que pregunta quien quiere que el robot le encuentre',
+      faq1:'¿Qué necesito exactamente para que Google indexe mi web?', faq2:'¿Qué es el registro DNS TXT de verificación? ¿Es seguro?', faq3:'¿robots.txt y sitemap.xml son lo mismo?', faq4:'¿Qué es llms.txt y por qué importa ahora?', faq5:'¿Google usa IndexNow?', faq6:'¿Esto garantiza salir en el puesto 1?', faq7:'¿Y las cookies de terceros?',
+      sec_src_ey:'Fuentes', sec_src_h2:'De dónde salen los datos', sec_src_lead:'Cada afirmación enlaza a su fuente. Verificado el 14 de agosto de 2026.',
+      cta_h2:'Publica, verifica y deja que el robot te encuentre.', cta_p:'Genera tu bitácora gratis: 3 preguntas y los ficheros listos para copiar. 5 $ pago único para el pack completo con la guía paso a paso por proveedor y la verificación final. Sin cuenta, sin cookies de terceros.', cta_btn:'Generar mis ficheros'
+    },
+    en: {
+      title:'Bitácora — the files that make Google and AI find your website',
+      n_check:'Generator', n_regla:'The rule', n_cuenta:'Countdown', n_pricing:'Pricing', n_faq:'FAQ', n_sources:'Sources', n_cta:'Generate logbook',
+      n_check2:'Generator', n_regla2:'The rule', n_cuenta2:'Countdown', n_chk2:'Checklist', n_pricing2:'Pricing',
+      hero_ey:'Verification · Indexing · SEO · GEO · Global',
+      hero_h1:'Google\'s crawler cannot find your site. <span class="rd">Give it a logbook.</span>',
+      hero_lead:'<b>96.55%</b> of pages get zero visits from Google (Ahrefs, ~14 billion pages). For the crawler to crawl you, index you and for AI to cite you, publishing is not enough: you need <b>DNS TXT</b> verification (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> and <b>llms.txt</b>. Bitácora generates the files in your browser and tells you exactly where to paste each one. <b>$5 one-time</b>, no account.',
+      hero_cta1:'Generate my files', hero_cta2:'See the rule',
+      hero_m1:'96.55% of pages with 0 visits', hero_m2:'3 files · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'$5 one-time · no account',
+      stamp_chip_hero:'google crawler', stamp_l1_hero:'IN THE INDEX', stamp_l2_hero:'yoursite.com · logbook', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT verified', stamp_date_hero:'Verified 14.08.2026',
+      sec_regla_ey:'The rule', sec_regla_h2:'Google indexes what it finds: the rule is files and verification', sec_regla_lead:'Since 2005 crawling has relied on standard files. Today AI joins in: indexing is no longer enough, you must be cited. These are the milestones that define your website\'s logbook.',
+      t1_h3:'Sitemaps 0.84 is born', t1_p:'Google introduces the <b>sitemap</b> protocol to list a site\'s URLs.',
+      t2_h3:'Search Console is born', t2_p:'Webmaster Tools is renamed and adds <b>property verification</b>.',
+      t3_h3:'robots.txt becomes standard', t3_p:'The exclusion protocol is published as <b>RFC 9309</b> (IETF).',
+      t4_h3:'End of Universal Analytics', t4_p:'Only <b>GA4</b> remains: if you do not measure, you do not know if you are indexed.',
+      t5_h3:'The /llms.txt proposal', t5_p:'Jeremy Howard (Answer.AI) proposes the file so that <b>AI can read your site</b>.',
+      t6_h3:'AI Overviews cut clicks', t6_p:'AI answers reduce top clicks by <b>~34-58%</b> (Ahrefs): GEO arrives.',
+      t7_h3:'Chrome 154: HTTPS by default', t7_p:'Without HTTPS, Chrome asks for confirmation before opening your site.',
+      t8_h3:'Certificates: 100 days', t8_p:'If your certificate expires, your site goes down and <b>leaves the index</b>.',
+      tag_live:'in force', tag_live2:'in force', tag_live3:'in force', tag_live4:'in force', tag_live5:'in force', tag_live6:'in force', tag_next:'upcoming', tag_next2:'upcoming',
+      sec_cuenta_ey:'Countdown', sec_cuenta_h2:'The two dates that can take you out of the index', sec_cuenta_lead:'The count runs in your browser, live, against the real cited dates.',
+      cd1_who:'Chrome 154 · HTTPS by default', days_word:'days', cd1_date:'rollout during October 2026', cd1_note:'Google\'s crawler prioritises HTTPS; with Chrome 154, a site without HTTPS loses visibility and trust.',
+      cd2_who:'Certificates · 100 days', days_word2:'days', cd2_date:'until 15/03/2027', cd2_note:'CA/Browser Forum SC-081: manual renewal is no longer viable. A down site is not indexed.',
+      sec_check_ey:'Logbook generator', sec_check_h2:'Your domain, 3 questions, your files ready', sec_check_lead:'Everything runs in your browser: generate robots.txt, sitemap.xml, llms.txt and the DNS TXT record, with a copy button and the exact place to paste them.',
+      domain_label:'Your domain', domain_ph:'yoursite.com', domain_go:'Generate', domain_note:'Optional: validated right here. Files are generated with your domain when you stamp the verdict.',
+      domain_ready:'Ready to generate with:', domain_err:'Enter a valid domain, e.g. myshop.com',
+      qk1:'Question 1 of 3', q1:'Is your website already live?',
+      q1_o1_b:'Yes, with my own domain', q1_o1_s:'E.g. myshop.com — the URL the crawler must crawl.',
+      q1_o2_b:'Yes, on a subdomain or free plan', q1_o2_s:'E.g. myshop.wordpress.com or similar.',
+      q1_o3_b:'Not live yet', q1_o3_s:'I am building it or it does not exist yet.',
+      qk2:'Question 2 of 3', q2:'Who manages your DNS?',
+      q2_o1_b:'The hosting', q2_o1_s:'cPanel, Plesk or your provider\'s panel.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'My DNS or proxy goes through Cloudflare.',
+      q2_o3_b:'Myself', q2_o3_s:'A registrar or server I manage.',
+      q2_o4_b:'I do not know', q2_o4_s:'The Pro guide tells you where to look.',
+      qk3:'Question 3 of 3', q3:'What do you want to achieve first?',
+      q3_o1_b:'Get indexed by Google', q3_o1_s:'Crawling + sitemap in Search Console.',
+      q3_o2_b:'Measure with GA4', q3_o2_s:'Google Analytics 4 + gtag.js snippet.',
+      q3_o3_b:'Get cited by AI', q3_o3_s:'llms.txt + structured data (GEO).',
+      q3_o4_b:'Everything', q3_o4_s:'The full pack, in order.',
+      restart_btn:'Start over', prev_btn:'Back', next_btn:'Next', next_final:'Stamp my logbook',
+      v_domain:'Domain', v_status:'Status', v_env:'DNS', v_svc:'Goal', v_files:'Files', v_chrome:'Chrome 154',
+      st_ok:'Published', st_warn:'On subdomain', st_bad:'No site',
+      env_host:'The hosting', env_cf:'Cloudflare', env_me:'Myself', env_detect:'To detect',
+      obj_index:'Get indexed by Google', obj_ga:'Measure with GA4', obj_geo:'Get cited by AI', obj_all:'Everything',
+      stamp_ok_label:'SITE PUBLISHED', stamp_warn_label:'ON SUBDOMAIN', stamp_bad_label:'NO SITE YET',
+      chip_ok:'crawler can index', chip_warn:'review subdomain', chip_bad:'publish first',
+      print_btn:'Print my stamp', copy_btn:'Copy', copied:'Copied!',
+      files_head:'Your file pack', files_hint:'Each file has a copy button and the exact place to paste it. The Pro guide adds provider steps (Cloudflare, cPanel, hosting) and the final verification.',
+      file_where_robots:'<b>Where:</b> save this file as robots.txt in your site\'s root (public/, htdocs/ or your hosting\'s root folder).',
+      file_where_sitemap:'<b>Where:</b> save as sitemap.xml next to robots.txt and submit it in Search Console (Indexing → Sitemaps).',
+      file_where_llms:'<b>Where:</b> save as llms.txt in the root, next to robots.txt. It is the file read by ChatGPT, Perplexity and AI Overviews.',
+      file_where_txt:'<b>Where:</b> in your DNS panel (Cloudflare → DNS → Records, or your hosting\'s TXT records). Search Console asks for it when verifying.',
+      file_where_gtag:'<b>Where:</b> paste this snippet into the &lt;head&gt; of every page (or use the GA4 assistant). Replace G-XXXXXXXXXX with your ID.',
+      llms_desc:'Describe this site for AI search engines (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'What this site is', llms_about_txt:'Write 2-3 sentences about what {domain} offers and for whom.',
+      llms_pages:'Main pages', llms_home:'Home',
+      v_ok_title:'Your site is live — leave the logbook so the crawler finds you',
+      v_warn_title:'You are on a subdomain — Google treats it worse, plan a migration',
+      v_bad_title:'No site yet — keep the logbook ready for launch',
+      v_ok_l1:'Verify ownership: add the TXT record in your DNS and confirm in Search Console',
+      v_ok_l2:'Upload robots.txt and sitemap.xml to the root and submit the sitemap in Search Console',
+      v_ok_l3:'Publish llms.txt in the root so AI can read you',
+      v_ok_l4:'Watch coverage: “Page indexed” arrives within days or weeks',
+      v_warn_l1:'Google treats own domains better: plan migrating from subdomain to your domain',
+      v_warn_l2:'Verify the domain with the TXT record and upload the 3 files to the root',
+      v_warn_l3:'Enable HTTPS and the 301 redirect before asking for indexing',
+      v_warn_l4:'Submit the sitemap in Search Console and watch coverage',
+      v_bad_l1:'Publish your site with HTTPS (own domain if you can)',
+      v_bad_l2:'Keep the files from this logbook ready for launch day',
+      v_bad_l3:'Add the TXT record to your DNS once you have the domain',
+      v_bad_l4:'On launch, verify in Search Console and submit the sitemap: Google indexes within days or weeks',
+      v_ok_note:'<b>Good:</b> your site is live. Indexing is not ranking: 96.55% of pages get zero visits from Google. With verification + sitemap + real content the crawler tracks you; the position depends on the rest.',
+      v_warn_note:'<b>Before scaling:</b> publish on your own domain. A free-plan subdomain gets indexed, but Google treats it worse and it is not yours. Meanwhile, keep verification and files ready.',
+      v_bad_note:'<b>Your next milestone:</b> going live. {days} left until Chrome 154 (October 2026): launch with HTTPS and this logbook ready, and the crawler will start tracking you on day one.',
+      sec_chk_ey:'Checklist', sec_chk_h2:'Mark what you already have under control', sec_chk_lead:'Sector terms — SEO and GEO — in pills saved to your device.',
+      chk1:'robots.txt in the root', chk2:'sitemap.xml in the root', chk3:'Sitemap submitted in Search Console', chk4:'DNS TXT verification done', chk5:'llms.txt for AI', chk6:'GA4 with gtag.js installed', chk7:'HTTPS + 301 redirect', chk8:'JSON-LD structured data', chk9:'Core Web Vitals in green', chk10:'OG/Twitter metadata', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'AI seal art. 50.4 in the footer', chk15:'lastmod updated in the sitemap', chk16:'Google Business Profile (local)',
+      checks_hint:'Tap a pill to mark it. Your progress is saved only on this device.',
+      sec_how_ey:'How it works', sec_how_h2:'From domain to verified indexing',
+      how1_h:'Enter your domain', how1_p:'Bitácora validates the domain and generates the files in your browser based on your 3 answers.',
+      how2_h:'Copy and paste where it belongs', how2_p:'robots.txt, sitemap.xml and llms.txt go to your site\'s root; the TXT record goes to your DNS (provider guide: Cloudflare, cPanel, hosting) and the snippet to GA4.',
+      how3_h:'Verify and leave a trail', how3_p:'Confirm ownership in Search Console and watch coverage; AI reads your llms.txt. Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC.',
+      sec_price_ey:'Pricing', sec_price_h2:'Free diagnosis. Full logbook for $5.',
+      plan_free:'Free', plan_pro:'Pro', plan_badge:'Recommended', plan_pro_unit:'one-time',
+      p_free1:'Your status in 3 questions', p_free2:'Published / on subdomain / no site', p_free3:'One generated file (llms.txt)', p_free4:'Countdown to Chrome 154', p_free5:'Interactive checklist', p_free6:'Official sources cited', p_free7:'Full pack + provider guide', p_free_cta:'Generate for free',
+      p_pro1:'Everything in Free', p_pro2:'Full pack: robots.txt + sitemap.xml + llms.txt', p_pro3:'DNS TXT record (Search Console + GA4) + gtag.js snippet', p_pro4:'Step-by-step guide per provider (Cloudflare, cPanel, hosting)', p_pro5:'Final indexing verification', p_pro6:'Extras: JSON-LD, Core Web Vitals, IndexNow, DMARC', p_pro_cta:'Unlock Pro — $5', p_pro_fiscal:'One-time payment in USDT/USDC. Price in USD; taxes depend on your country at checkout.',
+      sec_faq_ey:'FAQ', sec_faq_h2:'What people ask when they want the crawler to find them',
+      faq1:'What exactly do I need for Google to index my site?', faq2:'What is the DNS TXT verification record? Is it safe?', faq3:'Are robots.txt and sitemap.xml the same?', faq4:'What is llms.txt and why does it matter now?', faq5:'Does Google use IndexNow?', faq6:'Does this guarantee ranking #1?', faq7:'What about third-party cookies?',
+      sec_src_ey:'Sources', sec_src_h2:'Where the data comes from', sec_src_lead:'Every claim links to its source. Verified on 14 August 2026.',
+      cta_h2:'Publish, verify and let the crawler find you.', cta_p:'Generate your logbook for free: 3 questions and the files ready to copy. $5 one-time for the full pack with the provider step-by-step guide and the final verification. No account, no third-party cookies.', cta_btn:'Generate my files'
+    },
+    fr: {
+      title:'Bitácora — les fichiers qui font que Google et les IA trouvent votre site',
+      n_check:'Générateur', n_regla:'La règle', n_cuenta:'Compte à rebours', n_pricing:'Prix', n_faq:'FAQ', n_sources:'Sources', n_cta:'Générer le journal',
+      n_check2:'Générateur', n_regla2:'La règle', n_cuenta2:'Compte à rebours', n_chk2:'Checklist', n_pricing2:'Prix',
+      hero_ey:'Vérification · Indexation · SEO · GEO · Global',
+      hero_h1:'Le robot de Google ne trouve pas votre site. <span class="rd">Donnez-lui un journal de bord.</span>',
+      hero_lead:'<b>96,55&nbsp;%</b> des pages reçoivent 0 visite de Google (Ahrefs, ~14 milliards de pages). Pour que le robot vous explore, vous indexe et que les IA vous citent, publier ne suffit pas : vérification <b>DNS TXT</b> (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> et <b>llms.txt</b>. Bitácora génère les fichiers dans votre navigateur et vous dit où coller chacun. <b>5 $ paiement unique</b>, sans compte.',
+      hero_cta1:'Générer mes fichiers', hero_cta2:'Voir la règle',
+      hero_m1:'96,55 % de pages à 0 visite', hero_m2:'3 fichiers · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'5 $ unique · sans compte',
+      stamp_chip_hero:'robot de google', stamp_l1_hero:'DANS L\'INDEX', stamp_l2_hero:'votresite.com · journal', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT vérifié', stamp_date_hero:'Vérifié 14.08.2026',
+      sec_regla_ey:'La règle', sec_regla_h2:'Google indexe ce qu\'il trouve : la règle, ce sont les fichiers et la vérification', sec_regla_lead:'Depuis 2005, l\'exploration repose sur des fichiers standard. Aujourd\'hui les IA s\'ajoutent : indexer ne suffit plus, il faut être cité.',
+      t1_h3:'Naissance de Sitemaps 0.84', t1_p:'Google présente le protocole <b>sitemap</b> pour lister les URLs.',
+      t2_h3:'Naissance de Search Console', t2_p:'Webmaster Tools change de nom et ajoute la <b>vérification de propriété</b>.',
+      t3_h3:'robots.txt devient standard', t3_p:'Le protocole d\'exclusion est publié en <b>RFC 9309</b> (IETF).',
+      t4_h3:'Fin d\'Universal Analytics', t4_p:'Il ne reste que <b>GA4</b> : si vous ne mesurez pas, vous ne savez pas.',
+      t5_h3:'La proposition /llms.txt', t5_p:'Jeremy Howard (Answer.AI) propose le fichier pour que <b>les IA lisent votre site</b>.',
+      t6_h3:'AI Overviews réduit les clics', t6_p:'Les réponses IA réduisent les clics du top de <b>~34-58 %</b> (Ahrefs) : le GEO.',
+      t7_h3:'Chrome 154 : HTTPS par défaut', t7_p:'Sans HTTPS, Chrome demande confirmation avant d\'ouvrir votre site.',
+      t8_h3:'Certificats : 100 jours', t8_p:'Si votre certificat expire, votre site tombe et <b>sort de l\'index</b>.',
+      tag_live:'en vigueur', tag_live2:'en vigueur', tag_live3:'en vigueur', tag_live4:'en vigueur', tag_live5:'en vigueur', tag_live6:'en vigueur', tag_next:'à venir', tag_next2:'à venir',
+      sec_cuenta_ey:'Compte à rebours', sec_cuenta_h2:'Les deux dates qui peuvent vous sortir de l\'index', sec_cuenta_lead:'Le compte tourne dans votre navigateur, en direct, sur les dates réelles citées.',
+      cd1_who:'Chrome 154 · HTTPS par défaut', days_word:'jours', cd1_date:'déploiement en octobre 2026', cd1_note:'Le robot de Google priorise HTTPS ; avec Chrome 154, un site sans HTTPS perd visibilité.',
+      cd2_who:'Certificats · 100 jours', days_word2:'jours', cd2_date:'jusqu\'au 15/03/2027', cd2_note:'CA/Browser Forum SC-081 : renouveler à la main n\'est plus viable.',
+      sec_check_ey:'Générateur de journal', sec_check_h2:'Votre domaine, 3 questions, vos fichiers prêts', sec_check_lead:'Tout tourne dans votre navigateur : générez robots.txt, sitemap.xml, llms.txt et le DNS TXT, avec bouton copier et emplacement exact.',
+      domain_label:'Votre domaine', domain_ph:'votresite.com', domain_go:'Générer', domain_note:'Optionnel : validé ici. Les fichiers se génèrent avec votre domaine au tamponnage du verdict.',
+      domain_ready:'Prêt à générer avec :', domain_err:'Entrez un domaine valide, ex. maboutique.com',
+      qk1:'Question 1 sur 3', q1:'Votre site est-il déjà en ligne ?',
+      q1_o1_b:'Oui, avec mon propre domaine', q1_o1_s:'Ex. maboutique.com — l\'URL que le robot doit explorer.',
+      q1_o2_b:'Oui, en sous-domaine ou plan gratuit', q1_o2_s:'Ex. maboutique.wordpress.com.',
+      q1_o3_b:'Pas encore en ligne', q1_o3_s:'Je le construis ou il n\'existe pas encore.',
+      qk2:'Question 2 sur 3', q2:'Qui gère votre DNS ?',
+      q2_o1_b:'L\'hébergement', q2_o1_s:'cPanel, Plesk ou le panneau de votre fournisseur.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'Mon DNS ou proxy passe par Cloudflare.',
+      q2_o3_b:'Moi-même', q2_o3_s:'Un registrar ou serveur que je gère.',
+      q2_o4_b:'Je ne sais pas', q2_o4_s:'Le guide Pro vous dit où regarder.',
+      qk3:'Question 3 sur 3', q3:'Que voulez-vous obtenir en premier ?',
+      q3_o1_b:'Être indexé par Google', q3_o1_s:'Exploration + sitemap dans Search Console.',
+      q3_o2_b:'Mesurer avec GA4', q3_o2_s:'Google Analytics 4 + snippet gtag.js.',
+      q3_o3_b:'Être cité par les IA', q3_o3_s:'llms.txt + données structurées (GEO).',
+      q3_o4_b:'Tout', q3_o4_s:'Le pack complet, dans l\'ordre.',
+      restart_btn:'Recommencer', prev_btn:'Retour', next_btn:'Suivant', next_final:'Tamponner mon journal',
+      v_domain:'Domaine', v_status:'État', v_env:'DNS', v_svc:'Objectif', v_files:'Fichiers', v_chrome:'Chrome 154',
+      st_ok:'Publiée', st_warn:'En sous-domaine', st_bad:'Sans site',
+      env_host:'L\'hébergement', env_cf:'Cloudflare', env_me:'Moi-même', env_detect:'À détecter',
+      obj_index:'Être indexé par Google', obj_ga:'Mesurer avec GA4', obj_geo:'Être cité par les IA', obj_all:'Tout',
+      stamp_ok_label:'SITE PUBLIÉ', stamp_warn_label:'EN SOUS-DOMAINE', stamp_bad_label:'PAS DE SITE',
+      chip_ok:'le robot peut indexer', chip_warn:'revoir sous-domaine', chip_bad:'publiez d\'abord',
+      print_btn:'Imprimer mon tampon', copy_btn:'Copier', copied:'Copié !',
+      files_head:'Votre pack de fichiers', files_hint:'Chaque fichier a un bouton copier et l\'emplacement exact. Le guide Pro ajoute les étapes par fournisseur et la vérification finale.',
+      file_where_robots:'<b>Où :</b> enregistrez ce fichier comme robots.txt à la racine de votre site (public/, htdocs/).',
+      file_where_sitemap:'<b>Où :</b> enregistrez sitemap.xml à côté de robots.txt et envoyez-le dans Search Console.',
+      file_where_llms:'<b>Où :</b> enregistrez llms.txt à la racine, à côté de robots.txt.',
+      file_where_txt:'<b>Où :</b> dans le panneau DNS (Cloudflare → DNS → Enregistrements).',
+      file_where_gtag:'<b>Où :</b> collez ce snippet dans le &lt;head&gt; de toutes les pages.',
+      llms_desc:'Décrivez ce site pour les moteurs d\'IA (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'Ce qu\'est ce site', llms_about_txt:'Écrivez en 2-3 phrases ce que propose {domain} et pour qui.',
+      llms_pages:'Pages principales', llms_home:'Accueil',
+      v_ok_title:'Votre site est en ligne — laissez le journal pour que le robot vous trouve',
+      v_warn_title:'Vous êtes en sous-domaine — Google le traite moins bien',
+      v_bad_title:'Pas encore de site — gardez le journal prêt pour le lancement',
+      sec_chk_ey:'Checklist', sec_chk_h2:'Cochez ce que vous avez déjà sous contrôle', sec_chk_lead:'Les termes du secteur — SEO et GEO — en pastilles enregistrées sur votre appareil.',
+      chk1:'robots.txt à la racine', chk2:'sitemap.xml à la racine', chk3:'Sitemap envoyé dans Search Console', chk4:'Vérification DNS TXT faite', chk5:'llms.txt pour les IA', chk6:'GA4 avec gtag.js installé', chk7:'HTTPS + redirection 301', chk8:'Données structurées JSON-LD', chk9:'Core Web Vitals en vert', chk10:'Métadonnées OG/Twitter', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'Sceau IA art. 50.4 dans le footer', chk15:'lastmod mis à jour dans le sitemap', chk16:'Google Business Profile (local)',
+      checks_hint:'Touchez une pastille pour la cocher. Votre progression reste sur cet appareil.',
+      sec_price_ey:'Prix', sec_price_h2:'Diagnostic gratuit. Journal complet pour 5 $.',
+      plan_free:'Gratuit', plan_pro:'Pro', plan_badge:'Recommandé', plan_pro_unit:'unique',
+      p_free_cta:'Générer gratuitement', p_pro_cta:'Débloquer Pro — 5 $',
+      sec_faq_ey:'FAQ', sec_faq_h2:'Ce que demande qui veut que le robot le trouve',
+      faq1:'Que faut-il exactement pour que Google indexe mon site ?', faq2:'Qu\'est-ce que le DNS TXT de vérification ? Est-ce sûr ?', faq3:'robots.txt et sitemap.xml, c\'est pareil ?', faq4:'Qu\'est-ce que llms.txt et pourquoi ça compte ?', faq5:'Est-ce que Google utilise IndexNow ?', faq6:'Est-ce que ça garantit la 1re place ?', faq7:'Et les cookies tiers ?',
+      sec_src_ey:'Sources', sec_src_h2:'D\'où viennent les données', sec_src_lead:'Chaque affirmation renvoie à sa source. Vérifié le 14 août 2026.',
+      cta_h2:'Publiez, vérifiez et laissez le robot vous trouver.', cta_p:'Générez votre journal gratuitement : 3 questions et les fichiers prêts à copier. 5 $ unique pour le pack complet avec le guide pas à pas.', cta_btn:'Générer mes fichiers'
+    },
+    de: {
+      title:'Bitácora — die Dateien, mit denen Google und KI Ihre Website finden',
+      n_check:'Generator', n_regla:'Die Regel', n_cuenta:'Countdown', n_pricing:'Preis', n_faq:'FAQ', n_sources:'Quellen', n_cta:'Logbuch erstellen',
+      n_check2:'Generator', n_regla2:'Die Regel', n_cuenta2:'Countdown', n_chk2:'Checkliste', n_pricing2:'Preis',
+      hero_ey:'Verifizierung · Indexierung · SEO · GEO · Global',
+      hero_h1:'Der Google-Roboter findet Ihre Website nicht. <span class="rd">Geben Sie ihm ein Logbuch.</span>',
+      hero_lead:'<b>96,55 %</b> der Seiten erhalten 0 Besuche von Google (Ahrefs, ~14 Mrd. Seiten). Damit der Roboter Sie crawlt, indexiert und die KI Sie zitiert, reicht Veröffentlichen nicht: <b>DNS-TXT</b>-Verifizierung (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> und <b>llms.txt</b>. Bitácora erzeugt die Dateien im Browser und sagt Ihnen, wohin Sie jede einfügen. <b>5 $ einmalig</b>, ohne Konto.',
+      hero_cta1:'Meine Dateien erzeugen', hero_cta2:'Die Regel ansehen',
+      hero_m1:'96,55 % der Seiten mit 0 Besuchen', hero_m2:'3 Dateien · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'5 $ einmalig · ohne Konto',
+      stamp_chip_hero:'google-roboter', stamp_l1_hero:'IM INDEX', stamp_l2_hero:'ihresite.com · logbuch', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT verifiziert', stamp_date_hero:'Verifiziert 14.08.2026',
+      sec_regla_ey:'Die Regel', sec_regla_h2:'Google indexiert, was es findet: die Regel sind Dateien und Verifizierung', sec_regla_lead:'Seit 2005 stützt sich das Crawling auf Standarddateien. Heute kommen die KIs dazu: Indexieren reicht nicht mehr, man muss zitiert werden.',
+      t1_h3:'Sitemaps 0.84 entsteht', t1_p:'Google stellt das <b>Sitemap</b>-Protokoll zur Auflistung der URLs vor.',
+      t2_h3:'Search Console entsteht', t2_p:'Webmaster Tools wird umbenannt und erhält die <b>Eigentumsverifizierung</b>.',
+      t3_h3:'robots.txt wird Standard', t3_p:'Das Ausschlussprotokoll erscheint als <b>RFC 9309</b> (IETF).',
+      t4_h3:'Ende von Universal Analytics', t4_p:'Es bleibt nur <b>GA4</b>: Wer nicht misst, weiß nicht, ob er indexiert wird.',
+      t5_h3:'Die /llms.txt-Initiative', t5_p:'Jeremy Howard (Answer.AI) schlägt die Datei vor, damit <b>die KI Ihre Website liest</b>.',
+      t6_h3:'AI Overviews senkt Klicks', t6_p:'KI-Antworten senken die Klicks im Top um <b>~34-58 %</b> (Ahrefs): das GEO.',
+      t7_h3:'Chrome 154: HTTPS standardmäßig', t7_p:'Ohne HTTPS fragt Chrome vor dem Öffnen Ihrer Website nach.',
+      t8_h3:'Zertifikate: 100 Tage', t8_p:'Läuft Ihr Zertifikat ab, fällt die Website und <b>verlässt den Index</b>.',
+      tag_live:'in Kraft', tag_live2:'in Kraft', tag_live3:'in Kraft', tag_live4:'in Kraft', tag_live5:'in Kraft', tag_live6:'in Kraft', tag_next:'bevorstehend', tag_next2:'bevorstehend',
+      sec_cuenta_ey:'Countdown', sec_cuenta_h2:'Die zwei Daten, die Sie aus dem Index holen können', sec_cuenta_lead:'Der Countdown läuft live im Browser gegen die zitierten Daten.',
+      cd1_who:'Chrome 154 · HTTPS standardmäßig', days_word:'Tage', cd1_date:'Rollout im Oktober 2026', cd1_note:'Der Google-Roboter priorisiert HTTPS; ohne HTTPS verliert Ihre Website Sichtbarkeit.',
+      cd2_who:'Zertifikate · 100 Tage', days_word2:'Tage', cd2_date:'bis 15.03.2027', cd2_note:'CA/Browser Forum SC-081: manuelle Erneuerung ist nicht mehr tragbar.',
+      sec_check_ey:'Logbuch-Generator', sec_check_h2:'Ihre Domain, 3 Fragen, Ihre Dateien fertig', sec_check_lead:'Alles läuft im Browser: erzeugen Sie robots.txt, sitemap.xml, llms.txt und den DNS-TXT-Eintrag, mit Kopierbutton und genauer Ablagestelle.',
+      domain_label:'Ihre Domain', domain_ph:'ihresite.com', domain_go:'Erzeugen', domain_note:'Optional: wird hier validiert. Die Dateien werden mit Ihrer Domain beim Stempeln erzeugt.',
+      domain_ready:'Bereit zum Erzeugen mit:', domain_err:'Geben Sie eine gültige Domain ein, z. B. meinshop.com',
+      qk1:'Frage 1 von 3', q1:'Ist Ihre Website schon online?',
+      q1_o1_b:'Ja, mit eigener Domain', q1_o1_s:'Z. B. meinshop.com — die URL, die der Roboter crawlen soll.',
+      q1_o2_b:'Ja, auf Subdomain oder Gratisplan', q1_o2_s:'Z. B. meinshop.wordpress.com.',
+      q1_o3_b:'Noch nicht online', q1_o3_s:'Ich baue sie gerade oder sie existiert noch nicht.',
+      qk2:'Frage 2 von 3', q2:'Wer verwaltet Ihr DNS?',
+      q2_o1_b:'Das Hosting', q2_o1_s:'cPanel, Plesk oder das Panel Ihres Anbieters.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'Mein DNS oder Proxy läuft über Cloudflare.',
+      q2_o3_b:'Ich selbst', q2_o3_s:'Ein Registrar oder Server, den ich verwalte.',
+      q2_o4_b:'Ich weiß es nicht', q2_o4_s:'Der Pro-Leitfaden sagt Ihnen, wo Sie nachsehen.',
+      qk3:'Frage 3 von 3', q3:'Was möchten Sie zuerst erreichen?',
+      q3_o1_b:'Von Google indexiert werden', q3_o1_s:'Crawling + Sitemap in Search Console.',
+      q3_o2_b:'Mit GA4 messen', q3_o2_s:'Google Analytics 4 + gtag.js-Snippet.',
+      q3_o3_b:'Von der KI zitiert werden', q3_o3_s:'llms.txt + strukturierte Daten (GEO).',
+      q3_o4_b:'Alles', q3_o4_s:'Das komplette Paket, der Reihe nach.',
+      restart_btn:'Neu starten', prev_btn:'Zurück', next_btn:'Weiter', next_final:'Mein Logbuch stempeln',
+      v_domain:'Domain', v_status:'Status', v_env:'DNS', v_svc:'Ziel', v_files:'Dateien', v_chrome:'Chrome 154',
+      st_ok:'Veröffentlicht', st_warn:'Auf Subdomain', st_bad:'Keine Website',
+      env_host:'Das Hosting', env_cf:'Cloudflare', env_me:'Ich selbst', env_detect:'Zu erkennen',
+      obj_index:'Von Google indexiert', obj_ga:'Mit GA4 messen', obj_geo:'Von der KI zitiert', obj_all:'Alles',
+      stamp_ok_label:'SEITE VERÖFFENTLICHT', stamp_warn_label:'AUF SUBDOMAIN', stamp_bad_label:'NOCH KEINE SEITE',
+      chip_ok:'Roboter kann indexieren', chip_warn:'Subdomain prüfen', chip_bad:'zuerst veröffentlichen',
+      print_btn:'Meinen Stempel drucken', copy_btn:'Kopieren', copied:'Kopiert!',
+      files_head:'Ihr Dateipaket', files_hint:'Jede Datei hat einen Kopierbutton und die genaue Ablagestelle. Der Pro-Leitfaden ergänzt Schritte je Anbieter und die Endprüfung.',
+      file_where_robots:'<b>Wohin:</b> speichern Sie diese Datei als robots.txt im Stammverzeichnis Ihrer Website (public/, htdocs/).',
+      file_where_sitemap:'<b>Wohin:</b> speichern Sie sitemap.xml neben robots.txt und senden Sie sie in Search Console.',
+      file_where_llms:'<b>Wohin:</b> speichern Sie llms.txt im Stammverzeichnis, neben robots.txt.',
+      file_where_txt:'<b>Wohin:</b> im DNS-Panel (Cloudflare → DNS → Datensätze).',
+      file_where_gtag:'<b>Wohin:</b> fügen Sie dieses Snippet in den &lt;head&gt; aller Seiten ein.',
+      llms_desc:'Beschreiben Sie diese Website für KI-Suchmaschinen (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'Was diese Website ist', llms_about_txt:'Schreiben Sie in 2-3 Sätzen, was {domain} bietet und für wen.',
+      llms_pages:'Hauptseiten', llms_home:'Startseite',
+      v_ok_title:'Ihre Website ist online — hinterlassen Sie das Logbuch',
+      v_warn_title:'Sie sind auf einer Subdomain — Google behandelt sie schlechter',
+      v_bad_title:'Noch keine Website — halten Sie das Logbuch für den Start bereit',
+      sec_chk_ey:'Checkliste', sec_chk_h2:'Markieren Sie, was Sie schon im Griff haben', sec_chk_lead:'Fachbegriffe — SEO und GEO — als Pills, die auf Ihrem Gerät gespeichert werden.',
+      chk1:'robots.txt im Stammverzeichnis', chk2:'sitemap.xml im Stammverzeichnis', chk3:'Sitemap in Search Console gesendet', chk4:'DNS-TXT-Verifizierung erledigt', chk5:'llms.txt für die KI', chk6:'GA4 mit gtag.js installiert', chk7:'HTTPS + 301-Weiterleitung', chk8:'JSON-LD strukturierte Daten', chk9:'Core Web Vitals grün', chk10:'OG/Twitter-Metadaten', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'KI-Siegel Art. 50.4 im Footer', chk15:'lastmod in der Sitemap aktualisiert', chk16:'Google Business Profile (lokal)',
+      checks_hint:'Tippen Sie eine Pille an, um sie zu markieren. Ihr Fortschritt bleibt nur auf diesem Gerät.',
+      sec_price_ey:'Preis', sec_price_h2:'Diagnose gratis. Komplettes Logbuch für 5 $.',
+      plan_free:'Gratis', plan_pro:'Pro', plan_badge:'Empfohlen', plan_pro_unit:'einmalig',
+      p_free_cta:'Gratis erzeugen', p_pro_cta:'Pro freischalten — 5 $',
+      sec_faq_ey:'FAQ', sec_faq_h2:'Was man fragt, wenn der Roboter einen finden soll',
+      faq1:'Was brauche ich genau, damit Google meine Website indexiert?', faq2:'Was ist der DNS-TXT-Verifizierungseintrag? Ist er sicher?', faq3:'Sind robots.txt und sitemap.xml dasselbe?', faq4:'Was ist llms.txt und warum zählt es jetzt?', faq5:'Nutzt Google IndexNow?', faq6:'Garantiert das Platz 1?', faq7:'Und die Drittanbieter-Cookies?',
+      sec_src_ey:'Quellen', sec_src_h2:'Woher die Daten stammen', sec_src_lead:'Jede Aussage verlinkt auf ihre Quelle. Geprüft am 14. August 2026.',
+      cta_h2:'Veröffentlichen, verifizieren und den Roboter finden lassen.', cta_p:'Erzeugen Sie Ihr Logbuch gratis: 3 Fragen und die Dateien zum Kopieren. 5 $ einmalig für das komplette Paket mit dem Schritt-für-Schritt-Leitfaden.', cta_btn:'Meine Dateien erzeugen'
+    },
+    it: {
+      title:'Bitácora — i file che fanno trovare il tuo sito a Google e alle IA',
+      n_check:'Generatore', n_regla:'La regola', n_cuenta:'Conto alla rovescia', n_pricing:'Prezzo', n_faq:'FAQ', n_sources:'Fonti', n_cta:'Genera il giornale',
+      n_check2:'Generatore', n_regla2:'La regola', n_cuenta2:'Conto alla rovescia', n_chk2:'Checklist', n_pricing2:'Prezzo',
+      hero_ey:'Verifica · Indicizzazione · SEO · GEO · Globale',
+      hero_h1:'Il robot di Google non trova il tuo sito. <span class="rd">Dagli un giornale di bordo.</span>',
+      hero_lead:'Il <b>96,55%</b> delle pagine riceve 0 visite da Google (Ahrefs, ~14 miliardi di pagine). Perché il robot ti indicizzi e le IA ti citino non basta pubblicare: verifica <b>DNS TXT</b> (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> e <b>llms.txt</b>. Bitácora genera i file nel tuo browser e ti dice dove incollarli. <b>5 $ una tantum</b>, senza account.',
+      hero_cta1:'Genera i miei file', hero_cta2:'Vedi la regola',
+      hero_m1:'96,55% di pagine a 0 visite', hero_m2:'3 file · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'5 $ una tantum · senza account',
+      stamp_chip_hero:'robot di google', stamp_l1_hero:'NELL\'INDICE', stamp_l2_hero:'iltuosito.com · giornale', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT verificato', stamp_date_hero:'Verificato 14.08.2026',
+      sec_regla_ey:'La regola', sec_regla_h2:'Google indicizza ciò che trova: la regola sono i file e la verifica', sec_regla_lead:'Dal 2005 il crawling si basa su file standard. Oggi si aggiungono le IA: indicizzare non basta, bisogna essere citati.',
+      t1_h3:'Nasce Sitemaps 0.84', t1_p:'Google presenta il protocollo <b>sitemap</b> per elencare le URL.',
+      t2_h3:'Nasce Search Console', t2_p:'Webmaster Tools cambia nome e aggiunge la <b>verifica di proprietà</b>.',
+      t3_h3:'robots.txt diventa standard', t3_p:'Il protocollo di esclusione è pubblicato come <b>RFC 9309</b> (IETF).',
+      t4_h3:'Fine di Universal Analytics', t4_p:'Resta solo <b>GA4</b>: se non misuri, non sai se sei indicizzato.',
+      t5_h3:'La proposta /llms.txt', t5_p:'Jeremy Howard (Answer.AI) propone il file perché <b>le IA leggano il tuo sito</b>.',
+      t6_h3:'AI Overviews taglia i click', t6_p:'Le risposte IA riducono i click in top del <b>~34-58%</b> (Ahrefs): arriva il GEO.',
+      t7_h3:'Chrome 154: HTTPS predefinito', t7_p:'Senza HTTPS, Chrome chiede conferma prima di aprire il tuo sito.',
+      t8_h3:'Certificati: 100 giorni', t8_p:'Se il certificato scade, il sito cade e <b>esce dall\'indice</b>.',
+      tag_live:'in vigore', tag_live2:'in vigore', tag_live3:'in vigore', tag_live4:'in vigore', tag_live5:'in vigore', tag_live6:'in vigore', tag_next:'prossimo', tag_next2:'prossimo',
+      sec_cuenta_ey:'Conto alla rovescia', sec_cuenta_h2:'Le due date che possono toglierti dall\'indice', sec_cuenta_lead:'Il conteggio gira nel tuo browser, in diretta, sulle date reali citate.',
+      cd1_who:'Chrome 154 · HTTPS predefinito', days_word:'giorni', cd1_date:'rilascio durante ottobre 2026', cd1_note:'Il robot di Google dà priorità a HTTPS; senza HTTPS il tuo sito perde visibilità.',
+      cd2_who:'Certificati · 100 giorni', days_word2:'giorni', cd2_date:'fino al 15/03/2027', cd2_note:'CA/Browser Forum SC-081: il rinnovo manuale non è più sostenibile.',
+      sec_check_ey:'Generatore di giornale', sec_check_h2:'Il tuo dominio, 3 domande, i tuoi file pronti', sec_check_lead:'Tutto gira nel tuo browser: genera robots.txt, sitemap.xml, llms.txt e il DNS TXT, con pulsante copia e posizione esatta.',
+      domain_label:'Il tuo dominio', domain_ph:'iltuosito.com', domain_go:'Genera', domain_note:'Opzionale: viene validato qui. I file si generano con il tuo dominio al timbro del verdetto.',
+      domain_ready:'Pronto per generare con:', domain_err:'Inserisci un dominio valido, es. mioshop.com',
+      qk1:'Domanda 1 di 3', q1:'Il tuo sito è già online?',
+      q1_o1_b:'Sì, con dominio proprio', q1_o1_s:'Es. mioshop.com — l\'URL che il robot deve indicizzare.',
+      q1_o2_b:'Sì, su sottodominio o piano gratuito', q1_o2_s:'Es. mioshop.wordpress.com.',
+      q1_o3_b:'Non ancora online', q1_o3_s:'Lo sto costruendo o non esiste ancora.',
+      qk2:'Domanda 2 di 3', q2:'Chi gestisce il tuo DNS?',
+      q2_o1_b:'L\'hosting', q2_o1_s:'cPanel, Plesk o il pannello del provider.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'Il mio DNS o proxy passa da Cloudflare.',
+      q2_o3_b:'Io stesso', q2_o3_s:'Un registrar o server che gestisco.',
+      q2_o4_b:'Non lo so', q2_o4_s:'La guida Pro ti dice dove guardare.',
+      qk3:'Domanda 3 di 3', q3:'Cosa vuoi ottenere per primo?',
+      q3_o1_b:'Essere indicizzato da Google', q3_o1_s:'Crawling + sitemap in Search Console.',
+      q3_o2_b:'Misurare con GA4', q3_o2_s:'Google Analytics 4 + snippet gtag.js.',
+      q3_o3_b:'Essere citato dalle IA', q3_o3_s:'llms.txt + dati strutturati (GEO).',
+      q3_o4_b:'Tutto', q3_o4_s:'Il pacchetto completo, in ordine.',
+      restart_btn:'Ricomincia', prev_btn:'Indietro', next_btn:'Avanti', next_final:'Timbra il mio giornale',
+      v_domain:'Dominio', v_status:'Stato', v_env:'DNS', v_svc:'Obiettivo', v_files:'File', v_chrome:'Chrome 154',
+      st_ok:'Pubblicato', st_warn:'Su sottodominio', st_bad:'Senza sito',
+      env_host:'L\'hosting', env_cf:'Cloudflare', env_me:'Io stesso', env_detect:'Da rilevare',
+      obj_index:'Indicizzato da Google', obj_ga:'Misurare con GA4', obj_geo:'Citato dalle IA', obj_all:'Tutto',
+      stamp_ok_label:'SITO PUBBLICATO', stamp_warn_label:'SU SOTTODOMINIO', stamp_bad_label:'ANCORA NESSUN SITO',
+      chip_ok:'il robot può indicizzare', chip_warn:'rivedi sottodominio', chip_bad:'pubblica prima',
+      print_btn:'Stampa il mio timbro', copy_btn:'Copia', copied:'Copiato!',
+      files_head:'Il tuo pacchetto di file', files_hint:'Ogni file ha il pulsante copia e la posizione esatta. La guida Pro aggiunge i passi per provider e la verifica finale.',
+      file_where_robots:'<b>Dove:</b> salva questo file come robots.txt nella root del tuo sito (public/, htdocs/).',
+      file_where_sitemap:'<b>Dove:</b> salva sitemap.xml accanto a robots.txt e invialo in Search Console.',
+      file_where_llms:'<b>Dove:</b> salva llms.txt nella root, accanto a robots.txt.',
+      file_where_txt:'<b>Dove:</b> nel pannello DNS (Cloudflare → DNS → Record).',
+      file_where_gtag:'<b>Dove:</b> incolla questo snippet nel &lt;head&gt; di tutte le pagine.',
+      llms_desc:'Descrivi questo sito per i motori di ricerca IA (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'Cos\'è questo sito', llms_about_txt:'Scrivi in 2-3 frasi cosa offre {domain} e per chi.',
+      llms_pages:'Pagine principali', llms_home:'Home',
+      v_ok_title:'Il tuo sito è online — lascia il giornale perché il robot ti trovi',
+      v_warn_title:'Sei su un sottodominio — Google lo tratta peggio',
+      v_bad_title:'Nessun sito ancora — tieni il giornale pronto per il lancio',
+      sec_chk_ey:'Checklist', sec_chk_h2:'Segna ciò che hai già sotto controllo', sec_chk_lead:'I termini del settore — SEO e GEO — in pillole salvate sul tuo dispositivo.',
+      chk1:'robots.txt nella root', chk2:'sitemap.xml nella root', chk3:'Sitemap inviato in Search Console', chk4:'Verifica DNS TXT fatta', chk5:'llms.txt per le IA', chk6:'GA4 con gtag.js installato', chk7:'HTTPS + redirect 301', chk8:'Dati strutturati JSON-LD', chk9:'Core Web Vitals in verde', chk10:'Metadati OG/Twitter', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'Sigillo IA art. 50.4 nel footer', chk15:'lastmod aggiornato nel sitemap', chk16:'Google Business Profile (locale)',
+      checks_hint:'Tocca una pillola per marcarla. I tuoi progressi restano su questo dispositivo.',
+      sec_price_ey:'Prezzo', sec_price_h2:'Diagnosi gratis. Giornale completo per 5 $.',
+      plan_free:'Gratis', plan_pro:'Pro', plan_badge:'Consigliato', plan_pro_unit:'una tantum',
+      p_free_cta:'Genera gratis', p_pro_cta:'Sblocca Pro — 5 $',
+      sec_faq_ey:'FAQ', sec_faq_h2:'Cosa chiede chi vuole che il robot lo trovi',
+      faq1:'Cosa serve esattamente perché Google indicizzi il mio sito?', faq2:'Cos\'è il DNS TXT di verifica? È sicuro?', faq3:'robots.txt e sitemap.xml sono la stessa cosa?', faq4:'Cos\'è llms.txt e perché conta ora?', faq5:'Google usa IndexNow?', faq6:'Questo garantisce il primo posto?', faq7:'E i cookie di terze parti?',
+      sec_src_ey:'Fonti', sec_src_h2:'Da dove vengono i dati', sec_src_lead:'Ogni affermazione rimanda alla sua fonte. Verificato il 14 agosto 2026.',
+      cta_h2:'Pubblica, verifica e lascia che il robot ti trovi.', cta_p:'Genera il tuo giornale gratis: 3 domande e i file pronti da copiare. 5 $ una tantum per il pacchetto completo con la guida passo passo.', cta_btn:'Genera i miei file'
+    },
+    pt: {
+      title:'Bitácora — os ficheiros que fazem o Google e as IA encontrarem o seu site',
+      n_check:'Gerador', n_regla:'A regra', n_cuenta:'Contagem', n_pricing:'Preço', n_faq:'FAQ', n_sources:'Fontes', n_cta:'Gerar o diário',
+      n_check2:'Gerador', n_regla2:'A regra', n_cuenta2:'Contagem', n_chk2:'Checklist', n_pricing2:'Preço',
+      hero_ey:'Verificação · Indexação · SEO · GEO · Global',
+      hero_h1:'O robô do Google não encontra o seu site. <span class="rd">Dê-lhe um diário de bordo.</span>',
+      hero_lead:'<b>96,55%</b> das páginas recebem 0 visitas do Google (Ahrefs, ~14 mil milhões de páginas). Para o robô o rastrear, indexar e as IA o citarem, publicar não basta: verificação <b>DNS TXT</b> (Search Console + GA4), <b>robots.txt</b>, <b>sitemap.xml</b> e <b>llms.txt</b>. O Bitácora gera os ficheiros no seu navegador e diz-lhe onde colar cada um. <b>5 $ pagamento único</b>, sem conta.',
+      hero_cta1:'Gerar os meus ficheiros', hero_cta2:'Ver a regra',
+      hero_m1:'96,55% de páginas com 0 visitas', hero_m2:'3 ficheiros · robots + sitemap + llms.txt', hero_m3:'DNS TXT · Search Console · GA4', hero_m4:'5 $ único · sem conta',
+      stamp_chip_hero:'robô do google', stamp_l1_hero:'NO ÍNDICE', stamp_l2_hero:'oseusite.com · diário', stamp_l3_hero:'sitemap + robots + llms.txt', stamp_foot_hero:'DNS TXT verificado', stamp_date_hero:'Verificado 14.08.2026',
+      sec_regla_ey:'A regra', sec_regla_h2:'O Google indexa o que encontra: a regra são os ficheiros e a verificação', sec_regla_lead:'Desde 2005 o rastreio assenta em ficheiros padrão. Hoje juntam-se as IA: indexar já não basta, é preciso ser citado.',
+      t1_h3:'Nasce o Sitemaps 0.84', t1_p:'O Google apresenta o protocolo <b>sitemap</b> para listar as URLs.',
+      t2_h3:'Nasce a Search Console', t2_p:'Webmaster Tools muda de nome e ganha a <b>verificação de propriedade</b>.',
+      t3_h3:'robots.txt torna-se padrão', t3_p:'O protocolo de exclusão é publicado como <b>RFC 9309</b> (IETF).',
+      t4_h3:'Fim do Universal Analytics', t4_p:'Só resta o <b>GA4</b>: quem não mede, não sabe se é indexado.',
+      t5_h3:'A proposta /llms.txt', t5_p:'Jeremy Howard (Answer.AI) propõe o ficheiro para <b>as IA lerem o seu site</b>.',
+      t6_h3:'AI Overviews corta cliques', t6_p:'As respostas IA reduzem os cliques no top em <b>~34-58%</b> (Ahrefs): chega o GEO.',
+      t7_h3:'Chrome 154: HTTPS por defeito', t7_p:'Sem HTTPS, o Chrome pede confirmação antes de abrir o seu site.',
+      t8_h3:'Certificados: 100 dias', t8_p:'Se o certificado expirar, o site cai e <b>sai do índice</b>.',
+      tag_live:'em vigor', tag_live2:'em vigor', tag_live3:'em vigor', tag_live4:'em vigor', tag_live5:'em vigor', tag_live6:'em vigor', tag_next:'próximo', tag_next2:'próximo',
+      sec_cuenta_ey:'Contagem', sec_cuenta_h2:'As duas datas que podem tirá-lo do índice', sec_cuenta_lead:'A contagem corre no seu navegador, ao vivo, sobre as datas reais citadas.',
+      cd1_who:'Chrome 154 · HTTPS por defeito', days_word:'dias', cd1_date:'lançamento durante outubro de 2026', cd1_note:'O robô do Google prioriza HTTPS; sem HTTPS o seu site perde visibilidade.',
+      cd2_who:'Certificados · 100 dias', days_word2:'dias', cd2_date:'até 15/03/2027', cd2_note:'CA/Browser Forum SC-081: renovar à mão já não é viável.',
+      sec_check_ey:'Gerador de diário', sec_check_h2:'O seu domínio, 3 perguntas, os seus ficheiros prontos', sec_check_lead:'Tudo corre no seu navegador: gere robots.txt, sitemap.xml, llms.txt e o DNS TXT, com botão copiar e local exato.',
+      domain_label:'O seu domínio', domain_ph:'oseusite.com', domain_go:'Gerar', domain_note:'Opcional: é validado aqui. Os ficheiros geram-se com o seu domínio ao carimbar o veredito.',
+      domain_ready:'Pronto para gerar com:', domain_err:'Introduza um domínio válido, ex. aminhaloja.com',
+      qk1:'Pergunta 1 de 3', q1:'O seu site já está online?',
+      q1_o1_b:'Sim, com domínio próprio', q1_o1_s:'Ex. aminhaloja.com — o URL que o robô deve rastrear.',
+      q1_o2_b:'Sim, em subdomínio ou plano grátis', q1_o2_s:'Ex. aminhaloja.wordpress.com.',
+      q1_o3_b:'Ainda não está online', q1_o3_s:'Estou a construí-lo ou ainda não existe.',
+      qk2:'Pergunta 2 de 3', q2:'Quem gere o seu DNS?',
+      q2_o1_b:'O alojamento', q2_o1_s:'cPanel, Plesk ou o painel do seu fornecedor.',
+      q2_o2_b:'Cloudflare', q2_o2_s:'O meu DNS ou proxy passa pela Cloudflare.',
+      q2_o3_b:'Eu próprio', q2_o3_s:'Um registar ou servidor que administro.',
+      q2_o4_b:'Não sei', q2_o4_s:'O guia Pro diz-lhe onde procurar.',
+      qk3:'Pergunta 3 de 3', q3:'O que quer conseguir primeiro?',
+      q3_o1_b:'Ser indexado pelo Google', q3_o1_s:'Rastreio + sitemap na Search Console.',
+      q3_o2_b:'Medir com GA4', q3_o2_s:'Google Analytics 4 + snippet gtag.js.',
+      q3_o3_b:'Ser citado pelas IA', q3_o3_s:'llms.txt + dados estruturados (GEO).',
+      q3_o4_b:'Tudo', q3_o4_s:'O pacote completo, por ordem.',
+      restart_btn:'Recomeçar', prev_btn:'Voltar', next_btn:'Seguinte', next_final:'Carimbar o meu diário',
+      v_domain:'Domínio', v_status:'Estado', v_env:'DNS', v_svc:'Objetivo', v_files:'Ficheiros', v_chrome:'Chrome 154',
+      st_ok:'Publicado', st_warn:'Em subdomínio', st_bad:'Sem site',
+      env_host:'O alojamento', env_cf:'Cloudflare', env_me:'Eu próprio', env_detect:'Por detetar',
+      obj_index:'Indexado pelo Google', obj_ga:'Medir com GA4', obj_geo:'Citado pelas IA', obj_all:'Tudo',
+      stamp_ok_label:'SITE PUBLICADO', stamp_warn_label:'EM SUBDOMÍNIO', stamp_bad_label:'AINDA SEM SITE',
+      chip_ok:'o robô pode indexar', chip_warn:'rever subdomínio', chip_bad:'publique primeiro',
+      print_btn:'Imprimir o meu carimbo', copy_btn:'Copiar', copied:'Copiado!',
+      files_head:'O seu pacote de ficheiros', files_hint:'Cada ficheiro tem o botão copiar e o local exato. O guia Pro acrescenta os passos por fornecedor e a verificação final.',
+      file_where_robots:'<b>Onde:</b> guarde este ficheiro como robots.txt na raiz do seu site (public/, htdocs/).',
+      file_where_sitemap:'<b>Onde:</b> guarde sitemap.xml ao lado de robots.txt e envie-o na Search Console.',
+      file_where_llms:'<b>Onde:</b> guarde llms.txt na raiz, ao lado de robots.txt.',
+      file_where_txt:'<b>Onde:</b> no painel DNS (Cloudflare → DNS → Registos).',
+      file_where_gtag:'<b>Onde:</b> cole este snippet no &lt;head&gt; de todas as páginas.',
+      llms_desc:'Descreva este site para os motores de busca de IA (ChatGPT, Perplexity, AI Overviews).',
+      llms_about:'O que é este site', llms_about_txt:'Escreva em 2-3 frases o que {domain} oferece e para quem.',
+      llms_pages:'Páginas principais', llms_home:'Início',
+      v_ok_title:'O seu site está online — deixe o diário para o robô encontrá-lo',
+      v_warn_title:'Está num subdomínio — o Google trata-o pior',
+      v_bad_title:'Ainda sem site — mantenha o diário pronto para o lançamento',
+      sec_chk_ey:'Checklist', sec_chk_h2:'Marque o que já tem sob controlo', sec_chk_lead:'Os termos do setor — SEO e GEO — em pílulas guardadas no seu dispositivo.',
+      chk1:'robots.txt na raiz', chk2:'sitemap.xml na raiz', chk3:'Sitemap enviado na Search Console', chk4:'Verificação DNS TXT feita', chk5:'llms.txt para as IA', chk6:'GA4 com gtag.js instalado', chk7:'HTTPS + redirecionamento 301', chk8:'Dados estruturados JSON-LD', chk9:'Core Web Vitals em verde', chk10:'Metadados OG/Twitter', chk11:'Canonical + meta robots', chk12:'Bing Webmaster + IndexNow', chk13:'SPF / DKIM / DMARC', chk14:'Selo IA art. 50.4 no rodapé', chk15:'lastmod atualizado no sitemap', chk16:'Google Business Profile (local)',
+      checks_hint:'Toque numa pílula para a marcar. O seu progresso fica só neste dispositivo.',
+      sec_price_ey:'Preço', sec_price_h2:'Diagnóstico grátis. Diário completo por 5 $.',
+      plan_free:'Grátis', plan_pro:'Pro', plan_badge:'Recomendado', plan_pro_unit:'único',
+      p_free_cta:'Gerar grátis', p_pro_cta:'Desbloquear Pro — 5 $',
+      sec_faq_ey:'FAQ', sec_faq_h2:'O que pergunta quem quer que o robô o encontre',
+      faq1:'O que preciso exatamente para o Google indexar o meu site?', faq2:'O que é o DNS TXT de verificação? É seguro?', faq3:'robots.txt e sitemap.xml são a mesma coisa?', faq4:'O que é llms.txt e porque importa agora?', faq5:'O Google usa o IndexNow?', faq6:'Isto garante o primeiro lugar?', faq7:'E os cookies de terceiros?',
+      sec_src_ey:'Fontes', sec_src_h2:'De onde vêm os dados', sec_src_lead:'Cada afirmação liga à sua fonte. Verificado a 14 de agosto de 2026.',
+      cta_h2:'Publique, verifique e deixe o robô encontrá-lo.', cta_p:'Gere o seu diário grátis: 3 perguntas e os ficheiros prontos a copiar. 5 $ único para o pacote completo com o guia passo a passo.', cta_btn:'Gerar os meus ficheiros'
+    }
+  };
+  __APP__
+__I18N_PART__
+__APP__
+</script>
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/bitacora/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/latam/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en LATAM</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en LATAM:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/velas/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Velas</a> <a href="/negocios/cartanatal/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Carta Natal</a> <a href="/negocios/angeles/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Ángeles</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-28">2026-08-28</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

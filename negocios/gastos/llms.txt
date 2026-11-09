@@ -1,0 +1,23 @@
+# GastoOK
+
+GastoOK — tu extracto a categorías, sin teclear. en LATAM — 200 movimientos sin nombre no se gestionan. Dato duro: regla de consistencia (la misma compra, la misma categoría); declaración 30/04/2027. Herramienta en el navegador contra la bolsa «gastos». Gratis 1 mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Gastos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+2. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+3. https://www.santander.com.mx/educacion-financiera/blog/declaracion-anual-personas-fisicas-y-morales.html (Santander — Declaración anual)
+4. https://www.bbva.com/es/mx/empresas/calendario-fiscal-2026-para-personas-morales-en-mexico-y-fechas-esenciales-del-sat/ (BBVA — Calendario fiscal)
+5. https://blog.alegra.com/colombia/plazos-para-emitir-facturas-electronicas/ (Alegra — Facturación)
+
+## Precio
+- Gratis: 1 mes al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Meses ilimitados; Reglas por comercio; Exportación por categoría; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Las deducciones fiscales dependen de tu régimen: consulta a tu contador. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

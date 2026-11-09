@@ -1,0 +1,23 @@
+# Etiqueta honesta · Brasil
+
+> Comprueba si alimentación · etiquetado en Brasil es legítimo antes de confiar o pagar, contra la referencia oficial del día. Si no hay dato verificable, se dice que no hay dato: nada se rellena con suposiciones.
+
+- **Mercado:** Brasil
+- **Fuente de datos viva:** Open Food Facts BR — perfil NOVA por código de barras
+
+- **Sistema de diseño:** Contraste-alto (Archivo (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada caso documenta el mecanismo real de la estafa o el sobreprecio, con la referencia oficial del día como punto de comparación.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Open Food Facts BR — perfil NOVA por código de barras (https://world.openfoodfacts.org/api/v2/product/737628064502.json)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Open Food Facts BR — perfil NOVA por código de barras. (https://world.openfoodfacts.org/api/v2/product/737628064502.json)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis para el usuario — sin coste oculto ni letra pequeña.

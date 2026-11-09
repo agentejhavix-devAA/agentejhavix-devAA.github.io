@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://extractor.attenciona.com/llms.txt

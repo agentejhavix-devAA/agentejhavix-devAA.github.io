@@ -1,0 +1,23 @@
+# CPValida
+
+CPValida — país + código postal, validados. en LATAM — El CP es el dato más mal escrito de tu base. Dato duro: México 5 dígitos, Chile 7, Colombia 6 (catálogos oficiales de Correos). Herramienta en el navegador contra la entrega perdida. Gratis 100/mes + Pro anual (3 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Datos · Validación.
+- Fecha límite / cita: Etiquetas de tu próxima entrega.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.correosdemexico.gob.mx/ (Correos de México — Catálogo de CP)
+2. https://www.correos.cl/ (Correos de Chile)
+3. https://www.4-72.com.co/ (4-72 — Colombia)
+4. https://www.correoargentino.com.ar/ (Correo Argentino)
+5. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+
+## Precio
+- Gratis: 100 validaciones al mes.
+- Pro (3 USD pago único, cripto vía NOWPayments): Validaciones ilimitadas; Validación por lote; Reporte de errores; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Los catálogos postales se actualizan: ante dudas, consulta el sitio oficial de Correos de tu país. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

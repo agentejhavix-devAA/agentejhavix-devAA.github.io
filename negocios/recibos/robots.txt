@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://recibos.attenciona.com/llms.txt

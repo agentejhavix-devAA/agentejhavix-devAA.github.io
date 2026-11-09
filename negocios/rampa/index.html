@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rampa — ¿Tu tienda online cumple la Ley de Accesibilidad?</title>
+<meta name="description" content="La Ley 11/2023 (Acta Europea de Accesibilidad) obliga desde el 28 de junio de 2025 a que el comercio electrónico y los servicios digitales sean accesibles.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="canonical" href="https://www.attenciona.com/negocios/rampa/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rampa — ¿tu tienda online cumple la Ley de Accesibilidad?">
+<meta property="og:description" content="La Ley 11/2023 (Acta Europea de Accesibilidad) obliga desde el 28 de junio de 2025 a que el comercio electrónico y los servicios digitales sean accesibles.">
+<meta property="og:url" content="https://www.attenciona.com/negocios/rampa/">
+
+<style>
+  /* ============================================================
+     Rampa — identidad Fase 3
+     Público (ref. en vivo): dueños de tiendas online (Shopify,
+     WooCommerce, PrestaShop) y agencias web en España. Mundo del
+     ecommerce: cercano, humano, orientado a la inclusión.
+     Registro: "consumidor, confianza cercana" → Cálido-redondeado:
+       Baloo 2 (display) + Inter (cuerpo), auto-alojadas, sin CDN.
+       (Distinta de CNOta, que usó Fraunces editorial-serif.)
+     Logo/firma: pictograma de una RAMPA de acceso ascendente. La
+       firma es FUNCIONAL: una tarjeta de puntuación de accesibilidad
+       que "sube la rampa" marcando los requisitos WCAG cumplidos.
+     Paleta: papel cálido + tinta + azul accesible (confianza) +
+       ámbar de aviso para el riesgo/plazo. Alto contraste WCAG AA —
+       coherente con el propio producto. Distinta de quartly (verde
+       + naranja) y CNOta (verde + rojo).
+     Escala tipográfica modular (base 17px · 1.25) · grid 8px.
+     ============================================================ */
+  @font-face{font-family:'Baloo 2';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/baloo2-600.woff2') format('woff2');}
+  @font-face{font-family:'Baloo 2';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/baloo2-700.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/inter-700.woff2') format('woff2');}
+  :root{
+    --paper:#F6F7FB; --surface:#FFFFFF; --surface-2:#ECEEF6;
+    --ink:#1B2333; --ink-2:#525C70; --line:#E1E4EF; --line-2:#C8CDDE;
+    --brand:#2456D6;         /* azul accesible: confianza / cumplido */
+    --brand-2:#1B41A8; --brand-wash:#E5ECFC;
+    --warn:#B45309;          /* ámbar de aviso: el plazo y el riesgo */
+    --warn-wash:#FBEEDD;
+    --ok:#1E7A46; --ok-wash:#E6F3EA; --due:#B3261E; --due-wash:#FBE7E5;
+    --shadow:0 1px 2px rgba(27,35,51,.05), 0 10px 30px rgba(27,35,51,.07);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:'Baloo 2','Trebuchet MS',system-ui,sans-serif;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.12; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2rem,4.4vw,3.05rem)}
+  h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+  h3{font-size:1.2rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  .container{max-width:var(--maxw); margin-inline:auto; padding-inline:32px}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6}
+  .muted{color:var(--ink-2)}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  svg.i{width:20px;height:20px; stroke:currentColor; stroke-width:1.9; fill:none; stroke-linecap:round; stroke-linejoin:round; flex:none}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); padding:7px 13px; border-radius:999px}
+
+  /* --- logo: rampa de acceso ascendente --- */
+  .mark{display:inline-flex; width:34px;height:34px; color:var(--brand); align-items:center; justify-content:center}
+  .mark svg{width:32px;height:32px; display:block}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s}
+  .btn:focus-visible{outline:3px solid var(--brand); outline-offset:3px}
+  .btn-primary{background:var(--brand); color:#fff}
+  .btn-primary:hover{background:var(--brand-2); transform:translateY(-1px); box-shadow:0 8px 20px rgba(36,86,214,.25)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand); color:var(--brand)}
+  .btn-warn{background:var(--warn); color:#fff}
+  .btn-warn:hover{background:#97440a; transform:translateY(-1px); box-shadow:0 8px 20px rgba(180,83,9,.28)}
+
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(246,247,251,.9); backdrop-filter:saturate(1.3) blur(10px); border-bottom:1px solid var(--line)}
+  .nav-row{display:flex; align-items:center; gap:28px; height:70px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:700; font-size:1.32rem; letter-spacing:-.01em}
+  .nav-links{display:flex; gap:26px; margin-left:auto; align-items:center}
+  .nav-links a{font-size:var(--t-sm); font-weight:500; color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+
+  .hero{padding:80px 0 92px}
+  .hero-grid{display:grid; grid-template-columns:1.04fr .96fr; gap:56px; align-items:center}
+  .hero h1{margin-top:20px}
+  .hero .lead{margin-top:22px; max-width:40ch}
+  .hero-actions{display:flex; gap:12px; margin-top:32px; flex-wrap:wrap}
+  .hero-trust{display:flex; gap:22px; margin-top:28px; flex-wrap:wrap; color:var(--ink-2); font-size:var(--t-sm)}
+  .hero-trust span{display:inline-flex; align-items:center; gap:8px}
+  .hero-trust svg.i{width:17px;height:17px; color:var(--ok)}
+
+  /* --- scorecard de accesibilidad: la firma funcional --- */
+  .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden}
+  .panel-bar{display:flex; align-items:center; gap:8px; padding:13px 16px; border-bottom:1px solid var(--line); background:var(--surface-2)}
+  .panel-bar .dot{width:10px;height:10px;border-radius:50%}
+  .panel-url{margin-left:8px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:4px 10px; flex:1}
+  .panel-body{padding:22px}
+  .panel-label{font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); margin-bottom:14px}
+  .score{display:flex; align-items:baseline; gap:10px; margin-bottom:14px}
+  .score .n{font-family:var(--disp); font-weight:700; font-size:2.6rem; color:var(--brand); line-height:1}
+  .score .of{font-size:var(--t-sm); color:var(--ink-2)}
+  .bar{height:10px; background:var(--surface-2); border-radius:999px; overflow:hidden; margin-bottom:18px}
+  .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--brand),#4f7be6); border-radius:999px}
+  .checks{display:flex; flex-direction:column; gap:9px}
+  .crow{display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center; font-size:var(--t-sm)}
+  .crow .ck{width:20px;height:20px;border-radius:6px; display:grid; place-items:center; flex:none}
+  .crow .ck.y{background:var(--ok-wash); color:var(--ok)}
+  .crow .ck.n{background:var(--due-wash); color:var(--due)}
+  .crow .ck svg{width:13px;height:13px;stroke-width:2.6}
+  .crow .cl{color:var(--ink)}
+  .crow .cs{font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2)}
+  .prow{margin-top:14px; display:flex; justify-content:space-between; gap:14px; align-items:center; font-size:var(--t-sm); padding:12px 15px; border:1px solid var(--warn); background:var(--warn-wash); border-radius:9px}
+  .prow .k{color:var(--ink-2)}
+  .prow .v{font-weight:700; color:var(--warn)}
+
+  section.band{padding:110px 0}
+  section.tint{background:var(--surface); border-block:1px solid var(--line)}
+  .sec-head{max-width:700px; margin-bottom:56px}
+  .sec-head h2{margin-top:16px}
+  .sec-head p{margin-top:18px}
+  .center{margin-inline:auto; text-align:center}
+
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:30px}
+  section.tint .card{background:var(--paper)}
+  .card .ico{display:inline-flex; align-items:center; justify-content:center; width:44px;height:44px; border-radius:10px; background:var(--brand-wash); color:var(--brand); margin-bottom:18px}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--ink-2); font-size:var(--t-md)}
+  .card .big{font-family:var(--disp); font-size:2rem; font-weight:700; letter-spacing:-.01em; color:var(--warn); display:block; margin-bottom:8px}
+
+  .tool{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:36px; max-width:760px; margin-inline:auto}
+  .tool .step-head{display:flex; align-items:center; gap:12px; margin-bottom:22px}
+  .tool .qnum{width:30px;height:30px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:700; font-size:var(--t-sm); font-family:var(--disp)}
+  .tool .step-head h3{font-size:1.24rem}
+  .tool .qsub{color:var(--ink-2); font-size:var(--t-sm); margin-top:2px}
+  .opts{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .opt{border:1.5px solid var(--line-2); border-radius:11px; padding:15px 17px; background:var(--paper); cursor:pointer; text-align:left; font-size:var(--t-md); font-weight:500; transition:border-color .12s, background .12s}
+  .opt:hover{border-color:var(--brand)}
+  .opt.sel{border-color:var(--brand); background:var(--brand-wash); font-weight:600}
+  .opt small{display:block; font-size:var(--t-xs); color:var(--ink-2); font-weight:400; margin-top:3px}
+  .tool .nav-btns{display:flex; justify-content:space-between; gap:12px; margin-top:26px}
+  .tool .nav-btns .btn{height:44px; font-size:var(--t-sm)}
+  .tool .nav-btns .spacer{flex:1}
+  .progress{height:6px; background:var(--surface-2); border-radius:999px; overflow:hidden; margin-bottom:28px}
+  .progress i{display:block; height:100%; width:0; background:var(--brand); transition:width .3s ease}
+  .toolstep{display:none}
+  .toolstep.on{display:block}
+
+  .verdict{border:1.5px solid var(--line-2); border-radius:var(--r); padding:28px; margin-top:6px}
+  .verdict .vcat{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); padding:6px 12px; border-radius:999px}
+  .verdict .vcat.warn{color:var(--warn); background:var(--warn-wash)}
+  .verdict .vcat.ok{color:var(--ok); background:var(--ok-wash)}
+  .verdict h3{margin-top:16px; font-size:1.35rem}
+  .vtable{margin-top:20px; border:1px solid var(--line); border-radius:11px; overflow:hidden}
+  .vrow{display:grid; grid-template-columns:1fr auto; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line); font-size:var(--t-md)}
+  .vrow:last-child{border-bottom:0}
+  .vrow .k{color:var(--ink-2)}
+  .vrow .v{font-weight:700; text-align:right}
+  .vrow.warn .v{color:var(--warn)}
+  .vrow.ok .v{color:var(--ok)}
+  .vlist{margin-top:20px; display:flex; flex-direction:column; gap:11px; list-style:none; padding:0}
+  .vlist li{display:flex; gap:11px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink-2)}
+  .vlist li svg.i{width:17px;height:17px; margin-top:2px; color:var(--ok); flex:none}
+  .vlist li.w svg.i{color:var(--warn)}
+  .vnote{margin-top:18px; font-size:var(--t-xs); color:var(--ink-2); background:var(--warn-wash); border:1px solid var(--line); border-left:3px solid var(--warn); border-radius:9px; padding:13px 15px}
+  .vnote b{color:var(--warn)}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s}
+  .step{padding:30px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r)}
+  .step .num-b{counter-increment:s; font-family:var(--mono); font-size:.86rem; font-weight:700; color:var(--brand)}
+  .step .num-b::before{content:"0" counter(s) " /"}
+  .step h3{margin:12px 0 8px; font-size:1.12rem}
+  .step p{color:var(--ink-2); font-size:var(--t-sm)}
+
+  .price-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:740px; margin-inline:auto}
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:34px; display:flex; flex-direction:column}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand)}
+  .plan .badge{align-self:flex-start; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--brand); padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .plan h3{font-size:1rem; color:var(--ink-2); font-weight:600}
+  .plan .amt{font-size:2.8rem; font-weight:700; letter-spacing:-.02em; margin:8px 0 4px; font-family:var(--disp)}
+  .plan .amt small{font-size:1rem; font-weight:500; color:var(--ink-2)}
+  .plan ul{list-style:none; padding:0; margin:22px 0 28px; display:flex; flex-direction:column; gap:13px}
+  .plan li{display:flex; gap:11px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink-2)}
+  .plan li svg.i{width:18px;height:18px;margin-top:2px}
+  .plan li.y svg.i{color:var(--ok)} .plan li.n{color:#9aa1ab} .plan li.n svg.i{color:#c3c8d0}
+  .plan .btn{margin-top:auto; width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); margin-top:13px; text-align:center}
+
+  .faq{max-width:800px; margin-inline:auto}
+  details{border-bottom:1px solid var(--line); padding:4px 0}
+  summary{display:flex; align-items:center; gap:14px; padding:19px 4px; cursor:pointer; font-weight:600; font-size:1.04rem; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{margin-left:auto; transition:transform .2s; color:var(--ink-2)}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details .a{padding:0 4px 22px 4px; color:var(--ink-2); font-size:var(--t-md)}
+  details .a a{color:var(--brand); text-decoration:underline; text-underline-offset:2px}
+
+  .sources{display:grid; grid-template-columns:1fr 1fr; gap:0 32px; max-width:940px}
+  .source{display:flex; gap:12px; padding:17px 0; border-top:1px solid var(--line); font-size:var(--t-sm)}
+  .source .sn{flex:none; font-family:var(--mono); font-weight:700; color:var(--brand)}
+  .source a{color:var(--ink); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--line-2)}
+  .source a:hover{text-decoration-color:var(--brand)}
+  .source small{display:block; color:var(--ink-2); margin-top:3px}
+
+  .cta-final{background:var(--ink); color:#fff; border-radius:var(--r); padding:66px 48px; text-align:center; position:relative; overflow:hidden}
+  .cta-final h2{color:#fff; max-width:28ch; margin-inline:auto}
+  .cta-final p{color:#AEB7C7; margin:16px auto 0; max-width:58ch}
+  .cta-final .btn{margin-top:30px}
+
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:60px 0 42px}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:38px}
+  footer h4{font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); margin-bottom:15px}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px}
+  footer a{color:var(--ink-2); font-size:var(--t-sm)}
+  footer a:hover{color:var(--ink)}
+  .foot-brand p{color:var(--ink-2); font-size:var(--t-sm); margin-top:14px; max-width:44ch}
+  .foot-legal{font-size:var(--t-xs); color:var(--ink-2); line-height:1.75; border-top:1px solid var(--line); padding-top:26px}
+  .foot-legal strong{color:var(--ink)}
+  .foot-seal{display:inline-flex; align-items:center; gap:9px; margin-bottom:14px; font-size:var(--t-xs); font-weight:600; color:var(--warn); border:1.5px solid var(--warn); border-radius:8px; padding:8px 12px; background:var(--warn-wash)}
+
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  .skip{position:absolute; left:-999px; top:0; background:var(--brand); color:#fff; padding:10px 16px; border-radius:8px; z-index:100}
+  .skip:focus{left:16px; top:12px}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s, transform .5s}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none} html{scroll-behavior:auto}}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:44px}
+    .hero{padding:52px 0 64px}
+    .grid-3,.steps{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr}
+    .sources{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr; gap:28px}
+    .opts{grid-template-columns:1fr}
+    section.band{padding:74px 0}
+    .nav-links{display:none}
+  }
+  @media (max-width:520px){ .container{padding-inline:20px} .cta-final{padding:46px 26px} .tool{padding:26px 20px} }
+  @media print{
+    body{background:#fff}
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip{display:none !important}
+    .hero{padding:0 0 24px}
+    .tool{box-shadow:none;border:1px solid #ccc;max-width:100%}
+    .toolstep{display:block !important}
+    .progress{display:none}
+    .verdict{border-color:#999}
+    a{color:#000;text-decoration:underline}
+    .crow .ck,.prow,.bar i{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section.band{padding:24px 0;page-break-inside:avoid}
+    section.tint{background:#fff;border:0}
+    .reveal{opacity:1;transform:none}
+  }
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+
+<a class="skip" href="#tool">Ir a la herramienta</a>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Rampa","item":"https://www.attenciona.com/negocios/rampa/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Rampa","url":"https://www.attenciona.com/negocios/rampa/","datePublished":"2026-08-14","dateModified":"2026-08-13"}</script>
+<!--/BUILD:fase4-schema-->
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rampa — ¿Tu tienda online cumple la Ley de Accesibilidad?">
+<meta name="twitter:description" content="La Ley 11/2023 (Acta Europea de Accesibilidad) obliga desde el 28 de junio de 2025 a que el comercio electrónico y los servicios digitales sean accesibles.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="#top" aria-label="Rampa, inicio">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M4 26h24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M6 26 24 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.2" fill="currentColor"/><path d="M6 26v-3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      Rampa
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#obligacion">La obligación</a>
+      <a href="#tool">Mi diagnóstico</a>
+      <a href="#precio">Precio</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <a class="btn btn-primary" href="#tool" style="height:44px">Comprobar mi web</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>Ley 11/2023 (EAA) · en vigor desde el 28 de junio de 2025</span>
+        <h1>¿Tu tienda online cumple la Ley de Accesibilidad?</h1>
+        <p class="lead">La Ley 11/2023 obliga a que el comercio electrónico y los servicios digitales sean accesibles para personas con discapacidad. Rampa comprueba si te aplica, desde cuándo y qué te falta — con el riesgo de sanción de hasta <b>1.000.000 €</b>.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tool"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Comprobar mi web</a>
+          <a class="btn btn-ghost" href="#obligacion">A quién obliga</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Funciona en tu navegador</span>
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>BOE verificado el 12/08/2026</span>
+        </div>
+      </div>
+
+      <div class="panel reveal" role="img" aria-label="Tarjeta de accesibilidad de ejemplo: 4 de 6 comprobaciones superadas, con dos requisitos WCAG pendientes y el aviso del plazo.">
+        <div class="panel-bar" aria-hidden="true">
+          <span class="dot" style="background:#B3261E"></span><span class="dot" style="background:#B45309"></span><span class="dot" style="background:#1E7A46"></span>
+          <span class="panel-url">rampa.attenciona.com</span>
+        </div>
+        <div class="panel-body">
+          <p class="panel-label" aria-hidden="true"># tarjeta de accesibilidad — WCAG AA (EN 301 549)</p>
+          <div class="score" aria-hidden="true"><span class="n">4</span><span class="of">/ 6 comprobaciones base superadas</span></div>
+          <div class="bar" aria-hidden="true"><i style="width:66%"></i></div>
+          <div class="checks" aria-hidden="true">
+            <div class="crow"><span class="ck y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cl">Contraste de texto AA</span><span class="cs">1.4.3</span></div>
+            <div class="crow"><span class="ck y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6 9 17l-5-5"/></svg></span><span class="cl">Navegable con teclado</span><span class="cs">2.1.1</span></div>
+            <div class="crow"><span class="ck n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="cl">Texto alternativo en imágenes</span><span class="cs">1.1.1</span></div>
+            <div class="crow"><span class="ck n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span class="cl">Etiquetas en el formulario de pago</span><span class="cs">3.3.2</span></div>
+          </div>
+          <div class="prow"><span class="k">Declaración de accesibilidad</span><span class="v">Obligatoria · pendiente</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="obligacion">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">La obligación</span>
+        <h2>Accesible por ley, no por cortesía</h2>
+        <p class="lead">La Ley 11/2023 traspone el Acta Europea de Accesibilidad (Directiva UE 2019/882). Desde el 28 de junio de 2025, el comercio electrónico y otros servicios digitales dirigidos a consumidores deben ser accesibles.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="big">28 jun 2025</span>
+          <h3>Ya en vigor</h3>
+          <p>Las webs, apps y tiendas online que se lanzan o renuevan desde esa fecha deben cumplir desde el primer día. Los servicios que ya existían tienen un transitorio hasta el 28 de junio de 2030. <a href="#fuentes" class="muted">[1][2]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 7v5l3 3"/></svg></span>
+          <h3>WCAG nivel AA</h3>
+          <p>El criterio técnico es la norma EN 301 549, basada en las Pautas WCAG en nivel AA: contraste, navegación por teclado, textos alternativos, formularios etiquetados y una declaración de accesibilidad. <a href="#fuentes" class="muted">[3]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+          <h3>Hasta 1.000.000 €</h3>
+          <p>El incumplimiento puede sancionarse; en los casos más graves la multa puede alcanzar el millón de euros, además de la retirada del servicio. Consulta el régimen sancionador y a tu asesor. <a href="#fuentes" class="muted">[4]</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="tool">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Mi diagnóstico</span>
+        <h2>Tu situación en 3 preguntas</h2>
+        <p class="lead">Responde y Rampa te dice si te aplica, desde cuándo y qué requisitos revisar. Todo se queda en tu navegador.</p>
+      </div>
+
+      <div class="tool reveal" id="toolbox">
+        <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+
+        <div class="toolstep on" data-step="0">
+          <div class="step-head"><span class="qnum">1</span><div><h3>¿Qué ofreces a consumidores por internet?</h3><p class="qsub">La ley cubre servicios digitales dirigidos a consumidores.</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="ecommerce">Una tienda online (ecommerce)<small>Vendo productos o servicios por la web</small></button>
+            <button class="opt" data-val="servicio">App o servicio digital<small>Reservas, banca, transporte, ebooks, telecom…</small></button>
+            <button class="opt" data-val="web">Web informativa sin venta<small>Solo presento mi negocio, sin comercio</small></button>
+            <button class="opt" data-val="b2b">Solo vendo a empresas (B2B)<small>Sin consumidores finales</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="1">
+          <div class="step-head"><span class="qnum">2</span><div><h3>¿De qué tamaño es tu empresa?</h3><p class="qsub">Las microempresas tienen una exención específica para los servicios.</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="micro">Microempresa<small>Menos de 10 personas y menos de 2 M€ de facturación</small></button>
+            <button class="opt" data-val="pyme">Pequeña o mediana<small>10 o más personas, o 2 M€ o más</small></button>
+            <button class="opt" data-val="grande">Gran empresa<small>Más de 250 personas o 50 M€</small></button>
+            <button class="opt" data-val="nose">No lo sé<small>Rampa te indica el umbral a comprobar</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="2">
+          <div class="step-head"><span class="qnum">3</span><div><h3>¿Cuándo se lanzó o renovó tu web/app?</h3><p class="qsub">Marca la línea entre obligación inmediata y periodo transitorio.</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="nueva">Desde el 28 de junio de 2025<small>Nueva o renovada tras esa fecha</small></button>
+            <button class="opt" data-val="existente">Ya existía antes<small>En funcionamiento desde antes de junio de 2025</small></button>
+            <button class="opt" data-val="prevista">Está por lanzarse<small>Aún en desarrollo</small></button>
+            <button class="opt" data-val="nose3">No lo sé<small>Rampa asume el criterio más exigente</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="3">
+          <div class="step-head"><span class="qnum">★</span><div><h3>Tu diagnóstico y tus pasos</h3><p class="qsub">Basado en la Ley 11/2023. Confírmalo con tu asesor o con una auditoría de accesibilidad.</p></div></div>
+          <div id="verdict"></div>
+          <div class="nav-btns">
+            <button class="btn btn-ghost" id="restart">Empezar de nuevo</button>
+            <span class="spacer"></span>
+            <button class="btn btn-primary" id="printV">Imprimir mi checklist (Pro)</button>
+          </div>
+        </div>
+
+        <div class="nav-btns" id="qnav">
+          <button class="btn btn-ghost" id="prev" hidden>← Atrás</button>
+          <span class="spacer"></span>
+          <button class="btn btn-primary" id="next" disabled>Continuar →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="como">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Tres pasos hasta tu checklist</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num-b"></span><h3>Responde 3 preguntas</h3><p>Qué ofreces, tamaño de tu empresa y cuándo se lanzó tu web. Rampa determina si te aplica y desde cuándo.</p></div>
+        <div class="step reveal"><span class="num-b"></span><h3>Tu tarjeta de accesibilidad</h3><p>Los requisitos WCAG base que revisar (contraste, teclado, textos alternativos, formularios) y la declaración de accesibilidad.</p></div>
+        <div class="step reveal"><span class="num-b"></span><h3>Sigue el checklist</h3><p>Pásalo a tu desarrollador o agencia, corrige lo pendiente y publica tu declaración de accesibilidad.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="precio">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Precio</span>
+        <h2>Compruébalo gratis. Imprime tu checklist por 6 €.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <h3>Gratis</h3>
+          <div class="amt">0 €</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Si la obligación te aplica o estás exento</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Desde cuándo (28/06/2025 o 28/06/2030)</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Los requisitos WCAG base a revisar</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Enlaces al BOE y a la norma EN 301 549</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Checklist WCAG AA imprimible (PDF)</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Plantilla de declaración de accesibilidad</li>
+          </ul>
+          <a class="btn btn-ghost" href="#tool">Comprobar gratis</a>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge">Recomendado</span>
+          <h3>Pro</h3>
+          <div class="amt">6 € <small>pago único</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Gratis</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Checklist WCAG AA imprimible (PDF)</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Plantilla de declaración de accesibilidad</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Guía para pasárselo a tu desarrollador o agencia</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Desbloqueo permanente</li>
+          </ul>
+          <button class="btn btn-primary" onclick="ProWidget.checkout('rampa',6)">Desbloquear Pro — 6 €</button>
+          <p class="fiscal">Pago único en USDT/USDC. Desbloqueo permanente. Precio con IVA incluido cuando proceda; impuestos según tu país en el pago.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Preguntas</span>
+        <h2>Lo que preguntan tiendas y agencias</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>¿De verdad me obliga si tengo una tienda online?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">El comercio electrónico dirigido a consumidores está expresamente incluido en la Ley 11/2023. Si vendes a consumidores por internet y no eres microempresa, tienes que cumplir los requisitos de accesibilidad. <a href="#fuentes">[1][2]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>Soy una tienda muy pequeña, ¿estoy exento?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Las microempresas (menos de 10 personas y menos de 2 M€ de facturación o balance) están exentas de los requisitos aplicables a los <b>servicios</b> — y el comercio electrónico es un servicio. Ojo: si superas esos umbrales, o si fabricas o distribuyes ciertos <b>productos</b>, la exención puede no aplicarte. <a href="#fuentes">[2][3]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Desde cuándo tengo que cumplir?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Los requisitos se aplican desde el 28 de junio de 2025. Las webs y apps nuevas o renovadas desde esa fecha deben cumplir ya; los servicios que se venían prestando antes cuentan con un periodo transitorio hasta el 28 de junio de 2030. <a href="#fuentes">[1][2]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Qué es exactamente ser accesible?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Cumplir la norma EN 301 549, basada en las Pautas WCAG en nivel AA: contraste suficiente, uso con teclado y lector de pantalla, textos alternativos en imágenes, formularios etiquetados, y una declaración de accesibilidad publicada. Rampa te lista los puntos base a revisar. <a href="#fuentes">[3]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Rampa audita mi web automáticamente?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. Rampa no escanea tu web ni se conecta a ella: responde 3 preguntas y todo se calcula en tu navegador. Te da el diagnóstico legal y la lista de requisitos; la revisión técnica la hace tu desarrollador, tu agencia o una auditoría de accesibilidad.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="fuentes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Fuentes</span>
+        <h2>De dónde salen los datos</h2>
+        <p class="lead">Cada afirmación enlaza a su fuente. Verificado el 12 de agosto de 2026.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="sn">1</span><div><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022" target="_blank" rel="noopener">BOE — Ley 11/2023, de 8 de mayo (BOE-A-2023-11022)</a><small>Fuente primaria: transposición de la Directiva (UE) 2019/882 (EAA); requisitos de accesibilidad de productos y servicios y su régimen.</small></div></div>
+        <div class="source"><span class="sn">2</span><div><a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019L0882" target="_blank" rel="noopener">EUR-Lex — Directiva (UE) 2019/882 (Acta Europea de Accesibilidad)</a><small>Aplicación desde el 28/06/2025, transitorio hasta 2030, exención de microempresas para servicios y ámbito (ecommerce incluido).</small></div></div>
+        <div class="source"><span class="sn">3</span><div><a href="https://www.cuatrecasas.com/es/spain/propiedad-intelectual/art/claves-proxima-entrada-vigor-ley-accesibilidad-espana" target="_blank" rel="noopener">Cuatrecasas — Claves de la entrada en vigor de la Ley de Accesibilidad</a><small>Análisis jurídico: obligados, criterio técnico (EN 301 549 / WCAG AA) y calendario.</small></div></div>
+        <div class="source"><span class="sn">4</span><div><a href="https://www.legalitas.com/actualidad/european-accessibility-act" target="_blank" rel="noopener">Legalitas — La EAA y el comercio online</a><small>Alcance para tiendas online y régimen sancionador (multas que pueden alcanzar 1.000.000 € en casos graves).</small></div></div>
+        <div class="source"><span class="sn">5</span><div><a href="https://ceddd.org/actualidad/acta-europea-de-la-accesibilidad-que-cambia-a-partir-del-28-de-junio/" target="_blank" rel="noopener">CEDDD — Qué cambia a partir del 28 de junio</a><small>Resumen del impacto de la EAA para empresas y consumidores en España.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2>Que la accesibilidad no te pille en una inspección.</h2>
+        <p>Comprueba si te aplica, desde cuándo y qué te falta en un minuto. Gratis, sin cuenta y sin que nada salga de tu equipo.</p>
+        <a class="btn btn-primary" href="#tool"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Comprobar mi web</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 12h.01M15 12h.01"/></svg>Contenido asistido por IA, revisado antes de publicar — Reglamento de IA (UE), art. 50.4</span>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 26h24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M6 26 24 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="11" r="3.2" fill="currentColor"/><path d="M6 26v-3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>Rampa</a>
+        <p>¿Tu tienda online cumple la Ley de Accesibilidad? Una herramienta divulgativa — no es asesoramiento legal ni una auditoría técnica.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#tool">Mi diagnóstico</a></li>
+          <li><a href="#obligacion">La obligación</a></li>
+          <li><a href="#precio">Precio</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../../aviso-legal.html" target="_blank" rel="noopener">Aviso legal</a></li>
+          <li><a href="../../privacidad.html" target="_blank" rel="noopener">Privacidad</a></li>
+          <li><a href="https://www.attenciona.com" target="_blank" rel="noopener">attenciona.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Responsable editorial:</strong> attenciona (holding). Contenido asistido por IA y revisado por una persona antes de publicar (Reglamento de IA de la UE, art. 50.4). &nbsp;·&nbsp; <strong>No es asesoramiento:</strong> Rampa es una herramienta divulgativa basada en la Ley 11/2023 y el BOE; no sustituye a una auditoría de accesibilidad ni a tu asesor legal. &nbsp;·&nbsp; <strong>Última verificación:</strong> 12 de agosto de 2026. &nbsp;·&nbsp; <strong>Privacidad:</strong> todo funciona en tu navegador; no se envía ningún dato a un servidor. Sin cookies de terceros ni rastreadores publicitarios. &nbsp;·&nbsp; <strong>Fiscal:</strong> operación desde España · IVA 21% cuando proceda. &nbsp;·&nbsp; © 2026 Rampa · attenciona.</p>
+    </div>
+  </div>
+  <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=a2c30965e0" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <p><strong>Sin rastreo.</strong> Esta web funciona íntegramente en tu navegador: sin cookies de terceros, sin analítica publicitaria, y tus respuestas nunca salen de tu equipo. Solo guardamos en local si ya has visto este aviso.</p>
+  <div class="row">
+    <button class="btn btn-primary" id="consentOk">Entendido</button>
+    <a class="btn btn-ghost" href="#faq">Más información</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"Rampa","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/rampa/","inLanguage":"es","description":"Comprueba si la Ley 11/2023 (Acta Europea de Accesibilidad) obliga a tu tienda online o servicio digital a ser accesible, desde cuándo (28/06/2025 o transitorio hasta 28/06/2030) y qué requisitos WCAG AA revisar. Funciona en el navegador.","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","name":"Gratis"},{"@type":"Offer","price":"6","priceCurrency":"EUR","name":"Pro"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿La Ley 11/2023 obliga a las tiendas online a ser accesibles?","acceptedAnswer":{"@type":"Answer","text":"Sí. El comercio electrónico dirigido a consumidores está incluido en la Ley 11/2023 (Acta Europea de Accesibilidad); si no eres microempresa, debes cumplir los requisitos de accesibilidad."}},
+      {"@type":"Question","name":"¿Las microempresas están exentas de la EAA?","acceptedAnswer":{"@type":"Answer","text":"Las microempresas (menos de 10 personas y menos de 2 millones de euros) están exentas de los requisitos aplicables a los servicios, como el comercio electrónico. Si superan esos umbrales, dejan de estar exentas."}},
+      {"@type":"Question","name":"¿Desde cuándo hay que cumplir la Ley de Accesibilidad?","acceptedAnswer":{"@type":"Answer","text":"Desde el 28 de junio de 2025. Las webs y apps nuevas o renovadas deben cumplir ya; los servicios anteriores tienen un transitorio hasta el 28 de junio de 2030."}},
+      {"@type":"Question","name":"¿Qué requisitos técnicos exige la accesibilidad?","acceptedAnswer":{"@type":"Answer","text":"La norma EN 301 549, basada en las Pautas WCAG en nivel AA: contraste, navegación por teclado, textos alternativos, formularios etiquetados y una declaración de accesibilidad."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('rampa_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('rampa_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+})();
+
+/* ===== La herramienta Rampa ===== */
+(function(){
+  var STEP=0, answers={}, totalSteps=4;
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.toolstep'));
+  var prog=document.getElementById('prog');
+  var next=document.getElementById('next'), prev=document.getElementById('prev');
+  var qnav=document.getElementById('qnav');
+
+  function selOpts(){
+    steps[STEP].querySelectorAll('.opt').forEach(function(o){
+      o.classList.toggle('sel', o.dataset.val === answers[STEP]);
+    });
+  }
+  function refreshNav(){
+    prog.style.width = (STEP/(totalSteps-1)*100)+'%';
+    prev.hidden = STEP===0;
+    next.disabled = answers[STEP]===undefined;
+    next.textContent = STEP===totalSteps-2 ? 'Ver mi diagnóstico →' : 'Continuar →';
+    qnav.style.display = STEP===totalSteps-1 ? 'none' : 'flex';
+  }
+  function go(s){
+    STEP=Math.max(0,Math.min(totalSteps-1,s));
+    steps.forEach(function(el,i){ el.classList.toggle('on', i===STEP); });
+    selOpts(); refreshNav();
+    if(STEP===totalSteps-1) renderVerdict();
+  }
+  document.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      answers[STEP]=o.dataset.val;
+      selOpts(); refreshNav();
+      if(STEP<totalSteps-1){ setTimeout(function(){ go(STEP+1); },120); }
+      else go(STEP);
+    });
+  });
+  next.addEventListener('click', function(){ if(answers[STEP]!==undefined) go(STEP+1); });
+  prev.addEventListener('click', function(){ go(STEP-1); });
+  document.getElementById('restart').addEventListener('click', function(){ answers={}; go(0); });
+
+  var REQS='<ul class="vlist">'+
+    '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Contraste de texto suficiente (WCAG 1.4.3, nivel AA).</li>'+
+    '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Todo operable con teclado y compatible con lector de pantalla (2.1.1, 4.1.2).</li>'+
+    '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Textos alternativos en imágenes y controles (1.1.1).</li>'+
+    '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Formularios (registro y pago) con etiquetas y errores claros (3.3.1-3.3.2).</li>'+
+    '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Publica una declaración de accesibilidad y un canal de contacto.</li>'+
+    '</ul>';
+
+  function renderVerdict(){
+    var v=document.getElementById('verdict');
+    var tipo=answers[0], tam=answers[1], cuando=answers[2];
+
+    /* Fuera de ámbito: web informativa sin venta o solo B2B */
+    if(tipo==='web' || tipo==='b2b'){
+      v.innerHTML =
+        '<div class="verdict"><span class="vcat ok">Probablemente fuera de ámbito</span>'+
+        '<h3>La EAA se centra en servicios a consumidores</h3>'+
+        '<p class="muted" style="margin-top:10px">La Ley 11/2023 obliga sobre todo al comercio electrónico y a servicios digitales dirigidos a <b>consumidores</b>. Una web informativa sin venta, o un servicio solo B2B, suele quedar fuera de esta obligación concreta — aunque otras normas de accesibilidad pueden aplicarte (por ejemplo si contratas con el sector público).</p>'+
+        '<ul class="vlist"><li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Si añades venta a consumidores, vuelve a comprobarlo.</li></ul>'+
+        '<p style="font-size:var(--t-xs);color:var(--ink-2);margin-top:16px">Basado en la Ley 11/2023 (12/08/2026). Confírmalo con tu asesor.</p></div>';
+      return;
+    }
+
+    /* Microempresa de servicios: exención específica */
+    if(tam==='micro'){
+      v.innerHTML =
+        '<div class="verdict"><span class="vcat ok">Probablemente exenta (microempresa)</span>'+
+        '<h3>La exención de microempresas cubre los servicios</h3>'+
+        '<p class="muted" style="margin-top:10px">Como microempresa (menos de 10 personas y menos de 2 M€), estás exenta de los requisitos aplicables a los <b>servicios</b>, y el comercio electrónico es un servicio. Es una buena noticia — pero con matices.</p>'+
+        '<ul class="vlist">'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Si superas 10 personas o 2 M€, dejas de estar exenta.</li>'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>La exención es para servicios; ciertos productos tienen requisitos propios.</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aun exenta, ser accesible amplía tu público y mejora tu SEO.</li></ul>'+
+        '<p style="font-size:var(--t-xs);color:var(--ink-2);margin-top:16px">Basado en la Ley 11/2023 y la Directiva (UE) 2019/882 (12/08/2026). Confírmalo con tu asesor.</p></div>';
+      return;
+    }
+
+    /* En ámbito y no exenta */
+    var desde, cat, catcls, urg;
+    if(cuando==='existente'){
+      desde='28 de junio de 2030 (transitorio)'; cat='Te aplica · transitorio'; catcls='warn';
+      urg='<div class="vnote">Tu servicio ya existía antes de junio de 2025, así que cuentas con el periodo transitorio hasta el <b>28/06/2030</b>. No lo dejes para el final: adaptar accesibilidad lleva tiempo de desarrollo.</div>';
+    } else if(cuando==='prevista'){
+      desde='desde su lanzamiento'; cat='Te aplica · desde el día 1'; catcls='warn';
+      urg='<div class="vnote">Al lanzarse ahora, tu web o app debe nacer ya accesible: incorpóralo al desarrollo <b>antes</b> de publicar, no después.</div>';
+    } else {
+      desde='ya (desde el 28/06/2025)'; cat='Te aplica · ya en vigor'; catcls='warn';
+      urg='<div class="vnote">Tu web es nueva o renovada tras el 28/06/2025, así que la obligación <b>ya está activa</b>. Revisa los requisitos base cuanto antes.</div>';
+    }
+
+    v.innerHTML =
+      '<div class="verdict">'+
+        '<span class="vcat '+catcls+'">'+cat+'</span>'+
+        '<h3>Debes cumplir la Ley de Accesibilidad</h3>'+
+        '<div class="vtable" style="margin-top:16px">'+
+          '<div class="vrow warn"><span class="k">Obligación aplicable</span><span class="v">'+desde+'</span></div>'+
+          '<div class="vrow"><span class="k">Criterio técnico</span><span class="v">EN 301 549 · WCAG AA</span></div>'+
+          '<div class="vrow warn"><span class="k">Sanción máxima (casos graves)</span><span class="v">1.000.000 €</span></div>'+
+        '</div>'+
+        '<h3 style="font-size:1.15rem;margin-top:26px">Tu checklist base</h3>'+
+        REQS+
+        urg+
+        '<p style="font-size:var(--t-xs);color:var(--ink-2);margin-top:16px">Diagnóstico legal orientativo basado en la Ley 11/2023 (12/08/2026). No sustituye a una auditoría de accesibilidad. Confírmalo con tu asesor.</p>'+
+      '</div>';
+  }
+
+  /* ---- Pro: activación + impresión ---- */
+  var proKey='rampa_pro';
+  function proActive(){ try{ return localStorage.getItem(proKey)==='1'; }catch(e){ return false; } }
+  function showPro(){ try{ localStorage.setItem(proKey,'1'); }catch(e){} var b=document.getElementById('printV'); if(b){ b.textContent='Imprimir mi checklist (PDF)'; b.onclick=doPrint; } }
+  function doPrint(){ window.print(); }
+  window.activatePro=function(){ showPro(); doPrint(); };
+  window.addEventListener('proActivated', function(){ showPro(); });
+  window.addEventListener('proCodeReceived', function(){ showPro(); });
+  if(proActive()) showPro();
+
+  document.getElementById('printV').addEventListener('click', function(){
+    if(proActive()){ doPrint(); return; }
+    if(!window.ProWidget){ alert('El sistema de pago no se ha cargado. Recarga la página.'); return; }
+    ProWidget.checkout('rampa',6);
+  });
+
+  go(0);
+})();
+</script>
+
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/rampa/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/espana/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en España</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en España:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/inflacion-real-por-pais-mundo/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Inflación real por país (Banco Mundial)</a> <a href="/negocios/neto-colombia-colombia/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">CajaClara</a> <a href="/negocios/factu/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Factu</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-13">2026-08-13</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

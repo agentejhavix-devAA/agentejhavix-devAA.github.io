@@ -1,0 +1,21 @@
+# Hipoteca justa
+
+Cada décima de TAE en una hipoteca son miles de euros. Hipoteca justa cruza el Euríbor, el TIN/TAE oficial de las entidades (Banco de España) y tu perfil para decirte cuánto pagarías de cuota y si te conviene subrogar o amortizar.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · Euríbor: El Euríbor es la referencia de las hipotecas variables: se publica a diario y mueve la cuota de millones de familias.
+- En vigor · TIN vs TAE: La TAE (Banco de España) incluye comisiones y gastos: es el dato real para comparar ofertas, no el TIN del anuncio.
+
+## Fuentes citadas
+
+- https://www.bde.es
+- https://www.ine.es
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 7.99 € pago único en cripto.

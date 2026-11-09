@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Nigeria
+
+> Traduce la norma oficial de cripto · impuestos en Nigeria a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Nigeria
+- **Fuente de datos viva:** Presidencia de Nigeria — Virtual Assets Executive Order 2026
+
+- **Sistema de diseño:** Corporativo-limpio (Inter (titulares y cuerpo, pesos fuertes))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Presidencia de Nigeria — Virtual Assets Executive Order 2026 (https://statehouse.gov.ng/)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Presidencia de Nigeria — Virtual Assets Executive Order 2026. (https://statehouse.gov.ng/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

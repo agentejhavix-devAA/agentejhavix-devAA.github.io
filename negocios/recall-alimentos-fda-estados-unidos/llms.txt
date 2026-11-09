@@ -1,0 +1,25 @@
+# Revisa FDA · Estados Unidos
+
+> Busca una marca, producto o descripción en los Food Enforcement Reports de la FDA. Una coincidencia abre la puerta al aviso oficial; ninguna coincidencia no es una garantía de seguridad.
+
+- **Mercado:** Estados Unidos
+- **Fuente de datos viva:** openFDA — Food Enforcement Reports API (datos del FDA Recall Enterprise System; actualización semanal)
+
+- **Sistema de diseño:** Neo-orgánico (Sora (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+El comprobador consulta el registro FDA en vivo y te muestra coincidencias para que leas el aviso original. No sustituye la etiqueta, la comunicación del fabricante, el aviso oficial ni el criterio de un profesional de la salud.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- openFDA — Food Enforcement Reports API (datos del FDA Recall Enterprise System; actualización semanal) (https://open.fda.gov/apis/food/enforcement/)
+- FDA — Enforcement Reports: alcance, clasificación y suscripciones por palabra clave (https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/enforcement-reports)
+- FDA — Ukrop's Homestyle Foods recall, publicado 01/08/2026 (https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/ukrops-homestyle-foods-announces-voluntary-recall-due-possible-foreign-object)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: openFDA — Food Enforcement Reports API (datos del FDA Recall Enterprise System; actualización semanal). (https://open.fda.gov/apis/food/enforcement/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la consulta + Pro pago único (4,99 USD) — sin coste oculto ni letra pequeña.

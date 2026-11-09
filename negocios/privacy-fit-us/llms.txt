@@ -1,0 +1,25 @@
+# Privacy Fit
+
+Privacy Fit (attenciona) is a self-serve tool that tells a US small business which of the 20 state consumer-privacy laws apply to it, its penalty exposure, and what to do next. Answer 3 questions (where your customers are, how much personal data you handle, whether you sell/share data or run targeted ads) and get an instant applicability verdict. The check runs in the browser; a detailed per-state report is a one-time crypto payment. Built for the gap left by expensive privacy consultants.
+
+## Key facts (verified 16 August 2026)
+
+- 20 US states have comprehensive consumer-privacy laws in 2026. Indiana, Kentucky and Rhode Island became effective on 1 January 2026.
+- The 20 states: California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon, Montana, Florida, Delaware, Iowa, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, Indiana, Kentucky, Rhode Island.
+- Typical applicability threshold: processing the data of 100,000+ state residents in a year (or fewer if you sell personal data). Rhode Island triggers at 35,000 residents. Texas has no revenue threshold — it applies to almost any business operating in Texas that is not an SBA-defined "small business".
+- CCPA (California) penalties in 2026 (inflation-adjusted): up to $2,663 per unintentional violation and $7,988 per intentional violation or one involving a minor. Enforced by the California Attorney General and the California Privacy Protection Agency (CPPA). Amounts recalibrate every odd-numbered January; next adjustment 1 January 2027.
+
+## Pricing
+
+- Free: which state laws apply to you, your risk level, and links to official sources.
+- Pro ($9, one-time, crypto USDT/USDC): the per-state obligations that apply to you, a prioritized compliance checklist, and what to fix first to cut exposure.
+
+## Sources
+
+1. https://cppa.ca.gov/announcements/2024/20241217.html (California Privacy Protection Agency — CCPA fine adjustments)
+2. https://www.multistate.us/insider/2026/2/4/all-of-the-comprehensive-privacy-laws-that-take-effect-in-2026 (20 state privacy laws in effect in 2026)
+3. https://iapp.org/resources/article/us-state-privacy-legislation-tracker/ (IAPP US State Privacy Legislation Tracker)
+
+## Not legal advice
+
+Privacy Fit is an educational tool based on public US state privacy statutes; it is not legal advice. For complex cases, confirm with a qualified privacy attorney. AI-assisted content, human-reviewed before publishing (EU AI Act, art. 50.4). Editorial responsibility: attenciona (Holding), Spain.

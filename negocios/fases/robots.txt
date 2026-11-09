@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fases.attenciona.com/llms.txt

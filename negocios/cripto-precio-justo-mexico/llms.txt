@@ -1,0 +1,23 @@
+# Cripto-precio justo · México
+
+> Convierte datos crudos de cripto · precio de mercado en México en una cifra clara, usando la referencia oficial citada. Si un dato falta, la calculadora lo dice.
+
+- **Mercado:** México
+- **Fuente de datos viva:** CoinGecko — precio internacional del USDT en MXN
+
+- **Sistema de diseño:** Mono-crypto (JetBrains Mono (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+La calculadora usa la referencia oficial como base y muestra de dónde sale cada número.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- CoinGecko — precio internacional del USDT en MXN (https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=mxn)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: CoinGecko — precio internacional del USDT en MXN. (https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=mxn)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comparativa + Pro pago único en USDT — sin coste oculto ni letra pequeña.

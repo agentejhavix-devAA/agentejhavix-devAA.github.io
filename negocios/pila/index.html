@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pila — Is your battery passport-ready? Your cell, stamped</title>
+<meta name="description" content="EU Batteries Regulation (2023/1542): from 18 February 2027, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital…">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B0E13">
+<link rel="canonical" href="https://www.attenciona.com/negocios/pila/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E13'/%3E%3Crect x='8' y='6' width='16' height='20' rx='3.5' fill='none' stroke='%23C8F04E' stroke-width='2.2'/%3E%3Crect x='13' y='2' width='6' height='5' rx='1.5' fill='%23C8F04E'/%3E%3Cpath d='M13 12h6M13 16h6M13 20h4' stroke='%2338BDF8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   Pila · EU Batteries Regulation 2023/1542 (battery passport)
+   Identität: Celda / voltaje (Space Mono + Inter), baterías:
+   grafito #0B0E13 + volt-lima #C8F04E + eléctrico #38BDF8
+   (lenguaje del sector: celdas, EV, almacenamiento de energía).
+   Firma funcional: el Passport Stamp — tu pasaporte de batería
+   (EV / LMT / industrial >2 kWh) con el QR y la cuenta atrás
+   al 18.02.2027 (Art. 77).
+   Fuentes autohospedadas (sin CDN). Cero emojis.
+   ============================================================ */
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/spacemono-400.woff2') format('woff2');}
+  @font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/spacemono-700.woff2') format('woff2');}
+  :root{
+    --paper:#0B0E13; --surface:#12161E; --surface-2:#1A2029;
+    --ink:#EAEFF5; --ink-2:#97A2B4; --line:#232B36; --line-2:#33404F;
+    --brand:#C8F04E;        /* volt-lima: energía/pasaporte */
+    --brand-2:#A9D52F; --brand-wash:#1B230D;
+    --steel:#38BDF8;        /* eléctrico: autoridad/QR */
+    --steel-2:#0EA5E9; --steel-wash:#0E1E2E;
+    --signal:#22D3EE;       /* cian señal: estado del sistema */
+    --ok:#34D399; --ok-wash:#0F2A22; --warn:#F5B840; --warn-wash:#2A2110;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 34px rgba(0,0,0,.45);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:'Space Mono','SFMono-Regular',ui-monospace,'Cascadia Mono',Menlo,Consolas,monospace;
+    --mono:'Space Mono','SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.14; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2rem,4.4vw,3.1rem); letter-spacing:-.015em}
+  h2{font-size:clamp(1.5rem,2.8vw,2.1rem)}
+  h3{font-size:1.15rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0 0 12px}
+  a{color:inherit}
+  img,svg{display:block}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); border:1px solid #3A4A1C; padding:7px 13px; border-radius:999px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; text-decoration:none; font-family:var(--sans)}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand); color:#0B0E13; box-shadow:0 1px 2px rgba(169,213,47,.35), 0 8px 22px rgba(200,240,78,.28)}
+  .btn-brand:hover{background:var(--brand-2)}
+  .btn-steel{background:var(--steel); color:#0B0E13}
+  .btn-steel:hover{background:var(--steel-2)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .btn-sm{height:40px; padding:0 16px; font-size:var(--t-sm)}
+  .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+  .skip:focus{position:fixed; left:12px; top:12px; width:auto; height:auto; z-index:100; background:var(--surface); color:var(--ink); padding:10px 14px; border-radius:8px; box-shadow:var(--shadow)}
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+
+  /* ---- Nav ---- */
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(11,14,19,.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--disp); font-weight:700; font-size:19px; text-decoration:none; color:var(--ink)}
+  .brand .mark{width:30px; height:30px; border-radius:8px; background:var(--surface-2); display:grid; place-items:center; border:1px solid var(--line-2)}
+  .brand .mark svg{width:18px; height:18px}
+  nav.links{display:flex; align-items:center; gap:4px}
+  nav.links a{color:var(--ink-2); text-decoration:none; font-size:14px; font-weight:500; padding:8px 12px; border-radius:999px; transition:background .12s,color .12s}
+  nav.links a:hover{color:var(--ink); background:var(--surface-2)}
+  @media (max-width:760px){ nav.links a:not(.btn){display:none} }
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .hero h1{margin:18px 0 16px}
+  .hero h1 .rd{color:var(--brand); text-shadow:0 0 22px rgba(200,240,78,.35)}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6; max-width:54ch}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:20px; font-size:var(--t-sm); color:var(--ink-2)}
+  .hero-meta .hm{display:inline-flex; align-items:center; gap:6px}
+  .hero-meta .dot{width:8px; height:8px; border-radius:50%; background:var(--ok); flex:none}
+  .hero-meta .dot.red{background:var(--brand)}
+
+  /* ---- Stamp visual ---- */
+  .stamp-wrap{display:grid; place-items:center; padding:8px 0}
+  .stamp{transform:rotate(-3deg); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:18px 20px; max-width:330px; width:100%}
+  .stamp .top{display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px}
+  .stamp .ring{border:2.5px solid var(--steel); border-radius:10px; padding:16px 16px; text-align:center; background:var(--steel-wash)}
+  .stamp .ring .chip{display:inline-flex; align-items:center; gap:7px; background:#0B0E13; border:1px solid var(--line-2); border-radius:999px; padding:4px 11px; margin-bottom:12px}
+  .stamp .ring .chip .blink{width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 10px var(--signal)}
+  .stamp .ring .chip span{font-family:var(--mono); font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--signal)}
+  .stamp .ring .l1{font-family:var(--disp); font-weight:700; font-size:1.25rem; color:var(--ink); letter-spacing:.02em}
+  .stamp .ring .l2{font-family:var(--mono); font-size:.95rem; color:var(--brand); margin:7px 0 3px; letter-spacing:.03em}
+  .stamp .ring .l3{font-size:var(--t-xs); color:var(--ink-2); text-transform:uppercase; letter-spacing:.1em}
+  .stamp .foot{display:flex; justify-content:space-between; margin-top:12px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2)}
+  .stamp .foot .chk{display:inline-flex; align-items:center; gap:5px}
+  .stamp .foot .chk.on{color:var(--ok); font-weight:600}
+
+  /* ---- Bands ---- */
+  .band{padding:72px 0}
+  .band.tint{background:var(--surface)}
+  .band.grey{background:var(--surface-2)}
+  .sec-head{margin-bottom:34px; max-width:760px}
+  .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+  .sec-head h2{margin:12px 0 8px}
+  .sec-head .lead{font-size:var(--t-md); margin:0}
+
+  /* ---- Obligation: timeline ---- */
+  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+  @media (max-width:860px){ .timeline{grid-template-columns:repeat(2,1fr)} }
+  .t-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px}
+  .t-item .t-date{font-family:var(--mono); font-size:var(--t-sm); font-weight:700; color:var(--steel); letter-spacing:.02em}
+  .t-item.done .t-date{color:var(--ok)}
+  .t-item.next .t-date{color:var(--brand)}
+  .t-item h3{font-size:1rem; margin:10px 0 6px}
+  .t-item p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .t-item .tag{display:inline-block; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-top:12px; padding:4px 10px; border-radius:999px}
+  .tag.live{background:var(--ok-wash); color:var(--ok)}
+  .tag.warn{background:var(--brand-wash); color:var(--brand)}
+  .tag.soon{background:var(--steel-wash); color:var(--steel)}
+
+  /* ---- Tool ---- */
+  .toolbox{background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:30px; max-width:860px; margin:0 auto}
+  .steps-row{display:flex; align-items:center; gap:8px; margin-bottom:26px}
+  .step-dot{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-family:var(--disp); font-weight:700; font-size:var(--t-sm); background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line); transition:all .2s}
+  .step-dot.on{background:var(--steel); color:#0B0E13; border-color:var(--steel)}
+  .step-dot.ok{background:var(--ok); color:#04251A; border-color:var(--ok)}
+  .step-line{flex:1; height:2px; background:var(--line-2); border-radius:2px}
+  .step-line.ok{background:var(--ok)}
+  .qhead{margin-bottom:22px}
+  .qhead .qk{font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:8px}
+  .qhead h3{font-size:1.3rem}
+  .toolstep{display:none}
+  .toolstep.on{display:block; animation:fade .25s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  .opts{display:grid; gap:10px; margin-top:6px}
+  .opt{display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border:1.5px solid var(--line-2); border-radius:var(--r-sm); cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s; text-align:left; width:100%; font:inherit; color:var(--ink)}
+  .opt:hover{border-color:var(--steel)}
+  .opt.sel{border-color:var(--steel); background:var(--steel-wash)}
+  .opt .o-radio{width:18px; height:18px; border-radius:50%; border:2px solid var(--line-2); flex:none; margin-top:3px; display:grid; place-items:center; transition:border-color .15s}
+  .opt.sel .o-radio{border-color:var(--steel)}
+  .opt.sel .o-radio::after{content:''; width:8px; height:8px; border-radius:50%; background:var(--steel)}
+  .opt b{display:block; font-weight:600}
+  .opt small{color:var(--ink-2); font-size:var(--t-sm)}
+  .qnav{display:flex; justify-content:space-between; align-items:center; margin-top:26px; gap:12px}
+  .qnav .side{display:flex; gap:10px}
+  .hint{font-size:var(--t-sm); color:var(--ink-2)}
+  #restart{background:none; border:none; color:var(--ink-2); font-size:var(--t-sm); cursor:pointer; text-decoration:underline; padding:6px}
+
+  /* ---- Verdict ---- */
+  .verdict{border:1px solid var(--line); border-radius:var(--r); padding:24px; margin-top:20px; background:var(--paper)}
+  .vcat{display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .vcat.need{background:var(--brand-wash); color:var(--brand)}
+  .vcat.ok{background:var(--ok-wash); color:var(--ok)}
+  .vcat.soon{background:var(--steel-wash); color:var(--steel)}
+  .verdict h3{font-size:1.3rem; margin-bottom:8px}
+  .vtable{margin-top:14px; border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  .vrow{display:flex; justify-content:space-between; gap:14px; padding:13px 16px; border-top:1px solid var(--line); background:var(--surface)}
+  .vrow:first-child{border-top:0}
+  .vrow .k{color:var(--ink-2); font-size:var(--t-sm)}
+  .vrow .v{font-weight:600; text-align:right; font-size:var(--t-sm)}
+  .vrow.due .v{color:var(--brand)}
+  .vrow.ok .v{color:var(--ok)}
+  .vlist{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:9px}
+  .vlist li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink)}
+  .vlist li .i{width:17px; height:17px; flex:none; margin-top:3px; color:var(--ok); stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .vlist li.w .i{color:var(--brand)}
+  .vlist li.w{color:var(--brand)}
+  .vnote{background:var(--warn-wash); border:1px solid #4A3B10; border-radius:var(--r-sm); padding:13px 15px; font-size:var(--t-sm); color:#F5D27A; margin-top:16px}
+  .vprint{display:flex; justify-content:flex-end; margin-top:18px}
+  .footnote{font-size:var(--t-xs); color:var(--ink-2); margin-top:14px}
+
+  /* ---- Steps / pricing ---- */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px}
+  .step .num-b{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#0B0E13; display:grid; place-items:center; font-family:var(--disp); font-weight:700; margin-bottom:16px}
+  .step h3{margin-bottom:8px; font-size:1.05rem}
+  .step p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .price-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:860px; margin:0 auto}
+  @media (max-width:760px){ .price-grid{grid-template-columns:1fr} }
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; position:relative}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand), var(--shadow)}
+  .plan .badge{position:absolute; top:-12px; left:24px; background:var(--brand); color:#0B0E13; font-family:var(--mono); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 12px; border-radius:999px}
+  .plan h3{margin-bottom:4px}
+  .plan .amt{font-family:var(--disp); font-size:2.3rem; font-weight:700; margin:10px 0 18px}
+  .plan .amt small{font-size:var(--t-sm); color:var(--ink-2); font-weight:500}
+  .plan ul{list-style:none; padding:0; margin:0 0 22px; display:grid; gap:10px}
+  .plan li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm)}
+  .plan li .i{width:17px; height:17px; flex:none; margin-top:3px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .plan li.y .i{color:var(--ok)}
+  .plan li.n .i{color:var(--line-2)}
+  .plan li.n{color:var(--ink-2)}
+  .plan .btn{width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); text-align:center; margin:12px 0 0}
+
+  /* ---- FAQ ---- */
+  .faq{max-width:820px; margin:0 auto; display:grid; gap:10px}
+  details.faq-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  details.faq-item summary{list-style:none; cursor:pointer; padding:17px 20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary .chev{width:18px; height:18px; flex:none; color:var(--ink-2); transition:transform .2s; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  details.faq-item[open] summary .chev{transform:rotate(180deg)}
+  details.faq-item .a{padding:0 20px 18px; font-size:var(--t-sm); color:var(--ink-2)}
+  details.faq-item .a a{color:var(--signal); text-decoration:underline}
+
+  /* ---- Sources ---- */
+  .sources{display:grid; gap:12px}
+  .source{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:16px 18px}
+  .source .sn{width:28px; height:28px; border-radius:8px; background:var(--steel); color:#0B0E13; display:grid; place-items:center; font-family:var(--mono); font-size:var(--t-sm); font-weight:700; flex:none; margin-top:2px}
+  .source a{font-weight:600; color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+  .source a:hover{color:var(--brand)}
+  .source small{display:block; color:var(--ink-2); font-size:var(--t-sm); margin-top:3px}
+
+  /* ---- CTA ---- */
+  .cta-final{background:linear-gradient(120deg,var(--steel-2) 0%,var(--steel) 45%,var(--brand-2) 100%); border-radius:18px; padding:52px 40px; text-align:center; color:#0B0E13; position:relative; overflow:hidden}
+  .cta-final::after{content:''; position:absolute; inset:auto -40px -70px auto; width:280px; height:280px; border:38px solid rgba(11,14,19,.16); border-radius:50%}
+  .cta-final h2{color:#0B0E13; font-size:clamp(1.6rem,3.2vw,2.3rem); margin-bottom:12px; position:relative}
+  .cta-final p{color:rgba(11,14,19,.78); max-width:56ch; margin:0 auto 26px; position:relative}
+  .cta-final .btn{position:relative}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:52px 0 40px; margin-top:40px}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:34px}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr} }
+  .foot-brand p{font-size:var(--t-sm); color:var(--ink-2); margin-top:14px; max-width:38ch}
+  .foot-seal{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:600; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-bottom:16px}
+  .foot-seal svg{width:15px; height:15px; color:var(--signal)}
+  footer h4{font-family:var(--mono); font-size:var(--t-sm); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:14px}
+  footer ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}
+  footer ul a{color:var(--ink); text-decoration:none; font-size:var(--t-sm); font-weight:500}
+  footer ul a:hover{text-decoration:underline}
+  .foot-legal{border-top:1px solid var(--line); padding-top:22px; font-size:var(--t-sm); color:var(--ink-2)}
+  .foot-legal strong{color:var(--ink)}
+
+  /* ---- Consent ---- */
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  /* ---- Print ---- */
+  @media print{
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip,.vprint{display:none !important}
+    body{background:#fff; color:#000}
+    .band{padding:16px 0}
+    .toolbox{box-shadow:none; border-color:#999}
+    .stamp{transform:none; border-color:#000}
+    a{color:#000; text-decoration:underline}
+  }
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Pila","item":"https://www.attenciona.com/negocios/pila/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pila","url":"https://www.attenciona.com/negocios/pila/","datePublished":"2026-08-28","dateModified":"2026-08-28"}</script>
+<!--/BUILD:fase4-schema-->
+<link rel="stylesheet" href="/sello-ia.css">
+<meta property="og:title" content="Pila — Is your battery passport-ready? Your cell, stamped">
+<meta property="og:description" content="EU Batteries Regulation (2023/1542): from 18 February 2027, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital…">
+<meta property="og:url" content="https://www.attenciona.com/negocios/pila/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pila — Is your battery passport-ready? Your cell, stamped">
+<meta name="twitter:description" content="EU Batteries Regulation (2023/1542): from 18 February 2027, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body id="top">
+<a class="skip" href="#outil">Skip to the battery check</a>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a class="brand" href="#top" aria-label="Pila — Home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2.5" stroke="#C8F04E" stroke-width="2"/><rect x="10" y="1.5" width="4" height="4" rx="1.2" fill="#C8F04E"/><path d="M10 10h4M10 13h4M10 16h3" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <span>Pila</span>
+    </a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#outil">My battery</a>
+      <a href="#act">The rule</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">Sources</a>
+      <a class="btn btn-brand btn-sm" href="#outil">Check my battery</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">EU · Batteries Regulation 2023/1542 · Art. 77</span>
+          <h1>Your battery, <span class="rd">passport-ready</span> before 18.02.2027.</h1>
+          <p class="lead">From <b>18 February 2027</b>, every <b>EV, LMT and industrial battery above 2 kWh</b> placed on the EU market must carry a <b>digital battery passport</b> — linked by QR code, with carbon footprint, materials and state-of-health data. Pila checks your readiness — in 60 seconds.</p>
+          <div class="hero-actions">
+            <a class="btn btn-brand" href="#outil"><svg class="i" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2.5"/><rect x="10" y="1.5" width="4" height="4" rx="1.2"/></svg>Check my battery</a>
+            <a class="btn btn-ghost" href="#act">Understand the rule</a>
+          </div>
+          <div class="hero-meta">
+            <span class="hm"><span class="dot red"></span>Art. 77: 18.02.2027</span>
+            <span class="hm"><span class="dot"></span>EV · LMT · IND &gt; 2 kWh</span>
+            <span class="hm"><span class="dot"></span>QR + Digital Passport</span>
+          </div>
+        </div>
+        <div class="stamp-wrap" aria-hidden="true">
+          <div class="stamp">
+            <div class="top"><span>Pila · Passport Stamp</span><span>2023/1542</span></div>
+            <div class="ring">
+              <span class="chip"><span class="blink"></span><span>DPP · QR</span></span>
+              <div class="l1">BATTERY PASSPORT</div>
+              <div class="l2">18.02.2027 · Art. 77</div>
+              <div class="l3">EV · LMT · industrial &gt; 2 kWh</div>
+            </div>
+            <div class="foot">
+              <span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Recycled % from 2028</span>
+              <span class="num">Verified 14.08.2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE RULE ================= -->
+  <section class="band" id="act">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The rule</span>
+        <h2>Four dates on the battery clock — the passport is the one that blocks the market</h2>
+        <p class="lead">Regulation (EU) 2023/1542 applies to all batteries placed on the EU market. The digital passport is mandatory from 18 February 2027: without it, a covered battery cannot be placed on the market or put into service.</p>
+      </div>
+      <div class="timeline">
+        <div class="t-item done reveal">
+          <div class="t-date">18.02.2025</div>
+          <h3>Carbon footprint declaration</h3>
+          <p>EV batteries need a <b>carbon footprint declaration</b> before placement, covering the full life-cycle footprint of the cell.</p>
+          <span class="tag live">In force</span>
+        </div>
+        <div class="t-item done reveal">
+          <div class="t-date">18.02.2026</div>
+          <h3>Performance class</h3>
+          <p>The declaration escalates to a <b>carbon footprint performance class</b> label, with the battery's class shown on the label.</p>
+          <span class="tag live">In force</span>
+        </div>
+        <div class="t-item next reveal">
+          <div class="t-date">18.02.2027</div>
+          <h3>Battery passport + QR</h3>
+          <p><b>EV, LMT and industrial batteries above 2 kWh</b> need a digital battery passport linked by <b>QR code</b> — no passport, no placement (Art. 77).</p>
+          <span class="tag warn">Next · mandatory</span>
+        </div>
+        <div class="t-item next reveal">
+          <div class="t-date">18.08.2028</div>
+          <h3>Recycled content</h3>
+          <p>Passports must document <b>recycled content</b> — declared minimums of cobalt, lithium, nickel and lead recovered from waste.</p>
+          <span class="tag soon">Next</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOOL ================= -->
+  <section class="band tint" id="outil">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Battery check</span>
+        <h2>3 questions, your passport gap stamped</h2>
+        <p class="lead">Everything runs in your browser. No data leaves your device, no account needed.</p>
+      </div>
+      <div class="toolbox reveal">
+        <div class="steps-row" id="stepsrow" aria-hidden="true">
+          <span class="step-dot on" id="sd0">1</span><span class="step-line" id="sl1"></span>
+          <span class="step-dot" id="sd1">2</span><span class="step-line" id="sl2"></span>
+          <span class="step-dot" id="sd2">3</span><span class="step-line" id="sl3"></span>
+          <span class="step-dot" id="sd3">✓</span>
+        </div>
+
+        <div class="toolstep on" data-step="0">
+          <div class="qhead"><div class="qk">Question 1 of 3</div><h3>Do you place EV, LMT or industrial batteries above 2 kWh on the EU market?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>Electric-vehicle, light-means-of-transport (e-bikes, e-scooters) or industrial batteries over 2 kWh — as manufacturer or importer.</small></span></button>
+            <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>Only portable batteries, or no batteries placed on the EU market at all.</small></span></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="1">
+          <div class="qhead"><div class="qk">Question 2 of 3</div><h3>Do you have a battery passport system in place (DPP provider, QR marking, data per model)?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>We run a digital product passport flow: QR code on the battery, record linked to a passport provider, data updated per batch.</small></span></button>
+            <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>No passport system or QR marking exists for our batteries yet.</small></span></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="2">
+          <div class="qhead"><div class="qk">Question 3 of 3</div><h3>Can you supply the passport data set — manufacturer, model, capacity, carbon footprint, materials, state of health?</h3></div>
+          <div class="opts">
+            <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>We hold the identity, capacity, carbon footprint, material composition and performance data per model, including SOH history.</small></span></button>
+            <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>The data set doesn't exist in one place yet — it lives across suppliers, labs and ERP.</small></span></button>
+          </div>
+        </div>
+
+        <div class="qnav" id="qnav">
+          <button id="restart" type="button">Start over</button>
+          <div class="side">
+            <button class="btn btn-ghost" id="prev" type="button">Back</button>
+            <button class="btn btn-steel" id="next" type="button">Next</button>
+          </div>
+        </div>
+
+        <div id="verdict" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="band grey">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>From question to stamped passport</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num-b">1</span><h3>Answer 3 questions</h3><p>Market scope, passport system, data readiness. Pila maps your case against Article 77 of Regulation (EU) 2023/1542.</p></div>
+        <div class="step reveal"><span class="num-b">2</span><h3>Get your passport stamp</h3><p>The stamp shows your gap — passport system, data set or both — with a live countdown to 18.02.2027.</p></div>
+        <div class="step reveal"><span class="num-b">3</span><h3>Work the checklist</h3><p>QR marking, DPP provider, carbon footprint, materials and SOH data — step by step against the passport fields.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="band" id="pricing">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Check for free. Print your passport gap for 8 $.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <h3>Free</h3>
+          <div class="amt">0 $</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Your Art. 77 passport gap</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Market-access exposure</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Checklist: QR, DPP, data set</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Links to official sources</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Printable passport stamp (PDF)</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Passport data-set template</li>
+          </ul>
+          <a class="btn btn-ghost" href="#outil">Check for free</a>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge">Recommended</span>
+          <h3>Pro</h3>
+          <div class="amt">8 $ <small>one-time</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Everything in Free</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Printable passport stamp (PDF)</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Passport data-set template</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Art. 77 readiness checklist</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Permanent unlock</li>
+          </ul>
+          <button class="btn btn-brand" onclick="ProWidget.checkout('pila',8)">Unlock Pro — 8 $</button>
+          <p class="fiscal">One-time payment in USDT/USDC. Permanent unlock. Price in USD; taxes per your country at checkout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>What battery teams are asking right now</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item reveal" open>
+          <summary>When does the battery passport become mandatory?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">From <b>18 February 2027</b>, each <b>EV battery, LMT battery above 2 kWh and industrial battery above 2 kWh</b> placed on the EU market or put into service must have a battery passport linked by QR code (Art. 77 of Regulation (EU) 2023/1542). <a href="#sources">[1][2]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Which batteries need a passport?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Electric-vehicle batteries, light-means-of-transport batteries (e-bikes, e-scooters) above 2 kWh, and industrial batteries above 2 kWh. Portable batteries follow different rules — labelling and removability/replaceability from 2027 — but no passport. <a href="#sources">[1][2]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What data does the passport contain?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Manufacturer identity, model, capacity, chemistry and materials, carbon footprint, performance and durability, and state-of-health history — plus <b>recycled-content percentages</b> (cobalt, lithium, nickel, lead) from 18 August 2028. The QR code on the battery links to the record. <a href="#sources">[1][3]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What happens if my battery has no passport?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">From 18 February 2027 a covered battery <b>without a passport cannot be placed on the EU market or put into service</b>. Market surveillance can block, restrict or withdraw non-compliant batteries, and penalties are set by each Member State. <a href="#sources">[1][4]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What are the other key dates?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Carbon footprint <b>declaration</b> for EV batteries since 18 February 2025 and <b>performance class</b> since 18 February 2026; passport + QR from <b>18 February 2027</b>; recycled-content documentation from <b>18 August 2028</b>. <a href="#sources">[1][3]</a></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Does Pila connect to my systems?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. You answer 3 questions and everything is computed in your browser. No data is sent to any server and nothing is connected to your battery data, ERP or accounts.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOURCES ================= -->
+  <section class="band" id="sources">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Sources</span>
+        <h2>Where the data comes from</h2>
+        <p class="lead">Every claim links to its source. Verified on 14 August 2026.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="sn">1</span><div><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542" target="_blank" rel="noopener">EUR-Lex — Regulation (EU) 2023/1542 (Batteries Regulation)</a><small>Full legal text: Article 77 (battery passport and QR code), carbon footprint, due diligence, market surveillance and penalties.</small></div></div>
+        <div class="source"><span class="sn">2</span><div><a href="https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en" target="_blank" rel="noopener">European Commission — Digital Product Passport: Batteries</a><small>Official DPP page: the battery passport is linked to the battery through a QR code, in line with the Batteries Regulation and the applicable DPP rules.</small></div></div>
+        <div class="source"><span class="sn">3</span><div><a href="https://www.tuv.com/landingpage/en/eu-new-battery-regulation-eu-2023-1542/" target="_blank" rel="noopener">TÜV Rheinland — EU New Battery Regulation (2023/1542)</a><small>Deadline overview: carbon footprint declaration and performance class for EV batteries, passport from 18 February 2027 for industrial (&gt;2 kWh) and EV batteries.</small></div></div>
+        <div class="source"><span class="sn">4</span><div><a href="https://www.circularise.com/blogs/eu-battery-passport-regulation-requirements/" target="_blank" rel="noopener">Circularise — EU Battery Passport regulation requirements</a><small>Confirms from 18 February 2027 all EV and industrial batteries above 2 kWh placed on the EU market must have a passport, and the role of QR codes.</small></div></div>
+        <div class="source"><span class="sn">5</span><div><a href="https://www.compliancegate.com/batteries-regulation-european-union/" target="_blank" rel="noopener">Compliance Gate — EU Batteries Regulation guide</a><small>Overview of documentation, labelling, EPR and market-surveillance rules for batteries placed on the EU market.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2>18 February 2027 is the market-access date — no passport, no placement.</h2>
+        <p>Check your readiness and get your passport stamp in one minute. Free, no account — nothing leaves your device.</p>
+        <a class="btn btn-brand" href="#outil"><svg class="i" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2.5"/><rect x="10" y="1.5" width="4" height="4" rx="1.2"/></svg>Check my battery</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 12h.01M15 12h.01"/></svg>AI-assisted content, reviewed before publishing — EU AI Act Art. 50.4</span>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2.5" stroke="#C8F04E" stroke-width="2"/><rect x="10" y="1.5" width="4" height="4" rx="1.2" fill="#C8F04E"/><path d="M10 10h4M10 13h4M10 16h3" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round"/></svg></span>Pila</a>
+        <p>Your EU battery passport readiness, stamped. An educational tool — not legal or technical advice.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#outil">My battery</a></li>
+          <li><a href="#act">The rule</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../../aviso-legal.html" target="_blank" rel="noopener">Legal notice</a></li>
+          <li><a href="../../privacidad.html" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://www.attenciona.com" target="_blank" rel="noopener">attenciona.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Editorial responsibility:</strong> attenciona (Holding). AI-assisted content, humanly reviewed before publication (EU AI Act, Art. 50.4). &nbsp;·&nbsp; <strong>Not advice:</strong> Pila is an educational tool based on Regulation (EU) 2023/1542; settle your individual case with your legal and technical counsel. &nbsp;·&nbsp; <strong>Last verified:</strong> 14 August 2026. &nbsp;·&nbsp; <strong>Privacy:</strong> everything runs in your browser; no data is sent to any server. No third-party cookies or tracking. &nbsp;·&nbsp; crypto payments with buyer identification (AML). &nbsp;·&nbsp; © 2026 Pila · attenciona.</p>
+    </div>
+  </div>
+
+<div style="text-align:center;padding:20px 24px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=b94dfe6fa9" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Privacy notice">
+  <p><strong>No tracking.</strong> This page runs entirely in your browser: no third-party cookies, no analytics, your answers never leave your device. We only store locally whether you've seen this notice.</p>
+  <div class="row">
+    <button class="btn btn-brand" id="consentOk">Got it</button>
+    <a class="btn btn-ghost" href="#faq">More info</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"Pila","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/pila/","description":"Check whether your batteries will be ready for the EU digital battery passport, mandatory from 18 February 2027 for EV, LMT and industrial batteries above 2 kWh under Regulation (EU) 2023/1542: QR-linked passport record, carbon footprint, materials and state-of-health data. Runs entirely in the browser.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Free"},{"@type":"Offer","price":"8","priceCurrency":"USD","name":"Pro"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"When does the battery passport become mandatory?","acceptedAnswer":{"@type":"Answer","text":"From 18 February 2027, each EV battery, LMT battery above 2 kWh and industrial battery above 2 kWh placed on the EU market must have a battery passport linked by QR code."}},
+      {"@type":"Question","name":"Which batteries need a passport?","acceptedAnswer":{"@type":"Answer","text":"Electric-vehicle batteries, LMT batteries above 2 kWh and industrial batteries above 2 kWh. Portable batteries follow different rules."}},
+      {"@type":"Question","name":"What data does the passport contain?","acceptedAnswer":{"@type":"Answer","text":"Manufacturer identity, model, capacity, materials, carbon footprint, performance and durability, state of health — plus recycled content from August 2028."}},
+      {"@type":"Question","name":"What happens without a passport?","acceptedAnswer":{"@type":"Answer","text":"From 18 February 2027 a covered battery without a passport cannot be placed on the EU market or put into service."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('pila_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('pila_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+})();
+
+/* ===== The Pila tool ===== */
+(function(){
+  var STEP=0, answers={}, totalSteps=3;
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.toolstep'));
+  var dots=[document.getElementById('sd0'),document.getElementById('sd1'),document.getElementById('sd2'),document.getElementById('sd3')];
+  var lines=[document.getElementById('sl1'),document.getElementById('sl2'),document.getElementById('sl3')];
+  var next=document.getElementById('next'), prev=document.getElementById('prev');
+  var qnav=document.getElementById('qnav');
+
+  function selOpts(){
+    steps[STEP].querySelectorAll('.opt').forEach(function(o){
+      var on = o.dataset.val === answers[STEP];
+      o.classList.toggle('sel', !!on);
+    });
+  }
+  function refreshNav(){
+    prev.disabled = STEP===0;
+    prev.style.opacity = STEP===0 ? '.4' : '1';
+    if(STEP<totalSteps){ next.style.display=''; next.textContent = (STEP===totalSteps-1) ? 'Stamp my battery' : 'Next'; }
+  }
+  function go(i){
+    STEP = Math.max(0, Math.min(totalSteps, i));
+    steps.forEach(function(s,k){ s.classList.toggle('on', k===STEP); });
+    for(var k=0;k<3;k++){
+      dots[k].classList.toggle('on', k===STEP);
+      dots[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+      lines[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+    }
+    dots[3].classList.toggle('ok', STEP===3);
+    var v=document.getElementById('verdict');
+    if(STEP===totalSteps){ qnav.style.display='none'; renderVerdict(); v.hidden=false; v.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    else { v.hidden=true; qnav.style.display=''; }
+    selOpts(); refreshNav();
+  }
+  function skipToVerdict(){
+    go(totalSteps);
+  }
+  steps.forEach(function(s){
+    s.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        answers[s.dataset.step]=o.dataset.val;
+        selOpts();
+        var i=Number(s.dataset.step);
+        if(i===0 && answers[0]==='no'){ skipToVerdict(); return; }
+        if(i < totalSteps-1) go(i+1);
+        else go(totalSteps);
+      });
+    });
+  });
+  next.addEventListener('click', function(){ if(answers[STEP]!==undefined) go(STEP+1); });
+  prev.addEventListener('click', function(){ go(STEP-1); });
+  document.getElementById('restart').addEventListener('click', function(){ answers={}; go(0); });
+
+  function daysUntil(d){
+    var now=new Date(); now.setHours(0,0,0,0);
+    return Math.round((d-now)/86400000);
+  }
+  function enD(n){ return n + (n===1 ? ' day' : ' days'); }
+
+  function renderVerdict(){
+    var v=document.getElementById('verdict');
+    var scope=answers[0], system=answers[1], data=answers[2];
+    var cat, title, stampLabel, stampArt, rows, checklist, note;
+    var access='<div class="vrow due"><span class="k">Market access</span><span class="v">no passport → no placement (Art. 77)</span></div>';
+    var days=daysUntil(new Date(2027,1,18));
+
+    if(scope==='no'){
+      cat='<span class="vcat ok">Not in scope</span>';
+      title="The passport requirement doesn't reach your batteries — keep an eye on portable rules";
+      stampLabel='NOT IN SCOPE';
+      stampArt='—';
+      rows='<div class="vrow ok"><span class="k">EV / LMT / industrial &gt; 2 kWh</span><span class="v">None placed</span></div>'+
+           '<div class="vrow"><span class="k">Art. 77 passport duty</span><span class="v">Not applicable</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>If you start importing or manufacturing covered batteries, re-check before the first unit ships</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Portable batteries: track labelling and removability/replaceability rules phasing in from 2027</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Worth knowing:</b> the 2 kWh threshold decides scope — a light means of transport (e-bike, e-scooter) battery above 2 kWh is in. Confirm each model against the regulation with counsel.</div>';
+    } else if(system==='no'){
+      cat='<span class="vcat need">Passport system needed — 18.02.2027</span>';
+      title='Build the passport flow before the market-access date';
+      stampLabel='PASSPORT GAP';
+      stampArt='Art. 77 · 18.02.2027';
+      rows='<div class="vrow due"><span class="k">DPP + QR system</span><span class="v">Missing</span></div>'+
+           '<div class="vrow due"><span class="k">Mandatory from</span><span class="v">18.02.2027 · '+enD(days)+' away</span></div>'+
+           access;
+      checklist='<ul class="vlist">'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Select a digital product passport provider or build the record infrastructure</li>'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Design the QR marking on the battery label and its data-link flow per batch</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Agree data ownership with suppliers and contract the passport roles in your chain</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Deadline:</b> from 18 February 2027 ('+enD(days)+' from now) a covered battery without a passport cannot be placed on the EU market. The passport is not a paper file — it is a live QR-linked record updated per batch.</div>';
+    } else if(data==='no'){
+      cat='<span class="vcat need">Data gap — passport fields not assembled</span>';
+      title='Centralize the passport data set before 18 February 2027';
+      stampLabel='DATA GAP';
+      stampArt='passport fields';
+      rows='<div class="vrow ok"><span class="k">DPP + QR system</span><span class="v">In place</span></div>'+
+           '<div class="vrow due"><span class="k">Passport data set</span><span class="v">Incomplete</span></div>'+
+           '<div class="vrow due"><span class="k">Mandatory from</span><span class="v">18.02.2027 · '+enD(days)+' away</span></div>'+
+           access;
+      checklist='<ul class="vlist">'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Collect per model: manufacturer, capacity, chemistry, materials, carbon footprint</li>'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Instrument state-of-health history capture for the passport record</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Plan the recycled-content documentation arriving 18.08.2028</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Deadline:</b> the passport must carry the data the day it goes live — 18 February 2027 ('+enD(days)+' from now). Data scattered across suppliers, labs and ERP is the gap that blocks placement.</div>';
+    } else {
+      cat='<span class="vcat ok">Ready — keep it current</span>';
+      title="You're on track for 18 February 2027";
+      stampLabel='PASSPORT READY';
+      stampArt='as of 14.08.2026';
+      rows='<div class="vrow ok"><span class="k">DPP + QR system</span><span class="v">In place</span></div>'+
+           '<div class="vrow ok"><span class="k">Passport data set</span><span class="v">In place</span></div>'+
+           '<div class="vrow"><span class="k">Mandatory from</span><span class="v">18.02.2027 · '+enD(days)+' away</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Rehearse the QR → passport flow with a pilot battery before the date</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Verify carbon footprint and performance-class labels are current per model</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Track recycled-content documentation arriving 18.08.2028</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Good practice:</b> readiness is continuous — passports are live records. Keep supplier data, SOH history and QR marking updated per batch as you scale.</div>';
+    }
+
+    var stamp='<div class="stamp" style="margin:0 auto 4px; transform:none">'+
+      '<div class="top"><span>Pila · Passport Stamp</span><span>2023/1542</span></div>'+
+      '<div class="ring">'+
+        '<span class="chip"><span class="blink"></span><span>'+(scope==='no' ? 'not in scope' : (system==='no'||data==='no' ? 'gap detected' : 'ready'))+'</span></span>'+
+        '<div class="l1">'+stampLabel+'</div>'+
+        '<div class="l2">'+stampArt+'</div>'+
+        '<div class="l3">'+enD(days)+' to 18.02.2027</div>'+
+      '</div>'+
+      '<div class="foot"><span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>QR + DPP</span><span class="num">14.08.2026</span></div>'+
+    '</div>';
+
+    v.innerHTML = cat +
+      '<h3>'+title+'</h3>'+
+      '<div class="stamp-wrap">'+stamp+'</div>'+
+      '<div class="vtable">'+rows+'</div>'+
+      checklist +
+      note +
+      '<div class="vprint"><button class="btn btn-steel btn-sm" onclick="window.print()">Print my stamp</button></div>';
+  }
+})();
+</script>
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/pila/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/latam/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en LATAM</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en LATAM:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/velas/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Velas</a> <a href="/negocios/cartanatal/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Carta Natal</a> <a href="/negocios/angeles/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Ángeles</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-28">2026-08-28</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

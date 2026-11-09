@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fábrica de horas · el motor de automatización de attenciona</title>
+<meta name="description" content="Describe la tarea que repites a mano. La Fábrica de horas la convierte en una automatización real (n8n) en minutos, generada por IA y validada antes de…">
+<meta name="theme-color" content="#0f2d5c">
+<link rel="canonical" href="https://www.attenciona.com/negocios/fabrica-de-horas/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="Fábrica de horas · el motor de attenciona">
+<meta property="og:description" content="Describe la tarea que repites a mano. La Fábrica de horas la convierte en una automatización real (n8n) en minutos, generada por IA y validada antes de…">
+<meta property="og:url" content="https://www.attenciona.com/negocios/fabrica-de-horas/">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fábrica de horas · el motor de automatización de attenciona">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/nav-fase4.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Fábrica de horas","description":"El motor de automatización de attenciona: describes la tarea repetitiva, la IA construye el flujo real (n8n) validado, pagas solo si funciona.","url":"https://www.attenciona.com/negocios/fabrica-de-horas/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué recibo exactamente?","acceptedAnswer":{"@type":"Answer","text":"Dos archivos: automatizacion.n8n.json (el flujo real, para importar en tu cuenta de n8n) y LEEME.md (guía de instalación paso a paso, sin conocimientos técnicos)."}},{"@type":"Question","name":"¿Y si mi tarea es demasiado rara?","acceptedAnswer":{"@type":"Answer","text":"El generador pasa un filtro de calidad automático antes de entregarte nada: valida que el flujo es JSON real, que los nodos existen, que no hay credenciales coladas. Si no pasa el filtro, no se te cobra el 70% restante y se revisa a mano."}},{"@type":"Question","name":"¿Cuánto cuesta?","acceptedAnswer":{"@type":"Answer","text":"Desde 25 USDT por automatización: 30% de señal al pedir, 70% cuando está generada y validada. Pago en cripto vía NOWPayments, sin intermediarios ni suscripción."}}]}]}</script>
+<style>
+:root{
+  --bg:#fbfbfd; --surface:#f4f5fa; --surface-2:#eceef5; --ink:#131a2b; --muted:#5b6478; --faint:#8b93a7;
+  --line:#e3e6ee; --line-strong:#d3d8e5; --accent:#0f2d5c; --accent-deep:#0a1f42; --accent-tint:#eef1f9;
+  --accent-soft:#7fa6e8; --good:#2f8f5b; --good-tint:#e8f3ec; --bad:#b23b47; --bad-tint:#fbeced;
+  --gold:#c9973e; --gold-deep:#a9772c; --gold-tint:#fbf3e4; --warm:#ffb066; --warm-tint:#ffe6d6;
+  --shadow:0 1px 2px rgba(19,26,43,.04), 0 8px 28px rgba(19,26,43,.06);
+  --shadow-lift:0 2px 6px rgba(19,26,43,.06), 0 18px 48px rgba(10,31,66,.12);
+  --radius:16px; --maxw:1160px;
+  --font:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ===== HERO ===== */
+.hero{padding-top:22px}
+.hero-banner{position:relative;border-radius:26px;overflow:hidden;background:linear-gradient(150deg,#0a1f42 0%,#0f2d5c 52%,#173a6e 100%);box-shadow:var(--shadow-lift);display:grid;grid-template-columns:1.08fr .92fr}
+.hero-bg{position:absolute;inset:0}
+.hero-net{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse 95% 85% at 28% 42%,#000 18%,transparent 76%)}
+.glow{position:absolute;border-radius:50%;filter:blur(85px)}
+.g1{width:400px;height:400px;background:#2f5f9f;opacity:.5;top:-150px;left:-70px}
+.g2{width:300px;height:300px;background:var(--warm);opacity:.2;bottom:-110px;right:16%}
+.g3{width:230px;height:230px;background:var(--gold);opacity:.14;top:30%;right:40%}
+.hero-grain{position:absolute;inset:0;opacity:.45;mix-blend-mode:overlay;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.15) 1px,transparent 0);background-size:3px 3px}
+.hero-left{position:relative;z-index:3;padding:52px 18px 48px 48px;display:flex;flex-direction:column;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:8px;width:fit-content;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);color:#cfdaee;padding:6px 14px 6px 9px;border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:22px;backdrop-filter:blur(8px)}
+.pill .live{width:6px;height:6px;border-radius:50%;background:#6fd39c;animation:beat 1.9s infinite}
+@keyframes beat{0%,100%{box-shadow:0 0 0 3px rgba(111,211,156,.24)}50%{box-shadow:0 0 0 7px rgba(111,211,156,0)}}
+.hero-h1{font-family:var(--display);font-size:44px;line-height:1.08;font-weight:600;letter-spacing:-.025em;color:#fff;margin-bottom:16px;max-width:16ch}
+.hero-h1 .em{font-style:italic;font-weight:500;background:linear-gradient(94deg,#ffd9bd,#ffb066 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:#9fb0cc;font-size:15px;line-height:1.62;margin-bottom:28px;max-width:46ch}
+.hero-ctas{display:flex;gap:10px;margin-bottom:32px;flex-wrap:wrap}
+.btn{padding:9.5px 17px;border-radius:11px;font-size:13.5px;font-weight:600;border:none;cursor:pointer;font-family:var(--font);transition:transform .14s var(--ease),box-shadow .2s,background .16s}
+.btn:active{transform:scale(.975)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-deep);box-shadow:0 8px 20px rgba(15,45,92,.24)}
+.btn-white{background:#fff;color:var(--accent-deep)}
+.btn-glass{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-glass:hover{background:rgba(255,255,255,.18)}
+.hero-ctas .btn{padding:13px 22px;font-size:14.5px}
+.hero-metrics{display:flex;gap:34px;flex-wrap:wrap}
+.hm .v{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:700;color:#fff}
+.hm .v.up{color:#6fd39c}
+.hm .l{color:#7788a8;font-size:11.5px;margin-top:4px;font-weight:500}
+.hero-right{position:relative;z-index:3;display:flex;align-items:center;padding:36px 44px 36px 10px}
+.quote{width:100%;border-radius:20px;padding:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px);box-shadow:0 26px 56px rgba(0,0,0,.3)}
+.quote-top{display:flex;align-items:center;gap:11px}
+.quote-mark{width:42px;height:42px;border-radius:12px;flex:none;display:grid;place-items:center;background:linear-gradient(150deg,var(--gold),var(--gold-deep))}
+.quote-mark svg{width:22px;height:22px;color:#fff}
+.quote-name{color:#fff;font-size:16.5px;font-weight:700;letter-spacing:-.02em}
+.quote-cat{color:#8a9bba;font-size:11.5px;margin-top:1px}
+.quote-hot{margin-left:auto;font-size:9.5px;font-weight:700;color:#ffd9a8;background:rgba(201,151,62,.18);border:1px solid rgba(201,151,62,.4);padding:4px 8px;border-radius:6px;letter-spacing:.05em}
+.quote-price{display:flex;align-items:baseline;gap:9px;margin:18px 0 4px}
+.quote-price .pv{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:#fff;letter-spacing:-.03em}
+.quote-price .pc{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#6fd39c;background:rgba(111,211,156,.14);padding:3px 8px;border-radius:7px}
+.quote-sub{color:#7788a8;font-size:11.5px;margin-bottom:16px}
+.quote-steps{display:flex;flex-direction:column;gap:0;margin:14px 0 18px}
+.qs-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.1)}
+.qs-row:first-child{border-top:none}
+.qs-n{width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.12);color:#fff;font-size:10.5px;font-weight:700;display:grid;place-items:center;flex:none}
+.qs-t{color:#cfdaee;font-size:12px}
+.quote-actions{display:flex;gap:8px}
+.qb{flex:1;padding:12px 0;border-radius:11px;font-size:12.5px;font-weight:700;text-align:center;cursor:pointer;border:none}
+.qb-buy{background:#fff;color:var(--accent-deep)}
+.qb-rent{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.26)}
+
+/* ===== SECCIONES ===== */
+.section{padding:54px 0 0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:18px;flex-wrap:wrap}
+.eyebrow{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.11em;margin-bottom:8px}
+.eyebrow::before{content:"";width:15px;height:1.5px;background:var(--gold)}
+.shead h2{font-family:var(--display);font-size:30px;font-weight:600;letter-spacing:-.022em}
+.shead .sd{color:var(--faint);font-size:13.5px;margin-top:6px;max-width:56ch}
+
+/* ===== STEPS ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow)}
+.step .sn{font-family:var(--display);font-style:italic;font-size:38px;color:var(--gold);line-height:1;margin-bottom:12px;opacity:.55}
+.step h4{font-size:16px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px}
+.step p{color:var(--muted);font-size:13px;line-height:1.62}
+
+/* ===== FORMULARIO REAL — nivel "api-box" del sitio ===== */
+.forge{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;align-items:stretch}
+@media(max-width:960px){.forge{grid-template-columns:1fr}}
+.forge-l{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.forge-l h3{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.forge-l p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:20px}
+.forge-list{display:flex;flex-direction:column;gap:0;margin-top:auto}
+.forge-item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);align-items:flex-start}
+.forge-item:first-child{border-top:none}
+.forge-item svg{width:15px;height:15px;color:var(--good);flex:none;margin-top:2px}
+.forge-item .ft{font-size:12.5px;color:var(--muted);line-height:1.5}
+.forge-item .ft b{color:var(--ink);font-weight:700}
+
+.forge-r{background:linear-gradient(150deg,#0a1f42,#0f2d5c);border-radius:var(--radius);padding:26px 24px;color:#fff;position:relative;overflow:hidden}
+.forge-r .hero-net{mask-image:radial-gradient(ellipse 90% 90% at 50% 30%,#000 18%,transparent 76%)}
+.forge-r > *{position:relative}
+.f-label{font-size:12.5px;font-weight:700;color:#cfdaee;margin-bottom:8px;display:block}
+.f-hint{color:#7788a8;font-size:11.5px;margin-bottom:12px;line-height:1.5}
+.f-textarea{width:100%;min-height:110px;font:inherit;font-size:13.5px;padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;resize:vertical;margin-bottom:20px}
+.f-textarea::placeholder{color:#6d7ea3}
+.f-textarea:focus{outline:2px solid var(--gold);outline-offset:1px;background:rgba(255,255,255,.09)}
+.f-tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.f-check{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:8px 13px;border:1px solid rgba(255,255,255,.18);border-radius:999px;cursor:pointer;background:rgba(255,255,255,.05);color:#cfdaee;user-select:none;transition:.15s}
+.f-check input{width:14px;height:14px;accent-color:var(--gold)}
+.f-check.on{background:var(--gold);color:var(--accent-deep);border-color:var(--gold);font-weight:700}
+.f-email{width:100%;max-width:100%;font:inherit;font-size:13px;padding:11px 14px;border-radius:11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;margin-bottom:6px}
+.f-email::placeholder{color:#6d7ea3}
+.f-email-hint{font-size:11px;color:#7788a8;margin-bottom:20px}
+.f-price{display:flex;align-items:baseline;gap:9px;margin:4px 0 20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+.f-price .n{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#fff}
+.f-price .u{font-size:11.5px;color:#9fb0cc;line-height:1.4}
+.f-btn{width:100%;background:#fff;color:var(--accent-deep);font-weight:700;padding:14px 0;border-radius:12px;border:none;cursor:pointer;font-size:14.5px;transition:.15s}
+.f-btn:hover{background:var(--warm-tint)}
+.f-btn:disabled{opacity:.55;cursor:default}
+.f-res{margin-top:14px;font-size:13px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);display:none;color:#cfdaee;line-height:1.5}
+.f-res.show{display:block}
+.f-res.bad{color:#ffb0b6;background:rgba(178,59,71,.18);border-color:rgba(178,59,71,.4)}
+
+/* ===== HONESTIDAD / GATES ===== */
+.gates-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.gate{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:9px 14px;font-size:12.5px;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
+.gate svg{width:14px;height:14px;color:var(--good);flex:none}
+
+/* ===== FAQ ===== */
+.faq-item{border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;background:#fff;box-shadow:var(--shadow)}
+.faq-item summary{cursor:pointer;font-weight:700;font-size:14.5px;letter-spacing:-.01em}
+.faq-item p{margin-top:10px;color:var(--muted);font-size:13.5px;line-height:1.6}
+
+/* ===== CTA final ===== */
+.cta{margin:58px 0 0}
+.cta-in{border-radius:24px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(150deg,#0a1f42,#0f2d5c 60%,#1c3d70)}
+.cta-in .hero-net{mask-image:radial-gradient(ellipse 70% 90% at 50% 50%,#000 18%,transparent 74%)}
+.cta-in h2{position:relative;font-family:var(--display);color:#fff;font-size:31px;font-weight:600;letter-spacing:-.025em;margin-bottom:11px}
+.cta-in h2 .em{font-style:italic;color:var(--warm)}
+.cta-in p{position:relative;color:#9fb0cc;font-size:14.5px;margin-bottom:26px}
+.cta-in .btn{position:relative;padding:13px 26px;font-size:14.5px}
+
+/* ===== ORIGEN ===== */
+.origen-box{display:flex;gap:12px;background:var(--accent-tint);border:1px solid #d8e0f0;border-radius:var(--radius);padding:16px 20px;margin-top:16px;align-items:flex-start}
+.origen-box svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:1px}
+.origen-box .ot{font-size:12.5px;color:var(--muted);line-height:1.6}
+.origen-box .ot b{color:var(--ink);font-weight:700}
+
+/* ===== SELLO MarcaIA ===== */
+.mia{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;padding:4px 9px 4px 6px;border-radius:7px;font-size:9.5px;font-weight:700;letter-spacing:.02em;box-shadow:0 2px 6px rgba(15,45,92,.22)}
+.mia svg{width:11px;height:11px;flex:none}
+
+footer{border-top:1px solid var(--line);padding:34px 0 40px;color:var(--muted);font-size:13px;margin-top:60px}
+.foot-in{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-legal{display:flex;flex-direction:column;gap:8px;font-size:12px;border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.foot-legal a{color:var(--muted)}
+</style>
+<meta name="twitter:description" content="Describe la tarea que repites a mano. La Fábrica de horas la convierte en una automatización real (n8n) en minutos, generada por IA y validada antes de…">
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Fábrica de horas","item":"https://www.attenciona.com/negocios/fabrica-de-horas/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Fábrica de horas","url":"https://www.attenciona.com/negocios/fabrica-de-horas/","datePublished":"2026-08-28","dateModified":"2026-08-28"}</script>
+<!--/BUILD:fase4-schema-->
+<link rel="stylesheet" href="/sello-ia.css">
+</head>
+<body>
+<nav class="af-nav" aria-label="Principal"><div class="af-in">
+  <a class="af-brand" href="/"><span class="af-mk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5 L6 12 L12 12 Z" fill="#fff" opacity=".95"/><path d="M12 5 L18 12 L12 12 Z" fill="#ffe6d6" opacity=".9"/><path d="M12 12 L6 12 L12 19 Z" fill="#fff" opacity=".45"/><path d="M12 12 L12 19 L18 12 Z" fill="#fff" opacity=".68"/></svg></span>attenciona<span class="af-sub">Negocios</span></a>
+  <div class="af-links">
+    <div class="af-item">
+      <button class="af-btn" aria-haspopup="true">Explorar <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 8l3-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="af-mega">
+        <a class="af-mlink" href="/negocios/atiende-ia/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C4.4 1.5 1.5 4 1.5 7c0 1.6.8 3 2 4L3 13.5l3-1.2c.6.14 1.3.2 2 .2 3.6 0 6.5-2.5 6.5-5.5S11.6 1.5 8 1.5z" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">AtiendeIA</span><span class="af-md">Agentes de WhatsApp a medida · negocio principal</span></span></a>
+        <a class="af-mlink" href="/marketplace.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Destacados</span><span class="af-md">Los negocios mejor valorados</span></span></a>
+        <a class="af-mlink" href="/negocios/todos/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Todos los negocios</span><span class="af-md">El listado completo con buscador</span></span></a>
+        <a class="af-mlink" href="/negocios/fabrica-de-horas/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Fábrica de horas</span><span class="af-md">Motor: pide tu automatización, págala, recíbela</span></span></a>
+        <a class="af-mlink" href="/incubadora.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5c2.5 2.6 4 5 4 7a4 4 0 11-8 0c0-2 1.5-4.4 4-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Incubadora</span><span class="af-md">Lo último que sale del motor</span></span></a>
+        <a class="af-mlink" href="/negomazon/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M4 5.5h8l.8 8.5H3.2L4 5.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 5.5a2 2 0 0 1 4 0" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">Negomazon</span><span class="af-md">Guías de compra · afiliado Amazon</span></span></a>
+      </div>
+    </div>
+    <a class="af-link" href="/historia.html">Historia</a>
+  </div>
+  <div class="af-right"><a class="af-cta" href="#pedir">Pedir automatización</a></div>
+</div></nav>
+
+<div class="wrap hero">
+  <div class="hero-banner rv in">
+    <div class="hero-bg"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="hero-net"></div><div class="hero-grain"></div></div>
+    <div class="hero-left">
+      <div class="pill"><span class="live"></span> El motor de attenciona · en producción hoy</div>
+      <h1 class="hero-h1">La automatización que <span class="em">no tienes</span> que aprender a construir.</h1>
+      <p class="hero-sub">Describes la tarea que repites cada semana. La IA construye el flujo real (n8n), un filtro de calidad lo valida antes de cobrarte, y lo descargas listo para importar. Este no es un negocio más del catálogo: es el motor con el que attenciona construye.</p>
+      <div class="hero-ctas"><a class="btn btn-white" href="#pedir">Pedir mi automatización →</a><a class="btn btn-glass" href="#como">Cómo funciona</a></div>
+      <div class="hero-metrics">
+        <div class="hm"><div class="v up">25 USDT</div><div class="l">Precio de entrada</div></div>
+        <div class="hm"><div class="v">30/70</div><div class="l">Señal / entrega validada</div></div>
+        <div class="hm"><div class="v">n8n</div><div class="l">Herramienta soportada</div></div>
+        <div class="hm"><div class="v">5/5</div><div class="l">Puertas de calidad</div></div>
+      </div>
+    </div>
+    <div class="hero-right"><div class="quote">
+      <div class="quote-top">
+        <div class="quote-mark"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><div class="quote-name">Fábrica de horas</div><div class="quote-cat">Motor · automatización a demanda</div></div>
+        <span class="quote-hot">EN VIVO</span>
+      </div>
+      <div class="quote-price"><span class="pv">25 <span style="font-size:15px;color:#9fb0cc">USDT</span></span><span class="pc">30% señal</span></div>
+      <div class="quote-sub">Pago en cripto vía NOWPayments · sin suscripción</div>
+      <div class="quote-steps">
+        <div class="qs-row"><span class="qs-n">1</span><span class="qs-t">Describes la tarea + herramientas</span></div>
+        <div class="qs-row"><span class="qs-n">2</span><span class="qs-t">Pagas señal → IA genera el flujo</span></div>
+        <div class="qs-row"><span class="qs-n">3</span><span class="qs-t">Filtro de calidad → entrega o revisión</span></div>
+      </div>
+      <div class="quote-actions">
+        <a class="qb qb-buy" href="#pedir">Pedir ahora</a>
+        <a class="qb qb-rent" href="#como">Ver el proceso</a>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<div class="wrap section" id="como">
+  <div class="shead rv in"><div><div class="eyebrow">Cómo funciona</div><h2>De la tarea al flujo, sin nada a medias</h2><p class="sd">Tres pasos, todos ya conectados en producción — no es una promesa a futuro.</p></div></div>
+  <div class="steps rv in">
+    <div class="step"><div class="sn">01</div><h4>Describes la tarea</h4><p>Qué haces a mano, con qué herramientas (Gmail, Sheets, WhatsApp...). Dos minutos, sin jerga técnica.</p></div>
+    <div class="step"><div class="sn">02</div><h4>Señal + generación</h4><p>Pagas el 30% de señal. El motor construye el flujo real con IA, usando plantillas verificadas de la comunidad n8n — nunca inventa nodos que no existen.</p></div>
+    <div class="step"><div class="sn">03</div><h4>Filtro de calidad, luego entrega</h4><p>Un validador automático revisa el JSON, los nodos y que no haya credenciales coladas. Si pasa, pagas el 70% restante y descargas. Si no pasa, no se cobra y se revisa a mano.</p></div>
+  </div>
+</div>
+
+<div class="wrap section" id="pedir">
+  <div class="shead rv in"><div><div class="eyebrow">Pide la tuya</div><h2>¿Qué tarea quieres dejar de hacer a mano?</h2><p class="sd">Cuanto más concreto, mejor sale el flujo. El precio no cambia si añades detalle.</p></div></div>
+  <div class="forge rv in">
+    <div class="forge-l">
+      <h3>Lo que ya funciona hoy</h3>
+      <p>Cada pieza de este flujo está conectada en producción: no es una maqueta, es el motor con el que attenciona construye sus propios negocios.</p>
+      <div class="forge-list">
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Formulario de pedido</b> conectado a la API real del servidor</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Pago en cripto</b> vía NOWPayments, factura alojada</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Generación automática</b> con IA en cuanto se confirma el pago</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Filtro de calidad</b> antes de entregar nada</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Descarga directa</b> + aviso por email si lo diste</span></div>
+      </div>
+    </div>
+    <div class="forge-r">
+      <div class="hero-net"></div>
+      <label class="f-label" for="wDescripcion">Descríbela con tus palabras</label>
+      <p class="f-hint">Ej: "Cada lunes reviso los emails de facturas nuevas y las paso a mano a una hoja de cálculo"</p>
+      <textarea id="wDescripcion" class="f-textarea" placeholder="Cada vez que llega un email con una factura adjunta, quiero que se guarde el PDF en una carpeta de Drive y se apunte el importe en una hoja de cálculo..." maxlength="2000"></textarea>
+
+      <span class="f-label">¿Qué herramientas usas para esa tarea?</span>
+      <div class="f-tools" id="wTools">
+        <label class="f-check"><input type="checkbox" value="Gmail"> Gmail</label>
+        <label class="f-check"><input type="checkbox" value="Google Sheets"> Google Sheets</label>
+        <label class="f-check"><input type="checkbox" value="Google Drive"> Google Drive</label>
+        <label class="f-check"><input type="checkbox" value="WhatsApp"> WhatsApp</label>
+        <label class="f-check"><input type="checkbox" value="Telegram"> Telegram</label>
+        <label class="f-check"><input type="checkbox" value="Notion"> Notion</label>
+        <label class="f-check"><input type="checkbox" value="Slack"> Slack</label>
+        <label class="f-check"><input type="checkbox" value="Excel/Airtable"> Excel / Airtable</label>
+        <label class="f-check"><input type="checkbox" value="Web/API propia"> Web / API propia</label>
+      </div>
+
+      <label class="f-label" for="wEmail">Tu email (para avisarte cuando esté lista)</label>
+      <input type="email" id="wEmail" class="f-email" placeholder="tu@email.com">
+      <p class="f-email-hint">Opcional: sin email, la descargas tú mismo desde esta página con el enlace del pago.</p>
+
+      <div class="f-price"><span class="n">25</span><span class="u">USDT de señal (30%)<br>el resto (70%) al validarse la generación</span></div>
+
+      <button class="f-btn" id="wBtn" type="button">Pagar señal y empezar →</button>
+      <div class="f-res" id="wRes"></div>
+    </div>
+  </div>
+  <div class="gates-row rv in">
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Formulario real</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pago en cripto</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Generación con IA</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Filtro de calidad</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Entrega automática</div>
+  </div>
+</div>
+
+<div class="wrap section" id="faq">
+  <div class="shead rv in"><div><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que la gente pregunta</h2></div></div>
+  <div class="rv in">
+    <details class="faq-item"><summary>¿Qué recibo exactamente?</summary><p>Dos archivos: <b>automatizacion.n8n.json</b> (el flujo real, se importa directo en tu cuenta de n8n) y <b>LEEME.md</b> (guía de instalación paso a paso, pensada para alguien sin conocimientos técnicos).</p></details>
+    <details class="faq-item"><summary>¿Y si mi tarea es demasiado rara o compleja?</summary><p>El generador pasa un filtro de calidad automático antes de entregar nada: valida que el JSON es válido, que los nodos existen de verdad en n8n, que el código no tiene errores y que no se coló ninguna credencial real. Si no pasa, no se cobra el 70% restante y el pedido se revisa a mano.</p></details>
+    <details class="faq-item"><summary>¿Por qué n8n y no Zapier o Make?</summary><p>Honestidad ante todo: solo prometemos lo que hemos probado de verdad. n8n es la única herramienta con referencia verificada en el motor ahora mismo — Zapier y Make quedan retirados hasta tener la misma garantía de calidad.</p></details>
+    <details class="faq-item"><summary>¿Cuánto tarda?</summary><p>La generación es automática en cuanto se confirma el pago de la señal (unos minutos). Recibes aviso por email si lo diste, o puedes volver a esta página con tu enlace de pago para comprobar el estado y descargar.</p></details>
+    <details class="faq-item"><summary>¿Cuánto cuesta?</summary><p>Desde 25 USDT por automatización: 30% de señal al pedir, 70% cuando está generada y validada. Pago en cripto vía NOWPayments, sin intermediarios ni suscripción.</p></details>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="shead rv in"><div><div class="eyebrow">Origen</div><h2>Por qué existe este motor</h2></div></div>
+  <div class="origen-box rv in">
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5M12 16v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <div class="ot"><b>Fábrica de horas</b> es el mismo motor con el que attenciona genera sus propios negocios: describir, generar con IA, validar antes de entregar. Aquí lo abrimos para tu tarea concreta. Todo el proceso lleva el sello MarcaIA de transparencia (art. 50 del Reglamento de IA de la UE): contenido asistido por IA, siempre revisado antes de publicar.</div>
+  </div>
+</div>
+
+<div class="wrap cta">
+  <div class="cta-in rv in">
+    <div class="hero-net"></div>
+    <h2 style="position:relative">Deja de hacerlo <span class="em">a mano</span>.</h2>
+    <p style="position:relative">Dos minutos para describir la tarea. El motor hace el resto.</p>
+    <a class="btn btn-white" href="#pedir" style="position:relative">Pedir mi automatización →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <span><b>Fábrica de horas</b> · el motor de automatización de attenciona</span>
+    <span class="mia"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4"/></svg>Creado con IA · art. 50 UE</span>
+  </div>
+  <div class="wrap foot-legal">
+    <span><b>Responsable editorial:</b> attenciona (holding). Contenido asistido por IA y revisado antes de publicar (Reglamento de IA de la UE, art. 50.4).</span>
+    <span><b>No es asesoría legal ni fiscal.</b> Pago en cripto (USDT) vía NOWPayments · entrega automática validada.</span>
+    <span><b>Privacidad:</b> sin cookies de terceros ni rastreadores publicitarios. <a href="/privacidad.html">Política de privacidad</a> · <a href="/aviso-legal.html">Aviso legal</a></span>
+  </div>
+
+<div style="text-align:center;padding:20px 24px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=eff96f62c7" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<script>
+(function(){
+  var toolsWrap = document.getElementById('wTools');
+  toolsWrap.addEventListener('change', function(e){
+    if (e.target && e.target.type === 'checkbox') {
+      e.target.closest('.f-check').classList.toggle('on', e.target.checked);
+    }
+  });
+
+  function herramientasElegidas(){
+    return Array.prototype.slice.call(toolsWrap.querySelectorAll('input:checked')).map(function(i){ return i.value; });
+  }
+
+  var btn = document.getElementById('wBtn');
+  var res = document.getElementById('wRes');
+
+  function mostrar(msg, esError){
+    res.textContent = msg;
+    res.className = 'f-res show' + (esError ? ' bad' : '');
+  }
+
+  btn.addEventListener('click', function(){
+    var descripcion = document.getElementById('wDescripcion').value.trim();
+    var herramientas = herramientasElegidas();
+    var email = document.getElementById('wEmail').value.trim();
+
+    if (descripcion.length < 15) { mostrar('Cuéntanos un poco más de la tarea (al menos una frase con detalle).', true); return; }
+    if (!herramientas.length) { mostrar('Marca al menos una herramienta que uses para esa tarea.', true); return; }
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { mostrar('Ese email no parece válido — déjalo vacío si prefieres descargar tú mismo.', true); return; }
+
+    var textoOriginal = btn.innerHTML;
+    btn.disabled = true; btn.innerHTML = 'Creando tu pedido…';
+    mostrar('');
+
+    fetch('/api/fabrica-horas/pedido', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ descripcion: descripcion, herramientas: herramientas })
+    }).then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(res1){
+        if (!res1.ok || !res1.d.id) { throw new Error((res1.d && res1.d.error) || 'no se pudo crear el pedido'); }
+        var pedidoId = res1.d.id;
+        var pagoEmail = email || ('p_' + pedidoId + '@attenciona.com');
+        btn.innerHTML = 'Abriendo el pago…';
+        return fetch('/api/pro/create-invoice', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product: 'fabricahoras-' + pedidoId,
+            email: pagoEmail,
+            amount: 25,
+            success_path: '/negocios/fabrica-de-horas/gracias.html'
+          })
+        }).then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); });
+      })
+      .then(function(res2){
+        if (res2.ok && res2.d.invoice_url) { location.href = res2.d.invoice_url; return; }
+        var msg = res2.d && res2.d.error === 'Cobro no configurado (falta NOWPAYMENTS_API_KEY)'
+          ? 'El cobro todavía no está desplegado en este servidor. Escríbenos desde attenciona.com/automatiza/#consulta y lo coordinamos a mano mientras tanto.'
+          : 'No se pudo abrir el pago (' + ((res2.d && res2.d.error) || 'error') + '). Escríbenos desde attenciona.com/automatiza/#consulta.';
+        throw new Error(msg);
+      })
+      .catch(function(err){
+        btn.disabled = false; btn.innerHTML = textoOriginal;
+        mostrar(err.message || 'Algo falló. Escríbenos desde attenciona.com/automatiza/#consulta y lo resolvemos a mano.', true);
+      });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/fabrica-de-horas/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/latam/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en LATAM</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en LATAM:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/velas/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Velas</a> <a href="/negocios/cartanatal/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Carta Natal</a> <a href="/negocios/angeles/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Ángeles</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-28">2026-08-28</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

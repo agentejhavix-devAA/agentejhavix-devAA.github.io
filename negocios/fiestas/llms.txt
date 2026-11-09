@@ -1,0 +1,23 @@
+# Fiestas
+
+Fiestas — Semana Santa 2027 y las fiestas móviles, con fechas exactas por país. en LATAM — La Pascua se mueve entre el 22/03 y el 25/04 (regla de Nicea, 325) y el error de planificar vacaciones con la fecha del año pasado es el dolor #1: en 2027 la Semana Santa cae 8 días antes que 2026 (Pascua 28/03/2027, Ceniza 10/02, Corpus 27/05). Herramienta en el navegador contra el calendario litúrgico oficial del Vaticano. Gratis las fechas + Pro pago único (3 $).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fe · Fiestas móviles LATAM.
+- Fecha límite / cita: Domingo de Ramos · 27/03/2027.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 28/30 (9.3/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.vatican.va/liturgical_year/index_sp.htm (Vaticano — Calendario litúrgico 2026-2027)
+2. https://www.almanac.com/content/when-easter (Almanaque — cálculo de la Pascua (Concilio de Nicea))
+3. https://www.timeanddate.com/holidays/ (Time and Date — Semana Santa y feriados)
+4. https://www.gob.mx/ (Gobierno de México — Calendario oficial de feriados)
+5. https://www.dt.gob.cl/ (Dirección del Trabajo (Chile) — Feriados)
+
+## Precio
+- Gratis: Las fechas móviles 2026-2027.
+- Pro (3 USD pago único, cripto vía NOWPayments): Calendario 2027 imprimible (PDF); Feriados por país LATAM; Alerta cuando cambien fechas; desbloqueo permanente.
+
+## Aviso
+Herramienta de información. Fiestas cita calendarios oficiales; los feriados laborales los fija la ley de cada país. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

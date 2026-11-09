@@ -1,0 +1,24 @@
+# ResicoClaro · México
+
+> En RESICO la tasa de ISR no depende de tu actividad sino del tramo de ingresos cobrados en el mes: del 1% al 2,5% según el Art. 113-E de la LISR, más IVA 16% si lo trasladas. Introduce tus ingresos del mes y calcula el impuesto exacto antes de la declaración del día 17.
+
+- **Mercado:** México
+- **Fuente de datos viva:** SAT — Régimen Simplificado de Confianza para personas físicas (tasas 1%–2,5% del Art. 113-E LISR)
+
+- **Sistema de diseño:** Específico (de la investigación del spec) (Space Grotesk (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+La calculadora ubica tus ingresos del mes en el tramo oficial del Art. 113-E LISR, aplica la tasa al total cobrado (no es marginal) y separa ISR, IVA y neto estimado. Así sabes cuánto apartar antes de la declaración mensual, sin confundir facturado con disponible. Es una simulación con la tabla oficial del SAT: no sustituye la declaración ni el consejo de un contador.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- SAT — Régimen Simplificado de Confianza para personas físicas (tasas 1%–2,5% del Art. 113-E LISR) (https://www.sat.gob.mx/portal/public/personas-fisicas/pf-simplificado-de-confianza)
+- SAT — Requisitos y obligaciones para permanecer en RESICO (tasas de 1% a 2,5%) (https://www.gob.mx/sat/prensa/requisitos-y-obligaciones-para-personas-fisicas-que-busquen-permanecer-en-el-resico-003-2024)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: SAT — Régimen Simplificado de Confianza para personas físicas (tasas 1%–2,5% del Art. 113-E LISR). (https://www.sat.gob.mx/portal/public/personas-fisicas/pf-simplificado-de-confianza)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la calculadora + Pro pago único (14,90 USD) — sin coste oculto ni letra pequeña.

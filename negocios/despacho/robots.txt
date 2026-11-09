@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://despacho.attenciona.com/llms.txt

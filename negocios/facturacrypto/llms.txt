@@ -1,0 +1,23 @@
+# FacturaCrypto
+
+FacturaCrypto — genera facturas para cobrar en cripto, sin dolor. en LATAM — Cobrar en USDT sin factura es cobrar a ciegas. Dato duro: CFDI 4.0 obligatorio desde 2023 (SAT), declaración anual 30/04/2027. Herramienta en el navegador contra el cobro sin respaldo. Gratis 5/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Crypto · Facturación.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/Factura/solicita_requisitos.htm (SAT — Requisitos de la factura)
+2. https://www.upseller.com/es/blog-article-642 (UpSeller — Facturación 4.0 en 2026)
+3. https://www.groupseres.com/es-mx/factura-electronica-obligatoria-mexico (SERES — Factura electrónica en México)
+4. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+5. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto en LATAM 2026)
+
+## Precio
+- Gratis: 5 facturas al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Facturas ilimitadas; Plantillas por cliente; Exportación contable; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La emisión formal de CFDI requiere un PAC y tu e.firma: esta herramienta prepara tus datos, no sustituye a tu emisor de factura. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

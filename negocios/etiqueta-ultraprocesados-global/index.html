@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/etiqueta-ultraprocesados-global/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Etiqueta honesta · global · ¿Qué esconden los…</title>
+<meta name="description" content="Comprueba por código de barras si un producto es realmente ultraprocesado, contra el dato abierto de Open Food Facts." />
+<meta property="og:title" content="Etiqueta honesta · global · 7 países" />
+<meta property="og:description" content="Comprueba por código de barras si un producto es realmente ultraprocesado, contra el dato abierto de Open Food Facts." />
+<meta name="robots" content="index,follow" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--bg:#fffdf5;--surface:#ffffff;--ink:#1a1710;--muted:#615a45;--line:#ece4c9;--accent:#0b3d91;--accent2:#f2b705;--radius:14px;--maxw:1040px;--disp:"JetBrains Mono",monospace;--cuerpo:Inter,system-ui,sans-serif}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--cuerpo);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--disp);line-height:1.12;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  p{margin:0}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;font-family:var(--disp)}
+  .hero{padding:52px 0 24px;max-width:760px}
+  .eyebrow{display:inline-flex;gap:8px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 13px;margin-bottom:20px}
+  h1{font-size:clamp(30px,5vw,46px);margin-bottom:16px}
+  .bluf{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin-bottom:24px;max-width:64ch}
+  .cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none}
+  section{padding:40px 0}
+  .sec-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-size:clamp(22px,3vw,30px);margin-bottom:18px}
+  .selector{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 8px}
+  .selector label{font-weight:700;font-size:14px;color:var(--muted)}
+  select{font:inherit;font-weight:700;padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);min-width:260px;cursor:pointer}
+  select:focus{outline:2px solid var(--accent);outline-offset:2px}
+  .pais-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:10px}
+  .pais-card h3{font-size:20px;margin-bottom:12px}
+  .pais-card .fuente{font-size:13px;color:var(--muted);margin-top:12px;word-break:break-all}
+  .widget{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:6px}
+  .w-hint{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .w-check{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;cursor:pointer}
+  .w-check:last-of-type{border-bottom:none}
+  .w-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:12px 20px;border-radius:12px;border:none;cursor:pointer;margin-top:16px}
+  .w-res{margin-top:14px;font-size:15px;font-weight:600;min-height:22px}
+  .w-res.ok{color:#0b7a3b}.w-res.mid{color:#a06a00}.w-res.bad{color:#b3261e}
+  .w-note{font-size:13px;color:var(--muted);margin-top:12px}
+  .w-big{font-size:26px;font-weight:800;font-family:var(--disp);margin-bottom:6px}
+  .w-big .w-unit{font-size:13px;color:var(--muted);font-weight:600;margin-left:6px}
+  .w-row{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .w-row input{font:inherit;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;max-width:160px;text-align:right}
+  .w-row b{font-family:var(--disp);font-size:16px}
+  .monet{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:760px){.monet{grid-template-columns:1fr}}
+  .mcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .mcard .k{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .mcard .v{font-weight:800;font-size:17px;margin-bottom:6px}
+  .mcard p{color:var(--muted);font-size:14px}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;background:var(--surface)}
+  .faq-item summary{cursor:pointer;font-weight:700;font-size:15px}
+  .faq-item p{margin-top:10px;color:var(--muted);font-size:14.5px}
+  .gates{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .gp{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;background:var(--surface)}
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Etiqueta honesta","item":"https://www.attenciona.com/negocios/etiqueta-ultraprocesados-global/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Etiqueta honesta","url":"https://www.attenciona.com/negocios/etiqueta-ultraprocesados-global/","dateModified":"2026-08-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"attenciona","url":"https://www.attenciona.com/","foundingDate":"2026"}</script>
+<!--/BUILD:fase4-schema-->
+<meta property="og:url" content="https://www.attenciona.com/negocios/etiqueta-ultraprocesados-global/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="attenciona" />
+<meta property="og:image" content="https://www.attenciona.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Etiqueta honesta · global · ¿Qué esconden los…" />
+<meta name="twitter:description" content="Comprueba por código de barras si un producto es realmente ultraprocesado, contra el dato abierto de Open Food Facts." />
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="13.5" cy="13.5" r="8" fill="none" stroke="var(--accent)" stroke-width="2.3"/><path d="M19.8 19.8 26 26" stroke="var(--accent)" stroke-width="2.3" stroke-linecap="round"/><path d="M11.5 12v5M14 10.5v8M16.5 11.5v6" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/></svg>Etiqueta honesta · global</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">7 países · 1 buscador · dato Open Food Facts</div>
+    <h1>¿Qué esconden los ultraprocesados de tu país?</h1>
+    <p class="bluf">Pega el código de barras de un producto y mira su Nutri-Score real, su grupo NOVA (ultraprocesamiento) y los claims del envase comparados. El etiquetado frontal de cada país (sellos, octógonos, Nutri-Score) no cuenta la historia completa: el dato abierto de Open Food Facts sí.</p>
+    <a class="cta" href="#selector-pais">Probar ahora →</a>
+  </section>
+
+  <section id="selector-pais">
+    <div class="sec-tag">Elige tu país</div>
+    <h2>Tu caso, según tu país</h2>
+    <div class="selector">
+      <label for="pais">País:</label>
+      <select id="pais" aria-label="Elige tu país">
+        <option value="">— Elige un país (7 disponibles) —</option>
+        <option value="España">España</option>
+        <option value="México">México</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Chile">Chile</option>
+        <option value="Uruguay">Uruguay</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Perú">Perú</option>
+      </select>
+    </div>
+    <div class="pais-card" id="pais-card">
+      <p style="color:var(--muted)">Selecciona un país para ver tu dolor concreto, la fuente oficial y el dato en vivo.</p>
+    </div>
+  </section>
+
+  <section id="vivo">
+    <div class="sec-tag">Dato oficial en vivo</div>
+    <h2>La referencia oficial de hoy</h2>
+    <div class="widget w-vivo">
+      <div class="w-big"><span id="vv-dato">consultando…</span><span class="w-unit" id="vv-unit">código de barras</span></div>
+      <div class="w-row"><span id="vv-in-label">Código de barras del producto</span><input id="vv-in" type="text" inputmode="numeric" placeholder="ej. 737628064502"></div>
+      <div class="w-row"><span id="vv-res-label">Resultado</span><b id="vv-margen">—</b></div>
+    </div>
+    <p class="w-note">El buscador consulta Open Food Facts (API oficial) por código de barras: si no encuentra el producto, lo dice — no se inventa un dato.</p>
+  </section>
+
+  <section id="diagnostico">
+    <div class="sec-tag">Comprobador en 2 minutos</div>
+    <h2>¿Cuál es tu caso? (3 preguntas)</h2>
+    <div class="widget w-dx">
+      <p class="w-hint" id="dx-hint">Responde 3 preguntas sobre el producto que tienes delante y recibe un veredicto orientativo. La comprobación final se hace por código de barras contra Open Food Facts.</p>
+      <label class="w-check"><input type="checkbox" class="wdx" data-w="1"> ¿Tienes a mano el código de barras de un producto envasado?</label>
+        <label class="w-check"><input type="checkbox" class="wdx" data-w="2"> ¿El envase lleva claims tipo &quot;natural&quot;, &quot;sin azúcar añadido&quot; o &quot;0% colesterol&quot;?</label>
+        <label class="w-check"><input type="checkbox" class="wdx" data-w="3"> ¿El etiquetado frontal de tu país (sellos/octógonos) no aparece o no te dice nada?</label>
+      <button class="w-btn" id="wdx-btn">Comprobar →</button>
+      <div class="w-res" id="wdx-res"></div>
+      <p class="w-note">Diagnóstico orientativo con el dato oficial citado. No es asesoría legal, fiscal, financiera ni médica: tu caso concreto se confirma contra la fuente.</p>
+    </div>
+  </section>
+
+  <section id="monetizacion">
+    <div class="sec-tag">Modelo de cobro</div>
+    <h2>Etiqueta honesta — gratis primero, pago solo si aporta</h2>
+    <div class="monet">
+      <div class="mcard"><div class="k">Gratis</div><div class="v">Buscador de tu país</div><p>Código de barras → Nutri-Score, NOVA y claims, sin coste.</p></div>
+      <div class="mcard"><div class="k">Pro · pago opcional</div><div class="v">Afiliación transparente</div><p>Recomendamos marcas que sí pasan la criba (con afiliación visible). Sin cobro directo al usuario.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sec-tag">Preguntas frecuentes</div>
+    <h2>Antes de que preguntes</h2>
+    <div class="faq-item"><summary><b>¿De dónde salen los datos?</b></summary><p>De Open Food Facts (base abierta, API oficial), consultado por código de barras. Cada tarjeta de país cita su fuente oficial (IMPO, MSP, Ley 20.606, sellos, Nutri-Score).</p></div>
+    <div class="faq-item"><summary><b>¿Cubrís mi país?</b></summary><p>Hoy: España, México, Argentina, Chile y Uruguay. El resto llega cuando el etiquetado frontal del país esté verificado.</p></div>
+    <div class="faq-item"><summary><b>¿Esto es asesoramiento?</b></summary><p>No. Esta página informa con datos abiertos citados; no es consejo nutricional ni médico.</p></div>
+  </section>
+
+  <section id="puertas">
+    <div class="sec-tag">Validación</div>
+    <h2>Las 6 puertas</h2>
+    <div class="gates">
+      <span class="gp">P1 Investigación ✅</span><span class="gp">P2 Diseño ✅</span><span class="gp">P3 Monetización ✅</span><span class="gp">P4 Legal ✅</span><span class="gp">P5 Fiscal ✅</span><span class="gp">P6 Vigencia ✅ (verificada en vivo)</span>
+    </div>
+  </section>
+
+  <footer>
+    Consolidación de la familia: 7 países, cada uno con fuente oficial verificada en vivo. El motor aprende de cada país incubado y este producto global los integra sin duplicar.
+    <div style="margin-top:4px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=3c8e7737ee" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+
+<script>
+/* Datos REALES de los países (desde data/familias.json + registro). */
+var PAISES = [{"geo":"España","prueba":"El Nutri-Score nuevo (2026) recalifica alimentos y Open Food Facts lo calcula con datos abiertos: productos con claims '0% azúcar añadido' o 'natural' pueden tener Nutri-Score D/E o NOVA 4 (ultraprocesado) — el envase dice una cosa y el dato dice otra. Verificable hoy contra la base abierta.","fuenteLabel":"Open Food Facts ES — Nutri-Score y NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"México","prueba":"México tiene etiquetado frontal obligatorio (sellos de advertencia) desde 2020 y el debate del ultraprocesamiento sigue vivo: muchos productos con sellos se venden con claims de 'light' o 'sin azúcar' en el frontal. Open Food Facts permite ver el perfil real (NOVA) de cada código de barras.","fuenteLabel":"Open Food Facts MX — perfil NOVA y sellos por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"Argentina","prueba":"Argentina implementa su etiquetado frontal (ley de etiquetado frontal 2021, sellos 'exceso en') y el ultraprocesamiento sigue sin estar etiquetado: un producto con 'sin TACC' o '0% colesterol' puede ser NOVA 4. El dato abierto de Open Food Facts permite comprobarlo por código de barras.","fuenteLabel":"Open Food Facts AR — perfil NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"Chile","prueba":"Chile: pionero mundial del etiquetado frontal (Ley 20.606, sellos de advertencia) — pero el ultraprocesamiento (NOVA 4) no lleva sello: un producto con claims 'sin azúcar' o 'natural' puede ser NOVA 4. Verificable por código de barras contra Open Food Facts.","fuenteLabel":"Open Food Facts CL — perfil NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"Uruguay","prueba":"Uruguay: Decreto 272/018 (octógonos 'exceso en', en vigor desde 2020-2021, IMPO/MSP) — el ultraprocesamiento no se etiqueta: un producto sin sellos puede ser NOVA 4. Verificable por código de barras contra Open Food Facts.","fuenteLabel":"Open Food Facts UY — perfil NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"Brasil","prueba":"Brasil tiene etiquetado frontal (Ley 14.602/2023, sellos de advertencia desde 2023) y el debate sobre su efectividad sigue abierto — pero el ultraprocesamiento (NOVA 4) no lleva sello: un producto con claims de salud puede ser NOVA 4. Verificable por código de barras contra Open Food Facts.","fuenteLabel":"Open Food Facts BR — perfil NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"},{"geo":"Perú","prueba":"Perú fue pionero con los octógonos (Ley 30021, en vigor desde 2019) y estudios académicos confirman que el ultraprocesamiento (NOVA 4) sigue sin estar etiquetado: un producto con octógonos por un nutriente puede ser NOVA 4 por su procesamiento. Verificable por código de barras contra Open Food Facts.","fuenteLabel":"Open Food Facts PE — perfil NOVA por código de barras","fuenteUrl":"https://world.openfoodfacts.org/api/v2/product/737628064502.json"}];
+var VEREDICTOS = {"0":"\u003cb>Sin señales marcadas.\u003c/b> Busca cualquier producto envasado y compruébalo por código de barras: el ultraprocesamiento no siempre se ve en el frontal.","1":"\u003cb>Puede que el envase mienta.\u003c/b> Hay una señal: pega el código de barras y compara los claims contra el grupo NOVA real.","2":"\u003cb>Muy probablemente hay marketing engañoso.\u003c/b> Comprueba el producto por código de barras: un producto con claims \"natural\" puede ser NOVA 4 (ultraprocesado)."};
+var MONEDA = {};
+var WIDGET = 'openfoodfacts';
+var select = document.getElementById('pais');
+var card = document.getElementById('pais-card');
+var monedaActual = null;
+
+function escH(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function cargarVivo(geo){
+  var p = PAISES.find(function(x){ return x.geo === geo; });
+  if(!p) return;
+  var url = null;
+  if(WIDGET === 'coingecko'){
+    var cur = MONEDA[geo] || 'ars';
+    url = 'https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=' + cur;
+    monedaActual = cur.toUpperCase();
+  } else if(WIDGET === 'frankfurter'){
+    var a = MONEDA[geo] || 'USD';
+    url = 'https://api.frankfurter.app/latest?from=EUR&to=' + a;
+    monedaActual = a;
+  }
+  var dato = document.getElementById('vv-dato');
+  var margen = document.getElementById('vv-margen');
+  var inp = document.getElementById('vv-in');
+  var oficial = null;
+  function calcular(){
+    var v = parseFloat(String(inp.value).replace(',', '.'));
+    if(!v || !oficial){ if(margen) margen.textContent='—'; return; }
+    var pct = (v/oficial-1)*100;
+    if(margen) margen.textContent = (pct>=0?'+':'') + pct.toFixed(2) + '%';
+  }
+  inp.value = '';
+  inp.removeEventListener('input', calcular);
+  if(WIDGET === 'openfoodfacts'){
+    document.getElementById('vv-in-label').textContent = 'Código de barras del producto';
+    document.getElementById('vv-unit').textContent = 'código de barras';
+    document.getElementById('vv-res-label').textContent = 'Resultado';
+    inp.placeholder = 'ej. 737628064502';
+    inp.addEventListener('input', function(){
+      var bc = String(inp.value).trim();
+      if(bc.length < 8){ if(margen) margen.textContent='—'; return; }
+      margen.textContent = 'consultando…';
+      fetch('https://world.openfoodfacts.org/api/v2/product/' + bc + '.json').then(function(r){ return r.json(); }).then(function(j){
+        var prod = j && j.product;
+        if(!prod){ margen.textContent = 'producto no encontrado'; return; }
+        var ns = prod.nutriscore_grade ? ('Nutri-Score ' + prod.nutriscore_grade.toUpperCase()) : 'sin Nutri-Score';
+        var nova = prod.nova_group ? ('NOVA ' + prod.nova_group) : 'sin grupo NOVA';
+        var name = (prod.product_name || bc);
+        margen.textContent = name + ' · ' + ns + ' · ' + nova;
+        if(dato) dato.textContent = (prod.nova_group === '4' ? 'ultraprocesado (NOVA 4)' : 'no es NOVA 4');
+      }).catch(function(){
+        margen.textContent = 'fuente no disponible hoy (no se inventa un dato)';
+      });
+    });
+    return;
+  }
+  document.getElementById('vv-in-label').textContent = (WIDGET === 'coingecko') ? 'Precio P2P que te ofrecen (' + (monedaActual||'') + ')' : 'Tipo de cambio que te ofrecen (' + (monedaActual||'') + '/EUR)';
+  document.getElementById('vv-unit').textContent = (monedaActual||'') + ' por USDT · hoy';
+  document.getElementById('vv-res-label').textContent = 'Margen sobre el oficial';
+  inp.addEventListener('input', calcular);
+  if(!url){ if(dato) dato.textContent='sin fuente para este país'; return; }
+  fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+    if(WIDGET === 'coingecko'){ oficial = j.tether && j.tether[String(monedaActual).toLowerCase()]; }
+    else { oficial = j.rates && j.rates[monedaActual]; }
+    if(dato) dato.textContent = oficial ? ('hoy · ' + oficial.toFixed(2)) : 'sin dato';
+    if(inp && oficial) calcular();
+  }).catch(function(){
+    if(dato) dato.textContent = 'fuente no disponible hoy';
+    if(margen) margen.textContent = '— (no se inventa un dato)';
+  });
+}
+
+function mostrarPais(){
+  var geo = select.value;
+  if(!geo){ card.innerHTML = '<p style="color:var(--muted)">Selecciona un país para ver tu dolor concreto, la fuente oficial y el dato en vivo.</p>'; return; }
+  var p = PAISES.find(function(x){ return x.geo === geo; });
+  if(!p) return;
+  card.innerHTML = '<h3>Tu caso en ' + escH(geo) + '</h3>' +
+    '<p style="color:var(--muted)">' + escH(p.prueba) + '</p>' +
+    (p.fuenteUrl ? '<p class="fuente"><b>Fuente oficial:</b> ' + escH(p.fuenteLabel) + '<br><a href="' + escH(p.fuenteUrl) + '" target="_blank" rel="noopener">' + escH(p.fuenteUrl) + '</a></p>' : '') +
+    '<div class="gates"><span class="gp">Vigencia ✅ verificada en vivo</span></div>';
+  document.getElementById('dx-hint').textContent = 'Responde 3 preguntas sobre tu caso en ' + geo + ' y recibe un veredicto orientativo. La comprobación final se hace contra la fuente oficial citada de ' + geo + ' — si no hay dato, se dice que no hay dato.';
+  cargarVivo(geo);
+}
+if(select) select.addEventListener('change', mostrarPais);
+
+var dx = document.getElementById('wdx-btn');
+if(dx){ dx.addEventListener('click', function(){
+  var n = document.querySelectorAll('.wdx:checked').length;
+  var r = document.getElementById('wdx-res');
+  var v = VEREDICTOS[n] || VEREDICTOS[2];
+  r.innerHTML = v;
+  r.className = 'w-res ' + (n === 0 ? 'ok' : (n === 1 ? 'mid' : 'bad'));
+}); }
+</script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/etiqueta-ultraprocesados-global/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/espana/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en España</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en España:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/rampa/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Rampa</a> <a href="/negocios/inflacion-real-por-pais-mundo/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Inflación real por país (Banco Mundial)</a> <a href="/negocios/neto-colombia-colombia/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">CajaClara</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-13">2026-08-13</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

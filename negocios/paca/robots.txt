@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paca.attenciona.com/llms.txt

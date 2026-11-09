@@ -1,0 +1,42 @@
+# SSL Security
+
+SSL Security is a free SSL/HTTPS/DNS diagnostic for any public domain, plus a paid, environment-specific fix plan. It is operated by attenciona (Holding), Spain, at https://attenciona.com/negocios/ssl-security/ and available in Spanish, English, French, German, Italian and Portuguese.
+
+## What the free check actually does (server-side, live)
+
+- Real TLS handshake to port 443: negotiated protocol and cipher, trust verification, hostname/SAN match, self-signed detection.
+- Certificate: issuer and CA family, validity dates, days remaining, key type, full intermediate chain as served.
+- Whether the server still accepts TLS 1.0 and TLS 1.1 (deprecated by all browsers since 2020, forbidden by PCI DSS).
+- Redirect chain starting from http:// (does it end on https, and in how many hops).
+- The other host form (www vs apex): resolution and certificate validity.
+- Response headers: HSTS (max-age, includeSubDomains, preload), server, x-powered-by.
+- Mixed content: resources actually loaded over http (script/img/iframe/link rel=stylesheet/url() in CSS) — plain http links are not counted, to avoid false positives.
+- Stack detection: CDN (Cloudflare, Fastly, CloudFront, Vercel, Netlify, Akamai, Sucuri), server (nginx, Apache, LiteSpeed, IIS, Caddy), CMS (WordPress, Shopify, Wix, Squarespace, PrestaShop, Joomla, Drupal, Webflow), DNS provider and hosting panel (cPanel, Plesk).
+- Mail DNS on the registrable zone: MX, SPF, DMARC (including p=none detection), DKIM on 14 common selectors, CAA.
+
+## What it does NOT do
+
+- It never asks for passwords, API keys or any access to the user's server or DNS panel, and it does not change anything on their behalf. It prepares the exact values and verifies the result.
+- It does not issue certificates and does not replace the hosting provider.
+- It refuses domains that resolve to private or link-local addresses.
+- Where a value cannot be established with certainty (for example the SPF include of an unrecognised mail provider), it is flagged for review instead of being invented.
+
+## Pricing
+
+- Free: full diagnostic, no signup, no email, nothing stored.
+- Fix plan: 1 USD one-time per domain, paid in crypto via NOWPayments. Includes step-by-step instructions for the detected environment, ready-to-use config files (.htaccess, nginx, web.config), DNS records to paste, and unlimited re-checks for 30 days to confirm the problem is actually gone.
+
+## Why this matters in 2026 (verified facts)
+
+- CA/Browser Forum ballot SC-081v3 (passed April 2025) schedules public TLS certificate maximum validity down from 398 days to 200 days from 15 March 2026, 100 days from March 2027 and 47 days from March 2029.
+- CSC research published in July 2025, based on more than 100,000 global SSL certificate records, found as many as 40% of enterprises at risk of unexpected outages from out-of-date SSL certificates.
+
+## Sources
+
+1. https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/ (CA/Browser Forum — Ballot SC-081v3)
+2. https://www.sectigo.com/blog/200-day-ssl-certificate-expiration-risk (Sectigo — 200-day validity from 15 March 2026)
+3. https://www.cscglobal.com/service/press/csc-research-finds-enterprises-at-risk-ssl-expiration/ (CSC — 40% of enterprises at risk, July 2025)
+
+## Editorial responsibility
+
+attenciona (Holding), Spain. SSL Security is a diagnostic tool, not security or legal advice.

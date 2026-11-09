@@ -1,0 +1,143 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modulo 06 — De la simulacion al papel (sin dinero real)</title>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --borde:#30363d; --texto:#c9d1d9; --acento:#58a6ff; }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--texto); font-family:'Segoe UI', Arial, sans-serif; margin:0; line-height:1.7; }
+a { color:var(--acento); }
+.wrap { max-width:820px; margin:0 auto; padding:40px 24px 80px; }
+header.top { text-align:center; padding:36px 24px; border-bottom:1px solid var(--borde);
+             background:radial-gradient(ellipse at top, rgba(88,166,255,0.08), transparent 60%); }
+header.top .logo { font-size:1.8em; font-weight:900; color:#fff; }
+header.top a.volver { display:inline-block; margin-top:10px; font-size:0.9em; }
+h1, h2, h3 { color:#fff; }
+h1 { font-size:1.9em; }
+h2 { font-size:1.4em; border-left:4px solid var(--acento); padding-left:12px; margin-top:2em; }
+h3 { font-size:1.15em; margin-top:1.6em; }
+pre { background:#0d1117; border:1px solid var(--borde); border-radius:8px; padding:16px; overflow-x:auto; }
+code { background:#1c2128; padding:2px 6px; border-radius:4px; font-size:0.92em; }
+pre code { background:none; padding:0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; }
+th, td { padding:8px 10px; border:1px solid var(--borde); text-align:left; }
+th { background:#1c2128; }
+blockquote { border-left:3px solid var(--acento); margin:16px 0; padding:6px 16px; color:#8b949e; background:var(--panel); border-radius:0 8px 8px 0; }
+.nav-modulos { display:flex; justify-content:space-between; margin-top:50px; padding-top:20px; border-top:1px solid var(--borde); font-size:0.95em; }
+.indice { display:grid; gap:12px; margin-top:24px; }
+.indice a { display:block; background:var(--panel); border:1px solid var(--borde); border-radius:8px;
+            padding:16px 20px; text-decoration:none; color:var(--texto); }
+.indice a:hover { border-color:var(--acento); }
+.indice .num { color:var(--acento); font-weight:800; margin-right:10px; }
+.aviso { background:#2d1a1a; border:1px solid #e74c3c; border-radius:8px; padding:16px 20px; margin:24px 0; font-size:0.9em; color:#f0b3b3; }
+footer { text-align:center; padding:30px; color:#8b949e; font-size:0.85em; border-top:1px solid var(--borde); }
+</style>
+<link rel="canonical" href="https://www.attenciona.com/strategycheck/curso/modulo-06.html">
+<meta name="description" content="Modulo 06 — De la simulación al papel (sin dinero real) Objetivo del modulo Dar el paso siguiente a una idea que superó el checklist del Módulo 05, sin…">
+<meta property="og:title" content="Modulo 06 — De la simulacion al papel (sin dinero real)">
+<meta property="og:description" content="Modulo 06 — De la simulación al papel (sin dinero real) Objetivo del modulo Dar el paso siguiente a una idea que superó el checklist del Módulo 05, sin…">
+<meta property="og:url" content="https://www.attenciona.com/strategycheck/curso/modulo-06.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modulo 06 — De la simulacion al papel (sin dinero real)">
+<meta name="twitter:description" content="Modulo 06 — De la simulación al papel (sin dinero real) Objetivo del modulo Dar el paso siguiente a una idea que superó el checklist del Módulo 05, sin…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head><body>
+<header class="top"><div class="logo">⚖️ STRATEGYCHECK</div>
+<a class="volver" href="../index.html">&larr; Volver a la pagina principal</a></header>
+<div class="wrap"><h1>Modulo 06 — De la simulación al papel (sin dinero real)</h1>
+<h2>Objetivo del modulo</h2>
+<p>Dar el paso siguiente a una idea que superó el checklist del Módulo 05,
+<strong>sin arriesgar un solo euro real todavía</strong>. Este módulo cubre paper
+trading (simulación en tiempo real con datos en vivo) y gestión de riesgo
+básica — nunca ejecución de órdenes reales.</p>
+<blockquote>
+<p><strong>Advertencia explícita:</strong> este módulo NO cubre trading con dinero real
+ni conexión a cuentas reales de ningún exchange o bróker. Todo lo que
+aprendas aquí sigue siendo 100% simulado. Dar el salto a dinero real es
+una decisión personal, posterior y fuera del alcance de este curso.</p>
+</blockquote>
+<h2>Backtest vs paper trading: la diferencia que importa</h2>
+<p>El backtest (módulos 1-5) prueba tu estrategia contra datos <strong>históricos</strong>
+— el mercado ya sabe lo que pasó, así que es fácil sobreajustar sin darte
+cuenta. El paper trading prueba la misma estrategia contra datos <strong>en
+vivo, según van llegando</strong>, sin usar dinero real. Es el filtro final antes
+de siquiera plantearte una cuenta real: si la estrategia se rompe en paper
+trading pese a haber sido "VALE LA PENA EXPLORAR" en backtest, acabas de
+descubrir gratis un problema que te habría costado dinero real.</p>
+<p>Motivos típicos por los que una estrategia buena en backtest falla en
+paper trading:
+- <strong>Look-ahead bias no detectado</strong>: el backtest usó sin querer información
+  que no estaría disponible en tiempo real (revisa el Bloque 3 del
+  Módulo 03: la señal de la vela N se ejecuta en N+1, nunca en N).
+- <strong>Slippage real</strong>: el precio al que se ejecuta la orden en vivo no es
+  exactamente el de cierre que usa el backtest.
+- <strong>Latencia</strong>: entre que la señal se genera y la orden se envía, el
+  precio ya se movió.
+- <strong>Sobreajuste (overfitting)</strong>: la estrategia se ajustó, sin darse
+  cuenta, al ruido específico del histórico probado (ver Módulo 01).</p>
+<h2>Cómo montar un paper trading simple con ccxt en modo sandbox/testnet</h2>
+<p>La mayoría de exchanges grandes ofrecen un entorno de pruebas (testnet)
+con dinero ficticio y precios reales o casi reales. Ejemplo con Binance
+Testnet vía <code>ccxt</code>:</p>
+<pre><code class="language-python">import ccxt
+
+exchange = ccxt.binance({
+    &quot;apiKey&quot;: &quot;TU_API_KEY_DE_TESTNET&quot;,   # nunca la de tu cuenta real
+    &quot;secret&quot;: &quot;TU_SECRET_DE_TESTNET&quot;,
+    &quot;enableRateLimit&quot;: True,
+})
+exchange.set_sandbox_mode(True)  # fuerza el modo testnet/sandbox
+
+# A partir de aqui, exchange.create_order(...) opera con dinero FICTICIO
+# del testnet, nunca con tu cuenta real.
+</code></pre>
+<p>Puntos clave de seguridad:
+- Las claves de testnet son <strong>distintas</strong> a las de tu cuenta real y se
+  generan en un portal aparte (revisa la documentación de cada exchange:
+  buscar "testnet" + nombre del exchange).
+- <code>set_sandbox_mode(True)</code> no es infalible en todos los exchanges/versiones
+  de ccxt — verifica siempre que la orden aparece en el panel del testnet,
+  nunca en tu cuenta de producción, antes de automatizar nada.
+- Nunca reutilices en testnet las mismas claves que usas (o usarías) en
+  tu cuenta real.</p>
+<h2>Gestión de riesgo básica antes de pensar en dinero real</h2>
+<p>Incluso en simulación, practica desde ya estas reglas — son las que
+separan a alguien que sobrevive en trading real de alguien que no:</p>
+<ul>
+<li><strong>Tamaño de posición</strong>: nunca arriesgues más de un 1-2% de tu capital
+  total en una sola operación. Esto se calcula ANTES de entrar, no después.</li>
+<li><strong>Stop-loss definido de antemano</strong>: si no sabes a qué precio saldrías
+  con pérdida antes de entrar, no has terminado de diseñar la estrategia.</li>
+<li><strong>Número máximo de posiciones simultáneas</strong>: limita cuánto capital total
+  puede estar expuesto a la vez, incluso si varias señales se disparan
+  el mismo día.</li>
+<li><strong>Diario de operaciones</strong>: registra cada trade (real o de papel) con la
+  razón de entrada y salida. Es la única forma de detectar si estás
+  desviándote de tu propia estrategia por impulso.</li>
+</ul>
+<h2>Ejercicio final del curso</h2>
+<ol>
+<li>Toma la idea que mejor puntuó en tu checklist del Módulo 05.</li>
+<li>Móntala en modo paper trading/testnet siguiendo el patrón de arriba
+   (sin claves reales, sin dinero real).</li>
+<li>Déjala correr al menos 2-3 semanas registrando cada señal en un diario.</li>
+<li>Compara el resultado del paper trading contra lo que predijo el
+   backtest original: ¿coinciden las métricas aproximadamente, o hay una
+   diferencia que apunta a alguno de los 4 motivos de la sección anterior?</li>
+</ol>
+<p>Si tras este ejercicio la estrategia se sostiene, has hecho el trabajo que
+el 90% de la gente que "programa un bot con IA en una tarde" se salta por
+completo. Lo que decidas hacer a partir de aquí —incluida la decisión de
+operar con dinero real— es responsabilidad tuya y queda fuera del alcance
+de esta herramienta y este curso.</p>
+<hr />
+<p><em>Anterior: 05 — El veredicto: cuándo tirar una estrategia a la basura.</em> · <em>Fin del curso.</em></p><div class="nav-modulos"><a href="modulo-05.html">&larr; El veredicto: cuando tirar una estrategia a la basura</a><a href="index.html">Fin del curso &middot; Indice &rarr;</a></div></div>
+<footer>StrategyCheck &middot; un proyecto de Attenciona &middot; curso gratuito, sin registro &middot;
+no es asesoramiento financiero</footer></body></html>

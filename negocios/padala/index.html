@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/padala/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Padala · Cuánto se queda el intermediario de tu remesa, de verdad</title>
+<meta name="description" content="Padala compara el coste real (comisión + margen de cambio) de enviar dinero a Filipinas usando los datos oficiales del Banco Mundial. Sin registro." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- PROTOTIPO LOCAL — noindex a propósito: no está publicado, es una prueba de concepto Fase 3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Negocio Fase 3 nº2 (tras Zafra). Sistema de diseño obligatorio: pareja tipográfica y técnica de logo
+    DISTINTAS a las del negocio inmediatamente anterior (Zafra = Cálido-redondeado + Pictograma literal).
+    Pareja: Editorial-serif (Fraunces + Inter) — comparación, credibilidad profesional (tabla del sistema de diseño).
+    Técnica de logo: Monograma/badge — "siguiente en la rotación" según el propio sistema de diseño, sin usar todavía.
+    Investigación de audiencia real (regla obligatoria antes de diseñar, misma metodología que Puente/Engranaje):
+    referencia citada en landing-architect.md — GCash (la fintech que de verdad usan los OFW y sus familias en
+    Filipinas) usa azul marino. Se toma el AZUL MARINO como color ancla real de la audiencia; la tipografía
+    NO copia la de GCash (Proxima Soft, redondeada) a propósito, porque esa familia (cálido-redondeado) ya la
+    ocupó Zafra el negocio anterior — la paleta es inspirada, no una clonación literal del sistema de GCash.
+  */
+  :root{
+    --bg:#fbfbfd; --card:#ffffff; --line:#e3e6ee; --line2:#d7dbe8;
+    --txt:#131a2b; --muted:#5b6478; --soft:#8b93a7;
+    --marino:#0f2d5c; --marino-d:#0a1f42; --oro:#c9973e; --oro-l:#fbf3e2;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp{font-family:'Fraunces','Inter',serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{max-width:100%}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;font-family:'Fraunces',serif}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px;font-weight:600;font-family:'Inter',sans-serif}
+  nav a:hover{color:var(--marino)}
+
+  .badge-fase{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--marino-d);background:var(--oro-l);border:1px solid #ecd8ab;
+    border-radius:999px;padding:6px 13px;margin-bottom:20px;font-family:'Inter',sans-serif}
+
+  .hero{padding:56px 0 30px;max-width:700px}
+  h1{font-size:clamp(30px,5vw,45px);line-height:1.14;margin:0 0 18px;font-weight:600;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--marino)}
+  .lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px;max-width:560px;font-family:'Inter',sans-serif}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--marino);color:#fff;font-weight:700;
+    font-size:15.5px;padding:14px 24px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;
+    transition:.15s;font-family:'Inter',sans-serif}
+  .btn:hover{background:var(--marino-d)}
+  .fud{font-size:13.5px;color:var(--soft);font-family:'Inter',sans-serif}
+
+  section{padding:38px 0}
+  .section-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--oro);margin:0 0 10px;font-family:'Inter',sans-serif}
+  h2{font-size:clamp(21px,3vw,28px);margin:0 0 16px;font-weight:600;letter-spacing:-.01em}
+
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pas .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .pas .card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--oro);margin-bottom:8px;font-family:'Inter',sans-serif}
+  .pas .card p{margin:0;color:var(--txt);font-size:14.5px;font-family:'Inter',sans-serif}
+  @media(max-width:760px){.pas{grid-template-columns:1fr}}
+
+  .demo{background:var(--marino-d);color:#fff;border-radius:20px;padding:30px 28px;margin-top:8px}
+  .demo .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border-radius:999px;padding:5px 11px;margin-bottom:14px;font-family:'Inter',sans-serif}
+  .demo h3{margin:0 0 14px;font-size:19px;font-weight:600}
+  .demo-row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px;font-family:'Inter',sans-serif}
+  .demo-field label{display:block;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:6px}
+  .demo-field select,.demo-field input{font:inherit;font-size:14px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff;width:120px}
+  .demo-field select option{color:#111}
+  .demo-btn{background:var(--oro);color:#2b1f04;font-weight:700;border:none;border-radius:10px;padding:11px 18px;
+    cursor:pointer;font-size:14px;font-family:'Inter',sans-serif}
+  .demo-out{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:12px;padding:4px 18px 16px;font-size:14px;font-family:'Inter',sans-serif}
+  .demo-out table{width:100%;border-collapse:collapse;margin-top:8px}
+  .demo-out th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.55);padding:8px 6px;font-weight:600}
+  .demo-out td{padding:9px 6px;border-top:1px solid rgba(255,255,255,.12);font-size:14px}
+  .demo-out tr.best td{color:#ffe4a8;font-weight:700}
+  .demo-note{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;line-height:1.55}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;font-family:'Inter',sans-serif}
+  .box h3{margin:0 0 12px;font-size:16px;font-family:'Fraunces',serif;font-weight:600}
+  .box ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .box li{margin:6px 0}
+
+  .honest{background:var(--oro-l);border:1px solid #ecd8ab;border-radius:var(--radius);padding:20px 22px;font-size:14px;color:#4a3a14;font-family:'Inter',sans-serif}
+  .honest b{color:#2e2409}
+
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0;font-family:'Inter',sans-serif}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+  .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-family:'Inter',sans-serif}
+  @media(max-width:760px){.gates{grid-template-columns:1fr 1fr}}
+  .gate{border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:12.5px;text-align:center}
+  .gate .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+  .gate.ok .st{color:#0f8a45} .gate.pend .st{color:#b6791a}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 50px;color:var(--soft);font-size:12.5px;font-family:'Inter',sans-serif}
+  footer a{color:var(--marino);text-decoration:underline}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <!-- Monograma/badge: "P" encerrada en un sello — lógica funcional: un sello = referencia oficial/verificada -->
+        <path d="M17 2 L29 8 V18 C29 25 24 30 17 32 C10 30 5 25 5 18 V8 Z" fill="#0f2d5c"/>
+        <path d="M17 4.4 L26.6 9.2 V18 C26.6 23.8 22.4 28 17 29.7 C11.6 28 7.4 23.8 7.4 18 V9.2 Z" fill="none" stroke="#c9973e" stroke-width="1.1"/>
+        <text x="17" y="22.5" font-family="Fraunces, serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">P</text>
+      </svg>
+      Padala
+    </div>
+    <nav><a href="#como">Cómo funciona</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge-fase">◈ Attenciona · Fase 3 · prototipo</span>
+    <h1>¿Sabes cuánto se está quedando el intermediario de tu <em>padala</em>?</h1>
+    <p class="lead">Padala compara el coste real de enviar dinero a Filipinas —comisión y margen de cambio
+      juntos, no solo lo que anuncian— usando los datos oficiales del Banco Mundial. Para que la familia
+      reciba más de lo que ya ganaste con esfuerzo.</p>
+    <div class="cta-row">
+      <a class="btn" href="#como">Comparar el coste real →</a>
+      <span class="fud">Sin registro · dato oficial del Banco Mundial · no pide tus datos bancarios</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">El problema</p>
+    <div class="pas">
+      <div class="card"><b>Problema</b><p>Cada proveedor anuncia "comisión baja" o "envío gratis", pero esconde su margen en el tipo de cambio que aplica — el coste real casi nunca es el que ves primero.</p></div>
+      <div class="card"><b>Se agrava</b><p>Desde 2026 hay un impuesto nuevo del 1% en EEUU a las remesas en efectivo, y algunos proveedores (como Tigo Money en otros países) directamente dejan de operar sin aviso.</p></div>
+      <div class="card"><b>Solución</b><p>Un comparador con el dato oficial del corredor EEUU-Filipinas: comisión + margen de cambio, en un solo número, gratis y en segundos.</p></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <p class="section-tag">Cómo funciona</p>
+    <h2>Un dato oficial, no el marketing del proveedor</h2>
+    <div class="demo">
+      <span class="tag">Vista previa ilustrativa</span>
+      <h3>Elegí cuánto enviás</h3>
+      <div class="demo-row">
+        <div class="demo-field"><label>Monto</label>
+          <select id="monto"><option value="200">200 USD</option><option value="500">500 USD</option></select>
+        </div>
+        <button class="demo-btn" id="calc">Comparar coste real</button>
+      </div>
+      <div class="demo-out" id="out">
+        <table><thead><tr><th>Proveedor</th><th>Coste total</th><th>Te llega</th></tr></thead>
+          <tbody id="tbody"><tr><td colspan="3" style="color:rgba(255,255,255,.6)">Elegí un monto y tocá "Comparar" para ver el ejemplo.</td></tr></tbody></table>
+      </div>
+      <p class="demo-note">Esta tabla es una <b>maqueta ilustrativa</b> para revisar el concepto en local: los
+        proveedores y cifras son de ejemplo, no una llamada real a ninguna API (los navegadores bloquean fetch
+        a APIs externas desde un archivo local <code>file://</code>). La integración real usaría la
+        <b>World Bank Remittance Prices Worldwide API</b> (<code>remittanceprices.worldbank.org/api</code>,
+        gratis, uso comercial libre citando la fuente, 367 corredores) — pendiente validar en un entorno con
+        servidor que el corredor EEUU→Filipinas esté cubierto con el detalle de proveedores necesario.</p>
+    </div>
+  </section>
+
+  <section class="honest">
+    <b>Aviso honesto:</b> el dato del Banco Mundial se actualiza periódicamente (no en vivo al segundo) y
+    puede no reflejar promociones puntuales de un proveedor. Sirve para comparar el coste estructural real,
+    no para cazar el descuento de una campaña de un día.
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="box">
+        <h3>Beneficios (para el usuario)</h3>
+        <ul>
+          <li>Ver el coste total real, no solo la comisión anunciada</li>
+          <li>Enterarte de cambios como el nuevo impuesto del 1% antes de elegir proveedor</li>
+          <li>Comparar sin dar tus datos bancarios ni personales</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Características (qué hace)</h3>
+        <ul>
+          <li>Consulta el dato oficial del corredor EEUU-Filipinas (Banco Mundial)</li>
+          <li>Suma comisión + margen de cambio en un coste total único</li>
+          <li>Sin registro, sin guardar tu remesa</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Quién lo construye</p>
+    <h2>Autoridad, en honesto</h2>
+    <p style="color:var(--muted);max-width:640px;font-family:'Inter',sans-serif">Padala no tiene un fundador
+      humano con años en remesas — nace del motor de venture-building autónomo de <b>Attenciona (Fase 3)</b>,
+      que exige pasar 5 puertas de calidad (investigación real, diseño no genérico, monetización implementable,
+      legal y fiscal) antes de operar en producción. Es un producto nuevo: <b>todavía no tiene usuarios ni
+      cifras que mostrar</b> — en cuanto las tenga, aparecerán aquí con enlace verificable, nunca inventadas.</p>
+  </section>
+
+  <section id="precios">
+    <p class="section-tag">Precios</p>
+    <h2>Gratis para comparar, cripto para las alertas</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Comparación del coste real de hoy, 1 corredor</li>
+          <li>Suma de comisión + margen de cambio</li>
+          <li>Sin registro</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Pro (boceto — no conectado en este prototipo)</h3>
+        <ul>
+          <li>Alerta cuando el coste total baja de un umbral</li>
+          <li>Varios corredores guardados a la vez</li>
+          <li>Pago único en cripto (USDT/USDC/BTC/ETH — sin Solana, misma regla que el resto del holding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <p class="section-tag">Preguntas</p>
+    <h2>Antes de que preguntes</h2>
+    <details><summary>¿Es un tipo de cambio en vivo, al segundo?</summary><p>No. Es el dato oficial del Banco Mundial, que se actualiza periódicamente — sirve para comparar el coste estructural de cada proveedor, no para cazar una promoción de un día concreto.</p></details>
+    <details><summary>¿Cubre a mi proveedor favorito?</summary><p>En este prototipo se ilustra el corredor EEUU→Filipinas. La cobertura real de proveedores específicos depende de qué reporte el Banco Mundial para ese corredor — pendiente de confirmar en la versión con servidor.</p></details>
+    <details><summary>¿Por qué cobráis en cripto y no en pesos filipinos?</summary><p>Porque así el pago de la versión Pro no depende de tarjetas internacionales ni de bancos locales — la misma razón por la que muchos de los negocios de Attenciona cobran en USDT/USDC.</p></details>
+    <details><summary>¿Guardáis los datos de mi remesa?</summary><p>No. La consulta es de comparación de costes públicos, no pide ni guarda información de tu transferencia real.</p></details>
+  </section>
+
+  <section>
+    <p class="section-tag">Estado real (5 puertas de Fase 3)</p>
+    <div class="gates">
+      <div class="gate ok"><span class="st">✓ hecho</span>Investigación<br>(World Bank Remittance Prices API, fuente real)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Diseño<br>(audiencia investigada — referencia GCash citada)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Monetización<br>(afiliación por comparativa — especificación construible)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Legal<br>(consentimiento + privacidad + aviso legal enlazados)</div>
+    </div>
+  </section>
+
+  <footer>
+    Prototipo local de Fase 3 — no publicado, no indexado, no conectado a producción.
+    Fuentes: <a href="https://remittanceprices.worldbank.org/" target="_blank" rel="noopener">World Bank Remittance Prices Worldwide</a> (367 corredores, gratis, uso comercial libre) ·
+    <a href="https://www.pna.gov.ph/articles/1273028" target="_blank" rel="noopener">PNA — remesas feb-2026</a> ·
+    <a href="https://gulfnews.com/world/asia/philippines/philippines-50-discount-on-ofw-remittance-fees-set-what-happens-next-1.1732266785729" target="_blank" rel="noopener">Gulf News — recorte de comisiones 2026</a>.
+    <br><br>
+    Legal: <a href="../privacidad.html" rel="noopener">Privacidad</a> · <a href="../aviso-legal.html" rel="noopener">Aviso legal · Responsable editorial (Art. 50(4) AI Act)</a>.
+    <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=c8b4d6da3b" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+<script>
+  // Solo ilustrativo: números de ejemplo fijos por monto, para revisar el concepto sin llamar a ninguna API real.
+  const EJEMPLO = {
+    '200': [
+      {p:'Proveedor A (banco)', coste:'9.40 USD (4.7%)', llega:'190.60 USD equiv.'},
+      {p:'Proveedor B (digital)', coste:'3.20 USD (1.6%)', llega:'196.80 USD equiv.', best:true},
+      {p:'Proveedor C (efectivo)', coste:'11.00 USD (5.5%)', llega:'189.00 USD equiv.'}
+    ],
+    '500': [
+      {p:'Proveedor A (banco)', coste:'19.50 USD (3.9%)', llega:'480.50 USD equiv.'},
+      {p:'Proveedor B (digital)', coste:'6.50 USD (1.3%)', llega:'493.50 USD equiv.', best:true},
+      {p:'Proveedor C (efectivo)', coste:'24.00 USD (4.8%)', llega:'476.00 USD equiv.'}
+    ]
+  };
+  document.getElementById('calc').addEventListener('click', () => {
+    const monto = document.getElementById('monto').value;
+    const filas = EJEMPLO[monto];
+    document.getElementById('tbody').innerHTML = filas.map(f =>
+      `<tr class="${f.best?'best':''}"><td>${f.p}${f.best?' ✓ mejor opción':''}</td><td>${f.coste}</td><td>${f.llega}</td></tr>`
+    ).join('') + `<tr><td colspan="3" style="font-size:11.5px;color:rgba(255,255,255,.5);border-top:none">ejemplo ilustrativo, no dato real en vivo</td></tr>`;
+  });
+</script>
+<div id="consent" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:99;max-width:640px;margin:0 auto;background:#1c1714;color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.32);font-family:inherit;font-size:13px;line-height:1.5">
+  <p style="margin:0 0 10px;color:rgba(255,255,255,.78)">Este prototipo no carga servicios de terceros (analítica, enlaces de afiliado) hasta que consientas. Tu elección se guarda en este navegador. Más en <a href="../privacidad.html" style="color:#f2b705;text-decoration:underline">privacidad</a> y <a href="../aviso-legal.html" style="color:#f2b705;text-decoration:underline">aviso legal</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="consent-ok" style="background:#e8590c;color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Aceptar</button>
+    <button id="consent-no" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Solo lo necesario</button>
+  </div>
+</div>
+<script>
+  (function(){ var k='attenciona_consent'; var el=document.getElementById('consent'); var estado=null; try{estado=localStorage.getItem(k);}catch(e){}
+    function cerrar(v){ try{localStorage.setItem(k,v);}catch(e){} el.remove(); }
+    var ok=document.getElementById('consent-ok'), no=document.getElementById('consent-no');
+    if(ok) ok.addEventListener('click',function(){cerrar('ok');});
+    if(no) no.addEventListener('click',function(){cerrar('no');});
+    if(estado) el.remove();
+  })();
+</script>
+</body>
+</html>

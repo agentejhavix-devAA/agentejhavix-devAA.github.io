@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bano.attenciona.com/llms.txt

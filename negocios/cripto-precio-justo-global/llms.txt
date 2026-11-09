@@ -1,0 +1,3 @@
+# Cripto-precio justo · global
+Compara el precio P2P de tu USDT contra el precio internacional de CoinGecko, en tu país. Cubre: Argentina, Venezuela, Nigeria, Brasil, Colombia, Perú, Filipinas, México.
+Cada país cita su fuente oficial. No es asesoría.

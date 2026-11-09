@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://espanolas.attenciona.com/llms.txt

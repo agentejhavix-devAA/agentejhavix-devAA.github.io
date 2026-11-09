@@ -1,0 +1,32 @@
+# Paca
+
+Paca es una herramienta gratuita en el navegador que comprueba si tu envase cumple el Reglamento (UE) 2025/40 sobre envases y residuos de envases (PPWR). Corre íntegramente en el navegador (ningún dato sale del dispositivo).
+
+## Datos clave (verificados el 14 de agosto de 2026)
+
+- Reglamento (UE) 2025/40 (PPWR), publicado en el DOUE el 22/01/2025, en vigor desde el 11/02/2025.
+- Aplicación general desde el 12 de agosto de 2026: todo envase introducido en el mercado de la UE debe cumplirlo.
+- Desde el 12.08.2026: límites de PFAS en envases en contacto con alimentos (25 ppb cualquier PFAS, 250 ppb suma, 50 ppm incl. poliméricas), metales pesados ≤ 100 mg/kg (plomo, cadmio, mercurio, cromo VI), declaración UE de conformidad (art. 39), documentación técnica, etiquetado del material (art. 12) y custodia documental de 5 años (un solo uso) / 10 años (reutilizables).
+- Registro de productor (REPP): un productor por envase (fabricante, envasador o importador establecido en la UE o representante autorizado), 2026–2027 por Estado miembro.
+- Sistemas de depósito (SDDR) de botellas de plástico y latas de bebidas con 90% de recogida separada: 01/01/2029.
+- Todos los envases reciclables en 2030 (art. 7: 30% contenido reciclado en PET de bebidas) y reciclables en su totalidad en 2035.
+- Sanciones fijadas por cada Estado miembro (en España, régimen sancionador de la Ley 7/2022 de residuos).
+- Dolor de fondo: la UE generó 188,7 kg de residuos de envases por habitante en 2021 (récord) y 177,8 kg en 2023 (Eurostat).
+
+## Fuentes
+
+1. https://eur-lex.europa.eu/eli/reg/2025/40/oj (Reglamento (UE) 2025/40 — EUR-Lex)
+2. https://www.boe.es/buscar/doc.php?id=DOUE-Z-2026-70035 (Comisión Europea — Documento de orientación PPWR)
+3. https://eur-lex.europa.eu/ES/legal-content/summary/packaging-and-packaging-waste-from-2026.html (EUR-Lex — resumen)
+4. https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Packaging_waste_statistics (Eurostat)
+5. https://www.miteco.gob.es/es/calidad-y-evaluacion-ambiental/temas/prevencion-y-gestion-residuos/ (MITECO)
+6. https://www.taric.es/noticias/2026-08-12-reglamento-envases/ (Taric — aplicación desde el 12/08/2026)
+
+## Precios
+
+- Gratis: comprobador de brecha (3 preguntas) + estado en vigor + checklist de 12 términos del sector + fuentes oficiales.
+- Pro (22 USD pago único, cripto vía NOWPayments): Paca Stamp imprimible (PDF), texto para el equipo de cumplimiento, guía de registro de productor (REPP) por Estado miembro, checklist descargable 2026–2035, desbloqueo permanente.
+
+## No es asesoría
+
+Paca es una herramienta educativa basada en el Reglamento (UE) 2025/40. No es asesoría legal ni técnica. Responsable editorial: attenciona (Holding), España.

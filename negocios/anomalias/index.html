@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlertaGasto — detecta la operación sospechosa antes de que…</title>
+<meta name="description" content="Gastos raros, montos fuera de rango, proveedores nuevos: detecta la anomalía contable antes de que duela. Declaración anual: 30/04/2027.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B1220">
+<link rel="canonical" href="https://www.attenciona.com/negocios/anomalias/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230B1220%22%2F%3E%3Cg%20transform%3D%22translate(4%2C4)%22%3E%3Cpath%20d%3D%22M12%203.5l8.5%2015h-17z%22%20stroke%3D%22%234F8CFF%22%20stroke-width%3D%221.8%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12%2010v4M12%2016.6v.4%22%20stroke%3D%22%234F8CFF%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<style>
+/* ============================================================
+   AlertaGasto · sector Fintech · Detección
+   Identidad: triángulo de alerta en azul noche. Sello funcional: Alert Stamp.
+   Paleta finNoche. Fuentes de sistema (sin CDN). Cero emojis.
+   ============================================================ */
+  :root{
+    --paper:#0B1220; --surface:#111A2C; --surface-2:#1A2740;
+    --ink:#EAF0FA; --ink-2:#93A4BF; --line:#22304A; --line-2:#2F4264;
+    --brand:#4F8CFF; --brand-2:#2F6BEA; --brand-wash:#0F1F45;
+    --steel:#2FCF9F; --steel-2:#1FB385; --steel-wash:#0D2A20;
+    --signal:#8AB4FF; --ok:#3EDC93; --ok-wash:#0D2A20; --warn:#F5B840; --warn-wash:#33240F;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 14px 40px rgba(0,0,0,.4);
+    --maxw:1160px; --r:16px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.18rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.14; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2rem,4.4vw,3.05rem); letter-spacing:-.015em}
+  h2{font-size:clamp(1.5rem,2.8vw,2.05rem)}
+  h3{font-size:1.12rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0 0 12px}
+  a{color:inherit}
+  img,svg{display:block}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .num{font-variant-numeric:tabular-nums}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); border:1px solid var(--line-2); padding:7px 13px; border-radius:999px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; text-decoration:none; font-family:var(--sans)}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand); color:#fff; box-shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 22px var(--brand-wash)}
+  .btn-brand:hover{background:var(--brand-2)}
+  .btn-steel{background:var(--steel); color:#fff}
+  .btn-steel:hover{background:var(--steel-2)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .btn-sm{height:40px; padding:0 16px; font-size:var(--t-sm)}
+  .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+  .skip:focus{position:fixed; left:12px; top:12px; width:auto; height:auto; z-index:100; background:var(--surface); color:var(--ink); padding:10px 14px; border-radius:8px; box-shadow:var(--shadow)}
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+
+  header.nav{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--disp); font-weight:700; font-size:19px; text-decoration:none; color:var(--ink)}
+  .brand .mark{width:30px; height:30px; border-radius:8px; background:var(--surface-2); display:grid; place-items:center; border:1px solid var(--line-2)}
+  .brand .mark svg{width:18px; height:18px}
+  nav.links{display:flex; align-items:center; gap:4px}
+  nav.links a{color:var(--ink-2); text-decoration:none; font-size:14px; font-weight:500; padding:8px 12px; border-radius:999px; transition:background .12s,color .12s}
+  nav.links a:hover{color:var(--ink); background:var(--surface-2)}
+  @media (max-width:760px){ nav.links a:not(.btn){display:none} }
+
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .hero h1{margin:18px 0 16px}
+  .hero h1 .rd{color:var(--brand); text-shadow:0 0 24px var(--brand-wash)}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6; max-width:56ch}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:20px; font-size:var(--t-sm); color:var(--ink-2)}
+  .hero-meta .hm{display:inline-flex; align-items:center; gap:6px}
+  .hero-meta .dot{width:8px; height:8px; border-radius:50%; background:var(--ok); flex:none}
+  .hero-meta .dot.red{background:var(--brand)}
+
+  .stamp-wrap{display:grid; place-items:center; padding:8px 0}
+  .stamp{transform:rotate(-3deg); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:18px 20px; max-width:330px; width:100%}
+  .stamp .top{display:flex; justify-content:space-between; align-items:center; font-family:var(--disp); font-size:var(--t-xs); color:var(--ink-2); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px}
+  .stamp .ring{border:2.5px solid var(--steel); border-radius:10px; padding:16px 16px; text-align:center; background:var(--steel-wash)}
+  .stamp .ring .chip{display:inline-flex; align-items:center; gap:7px; background:var(--paper); border:1px solid var(--line-2); border-radius:999px; padding:4px 11px; margin-bottom:12px}
+  .stamp .ring .chip .blink{width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 10px var(--signal)}
+  .stamp .ring .chip span{font-family:var(--disp); font-size:var(--t-xs); letter-spacing:.1em; text-transform:uppercase; color:var(--signal)}
+  .stamp .ring .l1{font-family:var(--disp); font-weight:700; font-size:1.2rem; color:var(--ink); letter-spacing:.02em}
+  .stamp .ring .l2{font-family:var(--disp); font-size:.95rem; color:var(--brand); margin:7px 0 3px; letter-spacing:.03em}
+  .stamp .ring .l3{font-size:var(--t-xs); color:var(--ink-2); text-transform:uppercase; letter-spacing:.1em}
+  .stamp .foot{display:flex; justify-content:space-between; margin-top:12px; font-family:var(--disp); font-size:var(--t-xs); color:var(--ink-2)}
+  .stamp .foot .chk{display:inline-flex; align-items:center; gap:5px}
+  .stamp .foot .chk.on{color:var(--ok); font-weight:600}
+
+  .band{padding:72px 0}
+  .band.tint{background:var(--surface)}
+  .band.grey{background:var(--surface-2)}
+  .sec-head{margin-bottom:34px; max-width:780px}
+  .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+  .sec-head h2{margin:12px 0 8px}
+  .sec-head .lead{font-size:var(--t-md); margin:0}
+
+  .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+  @media (max-width:860px){ .timeline{grid-template-columns:repeat(2,1fr)} }
+  .t-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px}
+  .t-item .t-date{font-family:var(--disp); font-size:var(--t-sm); font-weight:700; color:var(--steel); letter-spacing:.02em}
+  .t-item.done .t-date{color:var(--ok)}
+  .t-item.next .t-date{color:var(--brand)}
+  .t-item h3{font-size:1rem; margin:10px 0 6px}
+  .t-item p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .t-item .tag{display:inline-block; font-family:var(--disp); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-top:12px; padding:4px 10px; border-radius:999px}
+  .tag.live{background:var(--ok-wash); color:var(--ok)}
+  .tag.warn{background:var(--brand-wash); color:var(--brand)}
+  .tag.soon{background:var(--steel-wash); color:var(--steel)}
+
+  .toolbox{background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:30px; max-width:860px; margin:0 auto}
+  .steps-row{display:flex; align-items:center; gap:8px; margin-bottom:26px}
+  .step-dot{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-family:var(--disp); font-weight:700; font-size:var(--t-sm); background:var(--surface-2); color:var(--ink-2); border:1px solid var(--line); transition:all .2s}
+  .step-dot.on{background:var(--steel); color:#fff; border-color:var(--steel)}
+  .step-dot.ok{background:var(--ok); color:#04251A; border-color:var(--ok)}
+  .step-line{flex:1; height:2px; background:var(--line-2); border-radius:2px}
+  .step-line.ok{background:var(--ok)}
+  .qhead{margin-bottom:22px}
+  .qhead .qk{font-family:var(--disp); font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:8px}
+  .qhead h3{font-size:1.25rem}
+  .toolstep{display:none}
+  .toolstep.on{display:block; animation:fade .25s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  .opts{display:grid; gap:10px; margin-top:6px}
+  .opt{display:flex; align-items:flex-start; gap:12px; padding:15px 18px; border:1.5px solid var(--line-2); border-radius:var(--r-sm); cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s; text-align:left; width:100%; font:inherit; color:var(--ink)}
+  .opt:hover{border-color:var(--steel)}
+  .opt.sel{border-color:var(--steel); background:var(--steel-wash)}
+  .opt .o-radio{width:18px; height:18px; border-radius:50%; border:2px solid var(--line-2); flex:none; margin-top:3px; display:grid; place-items:center; transition:border-color .15s}
+  .opt.sel .o-radio{border-color:var(--steel)}
+  .opt.sel .o-radio::after{content:''; width:8px; height:8px; border-radius:50%; background:var(--steel)}
+  .opt b{display:block; font-weight:600}
+  .opt small{color:var(--ink-2); font-size:var(--t-sm)}
+  .qnav{display:flex; justify-content:space-between; align-items:center; margin-top:26px; gap:12px}
+  .qnav .side{display:flex; gap:10px}
+  .hint{font-size:var(--t-sm); color:var(--ink-2)}
+  #restart{background:none; border:none; color:var(--ink-2); font-size:var(--t-sm); cursor:pointer; text-decoration:underline; padding:6px}
+
+  .verdict{border:1px solid var(--line); border-radius:var(--r); padding:24px; margin-top:20px; background:var(--paper)}
+  .vcat{display:inline-flex; align-items:center; gap:7px; font-family:var(--disp); font-size:var(--t-xs); font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .vcat.need{background:var(--brand-wash); color:var(--brand)}
+  .vcat.ok{background:var(--ok-wash); color:var(--ok)}
+  .vcat.soon{background:var(--steel-wash); color:var(--steel)}
+  .verdict h3{font-size:1.25rem; margin-bottom:8px}
+  .vtable{margin-top:14px; border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  .vrow{display:flex; justify-content:space-between; gap:14px; padding:13px 16px; border-top:1px solid var(--line); background:var(--surface)}
+  .vrow:first-child{border-top:0}
+  .vrow .k{color:var(--ink-2); font-size:var(--t-sm)}
+  .vrow .v{font-weight:600; text-align:right; font-size:var(--t-sm)}
+  .vrow.due .v{color:var(--brand)}
+  .vrow.ok .v{color:var(--ok)}
+  .vlist{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:9px}
+  .vlist li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink)}
+  .vlist li .i{width:17px; height:17px; flex:none; margin-top:3px; color:var(--ok); stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .vlist li.w .i{color:var(--brand)}
+  .vlist li.w{color:var(--brand)}
+  .vnote{background:var(--warn-wash); border:1px solid var(--line-2); border-radius:var(--r-sm); padding:13px 15px; font-size:var(--t-sm); color:var(--warn); margin-top:16px}
+  .vprint{display:flex; justify-content:flex-end; margin-top:18px}
+  .footnote{font-size:var(--t-xs); color:var(--ink-2); margin-top:14px}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px}
+  .step .num-b{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-family:var(--disp); font-weight:700; margin-bottom:16px}
+  .step h3{margin-bottom:8px; font-size:1.05rem}
+  .step p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+
+  .chk-progress{height:10px; border-radius:999px; background:var(--surface-2); border:1px solid var(--line); overflow:hidden; max-width:520px}
+  .chk-bar{height:100%; width:0; background:linear-gradient(90deg,var(--brand),var(--steel)); transition:width .3s ease; border-radius:999px}
+  .chk-count{font-size:var(--t-sm); color:var(--ink-2); margin:10px 0 20px; font-family:var(--disp)}
+  .chk-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px}
+  .chk{display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border:1.5px solid var(--line); border-radius:var(--r-sm); background:var(--surface); cursor:pointer; text-align:left; font:inherit; color:var(--ink); transition:border-color .15s, background .15s}
+  .chk:hover{border-color:var(--steel)}
+  .chk.on{border-color:var(--ok); background:var(--ok-wash)}
+  .chk .chk-box{width:20px; height:20px; border-radius:6px; border:2px solid var(--line-2); flex:none; margin-top:2px; display:grid; place-items:center; transition:all .15s}
+  .chk.on .chk-box{background:var(--ok); border-color:var(--ok)}
+  .chk.on .chk-box::after{content:''; width:10px; height:5px; border-left:2px solid #04251A; border-bottom:2px solid #04251A; transform:rotate(-45deg) translateY(-1px)}
+  .chk b{display:block; font-weight:600; font-size:var(--t-sm)}
+  .chk small{color:var(--ink-2); font-size:var(--t-xs)}
+
+  .cd-grid{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .cd-n{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:20px 26px; text-align:center; min-width:110px; box-shadow:var(--shadow)}
+  .cd-n span{display:block; font-family:var(--disp); font-weight:700; font-size:2.3rem; color:var(--brand)}
+  .cd-n small{color:var(--ink-2); font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.08em}
+  .cd-label{text-align:center; color:var(--ink-2); margin:18px 0 0; font-size:var(--t-sm)}
+  .cd-dyn{max-width:420px; margin:18px auto 0; text-align:center}
+  .cd-dyn label{display:block; font-size:var(--t-sm); color:var(--ink-2); margin-bottom:6px}
+  .cd-input{background:var(--surface); color:var(--ink); border:1px solid var(--line-2); border-radius:8px; padding:10px 12px; font:inherit; color-scheme:dark}
+  .cd-dyn .hint{color:var(--ok); margin-top:10px}
+
+  .price-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:860px; margin:0 auto}
+  @media (max-width:760px){ .price-grid{grid-template-columns:1fr} }
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; position:relative}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand), var(--shadow)}
+  .plan .badge{position:absolute; top:-12px; left:24px; background:var(--brand); color:#fff; font-family:var(--disp); font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 12px; border-radius:999px}
+  .plan h3{margin-bottom:4px}
+  .plan .amt{font-family:var(--disp); font-size:2.3rem; font-weight:700; margin:10px 0 18px}
+  .plan .amt small{font-size:var(--t-sm); color:var(--ink-2); font-weight:500}
+  .plan ul{list-style:none; padding:0; margin:0 0 22px; display:grid; gap:10px}
+  .plan li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm)}
+  .plan li .i{width:17px; height:17px; flex:none; margin-top:3px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .plan li.y .i{color:var(--ok)}
+  .plan li.n .i{color:var(--line-2)}
+  .plan li.n{color:var(--ink-2)}
+  .plan .btn{width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); text-align:center; margin:12px 0 0}
+
+  .faq{max-width:820px; margin:0 auto; display:grid; gap:10px}
+  details.faq-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  details.faq-item summary{list-style:none; cursor:pointer; padding:17px 20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary .chev{width:18px; height:18px; flex:none; color:var(--ink-2); transition:transform .2s; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  details.faq-item[open] summary .chev{transform:rotate(180deg)}
+  details.faq-item .a{padding:0 20px 18px; font-size:var(--t-sm); color:var(--ink-2)}
+  details.faq-item .a a{color:var(--signal); text-decoration:underline}
+
+  .sources{display:grid; gap:12px}
+  .source{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:16px 18px}
+  .source .sn{width:28px; height:28px; border-radius:8px; background:var(--steel); color:#fff; display:grid; place-items:center; font-family:var(--disp); font-size:var(--t-sm); font-weight:700; flex:none; margin-top:2px}
+  .source a{font-weight:600; color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+  .source a:hover{color:var(--brand)}
+  .source small{display:block; color:var(--ink-2); font-size:var(--t-sm); margin-top:3px}
+
+  .cta-final{background:linear-gradient(120deg,var(--steel-2) 0%,var(--steel) 55%,var(--brand-2) 100%); border-radius:18px; padding:52px 40px; text-align:center; color:#fff; position:relative; overflow:hidden}
+  .cta-final::after{content:''; position:absolute; inset:auto -40px -70px auto; width:280px; height:280px; border:38px solid rgba(255,255,255,.12); border-radius:50%}
+  .cta-final h2{color:#fff; font-size:clamp(1.6rem,3.2vw,2.3rem); margin-bottom:12px; position:relative}
+  .cta-final p{color:rgba(255,255,255,.88); max-width:56ch; margin:0 auto 26px; position:relative}
+  .cta-final .btn{position:relative}
+
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:52px 0 40px; margin-top:40px}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:34px}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr} }
+  .foot-brand p{font-size:var(--t-sm); color:var(--ink-2); margin-top:14px; max-width:40ch}
+  .foot-seal{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:600; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-bottom:16px}
+  .foot-seal svg{width:15px; height:15px; color:var(--signal)}
+  footer h4{font-family:var(--disp); font-size:var(--t-sm); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:14px}
+  footer ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}
+  footer ul a{color:var(--ink); text-decoration:none; font-size:var(--t-sm); font-weight:500}
+  footer ul a:hover{text-decoration:underline}
+  .foot-legal{border-top:1px solid var(--line); padding-top:22px; font-size:var(--t-sm); color:var(--ink-2)}
+  .foot-legal strong{color:var(--ink)}
+
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  @media print{
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip,.vprint{display:none !important}
+    body{background:#fff; color:#000}
+    .band{padding:16px 0}
+    .toolbox{box-shadow:none; border-color:#999}
+    .stamp{transform:none; border-color:#000}
+    a{color:#000; text-decoration:underline}
+  }
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"AlertaGasto","item":"https://www.attenciona.com/negocios/anomalias/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AlertaGasto","url":"https://www.attenciona.com/negocios/anomalias/","datePublished":"2026-08-28","dateModified":"2026-08-28"}</script>
+<!--/BUILD:fase4-schema-->
+<link rel="stylesheet" href="/sello-ia.css">
+<meta property="og:title" content="AlertaGasto — detecta la operación sospechosa antes de que…">
+<meta property="og:description" content="Gastos raros, montos fuera de rango, proveedores nuevos: detecta la anomalía contable antes de que duela. Declaración anual: 30/04/2027.">
+<meta property="og:url" content="https://www.attenciona.com/negocios/anomalias/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AlertaGasto — detecta la operación sospechosa antes de que…">
+<meta name="twitter:description" content="Gastos raros, montos fuera de rango, proveedores nuevos: detecta la anomalía contable antes de que duela. Declaración anual: 30/04/2027.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body id="top">
+<a class="skip" href="#outil">Saltar a la herramienta</a>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a class="brand" href="#top" aria-label="AlertaGasto — Inicio">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5l8.5 15h-17z" stroke="#4F8CFF" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 16.6v.4" stroke="#4F8CFF" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      <span>AlertaGasto</span>
+    </a>
+    <nav class="links" aria-label="Navegación principal">
+      <a href="#outil">Mi lectura</a>
+      <a href="#act">La regla</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#pricing">Precio</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">Fuentes</a>
+      <a class="btn btn-brand btn-sm" href="#outil">Empezar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Fintech · Anomalías contables</span>
+          <h1>Lo raro, <span class="rd">detectado.</span></h1>
+          <p class="lead">Un <b>gasto duplicado</b>, un <b>monto fuera de rango</b>, un <b>proveedor nuevo con pago grande</b>: las anomalías contables son la puerta del fraude y del error. AlertaGasto recorre tus movimientos y <b>marca lo raro</b> — antes de que duela.</p>
+          <div class="hero-actions">
+            <a class="btn btn-brand" href="#outil">Revisar mi mes</a>
+            <a class="btn btn-ghost" href="#act">Ver la regla</a>
+          </div>
+          <div class="hero-meta">
+            <span class="hm"><span class="dot red"></span>3 reglas · duplicado, rango, nuevo</span>
+            <span class="hm"><span class="dot"></span>30/04/2027 · declaración anual</span>
+            <span class="hm"><span class="dot"></span>Pro 6 $/año · en cripto</span>
+          </div>
+        </div>
+        <div class="stamp-wrap" aria-hidden="true">
+          <div class="stamp">
+            <div class="top"><span>AlertaGasto · Alert Stamp</span><span>Por mes</span></div>
+            <div class="ring">
+              <span class="chip"><span class="blink"></span><span>anomalías marcadas</span></span>
+              <div class="l1">MES REVISADO</div>
+              <div class="l2">duplicado · rango · proveedor nuevo</div>
+              <div class="l3">lo raro, a la vista</div>
+            </div>
+            <div class="foot">
+              <span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>investigar lo marcado</span>
+              <span class="num">16/08/2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="act">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">La regla</span>
+        <h2>Tres reglas cazan el 90% de las anomalías: duplicado, rango y proveedor nuevo</h2>
+        <p class="lead">La detección de anomalías se apoya en tres reglas: 1) duplicados (mismo monto, fechas cercanas), 2) fuera de rango (montos que se desvían de tu historial), 3) proveedor nuevo con pago grande. El fraude interno casi siempre pasa por una de las tres.</p>
+      </div>
+      <div class="timeline">
+        <div class="t-item reveal"><div class="t-date">Duplicado</div><h3>Regla 1</h3><p>El mismo monto en fechas cercanas: pago doble o fraude.</p><span class="tag live">regla</span></div>
+        <div class="t-item reveal"><div class="t-date">Rango</div><h3>Regla 2</h3><p>Montos que se desvían del historial: lo que nunca habías pagado.</p><span class="tag warn">regla</span></div>
+        <div class="t-item reveal"><div class="t-date">Nuevo</div><h3>Regla 3</h3><p>Proveedor nuevo con pago grande: la firma del fraude interno.</p><span class="tag warn">regla</span></div>
+        <div class="t-item next reveal"><div class="t-date">30/04/2027</div><h3>Declaración anual</h3><p>Las anomalías no investigadas llegan a tu declaración.</p><span class="tag warn">cita</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="outil">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Tu mes</span>
+        <h2>3 preguntas, tu revisión</h2>
+        <p class="lead">Todo corre en tu navegador. Nada sale de tu dispositivo, sin cuenta.</p>
+      </div>
+      <div class="toolbox reveal">
+        <div class="steps-row" id="stepsrow" aria-hidden="true">
+          <span class="step-dot on" id="sd0">1</span><span class="step-line" id="sl1"></span>
+          <span class="step-dot" id="sd1">2</span><span class="step-line" id="sl2"></span>
+          <span class="step-dot" id="sd2">3</span><span class="step-line" id="sl3"></span>
+          <span class="step-dot" id="sd3">✓</span>
+        </div>
+        <div class="toolstep on" data-step="0"><div class="qhead"><div class="qk">Pregunta 1 de 3</div><h3>¿Qué revisas?</h3></div><div class="opts"><button class="opt" data-val="gastos"><span class="o-radio"></span><span><b>Gastos y pagos</b><small>Cuentas por pagar.</small></span></button>
+            <button class="opt" data-val="movimientos"><span class="o-radio"></span><span><b>Movimientos bancarios</b><small>Todo el mes.</small></span></button></div></div>
+        <div class="toolstep" data-step="1"><div class="qhead"><div class="qk">Pregunta 2 de 3</div><h3>¿Cuántos movimientos tienes?</h3></div><div class="opts"><button class="opt" data-val="pocos"><span class="o-radio"></span><span><b>Menos de 200</b><small>Negocio chico.</small></span></button>
+            <button class="opt" data-val="muchos"><span class="o-radio"></span><span><b>Más de 200</b><small>Volumen alto.</small></span></button></div></div>
+        <div class="toolstep" data-step="2"><div class="qhead"><div class="qk">Pregunta 3 de 3</div><h3>¿Revisas anomalías hoy?</h3></div><div class="opts"><button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Sí, cada mes</b><small>Con susto.</small></span></button>
+            <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No, confío</b><small>En mi equipo o en mí.</small></span></button></div></div>
+        <div class="qnav" id="qnav">
+          <button id="restart" type="button">Empezar de nuevo</button>
+          <div class="side">
+            <button class="btn btn-ghost" id="prev" type="button">Atrás</button>
+            <button class="btn btn-steel" id="next" type="button">Siguiente</button>
+          </div>
+        </div>
+        <div id="verdict" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band grey">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Del mes a la alerta</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num-b">1</span><h3>Responde 3 preguntas</h3><p>Qué revisas, cuánto tienes y cómo revisas hoy.</p></div>
+        <div class="step reveal"><span class="num-b">2</span><h3>Recibe tu Alert Stamp</h3><p>El sello muestra tu mes: bajo control o la revisión que falta.</p></div>
+        <div class="step reveal"><span class="num-b">3</span><h3>Investiga y cierra</h3><p>Lo raro marcado, investigado y documentado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="checklist">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Checklist</span>
+        <h2>Checklist del detector</h2>
+        <p class="lead">Términos del sector, marcables. Se guardan en tu navegador.</p>
+      </div>
+      <div class="chk-progress reveal"><div class="chk-bar" id="chk-bar"></div></div>
+      <p class="chk-count" id="chk-count">0 de 9</p>
+      <div class="chk-grid">
+        <button class="chk" data-k="0" aria-pressed="false"><span class="chk-box"></span><span><b>Anomalía</b><small>Lo que se desvía de tu normalidad.</small></span></button>
+        <button class="chk" data-k="1" aria-pressed="false"><span class="chk-box"></span><span><b>Duplicado</b><small>Mismo monto, fechas cercanas.</small></span></button>
+        <button class="chk" data-k="2" aria-pressed="false"><span class="chk-box"></span><span><b>Fuera de rango</b><small>Montos que nunca habías visto.</small></span></button>
+        <button class="chk" data-k="3" aria-pressed="false"><span class="chk-box"></span><span><b>Proveedor nuevo</b><small>El que aparece y cobra grande.</small></span></button>
+        <button class="chk" data-k="4" aria-pressed="false"><span class="chk-box"></span><span><b>Fraude interno</b><small>El riesgo que nadie quiere ver.</small></span></button>
+        <button class="chk" data-k="5" aria-pressed="false"><span class="chk-box"></span><span><b>Control interno</b><small>Tu proceso de revisión mensual.</small></span></button>
+        <button class="chk" data-k="6" aria-pressed="false"><span class="chk-box"></span><span><b>Reporte</b><small>Tu documento de la revisión.</small></span></button>
+        <button class="chk" data-k="7" aria-pressed="false"><span class="chk-box"></span><span><b>Conciliación</b><small>El cruce que confirma los montos.</small></span></button>
+        <button class="chk" data-k="8" aria-pressed="false"><span class="chk-box"></span><span><b>Segregación</b><small>Quien paga no autoriza: la regla clásica.</small></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="cuenta">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Cuenta atrás</span>
+        <h2>La cuenta atrás a tu declaración</h2>
+        <p class="lead">La declaración anual vence el 30/04/2027: las anomalías investigadas no llegan a tus números.</p>
+      </div>
+      <div class="cd reveal" data-cd='{"iso":"2027-04-30","label":"Declaración anual"}' id="cdbox">
+        <div class="cd-grid">
+          <div class="cd-n"><span class="num" id="cd-d">–</span><small>días</small></div>
+          <div class="cd-n"><span class="num" id="cd-h">–</span><small>horas</small></div>
+          <div class="cd-n"><span class="num" id="cd-m">–</span><small>min</small></div>
+          <div class="cd-n"><span class="num" id="cd-s">–</span><small>seg</small></div>
+        </div>
+        <p class="cd-label" id="cd-label">Declaración anual</p>
+        <div class="cd-dyn" id="cd-dyn" hidden>
+          <label for="cd-birth">Tu fecha de nacimiento</label>
+          <input type="date" id="cd-birth" class="cd-input">
+          <p class="hint" id="cd-dyn-out"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="pricing">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Precio</span>
+        <h2>Revisa gratis. Tu regla por 6 $/año.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <h3>Gratis</h3>
+          <div class="amt">0 $</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>1 revisión mensual</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Hasta 200 movimientos</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Las 3 reglas de detección</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Enlaces a las fuentes oficiales</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>gratis para siempre</li>
+          </ul>
+          <a class="btn btn-ghost" href="#outil">Empezar gratis</a>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge">Recomendado</span>
+          <h3>Pro</h3>
+          <div class="amt">6 $ <small>pago único</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Todo lo de Gratis</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Revisiones ilimitadas</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Archivos sin límite</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Reporte exportable</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Desbloqueo permanente</li>
+          </ul>
+          <button class="btn btn-brand" onclick="ProWidget.checkout('anomalias',6)">Desbloquear Pro — 6 $</button>
+          <p class="fiscal">Pago único en USDT/USDC. Desbloqueo permanente. Precio en USD; impuestos según tu país al pagar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Lo que preguntan sobre anomalías</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item reveal" open><summary>¿Qué es una anomalía contable?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Un movimiento que se desvía de tu normalidad: duplicado, fuera de rango o con un proveedor nuevo. Es la puerta del fraude y del error. <a href="#sources">[1]</a></div></details>
+        <details class="faq-item reveal"><summary>¿Cuáles son las tres reglas?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Duplicado (mismo monto, fechas cercanas), rango (montos fuera de historial) y proveedor nuevo con pago grande. Cazan el 90% de anomalías.</div></details>
+        <details class="faq-item reveal"><summary>¿Cómo prevengo el fraude interno?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Con control: revisión mensual, segregación de funciones (quien paga no autoriza) y reporte documentado.</div></details>
+        <details class="faq-item reveal"><summary>¿Con qué frecuencia reviso?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Mensual, como mínimo. La revisión es parte del proceso, no un parche.</div></details>
+        <details class="faq-item reveal"><summary>¿Qué hago con lo marcado?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Investigar antes de ajustar: confirma con documentos, pregunta al responsable y documenta.</div></details>
+        <details class="faq-item reveal"><summary>¿Qué pasa con mis datos?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary><div class="a">Tus movimientos se revisan en tu navegador: no se suben a ningún servidor.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="sources">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Fuentes</span>
+        <h2>De dónde sale cada dato</h2>
+        <p class="lead">Fuentes verificadas el 16 de agosto de 2026.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="sn">1</span><div><a href="https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html" target="_blank" rel="noopener">SAT — Declaración Anual</a><small>La cita del 30/04: tus números declarados.</small></div></div>
+        <div class="source"><span class="sn">2</span><div><a href="https://www.condusef.gob.mx/" target="_blank" rel="noopener">Condusef — Protección financiera</a><small>La prevención del fraude financiero.</small></div></div>
+        <div class="source"><span class="sn">3</span><div><a href="https://www.bbva.com/es/mx/empresas/calendario-fiscal-2026-para-personas-morales-en-mexico-y-fechas-esenciales-del-sat/" target="_blank" rel="noopener">BBVA — Calendario fiscal</a><small>Las fechas fiscales del año.</small></div></div>
+        <div class="source"><span class="sn">4</span><div><a href="https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso" target="_blank" rel="noopener">Klar — Declaración anual</a><small>La mecánica de la declaración 2026.</small></div></div>
+        <div class="source"><span class="sn">5</span><div><a href="https://blog.alegra.com/colombia/plazos-para-emitir-facturas-electronicas/" target="_blank" rel="noopener">Alegra — Facturación</a><small>El control de los gastos en la región.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2>Lo raro, a la vista.</h2>
+        <p>Duplicado, rango y proveedor nuevo: tres reglas contra el susto. Gratis, sin cuenta.</p>
+        <a class="btn btn-brand" href="#outil">Revisar mi mes</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 12h.01M15 12h.01"/></svg>Contenido asistido por IA, verificado antes de publicar — art. 50.4 Reglamento de IA (UE)</span>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5l8.5 15h-17z" stroke="#4F8CFF" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 16.6v.4" stroke="#4F8CFF" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>AlertaGasto</span></a>
+        <p>AlertaGasto — detección de anomalías contables para negocios de LATAM. Hecha en la Incubadora de attenciona.</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="#outil">Mi lectura</a></li>
+          <li><a href="#act">La regla</a></li>
+          <li><a href="#checklist">Checklist</a></li>
+          <li><a href="#pricing">Precio</a></li>
+          <li><a href="#sources">Fuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Incubadora</h4>
+        <ul>
+          <li><a href="../index.html">← La Incubadora · attenciona</a></li>
+          <li><a href="llms.txt">llms.txt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <strong>Herramienta informativa.</strong> La detección automática no sustituye el control interno ni la auditoría: revisa lo marcado. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.
+    </div>
+  </div>
+
+<div style="text-align:center;padding:20px 24px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=a8c76100e6" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <p><strong>Sin seguimiento.</strong> Esta página corre entera en tu navegador: sin cookies de terceros, sin analítica; tus respuestas nunca salen de tu dispositivo. Solo guardamos localmente si ya viste este aviso.</p>
+  <div class="row">
+    <button class="btn btn-brand" id="consentOk">Entendido</button>
+    <a class="btn btn-ghost" href="#faq">Más info</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"AlertaGasto","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/anomalias/","description":"Gastos raros, montos fuera de rango, proveedores nuevos: detecta la anomalía contable antes de que duela. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Free"},{"@type":"Offer","price":"6","priceCurrency":"USD","name":"Pro"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿Qué es una anomalía contable?","acceptedAnswer":{"@type":"Answer","text":"Un movimiento que se desvía de tu normalidad: duplicado, fuera de rango o con un proveedor nuevo. Es la puerta del fraude y del error. [1]"}},
+      {"@type":"Question","name":"¿Cuáles son las tres reglas?","acceptedAnswer":{"@type":"Answer","text":"Duplicado (mismo monto, fechas cercanas), rango (montos fuera de historial) y proveedor nuevo con pago grande. Cazan el 90% de anomalías."}},
+      {"@type":"Question","name":"¿Cómo prevengo el fraude interno?","acceptedAnswer":{"@type":"Answer","text":"Con control: revisión mensual, segregación de funciones (quien paga no autoriza) y reporte documentado."}},
+      {"@type":"Question","name":"¿Con qué frecuencia reviso?","acceptedAnswer":{"@type":"Answer","text":"Mensual, como mínimo. La revisión es parte del proceso, no un parche."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('anomalias_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('anomalias_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+})();
+
+/* ===== Herramienta: wizard de 3 preguntas ===== */
+(function(){
+  var PATTERNS = [{"match":["*","*","no"],"catCls":"need","cat":"Sin revisión","chip":"confías y rezas","stampLabel":"CONFIAR NO REVISA","stampL2":"el fraude entra donde nadie mira","stampL3":"tres reglas, un mes","title":"No revisas anomalías: el fraude interno vive ahí","rows":[{"k":"Riesgo","v":"gastos sin explicación que pasan meses"},{"k":"Regla","v":"revisar cada mes"},{"k":"Solución","v":"duplicado, rango, proveedor nuevo"}],"chk":[{"t":"Revisa tu mes con las 3 reglas","w":true},{"t":"Investiga lo marcado","w":true},{"t":"Documenta la revisión"}],"note":"<b>Regla honesta:</b> la mayoría de fraudes internos se descubren por accidente o por auditoría: la revisión mensual los mata antes. <a href=\"#sources\">[2]</a>"},{"match":["*","muchos","*"],"catCls":"need","cat":"Volumen alto","chip":"+200 movimientos","stampLabel":"VOLUMEN = REGLAS","stampL2":"+200 movimientos","stampL3":"la revisión manual no alcanza","title":"Más de 200 movimientos: la revisión manual deja pasar las tres reglas","rows":[{"k":"Problema","v":"revisar 200+ a mano"},{"k":"Regla","v":"la detección se automatiza"},{"k":"Solución","v":"reglas sobre el archivo"}],"chk":[{"t":"Aplica las 3 reglas al archivo","w":true},{"t":"Revisa solo los marcados","w":true},{"t":"Guarda el reporte"}],"note":"<b>Dato:</b> en volumen alto, la revisión manual detecta menos del 50% de anomalías: las reglas no se cansan. <a href=\"#sources\">[4]</a>"},{"match":["gastos","pocos","yes"],"catCls":"ok","cat":"Gastos revisados","chip":"mes bajo control","stampLabel":"MES BAJO CONTROL","stampL2":"gastos con reglas","stampL3":"lo raro, marcado","title":"Revisas tus gastos: mantén las tres reglas vivas","rows":[{"k":"Regla","v":"duplicado, rango, nuevo"},{"k":"Frecuencia","v":"mensual"},{"k":"Resultado","v":"cero sustos"}],"chk":[{"t":"Mantén la revisión mensual","w":false},{"t":"Investiga cada marca","w":false},{"t":"Archiva el reporte"}],"note":"<b>Buen hábito:</b> la revisión mensual con reglas convierte el susto en rutina: lo raro se ve antes. <a href=\"#sources\">[3]</a>"},{"match":["movimientos","pocos","yes"],"catCls":"ok","cat":"Movimientos revisados","chip":"banco bajo control","stampLabel":"BANCO REVISADO","stampL2":"movimientos con reglas","stampL3":"las 3 reglas aplican","title":"Revisas tus movimientos: las mismas tres reglas aplican","rows":[{"k":"Regla","v":"duplicado, rango, nuevo"},{"k":"Dato","v":"depósitos y cargos raros"},{"k":"Resultado","v":"el mes dice la verdad"}],"chk":[{"t":"Aplica las 3 reglas al extracto","w":false},{"t":"Investiga depósitos raros","w":false},{"t":"Cierra el mes limpio"}],"note":"<b>Tip:</b> las anomalías también entran por el lado del ingreso: un depósito raro puede ser un error del banco o algo peor. <a href=\"#sources\">[5]</a>"}];
+  var STEP=0, answers={}, totalSteps=3;
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.toolstep'));
+  var dots=[document.getElementById('sd0'),document.getElementById('sd1'),document.getElementById('sd2'),document.getElementById('sd3')];
+  var lines=[document.getElementById('sl1'),document.getElementById('sl2'),document.getElementById('sl3')];
+  var next=document.getElementById('next'), prev=document.getElementById('prev');
+  var qnav=document.getElementById('qnav');
+
+  function selOpts(){
+    if(!steps[STEP]) return;
+    steps[STEP].querySelectorAll('.opt').forEach(function(o){
+      var on = o.dataset.val === answers[STEP];
+      o.classList.toggle('sel', !!on);
+    });
+  }
+  function refreshNav(){
+    prev.disabled = STEP===0;
+    prev.style.opacity = STEP===0 ? '.4' : '1';
+    if(STEP<totalSteps){ next.style.display=''; next.textContent = (STEP===totalSteps-1) ? 'Ver mi resultado' : 'Siguiente'; }
+  }
+  function go(i){
+    STEP = Math.max(0, Math.min(totalSteps, i));
+    steps.forEach(function(s,k){ s.classList.toggle('on', k===STEP); });
+    for(var k=0;k<3;k++){
+      dots[k].classList.toggle('on', k===STEP);
+      dots[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+      lines[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+    }
+    dots[3].classList.toggle('ok', STEP===3);
+    var v=document.getElementById('verdict');
+    if(STEP===totalSteps){ qnav.style.display='none'; renderVerdict(); v.hidden=false; v.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    else { v.hidden=true; qnav.style.display=''; }
+    selOpts(); refreshNav();
+  }
+  steps.forEach(function(s){
+    s.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        answers[s.dataset.step]=o.dataset.val;
+        selOpts();
+        var i=Number(s.dataset.step);
+        if(i < totalSteps-1) go(i+1);
+        else go(totalSteps);
+      });
+    });
+  });
+  next.addEventListener('click', function(){ if(answers[STEP]!==undefined) go(STEP+1); });
+  prev.addEventListener('click', function(){ go(STEP-1); });
+  document.getElementById('restart').addEventListener('click', function(){ answers={}; go(0); });
+
+  function match(p){
+    for(var i=0;i<3;i++){
+      if(p.match[i] && p.match[i]!=='*' && p.match[i]!==answers[i]) return false;
+    }
+    return true;
+  }
+  function rowsHTML(rows){
+    return rows.map(function(r){
+      return '<div class="vrow'+(r.due?' due':(r.ok?' ok':''))+'"><span class="k">'+r.k+'</span><span class="v">'+r.v+'</span></div>';
+    }).join('');
+  }
+  function chkHTML(chk){
+    return '<ul class="vlist">'+chk.map(function(c){
+      return '<li'+(c.w?' class="w"':'')+'><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>'+c.t+'</li>';
+    }).join('')+'</ul>';
+  }
+  function renderVerdict(){
+    var v=document.getElementById('verdict');
+    var p=null;
+    for(var i=0;i<PATTERNS.length;i++){ if(match(PATTERNS[i])){ p=PATTERNS[i]; break; } }
+    if(!p){ p=PATTERNS[PATTERNS.length-1]; }
+    var stamp='<div class="stamp" style="margin:0 auto 4px; transform:none">'+
+      '<div class="top"><span>AlertaGasto · Alert Stamp</span><span>Por mes</span></div>'+
+      '<div class="ring">'+
+        '<span class="chip"><span class="blink"></span><span>'+p.chip+'</span></span>'+
+        '<div class="l1">'+p.stampLabel+'</div>'+
+        '<div class="l2">'+p.stampL2+'</div>'+
+        '<div class="l3">'+p.stampL3+'</div>'+
+      '</div>'+
+      '<div class="foot"><span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>investigar lo marcado</span><span class="num">16/08/2026</span></div>'+
+    '</div>';
+    v.innerHTML = '<span class="vcat '+p.catCls+'">'+p.cat+'</span>'+
+      '<h3>'+p.title+'</h3>'+
+      '<div class="stamp-wrap">'+stamp+'</div>'+
+      '<div class="vtable">'+rowsHTML(p.rows)+'</div>'+
+      chkHTML(p.chk) +
+      '<div class="vnote">'+p.note+'</div>'+
+      '<div class="vprint"><button class="btn btn-steel btn-sm" onclick="window.print()">Imprimir mi sello</button></div>';
+  }
+})();
+
+/* ===== Cuenta atrás ===== */
+(function(){
+  var box=document.getElementById('cdbox');
+  if(!box) return;
+  var cfg=JSON.parse(box.getAttribute('data-cd'));
+  var dEl=document.getElementById('cd-d'), hEl=document.getElementById('cd-h'), mEl=document.getElementById('cd-m'), sEl=document.getElementById('cd-s');
+  var labelEl=document.getElementById('cd-label');
+  var dynEl=document.getElementById('cd-dyn');
+  var dynTarget=null;
+
+  function pad(n){ return (n<10?'0':'')+n; }
+  function nextSunday(){
+    var d=new Date(); d.setHours(23,59,59,0);
+    d.setDate(d.getDate() + ((7-d.getDay())%7 || 7));
+    return d;
+  }
+  function nextMonth(){
+    var d=new Date(); d.setDate(1); d.setMonth(d.getMonth()+1); d.setHours(0,0,0,0);
+    return d;
+  }
+  function daysSince(birth){
+    var now=new Date(); now.setHours(0,0,0,0);
+    var b=new Date(birth); b.setHours(0,0,0,0);
+    return Math.round((now-b)/86400000);
+  }
+  function nextCritical(birth){
+    var ds=daysSince(birth);
+    var cycles=[{p:23,l:'físico'},{p:28,l:'emocional'},{p:33,l:'intelectual'}];
+    var best=null, bestLabel='';
+    for(var i=0;i<cycles.length;i++){
+      var rem=cycles[i].p - (ds % cycles[i].p);
+      if(rem===cycles[i].p) rem=0;
+      if(rem>0 && (best===null || rem<best)){ best=rem; bestLabel=cycles[i].l; }
+    }
+    return {days:best, label:bestLabel};
+  }
+  function target(){
+    if(cfg.dyn==='sunday') return nextSunday();
+    if(cfg.dyn==='month') return nextMonth();
+    if(cfg.dyn==='bioritmo'){
+      if(dynTarget) return dynTarget;
+      return null;
+    }
+    return new Date(cfg.iso+'T23:59:59');
+  }
+  function fmtLabel(d){
+    if(!d) return cfg.label;
+    var dd=String(d.getDate()).padStart(2,'0'), mm=String(d.getMonth()+1).padStart(2,'0');
+    return cfg.label+' · '+dd+'/'+mm+'/'+d.getFullYear();
+  }
+  function tick(){
+    var t=target();
+    if(!t){ dEl.textContent='–'; hEl.textContent='–'; mEl.textContent='–'; sEl.textContent='–'; return; }
+    var now=new Date().getTime();
+    var diff=Math.max(0, t.getTime()-now);
+    var d=Math.floor(diff/86400000), h=Math.floor(diff/3600000)%24, m=Math.floor(diff/60000)%60, s=Math.floor(diff/1000)%60;
+    dEl.textContent=d; hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
+  }
+  if(cfg.dyn==='bioritmo'){
+    dynEl.hidden=false;
+    var birth=null;
+    try{ birth=localStorage.getItem('anomalias_birth'); }catch(e){}
+    var inp=document.getElementById('cd-birth'), out=document.getElementById('cd-dyn-out');
+    if(birth){ inp.value=birth; }
+    function compute(){
+      if(!inp.value) return;
+      birth=inp.value;
+      try{ localStorage.setItem('anomalias_birth',birth); }catch(e){}
+      var r=nextCritical(birth);
+      dynTarget=new Date(); dynTarget.setHours(23,59,59,0); dynTarget.setDate(dynTarget.getDate()+r.days);
+      out.textContent='Tu próximo día crítico ('+r.label+'): en '+r.days+' días, el '+String(dynTarget.getDate()).padStart(2,'0')+'/'+String(dynTarget.getMonth()+1).padStart(2,'0')+'/'+dynTarget.getFullYear()+'.';
+      labelEl.textContent='Día crítico del ciclo '+r.label;
+      tick();
+    }
+    inp.addEventListener('change', compute);
+    if(inp.value) compute();
+  }
+  labelEl.textContent=fmtLabel(target());
+  tick();
+  setInterval(tick,1000);
+})();
+
+/* ===== Checklist interactivo ===== */
+(function(){
+  var key='anomalias_chk';
+  var items=Array.prototype.slice.call(document.querySelectorAll('.chk'));
+  var bar=document.getElementById('chk-bar'), count=document.getElementById('chk-count');
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(key)||'{}'); }catch(e){}
+  function render(){
+    var on=0;
+    items.forEach(function(it){
+      var k=it.dataset.k;
+      var active=!!saved[k];
+      it.classList.toggle('on', active);
+      if(active) on++;
+      it.setAttribute('aria-pressed', active?'true':'false');
+    });
+    bar.style.width=(items.length? (on/items.length*100)+'%':'0%');
+    count.textContent=on+' de '+items.length+' listo';
+  }
+  items.forEach(function(it){
+    it.addEventListener('click', function(){
+      var k=it.dataset.k;
+      saved[k]=!saved[k];
+      try{ localStorage.setItem(key, JSON.stringify(saved)); }catch(e){}
+      render();
+    });
+  });
+  render();
+})();
+</script>
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/anomalias/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/latam/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en LATAM</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en LATAM:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/velas/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Velas</a> <a href="/negocios/cartanatal/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Carta Natal</a> <a href="/negocios/angeles/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Ángeles</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-28">2026-08-28</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

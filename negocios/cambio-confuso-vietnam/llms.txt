@@ -1,0 +1,23 @@
+# Cambio confuso al turista / conversión engañosa · Vietnam
+
+> Comprueba si el cambio de divisas en Vietnam es legítimo antes de confiar o pagar, contra la referencia oficial del día. Si no hay dato verificable, se dice que no hay dato: nada se rellena con suposiciones.
+
+- **Mercado:** Vietnam
+- **Fuente de datos viva:** Frankfurter — tipo de cambio del BCE (API oficial)
+
+- **Sistema de diseño:** Corporativo-limpio (Inter (titulares y cuerpo, pesos fuertes))
+
+## Qué resuelve
+Cada caso documenta el mecanismo real de la estafa o el sobreprecio, con la referencia oficial del día como punto de comparación.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Frankfurter — tipo de cambio del BCE (API oficial) (https://api.frankfurter.app)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Frankfurter — tipo de cambio del BCE (API oficial). (https://api.frankfurter.app)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis para el usuario — sin coste oculto ni letra pequeña.

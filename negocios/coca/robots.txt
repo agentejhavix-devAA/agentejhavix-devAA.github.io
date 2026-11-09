@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coca.attenciona.com/llms.txt

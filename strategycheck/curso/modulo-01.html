@@ -1,0 +1,102 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modulo 01 — Fundamentos: por que casi todos los bots fallan</title>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --borde:#30363d; --texto:#c9d1d9; --acento:#58a6ff; }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--texto); font-family:'Segoe UI', Arial, sans-serif; margin:0; line-height:1.7; }
+a { color:var(--acento); }
+.wrap { max-width:820px; margin:0 auto; padding:40px 24px 80px; }
+header.top { text-align:center; padding:36px 24px; border-bottom:1px solid var(--borde);
+             background:radial-gradient(ellipse at top, rgba(88,166,255,0.08), transparent 60%); }
+header.top .logo { font-size:1.8em; font-weight:900; color:#fff; }
+header.top a.volver { display:inline-block; margin-top:10px; font-size:0.9em; }
+h1, h2, h3 { color:#fff; }
+h1 { font-size:1.9em; }
+h2 { font-size:1.4em; border-left:4px solid var(--acento); padding-left:12px; margin-top:2em; }
+h3 { font-size:1.15em; margin-top:1.6em; }
+pre { background:#0d1117; border:1px solid var(--borde); border-radius:8px; padding:16px; overflow-x:auto; }
+code { background:#1c2128; padding:2px 6px; border-radius:4px; font-size:0.92em; }
+pre code { background:none; padding:0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; }
+th, td { padding:8px 10px; border:1px solid var(--borde); text-align:left; }
+th { background:#1c2128; }
+blockquote { border-left:3px solid var(--acento); margin:16px 0; padding:6px 16px; color:#8b949e; background:var(--panel); border-radius:0 8px 8px 0; }
+.nav-modulos { display:flex; justify-content:space-between; margin-top:50px; padding-top:20px; border-top:1px solid var(--borde); font-size:0.95em; }
+.indice { display:grid; gap:12px; margin-top:24px; }
+.indice a { display:block; background:var(--panel); border:1px solid var(--borde); border-radius:8px;
+            padding:16px 20px; text-decoration:none; color:var(--texto); }
+.indice a:hover { border-color:var(--acento); }
+.indice .num { color:var(--acento); font-weight:800; margin-right:10px; }
+.aviso { background:#2d1a1a; border:1px solid #e74c3c; border-radius:8px; padding:16px 20px; margin:24px 0; font-size:0.9em; color:#f0b3b3; }
+footer { text-align:center; padding:30px; color:#8b949e; font-size:0.85em; border-top:1px solid var(--borde); }
+</style>
+<link rel="canonical" href="https://www.attenciona.com/strategycheck/curso/modulo-01.html">
+<meta name="description" content="Modulo 01 — Fundamentos: por que casi todos los bots de trading con IA fallan Objetivo del modulo Entender los 3 errores que hacen que un backtest…">
+<meta property="og:title" content="Modulo 01 — Fundamentos: por que casi todos los bots fallan">
+<meta property="og:description" content="Modulo 01 — Fundamentos: por que casi todos los bots de trading con IA fallan Objetivo del modulo Entender los 3 errores que hacen que un backtest…">
+<meta property="og:url" content="https://www.attenciona.com/strategycheck/curso/modulo-01.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modulo 01 — Fundamentos: por que casi todos los bots fallan">
+<meta name="twitter:description" content="Modulo 01 — Fundamentos: por que casi todos los bots de trading con IA fallan Objetivo del modulo Entender los 3 errores que hacen que un backtest…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head><body>
+<header class="top"><div class="logo">⚖️ STRATEGYCHECK</div>
+<a class="volver" href="../index.html">&larr; Volver a la pagina principal</a></header>
+<div class="wrap"><h1>Modulo 01 — Fundamentos: por que casi todos los bots de trading con IA fallan</h1>
+<h2>Objetivo del modulo</h2>
+<p>Entender los 3 errores que hacen que un backtest "bonito" sea, en realidad,
+una mentira estadistica. Sin entender esto, cualquier bot que construyas
+(con IA o sin ella) te va a enganar a ti mismo antes de enganar a nadie mas.</p>
+<h2>1. Overfitting (sobreajuste)</h2>
+<p>Ocurre cuando ajustas los parametros de tu estrategia (ej. "RSI &lt; 27.3 en vez
+de RSI &lt; 30") hasta que encajan perfectamente con los datos historicos que
+tienes delante. El resultado: una estrategia que parece perfecta en el
+pasado... y que falla en cuanto llega un dato nuevo que no "conocia".</p>
+<p><strong>Señal de alarma:</strong> si tu estrategia tiene mas de 3-4 parametros ajustados a
+mano y solo la has probado en un periodo, es sospechosa de overfitting.</p>
+<p><strong>Como mitigarlo (nivel MVP):</strong>
+- Prueba la misma estrategia en al menos 2 periodos distintos (ej. 2022-2023
+  y 2023-2024) y en al menos 2 activos distintos.
+- Si el rendimiento cambia radicalmente entre periodos, no es una estrategia
+  robusta, es una casualidad estadistica maquillada.</p>
+<h2>2. Look-ahead bias (sesgo de mirar al futuro)</h2>
+<p>Es el error mas comun y mas grave: tu backtest usa, sin darte cuenta,
+informacion que en el momento real de la operacion todavia no existia.</p>
+<p>Ejemplo clasico: calculas el RSI del dia usando el precio de CIERRE de ese
+mismo dia, y luego simulas que "compraste" a ese mismo precio de cierre.
+En la vida real, cuando ves el cierre del dia, el dia ya termino — no puedes
+comprar a ese precio retroactivamente.</p>
+<p><strong>Como lo evita el motor de Veredicto:</strong> la señal generada al cierre de la
+vela N solo se ejecuta en la vela N+1 (ver <code>engine/backtest.py</code>,
+columna <code>posicion = signal.shift(1)</code>). Es una regla simple pero elimina la
+mayoria de los "backtests magicos" que circulan por internet.</p>
+<h2>3. Survivorship bias (sesgo de supervivencia)</h2>
+<p>Si pruebas tu estrategia solo sobre el activo que "sabes" que subio mucho
+(ej. Bitcoin desde 2020), estas viendo el resultado con el sesgo de saber
+que gano. Una estrategia real debe probarse tambien sobre activos que
+lateralizaron o cayeron, para ver si de verdad aporta algo sobre
+simplemente "comprar y mantener" (buy &amp; hold).</p>
+<p><strong>Por eso todo informe de Veredicto compara siempre contra buy &amp; hold.</strong>
+Si tu estrategia no le gana a comprar y quedarte quieto, no esta aportando
+valor — solo estas asumiendo mas riesgo y pagando mas comisiones para el
+mismo resultado (o peor).</p>
+<h2>Ejercicio del modulo</h2>
+<p>Coge cualquier estrategia que hayas visto prometida en redes sociales
+("gana un 300% con este RSI") y hazte estas 3 preguntas:
+1. ¿En que periodo exacto de fechas se probo?
+2. ¿Se comparo contra buy &amp; hold en ese mismo periodo?
+3. ¿Cuantas operaciones (trades) hizo? (si son menos de 20-30, desconfía)</p>
+<p>Si no puedes responder a las 3, no es un backtest — es marketing.</p>
+<hr />
+<p><em>Siguiente modulo: 02 — De la idea al codigo con IA.</em></p><div class="nav-modulos"><a href="index.html">&larr; Indice del curso</a><a href="modulo-02.html">De la idea al codigo con IA &rarr;</a></div></div>
+<footer>StrategyCheck &middot; un proyecto de Attenciona &middot; curso gratuito, sin registro &middot;
+no es asesoramiento financiero</footer></body></html>

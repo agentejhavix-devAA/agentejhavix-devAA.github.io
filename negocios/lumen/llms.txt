@@ -1,0 +1,31 @@
+# Lumen
+
+Lumen is a free browser tool that checks which EU AI Act Article 50 transparency labels your AI deployment needs. It runs entirely in the browser (no data leaves the device).
+
+## Key facts (verified 13 August 2026)
+
+- Regulation (EU) 2024/1689 (the AI Act) became applicable on 2 August 2026.
+- Article 50 transparency duties apply from that date — no transition.
+- Art. 50(1): chatbots and AI assistants must inform users they are interacting with AI (unless obvious).
+- Art. 50(2): AI-generated image/audio/video must be marked as artificially generated in a machine-readable format.
+- Art. 50(3): deepfakes must be labelled; public-interest deepfakes disclosed at first use.
+- Art. 50(4): AI text published to inform the public must be disclosed, unless human-reviewed with editorial responsibility.
+- Fines: up to EUR 15,000,000 or 3% of worldwide annual turnover (Art. 99).
+- Content generated before 2 August 2026 is not labelled retroactively.
+
+## Sources
+
+1. https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (European Commission — AI Act)
+2. https://artificialintelligenceact.eu/article/50/ (Article 50 full text)
+3. https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act (Commission FAQ)
+4. https://www.cooley.com/news/insight/2026/2026-08-03-eu-ai-act-transparency-obligations-take-effect-2-august-2026 (Cooley)
+5. https://hard2bit.com/en/blog/ai-act-article-50-ai-transparency-chatbots-deepfakes/ (Hard2bit)
+
+## Pricing
+
+- Free: label check + checklist + fine exposure.
+- Pro (14 USD one-time, crypto via NOWPayments): printable label PDF, disclosure copy, Art. 50 readiness checklist, permanent unlock.
+
+## Not advice
+
+Lumen is an educational tool based on Regulation (EU) 2024/1689. It is not legal advice. Editorial responsibility: attenciona (Holding), Spain.

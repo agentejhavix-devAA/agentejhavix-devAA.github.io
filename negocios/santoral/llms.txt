@@ -1,0 +1,23 @@
+# Santoral
+
+Santoral — qué santo se celebra hoy y qué nombre dar. en LATAM — Cada día del calendario litúrgico celebra un santo y en LATAM la fiesta patronal mueve pueblos enteros: San Judas Tadeo (28/10/2026, causas difíciles) es la próxima gran devoción con santuario lleno en CDMX. Dolor real: la gente no sabe qué santo se celebra hoy ni qué patrono corresponde a su nombre, profesión o pueblo. Herramienta en el navegador contra el calendario romano general (Vaticano). Gratis el diagnóstico + Pro pago único (4 $).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fe · Santos del día.
+- Fecha límite / cita: San Judas Tadeo · 28/10/2026.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 28/30 (9.3/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020514_versione-italiana_sp.html (Vaticano — Calendario litúrgico romano)
+2. https://santuario-sanhipolito.org/ (Santuario de San Judas Tadeo (San Hipólito, CDMX))
+3. https://bible.usccb.org/es (USCCB — Lecturas diarias y santoral)
+4. https://www.catholic.org/saints/ (Catholic.org — Santoral)
+5. https://cuentame.inegi.org.mx/descubre/poblacion/religiones_en_mexico/ (INEGI — Cuéntame: las religiones en México)
+
+## Precio
+- Gratis: El santo de hoy y sus próximas fiestas.
+- Pro (4 USD pago único, cripto vía NOWPayments): Calendario anual de fiestas (PDF); Fiestas patronales por país LATAM; Historia breve de cada santo; desbloqueo permanente.
+
+## Aviso
+Herramienta de información y devoción. Santoral no sustituye la catequesis ni la dirección espiritual. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

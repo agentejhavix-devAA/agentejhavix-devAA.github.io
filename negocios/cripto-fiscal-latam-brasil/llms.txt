@@ -1,0 +1,23 @@
+# Cripto-fiscal LATAM · Brasil
+
+> Traduce la norma oficial de cripto · impuestos en Brasil a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Brasil
+- **Fuente de datos viva:** Receita Federal do Brasil — Criptoativos (DeCripto, IN 2.291/2025)
+
+- **Sistema de diseño:** Neo-orgánico (Sora (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Receita Federal do Brasil — Criptoativos (DeCripto, IN 2.291/2025) (https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/declaracoes-e-demonstrativos/criptoativos)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Receita Federal do Brasil — Criptoativos (DeCripto, IN 2.291/2025). (https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/declaracoes-e-demonstrativos/criptoativos)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

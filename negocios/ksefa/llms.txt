@@ -1,0 +1,24 @@
+# Ksefa — Twój obowiązek KSeF, ostemplowany na dziś
+
+Ksefa to narzędzie edukacyjne (bez doradztwa podatkowego) które sprawdza, czy polska firma musi wystawiać faktury w Krajowym Systemie e-Faktur (KSeF) i od kiedy.
+
+## Fakty kluczowe (sprawdzone 13.08.2026)
+
+- KSeF 2.0 działa w produkcji od 01.02.2026.
+- Obowiązek wystawiania faktur ustrukturyzowanych (FA(3)) w KSeF:
+  - Od 01.02.2026: firmy, których sprzedaż (z VAT) w 2024 r. przekroczyła 200 mln zł.
+  - Od 01.04.2026: pozostali czynni podatnicy VAT.
+  - Od 01.01.2027: mikroprzedsiębiorcy (sprzedaż ≤ 10.000 zł brutto miesięcznie) — uproszczenie „wykluczeni cyfrowo” obowiązuje do końca 2026 r.
+- Rok 2026 = okres ochronny: brak sankcji za faktury wystawione poza KSeF.
+- Kary od 01.01.2027: do 100% kwoty VAT na fakturze (minimum 1.000 zł) lub do 18,7% kwoty brutto dla podatników zwolnionych.
+- Obowiązek podawania numeru KSeF przy płatności (art. 108g) odroczony do końca 2026 r.
+- Faktury B2C w KSeF: dobrowolne. Podatnicy zwolnieni z VAT: bez obowiązku (rejestracja dobrowolna).
+- Numer KSeF faktur wystawionych w systemie jest wykazywany w JPK_V7M.
+
+## Źródła
+
+1. https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/podstawy-prawne-oraz-kluczowe-terminy/ (Portal Podatkowy MF)
+2. https://ksef.podatki.gov.pl/informacje-ogolne-ksef-20/zakres-obowiazkowego-ksef/
+3. https://jpk.info.pl/faktury/e-faktura-ustrukturyzowana-ksef/obowiazek-korzystania/
+4. https://sovos.com/vat/tax-rules/poland-e-invoicing/
+5. https://amavat.pl/terminy-i-obowiazki-zwiazane-z-ksef-aktualny-harmonogram-zmian/

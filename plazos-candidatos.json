@@ -1,0 +1,1786 @@
+{
+  "generado": "2026-09-19T10:08:09.336Z",
+  "nota": "Fechas auto-detectadas en las fichas. NO son plazos confirmados. Revisar y, si procede, poner fecha_limite + fecha_limite_desc en el negocio dentro de incubadora-datos.json (o en el generador que lo produce).",
+  "candidatos": [
+    {
+      "slug": "rampa",
+      "nombre": "Rampa",
+      "pais": "España",
+      "ficha": "/negocios/rampa/",
+      "fechasDetectadas": [
+        {
+          "iso": "2030-06-28",
+          "texto": "28 de junio de 2030"
+        }
+      ]
+    },
+    {
+      "slug": "marea-real-vs-prevista-eeuu-costa-oeste",
+      "nombre": "Marea real vs prevista (NOAA)",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/marea-real-vs-prevista-eeuu-costa-oeste/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "inflacion-real-por-pais-mundo",
+      "nombre": "Inflación real por país (Banco Mundial)",
+      "pais": "España",
+      "ficha": "/negocios/inflacion-real-por-pais-mundo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "recall-alimentos-fda-estados-unidos",
+      "nombre": "Revisa FDA",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/recall-alimentos-fda-estados-unidos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "boleta-honorarios-chile-chile",
+      "nombre": "NetoClaro",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/boleta-honorarios-chile-chile/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "neto-colombia-colombia",
+      "nombre": "CajaClara",
+      "pais": "España",
+      "ficha": "/negocios/neto-colombia-colombia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "resico-mexico-mexico",
+      "nombre": "ResicoClaro",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/resico-mexico-mexico/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "candado",
+      "nombre": "Candado",
+      "pais": "Sin precisar",
+      "ficha": "/negocios/candado/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-03-15",
+          "texto": "15 de marzo de 2027"
+        },
+        {
+          "iso": "2029-03-15",
+          "texto": "15 de marzo de 2029"
+        }
+      ]
+    },
+    {
+      "slug": "cnota",
+      "nombre": "CNOta",
+      "pais": "España",
+      "ficha": "/negocios/cnota/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-01",
+          "texto": "1 de febrero de 2027"
+        }
+      ]
+    },
+    {
+      "slug": "quartly",
+      "nombre": "Quartly",
+      "pais": "Reino Unido",
+      "ficha": "/negocios/quartly/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        },
+        {
+          "iso": "2026-08-12",
+          "texto": "2026-08-12"
+        }
+      ]
+    },
+    {
+      "slug": "beleg",
+      "nombre": "Beleg",
+      "pais": "Alemania",
+      "ficha": "/negocios/beleg/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "vigil",
+      "nombre": "Vigil",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/vigil/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "echeance",
+      "nombre": "Échéance",
+      "pais": "Francia",
+      "ficha": "/negocios/echeance/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "2026-08-16"
+        },
+        {
+          "iso": "2026-08-12",
+          "texto": "2026-08-12"
+        }
+      ]
+    },
+    {
+      "slug": "ksefa",
+      "nombre": "Ksefa",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/ksefa/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-15",
+          "texto": "2026-08-15"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "irin",
+      "nombre": "Irin",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/irin/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-15",
+          "texto": "2026-08-15"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "parcela",
+      "nombre": "Parcela",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/parcela/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-21",
+          "texto": "2026-08-21"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "karbon",
+      "nombre": "Karbon",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/karbon/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-17",
+          "texto": "2026-08-17"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "hora",
+      "nombre": "Hora",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/hora/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-17",
+          "texto": "2026-08-17"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "sanad",
+      "nombre": "Sanad",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/sanad/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-14",
+          "texto": "2026-08-14"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "lumen",
+      "nombre": "Lumen",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/lumen/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-15",
+          "texto": "2026-08-15"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        },
+        {
+          "iso": "2026-08-03",
+          "texto": "2026-08-03"
+        }
+      ]
+    },
+    {
+      "slug": "cripta",
+      "nombre": "Cripta",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/cripta/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-21",
+          "texto": "2026-08-21"
+        },
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "cripto-fiscal-global",
+      "nombre": "Cripto-fiscal global",
+      "pais": "España",
+      "ficha": "/negocios/cripto-fiscal-global/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "cripto-precio-justo-global",
+      "nombre": "Cripto-precio justo",
+      "pais": "Filipinas",
+      "ficha": "/negocios/cripto-precio-justo-global/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "etiqueta-ultraprocesados-global",
+      "nombre": "Etiqueta honesta",
+      "pais": "España",
+      "ficha": "/negocios/etiqueta-ultraprocesados-global/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "cambio-confuso-global",
+      "nombre": "Cambio confuso",
+      "pais": "Sin precisar",
+      "ficha": "/negocios/cambio-confuso-global/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "cumplimiento-normativo-global",
+      "nombre": "Cumplimiento fiscal B2B global",
+      "pais": "España",
+      "ficha": "/negocios/cumplimiento-normativo-global/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-13",
+          "texto": "2026-08-13"
+        }
+      ]
+    },
+    {
+      "slug": "reclama",
+      "nombre": "Reclama",
+      "pais": "España",
+      "ficha": "/negocios/reclama/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-28",
+          "texto": "28 de diciembre de 2026"
+        }
+      ]
+    },
+    {
+      "slug": "privacy-fit-us",
+      "nombre": "Privacy Fit",
+      "pais": "Unión Europea",
+      "ficha": "/negocios/privacy-fit-us/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-17",
+          "texto": "2026-08-17"
+        }
+      ]
+    },
+    {
+      "slug": "paca",
+      "nombre": "Paca",
+      "pais": "España",
+      "ficha": "/negocios/paca/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-12",
+          "texto": "12 de agosto de 2026"
+        },
+        {
+          "iso": "2025-02-11",
+          "texto": "11 de febrero de 2025"
+        },
+        {
+          "iso": "2026-08-14",
+          "texto": "14 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-24",
+          "texto": "2026-08-24"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "eu261",
+      "nombre": "EU261 vuelos",
+      "pais": "España",
+      "ficha": "/negocios/eu261/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-25",
+          "texto": "2026-08-25"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "clickcancel",
+      "nombre": "Click-to-Cancel",
+      "pais": "España",
+      "ficha": "/negocios/clickcancel/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-24",
+          "texto": "2026-08-24"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "csrd",
+      "nombre": "CSRD · Ómnibus",
+      "pais": "España",
+      "ficha": "/negocios/csrd/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-25",
+          "texto": "2026-08-25"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "maquinas",
+      "nombre": "Reglamento de Máquinas",
+      "pais": "España",
+      "ficha": "/negocios/maquinas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-20",
+          "texto": "2027-01-20"
+        }
+      ]
+    },
+    {
+      "slug": "comisiones",
+      "nombre": "MarketPlace",
+      "pais": "Sin precisar",
+      "ficha": "/negocios/comisiones/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "luzjusta",
+      "nombre": "Luz justa",
+      "pais": "España",
+      "ficha": "/negocios/luzjusta/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-24",
+          "texto": "2026-08-24"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "hipoteca",
+      "nombre": "Hipoteca justa",
+      "pais": "España",
+      "ficha": "/negocios/hipoteca/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-24",
+          "texto": "2026-08-24"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "aranceles",
+      "nombre": "Aranceles",
+      "pais": "España",
+      "ficha": "/negocios/aranceles/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "salariominimo",
+      "nombre": "Salario mínimo",
+      "pais": "España",
+      "ficha": "/negocios/salariominimo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-26",
+          "texto": "2026-08-26"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "bonosocial",
+      "nombre": "Bono social",
+      "pais": "España",
+      "ficha": "/negocios/bonosocial/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-25",
+          "texto": "2026-08-25"
+        },
+        {
+          "iso": "2026-08-23",
+          "texto": "2026-08-23"
+        }
+      ]
+    },
+    {
+      "slug": "velas",
+      "nombre": "Velas",
+      "pais": "LATAM",
+      "ficha": "/negocios/velas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-02",
+          "texto": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "slug": "cartanatal",
+      "nombre": "Carta Natal",
+      "pais": "LATAM",
+      "ficha": "/negocios/cartanatal/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-03-20",
+          "texto": "2027-03-20"
+        }
+      ]
+    },
+    {
+      "slug": "angeles",
+      "nombre": "Ángeles",
+      "pais": "LATAM",
+      "ficha": "/negocios/angeles/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-09-29",
+          "texto": "2026-09-29"
+        }
+      ]
+    },
+    {
+      "slug": "tarotamor",
+      "nombre": "Tarot Amor",
+      "pais": "LATAM",
+      "ficha": "/negocios/tarotamor/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-13",
+          "texto": "2026-11-13"
+        }
+      ]
+    },
+    {
+      "slug": "horoscopodia",
+      "nombre": "Horóscopo Día",
+      "pais": "LATAM",
+      "ficha": "/negocios/horoscopodia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-09-22",
+          "texto": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "tarotsino",
+      "nombre": "Tarot Sí/No",
+      "pais": "LATAM",
+      "ficha": "/negocios/tarotsino/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-10-26",
+          "texto": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "slug": "tarotsemana",
+      "nombre": "Tarot Semana",
+      "pais": "LATAM",
+      "ficha": "/negocios/tarotsemana/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "runas",
+      "nombre": "Runas",
+      "pais": "LATAM",
+      "ficha": "/negocios/runas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-21",
+          "texto": "2026-12-21"
+        }
+      ]
+    },
+    {
+      "slug": "numerologia",
+      "nombre": "Numerología",
+      "pais": "LATAM",
+      "ficha": "/negocios/numerologia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "2027-01-01"
+        }
+      ]
+    },
+    {
+      "slug": "suenos",
+      "nombre": "Sueños",
+      "pais": "LATAM",
+      "ficha": "/negocios/suenos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        },
+        {
+          "iso": "2026-09-11",
+          "texto": "2026-09-11"
+        }
+      ]
+    },
+    {
+      "slug": "packinglist",
+      "nombre": "PackingList",
+      "pais": "LATAM",
+      "ficha": "/negocios/packinglist/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "calculaexport",
+      "nombre": "CalcExport",
+      "pais": "LATAM",
+      "ficha": "/negocios/calculaexport/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "valtransfer",
+      "nombre": "ValidaTransfer",
+      "pais": "LATAM",
+      "ficha": "/negocios/valtransfer/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "calculafx",
+      "nombre": "CalcFX",
+      "pais": "LATAM",
+      "ficha": "/negocios/calculafx/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "recibos",
+      "nombre": "ReciboPago",
+      "pais": "LATAM",
+      "ficha": "/negocios/recibos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "gastos",
+      "nombre": "GastoOK",
+      "pais": "LATAM",
+      "ficha": "/negocios/gastos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "anomalias",
+      "nombre": "AlertaGasto",
+      "pais": "LATAM",
+      "ficha": "/negocios/anomalias/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "direcciones",
+      "nombre": "DirOK",
+      "pais": "México",
+      "ficha": "/negocios/direcciones/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "moneda",
+      "nombre": "MonoIdent",
+      "pais": "México",
+      "ficha": "/negocios/moneda/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "codigopostal",
+      "nombre": "CPValida",
+      "pais": "México",
+      "ficha": "/negocios/codigopostal/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "aduana",
+      "nombre": "DocAduana",
+      "pais": "LATAM",
+      "ficha": "/negocios/aduana/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "apidatos",
+      "nombre": "DataAPI",
+      "pais": "LATAM",
+      "ficha": "/negocios/apidatos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "costototal",
+      "nombre": "CostoTotal",
+      "pais": "LATAM",
+      "ficha": "/negocios/costototal/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "validadocs",
+      "nombre": "ValidaDocs",
+      "pais": "LATAM",
+      "ficha": "/negocios/validadocs/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "pila",
+      "nombre": "Pila",
+      "pais": "LATAM",
+      "ficha": "/negocios/pila/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "factu",
+      "nombre": "Factu",
+      "pais": "España",
+      "ficha": "/negocios/factu/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "1 de enero de 2027"
+        },
+        {
+          "iso": "2027-07-01",
+          "texto": "1 de julio de 2027"
+        }
+      ]
+    },
+    {
+      "slug": "bitacora",
+      "nombre": "Bitácora",
+      "pais": "LATAM",
+      "ficha": "/negocios/bitacora/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-14",
+          "texto": "14 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        },
+        {
+          "iso": "2024-09-03",
+          "texto": "2024-09-03"
+        }
+      ]
+    },
+    {
+      "slug": "freelance",
+      "nombre": "FreelanceNet",
+      "pais": "LATAM",
+      "ficha": "/negocios/freelance/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "novena",
+      "nombre": "Novena",
+      "pais": "LATAM",
+      "ficha": "/negocios/novena/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-25",
+          "texto": "2026-12-25"
+        }
+      ]
+    },
+    {
+      "slug": "santoral",
+      "nombre": "Santoral",
+      "pais": "LATAM",
+      "ficha": "/negocios/santoral/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-10-28",
+          "texto": "2026-10-28"
+        }
+      ]
+    },
+    {
+      "slug": "salmos",
+      "nombre": "Salmos",
+      "pais": "LATAM",
+      "ficha": "/negocios/salmos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-24",
+          "texto": "2027-01-24"
+        }
+      ]
+    },
+    {
+      "slug": "rosario",
+      "nombre": "Rosario",
+      "pais": "LATAM",
+      "ficha": "/negocios/rosario/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-10-07",
+          "texto": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "slug": "ceniza",
+      "nombre": "Ceniza",
+      "pais": "LATAM",
+      "ficha": "/negocios/ceniza/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-10",
+          "texto": "2027-02-10"
+        }
+      ]
+    },
+    {
+      "slug": "guadalupe",
+      "nombre": "Guadalupe",
+      "pais": "México",
+      "ficha": "/negocios/guadalupe/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-03",
+          "texto": "2026-12-03"
+        }
+      ]
+    },
+    {
+      "slug": "biblia",
+      "nombre": "Biblia",
+      "pais": "LATAM",
+      "ficha": "/negocios/biblia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "2027-01-01"
+        }
+      ]
+    },
+    {
+      "slug": "promesas",
+      "nombre": "Promesas",
+      "pais": "LATAM",
+      "ficha": "/negocios/promesas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-03-27",
+          "texto": "2027-03-27"
+        }
+      ]
+    },
+    {
+      "slug": "fiestas",
+      "nombre": "Fiestas",
+      "pais": "LATAM",
+      "ficha": "/negocios/fiestas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-03-27",
+          "texto": "2027-03-27"
+        }
+      ]
+    },
+    {
+      "slug": "compatibilidad",
+      "nombre": "Compatibilidad",
+      "pais": "LATAM",
+      "ficha": "/negocios/compatibilidad/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-14",
+          "texto": "2027-02-14"
+        }
+      ]
+    },
+    {
+      "slug": "retrogrado",
+      "nombre": "Retrógrados",
+      "pais": "LATAM",
+      "ficha": "/negocios/retrogrado/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-10-24",
+          "texto": "2026-10-24"
+        }
+      ]
+    },
+    {
+      "slug": "fases",
+      "nombre": "Fases",
+      "pais": "LATAM",
+      "ficha": "/negocios/fases/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-09-26",
+          "texto": "2026-09-26"
+        }
+      ]
+    },
+    {
+      "slug": "eclipse",
+      "nombre": "Eclipse",
+      "pais": "LATAM",
+      "ficha": "/negocios/eclipse/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-06",
+          "texto": "2027-02-06"
+        }
+      ]
+    },
+    {
+      "slug": "chino",
+      "nombre": "Chino",
+      "pais": "LATAM",
+      "ficha": "/negocios/chino/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-06",
+          "texto": "2027-02-06"
+        }
+      ]
+    },
+    {
+      "slug": "biorritmo",
+      "nombre": "Biorritmo",
+      "pais": "LATAM",
+      "ficha": "/negocios/biorritmo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "astrotrabajo",
+      "nombre": "Astro Trabajo",
+      "pais": "LATAM",
+      "ficha": "/negocios/astrotrabajo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-29",
+          "texto": "2026-11-29"
+        }
+      ]
+    },
+    {
+      "slug": "espanolas",
+      "nombre": "Baraja Española",
+      "pais": "LATAM",
+      "ficha": "/negocios/espanolas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "iching",
+      "nombre": "I Ching",
+      "pais": "LATAM",
+      "ficha": "/negocios/iching/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-06",
+          "texto": "2027-02-06"
+        }
+      ]
+    },
+    {
+      "slug": "cafe",
+      "nombre": "Café",
+      "pais": "LATAM",
+      "ficha": "/negocios/cafe/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-06",
+          "texto": "2027-01-06"
+        }
+      ]
+    },
+    {
+      "slug": "manos",
+      "nombre": "Manos",
+      "pais": "LATAM",
+      "ficha": "/negocios/manos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-06-24",
+          "texto": "2027-06-24"
+        }
+      ]
+    },
+    {
+      "slug": "orisha",
+      "nombre": "Orisha",
+      "pais": "Cuba",
+      "ficha": "/negocios/orisha/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        },
+        {
+          "iso": "2026-09-07",
+          "texto": "2026-09-07"
+        }
+      ]
+    },
+    {
+      "slug": "eleggua",
+      "nombre": "Elegguá",
+      "pais": "Cuba",
+      "ficha": "/negocios/eleggua/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "2027-01-01"
+        }
+      ]
+    },
+    {
+      "slug": "yemaya",
+      "nombre": "Yemayá",
+      "pais": "Cuba",
+      "ficha": "/negocios/yemaya/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        },
+        {
+          "iso": "2026-09-07",
+          "texto": "2026-09-07"
+        }
+      ]
+    },
+    {
+      "slug": "oshun",
+      "nombre": "Oshún",
+      "pais": "Cuba",
+      "ficha": "/negocios/oshun/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        },
+        {
+          "iso": "2026-09-08",
+          "texto": "2026-09-08"
+        }
+      ]
+    },
+    {
+      "slug": "shango",
+      "nombre": "Shangó",
+      "pais": "Cuba",
+      "ficha": "/negocios/shango/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-04",
+          "texto": "2026-12-04"
+        }
+      ]
+    },
+    {
+      "slug": "sanlazaro",
+      "nombre": "San Lázaro",
+      "pais": "Cuba",
+      "ficha": "/negocios/sanlazaro/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-17",
+          "texto": "2026-12-17"
+        }
+      ]
+    },
+    {
+      "slug": "orula",
+      "nombre": "Orula",
+      "pais": "Cuba",
+      "ficha": "/negocios/orula/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-10-04",
+          "texto": "2026-10-04"
+        }
+      ]
+    },
+    {
+      "slug": "santamuerte",
+      "nombre": "Santa Muerte",
+      "pais": "México",
+      "ficha": "/negocios/santamuerte/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-02",
+          "texto": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "slug": "candomble",
+      "nombre": "Orixás Brasil",
+      "pais": "Brasil",
+      "ficha": "/negocios/candomble/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-02",
+          "texto": "2027-02-02"
+        }
+      ]
+    },
+    {
+      "slug": "vudu",
+      "nombre": "Vudú",
+      "pais": "Haití",
+      "ficha": "/negocios/vudu/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-01",
+          "texto": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "slug": "pachamama",
+      "nombre": "Pachamama",
+      "pais": "Bolivia",
+      "ficha": "/negocios/pachamama/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-08-01",
+          "texto": "2027-08-01"
+        }
+      ]
+    },
+    {
+      "slug": "intiraymi",
+      "nombre": "Inti Raymi",
+      "pais": "Perú",
+      "ficha": "/negocios/intiraymi/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-06-24",
+          "texto": "2027-06-24"
+        }
+      ]
+    },
+    {
+      "slug": "anoneandino",
+      "nombre": "Año Nuevo Andino",
+      "pais": "Bolivia",
+      "ficha": "/negocios/anoneandino/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-06-21",
+          "texto": "2027-06-21"
+        }
+      ]
+    },
+    {
+      "slug": "despacho",
+      "nombre": "Despacho",
+      "pais": "Bolivia",
+      "ficha": "/negocios/despacho/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "coca",
+      "nombre": "Lectura de Coca",
+      "pais": "Bolivia",
+      "ficha": "/negocios/coca/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-11",
+          "texto": "2027-01-11"
+        }
+      ]
+    },
+    {
+      "slug": "illas",
+      "nombre": "Illas",
+      "pais": "Bolivia",
+      "ficha": "/negocios/illas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "alasitas",
+      "nombre": "Alasitas",
+      "pais": "Bolivia",
+      "ficha": "/negocios/alasitas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-24",
+          "texto": "2027-01-24"
+        }
+      ]
+    },
+    {
+      "slug": "todosantos",
+      "nombre": "Todos Santos",
+      "pais": "Bolivia",
+      "ficha": "/negocios/todosantos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-01",
+          "texto": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "slug": "qhapaqraymi",
+      "nombre": "Qhapaq Raymi",
+      "pais": "Bolivia",
+      "ficha": "/negocios/qhapaqraymi/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-21",
+          "texto": "2026-12-21"
+        }
+      ]
+    },
+    {
+      "slug": "challa",
+      "nombre": "Ch'alla",
+      "pais": "Bolivia",
+      "ficha": "/negocios/challa/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-09",
+          "texto": "09 de febrero de 2027"
+        }
+      ]
+    },
+    {
+      "slug": "amuletos",
+      "nombre": "Amuletos",
+      "pais": "LATAM",
+      "ficha": "/negocios/amuletos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "limpia",
+      "nombre": "Limpia",
+      "pais": "LATAM",
+      "ficha": "/negocios/limpia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "huevo",
+      "nombre": "Lectura de Huevo",
+      "pais": "LATAM",
+      "ficha": "/negocios/huevo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "sahumerio",
+      "nombre": "Sahumerio",
+      "pais": "LATAM",
+      "ficha": "/negocios/sahumerio/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-06",
+          "texto": "2027-01-06"
+        }
+      ]
+    },
+    {
+      "slug": "bano",
+      "nombre": "Baño de Descarga",
+      "pais": "LATAM",
+      "ficha": "/negocios/bano/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-06-24",
+          "texto": "2027-06-24"
+        }
+      ]
+    },
+    {
+      "slug": "quemanoia",
+      "nombre": "Quema de Año Viejo",
+      "pais": "LATAM",
+      "ficha": "/negocios/quemanoia/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-31",
+          "texto": "2026-12-31"
+        }
+      ]
+    },
+    {
+      "slug": "quitapenas",
+      "nombre": "Muñecas Quitapenas",
+      "pais": "Guatemala",
+      "ficha": "/negocios/quitapenas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    },
+    {
+      "slug": "altar",
+      "nombre": "Altar de Muertos",
+      "pais": "LATAM",
+      "ficha": "/negocios/altar/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-11-02",
+          "texto": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "slug": "exvoto",
+      "nombre": "Exvotos",
+      "pais": "LATAM",
+      "ficha": "/negocios/exvoto/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-12-12",
+          "texto": "2026-12-12"
+        }
+      ]
+    },
+    {
+      "slug": "curandera",
+      "nombre": "Curandera",
+      "pais": "LATAM",
+      "ficha": "/negocios/curandera/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-02-02",
+          "texto": "2027-02-02"
+        }
+      ]
+    },
+    {
+      "slug": "reconciliacion",
+      "nombre": "Reconcilia",
+      "pais": "LATAM",
+      "ficha": "/negocios/reconciliacion/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "clasificador",
+      "nombre": "Clasifica",
+      "pais": "LATAM",
+      "ficha": "/negocios/clasificador/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "2027-01-01"
+        }
+      ]
+    },
+    {
+      "slug": "calculadoraimpo",
+      "nombre": "CalcImport",
+      "pais": "México",
+      "ficha": "/negocios/calculadoraimpo/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-01-01",
+          "texto": "2027-01-01"
+        }
+      ]
+    },
+    {
+      "slug": "facturacrypto",
+      "nombre": "FacturaCrypto",
+      "pais": "LATAM",
+      "ficha": "/negocios/facturacrypto/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "monitorpagos",
+      "nombre": "PayWatch",
+      "pais": "LATAM",
+      "ficha": "/negocios/monitorpagos/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "conciliador",
+      "nombre": "Conciliador",
+      "pais": "LATAM",
+      "ficha": "/negocios/conciliador/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "calculamel",
+      "nombre": "CalcMEL",
+      "pais": "LATAM",
+      "ficha": "/negocios/calculamel/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "duplicados",
+      "nombre": "DupliCheck",
+      "pais": "LATAM",
+      "ficha": "/negocios/duplicados/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "validatx",
+      "nombre": "ValidaTX",
+      "pais": "LATAM",
+      "ficha": "/negocios/validatx/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "extractor",
+      "nombre": "ExtraePDF",
+      "pais": "LATAM",
+      "ficha": "/negocios/extractor/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "xml2csv",
+      "nombre": "XML2Data",
+      "pais": "LATAM",
+      "ficha": "/negocios/xml2csv/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "validadorcfdi",
+      "nombre": "ValidaCFDI",
+      "pais": "México",
+      "ficha": "/negocios/validadorcfdi/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "extractorfacturas",
+      "nombre": "FacturaData",
+      "pais": "LATAM",
+      "ficha": "/negocios/extractorfacturas/",
+      "fechasDetectadas": [
+        {
+          "iso": "2027-04-30",
+          "texto": "2027-04-30"
+        }
+      ]
+    },
+    {
+      "slug": "proforma",
+      "nombre": "Proforma",
+      "pais": "LATAM",
+      "ficha": "/negocios/proforma/",
+      "fechasDetectadas": [
+        {
+          "iso": "2026-08-16",
+          "texto": "16 de agosto de 2026"
+        },
+        {
+          "iso": "2026-08-28",
+          "texto": "2026-08-28"
+        }
+      ]
+    }
+  ]
+}

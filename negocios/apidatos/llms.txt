@@ -1,0 +1,23 @@
+# DataAPI
+
+DataAPI — normaliza y valida la información de tu negocio. en LATAM — La información sucia cuesta entregas, facturas y clientes. Dato duro: 4 validadores (ISO 4217, Correos, dirección, HS/OMD); 5-10% de direcciones con errores. Herramienta en el navegador contra «cargar y rezar». Gratis 100/mes + Pro anual (6 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Datos · APIs.
+- Fecha límite / cita: Tu próxima carga de datos.
+- Precio Pro: 6 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.iso.org/iso-4217-currency-codes.html (ISO 4217 — Códigos de moneda)
+2. https://www.correosdemexico.gob.mx/ (Correos de México — Catálogo de CP)
+3. https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2027-edition.aspx (OMD — Sistema Armonizado)
+4. https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf (SAT — RGCE 2026)
+5. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+
+## Precio
+- Gratis: 100 registros al mes.
+- Pro (6 USD pago único, cripto vía NOWPayments): Registros ilimitados; Validación por lote; Exportación limpia; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La validación reduce errores; la información definitiva es tu responsabilidad y la de tus fuentes. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

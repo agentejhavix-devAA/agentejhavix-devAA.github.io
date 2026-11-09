@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guadalupe.attenciona.com/llms.txt

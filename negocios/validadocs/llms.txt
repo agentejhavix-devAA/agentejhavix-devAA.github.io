@@ -1,0 +1,23 @@
+# ValidaDocs
+
+ValidaDocs — comprueba tus documentos antes de enviarlos. en LATAM — Un campo mal cuesta la operación o el embarque. Dato duro: la consistencia entre factura, proforma y packing es la regla (RGCE/SAT); peso distinto = retención. Herramienta en el navegador contra «enviar y rezar». Gratis 10/mes + Pro anual (5 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Comercio · Validación.
+- Fecha límite / cita: Documentos de tu próximo envío.
+- Precio Pro: 5 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/Factura/solicita_requisitos.htm (SAT — Requisitos de la factura)
+2. https://www.upseller.com/es/blog-article-642 (UpSeller — CFDI 4.0 en 2026)
+3. https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf (SAT — RGCE 2026)
+4. https://www.camtomx.com/guia/guia-importar-mexico-paso-a-paso (Camtom — Importar paso a paso)
+5. https://horizonteaduanal.com.mx/guia-practica-como-calcular-aranceles-para-importaciones-en-mexico/ (Horizonte Aduanal — Aranceles)
+
+## Precio
+- Gratis: 10 validaciones al mes.
+- Pro (5 USD pago único, cripto vía NOWPayments): Validaciones ilimitadas; Consistencia entre documentos; Reporte exportable; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La validación reduce errores; la responsabilidad del documento es tuya y de tu agente. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

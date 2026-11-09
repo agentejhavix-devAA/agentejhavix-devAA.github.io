@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head><script>try{location.replace("https://www.attenciona.com"+location.pathname+location.search+location.hash);}catch(e){location.href="https://www.attenciona.com/";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mis Negocios — attenciona</title>
+<meta name="description" content="Panel del dueño: compra un negocio, cobra el 70% por uso, ponlo en venta y retira tu saldo. attenciona.">
+<meta name="robots" content="noindex,follow">
+<style>
+:root{--navy:#0f2d5c;--navy2:#0b2244;--oro:#c9a44c;--tinta:#0e1726;--muted:#5b6b82;--linea:#e4e9f1;--paper:#f6f8fc;--ok:#0f7b52;--max:1080px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--tinta);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+a{color:var(--navy)}
+.wrap{max-width:var(--max);margin:auto;padding:0 20px}
+header.top{background:linear-gradient(180deg,var(--navy),var(--navy2));color:#fff;padding:14px 0}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;text-decoration:none}
+.brand .m{width:26px;height:26px;border:2px solid var(--oro);border-radius:8px;display:grid;place-items:center;color:var(--oro);font-size:13px}
+header.top nav a{color:#dbe6f7;text-decoration:none;font-size:.9rem;margin-left:16px}
+.hero{background:linear-gradient(180deg,var(--navy2),#0a1c38);color:#fff;padding:48px 0 40px}
+.hero h1{font-size:2rem;margin:0 0 8px}
+.hero p{color:#c3d2ea;max-width:60ch;margin:0}
+.split-badge{display:inline-flex;gap:8px;align-items:center;background:rgba(201,164,76,.15);border:1px solid rgba(201,164,76,.5);color:#f2e2b8;border-radius:999px;padding:6px 12px;font-size:.8rem;font-weight:700;margin-bottom:14px}
+section{padding:34px 0}
+.card{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:22px;box-shadow:0 10px 30px rgba(15,45,92,.05)}
+.grid{display:grid;gap:16px}
+.eyebrow{color:var(--oro);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.74rem}
+h2{font-size:1.35rem;margin:.2em 0 .6em}
+label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin:10px 0 4px}
+input,select{width:100%;padding:12px 14px;border:1px solid var(--linea);border-radius:10px;font:inherit;background:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>div{flex:1;min-width:200px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 20px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn.oro{background:var(--oro);color:#20180a}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.btn.sm{padding:8px 14px;font-size:.86rem}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.muted{color:var(--muted)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 4px}
+.kpi{background:var(--paper);border:1px solid var(--linea);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:1.5rem;font-family:"Fraunces",serif}
+.kpi span{font-size:.78rem;color:var(--muted)}
+.biz{border:1px solid var(--linea);border-radius:12px;padding:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.biz .n{font-weight:700}
+.pill{font-size:.72rem;font-weight:700;border-radius:999px;padding:3px 9px;border:1px solid var(--linea)}
+.pill.venta{background:#fff7e6;border-color:#e7cf94;color:#8a6b1f}
+.pill.ok{background:#e8f6ef;border-color:#a9dcc5;color:var(--ok)}
+.msg{padding:12px 14px;border-radius:10px;margin:12px 0;font-size:.9rem;display:none}
+.msg.show{display:block}
+.msg.err{background:#fdecec;border:1px solid #f4c2c2;color:#a12626}
+.msg.good{background:#e8f6ef;border:1px solid #a9dcc5;color:var(--ok)}
+.hidden{display:none}
+footer{padding:34px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--linea)}
+.note{font-size:.8rem;color:var(--muted);margin-top:8px}
+.dash{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:12px}
+.tile{background:linear-gradient(180deg,#12315f,#0e2951);color:#fff;border-radius:14px;padding:16px}
+.tile .lbl{display:block;font-size:.7rem;color:#b9cbe6;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+.tile b{display:block;font-family:"Fraunces",serif;font-size:1.7rem;margin-top:4px;line-height:1}
+.tile .sub{font-size:.74rem;color:#b9cbe6}
+.tile.big{background:linear-gradient(180deg,#c9a44c,#b0863a);color:#20180a}
+.tile.big .lbl,.tile.big .sub{color:#5c4a18}
+.bizc{border:1px solid var(--linea);border-radius:14px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:#fff}
+.bizc .head{display:flex;align-items:center;gap:10px}
+.bizc .dot{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:"Fraunces",serif;flex:0 0 auto}
+.bizc .earn{font-family:"Fraunces",serif}
+.bizc .meta{color:var(--muted);font-size:.84rem;margin-top:2px}
+.bizc .acts{display:flex;flex-direction:column;gap:8px;min-width:190px}
+.feed{display:flex;flex-direction:column;gap:8px}
+.fitem{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--linea);border-radius:10px;font-size:.9rem}
+.fitem .fi{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;flex:0 0 auto}
+.fitem .fa{margin-left:auto;font-weight:800}
+@media(max-width:820px){.dash{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.kpis{grid-template-columns:1fr}.dash{grid-template-columns:1fr}.bizc{grid-template-columns:1fr}.bizc .acts{min-width:0}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/nav-fase4.css">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="Mis Negocios — attenciona">
+<meta property="og:description" content="Panel del dueño: compra un negocio, cobra el 70% por uso, ponlo en venta y retira tu saldo. attenciona.">
+<meta property="og:url" content="https://www.attenciona.com/mis-negocios.html">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mis Negocios — attenciona">
+<meta name="twitter:description" content="Panel del dueño: compra un negocio, cobra el 70% por uso, ponlo en venta y retira tu saldo. attenciona.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body>
+<nav class="af-nav" aria-label="Principal"><div class="af-in">
+  <a class="af-brand" href="/"><span class="af-mk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5 L6 12 L12 12 Z" fill="#fff" opacity=".95"/><path d="M12 5 L18 12 L12 12 Z" fill="#ffe6d6" opacity=".9"/><path d="M12 12 L6 12 L12 19 Z" fill="#fff" opacity=".45"/><path d="M12 12 L12 19 L18 12 Z" fill="#fff" opacity=".68"/></svg></span>attenciona<span class="af-sub">Negocios</span></a>
+  <div class="af-links">
+    <div class="af-item">
+      <button class="af-btn" aria-haspopup="true">Explorar <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 8l3-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="af-mega">
+        <a class="af-mlink" href="/negocios/atiende-ia/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C4.4 1.5 1.5 4 1.5 7c0 1.6.8 3 2 4L3 13.5l3-1.2c.6.14 1.3.2 2 .2 3.6 0 6.5-2.5 6.5-5.5S11.6 1.5 8 1.5z" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">AtiendeIA</span><span class="af-md">Agentes de WhatsApp a medida · negocio principal</span></span></a>
+        <a class="af-mlink" href="/marketplace.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Destacados</span><span class="af-md">Los negocios mejor valorados</span></span></a>
+        <a class="af-mlink" href="/negocios/todos/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Todos los negocios</span><span class="af-md">El listado completo con buscador</span></span></a>
+        <a class="af-mlink" href="/incubadora.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5c2.5 2.6 4 5 4 7a4 4 0 11-8 0c0-2 1.5-4.4 4-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Incubadora</span><span class="af-md">Lo último que sale del motor</span></span></a>
+        <a class="af-mlink" href="/problemas/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4M8 4.9v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><span class="af-mt">Por problema</span><span class="af-md">Entra por tu obligación legal</span></span></a>
+        <a class="af-mlink" href="/negocios/pais/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h12M8 2c2 2.4 2 9.6 0 12M8 2c-2 2.4-2 9.6 0 12" stroke="currentColor" stroke-width="1.1"/></svg></span><span><span class="af-mt">Por país</span><span class="af-md">Cumplimiento por territorio</span></span></a>
+        <a class="af-mlink" href="/negomazon/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M4 5.5h8l.8 8.5H3.2L4 5.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 5.5a2 2 0 0 1 4 0" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">Negomazon</span><span class="af-md">Guías de compra · afiliado Amazon</span></span></a>
+        <a class="af-mlink" href="/strategycheck/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l2 3.2h3.6L11 7.5l1 3.7-4-2.3-4 2.3 1-3.7L2.4 4.7H6L8 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg></span><span><span class="af-mt">StrategyCheck</span><span class="af-md">Backtest honesto de bots · gratis</span></span></a>
+      </div>
+    </div>
+    <a class="af-link" href="/historia.html">Historia</a>
+    <a class="af-link af-active" href="/mis-negocios.html">Mis Negocios</a>
+  </div>
+  <div class="af-right"><a class="af-cta" href="/incubadora.html">Ver la <span>incubadora</span></a></div>
+</div></nav>
+
+<div class="hero"><div class="wrap">
+  <span class="split-badge">◆ Reparto 70% dueño · 15% promotor · 15% attenciona (o 70/30 sin promotor)</span>
+  <h1>Mis Negocios</h1>
+  <p>Compra un negocio y sé su dueño. Cobra el <b>70%</b> cada vez que alguien lo usa, ponlo en venta cuando quieras y retira tu saldo a tu wallet.</p>
+</div></div>
+
+<section><div class="wrap grid">
+
+  <!-- 1. Identidad -->
+  <div class="card" id="loginCard">
+    <div class="eyebrow">Paso 1 · Identifícate</div>
+    <h2>Tu wallet y tu email</h2>
+    <p class="muted">La <b>wallet</b> es donde cobras (destino del payout). El <b>email</b> es para avisos y recuperar el acceso. No hay contraseñas: tu wallet+email son tu llave.</p>
+    <div class="row">
+      <div>
+        <label>Wallet (cripto)</label>
+        <input id="wallet" placeholder="0x… o dirección de tu wallet" autocomplete="off">
+        <button class="btn ghost sm" id="mmBtn" style="margin-top:8px" type="button">Conectar MetaMask</button>
+      </div>
+      <div>
+        <label>Email</label>
+        <input id="email" type="email" placeholder="tu@correo.com" autocomplete="email">
+      </div>
+    </div>
+    <div style="margin-top:14px"><button class="btn" id="entrarBtn" type="button">Entrar a mi panel</button></div>
+    <div class="msg" id="loginMsg"></div>
+  </div>
+
+  <!-- 2. Panel del dueño -->
+  <div class="card hidden" id="panel">
+    <div class="eyebrow">Paso 2 · Tu panel</div>
+    <h2>Tu dinero de un vistazo</h2>
+    <div class="dash">
+      <div class="tile big"><span class="lbl">Generado total</span><b id="tGen">$0</b><span class="sub"><span id="tUsos">0</span> usos · <span id="tVentas">0</span> ventas</span></div>
+      <div class="tile"><span class="lbl">Por uso (70%)</span><b id="tUso">$0</b></div>
+      <div class="tile"><span class="lbl">Por reventa</span><b id="tRev">$0</b></div>
+      <div class="tile"><span class="lbl">Saldo pendiente</span><b id="tPend">$0</b></div>
+      <div class="tile"><span class="lbl">Ya cobrado</span><b id="tPag">$0</b></div>
+    </div>
+    <div class="row" style="align-items:center;margin-top:14px">
+      <button class="btn oro" id="retirarBtn" type="button">Retirar saldo a mi wallet</button>
+      <span class="note" id="payoutNota"></span>
+    </div>
+    <div class="msg" id="panelMsg"></div>
+
+    <h3 style="margin:22px 0 4px">Tus negocios</h3>
+    <p class="muted" style="margin:0 0 12px;font-size:.9rem">Cada negocio te da dinero de <b>dos formas</b>: 🔁 <b>por uso</b> — te llevas el <b>70%</b> cada vez que alguien lo usa, automático y fijo (no lo tocas) · o 🏷️ <b>revendiéndolo</b> entero <b>al precio que tú quieras</b> (mandas tú).</p>
+    <div id="listaNeg" class="grid"></div>
+
+    <h3 style="margin:24px 0 6px">Actividad reciente</h3>
+    <div id="feed" class="feed"><p class="muted">Sin movimientos todavía.</p></div>
+  </div>
+
+  <!-- 3. Comprar para ser dueño -->
+  <div class="card hidden" id="comprarCard">
+    <div class="eyebrow">Hazte dueño</div>
+    <h2>Compra un negocio del catálogo</h2>
+    <p class="muted">Elige un negocio disponible. Al pagar quedas registrado como su dueño y empiezas a cobrar el 70% de cada uso.</p>
+    <div class="row">
+      <div>
+        <label>Negocio</label>
+        <select id="selNeg"><option value="">Cargando catálogo…</option></select>
+      </div>
+      <div>
+        <label>Wallet del promotor (opcional)</label>
+        <input id="refWallet" placeholder="quien te lo trajo cobra el 15% del uso">
+      </div>
+    </div>
+    <div style="margin-top:14px"><button class="btn" id="comprarBtn" type="button">Comprar y ser dueño</button></div>
+    <div class="msg" id="comprarMsg"></div>
+  </div>
+
+  <!-- 4. Mercado secundario -->
+  <div class="card">
+    <div class="eyebrow">Mercado secundario</div>
+    <h2>Negocios en reventa</h2>
+    <p class="muted">Negocios de <b>otros</b> dueños que puedes comprar. Los que tú pones en venta aparecen arriba, en «Tus negocios». Al comprar, la propiedad se transfiere a tu wallet+email.</p>
+    <div id="listaReventa" class="grid" style="margin-top:8px"><p class="muted">Cargando…</p></div>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap">
+  attenciona · Panel de dueños. El pago y el escrow los procesa NOWPayments. El reparto 70/15/15 y el certificado de propiedad se registran en el servidor. Esto no es asesoría financiera.
+</div></footer>
+
+<script src="/cartera.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+let STATE = { wallet:'', email:'', negocios:[], saldo:{pendiente:0,pagado:0}, certByCert:'' };
+const DEMO = new URLSearchParams(location.search).get('demo') || '';
+if (DEMO) {
+  const bn = document.createElement('div');
+  bn.textContent = '🧪 MODO DEMO — puedes comprar negocios SIN pagar. Enlace privado, solo para tus pruebas.';
+  bn.style.cssText = 'background:#c9a44c;color:#20180a;text-align:center;padding:9px;font-weight:800;font-size:.9rem';
+  document.body.insertBefore(bn, document.body.firstChild);
+}
+
+function money(n){ return '$' + (Math.round(Number(n||0)*100)/100).toLocaleString('es-ES'); }
+function showMsg(el, text, kind){ el.textContent = text; el.className = 'msg show ' + (kind||''); }
+function hideMsg(el){ el.className = 'msg'; }
+
+// --- MetaMask (sin projectId; funciona si el visitante tiene wallet inyectada) ---
+$('#mmBtn').onclick = async () => {
+  if(!window.Cartera || !Cartera.hayCartera()){
+    if(window.Cartera && Cartera.esMovil()){ location.href = Cartera.deeplink('/mis-negocios.html'); return; }
+    showMsg($('#loginMsg'),'No detecto una wallet en el navegador. Pega tu dirección a mano.','err'); return;
+  }
+  try{
+    const r = await Cartera.conectar({ red:false });
+    if(r.cuenta){ $('#wallet').value = r.cuenta; hideMsg($('#loginMsg')); }
+  }catch(e){ showMsg($('#loginMsg'), Cartera.mensajeError(e),'err'); }
+};
+
+$('#entrarBtn').onclick = entrar;
+async function entrar(){
+  const wallet = $('#wallet').value.trim(), email = $('#email').value.trim().toLowerCase();
+  hideMsg($('#loginMsg'));
+  if(!/^[a-zA-Z0-9:_-]{6,120}$/.test(wallet)) return showMsg($('#loginMsg'),'Wallet no válida.','err');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return showMsg($('#loginMsg'),'Email no válido.','err');
+  STATE.wallet = wallet; STATE.email = email;
+  await cargarPanel();
+  $('#panel').classList.remove('hidden');
+  $('#comprarCard').classList.remove('hidden');
+  await cargarCatalogo();
+  cargarReventa();   // recarga el mercado ya filtrando fuera lo tuyo
+}
+
+async function cargarPanel(){
+  const r = await fetch('/api/mercado/mis-negocios?wallet='+encodeURIComponent(STATE.wallet)+'&email='+encodeURIComponent(STATE.email));
+  const d = await r.json();
+  if(d.error){ showMsg($('#panelMsg'), d.error, 'err'); return; }
+  STATE.negocios = d.negocios||[]; STATE.saldo = d.saldo||{pendiente:0,pagado:0};
+  STATE.cert = (STATE.negocios[0]||{}).cert || '';
+  const t = d.totales||{generadoTotal:0,porUso:0,porReventa:0,usosTotales:0,ventasTotales:0};
+  $('#tGen').textContent = money(t.generadoTotal);
+  $('#tUso').textContent = money(t.porUso);
+  $('#tRev').textContent = money(t.porReventa);
+  $('#tPend').textContent = money(STATE.saldo.pendiente);
+  $('#tPag').textContent = money(STATE.saldo.pagado);
+  $('#tUsos').textContent = t.usosTotales; $('#tVentas').textContent = t.ventasTotales;
+  $('#payoutNota').textContent = d.payoutConfigurado ? ('Mínimo para retirar: '+money(d.retiroMin)) : ('Payout aún no conectado: tu saldo se acumula y se paga a mano. Mínimo '+money(d.retiroMin));
+  // tarjetas de negocio
+  const colores=['#0f2d5c','#155e75','#7c2d12','#4c1d95','#166534','#9a3412'];
+  const cont = $('#listaNeg'); cont.innerHTML='';
+  if(!STATE.negocios.length){ cont.innerHTML='<p class="muted">Todavía no eres dueño de ningún negocio. Cómprate uno más abajo 👇</p>'; }
+  STATE.negocios.forEach((n,idx)=>{
+    const c=colores[idx%colores.length];
+    const el = document.createElement('div'); el.className='bizc';
+    el.innerHTML = '<div><div class="head"><span class="dot" style="background:'+c+'">'+n.slug.slice(0,1).toUpperCase()+'</span>'
+      + '<div><div style="font-weight:800">'+n.slug+' '+(n.enVenta?'<span class="pill venta">en venta '+money(n.precioVenta)+'</span>':'')+(n.promotor?' <span class="pill">promotor</span>':'')+'</div>'
+      + '<div class="meta">🔁 '+n.ingresos.usos+' usos · tu 70%: <b class="earn">'+money(n.ingresos.netoDueno)+'</b></div></div></div></div>'
+      + '<div class="acts"></div>';
+    const acts = el.querySelector('.acts');
+    if(n.enVenta){
+      const b=document.createElement('button'); b.className='btn ghost sm'; b.textContent='Quitar de la venta'; b.onclick=()=>retirarListado(n.slug); acts.appendChild(b);
+      const e=document.createElement('button'); e.className='btn sm'; e.textContent='Cambiar precio'; e.onclick=()=>ponerEnVenta(n.slug, n.cert); acts.appendChild(e);
+    } else {
+      const b=document.createElement('button'); b.className='btn sm'; b.textContent='🏷️ Revender · pon tu precio'; b.onclick=()=>ponerEnVenta(n.slug, n.cert); acts.appendChild(b);
+    }
+    if(DEMO){
+      const s=document.createElement('button'); s.className='btn ghost sm'; s.textContent='Simular uso $3';
+      s.onclick=async()=>{ await fetch('/api/mercado/demo-uso',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({clave:DEMO,slug:n.slug,bruto:3})}); cargarPanel(); };
+      acts.appendChild(s);
+    }
+    cont.appendChild(el);
+  });
+  // feed de actividad
+  const feed = $('#feed'); const movs = d.movimientos||[];
+  if(!movs.length){ feed.innerHTML='<p class="muted">Sin movimientos todavía. Cuando alguien use o compre tu negocio, aparecerá aquí.</p>'; }
+  else { feed.innerHTML=''; movs.forEach(m=>{
+    const es = m.tipo==='reventa'; const el=document.createElement('div'); el.className='fitem';
+    el.innerHTML='<span class="fi" style="background:'+(es?'#fff7e6':'#e8f6ef')+'">'+(es?'🏷️':'🔁')+'</span>'
+      +'<span>'+(es?'Venta de ':'Uso de ')+'<b>'+m.slug+'</b> · '+new Date(m.fecha).toLocaleDateString('es-ES')+'</span>'
+      +'<span class="fa" style="color:'+(es?'#8a6b1f':'#0f7b52')+'">+'+money(m.neto)+'</span>';
+    feed.appendChild(el);
+  }); }
+}
+
+async function ponerEnVenta(slug, cert){
+  const precio = Number(prompt('¿A qué precio quieres revender "'+slug+'"? (USD — lo decides tú, mandas)','149'));
+  if(!precio || precio<1) return;
+  const r = await fetch('/api/mercado/reventa/listar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,wallet:STATE.wallet,cert,precioUSD:precio})});
+  const d = await r.json();
+  if(d.ok){ showMsg($('#panelMsg'),'Publicado en el mercado a '+money(precio),'good'); cargarPanel(); cargarReventa(); }
+  else showMsg($('#panelMsg'), d.error||'No se pudo publicar','err');
+}
+async function retirarListado(slug){
+  const cert = (STATE.negocios.find(n=>n.slug===slug)||{}).cert||'';
+  const r = await fetch('/api/mercado/reventa/retirar-listado',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,wallet:STATE.wallet,cert})});
+  const d = await r.json();
+  if(d.ok){ cargarPanel(); cargarReventa(); } else showMsg($('#panelMsg'), d.error||'Error','err');
+}
+
+$('#retirarBtn').onclick = async () => {
+  if(!STATE.cert) return showMsg($('#panelMsg'),'Necesitas al menos un negocio para retirar.','err');
+  const r = await fetch('/api/mercado/retirar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({wallet:STATE.wallet,cert:STATE.cert})});
+  const d = await r.json();
+  if(d.ok) showMsg($('#panelMsg'), d.mensaje || ('Payout enviado: '+money(d.pagado)),'good');
+  else showMsg($('#panelMsg'), (d.motivo==='saldo_insuficiente'?('Saldo por debajo del mínimo ('+money(d.minimo)+'). Pendiente: '+money(d.pendiente)) : (d.nota||d.motivo||'No se pudo retirar')), d.motivo==='payout_no_configurado'?'':'err');
+  cargarPanel();
+};
+
+// --- Comprar para ser dueño ---
+async function cargarCatalogo(){
+  try{
+    const [cat, vend] = await Promise.all([ fetch('/incubadora-datos.json').then(r=>r.json()), fetch('/api/incubadora/vendidos').then(r=>r.json()).catch(()=>({vendidos:[]})) ]);
+    const vendidos = new Set(vend.vendidos||[]);
+    const libres = (cat.negocios||[]).filter(n=>n.liberado && !vendidos.has(n.slug)).sort((a,b)=>b.nota-a.nota);
+    const sel = $('#selNeg'); sel.innerHTML = '<option value="">Elige un negocio…</option>';
+    libres.forEach(n=>{ const o=document.createElement('option'); o.value=n.slug; o.textContent=n.nombre+' — '+money(n.precioUSD)+' ('+n.de10+')'; sel.appendChild(o); });
+    if(!libres.length) sel.innerHTML='<option value="">No hay negocios disponibles ahora mismo</option>';
+  }catch(e){ $('#selNeg').innerHTML='<option value="">No se pudo cargar el catálogo</option>'; }
+}
+$('#comprarBtn').onclick = async () => {
+  const slug = $('#selNeg').value; const ref = $('#refWallet').value.trim();
+  hideMsg($('#comprarMsg'));
+  if(!slug) return showMsg($('#comprarMsg'),'Elige un negocio.','err');
+  if(DEMO){
+    const r = await fetch('/api/mercado/demo-comprar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({clave:DEMO,slug,wallet:STATE.wallet,email:STATE.email,ref})});
+    const d = await r.json();
+    if(d.ok){ showMsg($('#comprarMsg'),'✅ Compra DEMO hecha: ya eres dueño de '+slug,'good'); cargarPanel(); cargarCatalogo(); }
+    else showMsg($('#comprarMsg'), d.error||'No se pudo (demo)','err');
+    return;
+  }
+  const r = await fetch('/api/incubadora/create-invoice',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,wallet:STATE.wallet,email:STATE.email,ref})});
+  const d = await r.json();
+  if(d.invoice_url){ showMsg($('#comprarMsg'),'Redirigiendo al pago…','good'); location.href=d.invoice_url; }
+  else showMsg($('#comprarMsg'), d.error||'No se pudo iniciar el pago','err');
+};
+
+// --- Mercado secundario ---
+async function cargarReventa(){
+  const cont = $('#listaReventa');
+  try{
+    const d = await (await fetch('/api/mercado/reventa/listado')).json();
+    const propios = new Set((STATE.negocios||[]).map(n=>n.slug));   // no muestres lo tuyo aquí
+    const l = (d.listado||[]).filter(x=>!propios.has(x.slug));
+    if(!l.length){ cont.innerHTML='<p class="muted">Ahora mismo no hay negocios de otros dueños en venta.</p>'; return; }
+    cont.innerHTML='';
+    l.forEach(x=>{
+      const el=document.createElement('div'); el.className='biz';
+      el.innerHTML='<div><div class="n">'+x.slug+'</div><div class="muted" style="font-size:.85rem">Precio '+money(x.precioUSD)+' · fee reventa '+x.feePct+'%</div></div>';
+      const b=document.createElement('button'); b.className='btn sm'; b.textContent='Comprar';
+      b.onclick=()=>comprarReventa(x.slug); el.appendChild(b); cont.appendChild(el);
+    });
+  }catch(e){ cont.innerHTML='<p class="muted">No se pudo cargar el mercado.</p>'; }
+}
+async function comprarReventa(slug){
+  if(!STATE.wallet||!STATE.email) return alert('Primero identifícate arriba con tu wallet y email.');
+  if(DEMO){
+    const r = await fetch('/api/mercado/demo-comprar-reventa',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({clave:DEMO,slug,wallet:STATE.wallet,email:STATE.email})});
+    const d = await r.json();
+    if(d.ok){ alert('✅ Compra DEMO hecha: ahora eres dueño de '+slug); cargarPanel(); cargarReventa(); cargarCatalogo(); }
+    else alert(d.error||'No se pudo (demo)');
+    return;
+  }
+  const r = await fetch('/api/mercado/reventa/comprar-invoice',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slug,wallet:STATE.wallet,email:STATE.email})});
+  const d = await r.json();
+  if(d.invoice_url) location.href=d.invoice_url;
+  else alert(d.error||'No se pudo iniciar la compra');
+}
+cargarReventa();
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Hora — Your Employment Rights Act duties, stamped
+
+Hora es una herramienta educativa (sin asesoría legal/HR) que comprueba qué deberes del Employment Rights Act 2025 (Reino Unido) afectan a un empleador y con qué fechas.
+
+## Hechos clave (verificados 13.08.2026)
+
+- Employment Rights Act 2025 (Royal Assent, diciembre 2025) — implementación por fases.
+- Ya en vigor: reforma del Statutory Sick Pay (SSP) desde el **06.04.2026** (sin Lower Earnings Limit ni días de espera); permiso parental/paternidad día 1 (feb–abr 2026); Fair Work Agency (07.04.2026).
+- **30.10.2026**: deber de tomar "todas las medidas razonables" para prevenir el acoso sexual de los empleados, incluido el acoso por terceros (clientes, etc.). El incumplimiento puede elevar la compensación hasta un 25%.
+- **01.10.2026**: el plazo para presentar demandas laborales pasa de 3 a 6 meses (Escocia: contratos, 09.11.2026).
+- **01.01.2027**: el periodo de calificación para despido improcedente baja de 2 años a 6 meses y se elimina el tope de compensación; protecciones contra "fire and rehire".
+- **2027**: derecho a horas garantizadas para trabajadores de cero horas/contratos de pocas horas (basado en un periodo de referencia) + aviso razonable; regulaciones pendientes de consulta.
+
+## Fuentes
+
+1. https://www.gov.uk/government/publications/implementing-the-plan-to-make-work-pay-and-employment-rights-act/plan-to-make-work-pay-and-employment-rights-act-timeline-update (GOV.UK — cronograma oficial)
+2. https://knowledge.dlapiper.com/dlapiperknowledge/globalemploymentlatestdevelopments/2026/new-harassment-measures-expand-protections-for-employees (DLA Piper, mar 2026)
+3. https://www.acas.org.uk/employment-rights-act-2025 (guía Acas)
+4. https://www.jdsupra.com/legalnews/looking-forward-to-october-2026-next-8341199/ (incremento del 25%, jun 2026)
+5. https://ogletree.com/insights-resources/blog-posts/uk-imposes-new-duty-on-employers-to-prevent-sexual-harassment/ (Ogletree, 25% uplift)

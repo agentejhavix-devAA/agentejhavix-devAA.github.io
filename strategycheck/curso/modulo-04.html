@@ -1,0 +1,149 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modulo 04 — Leer las metricas como un profesional</title>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --borde:#30363d; --texto:#c9d1d9; --acento:#58a6ff; }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--texto); font-family:'Segoe UI', Arial, sans-serif; margin:0; line-height:1.7; }
+a { color:var(--acento); }
+.wrap { max-width:820px; margin:0 auto; padding:40px 24px 80px; }
+header.top { text-align:center; padding:36px 24px; border-bottom:1px solid var(--borde);
+             background:radial-gradient(ellipse at top, rgba(88,166,255,0.08), transparent 60%); }
+header.top .logo { font-size:1.8em; font-weight:900; color:#fff; }
+header.top a.volver { display:inline-block; margin-top:10px; font-size:0.9em; }
+h1, h2, h3 { color:#fff; }
+h1 { font-size:1.9em; }
+h2 { font-size:1.4em; border-left:4px solid var(--acento); padding-left:12px; margin-top:2em; }
+h3 { font-size:1.15em; margin-top:1.6em; }
+pre { background:#0d1117; border:1px solid var(--borde); border-radius:8px; padding:16px; overflow-x:auto; }
+code { background:#1c2128; padding:2px 6px; border-radius:4px; font-size:0.92em; }
+pre code { background:none; padding:0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; }
+th, td { padding:8px 10px; border:1px solid var(--borde); text-align:left; }
+th { background:#1c2128; }
+blockquote { border-left:3px solid var(--acento); margin:16px 0; padding:6px 16px; color:#8b949e; background:var(--panel); border-radius:0 8px 8px 0; }
+.nav-modulos { display:flex; justify-content:space-between; margin-top:50px; padding-top:20px; border-top:1px solid var(--borde); font-size:0.95em; }
+.indice { display:grid; gap:12px; margin-top:24px; }
+.indice a { display:block; background:var(--panel); border:1px solid var(--borde); border-radius:8px;
+            padding:16px 20px; text-decoration:none; color:var(--texto); }
+.indice a:hover { border-color:var(--acento); }
+.indice .num { color:var(--acento); font-weight:800; margin-right:10px; }
+.aviso { background:#2d1a1a; border:1px solid #e74c3c; border-radius:8px; padding:16px 20px; margin:24px 0; font-size:0.9em; color:#f0b3b3; }
+footer { text-align:center; padding:30px; color:#8b949e; font-size:0.85em; border-top:1px solid var(--borde); }
+</style>
+<link rel="canonical" href="https://www.attenciona.com/strategycheck/curso/modulo-04.html">
+<meta name="description" content="Modulo 04 — Leer las metricas como un profesional Objetivo del modulo Que dejes de fiarte de una sola metrica &quot;bonita&quot; y aprendas a leer el conjunto…">
+<meta property="og:title" content="Modulo 04 — Leer las metricas como un profesional">
+<meta property="og:description" content="Modulo 04 — Leer las metricas como un profesional Objetivo del modulo Que dejes de fiarte de una sola metrica &quot;bonita&quot; y aprendas a leer el conjunto…">
+<meta property="og:url" content="https://www.attenciona.com/strategycheck/curso/modulo-04.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modulo 04 — Leer las metricas como un profesional">
+<meta name="twitter:description" content="Modulo 04 — Leer las metricas como un profesional Objetivo del modulo Que dejes de fiarte de una sola metrica &quot;bonita&quot; y aprendas a leer el conjunto…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head><body>
+<header class="top"><div class="logo">⚖️ STRATEGYCHECK</div>
+<a class="volver" href="../index.html">&larr; Volver a la pagina principal</a></header>
+<div class="wrap"><h1>Modulo 04 — Leer las metricas como un profesional</h1>
+<h2>Objetivo del modulo</h2>
+<p>Que dejes de fiarte de una sola metrica "bonita" y aprendas a leer el
+conjunto completo como lo haria alguien que evalua estrategias para vivir de
+ello. Un backtest con una sola metrica llamativa y el resto ignoradas es la
+forma mas comun de autoengaño en trading algoritmico.</p>
+<h2>Por que un "80% win rate" puede ser una trampa</h2>
+<p>Imagina dos estrategias sobre el mismo capital inicial de 1.000€:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Estrategia A</th>
+<th>Estrategia B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Win rate</td>
+<td>80%</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>Ganancia media por trade ganador</td>
+<td>+1%</td>
+<td>+8%</td>
+</tr>
+<tr>
+<td>Perdida media por trade perdedor</td>
+<td>-6%</td>
+<td>-2%</td>
+</tr>
+<tr>
+<td>Resultado tras 20 trades</td>
+<td><strong>-16€</strong></td>
+<td><strong>+68€</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La Estrategia A gana casi siempre, pero cuando pierde, pierde mucho: el
+clasico patron de "recoger monedas delante de una apisonadora". La B pierde
+más veces de las que gana, pero sus ganancias son mucho mayores que sus
+pérdidas. <strong>El win rate solo, sin el ratio ganancia/pérdida al lado, no dice
+nada sobre si una estrategia es rentable.</strong></p>
+<p>Regla practica: multiplica win rate x ganancia media, y (1 - win rate) x
+perdida media. Si el primer numero no supera claramente al segundo, no
+importa lo alto que sea el win rate.</p>
+<h2>Sharpe ratio: que mide de verdad y sus limitaciones</h2>
+<p>El Sharpe ratio anualizado (el que calcula <code>engine/backtest.py</code>) responde a
+una pregunta concreta: <em>"por cada unidad de volatilidad que aguantas,
+¿cuánto retorno extra estás consiguiendo?"</em></p>
+<pre><code class="language-python">sharpe = (retorno_medio_diario / desviacion_estandar_diaria) * raiz(365)
+</code></pre>
+<p>Interpretacion orientativa (no son reglas absolutas):
+- Sharpe &lt; 0: la estrategia pierde dinero de media.
+- Sharpe 0 – 1: mediocre, probablemente no compensa el riesgo asumido.
+- Sharpe 1 – 2: aceptable a bueno.
+- Sharpe &gt; 2: muy bueno — y con pocos datos, motivo de sospecha, no de
+  celebración (ver limitación siguiente).</p>
+<p><strong>Limitación clave: con menos de ~30-50 operaciones, el Sharpe es ruido.</strong>
+Un Sharpe de 3 calculado sobre 8 trades no significa que tengas el Santo
+Grial; significa que no tienes datos suficientes para calcular nada. Es
+exactamente lo que la herramienta marca como "DATOS INSUFICIENTES" cuando
+hay menos de 5 operaciones — con menos de 30 sigue siendo frágil, aunque el
+umbral duro que usamos sea más permisivo por simplicidad del MVP.</p>
+<h2>Max Drawdown como proxy del dolor psicológico real</h2>
+<p>El max drawdown es la mayor caída porcentual desde un máximo de capital
+hasta el siguiente mínimo. No es solo un número de riesgo: es la mejor
+aproximación que tienes a <em>cómo se sentiría de verdad operar esa
+estrategia con dinero real.</em></p>
+<p>Una estrategia con +40% de retorno anual pero -45% de drawdown en el camino
+significa que, en algún punto, viste tu capital reducirse casi a la mitad
+antes de recuperarse. La mayoría de traders reales abandonan la estrategia
+en ese punto — por eso un backtest "rentable a largo plazo" con un
+drawdown brutal suele ser inviable en la práctica, aunque el número final
+sea bonito.</p>
+<p>Umbral orientativo que usa el veredicto de la herramienta: por encima de
+-35% de drawdown máximo, se considera "riesgo de pérdida severa en el
+camino", independientemente de lo bueno que sea el retorno final.</p>
+<h2>Ejercicio: encuentra el problema oculto</h2>
+<p>Corre el gauntlet con tres periodos distintos del mismo símbolo:</p>
+<pre><code class="language-bash">python engine/run_veredicto.py --simbolo BTC/USDT --dias 90
+python engine/run_veredicto.py --simbolo BTC/USDT --dias 365
+python engine/run_veredicto.py --simbolo BTC/USDT --dias 730
+</code></pre>
+<p>Para cada informe generado, contesta antes de mirar el veredicto automático:
+1. ¿Cuántos trades hay? ¿Es un número fiable estadísticamente?
+2. ¿El retorno bate a buy&amp;hold, o solo parece bueno en aislado?
+3. ¿Qué tan doloroso habría sido el drawdown máximo en la práctica?
+4. ¿El profit factor sobrevive si le restas un 20% de margen de seguridad?</p>
+<p>Compara tus respuestas con el veredicto automático de la herramienta al
+final. Si discrepan, revisa cuál de las 4 preguntas explica la diferencia.</p>
+<hr />
+<p><em>Anterior: 03 — Backtesting honesto paso a paso.</em> · <em>Siguiente: 05 — El veredicto: cuándo tirar una estrategia a la basura.</em></p><div class="nav-modulos"><a href="modulo-03.html">&larr; Backtesting honesto paso a paso</a><a href="modulo-05.html">El veredicto: cuando tirar una estrategia a la basura &rarr;</a></div></div>
+<footer>StrategyCheck &middot; un proyecto de Attenciona &middot; curso gratuito, sin registro &middot;
+no es asesoramiento financiero</footer></body></html>

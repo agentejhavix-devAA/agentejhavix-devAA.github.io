@@ -1,0 +1,27 @@
+# Inflación real por país (Banco Mundial)
+
+> Convierte datos crudos de datos · economía en Mundo en una cifra clara, usando la referencia oficial citada. Si un dato falta, la calculadora lo dice.
+
+- **Mercado:** Mundo
+- **Fuente de datos viva:** Banco Mundial — indicadores (FP.CPI.TOTL.ZG · FR.INR.LEND)
+
+- **Sistema de diseño:** Editorial-serif (Fraunces (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+La calculadora usa la referencia oficial como base y muestra de dónde sale cada número.
+
+## Comparativa
+Datos reales consultados en la API del Banco Mundial el 13/08/2026. El dato oficial del año más reciente publicado por país.
+- Brasil · 5.02% · 45.33% (2025) · Inflación dentro de rango pero crédito carísimo
+- México · 3.81% · — · Inflación cerca del objetivo
+- España · 2.70% · — · Inflación en el rango del BCE
+- Nigeria · 23.01% · — · Inflación muy por encima del objetivo: riesgo de precios
+
+## Fuentes citadas
+- Banco Mundial — indicadores (FP.CPI.TOTL.ZG · FR.INR.LEND) (https://datos.bancomundial.org/indicador)
+- FELABAN — La inflación en el mundo (jun 2026) (https://felaban.com/las-inflacion-en-el-mundo/)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Banco Mundial — indicadores (FP.CPI.TOTL.ZG · FR.INR.LEND). (https://datos.bancomundial.org/indicador)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comparativa + Pro 5 USDT/mes (comparador ampliado y alerta cuando se publica el dato) — sin coste oculto ni letra pequeña.

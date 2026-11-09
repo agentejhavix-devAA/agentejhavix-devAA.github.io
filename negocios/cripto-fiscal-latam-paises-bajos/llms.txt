@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Países Bajos
+
+> Traduce la norma oficial de cripto · impuestos en Países Bajos a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Países Bajos
+- **Fuente de datos viva:** Belastingdienst (Países Bajos) — Income in Box 3 y declaración anual
+
+- **Sistema de diseño:** Mono-crypto (JetBrains Mono (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Belastingdienst (Países Bajos) — Income in Box 3 y declaración anual (https://www.belastingdienst.nl/wps/wcm/connect/en/individuals/individuals)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Belastingdienst (Países Bajos) — Income in Box 3 y declaración anual. (https://www.belastingdienst.nl/wps/wcm/connect/en/individuals/individuals)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

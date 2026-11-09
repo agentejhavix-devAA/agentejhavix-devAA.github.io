@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Parcela — landing de comprobación de alcance EUDR (Unión Europea)
+# Generado por la Incubadora de attenciona. Sin contenido oculto.

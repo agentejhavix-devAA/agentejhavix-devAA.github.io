@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experimentos de todas las fases · attenciona</title>
+<meta name="description" content="Cuatro generaciones de negocios generados por IA que se mantienen solas: una red de bots produce, prueba y genera datos reales en auto. De ahí salen los negocios que licencias y te quedas el 70%.">
+<link rel="canonical" href="https://www.attenciona.com/">
+<meta name="theme-color" content="#0f2d5c">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="attenciona · Experimentos de todas las fases">
+<meta property="og:description" content="Cuatro generaciones de negocios generados por IA que se mantienen solas: una red de bots produce, prueba y genera datos reales en auto. De ahí salen los negocios que licencias.">
+<meta property="og:url" content="https://www.attenciona.com/marketplace.html">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Experimentos de todas las fases — attenciona">
+<meta name="twitter:description" content="Cuatro generaciones de negocios generados por IA que se mantienen solas: una red de bots produce, prueba y genera datos reales en auto. De ahí salen los negocios que licencias.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/nav-fase4.css">
+<style>
+/* mono de sistema (el sitio no aloja JetBrains Mono) */
+.mono,.tape-item .p,.tape-item .c,.cprice .v,.quote-price .pv{font-family:ui-monospace,'SFMono-Regular','JetBrains Mono',Menlo,Consolas,monospace;}
+/* RENDIMIENTO: con 100+ tarjetas y SVG por tarjeta, el navegador solo pinta las visibles.
+   contain-intrinsic-size reserva el alto para que el scroll no salte. */
+.grid .card{content-visibility:auto;contain-intrinsic-size:auto 440px;}
+.grid .card.featured{contain-intrinsic-size:auto 520px;}
+/* título de tarjeta: NO es encabezado de documento (mejor proporción H/texto para SEO) */
+.cbody .ctitle{font-family:var(--display),Fraunces,Georgia,serif;font-size:17px;font-weight:600;letter-spacing:-.02em;line-height:1.22;margin:0 0 4px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.cbody .ctitle a{color:inherit;text-decoration:none;}
+.card:hover .ctitle a{color:var(--accent,#0f2d5c);}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+/* banda CTA "El motor no para": centrada */
+.cta-in{text-align:center;}
+
+/* ===== TOKENS — heredados de attenciona.com ===== */
+:root{
+  --bg:#fbfbfd;
+  --surface:#f4f5fa;
+  --surface-2:#eceef5;
+  --ink:#131a2b;
+  --muted:#5b6478;
+  --faint:#8b93a7;
+  --line:#e3e6ee;
+  --line-strong:#d3d8e5;
+  --accent:#0f2d5c;
+  --accent-deep:#0a1f42;
+  --accent-tint:#eef1f9;
+  --accent-soft:#7fa6e8;
+  --good:#2f8f5b;
+  --good-tint:#e8f3ec;
+  --bad:#b23b47;
+  --bad-tint:#fbeced;
+  --gold:#c9973e;
+  --gold-deep:#a9772c;
+  --gold-tint:#fbf3e4;
+  --warm:#ffb066;
+  --warm-tint:#ffe6d6;
+  --shadow:0 1px 2px rgba(19,26,43,.04), 0 8px 28px rgba(19,26,43,.06);
+  --shadow-lift:0 2px 6px rgba(19,26,43,.06), 0 18px 48px rgba(10,31,66,.12);
+  --radius:16px;
+  --maxw:1160px;
+  --font:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.mono{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;}
+.cprice .v,.tfoot .p,.rail-cell .v{white-space:nowrap;}
+::selection{background:var(--accent);color:#fff;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.rv.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ===== CINTA ===== */
+.tape{background:var(--accent-deep);overflow:hidden;padding:7px 0;}
+.tape-track{display:inline-flex;white-space:nowrap;animation:tape 48s linear infinite;}
+.tape:hover .tape-track{animation-play-state:paused;}
+@keyframes tape{to{transform:translateX(-50%)}}
+.tape-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;font-size:11.5px;border-right:1px solid rgba(255,255,255,.09);}
+.tape-item .n{color:#93a4c4;font-weight:600;letter-spacing:.03em;}
+.tape-item .p{font-family:'JetBrains Mono',monospace;font-weight:600;color:#e6ebf6;}
+.tape-item .c{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px;}
+.c.up{color:#6fd39c;} .c.down{color:#f0949c;}
+
+/* ===== NAV (idéntica a attenciona.com) ===== */
+nav{position:sticky;top:0;z-index:100;background:rgba(251,251,253,.88);backdrop-filter:blur(16px) saturate(1.5);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:13px 24px;max-width:var(--maxw);margin:0 auto;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--accent),var(--accent-deep));box-shadow:0 3px 10px rgba(15,45,92,.24);}
+.brand .mark svg{width:19px;height:19px;}
+.brand .lo{font-family:var(--font);font-weight:700;font-size:17px;letter-spacing:-.03em;}
+.brand .sub{font-family:var(--display);font-style:italic;font-weight:500;color:var(--gold);font-size:16px;letter-spacing:-.01em;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links > a, .navitem > button{color:var(--muted);font-size:13.5px;font-weight:500;padding:7px 12px;border-radius:9px;transition:.16s;
+  background:none;border:none;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:5px;}
+.nav-links > a:hover, .navitem > button:hover{background:var(--surface);color:var(--ink);}
+.nav-links > a.active{color:var(--ink);font-weight:600;}
+.navitem{position:relative;}
+.navitem > button svg{width:9px;height:9px;transition:transform .2s var(--ease);opacity:.7;}
+.navitem:hover > button{background:var(--surface);color:var(--ink);}
+.navitem:hover > button svg{transform:rotate(180deg);}
+
+/* ---- MEGA MENU ---- */
+.mega{
+  position:absolute;top:calc(100% + 9px);left:50%;transform:translateX(-50%) translateY(-6px);
+  background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lift);
+  padding:10px;width:520px;display:grid;grid-template-columns:1fr 1fr;gap:4px;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
+  z-index:120;
+}
+.navitem:hover .mega, .navitem:focus-within .mega{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.mega::before{content:"";position:absolute;top:-10px;left:0;right:0;height:12px;}
+.mega.one{grid-template-columns:1fr;width:290px;}
+.mlink{display:flex;gap:11px;padding:11px 12px;border-radius:12px;transition:background .15s;align-items:flex-start;}
+.mlink:hover{background:var(--surface);}
+.micon{width:32px;height:32px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--accent-tint);}
+.micon svg{width:15px;height:15px;color:var(--accent);}
+.micon.gold{background:var(--gold-tint);} .micon.gold svg{color:var(--gold-deep);}
+.micon.good{background:var(--good-tint);} .micon.good svg{color:var(--good);}
+.mtxt .mt{font-size:13px;font-weight:700;letter-spacing:-.015em;display:flex;align-items:center;gap:6px;}
+.mtxt .md{color:var(--faint);font-size:11.5px;line-height:1.45;margin-top:2px;}
+.mnew{font-size:8.5px;font-weight:700;color:var(--gold-deep);background:var(--gold-tint);padding:2px 5px;border-radius:4px;letter-spacing:.05em;}
+.mega-foot{grid-column:1/-1;margin-top:4px;padding:11px 13px;background:var(--surface);border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.mega-foot .mf{font-size:11.5px;color:var(--muted);line-height:1.45;}
+.mega-foot .mf b{color:var(--ink);}
+.mega-foot a{font-size:11.5px;font-weight:700;color:var(--accent);white-space:nowrap;}
+
+/* ---- BURGER + DRAWER ---- */
+.burger{display:none;width:38px;height:38px;border-radius:10px;border:1.5px solid var(--line-strong);background:#fff;
+  cursor:pointer;place-items:center;flex-direction:column;gap:4px;}
+.burger i{display:block;width:15px;height:1.7px;background:var(--ink);border-radius:2px;transition:.22s var(--ease);}
+body.dopen .burger i:nth-child(1){transform:translateY(5.7px) rotate(45deg);}
+body.dopen .burger i:nth-child(2){opacity:0;}
+body.dopen .burger i:nth-child(3){transform:translateY(-5.7px) rotate(-45deg);}
+.scrim{position:fixed;inset:0;background:rgba(10,31,66,.35);backdrop-filter:blur(3px);opacity:0;visibility:hidden;
+  transition:.24s var(--ease);z-index:98;}
+body.dopen .scrim{opacity:1;visibility:visible;}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(340px,88vw);background:#fff;z-index:99;
+  transform:translateX(102%);transition:transform .28s var(--ease);overflow-y:auto;padding:18px 18px 34px;
+  box-shadow:-20px 0 60px rgba(10,31,66,.18);}
+body.dopen .drawer{transform:none;}
+.dsec{margin-top:20px;}
+.dsec .dh{font-size:9.5px;font-weight:700;color:var(--faint);letter-spacing:.11em;margin:0 4px 8px;}
+.dlink{display:flex;gap:11px;padding:11px 10px;border-radius:12px;align-items:flex-start;}
+.dlink:active{background:var(--surface);}
+.dfoot{margin-top:24px;display:flex;flex-direction:column;gap:8px;}
+.dfoot .btn{width:100%;}
+.nav-right{display:flex;align-items:center;gap:9px;}
+.btn{padding:9.5px 17px;border-radius:11px;font-size:13.5px;font-weight:600;border:none;cursor:pointer;font-family:var(--font);transition:transform .14s var(--ease), box-shadow .2s, background .16s;}
+.btn:active{transform:scale(.975);}
+.btn-accent{background:var(--accent);color:#fff;}
+.btn-accent:hover{background:var(--accent-deep);box-shadow:0 8px 20px rgba(15,45,92,.24);}
+.btn-line{background:#fff;color:var(--ink);border:1.5px solid var(--line-strong);}
+.btn-line:hover{border-color:var(--faint);}
+.btn-gold{background:var(--gold);color:#fff;}
+.btn-gold:hover{background:var(--gold-deep);}
+.btn-white{background:#fff;color:var(--accent-deep);}
+.btn-glass{background:rgba(255,255,255,.10);color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-glass:hover{background:rgba(255,255,255,.18);}
+
+/* ===== HERO ===== */
+.hero{padding-top:22px;}
+.hero-banner{
+  position:relative;border-radius:26px;overflow:hidden;
+  background:linear-gradient(150deg,#0a1f42 0%,#0f2d5c 52%,#173a6e 100%);
+  box-shadow:var(--shadow-lift);display:grid;grid-template-columns:1.08fr .92fr;
+}
+.hero-bg{position:absolute;inset:0;}
+.hero-net{position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(ellipse 95% 85% at 28% 42%, #000 18%, transparent 76%);}
+.glow{position:absolute;border-radius:50%;filter:blur(85px);}
+.g1{width:400px;height:400px;background:#2f5f9f;opacity:.5;top:-150px;left:-70px;}
+.g2{width:300px;height:300px;background:var(--warm);opacity:.20;bottom:-110px;right:16%;}
+.g3{width:230px;height:230px;background:var(--gold);opacity:.14;top:30%;right:40%;}
+.hero-grain{position:absolute;inset:0;opacity:.45;mix-blend-mode:overlay;
+  background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.15) 1px, transparent 0);background-size:3px 3px;}
+
+.hero-left{position:relative;z-index:3;padding:52px 18px 48px 48px;display:flex;flex-direction:column;justify-content:center;}
+.pill{display:inline-flex;align-items:center;gap:8px;width:fit-content;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);color:#cfdaee;
+  padding:6px 14px 6px 9px;border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:22px;backdrop-filter:blur(8px);}
+.pill .live{width:6px;height:6px;border-radius:50%;background:#6fd39c;animation:beat 1.9s infinite;}
+@keyframes beat{0%,100%{box-shadow:0 0 0 3px rgba(111,211,156,.24)}50%{box-shadow:0 0 0 7px rgba(111,211,156,0)}}
+.hero-h1{font-family:var(--display);font-size:47px;line-height:1.06;font-weight:600;letter-spacing:-.025em;color:#fff;margin-bottom:16px;max-width:15ch;}
+.hero-h1 .em{font-style:italic;font-weight:500;color:var(--warm-tint);
+  background:linear-gradient(94deg,#ffd9bd,#ffb066 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{color:#9fb0cc;font-size:15px;line-height:1.62;margin-bottom:28px;max-width:44ch;}
+.hero-ctas{display:flex;gap:10px;margin-bottom:32px;}
+.hero-ctas .btn{padding:13px 22px;font-size:14.5px;}
+.hero-metrics{display:flex;gap:34px;flex-wrap:wrap;}
+.hm .v{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:700;color:#fff;}
+.hm .v.up{color:#6fd39c;}
+.hm .l{color:#7788a8;font-size:11.5px;margin-top:4px;font-weight:500;}
+
+.hero-right{position:relative;z-index:3;display:flex;align-items:center;padding:36px 44px 36px 10px;}
+.quote{width:100%;border-radius:20px;padding:20px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px);box-shadow:0 26px 56px rgba(0,0,0,.3);}
+.quote-top{display:flex;align-items:center;gap:11px;}
+.quote-mark{width:42px;height:42px;border-radius:12px;flex:none;overflow:hidden;}
+.quote-name{color:#fff;font-family:var(--font);font-size:16.5px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:5px;}
+.quote-cat{color:#8a9bba;font-size:11.5px;margin-top:1px;}
+.quote-hot{margin-left:auto;font-size:9.5px;font-weight:700;color:#ffd9a8;background:rgba(201,151,62,.18);border:1px solid rgba(201,151,62,.4);padding:4px 8px;border-radius:6px;letter-spacing:.05em;}
+.quote-price{display:flex;align-items:baseline;gap:9px;margin:16px 0 2px;}
+.quote-price .pv{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:#fff;letter-spacing:-.03em;}
+.quote-price .pc{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;color:#6fd39c;background:rgba(111,211,156,.14);padding:3px 8px;border-radius:7px;}
+.quote-sub{color:#7788a8;font-size:11.5px;margin-bottom:12px;}
+.quote-chart{width:100%;height:84px;display:block;}
+.quote-ranges{display:flex;gap:5px;margin:10px 0 15px;}
+.range{flex:1;text-align:center;font-size:10.5px;font-weight:600;color:#8a9bba;padding:5px 0;border-radius:7px;background:rgba(255,255,255,.05);cursor:pointer;}
+.range.on{background:rgba(255,255,255,.17);color:#fff;}
+.quote-actions{display:flex;gap:8px;}
+.qb{flex:1;padding:11px 0;border-radius:11px;font-size:12.5px;font-weight:700;text-align:center;cursor:pointer;}
+.qb-buy{background:#fff;color:var(--accent-deep);}
+.qb-rent{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.26);}
+
+/* ===== RAIL ===== */
+.rail{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:20px;box-shadow:var(--shadow);}
+.rail-cell{background:#fff;padding:18px 22px;position:relative;}
+.rail-cell .l{color:var(--faint);font-size:11px;font-weight:600;margin-bottom:6px;}
+.rail-cell .v{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;letter-spacing:-.02em;}
+.rail-cell .d{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;margin-top:4px;}
+.rail-cell .mini{position:absolute;right:18px;bottom:15px;width:60px;height:24px;}
+
+/* ===== SECCIONES ===== */
+.section{padding:54px 0 0;}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:18px;}
+.eyebrow{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.11em;margin-bottom:8px;}
+.eyebrow::before{content:"";width:15px;height:1.5px;background:var(--gold);}
+.shead h2{font-family:var(--display);font-size:30px;font-weight:600;letter-spacing:-.022em;}
+.shead .sd{color:var(--faint);font-size:13.5px;margin-top:6px;}
+.see{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-size:13px;font-weight:600;padding:9px 15px;border:1.5px solid var(--line-strong);border-radius:11px;transition:.16s;white-space:nowrap;}
+.see:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ===== TREND ===== */
+.trend-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;align-items:stretch;}
+.trend-row::-webkit-scrollbar{height:5px;}
+.trend-row::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:99px;}
+.tcard{flex:0 0 224px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .25s var(--ease),box-shadow .25s var(--ease);cursor:pointer;}
+.tcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.tcover{height:86px;position:relative;overflow:hidden;}
+.tcover svg{position:absolute;inset:0;width:100%;height:100%;}
+.trank{position:absolute;top:9px;left:9px;background:rgba(255,255,255,.93);color:var(--ink);min-width:21px;height:21px;padding:0 6px;
+  border-radius:7px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;}
+.tmark{width:40px;height:40px;border-radius:11px;border:3px solid #fff;margin:-23px 0 0 14px;position:relative;z-index:2;box-shadow:var(--shadow);overflow:hidden;}
+.tbody{padding:8px 14px 14px;display:flex;flex-direction:column;flex:1;}
+.tbody h4{font-size:14.5px;font-weight:700;letter-spacing:-.02em;line-height:1.25;min-height:2.5em;}
+.tbody .tc{color:var(--faint);font-size:11px;margin:2px 0 10px;}
+.tfoot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+.tfoot .p{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13.5px;}
+.chgpill{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3.5px 7px;border-radius:7px;white-space:nowrap;flex:none;align-self:flex-end;}
+.chgpill.up{color:var(--good);background:var(--good-tint);}
+.chgpill.down{color:var(--bad);background:var(--bad-tint);}
+
+/* ===== FILTROS ===== */
+.filters{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{padding:8.5px 15px;border-radius:11px;font-size:12.5px;font-weight:600;background:#fff;border:1.5px solid var(--line-strong);
+  color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:7px;transition:.16s;}
+.chip:hover{border-color:var(--faint);}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent);}
+.chip .sw{width:7px;height:7px;border-radius:50%;}
+.sortbox{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);font-weight:600;border:1.5px solid var(--line-strong);border-radius:11px;padding:8.5px 13px;cursor:pointer;}
+
+/* ===== GRID ===== */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;height:100%;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);cursor:pointer;}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lift);}
+.cover{height:98px;position:relative;overflow:hidden;}
+.cover svg{position:absolute;inset:0;width:100%;height:100%;}
+.tag{position:absolute;top:9px;right:9px;background:rgba(255,255,255,.94);color:var(--ink);font-size:9px;font-weight:700;
+  padding:4.5px 8px;border-radius:6px;letter-spacing:.06em;}
+.cmark{width:44px;height:44px;border-radius:12px;border:3px solid #fff;margin:-25px 0 0 15px;position:relative;z-index:2;box-shadow:var(--shadow);overflow:hidden;}
+.cbody{padding:8px 15px 15px;display:flex;flex-direction:column;flex:1;}
+.cbody h4{font-size:15px;font-weight:700;letter-spacing:-.022em;line-height:1.3;min-height:2.6em;display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+.cbody .owner{color:var(--faint);font-size:11px;margin-top:2px;min-height:30px;line-height:1.35;}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 7px;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:46px;align-items:center;}
+.metric .mv{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;}
+.metric{min-width:0;}
+.metric .ml{color:var(--faint);font-size:9px;font-weight:600;letter-spacing:.04em;margin-top:2px;line-height:1.3;}
+.spark{width:100%;height:34px;display:block;margin:3px 0;}
+.cbot{display:flex;justify-content:space-between;align-items:flex-end;margin:7px 0 12px;gap:10px;flex-wrap:wrap;}
+.cprice{min-width:0;flex:1;}
+.cprice .l{font-size:9px;color:var(--faint);font-weight:700;letter-spacing:.06em;white-space:nowrap;}
+.cprice .v{font-family:'JetBrains Mono',monospace;font-size:16.5px;font-weight:700;letter-spacing:-.02em;margin-top:2px;}
+.cact{display:flex;gap:7px;}
+.cfill{flex:1;}
+.cfoot{margin-top:auto;}
+.mb{flex:1;padding:10px 8px;border-radius:10px;font-size:12px;font-weight:700;text-align:center;border:1.5px solid var(--line-strong);color:var(--muted);transition:.16s;min-height:38px;display:flex;align-items:center;justify-content:center;line-height:1.2;}
+.mb:hover{border-color:var(--faint);color:var(--ink);}
+.mb.buy{background:var(--accent);color:#fff;border-color:var(--accent);}
+.mb.buy:hover{background:var(--accent-deep);}
+
+/* ===== SPLIT ===== */
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start;}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.panel-head{padding:15px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+.panel-head h3{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.02em;}
+.live-dot{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--faint);font-weight:600;}
+.live-dot i{width:6px;height:6px;border-radius:50%;background:var(--good);animation:beat 1.9s infinite;}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;padding:10px 20px;font-size:9.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.09em;font-weight:700;border-bottom:1px solid var(--line);background:var(--surface);}
+td{padding:12px 20px;border-bottom:1px solid var(--line);font-size:12.5px;}
+tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:var(--surface);}
+.rname{display:flex;align-items:center;gap:10px;}
+.rmark{width:30px;height:30px;border-radius:9px;flex:none;overflow:hidden;}
+.rname .rn{font-weight:700;letter-spacing:-.015em;}
+.rname .rs{color:var(--faint);font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:600;}
+td.num{font-family:'JetBrains Mono',monospace;font-weight:600;}
+td.chg{font-family:'JetBrains Mono',monospace;font-weight:700;}
+td.chg.up{color:var(--good);} td.chg.down{color:var(--bad);}
+.tspark{width:62px;height:24px;display:block;}
+.feed{max-height:472px;overflow-y:auto;}
+.fitem{display:flex;gap:11px;padding:12px 18px;border-bottom:1px solid var(--line);align-items:center;}
+.fitem:last-child{border-bottom:none;}
+.fmark{width:32px;height:32px;border-radius:9px;flex:none;overflow:hidden;}
+.ftxt{flex:1;min-width:0;}
+.ftxt .l1{font-size:12.5px;font-weight:700;letter-spacing:-.01em;}
+.ftxt .l2{color:var(--faint);font-size:10.5px;margin-top:2px;}
+.fact{font-size:9px;font-weight:700;padding:3px 6px;border-radius:5px;letter-spacing:.05em;margin-left:5px;}
+.fact.venta{background:var(--good-tint);color:var(--good);}
+.fact.oferta{background:var(--accent-tint);color:var(--accent);}
+.fact.alquiler{background:var(--gold-tint);color:var(--gold-deep);}
+.fact.listado{background:var(--surface-2);color:var(--muted);}
+.fprice{text-align:right;}
+.fprice .fp{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;}
+.fprice .ft{color:var(--faint);font-size:9.5px;margin-top:2px;}
+
+/* ===== PASOS ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow);}
+.step .sn{font-family:var(--display);font-style:italic;font-size:38px;color:var(--gold);line-height:1;margin-bottom:12px;opacity:.55;}
+.step h4{font-size:16px;font-weight:700;letter-spacing:-.02em;margin-bottom:7px;}
+.step p{color:var(--muted);font-size:13px;line-height:1.62;}
+
+/* ===== CTA ===== */
+.cta{margin:58px 0 0;}
+.cta-in{border-radius:24px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(150deg,#0a1f42,#0f2d5c 60%,#1c3d70);}
+.cta-in .hero-net{mask-image:radial-gradient(ellipse 70% 90% at 50% 50%, #000 18%, transparent 74%);}
+.cta-in h2{position:relative;font-family:var(--display);color:#fff;font-size:33px;font-weight:600;letter-spacing:-.025em;margin-bottom:11px;}
+.cta-in h2 .em{font-style:italic;color:var(--warm);}
+.cta-in p{position:relative;color:#9fb0cc;font-size:14.5px;margin-bottom:26px;}
+.cta-in .btn{position:relative;padding:13px 26px;font-size:14.5px;}
+
+/* ===== MEJORAS: procedencia, salud, fórmula, liquidación ===== */
+.verified{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;color:var(--good);align-self:center;white-space:nowrap;
+  background:var(--good-tint);padding:3px 6px;border-radius:5px;letter-spacing:.03em;vertical-align:middle;}
+.verified svg{width:9px;height:9px;}
+.srcline{display:flex;align-items:flex-start;gap:5px;color:var(--faint);font-size:9.5px;font-weight:600;margin-top:7px;line-height:1.4;min-height:26px;}
+.srcline .sdot{margin-top:4px;flex:none;}
+.srcline .sdot{width:5px;height:5px;border-radius:50%;background:var(--good);}
+
+.health{margin:8px 0 2px;}
+.health-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.health-top .hl{font-size:9px;font-weight:700;color:var(--faint);letter-spacing:.05em;}
+.health-top .hv{font-size:9.5px;font-weight:700;}
+.health-bar{height:4px;border-radius:99px;background:var(--surface-2);overflow:hidden;}
+.health-bar i{display:block;height:100%;border-radius:99px;}
+.h-fuerte{color:var(--good);} .h-fuerte-bg{background:var(--good);}
+.h-estable{color:var(--gold-deep);} .h-estable-bg{background:var(--gold);}
+.h-declive{color:var(--bad);} .h-declive-bg{background:var(--bad);}
+
+.mb.demo{background:var(--accent-tint);color:var(--accent);border-color:var(--accent-tint);}
+.mb.demo:hover{background:#e2e8f5;border-color:#e2e8f5;}
+
+.formula{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;}
+.fbox{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow);}
+.fbox h3{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px;}
+.fbox .fdesc{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:18px;}
+.frow{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line);}
+.frow:first-of-type{border-top:none;}
+.fw{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);
+  background:var(--accent-tint);padding:4px 8px;border-radius:7px;flex:none;min-width:44px;text-align:center;}
+.fmeta{flex:1;}
+.fmeta .fn{font-size:13px;font-weight:700;letter-spacing:-.01em;}
+.fmeta .fs{color:var(--faint);font-size:11px;margin-top:2px;}
+.fnote{margin-top:16px;padding:12px 14px;background:var(--surface);border-radius:11px;color:var(--muted);font-size:11.5px;line-height:1.55;}
+.fcalc{background:linear-gradient(150deg,#0a1f42,#0f2d5c);border-radius:var(--radius);padding:24px 22px;color:#fff;position:relative;overflow:hidden;}
+.fcalc .hero-net{mask-image:radial-gradient(ellipse 80% 90% at 50% 40%,#000 18%,transparent 76%);}
+.fcalc h4{position:relative;font-family:var(--display);font-size:16px;font-weight:600;margin-bottom:4px;}
+.fcalc .fc-sub{position:relative;color:#8a9bba;font-size:11.5px;margin-bottom:18px;}
+.fcline{position:relative;display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:12.5px;}
+.fcline .k{color:#9fb0cc;}
+.fcline .v{font-family:'JetBrains Mono',monospace;font-weight:700;}
+.fctotal{position:relative;display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);}
+.fctotal .k{font-size:12px;color:#9fb0cc;font-weight:600;}
+.fctotal .v{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;}
+
+.liq-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.liq-tag{font-size:9.5px;font-weight:700;color:var(--bad);background:var(--bad-tint);padding:4px 9px;border-radius:6px;letter-spacing:.05em;}
+.liq-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch;}
+.liqcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);
+  display:flex;gap:12px;align-items:center;transition:transform .22s var(--ease),box-shadow .22s var(--ease);cursor:pointer;}
+.liqcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);}
+.liqmark{width:40px;height:40px;border-radius:11px;flex:none;overflow:hidden;filter:saturate(.55);}
+.liqtxt{flex:1;min-width:0;}
+.liqtxt h5{font-size:13.5px;font-weight:700;letter-spacing:-.015em;}
+.liqtxt .ls{color:var(--faint);font-size:10.5px;margin-top:2px;}
+.liqprice{text-align:right;flex:none;}
+.liqprice .old{color:var(--faint);font-size:10.5px;text-decoration:line-through;font-family:'JetBrains Mono',monospace;}
+.liqprice .new{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--bad);}
+
+.incu{display:flex;align-items:center;gap:14px;background:var(--gold-tint);border:1px solid #efdcb8;
+  border-radius:var(--radius);padding:16px 20px;margin-top:18px;}
+.incu .ibadge{font-size:9.5px;font-weight:700;color:var(--gold-deep);background:#fff;border:1px solid #efdcb8;
+  padding:5px 9px;border-radius:6px;letter-spacing:.05em;flex:none;}
+.incu .itxt{flex:1;font-size:12.5px;color:var(--muted);line-height:1.55;}
+.incu .itxt b{color:var(--ink);font-weight:700;}
+.incu .btn{flex:none;}
+
+/* ===== MEJORA 1 · SELLO DE ORIGEN ===== */
+.origen{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;color:var(--accent);
+  background:var(--accent-tint);padding:3.5px 7px;border-radius:5px;letter-spacing:.03em;}
+.origen svg{width:9px;height:9px;}
+.origen-box{display:flex;gap:12px;background:var(--accent-tint);border:1px solid #d8e0f0;border-radius:var(--radius);
+  padding:15px 18px;margin-top:16px;align-items:flex-start;}
+.origen-box svg{width:17px;height:17px;color:var(--accent);flex:none;margin-top:1px;}
+.origen-box .ot{font-size:12.5px;color:var(--muted);line-height:1.55;}
+.origen-box .ot b{color:var(--ink);font-weight:700;}
+
+/* ===== MEJORA 2 · ÍNDICE ATTX ===== */
+.attx{display:grid;grid-template-columns:1.35fr .65fr;gap:0;border-radius:22px;overflow:hidden;
+  background:linear-gradient(150deg,#0a1f42,#0f2d5c 58%,#1c3d70);box-shadow:var(--shadow-lift);position:relative;}
+.attx .hero-net{mask-image:radial-gradient(ellipse 90% 90% at 30% 45%,#000 18%,transparent 76%);}
+.attx-l{position:relative;z-index:2;padding:28px 30px;}
+.attx-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);
+  color:#cfdaee;padding:5px 12px 5px 8px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.05em;margin-bottom:14px;}
+.attx-tag i{width:6px;height:6px;border-radius:50%;background:#6fd39c;animation:beat 1.9s infinite;}
+.attx-val{display:flex;align-items:baseline;gap:12px;margin-bottom:4px;}
+.attx-val .v{font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:700;color:#fff;letter-spacing:-.035em;}
+.attx-val .c{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:#6fd39c;
+  background:rgba(111,211,156,.14);padding:4px 9px;border-radius:8px;}
+.attx-sub{color:#8a9bba;font-size:12px;margin-bottom:18px;}
+.attx-chart{width:100%;height:104px;display:block;}
+.attx-r{position:relative;z-index:2;padding:28px 26px 28px 12px;display:flex;flex-direction:column;justify-content:center;gap:1px;}
+.attx-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.attx-row:last-child{border-bottom:none;}
+.attx-row .k{color:#9fb0cc;font-size:11.5px;}
+.attx-row .v{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#fff;}
+.attx-row .v.up{color:#6fd39c;} .attx-row .v.down{color:#f0949c;}
+
+/* ===== MEJORA 3 · FRACCIONES ===== */
+.frac{display:flex;align-items:center;gap:10px;margin:9px 0 0;padding:9px 0 0;border-top:1px solid var(--line);}
+.frac-bar{flex:1;height:5px;border-radius:99px;background:var(--surface-2);overflow:hidden;}
+.frac-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-soft));border-radius:99px;}
+.frac-txt{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--muted);flex:none;}
+.frac-min{font-size:9px;color:var(--faint);font-weight:600;letter-spacing:.04em;margin-top:5px;}
+
+/* ===== MEJORA 4 · RENTA ===== */
+.renta{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px;background:var(--good-tint);--rbg:var(--good-tint);
+  border-radius:9px;padding:7px 10px;margin:9px 0 0;}
+.renta .rl{font-size:9.5px;font-weight:700;color:var(--good);letter-spacing:.04em;white-space:nowrap;}
+.renta .rv{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--good);white-space:nowrap;flex:none;}
+
+/* ===== MEJORA 5 · API ===== */
+.api{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:stretch;}
+.api-box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--shadow);}
+.api-box h3{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:7px;}
+.api-box p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px;}
+.api-feat{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line);align-items:flex-start;}
+.api-feat:first-of-type{border-top:none;}
+.api-feat svg{width:15px;height:15px;color:var(--good);flex:none;margin-top:1px;}
+.api-feat .af{font-size:12.5px;color:var(--muted);line-height:1.5;}
+.api-feat .af b{color:var(--ink);font-weight:700;}
+.code{background:#0a1f42;border-radius:var(--radius);padding:18px 20px;overflow-x:auto;position:relative;}
+.code-hd{display:flex;align-items:center;gap:7px;margin-bottom:14px;}
+.code-hd i{width:9px;height:9px;border-radius:50%;}
+.code-hd .cf{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:#7788a8;}
+.code pre{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.75;color:#c3cde0;white-space:pre;}
+.code .cm{color:#6d7ea3;} .code .st{color:#8fd7b0;} .code .nu{color:#ffc48a;} .code .ky{color:#8fb0ff;}
+
+/* ===== MEJORA 6 · CERTIFICADO DE DEFUNCIÓN ===== */
+.obit-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch;}
+.obit{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease);cursor:pointer;}
+.obit:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);}
+.obit-hd{padding:15px 18px 13px;display:flex;gap:11px;align-items:center;border-bottom:1px solid var(--line);}
+.obit-mk{width:36px;height:36px;border-radius:10px;flex:none;overflow:hidden;filter:grayscale(.75);opacity:.7;}
+.obit-tx{flex:1;min-width:0;}
+.obit-tx h5{font-size:13.5px;font-weight:700;letter-spacing:-.015em;}
+.obit-tx .od{color:var(--faint);font-size:10.5px;margin-top:2px;font-family:'JetBrains Mono',monospace;}
+.obit-bd{padding:14px 18px;flex:1;}
+.obit-bd .ocause{font-size:9px;font-weight:700;color:var(--bad);background:var(--bad-tint);padding:3.5px 7px;
+  border-radius:5px;letter-spacing:.05em;display:inline-block;margin-bottom:9px;}
+.obit-bd p{color:var(--muted);font-size:12px;line-height:1.55;}
+.obit-ft{padding:11px 18px;background:var(--surface);display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:8px;}
+.obit-ft .ol{font-size:10.5px;color:var(--faint);font-weight:600;}
+.obit-ft a{font-size:10.5px;font-weight:700;color:var(--accent);}
+
+/* ===== SELLO MarcaIA ===== */
+.mia{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));
+  color:#fff;padding:4px 9px 4px 6px;border-radius:7px;font-size:9.5px;font-weight:700;letter-spacing:.02em;
+  box-shadow:0 2px 6px rgba(15,45,92,.22);}
+.mia svg{width:11px;height:11px;flex:none;}
+.mia .mp{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;
+  background:rgba(255,255,255,.18);padding:1px 5px;border-radius:4px;margin-left:1px;}
+
+/* sello en tarjeta: barra de éxito */
+.mia-bar{margin:10px 0 0;padding:10px 11px;background:var(--accent-tint);border:1px solid #d8e0f0;border-radius:11px;}
+.mia-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;}
+.mia-lbl{display:flex;align-items:center;gap:5px;font-size:9px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.mia-lbl svg{width:11px;height:11px;}
+.mia-val{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);}
+.mia-track{height:5px;border-radius:99px;background:#dbe3f2;overflow:hidden;}
+.mia-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-soft));}
+.mia-foot{font-size:9px;color:var(--faint);font-weight:600;margin-top:6px;letter-spacing:.02em;}
+
+/* sello en el destacado del hero */
+.mia-dark{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:11px;padding:10px 12px;margin:12px 0 0;}
+.mia-dark .ml{display:flex;align-items:center;gap:6px;font-size:9.5px;font-weight:700;color:#cfdaee;letter-spacing:.05em;}
+.mia-dark .ml svg{width:12px;height:12px;}
+.mia-dark .mv{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:#fff;}
+
+/* sección explicativa del sello */
+.mia-sec{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:stretch;}
+.mia-card{background:linear-gradient(150deg,#0a1f42,#0f2d5c 60%,#1c3d70);border-radius:var(--radius);
+  padding:26px 24px;color:#fff;position:relative;overflow:hidden;}
+.mia-card .hero-net{mask-image:radial-gradient(ellipse 85% 90% at 40% 40%,#000 18%,transparent 76%);}
+.mia-badge-xl{position:relative;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.24);border-radius:11px;padding:8px 14px 8px 11px;margin-bottom:18px;}
+.mia-badge-xl svg{width:18px;height:18px;}
+.mia-badge-xl span{font-size:13px;font-weight:700;letter-spacing:-.01em;}
+.mia-card h3{position:relative;font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.022em;margin-bottom:9px;}
+.mia-card p{position:relative;color:#9fb0cc;font-size:13px;line-height:1.62;}
+.mia-rule{position:relative;display:flex;gap:10px;padding:11px 0;border-top:1px solid rgba(255,255,255,.12);align-items:flex-start;margin-top:14px;}
+.mia-rule:first-of-type{margin-top:18px;}
+.mia-rule svg{width:14px;height:14px;color:#6fd39c;flex:none;margin-top:2px;}
+.mia-rule .mr{font-size:12px;color:#c3cde0;line-height:1.5;}
+.mia-rule .mr b{color:#fff;font-weight:700;}
+
+.mia-rank{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.mia-row{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);}
+.mia-row:last-child{border-bottom:none;}
+.mia-pos{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--faint);width:20px;flex:none;}
+.mia-mk{width:32px;height:32px;border-radius:9px;flex:none;overflow:hidden;}
+.mia-nm{flex:1;min-width:0;}
+.mia-nm .m1{font-size:13px;font-weight:700;letter-spacing:-.015em;}
+.mia-nm .m2{color:var(--faint);font-size:10.5px;margin-top:1px;}
+.mia-pct{width:120px;flex:none;}
+.mia-pct .mtop{display:flex;justify-content:flex-end;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;margin-bottom:4px;}
+.mia-pct .mtrk{height:5px;border-radius:99px;background:var(--surface-2);overflow:hidden;}
+.mia-pct .mtrk i{display:block;height:100%;border-radius:99px;}
+
+/* ===== PANEL DE ÉXITO MarcaIA ===== */
+.mia-hero{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lift);position:relative;
+  background:linear-gradient(150deg,#0a1f42 0%,#0f2d5c 48%,#1c3d70 100%);}
+.mia-hero .hero-net{mask-image:radial-gradient(ellipse 95% 90% at 40% 40%,#000 18%,transparent 78%);}
+.mia-hero-in{position:relative;z-index:2;padding:34px 34px 30px;}
+.mia-hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:26px;}
+.mia-seal{display:flex;align-items:center;gap:14px;}
+.mia-seal-mk{width:62px;height:62px;border-radius:18px;flex:none;display:grid;place-items:center;
+  background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.28);box-shadow:0 8px 26px rgba(0,0,0,.28);}
+.mia-seal-mk svg{width:30px;height:30px;}
+.mia-seal-tx .mst{font-size:22px;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;}
+.mia-seal-tx .msd{color:#9fb0cc;font-size:12px;margin-top:4px;}
+.mia-oblig{display:inline-flex;align-items:center;gap:7px;background:rgba(201,151,62,.18);border:1px solid rgba(201,151,62,.42);
+  color:#ffd9a8;padding:6px 13px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.06em;}
+
+.mia-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.14);border-radius:16px;overflow:hidden;margin-bottom:24px;}
+.mia-num{background:rgba(10,31,66,.45);padding:20px 20px;backdrop-filter:blur(6px);}
+.mia-num .nv{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:#fff;letter-spacing:-.035em;line-height:1;}
+.mia-num .nv.hi{color:#6fd39c;}
+.mia-num .nl{color:#8a9bba;font-size:11px;font-weight:600;margin-top:8px;line-height:1.4;}
+
+.mia-medals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.medal{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:16px 17px;
+  display:flex;gap:12px;align-items:center;}
+.medal-ico{width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;
+  font-size:12px;font-weight:700;color:#0a1f42;}
+.medal-oro{background:linear-gradient(145deg,#ffd88a,#c9973e);}
+.medal-plata{background:linear-gradient(145deg,#e8edf5,#a9b4c7);}
+.medal-bronce{background:linear-gradient(145deg,#e5b48a,#a9772c);}
+.medal-tx .m1{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.015em;}
+.medal-tx .m2{color:#8a9bba;font-size:10.5px;margin-top:2px;}
+
+.mia-strip{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.13);flex-wrap:wrap;}
+.mia-strip .msl{color:#9fb0cc;font-size:12px;line-height:1.55;flex:1;min-width:240px;}
+.mia-strip .msl b{color:#fff;font-weight:700;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== 5 · TILT 3D EN EL DESTACADO ===== */
+.hero-right{perspective:1100px;}
+.quote{transform-style:preserve-3d;transition:transform .18s ease-out, box-shadow .25s;will-change:transform;}
+.quote.tilting{transition:transform .06s linear;}
+.quote-glare{position:absolute;inset:0;border-radius:20px;pointer-events:none;opacity:0;
+  background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.16),transparent 62%);
+  transition:opacity .25s;}
+.quote:hover .quote-glare{opacity:1;}
+@media (prefers-reduced-motion:reduce){.quote{transform:none!important;}}
+
+/* ===== 8 · TARJETA DESTACADA A DOBLE ANCHO (MarcaIA) ===== */
+.card.featured{grid-column:span 2;grid-row:span 1;}
+.card.featured .cover{height:150px;}
+.card.featured .cbody{padding:10px 20px 20px;}
+.card.featured h4{font-size:19px;min-height:0;}
+.card.featured .owner{font-size:12px;min-height:0;}
+.feat-flag{position:absolute;top:12px;left:12px;z-index:3;display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.06em;
+  padding:5px 10px;border-radius:7px;box-shadow:0 4px 12px rgba(201,151,62,.4);}
+.feat-flag svg{width:10px;height:10px;}
+.feat-lead{color:var(--muted);font-size:12.5px;line-height:1.55;margin:10px 0 0;}
+.feat-lead b{color:var(--ink);font-weight:700;}
+.feat-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0 0;
+  padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.feat-stat .fv{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;letter-spacing:-.02em;}
+.feat-stat .fl{color:var(--faint);font-size:9px;font-weight:600;letter-spacing:.04em;margin-top:3px;line-height:1.3;}
+
+/* ===== 10 · FONDO ALTERNO ENTRE SECCIONES ===== */
+.band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:44px;}
+.band .section{padding-top:52px;padding-bottom:52px;}
+.band + .wrap .section{padding-top:52px;}
+
+/* ===== 11 · ESQUELETOS DE CARGA ===== */
+@keyframes shimmer{0%{background-position:-460px 0}100%{background-position:460px 0}}
+.sk{background:linear-gradient(90deg,var(--surface) 8%,var(--surface-2) 20%,var(--surface) 33%);
+  background-size:900px 100%;animation:shimmer 1.5s linear infinite;border-radius:8px;}
+.sk-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.sk-cover{height:98px;}
+.sk-body{padding:16px 15px 15px;}
+.sk-l{height:10px;margin-bottom:9px;}
+.sk-mk{width:44px;height:44px;border-radius:12px;margin:-26px 0 0 16px;position:relative;z-index:2;border:3px solid #fff;}
+@media (prefers-reduced-motion:reduce){.sk{animation:none;}}
+
+/* ===== 17 · LÍNEA DE TIEMPO DEL MOTOR ===== */
+.tl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 20px;box-shadow:var(--shadow);}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+.tl-head .tt{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.02em;}
+.tl-head .ts{color:var(--faint);font-size:12px;margin-top:4px;}
+.tl-legend{display:flex;gap:14px;flex-wrap:wrap;}
+.tl-lg{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600;}
+.tl-lg i{width:9px;height:9px;border-radius:3px;}
+.tl-chart{display:flex;align-items:flex-end;gap:6px;height:132px;padding-bottom:2px;}
+.tl-week{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;min-width:0;cursor:pointer;position:relative;}
+.tl-week:hover .tl-tip{opacity:1;transform:translate(-50%,-6px);}
+.tl-seg{width:100%;border-radius:3px;transition:filter .16s;}
+.tl-week:hover .tl-seg{filter:brightness(1.12);}
+.tl-tip{position:absolute;bottom:100%;left:50%;transform:translate(-50%,0);background:var(--ink);color:#fff;
+  font-size:10.5px;font-weight:600;padding:6px 9px;border-radius:7px;white-space:nowrap;opacity:0;
+  pointer-events:none;transition:.16s;z-index:5;line-height:1.4;}
+.tl-axis{display:flex;gap:6px;margin-top:9px;}
+.tl-lbl{flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--faint);
+  font-weight:600;min-width:0;overflow:hidden;}
+.tl-foot{display:flex;gap:22px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.tl-kpi .kv{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;letter-spacing:-.02em;}
+.tl-kpi .kv.up{color:var(--good);}
+.tl-kpi .kl{color:var(--faint);font-size:11px;font-weight:500;margin-top:3px;}
+
+@media (max-width:820px){
+  .card.featured{grid-column:span 1;}
+  .card.featured .cover{height:110px;}
+  .card.featured h4{font-size:16px;}
+  .feat-stats{grid-template-columns:1fr;gap:8px;}
+  .tl{padding:18px 16px 16px;}
+  .tl-chart{height:104px;gap:4px;}
+  .tl-lbl{font-size:8px;}
+  .tl-foot{gap:16px;}
+  .tl-kpi .kv{font-size:17px;}
+  .band .section{padding-top:38px;padding-bottom:38px;}
+}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0;text-align:center;color:var(--faint);font-size:11.5px;}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1000px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .split{grid-template-columns:1fr;}
+  .hero-banner{grid-template-columns:1fr;}
+  .hero-right{padding:0 44px 36px;}
+}
+@media (max-width:820px){
+  .nav-in{padding:11px 16px;}
+  .nav-links,.nav-right .btn-line{display:none;}
+  .burger{display:flex;}
+  .wrap{padding:0 16px;}
+  .hero{padding-top:12px;}
+  .hero-banner{border-radius:20px;}
+  .hero-left{padding:32px 20px 24px;}
+  .hero-h1{font-size:31px;max-width:100%;}
+  .hero-sub{font-size:14px;}
+  .hero-ctas{flex-direction:column;}
+  .hero-ctas .btn{width:100%;}
+  .hero-metrics{gap:22px;}
+  .hm .v{font-size:16.5px;}
+  .hero-right{padding:0 20px 24px;}
+  .g3{display:none;}
+  .rail{grid-template-columns:repeat(2,1fr);}
+  .rail-cell{padding:15px 16px;}
+  .rail-cell .v{font-size:19px;}
+  .rail-cell .mini{display:none;}
+  .section{padding-top:38px;}
+  .shead{flex-direction:column;align-items:flex-start;gap:11px;}
+  .shead h2{font-size:24px;}
+  .trend-row{margin:0 -16px;padding:0 16px 12px;}
+  .tcard{flex:0 0 76vw;max-width:280px;}
+  .grid{grid-template-columns:1fr;gap:12px;}
+  .cbody{padding:7px 12px 13px;}
+  .cbody h4{font-size:15px;min-height:0;}
+  .cbody .owner{min-height:0;}
+  .srcline{min-height:0;}
+  .metrics{gap:10px;}
+  .cprice .v{font-size:15px;}
+  .cact{flex-direction:column;gap:6px;}
+  .tbl-scroll{overflow-x:auto;}
+  table{min-width:540px;}
+  .steps{grid-template-columns:1fr;}
+  .attx{grid-template-columns:1fr;border-radius:18px;}
+  .attx-l{padding:22px 20px 18px;}
+  .attx-val .v{font-size:33px;}
+  .attx-r{padding:0 20px 22px;}
+  .api{grid-template-columns:1fr;}
+  .mia-sec{grid-template-columns:1fr;}
+  
+  
+  
+  .mia-hero-in{padding:24px 20px 22px;}
+  .mia-hero-top{gap:14px;margin-bottom:18px;}
+  .mia-seal-mk{width:50px;height:50px;border-radius:15px;}
+  .mia-seal-tx .mst{font-size:18px;}
+  .mia-nums{grid-template-columns:repeat(2,1fr);}
+  .mia-num{padding:16px;}
+  .mia-num .nv{font-size:24px;}
+  .mia-medals{grid-template-columns:1fr;}
+  .mia-pct{width:88px;}
+  .mia-card{padding:22px 20px;}
+  .obit-row{grid-template-columns:1fr;}
+  .code{padding:15px 16px;}
+  .code pre{font-size:10px;}
+  .formula{grid-template-columns:1fr;}
+  .liq-row{grid-template-columns:1fr;}
+  .incu{flex-direction:column;align-items:flex-start;gap:10px;}
+  .incu .btn{width:100%;}
+  .cta-in{padding:38px 20px;border-radius:18px;}
+  .cta-in h2{font-size:25px;}
+  .feed{max-height:none;}
+}
+@media (max-width:400px){
+  .hero-h1{font-size:24px;}
+  .quote-price .pv{font-size:24px;}
+}
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Negocios de attenciona","numberOfItems":132,"itemListElement":[{"@type":"ListItem","position":1,"name":"Guadalupe","url":"https://www.attenciona.com/negocios/guadalupe/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":2,"name":"Velas","url":"https://www.attenciona.com/negocios/velas/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":3,"name":"Carta Natal","url":"https://www.attenciona.com/negocios/cartanatal/","offers":{"@type":"Offer","price":199,"priceCurrency":"USD"}},{"@type":"ListItem","position":4,"name":"Ángeles","url":"https://www.attenciona.com/negocios/angeles/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":5,"name":"Novena","url":"https://www.attenciona.com/negocios/novena/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":6,"name":"Santoral","url":"https://www.attenciona.com/negocios/santoral/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":7,"name":"Salmos","url":"https://www.attenciona.com/negocios/salmos/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":8,"name":"Rosario","url":"https://www.attenciona.com/negocios/rosario/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":9,"name":"Ceniza","url":"https://www.attenciona.com/negocios/ceniza/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":10,"name":"Biblia","url":"https://www.attenciona.com/negocios/biblia/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":11,"name":"Promesas","url":"https://www.attenciona.com/negocios/promesas/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":12,"name":"Fiestas","url":"https://www.attenciona.com/negocios/fiestas/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":13,"name":"Orisha","url":"https://www.attenciona.com/negocios/orisha/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":14,"name":"Elegguá","url":"https://www.attenciona.com/negocios/eleggua/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":15,"name":"Yemayá","url":"https://www.attenciona.com/negocios/yemaya/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":16,"name":"Oshún","url":"https://www.attenciona.com/negocios/oshun/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":17,"name":"Shangó","url":"https://www.attenciona.com/negocios/shango/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":18,"name":"San Lázaro","url":"https://www.attenciona.com/negocios/sanlazaro/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":19,"name":"Orula","url":"https://www.attenciona.com/negocios/orula/","offers":{"@type":"Offer","price":199,"priceCurrency":"USD"}},{"@type":"ListItem","position":20,"name":"Pachamama","url":"https://www.attenciona.com/negocios/pachamama/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":21,"name":"Inti Raymi","url":"https://www.attenciona.com/negocios/intiraymi/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":22,"name":"Año Nuevo Andino","url":"https://www.attenciona.com/negocios/anoneandino/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":23,"name":"Alasitas","url":"https://www.attenciona.com/negocios/alasitas/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":24,"name":"Todos Santos","url":"https://www.attenciona.com/negocios/todosantos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":25,"name":"Qhapaq Raymi","url":"https://www.attenciona.com/negocios/qhapaqraymi/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":26,"name":"Altar de Muertos","url":"https://www.attenciona.com/negocios/altar/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":27,"name":"Exvotos","url":"https://www.attenciona.com/negocios/exvoto/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":28,"name":"Curandera","url":"https://www.attenciona.com/negocios/curandera/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":29,"name":"Rampa","url":"https://www.attenciona.com/negocios/rampa/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":30,"name":"Candado","url":"https://www.attenciona.com/negocios/candado/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":31,"name":"Tarot Amor","url":"https://www.attenciona.com/negocios/tarotamor/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":32,"name":"Horóscopo Día","url":"https://www.attenciona.com/negocios/horoscopodia/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":33,"name":"PackingList","url":"https://www.attenciona.com/negocios/packinglist/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":34,"name":"CalcExport","url":"https://www.attenciona.com/negocios/calculaexport/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":35,"name":"ValidaTransfer","url":"https://www.attenciona.com/negocios/valtransfer/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":36,"name":"CalcFX","url":"https://www.attenciona.com/negocios/calculafx/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":37,"name":"ReciboPago","url":"https://www.attenciona.com/negocios/recibos/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":38,"name":"GastoOK","url":"https://www.attenciona.com/negocios/gastos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":39,"name":"AlertaGasto","url":"https://www.attenciona.com/negocios/anomalias/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":40,"name":"DirOK","url":"https://www.attenciona.com/negocios/direcciones/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":41,"name":"MonoIdent","url":"https://www.attenciona.com/negocios/moneda/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":42,"name":"CPValida","url":"https://www.attenciona.com/negocios/codigopostal/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":43,"name":"DocAduana","url":"https://www.attenciona.com/negocios/aduana/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":44,"name":"DataAPI","url":"https://www.attenciona.com/negocios/apidatos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":45,"name":"CostoTotal","url":"https://www.attenciona.com/negocios/costototal/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":46,"name":"ValidaDocs","url":"https://www.attenciona.com/negocios/validadocs/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":47,"name":"FreelanceNet","url":"https://www.attenciona.com/negocios/freelance/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":48,"name":"Compatibilidad","url":"https://www.attenciona.com/negocios/compatibilidad/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":49,"name":"Retrógrados","url":"https://www.attenciona.com/negocios/retrogrado/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":50,"name":"Fases","url":"https://www.attenciona.com/negocios/fases/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":51,"name":"Eclipse","url":"https://www.attenciona.com/negocios/eclipse/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":52,"name":"Chino","url":"https://www.attenciona.com/negocios/chino/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":53,"name":"Santa Muerte","url":"https://www.attenciona.com/negocios/santamuerte/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":54,"name":"Orixás Brasil","url":"https://www.attenciona.com/negocios/candomble/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":55,"name":"Vudú","url":"https://www.attenciona.com/negocios/vudu/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":56,"name":"Despacho","url":"https://www.attenciona.com/negocios/despacho/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":57,"name":"Lectura de Coca","url":"https://www.attenciona.com/negocios/coca/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":58,"name":"Illas","url":"https://www.attenciona.com/negocios/illas/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":59,"name":"Ch'alla","url":"https://www.attenciona.com/negocios/challa/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":60,"name":"Quema de Año Viejo","url":"https://www.attenciona.com/negocios/quemanoia/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":61,"name":"Reconcilia","url":"https://www.attenciona.com/negocios/reconciliacion/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":62,"name":"Clasifica","url":"https://www.attenciona.com/negocios/clasificador/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":63,"name":"CalcImport","url":"https://www.attenciona.com/negocios/calculadoraimpo/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":64,"name":"FacturaCrypto","url":"https://www.attenciona.com/negocios/facturacrypto/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":65,"name":"PayWatch","url":"https://www.attenciona.com/negocios/monitorpagos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":66,"name":"Conciliador","url":"https://www.attenciona.com/negocios/conciliador/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":67,"name":"CalcMEL","url":"https://www.attenciona.com/negocios/calculamel/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":68,"name":"DupliCheck","url":"https://www.attenciona.com/negocios/duplicados/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":69,"name":"ValidaTX","url":"https://www.attenciona.com/negocios/validatx/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":70,"name":"ExtraePDF","url":"https://www.attenciona.com/negocios/extractor/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":71,"name":"XML2Data","url":"https://www.attenciona.com/negocios/xml2csv/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":72,"name":"ValidaCFDI","url":"https://www.attenciona.com/negocios/validadorcfdi/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":73,"name":"FacturaData","url":"https://www.attenciona.com/negocios/extractorfacturas/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":74,"name":"Proforma","url":"https://www.attenciona.com/negocios/proforma/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":75,"name":"Tarot Sí/No","url":"https://www.attenciona.com/negocios/tarotsino/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":76,"name":"Tarot Semana","url":"https://www.attenciona.com/negocios/tarotsemana/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":77,"name":"Runas","url":"https://www.attenciona.com/negocios/runas/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":78,"name":"Numerología","url":"https://www.attenciona.com/negocios/numerologia/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":79,"name":"Sueños","url":"https://www.attenciona.com/negocios/suenos/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":80,"name":"Fábrica de horas","url":"https://www.attenciona.com/negocios/fabrica-de-horas/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":81,"name":"Pila","url":"https://www.attenciona.com/negocios/pila/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":82,"name":"Factu","url":"https://www.attenciona.com/negocios/factu/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":83,"name":"Bitácora","url":"https://www.attenciona.com/negocios/bitacora/","offers":{"@type":"Offer","price":149,"priceCurrency":"USD"}},{"@type":"ListItem","position":84,"name":"Biorritmo","url":"https://www.attenciona.com/negocios/biorritmo/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":85,"name":"Astro Trabajo","url":"https://www.attenciona.com/negocios/astrotrabajo/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":86,"name":"Baraja Española","url":"https://www.attenciona.com/negocios/espanolas/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":87,"name":"I Ching","url":"https://www.attenciona.com/negocios/iching/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":88,"name":"Café","url":"https://www.attenciona.com/negocios/cafe/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":89,"name":"Manos","url":"https://www.attenciona.com/negocios/manos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":90,"name":"Amuletos","url":"https://www.attenciona.com/negocios/amuletos/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":91,"name":"Limpia","url":"https://www.attenciona.com/negocios/limpia/","offers":{"@type":"Offer","price":129,"priceCurrency":"USD"}},{"@type":"ListItem","position":92,"name":"Lectura de Huevo","url":"https://www.attenciona.com/negocios/huevo/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":93,"name":"Sahumerio","url":"https://www.attenciona.com/negocios/sahumerio/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":94,"name":"Baño de Descarga","url":"https://www.attenciona.com/negocios/bano/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":95,"name":"Muñecas Quitapenas","url":"https://www.attenciona.com/negocios/quitapenas/","offers":{"@type":"Offer","price":99,"priceCurrency":"USD"}},{"@type":"ListItem","position":96,"name":"CNOta","url":"https://www.attenciona.com/negocios/cnota/","offers":{"@type":"Offer","price":319,"priceCurrency":"USD"}},{"@type":"ListItem","position":97,"name":"Reclama","url":"https://www.attenciona.com/negocios/reclama/","offers":{"@type":"Offer","price":319,"priceCurrency":"USD"}},{"@type":"ListItem","position":98,"name":"Quartly","url":"https://www.attenciona.com/negocios/quartly/","offers":{"@type":"Offer","price":279,"priceCurrency":"USD"}},{"@type":"ListItem","position":99,"name":"Beleg","url":"https://www.attenciona.com/negocios/beleg/","offers":{"@type":"Offer","price":279,"priceCurrency":"USD"}},{"@type":"ListItem","position":100,"name":"Vigil","url":"https://www.attenciona.com/negocios/vigil/","offers":{"@type":"Offer","price":279,"priceCurrency":"USD"}},{"@type":"ListItem","position":101,"name":"Privacy Fit","url":"https://www.attenciona.com/negocios/privacy-fit-us/","offers":{"@type":"Offer","price":279,"priceCurrency":"USD"}},{"@type":"ListItem","position":102,"name":"Échéance","url":"https://www.attenciona.com/negocios/echeance/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":103,"name":"Ksefa","url":"https://www.attenciona.com/negocios/ksefa/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":104,"name":"Irin","url":"https://www.attenciona.com/negocios/irin/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":105,"name":"Parcela","url":"https://www.attenciona.com/negocios/parcela/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":106,"name":"Karbon","url":"https://www.attenciona.com/negocios/karbon/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":107,"name":"Hora","url":"https://www.attenciona.com/negocios/hora/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":108,"name":"Sanad","url":"https://www.attenciona.com/negocios/sanad/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":109,"name":"Lumen","url":"https://www.attenciona.com/negocios/lumen/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":110,"name":"Cripta","url":"https://www.attenciona.com/negocios/cripta/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":111,"name":"Paca","url":"https://www.attenciona.com/negocios/paca/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":112,"name":"Click-to-Cancel","url":"https://www.attenciona.com/negocios/clickcancel/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":113,"name":"CSRD · Ómnibus","url":"https://www.attenciona.com/negocios/csrd/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":114,"name":"Reglamento de Máquinas","url":"https://www.attenciona.com/negocios/maquinas/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":115,"name":"Luz justa","url":"https://www.attenciona.com/negocios/luzjusta/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":116,"name":"Hipoteca justa","url":"https://www.attenciona.com/negocios/hipoteca/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":117,"name":"Aranceles","url":"https://www.attenciona.com/negocios/aranceles/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":118,"name":"EU261 vuelos","url":"https://www.attenciona.com/negocios/eu261/","offers":{"@type":"Offer","price":199,"priceCurrency":"USD"}},{"@type":"ListItem","position":119,"name":"Salario mínimo","url":"https://www.attenciona.com/negocios/salariominimo/","offers":{"@type":"Offer","price":199,"priceCurrency":"USD"}},{"@type":"ListItem","position":120,"name":"Bono social","url":"https://www.attenciona.com/negocios/bonosocial/","offers":{"@type":"Offer","price":199,"priceCurrency":"USD"}},{"@type":"ListItem","position":121,"name":"Marea real vs prevista (NOAA)","url":"https://www.attenciona.com/negocios/marea-real-vs-prevista-eeuu-costa-oeste/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":122,"name":"Inflación real por país (Banco Mundial)","url":"https://www.attenciona.com/negocios/inflacion-real-por-pais-mundo/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":123,"name":"Revisa FDA","url":"https://www.attenciona.com/negocios/recall-alimentos-fda-estados-unidos/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":124,"name":"NetoClaro","url":"https://www.attenciona.com/negocios/boleta-honorarios-chile-chile/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":125,"name":"CajaClara","url":"https://www.attenciona.com/negocios/neto-colombia-colombia/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":126,"name":"ResicoClaro","url":"https://www.attenciona.com/negocios/resico-mexico-mexico/","offers":{"@type":"Offer","price":359,"priceCurrency":"USD"}},{"@type":"ListItem","position":127,"name":"Cripto-fiscal global","url":"https://www.attenciona.com/negocios/cripto-fiscal-global/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":128,"name":"Cripto-precio justo","url":"https://www.attenciona.com/negocios/cripto-precio-justo-global/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":129,"name":"Etiqueta honesta","url":"https://www.attenciona.com/negocios/etiqueta-ultraprocesados-global/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":130,"name":"Cambio confuso","url":"https://www.attenciona.com/negocios/cambio-confuso-global/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":131,"name":"Cumplimiento fiscal B2B global","url":"https://www.attenciona.com/negocios/cumplimiento-normativo-global/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}},{"@type":"ListItem","position":132,"name":"MarketPlace","url":"https://www.attenciona.com/negocios/comisiones/","offers":{"@type":"Offer","price":239,"priceCurrency":"USD"}}]}</script>
+</head>
+<body>
+<div class="tape"><div class="tape-track" id="tape"><div class="tape-item"><span class="n">Guadalupe</span><span class="c" style="color:#93a4c4">9.7/10</span></div><div class="tape-item"><span class="n">Velas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Carta Natal</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Ángeles</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Novena</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Santoral</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Salmos</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Rosario</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Ceniza</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Biblia</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Promesas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Fiestas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Orisha</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Elegguá</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Guadalupe</span><span class="c" style="color:#93a4c4">9.7/10</span></div><div class="tape-item"><span class="n">Velas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Carta Natal</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Ángeles</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Novena</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Santoral</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Salmos</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Rosario</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Ceniza</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Biblia</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Promesas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Fiestas</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Orisha</span><span class="c" style="color:#93a4c4">9.3/10</span></div><div class="tape-item"><span class="n">Elegguá</span><span class="c" style="color:#93a4c4">9.3/10</span></div></div></div>
+<nav class="af-nav" aria-label="Principal"><div class="af-in">
+  <a class="af-brand" href="/"><span class="af-mk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5 L6 12 L12 12 Z" fill="#fff" opacity=".95"/><path d="M12 5 L18 12 L12 12 Z" fill="#ffe6d6" opacity=".9"/><path d="M12 12 L6 12 L12 19 Z" fill="#fff" opacity=".45"/><path d="M12 12 L12 19 L18 12 Z" fill="#fff" opacity=".68"/></svg></span>attenciona<span class="af-sub">Negocios</span></a>
+  <div class="af-links">
+    <div class="af-item">
+      <button class="af-btn af-active" aria-haspopup="true">Explorar <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 8l3-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="af-mega">
+        <a class="af-mlink" href="/negocios/atiende-ia/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C4.4 1.5 1.5 4 1.5 7c0 1.6.8 3 2 4L3 13.5l3-1.2c.6.14 1.3.2 2 .2 3.6 0 6.5-2.5 6.5-5.5S11.6 1.5 8 1.5z" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">AtiendeIA</span><span class="af-md">Agentes de WhatsApp a medida · negocio principal</span></span></a>
+        <a class="af-mlink" href="/marketplace.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Destacados</span><span class="af-md">Los negocios mejor valorados</span></span></a>
+        <a class="af-mlink" href="/negocios/todos/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Todos los negocios</span><span class="af-md">El listado completo con buscador</span></span></a>
+        <a class="af-mlink" href="/incubadora.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5c2.5 2.6 4 5 4 7a4 4 0 11-8 0c0-2 1.5-4.4 4-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Incubadora</span><span class="af-md">Lo último que sale del motor</span></span></a>
+        <a class="af-mlink" href="/problemas/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4M8 4.9v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><span class="af-mt">Por problema</span><span class="af-md">Entra por tu obligación legal</span></span></a>
+        <a class="af-mlink" href="/negocios/pais/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M2 8h12M8 2c2 2.4 2 9.6 0 12M8 2c-2 2.4-2 9.6 0 12" stroke="currentColor" stroke-width="1.1"/></svg></span><span><span class="af-mt">Por país</span><span class="af-md">Cumplimiento por territorio</span></span></a>
+        <a class="af-mlink" href="/negomazon/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M4 5.5h8l.8 8.5H3.2L4 5.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 5.5a2 2 0 0 1 4 0" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">Negomazon</span><span class="af-md">Guías de compra · afiliado Amazon</span></span></a>
+        <a class="af-mlink" href="/strategycheck/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l2 3.2h3.6L11 7.5l1 3.7-4-2.3-4 2.3 1-3.7L2.4 4.7H6L8 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg></span><span><span class="af-mt">StrategyCheck</span><span class="af-md">Backtest honesto de bots · gratis</span></span></a>
+      </div>
+    </div>
+    <a class="af-link" href="/historia.html">Historia</a>
+    <a class="af-link" href="/mis-negocios.html">Mis Negocios</a>
+  </div>
+  <div class="af-right"><a class="af-cta" href="/incubadora.html">Ver la <span>incubadora</span></a></div>
+</div></nav>
+<div class="wrap hero">
+    <div class="hero-banner rv">
+      <div class="hero-bg"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="hero-net"></div><div class="hero-grain"></div></div>
+      <div class="hero-left">
+        <div class="pill"><span class="live"></span> Sistema vivo · cuatro generaciones de negocios · se mantiene solo</div>
+        <h1 class="hero-h1">Experimentos de <span class="em">todas las fases</span>.</h1>
+        <p class="hero-sub">No es un catálogo cerrado: es una máquina que lleva cuatro generaciones aprendiendo. Cada fase heredó lo que funcionó de la anterior y descartó lo que no. Hoy una red de bots la mantiene en marcha sola —genera datos reales, prueba ideas y publica también lo que falla— y de ahí salen los negocios que puedes licenciar.</p>
+        <div class="hero-ctas"><a class="btn btn-white" href="#evolucion">Ver la evolución</a><a class="btn btn-glass" href="#grid">Explorar el catálogo</a></div>
+        <div class="hero-metrics">
+          <div class="hm"><div class="v up">4</div><div class="l">Generaciones · Fase 1 → 4</div></div>
+          <div class="hm"><div class="v">132</div><div class="l">Negocios en el catálogo</div></div>
+          <div class="hm"><div class="v">24/7</div><div class="l">En auto · 0 € de nube</div></div>
+          <div class="hm"><div class="v">1 min</div><div class="l">Refresco de los bots</div></div>
+          <div class="hm"><div class="v">+100</div><div class="l">Ideas probadas y registradas</div></div>
+        </div>
+      </div>
+      <div class="hero-right"><a href="/locobot/" class="quote" style="text-decoration:none;background:linear-gradient(135deg,#0a0b0d 0%,#1a1b2e 100%);border:1px solid rgba(94,106,210,.4);">
+      <div class="quote-top">
+        <div class="quote-mark" style="background:linear-gradient(135deg,#5e6ad2,#7170ff);font-size:20px;">🤖</div>
+        <div><div class="quote-name" style="color:#fff;">LOCOBOT</div><div class="quote-cat" style="color:#8a8f98;">Trading Algorítmico</div></div>
+        <span class="quote-hot" style="background:#10b981;">EN VIVO</span>
+      </div>
+      <div class="quote-price"><span class="pv" style="color:#10b981;">En pruebas</span></div>
+      <div class="quote-sub" style="color:#d0d6e0;">Señales automáticas por Telegram · Sin rentabilidad garantizada · Pago en cripto</div>
+      <div class="quote-cover" style="border-radius:12px;overflow:hidden;height:88px;margin:14px 0;background:linear-gradient(135deg,#5e6ad2 0%,#7170ff 50%,#828fff 100%);display:flex;align-items:center;justify-content:center;">
+        <div style="color:#fff;font-size:32px;font-weight:700;letter-spacing:-1px;">📊 Señales en pruebas</div>
+      </div>
+      <div class="quote-actions"><span class="qb qb-buy" style="background:#5e6ad2;border-color:#5e6ad2;">Ver Señales GRATIS</span><span class="qb qb-rent">Planes Pro</span></div>
+    </a></div>
+    </div>
+  </div>
+<style>
+  /* ===== Experimentos de todas las fases — bloques nuevos ===== */
+  .evo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
+  .evo-step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;transition:.2s var(--ease)}
+  .evo-step:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:var(--line-strong)}
+  .evo-step .ph{font-family:var(--display);font-size:13px;color:var(--gold-deep);font-weight:600;letter-spacing:.02em}
+  .evo-step h3{font-family:var(--display);font-size:18px;letter-spacing:-.02em;margin:6px 0 8px;line-height:1.2}
+  .evo-step p{font-size:13.5px;color:var(--muted);line-height:1.5;margin:0 0 12px}
+  .evo-step .learn{display:block;font-size:12.5px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px}
+  .evo-step .learn b{color:var(--accent);font-weight:600}
+  .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ref-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.2s var(--ease);box-shadow:var(--shadow)}
+  .ref-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+  .ref-card .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-deep)}
+  .ref-card h3{font-family:var(--display);font-size:19px;letter-spacing:-.02em;margin:7px 0 7px}
+  .ref-card p{font-size:13.5px;color:var(--muted);line-height:1.5;flex:1;margin:0}
+  .ref-card .go{margin-top:12px;font-size:13px;font-weight:600;color:var(--accent)}
+  .motor{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .motor-col{background:var(--accent-deep);color:#eaf0fb;border-radius:var(--radius);padding:26px}
+  .motor-col.gold{background:linear-gradient(150deg,#15325f,#0a1f42)}
+  .motor-col .ic{font-size:22px}
+  .motor-col h3{font-family:var(--display);font-size:21px;letter-spacing:-.02em;margin:10px 0 10px;color:#fff}
+  .motor-col p{font-size:14px;line-height:1.55;color:#c3cfe6;margin:0 0 14px}
+  .motor-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0;padding:0}
+  .motor-col li{font-size:13px;color:#dbe4f5;padding-left:20px;position:relative;line-height:1.45}
+  .motor-col li::before{content:'→';position:absolute;left:0;color:var(--warm)}
+  @media(max-width:860px){.evo,.ref-grid{grid-template-columns:1fr 1fr}.motor{grid-template-columns:1fr}}
+  @media(max-width:560px){.evo,.ref-grid{grid-template-columns:1fr}}
+</style>
+<div class="wrap section" id="evolucion">
+    <div class="shead rv"><div><div class="eyebrow">La evolución</div><h2>Cuatro generaciones, una sola máquina que aprende</h2><div class="sd">Cada fase heredó lo que funcionó de la anterior y tiró lo que no. Esta es la línea de sangre del sistema.</div></div></div>
+    <div class="evo rv">
+      <div class="evo-step"><div class="ph">Fase 1</div><h3>Laboratorio de microproductos</h3><p>Un agente autónomo lanzó más de cien negocios pequeños solo para ver cuáles tenían tirón.</p><span class="learn"><b>Aprendió:</b> diversidad de sectores y países; la mayoría no arranca, y eso también es dato.</span></div>
+      <div class="evo-step"><div class="ph">Fase 2</div><h3>Herramientas SaaS</h3><p>Utilidades de IA con marca compartida, pensadas para lanzarse y mantenerse con poco esfuerzo.</p><span class="learn"><b>Aprendió:</b> el pipeline idea → landing → pago, repetible sin tocar nada a mano.</span></div>
+      <div class="evo-step"><div class="ph">Fase 3</div><h3>Marketplace, incubadora y motor</h3><p>Mercado de negocios con dueño, una incubadora que libera uno cada pocas horas, MarcaIA y la Fábrica de horas.</p><span class="learn"><b>Aprendió:</b> cobrar de verdad —licencia + micropago en cripto— y medirlo desde el día uno.</span></div>
+      <div class="evo-step"><div class="ph">Fase 4</div><h3>Una sola imagen</h3><p>Toda la casa unificada en navy y oro, con verticales nuevas en Latinoamérica.</p><span class="learn"><b>Aprendió:</b> una marca única y coherente pesa más que mil páginas sueltas.</span></div>
+    </div>
+  </div>
+<div class="wrap section" id="referentes">
+    <div class="shead rv"><div><div class="eyebrow">Negocios referentes</div><h2>Las piezas que sostienen todo lo demás</h2><div class="sd">No son «los más caros»: son los que marcan el estándar. Van primero y al mismo nivel.</div></div></div>
+    <div class="ref-grid rv">
+      <a class="ref-card" href="/negocios/atiende-ia/"><span class="tag">Negocio principal</span><h3>AtiendeIA</h3><p>Agentes de WhatsApp a medida que atienden, cualifican y venden solos. La vertical que más tira de todo el holding.</p><span class="go">Ver →</span></a>
+      <a class="ref-card" href="/negocios/marcaia/"><span class="tag">El sello</span><h3>MarcaIA</h3><p>Sello de transparencia para contenido hecho con IA, verificable en línea. Conforme al art. 50 del Reglamento de IA de la UE.</p><span class="go">Ver →</span></a>
+      <a class="ref-card" href="/negocios/fabrica-de-horas/"><span class="tag">Productizado</span><h3>Fábrica de horas</h3><p>Pides una automatización, el sistema calcula su precio por dificultad y la entrega sin intervención manual.</p><span class="go">Ver →</span></a>
+      <a class="ref-card" href="/incubadora.html"><span class="tag">El motor</span><h3>Incubadora</h3><p>La cinta de producción: libera un negocio nuevo cada pocas horas, ya validado y con su demo en vivo.</p><span class="go">Ver →</span></a>
+      <a class="ref-card" href="/strategycheck/"><span class="tag">Honestidad</span><h3>StrategyCheck</h3><p>Backtest honesto de bots, gratis. Lo que no gana fuera de muestra se dice. La regla que ordena todo el sistema.</p><span class="go">Ver →</span></a>
+      <a class="ref-card" href="/atta/"><span class="tag">La moneda</span><h3>ATTA · token en Base</h3><p>El token del ecosistema: paga servicios, con curva de precio pública y respaldo en USDC intocable.</p><span class="go">Ver →</span></a>
+    </div>
+  </div>
+<div class="wrap section" id="motor-auto">
+    <div class="shead rv"><div><div class="eyebrow">El motor en auto</div><h2>Lo que hace que esto funcione solo</h2><div class="sd">Dos engranajes: la data que se genera sin parar y la red de bots que la mantiene viva 24/7.</div></div></div>
+    <div class="motor rv">
+      <div class="motor-col"><div class="ic">📊</div><h3>La DATA que genera</h3><p>Cada demo corre con datos reales y cada experimento deja registro —lo que funcionó y lo que se descartó— para no repetir callejones sin salida.</p>
+        <ul>
+          <li>Fuentes vivas: CoinGecko, Banco Mundial, NOAA y las propias on-chain.</li>
+          <li>Biblioteca de lo probado: el conocimiento se acumula, no se pierde.</li>
+          <li>DataAPI: datos limpios servidos en JSON para otros proyectos.</li>
+          <li>Lo descartado se publica igual que lo que gana.</li>
+        </ul>
+      </div>
+      <div class="motor-col gold"><div class="ic">🤖</div><h3>La red de bots que lo mantiene</h3><p>Una malla de bots mantiene el sistema sin manos: produce, refresca, vigila y se repara solo.</p>
+        <ul>
+          <li>La incubadora libera un negocio nuevo cada pocas horas.</li>
+          <li>Los bots refrescan sus paneles cada minuto, en vivo.</li>
+          <li>Vigilancia que levanta sola cualquier pieza que se caiga.</li>
+          <li>Infraestructura propia 24/7, a 0 € de nube.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<div class="wrap section">
+    <div class="shead rv"><div><div class="eyebrow">Cómo funciona</div><h2>Dos formas de ganar, un solo negocio</h2></div></div>
+    <div class="steps rv">
+      <div class="step"><div class="sn">01</div><h3>Pruébalo antes de pagar</h3><p>Cada negocio tiene su demo en vivo, con datos reales, abierta y sin registro. Ves cómo funciona antes de licenciarlo.</p></div>
+      <div class="step"><div class="sn">02</div><h3>Licéncialo</h3><p>Compras la licencia del negocio entero (media 156 USD). El reparto es 70% para ti, 15% para quien lo promociona y 15% para attenciona, que lo aloja y mantiene.</p></div>
+      <div class="step"><div class="sn">03</div><h3>Cobra por cada uso</h3><p>El usuario final paga un micropago por usar el negocio. Ese ingreso recurrente es tuyo en un 70%, medido desde el día uno por el propio motor.</p></div>
+    </div>
+  </div>
+<div class="wrap section">
+    <div class="shead rv"><div><div class="eyebrow">El catálogo · lo que sale del motor</div><h2>Negocios listos para licenciar</h2><div class="sd">Una selección de los 132 negocios que ya han pasado por todas las fases. Míralos todos en el listado completo.</div></div>
+      <a class="see" href="/negocios/todos/" style="white-space:nowrap">Ver los 132 negocios →</a></div>
+    <div class="grid" id="grid">
+<article class="card featured">
+    <span class="feat-flag"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.6l1.6 3.3 3.6.5-2.6 2.5.6 3.6L8 9.8l-3.2 1.7.6-3.6L2.8 5.4l3.6-.5L8 1.6z" fill="currentColor"/></svg> SELLO OBLIGATORIO</span>
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cmarcaia" gradientTransform="rotate(90 .5 .5)"><stop stop-color="#0f2d5c"/><stop offset="1" stop-color="#7485a0"/></linearGradient><linearGradient id="cmarcaiav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cmarcaia)"/><circle cx="76.2" cy="83.8" r="16.0" stroke="#fff" stroke-opacity="0.160" stroke-width="1.2" fill="none"/><circle cx="97.2" cy="85.4" r="29.0" stroke="#fff" stroke-opacity="0.142" stroke-width="1.2" fill="none"/><circle cx="166.9" cy="7.4" r="42.0" stroke="#fff" stroke-opacity="0.124" stroke-width="1.2" fill="none"/><circle cx="176.0" cy="62.2" r="55.0" stroke="#fff" stroke-opacity="0.106" stroke-width="1.2" fill="none"/><circle cx="46.2" cy="60.0" r="68.0" stroke="#fff" stroke-opacity="0.088" stroke-width="1.2" fill="none"/><circle cx="158.8" cy="24.1" r="81.0" stroke="#fff" stroke-opacity="0.070" stroke-width="1.2" fill="none"/><circle cx="207.4" cy="77.6" r="94.0" stroke="#fff" stroke-opacity="0.052" stroke-width="1.2" fill="none"/><rect width="260" height="94" fill="url(#cmarcaiav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mmarcaia" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#c9973e"/><stop offset="1" stop-color="#e0c38f"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mmarcaia)"/><circle cx="24" cy="16" r="3.6" fill="#fff"/><circle cx="15" cy="31" r="3.6" fill="#fff" fill-opacity=".72"/><circle cx="33" cy="31" r="3.6" fill="#fff" fill-opacity=".72"/><path d="M24 19.5L16 28M24 19.5L32 28M17 31h14" stroke="#fff" stroke-width="1.8" stroke-opacity=".65"/></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/marcaia/">MarcaIA</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Transparencia de IA · el sello que llevan todos</div>
+      <p class="feat-lead">El sello que attenciona estampa <b>gratis y de forma obligatoria</b> en cada negocio que genera. Acredita que está hecho con IA y cumple la transparencia que exige el Reglamento Europeo de IA.</p>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Gratuito · no desactivable · cumple el art. 50 del Reglamento de IA de la UE</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/negocios/marcaia/">Probar MarcaIA</a><a class="mb" href="/negocios/marcaia/">Cómo funciona</a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cguadalupe" gradientTransform="rotate(124 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="cguadalupev" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cguadalupe)"/><line x1="232.8" y1="23.6" x2="36.7" y2="66.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="36.7" y1="66.8" x2="37.2" y2="25.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="37.2" y1="25.8" x2="195.4" y2="30.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="195.4" y1="30.8" x2="87.0" y2="16.9" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="87.0" y1="16.9" x2="220.3" y2="32.7" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="220.3" y1="32.7" x2="176.9" y2="66.9" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="176.9" y1="66.9" x2="61.2" y2="18.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="61.2" y1="18.6" x2="126.9" y2="50.1" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="126.9" y1="50.1" x2="232.8" y2="23.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><circle cx="232.8" cy="23.6" r="4.1" fill="#fff" fill-opacity="0.44"/><circle cx="36.7" cy="66.8" r="3.6" fill="#fff" fill-opacity="0.33"/><circle cx="37.2" cy="25.8" r="3.2" fill="#fff" fill-opacity="0.33"/><circle cx="195.4" cy="30.8" r="2.3" fill="#fff" fill-opacity="0.47"/><circle cx="87.0" cy="16.9" r="5.1" fill="#fff" fill-opacity="0.39"/><circle cx="220.3" cy="32.7" r="5.2" fill="#fff" fill-opacity="0.32"/><circle cx="176.9" cy="66.9" r="2.9" fill="#fff" fill-opacity="0.45"/><circle cx="61.2" cy="18.6" r="4.7" fill="#fff" fill-opacity="0.48"/><circle cx="126.9" cy="50.1" r="2.1" fill="#fff" fill-opacity="0.22"/><rect width="260" height="94" fill="url(#cguadalupev)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlguadalupe" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlguadalupe)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 20.5c-4.8-2.8-7.5-6.4-7.5-10a4 4 0 0 1 7.5-1.8A4 4 0 0 1 19.5 10.5c0 3.6-2.7 7.2-7.5 10z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/guadalupe/">Guadalupe</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">México · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">El 12/12 millones de peregrinos llegan a la Basílica de Guadalupe en CDMX; el novenario va del 3 al 12/12/2026. Guadalupe te arma el plan: novena, misa, peregrinación o acompañamiento desde tu casa. Gratis + Pro 6 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.7/10</span></div>
+      <div class="health-bar"><i style="width:97%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Guadalupe</span></a><a class="mb" href="/negocios/guadalupe/">Pago por uso<span class="vh"> Guadalupe</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cvelas" gradientTransform="rotate(99 .5 .5)"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient><linearGradient id="cvelasv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cvelas)"/><rect x="-30.0" y="-20" width="12.0" height="140" fill="#fff" fill-opacity="0.064" transform="rotate(22 130 47)"/><rect x="-2.0" y="-20" width="9.7" height="140" fill="#fff" fill-opacity="0.119" transform="rotate(22 130 47)"/><rect x="26.0" y="-20" width="13.6" height="140" fill="#fff" fill-opacity="0.144" transform="rotate(22 130 47)"/><rect x="54.0" y="-20" width="5.6" height="140" fill="#fff" fill-opacity="0.144" transform="rotate(22 130 47)"/><rect x="82.0" y="-20" width="17.0" height="140" fill="#fff" fill-opacity="0.124" transform="rotate(22 130 47)"/><rect x="110.0" y="-20" width="5.5" height="140" fill="#fff" fill-opacity="0.073" transform="rotate(22 130 47)"/><rect x="138.0" y="-20" width="7.2" height="140" fill="#fff" fill-opacity="0.155" transform="rotate(22 130 47)"/><rect x="166.0" y="-20" width="14.4" height="140" fill="#fff" fill-opacity="0.155" transform="rotate(22 130 47)"/><rect x="194.0" y="-20" width="9.4" height="140" fill="#fff" fill-opacity="0.086" transform="rotate(22 130 47)"/><rect x="222.0" y="-20" width="8.6" height="140" fill="#fff" fill-opacity="0.067" transform="rotate(22 130 47)"/><rect x="250.0" y="-20" width="16.0" height="140" fill="#fff" fill-opacity="0.149" transform="rotate(22 130 47)"/><rect width="260" height="94" fill="url(#cvelasv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlvelas" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlvelas)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><rect x="7" y="11" width="10" height="10" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M12 5c1 1.8 2.6 2.7 2.6 4.4a2.6 2.6 0 0 1-5.2 0C9.4 7.7 11 6.8 12 5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/velas/">Velas</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Cada veladora tiene su propósito (miel: dulzura; 7 potencias: protección; morada: hogar) y su fecha (Día de Muertos: 01-02/11). Velas te dice cuál encender, cuándo y con qué oración. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#B5451F"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Velas</span></a><a class="mb" href="/negocios/velas/">Pago por uso<span class="vh"> Velas</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ccartanatal" gradientTransform="rotate(45 .5 .5)"><stop stop-color="#B45CFF"/><stop offset="1" stop-color="#d4a0ff"/></linearGradient><linearGradient id="ccartanatalv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#ccartanatal)"/><rect x="-30.0" y="-20" width="8.0" height="140" fill="#fff" fill-opacity="0.154" transform="rotate(22 130 47)"/><rect x="-2.0" y="-20" width="6.9" height="140" fill="#fff" fill-opacity="0.092" transform="rotate(22 130 47)"/><rect x="26.0" y="-20" width="8.4" height="140" fill="#fff" fill-opacity="0.070" transform="rotate(22 130 47)"/><rect x="54.0" y="-20" width="6.3" height="140" fill="#fff" fill-opacity="0.092" transform="rotate(22 130 47)"/><rect x="82.0" y="-20" width="11.0" height="140" fill="#fff" fill-opacity="0.089" transform="rotate(22 130 47)"/><rect x="110.0" y="-20" width="12.3" height="140" fill="#fff" fill-opacity="0.081" transform="rotate(22 130 47)"/><rect x="138.0" y="-20" width="16.3" height="140" fill="#fff" fill-opacity="0.065" transform="rotate(22 130 47)"/><rect x="166.0" y="-20" width="9.1" height="140" fill="#fff" fill-opacity="0.058" transform="rotate(22 130 47)"/><rect x="194.0" y="-20" width="5.4" height="140" fill="#fff" fill-opacity="0.115" transform="rotate(22 130 47)"/><rect x="222.0" y="-20" width="13.7" height="140" fill="#fff" fill-opacity="0.065" transform="rotate(22 130 47)"/><rect x="250.0" y="-20" width="15.7" height="140" fill="#fff" fill-opacity="0.105" transform="rotate(22 130 47)"/><rect width="260" height="94" fill="url(#ccartanatalv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlcartanatal" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#B45CFF"/><stop offset="1" stop-color="#d4a0ff"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlcartanatal)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="#fff" stroke-width="1.8"/><path d="M12 3.5v17M3.5 12h17" stroke="#fff" stroke-width="1.8"/><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="1.4"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/cartanatal/">Carta Natal</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Tu ascendente necesita la hora de nacimiento, y la mayoría no la sabe. Carta Natal te dice cómo recuperarla (acta de nacimiento del Registro Civil) y calcula tu carta: Sol, Luna y ascendente. Temporada de Aries: 20/03/2027. Gratis + Pro 7 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#B45CFF"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">199 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Carta Natal</span></a><a class="mb" href="/negocios/cartanatal/">Pago por uso<span class="vh"> Carta Natal</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cangeles" gradientTransform="rotate(105 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="cangelesv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cangeles)"/><rect x="-30.0" y="-20" width="15.7" height="140" fill="#fff" fill-opacity="0.074" transform="rotate(22 130 47)"/><rect x="-2.0" y="-20" width="6.6" height="140" fill="#fff" fill-opacity="0.158" transform="rotate(22 130 47)"/><rect x="26.0" y="-20" width="15.2" height="140" fill="#fff" fill-opacity="0.105" transform="rotate(22 130 47)"/><rect x="54.0" y="-20" width="14.6" height="140" fill="#fff" fill-opacity="0.099" transform="rotate(22 130 47)"/><rect x="82.0" y="-20" width="11.4" height="140" fill="#fff" fill-opacity="0.062" transform="rotate(22 130 47)"/><rect x="110.0" y="-20" width="12.6" height="140" fill="#fff" fill-opacity="0.069" transform="rotate(22 130 47)"/><rect x="138.0" y="-20" width="9.9" height="140" fill="#fff" fill-opacity="0.110" transform="rotate(22 130 47)"/><rect x="166.0" y="-20" width="9.8" height="140" fill="#fff" fill-opacity="0.074" transform="rotate(22 130 47)"/><rect x="194.0" y="-20" width="4.6" height="140" fill="#fff" fill-opacity="0.152" transform="rotate(22 130 47)"/><rect x="222.0" y="-20" width="9.1" height="140" fill="#fff" fill-opacity="0.131" transform="rotate(22 130 47)"/><rect x="250.0" y="-20" width="12.0" height="140" fill="#fff" fill-opacity="0.060" transform="rotate(22 130 47)"/><rect width="260" height="94" fill="url(#cangelesv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlangeles" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlangeles)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M4 12C6 6.5 12 4.5 12 4.5s6 2 8 7.5c-5-2.5-11-2.5-16 0z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 5v16" stroke="#fff" stroke-width="1.8"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/angeles/">Ángeles</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">El 29/09 la Iglesia celebra a los arcángeles Miguel, Gabriel y Rafael. Ángeles te dice cuál invocar según tu necesidad y cómo rezar. Fiesta: 29/09/2026. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Ángeles</span></a><a class="mb" href="/negocios/angeles/">Pago por uso<span class="vh"> Ángeles</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cnovena" gradientTransform="rotate(87 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="cnovenav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cnovena)"/><rect x="-30.0" y="-20" width="7.8" height="140" fill="#fff" fill-opacity="0.098" transform="rotate(22 130 47)"/><rect x="-2.0" y="-20" width="6.3" height="140" fill="#fff" fill-opacity="0.087" transform="rotate(22 130 47)"/><rect x="26.0" y="-20" width="13.0" height="140" fill="#fff" fill-opacity="0.102" transform="rotate(22 130 47)"/><rect x="54.0" y="-20" width="11.8" height="140" fill="#fff" fill-opacity="0.070" transform="rotate(22 130 47)"/><rect x="82.0" y="-20" width="10.9" height="140" fill="#fff" fill-opacity="0.132" transform="rotate(22 130 47)"/><rect x="110.0" y="-20" width="5.7" height="140" fill="#fff" fill-opacity="0.141" transform="rotate(22 130 47)"/><rect x="138.0" y="-20" width="16.5" height="140" fill="#fff" fill-opacity="0.116" transform="rotate(22 130 47)"/><rect x="166.0" y="-20" width="11.0" height="140" fill="#fff" fill-opacity="0.124" transform="rotate(22 130 47)"/><rect x="194.0" y="-20" width="12.6" height="140" fill="#fff" fill-opacity="0.089" transform="rotate(22 130 47)"/><rect x="222.0" y="-20" width="16.1" height="140" fill="#fff" fill-opacity="0.105" transform="rotate(22 130 47)"/><rect x="250.0" y="-20" width="6.4" height="140" fill="#fff" fill-opacity="0.068" transform="rotate(22 130 47)"/><rect width="260" height="94" fill="url(#cnovenav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlnovena" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlnovena)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 3c1 2.2 3 3.4 3 6a3 3 0 0 1-6 0c0-2.6 2-3.8 3-6z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 13.5h8v6.5H8z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/novena/">Novena</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">La novena clásica dura 9 días y se reza en fechas fijas (Adviento, Navidad, santos). Novena te arma la tuya: intención, oraciones de los 9 días y recordatorio diario, todo en el navegador. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Novena</span></a><a class="mb" href="/negocios/novena/">Pago por uso<span class="vh"> Novena</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="csantoral" gradientTransform="rotate(36 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="csantoralv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#csantoral)"/><line x1="127.8" y1="66.9" x2="68.2" y2="72.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="68.2" y1="72.8" x2="243.4" y2="23.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="243.4" y1="23.0" x2="54.4" y2="73.1" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="54.4" y1="73.1" x2="27.2" y2="70.1" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="27.2" y1="70.1" x2="24.0" y2="54.3" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="24.0" y1="54.3" x2="216.2" y2="26.7" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="216.2" y1="26.7" x2="193.9" y2="23.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="193.9" y1="23.6" x2="112.7" y2="15.5" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="112.7" y1="15.5" x2="127.8" y2="66.9" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><circle cx="127.8" cy="66.9" r="3.2" fill="#fff" fill-opacity="0.21"/><circle cx="68.2" cy="72.8" r="2.5" fill="#fff" fill-opacity="0.30"/><circle cx="243.4" cy="23.0" r="3.6" fill="#fff" fill-opacity="0.23"/><circle cx="54.4" cy="73.1" r="2.9" fill="#fff" fill-opacity="0.46"/><circle cx="27.2" cy="70.1" r="3.4" fill="#fff" fill-opacity="0.44"/><circle cx="24.0" cy="54.3" r="3.1" fill="#fff" fill-opacity="0.46"/><circle cx="216.2" cy="26.7" r="5.4" fill="#fff" fill-opacity="0.42"/><circle cx="193.9" cy="23.6" r="3.1" fill="#fff" fill-opacity="0.31"/><circle cx="112.7" cy="15.5" r="4.8" fill="#fff" fill-opacity="0.44"/><rect width="260" height="94" fill="url(#csantoralv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlsantoral" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlsantoral)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M6 16h12l-2-5V9a4 4 0 0 0-8 0v2z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 19.5a2 2 0 0 0 4 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/santoral/">Santoral</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Cada día del año celebra uno o varios santos. Santoral te dice el santo del día, su historia breve y los nombres que se celebran — para elegir nombre de bebé, patrono o fiesta patronal. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Santoral</span></a><a class="mb" href="/negocios/santoral/">Pago por uso<span class="vh"> Santoral</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="csalmos" gradientTransform="rotate(95 .5 .5)"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient><linearGradient id="csalmosv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#csalmos)"/><rect x="-30.0" y="-20" width="16.5" height="140" fill="#fff" fill-opacity="0.145" transform="rotate(22 130 47)"/><rect x="-2.0" y="-20" width="8.1" height="140" fill="#fff" fill-opacity="0.156" transform="rotate(22 130 47)"/><rect x="26.0" y="-20" width="11.2" height="140" fill="#fff" fill-opacity="0.082" transform="rotate(22 130 47)"/><rect x="54.0" y="-20" width="7.6" height="140" fill="#fff" fill-opacity="0.154" transform="rotate(22 130 47)"/><rect x="82.0" y="-20" width="5.1" height="140" fill="#fff" fill-opacity="0.087" transform="rotate(22 130 47)"/><rect x="110.0" y="-20" width="15.6" height="140" fill="#fff" fill-opacity="0.090" transform="rotate(22 130 47)"/><rect x="138.0" y="-20" width="13.3" height="140" fill="#fff" fill-opacity="0.127" transform="rotate(22 130 47)"/><rect x="166.0" y="-20" width="13.3" height="140" fill="#fff" fill-opacity="0.081" transform="rotate(22 130 47)"/><rect x="194.0" y="-20" width="7.0" height="140" fill="#fff" fill-opacity="0.065" transform="rotate(22 130 47)"/><rect x="222.0" y="-20" width="11.1" height="140" fill="#fff" fill-opacity="0.133" transform="rotate(22 130 47)"/><rect x="250.0" y="-20" width="10.2" height="140" fill="#fff" fill-opacity="0.074" transform="rotate(22 130 47)"/><rect width="260" height="94" fill="url(#csalmosv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlsalmos" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlsalmos)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-1.7-7-1v13c2-.7 5-.5 7 1 2-1.5 5-1.7 7-1V5c-2-.7-5-.5-7 1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13" stroke="#fff" stroke-width="1.8"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/salmos/">Salmos</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Cuando duele algo, hay un salmo. Salmos te dice cuál rezar según tu momento (miedo, duelo, gratitud, trabajo) con un plan de 30 días. Fecha límite: Domingo de la Palabra de Dios (24/01/2027). Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#B5451F"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Salmos</span></a><a class="mb" href="/negocios/salmos/">Pago por uso<span class="vh"> Salmos</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="crosario" gradientTransform="rotate(83 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="crosariov" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#crosario)"/><rect x="6.0" y="41.7" width="5.5" height="54.3" rx="2.7" fill="#fff" fill-opacity="0.210"/><rect x="21.6" y="76.1" width="5.5" height="19.9" rx="2.7" fill="#fff" fill-opacity="0.139"/><rect x="37.2" y="55.3" width="5.5" height="40.7" rx="2.7" fill="#fff" fill-opacity="0.086"/><rect x="52.8" y="50.3" width="5.5" height="45.7" rx="2.7" fill="#fff" fill-opacity="0.136"/><rect x="68.4" y="69.5" width="5.5" height="26.5" rx="2.7" fill="#fff" fill-opacity="0.218"/><rect x="84.0" y="82.3" width="5.5" height="13.7" rx="2.7" fill="#fff" fill-opacity="0.120"/><rect x="99.6" y="48.2" width="5.5" height="47.8" rx="2.7" fill="#fff" fill-opacity="0.226"/><rect x="115.2" y="52.2" width="5.5" height="43.8" rx="2.7" fill="#fff" fill-opacity="0.199"/><rect x="130.8" y="58.4" width="5.5" height="37.6" rx="2.7" fill="#fff" fill-opacity="0.226"/><rect x="146.4" y="68.7" width="5.5" height="27.3" rx="2.7" fill="#fff" fill-opacity="0.170"/><rect x="162.0" y="46.5" width="5.5" height="49.5" rx="2.7" fill="#fff" fill-opacity="0.089"/><rect x="177.6" y="59.5" width="5.5" height="36.5" rx="2.7" fill="#fff" fill-opacity="0.102"/><rect x="193.2" y="51.9" width="5.5" height="44.1" rx="2.7" fill="#fff" fill-opacity="0.158"/><rect x="208.8" y="47.3" width="5.5" height="48.7" rx="2.7" fill="#fff" fill-opacity="0.082"/><rect x="224.4" y="76.6" width="5.5" height="19.4" rx="2.7" fill="#fff" fill-opacity="0.132"/><rect x="240.0" y="61.7" width="5.5" height="34.3" rx="2.7" fill="#fff" fill-opacity="0.094"/><rect width="260" height="94" fill="url(#crosariov)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlrosario" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlrosario)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5.5" stroke="#fff" stroke-width="1.8"/><path d="M12 13.5v3.5" stroke="#fff" stroke-width="1.8"/><path d="M10 20.5h4l-2-3.5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/rosario/">Rosario</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">El rosario se reza con los misterios del día: gozosos (lun/sáb), dolorosos (mar/vie), gloriosos (mié/dom) y luminosos (jue). Rosario te guía los 5 misterios paso a paso con la cuenta y las oraciones. Fiesta de Nuestra Señora del Rosario: 07/10/2026. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Rosario</span></a><a class="mb" href="/negocios/rosario/">Pago por uso<span class="vh"> Rosario</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cceniza" gradientTransform="rotate(104 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="ccenizav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cceniza)"/><circle cx="175.5" cy="88.2" r="16.0" stroke="#fff" stroke-opacity="0.160" stroke-width="1.2" fill="none"/><circle cx="192.9" cy="60.7" r="29.0" stroke="#fff" stroke-opacity="0.142" stroke-width="1.2" fill="none"/><circle cx="176.3" cy="18.1" r="42.0" stroke="#fff" stroke-opacity="0.124" stroke-width="1.2" fill="none"/><circle cx="220.1" cy="6.0" r="55.0" stroke="#fff" stroke-opacity="0.106" stroke-width="1.2" fill="none"/><circle cx="125.9" cy="20.1" r="68.0" stroke="#fff" stroke-opacity="0.088" stroke-width="1.2" fill="none"/><circle cx="218.7" cy="10.6" r="81.0" stroke="#fff" stroke-opacity="0.070" stroke-width="1.2" fill="none"/><circle cx="41.7" cy="39.5" r="94.0" stroke="#fff" stroke-opacity="0.052" stroke-width="1.2" fill="none"/><rect width="260" height="94" fill="url(#ccenizav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlceniza" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlceniza)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="#fff" stroke-width="1.8"/><path d="M12 8.5v7M8.8 12h6.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/ceniza/">Ceniza</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">La Cuaresma 2027 va del Miércoles de Ceniza (10/02/2027) al Domingo de Resurrección (28/03/2027): 40 días de ayuno, abstinencia, oración y limosna. Ceniza te arma el plan de Cuaresma en 3 preguntas. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Ceniza</span></a><a class="mb" href="/negocios/ceniza/">Pago por uso<span class="vh"> Ceniza</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cbiblia" gradientTransform="rotate(111 .5 .5)"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient><linearGradient id="cbibliav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cbiblia)"/><rect x="6.0" y="45.3" width="5.5" height="50.7" rx="2.7" fill="#fff" fill-opacity="0.150"/><rect x="21.6" y="40.1" width="5.5" height="55.9" rx="2.7" fill="#fff" fill-opacity="0.194"/><rect x="37.2" y="51.7" width="5.5" height="44.3" rx="2.7" fill="#fff" fill-opacity="0.124"/><rect x="52.8" y="77.4" width="5.5" height="18.6" rx="2.7" fill="#fff" fill-opacity="0.120"/><rect x="68.4" y="42.8" width="5.5" height="53.2" rx="2.7" fill="#fff" fill-opacity="0.235"/><rect x="84.0" y="80.5" width="5.5" height="15.5" rx="2.7" fill="#fff" fill-opacity="0.126"/><rect x="99.6" y="80.9" width="5.5" height="15.1" rx="2.7" fill="#fff" fill-opacity="0.084"/><rect x="115.2" y="80.9" width="5.5" height="15.1" rx="2.7" fill="#fff" fill-opacity="0.158"/><rect x="130.8" y="50.4" width="5.5" height="45.6" rx="2.7" fill="#fff" fill-opacity="0.149"/><rect x="146.4" y="69.0" width="5.5" height="27.0" rx="2.7" fill="#fff" fill-opacity="0.083"/><rect x="162.0" y="58.8" width="5.5" height="37.2" rx="2.7" fill="#fff" fill-opacity="0.187"/><rect x="177.6" y="80.1" width="5.5" height="15.9" rx="2.7" fill="#fff" fill-opacity="0.222"/><rect x="193.2" y="69.2" width="5.5" height="26.8" rx="2.7" fill="#fff" fill-opacity="0.206"/><rect x="208.8" y="70.8" width="5.5" height="25.2" rx="2.7" fill="#fff" fill-opacity="0.173"/><rect x="224.4" y="81.8" width="5.5" height="14.2" rx="2.7" fill="#fff" fill-opacity="0.143"/><rect x="240.0" y="57.1" width="5.5" height="38.9" rx="2.7" fill="#fff" fill-opacity="0.144"/><rect width="260" height="94" fill="url(#cbibliav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlbiblia" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlbiblia)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-1.7-7-1v13c2-.7 5-.5 7 1 2-1.5 5-1.7 7-1V5c-2-.7-5-.5-7 1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 6v13" stroke="#fff" stroke-width="1.8"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/biblia/">Biblia</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Leer la Biblia completa toma 365 días a 10 minutos diarios. El 90% abandona en el primer mes. Biblia te arma el plan con progreso, versículo del día y lecturas del año litúrgico. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#B5451F"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Biblia</span></a><a class="mb" href="/negocios/biblia/">Pago por uso<span class="vh"> Biblia</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cpromesas" gradientTransform="rotate(78 .5 .5)"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient><linearGradient id="cpromesasv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cpromesas)"/><circle cx="80.6" cy="61.3" r="16.0" stroke="#fff" stroke-opacity="0.160" stroke-width="1.2" fill="none"/><circle cx="139.7" cy="67.4" r="29.0" stroke="#fff" stroke-opacity="0.142" stroke-width="1.2" fill="none"/><circle cx="206.6" cy="45.3" r="42.0" stroke="#fff" stroke-opacity="0.124" stroke-width="1.2" fill="none"/><circle cx="107.8" cy="7.0" r="55.0" stroke="#fff" stroke-opacity="0.106" stroke-width="1.2" fill="none"/><circle cx="173.3" cy="54.4" r="68.0" stroke="#fff" stroke-opacity="0.088" stroke-width="1.2" fill="none"/><circle cx="119.0" cy="3.0" r="81.0" stroke="#fff" stroke-opacity="0.070" stroke-width="1.2" fill="none"/><circle cx="110.6" cy="70.8" r="94.0" stroke="#fff" stroke-opacity="0.052" stroke-width="1.2" fill="none"/><rect width="260" height="94" fill="url(#cpromesasv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlpromesas" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E6B84C"/><stop offset="1" stop-color="#f1d697"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlpromesas)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="8.5" stroke="#fff" stroke-width="1.8"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/promesas/">Promesas</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">En LATAM millones hacen mandas y promesas a un santo (San Judas, la Virgen, San Expedito) y las olvidan. Promesas te ayuda a fijarlas, cumplirlas y cerrarlas antes del Domingo de Ramos 2027. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E6B84C"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Promesas</span></a><a class="mb" href="/negocios/promesas/">Pago por uso<span class="vh"> Promesas</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cfiestas" gradientTransform="rotate(125 .5 .5)"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient><linearGradient id="cfiestasv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cfiestas)"/><rect x="6.0" y="45.0" width="5.5" height="51.0" rx="2.7" fill="#fff" fill-opacity="0.086"/><rect x="21.6" y="45.8" width="5.5" height="50.2" rx="2.7" fill="#fff" fill-opacity="0.091"/><rect x="37.2" y="63.0" width="5.5" height="33.0" rx="2.7" fill="#fff" fill-opacity="0.173"/><rect x="52.8" y="41.9" width="5.5" height="54.1" rx="2.7" fill="#fff" fill-opacity="0.158"/><rect x="68.4" y="70.8" width="5.5" height="25.2" rx="2.7" fill="#fff" fill-opacity="0.113"/><rect x="84.0" y="70.0" width="5.5" height="26.0" rx="2.7" fill="#fff" fill-opacity="0.184"/><rect x="99.6" y="61.2" width="5.5" height="34.8" rx="2.7" fill="#fff" fill-opacity="0.141"/><rect x="115.2" y="53.6" width="5.5" height="42.4" rx="2.7" fill="#fff" fill-opacity="0.219"/><rect x="130.8" y="69.1" width="5.5" height="26.9" rx="2.7" fill="#fff" fill-opacity="0.154"/><rect x="146.4" y="43.0" width="5.5" height="53.0" rx="2.7" fill="#fff" fill-opacity="0.132"/><rect x="162.0" y="41.2" width="5.5" height="54.8" rx="2.7" fill="#fff" fill-opacity="0.235"/><rect x="177.6" y="64.8" width="5.5" height="31.2" rx="2.7" fill="#fff" fill-opacity="0.087"/><rect x="193.2" y="50.6" width="5.5" height="45.4" rx="2.7" fill="#fff" fill-opacity="0.172"/><rect x="208.8" y="82.6" width="5.5" height="13.4" rx="2.7" fill="#fff" fill-opacity="0.207"/><rect x="224.4" y="56.3" width="5.5" height="39.7" rx="2.7" fill="#fff" fill-opacity="0.221"/><rect x="240.0" y="81.1" width="5.5" height="14.9" rx="2.7" fill="#fff" fill-opacity="0.194"/><rect width="260" height="94" fill="url(#cfiestasv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlfiestas" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#B5451F"/><stop offset="1" stop-color="#d4937d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlfiestas)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M4 9.5h16M8 3v4M16 3v4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/fiestas/">Fiestas</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">LATAM · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Pascua 2027 cae el 28/03: Semana Santa del 27/03 al 03/04. Las fiestas móviles (Ceniza, Corpus, Pentecostés) cambian cada año y confunden vacaciones. Fiestas te da las fechas exactas 2026-2027 por país LATAM. Gratis + Pro 3 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#B5451F"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">99 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Fiestas</span></a><a class="mb" href="/negocios/fiestas/">Pago por uso<span class="vh"> Fiestas</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="corisha" gradientTransform="rotate(66 .5 .5)"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient><linearGradient id="corishav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#corisha)"/><line x1="237.2" y1="31.4" x2="64.0" y2="82.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="64.0" y1="82.6" x2="167.1" y2="14.7" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="167.1" y1="14.7" x2="48.3" y2="18.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="48.3" y1="18.8" x2="14.2" y2="41.7" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="14.2" y1="41.7" x2="18.4" y2="45.9" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="18.4" y1="45.9" x2="143.1" y2="59.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="143.1" y1="59.8" x2="156.0" y2="36.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="156.0" y1="36.0" x2="103.8" y2="77.8" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="103.8" y1="77.8" x2="237.2" y2="31.4" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><circle cx="237.2" cy="31.4" r="5.1" fill="#fff" fill-opacity="0.30"/><circle cx="64.0" cy="82.6" r="2.0" fill="#fff" fill-opacity="0.32"/><circle cx="167.1" cy="14.7" r="2.4" fill="#fff" fill-opacity="0.39"/><circle cx="48.3" cy="18.8" r="3.9" fill="#fff" fill-opacity="0.38"/><circle cx="14.2" cy="41.7" r="4.0" fill="#fff" fill-opacity="0.41"/><circle cx="18.4" cy="45.9" r="3.9" fill="#fff" fill-opacity="0.22"/><circle cx="143.1" cy="59.8" r="4.7" fill="#fff" fill-opacity="0.48"/><circle cx="156.0" cy="36.0" r="3.7" fill="#fff" fill-opacity="0.40"/><circle cx="103.8" cy="77.8" r="3.6" fill="#fff" fill-opacity="0.32"/><rect width="260" height="94" fill="url(#corishav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlorisha" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlorisha)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M4 19h16M5 8l3.5 3.5L12 5l3.5 6.5L19 8v11H5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/orisha/">Orisha</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">En la Regla de Ocha cada persona tiene un orisha que «manda en su cabeza» (orí), y descubrirlo requiere iniciación y adivinación de un babalawo u oriate. Orisha te explica el sistema documentado (sin fingir que te inicia): los orishas principales, sus caminos y sus fiestas. Fiestas de Yemayá: 07/09/2026. Gratis + Pro 6 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#F2A93B"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Orisha</span></a><a class="mb" href="/negocios/orisha/">Pago por uso<span class="vh"> Orisha</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="celeggua" gradientTransform="rotate(94 .5 .5)"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient><linearGradient id="celegguav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#celeggua)"/><line x1="182.9" y1="42.2" x2="124.6" y2="21.9" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="124.6" y1="21.9" x2="226.9" y2="28.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="226.9" y1="28.0" x2="241.0" y2="58.2" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="241.0" y1="58.2" x2="176.9" y2="73.4" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="176.9" y1="73.4" x2="149.7" y2="77.4" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="149.7" y1="77.4" x2="24.3" y2="36.2" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="24.3" y1="36.2" x2="157.7" y2="69.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="157.7" y1="69.0" x2="196.8" y2="45.2" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="196.8" y1="45.2" x2="182.9" y2="42.2" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><circle cx="182.9" cy="42.2" r="4.7" fill="#fff" fill-opacity="0.39"/><circle cx="124.6" cy="21.9" r="2.3" fill="#fff" fill-opacity="0.33"/><circle cx="226.9" cy="28.0" r="3.4" fill="#fff" fill-opacity="0.22"/><circle cx="241.0" cy="58.2" r="4.2" fill="#fff" fill-opacity="0.36"/><circle cx="176.9" cy="73.4" r="2.2" fill="#fff" fill-opacity="0.39"/><circle cx="149.7" cy="77.4" r="3.1" fill="#fff" fill-opacity="0.34"/><circle cx="24.3" cy="36.2" r="4.4" fill="#fff" fill-opacity="0.32"/><circle cx="157.7" cy="69.0" r="4.3" fill="#fff" fill-opacity="0.25"/><circle cx="196.8" cy="45.2" r="2.4" fill="#fff" fill-opacity="0.50"/><rect width="260" height="94" fill="url(#celegguav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mleleggua" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mleleggua)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 3v8M12 11l-6 10M12 11l6 10" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="3.4" r="1.7" fill="#fff"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/eleggua/">Elegguá</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Elegguá es el primer orisha: abre y cierra caminos, y en la Regla de Ocha se le saluda primero en todo ritual. Sus 21 caminos (avatars) y la ofrenda de apertura del año se documentan aquí. Elegguá abre el año: 01/01/2027. Gratis + Pro 4 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#F2A93B"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">129 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Elegguá</span></a><a class="mb" href="/negocios/eleggua/">Pago por uso<span class="vh"> Elegguá</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cyemaya" gradientTransform="rotate(126 .5 .5)"><stop stop-color="#4FC3E8"/><stop offset="1" stop-color="#99dcf2"/></linearGradient><linearGradient id="cyemayav" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cyemaya)"/><circle cx="35.6" cy="2.9" r="16.0" stroke="#fff" stroke-opacity="0.160" stroke-width="1.2" fill="none"/><circle cx="112.3" cy="3.7" r="29.0" stroke="#fff" stroke-opacity="0.142" stroke-width="1.2" fill="none"/><circle cx="208.8" cy="20.4" r="42.0" stroke="#fff" stroke-opacity="0.124" stroke-width="1.2" fill="none"/><circle cx="171.2" cy="19.3" r="55.0" stroke="#fff" stroke-opacity="0.106" stroke-width="1.2" fill="none"/><circle cx="86.7" cy="24.4" r="68.0" stroke="#fff" stroke-opacity="0.088" stroke-width="1.2" fill="none"/><circle cx="30.3" cy="27.8" r="81.0" stroke="#fff" stroke-opacity="0.070" stroke-width="1.2" fill="none"/><circle cx="34.8" cy="28.0" r="94.0" stroke="#fff" stroke-opacity="0.052" stroke-width="1.2" fill="none"/><rect width="260" height="94" fill="url(#cyemayav)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlyemaya" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#4FC3E8"/><stop offset="1" stop-color="#99dcf2"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlyemaya)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M3 9q2.25-2.4 4.5 0t4.5 0 4.5 0 4.5 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M3 13.5q2.25-2.4 4.5 0t4.5 0 4.5 0 4.5 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 19.5c-2.4-1.4-3.7-3.2-3.7-4.8a3.7 3.7 0 0 1 7.4 0c0 1.6-1.3 3.4-3.7 4.8z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/yemaya/">Yemayá</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Yemayá es la orisha de las aguas saladas y la maternidad, sincretizada con la Virgen de Regla (07/09). Su número es el 7, sus colores azul y blanco, y se le ofrecen sandías, melones y 7 faldas de olas. Yemayá te guía en el mar de tu vida. Fiesta: 07/09/2026. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#4FC3E8"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Yemayá</span></a><a class="mb" href="/negocios/yemaya/">Pago por uso<span class="vh"> Yemayá</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="coshun" gradientTransform="rotate(67 .5 .5)"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient><linearGradient id="coshunv" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#coshun)"/><rect x="6.0" y="51.5" width="5.5" height="44.5" rx="2.7" fill="#fff" fill-opacity="0.209"/><rect x="21.6" y="41.0" width="5.5" height="55.0" rx="2.7" fill="#fff" fill-opacity="0.125"/><rect x="37.2" y="64.6" width="5.5" height="31.4" rx="2.7" fill="#fff" fill-opacity="0.188"/><rect x="52.8" y="41.7" width="5.5" height="54.3" rx="2.7" fill="#fff" fill-opacity="0.207"/><rect x="68.4" y="67.5" width="5.5" height="28.5" rx="2.7" fill="#fff" fill-opacity="0.122"/><rect x="84.0" y="62.3" width="5.5" height="33.7" rx="2.7" fill="#fff" fill-opacity="0.192"/><rect x="99.6" y="42.6" width="5.5" height="53.4" rx="2.7" fill="#fff" fill-opacity="0.159"/><rect x="115.2" y="53.0" width="5.5" height="43.0" rx="2.7" fill="#fff" fill-opacity="0.231"/><rect x="130.8" y="70.3" width="5.5" height="25.7" rx="2.7" fill="#fff" fill-opacity="0.156"/><rect x="146.4" y="72.8" width="5.5" height="23.2" rx="2.7" fill="#fff" fill-opacity="0.150"/><rect x="162.0" y="45.6" width="5.5" height="50.4" rx="2.7" fill="#fff" fill-opacity="0.095"/><rect x="177.6" y="71.8" width="5.5" height="24.2" rx="2.7" fill="#fff" fill-opacity="0.158"/><rect x="193.2" y="48.7" width="5.5" height="47.3" rx="2.7" fill="#fff" fill-opacity="0.111"/><rect x="208.8" y="59.7" width="5.5" height="36.3" rx="2.7" fill="#fff" fill-opacity="0.163"/><rect x="224.4" y="56.3" width="5.5" height="39.7" rx="2.7" fill="#fff" fill-opacity="0.090"/><rect x="240.0" y="57.4" width="5.5" height="38.6" rx="2.7" fill="#fff" fill-opacity="0.230"/><rect width="260" height="94" fill="url(#coshunv)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mloshun" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#F2A93B"/><stop offset="1" stop-color="#f7cd8d"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mloshun)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 4c5 2.5 7.5 7.5 6.5 13h-13C4.5 11.5 7 6.5 12 4z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 4v13" stroke="#fff" stroke-width="1.6"/><path d="M7.5 17l2.3-4.6M16.5 17l-2.3-4.6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/oshun/">Oshún</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Oshún es la orisha de las aguas dulces, el amor y el oro, sincretizada con la Virgen de la Caridad del Cobre, patrona de Cuba (08/09). Su número es el 5, sus colores el amarillo y el dorado, y se le ofrecen miel, flores y espejos. Oshún te guía en el amor y la dulzura. Fiesta: 08/09/2026. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#F2A93B"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Oshún</span></a><a class="mb" href="/negocios/oshun/">Pago por uso<span class="vh"> Oshún</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="cshango" gradientTransform="rotate(80 .5 .5)"><stop stop-color="#E84A2F"/><stop offset="1" stop-color="#f29686"/></linearGradient><linearGradient id="cshangov" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#cshango)"/><line x1="111.3" y1="53.5" x2="91.7" y2="53.1" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="91.7" y1="53.1" x2="30.2" y2="72.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="30.2" y1="72.6" x2="100.7" y2="40.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="100.7" y1="40.0" x2="92.1" y2="84.2" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="92.1" y1="84.2" x2="96.2" y2="53.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="96.2" y1="53.0" x2="216.1" y2="57.7" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="216.1" y1="57.7" x2="160.9" y2="84.6" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="160.9" y1="84.6" x2="41.2" y2="24.0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><line x1="41.2" y1="24.0" x2="111.3" y2="53.5" stroke="#fff" stroke-opacity=".12" stroke-width="1"/><circle cx="111.3" cy="53.5" r="4.4" fill="#fff" fill-opacity="0.40"/><circle cx="91.7" cy="53.1" r="5.3" fill="#fff" fill-opacity="0.27"/><circle cx="30.2" cy="72.6" r="2.6" fill="#fff" fill-opacity="0.34"/><circle cx="100.7" cy="40.0" r="3.9" fill="#fff" fill-opacity="0.49"/><circle cx="92.1" cy="84.2" r="3.7" fill="#fff" fill-opacity="0.20"/><circle cx="96.2" cy="53.0" r="2.5" fill="#fff" fill-opacity="0.43"/><circle cx="216.1" cy="57.7" r="5.3" fill="#fff" fill-opacity="0.40"/><circle cx="160.9" cy="84.6" r="3.1" fill="#fff" fill-opacity="0.42"/><circle cx="41.2" cy="24.0" r="4.1" fill="#fff" fill-opacity="0.27"/><rect width="260" height="94" fill="url(#cshangov)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlshango" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#E84A2F"/><stop offset="1" stop-color="#f29686"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlshango)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><path d="M12 21V8" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M12 8c-4.5 0-7-2-7-5 4.5 0 7 2 7 5zM12 8c4.5 0 7-2 7-5-4.5 0-7 2-7 5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/shango/">Shangó</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">Shangó es el rey de los orishas: dueño del tambor, el fuego, el rayo y la justicia, sincretizado con Santa Bárbara (04/12). Su número es el 6 (y 4), sus colores el rojo y el blanco, y su baile es el del tambor. Shangó te enseña el rey que hay en ti. Fiesta: 04/12/2026. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#E84A2F"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> Shangó</span></a><a class="mb" href="/negocios/shango/">Pago por uso<span class="vh"> Shangó</span></a></div>
+      </div>
+    </div>
+  </article>
+<article class="card">
+    <div class="cover"><svg viewBox="0 0 260 94" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="csanlazaro" gradientTransform="rotate(95 .5 .5)"><stop stop-color="#C77DFF"/><stop offset="1" stop-color="#dfb4ff"/></linearGradient><linearGradient id="csanlazarov" x1="0" y1="0" x2="0" y2="94"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="260" height="94" fill="url(#csanlazaro)"/><rect x="6.0" y="52.1" width="5.5" height="43.9" rx="2.7" fill="#fff" fill-opacity="0.147"/><rect x="21.6" y="79.9" width="5.5" height="16.1" rx="2.7" fill="#fff" fill-opacity="0.141"/><rect x="37.2" y="47.9" width="5.5" height="48.1" rx="2.7" fill="#fff" fill-opacity="0.180"/><rect x="52.8" y="58.3" width="5.5" height="37.7" rx="2.7" fill="#fff" fill-opacity="0.083"/><rect x="68.4" y="52.7" width="5.5" height="43.3" rx="2.7" fill="#fff" fill-opacity="0.129"/><rect x="84.0" y="78.1" width="5.5" height="17.9" rx="2.7" fill="#fff" fill-opacity="0.220"/><rect x="99.6" y="45.1" width="5.5" height="50.9" rx="2.7" fill="#fff" fill-opacity="0.109"/><rect x="115.2" y="73.8" width="5.5" height="22.2" rx="2.7" fill="#fff" fill-opacity="0.154"/><rect x="130.8" y="42.3" width="5.5" height="53.7" rx="2.7" fill="#fff" fill-opacity="0.167"/><rect x="146.4" y="85.1" width="5.5" height="10.9" rx="2.7" fill="#fff" fill-opacity="0.148"/><rect x="162.0" y="53.5" width="5.5" height="42.5" rx="2.7" fill="#fff" fill-opacity="0.147"/><rect x="177.6" y="82.7" width="5.5" height="13.3" rx="2.7" fill="#fff" fill-opacity="0.205"/><rect x="193.2" y="61.4" width="5.5" height="34.6" rx="2.7" fill="#fff" fill-opacity="0.082"/><rect x="208.8" y="76.9" width="5.5" height="19.1" rx="2.7" fill="#fff" fill-opacity="0.177"/><rect x="224.4" y="47.8" width="5.5" height="48.2" rx="2.7" fill="#fff" fill-opacity="0.136"/><rect x="240.0" y="49.2" width="5.5" height="46.8" rx="2.7" fill="#fff" fill-opacity="0.160"/><rect width="260" height="94" fill="url(#csanlazarov)"/></svg></div>
+    <div class="cmark"><svg viewBox="0 0 48 48" style="width:100%;height:100%;display:block" aria-hidden="true"><defs><linearGradient id="mlsanlazaro" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#C77DFF"/><stop offset="1" stop-color="#dfb4ff"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#mlsanlazaro)"/><svg x="9" y="9" width="30" height="30" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" stroke="#fff" stroke-width="1.8"/><path d="M12 8v8M9 11h6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="9.5" cy="14.5" r="1" fill="#fff"/><circle cx="14.5" cy="9.5" r="1" fill="#fff"/></svg></svg></div>
+    <div class="cbody">
+      <p class="ctitle"><a href="/negocios/sanlazaro/">San Lázaro</a> <span class="verified" title="Métricas de origen: medidas por el motor de attenciona desde el día uno"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2l2.3 2.3L9.5 3.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DE ORIGEN</span></p>
+      <div class="owner">Cuba · Disponible · Fase 3</div>
+      <p style="font-size:13px;color:var(--muted);margin:8px 0 2px;line-height:1.5;max-height:3.9em;overflow:hidden;">San Lázaro (Babalú Ayé) es el santo de la salud y la sanación: en la Regla de Ocha se sincretiza con el orisha de las enfermedades y la curación. Su santuario de El Rincón, en La Habana, recibe a cientos de miles cada 17/12. San Lázaro te acompaña en la salud y la promesa. Peregrinación: 17/12/2026. Gratis + Pro 5 $ pago único en cripto.</p>
+      <div class="health"><div class="health-top"><span class="hl">CALIDAD (MOTOR)</span><span class="hv">9.3/10</span></div>
+      <div class="health-bar"><i style="width:93%;background:#C77DFF"></i></div></div>
+      <div class="cbot"><div class="cprice"><div class="l">LICENCIA</div><div class="v">149 <span style="font-size:12px;color:var(--faint)">USD</span></div></div></div>
+      <div class="cfoot">
+        <div class="srcline"><span class="sdot"></span> Sello MarcaIA · negocio generado por attenciona</div>
+        <div class="cact" style="margin-top:11px"><a class="mb buy" href="/incubadora.html">Licenciar<span class="vh"> San Lázaro</span></a><a class="mb" href="/negocios/sanlazaro/">Pago por uso<span class="vh"> San Lázaro</span></a></div>
+      </div>
+    </div>
+  </article>
+    </div>
+    <div style="text-align:center;margin-top:26px">
+      <a href="/negocios/todos/" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent,#0f2d5c);color:#fff;font-weight:600;font-size:15px;padding:13px 26px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(15,45,92,.22)">Ver los 132 negocios en el listado →</a>
+    </div>
+  </div>
+<div class="wrap cta"><div class="cta-in"><div class="hero-net"></div>
+    <h2>El motor no para. <span class="em">Cada semana sale uno nuevo.</span></h2>
+    <p>Entra en la incubadora y reserva el próximo antes de que salga, con descuento.</p>
+    <a class="btn btn-gold" href="/incubadora.html">Ver la incubadora</a>
+  </div></div>
+<footer>attenciona · Negocios de Fase 3 generados por IA · licencia + micropago · datos reales del catálogo · Transparencia conforme al <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener">Reglamento de IA de la UE</a></footer>
+<script>
+  var burger=document.getElementById('burger'),scrim=document.getElementById('scrim');
+  function td(o){document.body.classList.toggle('dopen',o);if(burger)burger.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';}
+  if(burger)burger.addEventListener('click',function(){td(!document.body.classList.contains('dopen'));});
+  if(scrim)scrim.addEventListener('click',function(){td(false);});
+  var dr=document.getElementById('drawer'); if(dr)dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){td(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')td(false);});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.06,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4)*55+'ms';io.observe(el);});
+  </script>
+</body>
+</html>

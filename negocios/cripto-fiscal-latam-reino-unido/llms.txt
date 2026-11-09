@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Reino Unido
+
+> Traduce la norma oficial de cripto · impuestos en Reino Unido a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Reino Unido
+- **Fuente de datos viva:** GOV.UK — Cryptoassets (HMRC guidance collection)
+
+- **Sistema de diseño:** Cálido-redondeado (Baloo 2 (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- GOV.UK — Cryptoassets (HMRC guidance collection) (https://www.gov.uk/government/collections/cryptoassets)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: GOV.UK — Cryptoassets (HMRC guidance collection). (https://www.gov.uk/government/collections/cryptoassets)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

@@ -1,0 +1,37 @@
+# Candado
+
+Candado is a browser tool that checks whether a website passes the HTTPS/SSL test and stamps its status (correct / improvable / problem). The free diagnosis runs entirely in the browser (no data leaves the device). It is international by design (ES, EN, FR, DE, IT, PT on the interface and diagnosis).
+
+## Key facts (verified 14 August 2026)
+
+- Since 24 July 2018 (Chrome 68) Google Chrome marks all HTTP sites as "Not secure" (Google Security Blog, 08/02/2018).
+- Chrome 154 (release during October 2026) enables "Always Use Secure Connections" by default: Chrome will attempt HTTPS and ask for confirmation before loading any public site that does not support it. In April 2026, Chrome 147 already turns it on for Enhanced Safe Browsing users (Infosecurity Magazine, 29/10/2025).
+- HTTPS adoption in Chrome grew from ~30-45% in 2015 to ~95-99% by 2020 and later (Google Transparency Report).
+- Public TLS certificate maximum lifetime: 398 days since 01/09/2020 (Apple); cut to 200 days on 15/03/2026, 100 days on 15/03/2027 and 47 days on 15/03/2029 (CA/Browser Forum Ballot SC081v3).
+- Let's Encrypt certificates: 90 days today, 64 days on 10/02/2027 and 45 days on 16/02/2028 (Let's Encrypt, 02/12/2025). Manual renewal is no longer viable; automation (ACME/Certbot) is required.
+
+## What the tool does
+
+1. User enters a domain (optional) and answers 3 questions (padlock status, hosting environment, goal).
+2. The Padlock Stamp shows the verdict: HTTPS OK / verify / no HTTPS, with the domain, environment, service and the Chrome 154 countdown.
+3. Free: status, environment, countdown, interactive checklist, official sources.
+4. Pro (1 USD per use, crypto): full scan of HTTPS, certificate, expiry, DNS and redirects; environment detection (Cloudflare, WordPress, Nginx/Apache/IIS); step-by-step instructions plus files/commands (TXT); post-change verification. Sellable extras: SPF, DKIM, DMARC, DNS, technical SEO, speed.
+
+## Sources
+
+1. https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html (Google Security Blog — Chrome 68 marks HTTP "Not secure")
+2. https://blog.google/products-and-platforms/products/chrome/milestone-chrome-security-marking-http-not-secure/ (Google — milestone, 24/07/2018)
+3. https://www.infosecurity-magazine.com/news/chrome-https-mandatory-2026/ (Infosecurity Magazine — Chrome 154 HTTPS by default, 29/10/2025)
+4. https://support.apple.com/en-us/102028 (Apple Support — 398-day certificate limit)
+5. https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/ (CA/Browser Forum — Ballot SC081v3)
+6. https://letsencrypt.org/2025/12/02/from-90-to-45 (Let's Encrypt — decreasing certificate lifetimes)
+7. https://transparencyreport.google.com/https/overview (Google Transparency Report — HTTPS encryption on the web)
+
+## Pricing
+
+- Free: 3-question status + environment + countdown to Chrome 154 + interactive checklist + cited sources.
+- Pro (1 USD per use, crypto via USDT/USDC): full domain scan, environment detection, step-by-step instructions + files/commands, post-change verification, extras (SPF, DKIM, DMARC, DNS, technical SEO, speed).
+
+## Not advice
+
+Candado is an educational tool based on public announcements from Google, CA/Browser Forum, Apple and Let's Encrypt. It is not a substitute for your hosting provider or system administrator. Editorial responsibility: attenciona (Holding), Spain.

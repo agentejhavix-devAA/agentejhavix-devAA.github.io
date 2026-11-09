@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/ceiba/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ceiba · La forma más barata de mandar tu remesa a Guatemala, hoy</title>
+<meta name="description" content="Ceiba compara el coste real de enviar dinero de EEUU a Guatemala con el dato oficial del Banco Mundial, actualizado tras el nuevo impuesto de 2026. Sin registro." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- PROTOTIPO LOCAL — noindex a propósito: no está publicado, es una prueba de concepto Fase 3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /*
+    Negocio Fase 3 nº5 (tras Zafra, Padala, Sejuta, Sahih). Sistema de diseño: pareja y técnica DISTINTAS
+    a las 4 anteriores (Cálido-redondeado+Pictograma literal / Editorial-serif+Monograma-badge /
+    Técnico-geométrico+Espacio negativo / Mono-crypto+Sustracción).
+    Pareja: Corporativo-limpio (solo Inter, varios pesos, sin display) — identidad directa, sin adorno,
+    coherente con un negocio de "el dato oficial, sin vueltas".
+    Técnica de logo: Ligadura tipográfica — la "C" de Ceiba se abre en una bifurcación de raíz/rama que
+    dobla como flecha de envío (la letra del propio nombre se transforma en el símbolo).
+    Investigación de audiencia real: Banrural, el banco con más agencias rurales de Guatemala y el más
+    usado por receptores de remesas fuera de la capital, usa AZUL (Guatemala) + VERDE (el banco) + rojo
+    (pasión) en su simbología de marca (fuente citada al pie). Paleta INSPIRADA en esa referencia real,
+    con énfasis en el azul (bandera de Guatemala) para diferenciarse visualmente de los negocios anteriores
+    que ya usaban verde como color dominante (Zafra, Sejuta).
+  */
+  :root{
+    --bg:#f7fafc; --card:#ffffff; --line:#e0e8ef; --line2:#cddbe6;
+    --txt:#111a22; --muted:#546272; --soft:#8494a3;
+    --azul:#1a5fa8; --azul-d:#0f3f74; --verde:#1f8a5c; --verde-l:#eaf7f0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{max-width:100%}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px;font-weight:600}
+  nav a:hover{color:var(--azul)}
+
+  .badge-fase{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--azul-d);background:var(--verde-l);border:1px solid #cdeadb;
+    border-radius:999px;padding:6px 13px;margin-bottom:20px}
+
+  .hero{padding:56px 0 30px;max-width:700px}
+  h1{font-size:clamp(28px,4.6vw,44px);line-height:1.15;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--azul)}
+  .lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px;max-width:560px}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--azul);color:#fff;font-weight:700;
+    font-size:15.5px;padding:14px 24px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{background:var(--azul-d)}
+  .fud{font-size:13.5px;color:var(--soft)}
+
+  section{padding:38px 0}
+  .section-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin:0 0 10px}
+  h2{font-size:clamp(21px,3vw,28px);margin:0 0 16px;font-weight:800;letter-spacing:-.015em}
+
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pas .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .pas .card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--verde);margin-bottom:8px}
+  .pas .card p{margin:0;color:var(--txt);font-size:14.5px}
+  @media(max-width:760px){.pas{grid-template-columns:1fr}}
+
+  .demo{background:var(--azul-d);color:#eaf3fc;border-radius:20px;padding:30px 28px;margin-top:8px}
+  .demo .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border-radius:999px;padding:5px 11px;margin-bottom:14px}
+  .demo h3{margin:0 0 14px;font-size:19px;font-weight:700}
+  .demo-row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px}
+  .demo-field label{display:block;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:6px}
+  .demo-field select{font:inherit;font-size:14px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff}
+  .demo-field select option{color:#111}
+  .demo-btn{background:#fff;color:var(--azul-d);font-weight:700;border:none;border-radius:10px;padding:11px 18px;
+    cursor:pointer;font-size:14px}
+  .demo-out{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:12px;padding:4px 18px 16px;font-size:14px}
+  .demo-out table{width:100%;border-collapse:collapse;margin-top:8px}
+  .demo-out th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.55);padding:8px 6px;font-weight:600}
+  .demo-out td{padding:9px 6px;border-top:1px solid rgba(255,255,255,.12);font-size:14px}
+  .demo-out tr.best td{color:#bfe6ff;font-weight:700}
+  .demo-note{font-size:12px;color:rgba(234,243,252,.65);margin-top:12px;line-height:1.55}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .box h3{margin:0 0 12px;font-size:16px;font-weight:700}
+  .box ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .box li{margin:6px 0}
+
+  .honest{background:var(--verde-l);border:1px solid #cdeadb;border-radius:var(--radius);padding:20px 22px;font-size:14px;color:#173d29}
+  .honest b{color:#0d2417}
+
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+  .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:760px){.gates{grid-template-columns:1fr 1fr}}
+  .gate{border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:12.5px;text-align:center}
+  .gate .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+  .gate.ok .st{color:#0f8a45} .gate.pend .st{color:#b6791a}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 50px;color:var(--soft);font-size:12.5px}
+  footer a{color:var(--azul);text-decoration:underline}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <!-- Ligadura tipográfica: la "C" de Ceiba se abre en una bifurcación raíz/flecha de envío -->
+        <path d="M24 8 C15 6 8 11 8 18 C8 25 15 30 24 28" stroke="#1a5fa8" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+        <path d="M8 18 L15 18 M15 18 L12 14.5 M15 18 L12 21.5" stroke="#1f8a5c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Ceiba
+    </div>
+    <nav><a href="#como">Cómo funciona</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge-fase">◈ Attenciona · Fase 3 · prototipo</span>
+    <h1>El impuesto nuevo ya está aquí. <em>¿Sabés cuál es la vía más barata hoy?</em></h1>
+    <p class="lead">Desde 2026 hay un impuesto del 1% en EEUU a las remesas en efectivo, y algunos
+      proveedores dejaron de operar sin aviso. Ceiba compara el coste real, hoy, con el dato oficial del
+      Banco Mundial — para que la familia reciba más.</p>
+    <div class="cta-row">
+      <a class="btn" href="#como">Comparar el coste real →</a>
+      <span class="fud">Sin registro · dato oficial del Banco Mundial · no pide tus datos bancarios</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">El problema</p>
+    <div class="pas">
+      <div class="card"><b>Problema</b><p>Las remesas son casi el 20% del PIB de Guatemala — $26.000 millones al año. Un par de puntos de comisión de más, multiplicados, son mucho dinero real perdido.</p></div>
+      <div class="card"><b>Se agrava</b><p>El nuevo impuesto del 1% en EEUU a transferencias en efectivo empieza en 2026, y Tigo Money dejó de recibir remesas internacionales en abril de 2026 sin previo aviso.</p></div>
+      <div class="card"><b>Solución</b><p>El dato oficial del corredor EEUU-Guatemala del Banco Mundial, con el impuesto nuevo ya tenido en cuenta, en un solo número.</p></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <p class="section-tag">Cómo funciona</p>
+    <h2>El dato oficial, no la promoción del mes</h2>
+    <div class="demo">
+      <span class="tag">Vista previa ilustrativa</span>
+      <h3>Elegí cuánto enviás</h3>
+      <div class="demo-row">
+        <div class="demo-field"><label>Monto</label>
+          <select id="monto"><option value="200">200 USD</option><option value="500">500 USD</option></select>
+        </div>
+        <button class="demo-btn" id="calc">Comparar coste real</button>
+      </div>
+      <div class="demo-out" id="out">
+        <table><thead><tr><th>Proveedor</th><th>Coste total</th><th>Te llega</th></tr></thead>
+          <tbody id="tbody"><tr><td colspan="3" style="color:rgba(255,255,255,.6)">Elegí un monto y tocá "Comparar" para ver el ejemplo.</td></tr></tbody></table>
+      </div>
+      <p class="demo-note">Esta tabla es una <b>maqueta ilustrativa</b> para revisar el concepto en local: los
+        proveedores y cifras son de ejemplo, no una llamada real a ninguna API (los navegadores bloquean fetch
+        a APIs externas desde un archivo local <code>file://</code>). La integración real usaría la
+        <b>World Bank Remittance Prices Worldwide API</b> (<code>remittanceprices.worldbank.org/api</code>,
+        gratis, uso comercial libre citando la fuente), que ya publica el corredor EEUU→Guatemala como
+        ejemplo propio en su sitio.</p>
+    </div>
+  </section>
+
+  <section class="honest">
+    <b>Aviso honesto:</b> el dato del Banco Mundial se actualiza periódicamente, no en vivo al segundo, y
+    puede no reflejar que un proveedor concreto (como Tigo Money) haya dejado de operar de un día para
+    otro. Sirve para comparar el coste estructural, conviene confirmar disponibilidad antes de enviar.
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="box">
+        <h3>Beneficios (para el usuario)</h3>
+        <ul>
+          <li>Ver el coste total real, con el impuesto nuevo ya incluido</li>
+          <li>Enterarte si tu proveedor de siempre dejó de operar</li>
+          <li>Comparar sin dar tus datos bancarios ni personales</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Características (qué hace)</h3>
+        <ul>
+          <li>Consulta el dato oficial del corredor EEUU-Guatemala (Banco Mundial)</li>
+          <li>Suma comisión + margen de cambio en un coste total único</li>
+          <li>Sin registro, sin guardar tu remesa</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Quién lo construye</p>
+    <h2>Autoridad, en honesto</h2>
+    <p style="color:var(--muted);max-width:640px">Ceiba no tiene un fundador humano con años en remesas —
+      nace del motor de venture-building autónomo de <b>Attenciona (Fase 3)</b>, que exige pasar 5 puertas
+      de calidad (investigación real, diseño no genérico, monetización implementable, legal y fiscal) antes
+      de operar en producción. Es un producto nuevo: <b>todavía no tiene usuarios ni cifras que mostrar</b>
+      — en cuanto las tenga, aparecerán aquí con enlace verificable, nunca inventadas.</p>
+  </section>
+
+  <section id="precios">
+    <p class="section-tag">Precios</p>
+    <h2>Gratis para comparar, cripto para las alertas</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Comparación del coste real de hoy, 1 corredor</li>
+          <li>Suma de comisión + margen de cambio</li>
+          <li>Sin registro</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Pro (boceto — no conectado en este prototipo)</h3>
+        <ul>
+          <li>Alerta si un proveedor deja de operar o sube el coste</li>
+          <li>Varios corredores guardados a la vez</li>
+          <li>Pago único en cripto (USDT/USDC/BTC/ETH — sin Solana, misma regla que el resto del holding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <p class="section-tag">Preguntas</p>
+    <h2>Antes de que preguntes</h2>
+    <details><summary>¿Es un dato en vivo, al segundo?</summary><p>No. Es el dato oficial del Banco Mundial, que se actualiza periódicamente — sirve para comparar el coste estructural de cada proveedor, no para cazar una promoción de un día concreto.</p></details>
+    <details><summary>¿Cubre a mi proveedor favorito?</summary><p>En este prototipo se ilustra el corredor EEUU→Guatemala. La cobertura real de proveedores específicos depende de qué reporte el Banco Mundial para ese corredor — pendiente de confirmar en la versión con servidor.</p></details>
+    <details><summary>¿Por qué cobráis en cripto y no en quetzales?</summary><p>Para que la versión Pro no dependa de tarjetas internacionales ni bancos locales — la misma razón por la que muchos negocios de Attenciona cobran en USDT/USDC.</p></details>
+    <details><summary>¿Guardáis los datos de mi remesa?</summary><p>No. La consulta es de comparación de costes públicos, no pide ni guarda información de tu transferencia real.</p></details>
+  </section>
+
+  <section>
+    <p class="section-tag">Estado real (5 puertas de Fase 3)</p>
+    <div class="gates">
+      <div class="gate ok"><span class="st">✓ hecho</span>Investigación<br>(World Bank Remittance Prices API + disrupción Tigo/impuesto, con fuente)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Diseño<br>(audiencia investigada — referencia Banrural citada)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Monetización<br>(afiliación por comparativa — especificación construible)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Legal<br>(consentimiento + privacidad + aviso legal enlazados)</div>
+    </div>
+  </section>
+
+  <footer>
+    Prototipo local de Fase 3 — no publicado, no indexado, no conectado a producción.
+    Fuentes: <a href="https://remittanceprices.worldbank.org/corridor/United-States/Guatemala" target="_blank" rel="noopener">World Bank — corredor EEUU-Guatemala</a> ·
+    <a href="https://livinginguatemala.com/remittances/" target="_blank" rel="noopener">Living in Guatemala — comparar proveedores 2026</a> ·
+    paleta inspirada en <a href="https://www.banrural.com.gt/" target="_blank" rel="noopener">Banrural</a>.
+    <br><br>
+    Legal: <a href="../privacidad.html" rel="noopener">Privacidad</a> · <a href="../aviso-legal.html" rel="noopener">Aviso legal · Responsable editorial (Art. 50(4) AI Act)</a>.
+    <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=3b3b374ce8" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+<script>
+  // Solo ilustrativo: números de ejemplo fijos por monto, para revisar el concepto sin llamar a ninguna API real.
+  const EJEMPLO = {
+    '200': [
+      {p:'Proveedor A (banco)', coste:'8.60 USD (4.3%)', llega:'191.40 USD equiv.'},
+      {p:'Proveedor B (digital)', coste:'2.90 USD (1.5%) + 1% imp.', llega:'195.10 USD equiv.', best:true},
+      {p:'Proveedor C (efectivo)', coste:'10.50 USD (5.3%) + 1% imp.', llega:'187.50 USD equiv.'}
+    ],
+    '500': [
+      {p:'Proveedor A (banco)', coste:'17.00 USD (3.4%)', llega:'483.00 USD equiv.'},
+      {p:'Proveedor B (digital)', coste:'6.00 USD (1.2%) + 1% imp.', llega:'489.00 USD equiv.', best:true},
+      {p:'Proveedor C (efectivo)', coste:'22.50 USD (4.5%) + 1% imp.', llega:'472.50 USD equiv.'}
+    ]
+  };
+  document.getElementById('calc').addEventListener('click', () => {
+    const monto = document.getElementById('monto').value;
+    const filas = EJEMPLO[monto];
+    document.getElementById('tbody').innerHTML = filas.map(f =>
+      `<tr class="${f.best?'best':''}"><td>${f.p}${f.best?' ✓ mejor opción':''}</td><td>${f.coste}</td><td>${f.llega}</td></tr>`
+    ).join('') + `<tr><td colspan="3" style="font-size:11.5px;color:rgba(255,255,255,.5);border-top:none">ejemplo ilustrativo, no dato real en vivo</td></tr>`;
+  });
+</script>
+<div id="consent" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:99;max-width:640px;margin:0 auto;background:#1c1714;color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.32);font-family:inherit;font-size:13px;line-height:1.5">
+  <p style="margin:0 0 10px;color:rgba(255,255,255,.78)">Este prototipo no carga servicios de terceros (analítica, enlaces de afiliado) hasta que consientas. Tu elección se guarda en este navegador. Más en <a href="../privacidad.html" style="color:#f2b705;text-decoration:underline">privacidad</a> y <a href="../aviso-legal.html" style="color:#f2b705;text-decoration:underline">aviso legal</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="consent-ok" style="background:#e8590c;color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Aceptar</button>
+    <button id="consent-no" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Solo lo necesario</button>
+  </div>
+</div>
+<script>
+  (function(){ var k='attenciona_consent'; var el=document.getElementById('consent'); var estado=null; try{estado=localStorage.getItem(k);}catch(e){}
+    function cerrar(v){ try{localStorage.setItem(k,v);}catch(e){} el.remove(); }
+    var ok=document.getElementById('consent-ok'), no=document.getElementById('consent-no');
+    if(ok) ok.addEventListener('click',function(){cerrar('ok');});
+    if(no) no.addEventListener('click',function(){cerrar('no');});
+    if(estado) el.remove();
+  })();
+</script>
+</body>
+</html>

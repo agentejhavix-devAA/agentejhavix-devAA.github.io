@@ -1,0 +1,161 @@
+{
+    "numero":  20,
+    "historial":  [
+                      {
+                          "fecha":  "2026-08-15T06:14:11.493Z",
+                          "slug":  "lumen",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-15T12:30:08.232Z",
+                          "slug":  "irin",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-15T19:30:07.984Z",
+                          "slug":  "ksefa",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-16T06:30:08.415Z",
+                          "slug":  "echeance",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-16T12:00:07.881Z",
+                          "slug":  "reclama",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-17T06:30:33.293Z",
+                          "slug":  "privacy-fit-us",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-17T09:30:34.639Z",
+                          "slug":  "hora",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-17T13:30:34.340Z",
+                          "slug":  "karbon",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-21T08:30:43.086Z",
+                          "slug":  "cripta",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-21T11:30:38.042Z",
+                          "slug":  "parcela",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-21T14:30:40.804Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-21T17:30:49.581Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-22T06:30:41.165Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-22T10:30:40.181Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-23T06:00:45.915Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-23T10:30:38.206Z",
+                          "slug":  "maquinas",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-23T17:00:32.251Z",
+                          "slug":  "aranceles",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-24T06:30:34.055Z",
+                          "slug":  "hipoteca",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-24T11:30:37.014Z",
+                          "slug":  "luzjusta",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-24T18:00:48.506Z",
+                          "slug":  "clickcancel",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-24T21:00:39.443Z",
+                          "slug":  "paca",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-25T06:30:42.572Z",
+                          "slug":  "csrd",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-25T13:00:51.979Z",
+                          "slug":  "eu261",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-25T19:30:49.331Z",
+                          "slug":  "bonosocial",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-26T06:00:46.959Z",
+                          "slug":  "salariominimo",
+                          "resultado":  "liberado"
+                      },
+                      {
+                          "fecha":  "2026-08-26T09:00:44.685Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-26T15:00:47.804Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-27T06:30:45.555Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-27T09:30:44.163Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      },
+                      {
+                          "fecha":  "2026-08-27T13:00:51.703Z",
+                          "slug":  null,
+                          "resultado":  "ninguno-paso-el-filtro"
+                      }
+                  ],
+    "ultima":  "2026-08-27T13:00:51.703Z",
+    "siguiente":  "2026-08-28T06:00:00.000Z",
+    "cadenciaHoras":  7,
+    "ultimoSlug":  "salariominimo",
+    "ultimaFamilia":  "salariominimo",
+    "ultimoResultado":  "sin-candidato-valido-esta-ronda"
+}

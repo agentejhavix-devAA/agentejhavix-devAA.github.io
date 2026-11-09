@@ -1,0 +1,4913 @@
+{
+  "generado": "2026-08-26T06:00:46.959Z",
+  "negocios": [
+    {
+      "slug": "rampa",
+      "nombre": "Rampa",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#f6f7fb",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "27 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Baloo 2"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "3/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "La Ley 11/2023 (Acta Europea de Accesibilidad) obliga desde el 28 de junio de 2025 a que el comercio electrónico y los servicios digitales sean accesibles. R…",
+      "vistaPrevia": "negocios/rampa/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-14",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "marea-real-vs-prevista-eeuu-costa-oeste",
+      "nombre": "Marea real vs prevista (NOAA)",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#0e7490",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "12 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "Comprueba si clima · costas en EEUU (costa oeste) es legítimo antes de confiar o pagar, contra la referencia oficial del día. Si no hay dato verificable, se…",
+      "vistaPrevia": "negocios/marea-real-vs-prevista-eeuu-costa-oeste/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "inflacion-real-por-pais-mundo",
+      "nombre": "Inflación real por país (Banco Mundial)",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#1d4f91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "12 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Convierte datos crudos de datos · economía en Mundo en una cifra clara, usando la referencia oficial citada. Si un dato falta, la calculadora lo dice.",
+      "vistaPrevia": "negocios/inflacion-real-por-pais-mundo/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "recall-alimentos-fda-estados-unidos",
+      "nombre": "Revisa FDA",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#005ea8",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "12 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "Busca una marca, producto o descripción en los Food Enforcement Reports de la FDA. Una coincidencia abre la puerta al aviso oficial; ninguna coincidencia no…",
+      "vistaPrevia": "negocios/recall-alimentos-fda-estados-unidos/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "boleta-honorarios-chile-chile",
+      "nombre": "NetoClaro",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#6b21a8",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "13 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "En Chile la retención vigente de las boletas de honorarios es 15,25% durante 2026. Introduce tu bruto o el líquido que necesitas y calcula el importe correct…",
+      "vistaPrevia": "negocios/boleta-honorarios-chile-chile/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "neto-colombia-colombia",
+      "nombre": "CajaClara",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#0f6b4f",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "13 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "En Colombia un independiente no se queda con lo que factura: aporta salud (12,5%) y pensión (16%) sobre la base IBC —mínimo el 40% de sus ingresos— y cada mo…",
+      "vistaPrevia": "negocios/neto-colombia-colombia/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "resico-mexico-mexico",
+      "nombre": "ResicoClaro",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#0e7c5b",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "13 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Fraunces"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "En RESICO la tasa de ISR no depende de tu actividad sino del tramo de ingresos cobrados en el mes: del 1% al 2,5% según el Art. 113-E de la LISR, más IVA 16%…",
+      "vistaPrevia": "negocios/resico-mexico-mexico/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "candado",
+      "nombre": "Candado",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#eaf3fc",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "31 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "7 enlaces externos"
+        }
+      },
+      "pais": "Sin precisar",
+      "resumen": "Chrome 154 (octubre 2026) activa HTTPS por defecto y avisará antes de cargar sitios HTTP públicos. Los certificados ya solo duran 200 días (100 en 2027, 47 e…",
+      "vistaPrevia": "negocios/candado/",
+      "precioUSD": 359,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.9,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 359,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-14",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-14"
+    },
+    {
+      "slug": "cnota",
+      "nombre": "CNOta",
+      "nota": 8,
+      "de10": "8/10",
+      "accent": "#f7f5ef",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "27 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Baloo 2"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "El Real Decreto 643/2026 obliga a todos los empresarios a comunicar a la Seguridad Social el código de ocupación (CNO) de sus trabajadores antes del 1 de feb…",
+      "vistaPrevia": "negocios/cnota/",
+      "precioUSD": 319,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.8,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 319,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-14",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "quartly",
+      "nombre": "Quartly",
+      "nota": 7,
+      "de10": "7/10",
+      "accent": "#fbf7f0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "27 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Baloo 2"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin marca gráfica propia detectada"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Reino Unido",
+      "resumen": "MTD for Income Tax is live since 6 April 2026. If your qualifying income is over £50,000 you must send HMRC quarterly updates. Quartly tells you if you're in…",
+      "vistaPrevia": "negocios/quartly/",
+      "precioUSD": 279,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.7,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 279,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-13",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-12"
+    },
+    {
+      "slug": "beleg",
+      "nombre": "Beleg",
+      "nota": 7,
+      "de10": "7/10",
+      "accent": "#f4f5f7",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "27 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "Space Grotesk"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Alemania",
+      "resumen": "E-Rechnung Deutschland: Empfangspflicht seit 01.01.2025 (in Kraft), Ausstellungspflicht ab 01.01.2027 (>800.000 € Umsatz) bzw. 01.01.2028 (alle). Beleg berec…",
+      "vistaPrevia": "negocios/beleg/",
+      "precioUSD": 279,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.7,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 279,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-13",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "vigil",
+      "nombre": "Vigil",
+      "nota": 7,
+      "de10": "7/10",
+      "accent": "#0a0c12",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "29 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "EU Cyber Resilience Act Article 14: from 11 September 2026, manufacturers of products with digital elements must report actively exploited vulnerabilities an…",
+      "vistaPrevia": "negocios/vigil/",
+      "precioUSD": 279,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.7,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 279,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-13",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "echeance",
+      "nombre": "Échéance",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#faf8f4",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "26 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin marca gráfica propia detectada"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "6 enlaces externos"
+        }
+      },
+      "pais": "Francia",
+      "resumen": "Depuis le 1er septembre 2026, toute entreprise assujettie à la TVA en France doit pouvoir recevoir des factures électroniques. Découvrez votre échéance exact…",
+      "vistaPrevia": "negocios/echeance/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-16",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-12"
+    },
+    {
+      "slug": "ksefa",
+      "nombre": "Ksefa",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f6f5ef",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "KSeF w Polsce: duże firmy od 01.02.2026, pozostali od 01.04.2026 — w mocy. Mikroprzedsiębiorcy (≤10.000 zł/mies.) do 01.01.2027. Ksefa sprawdza twój status w…",
+      "vistaPrevia": "negocios/ksefa/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-15",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "irin",
+      "nombre": "Irin",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f7f4ef",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "Nigeria NRS e-invoicing: large taxpayers (turnover ≥ ₦5bn) had a 31 July 2026 compliance deadline — passed, monitoring active. Medium taxpayers face enforcem…",
+      "vistaPrevia": "negocios/irin/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-15",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "parcela",
+      "nombre": "Parcela",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f4f7f3",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "29 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "EU Deforestation Regulation (EUDR 2023/1115): large and medium operators must file due-diligence statements from 30 December 2026; micro and small from 30 Ju…",
+      "vistaPrevia": "negocios/parcela/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-21",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "karbon",
+      "nombre": "Karbon",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f5f4f0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "EU Carbon Border Adjustment Mechanism (CBAM, Reg. 2023/956): the definitive regime is in force since 1 January 2026 — only Authorised CBAM Declarants may imp…",
+      "vistaPrevia": "negocios/karbon/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-17",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "hora",
+      "nombre": "Hora",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f5f4f0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "Employment Rights Act 2025 (UK): the sexual-harassment prevention duty takes effect 30 October 2026, unfair dismissal changes from 1 January 2027, and SSP re…",
+      "vistaPrevia": "negocios/hora/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-17",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "sanad",
+      "nombre": "Sanad",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#faf8f1",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "UAE e-invoicing (EIS): businesses with revenue of AED 50M or more must appoint an Accredited Service Provider by 30 October 2026 and exchange e-invoices from…",
+      "vistaPrevia": "negocios/sanad/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-14",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "lumen",
+      "nombre": "Lumen",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0a0b10",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "29 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "EU AI Act Article 50 transparency obligations are in force since 2 August 2026: chatbots must disclose, AI-generated media must be marked, deepfakes must be…",
+      "vistaPrevia": "negocios/lumen/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-15",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "cripta",
+      "nombre": "Cripta",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f6f8fb",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "29 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "DAC8 (Directive 2023/2226) is in force since 1 January 2026: crypto-asset service providers must collect reportable transaction data for all of 2026 and file…",
+      "vistaPrevia": "negocios/cripta/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-21",
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "cripto-fiscal-global",
+      "nombre": "Cripto-fiscal global",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0b3d91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "11 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "0 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Comprobador global de la obligación fiscal de criptoactivos por país: elige tu país y mira si te toca declarar, con la fuente oficial citada. 21 países cubie…",
+      "vistaPrevia": "negocios/cripto-fiscal-global/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "cripto-precio-justo-global",
+      "nombre": "Cripto-precio justo",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0b3d91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "11 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "0 enlaces externos"
+        }
+      },
+      "pais": "Filipinas",
+      "resumen": "Compara el precio P2P de tu USDT contra el precio internacional de CoinGecko, en tu país. 8 países cubiertos, cada uno con su fuente oficial.",
+      "vistaPrevia": "negocios/cripto-precio-justo-global/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "etiqueta-ultraprocesados-global",
+      "nombre": "Etiqueta honesta",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0b3d91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "11 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "0 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Comprueba por código de barras si un producto es realmente ultraprocesado, contra el dato abierto de Open Food Facts. 7 países cubiertos, cada uno con su fue…",
+      "vistaPrevia": "negocios/etiqueta-ultraprocesados-global/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "cambio-confuso-global",
+      "nombre": "Cambio confuso",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0b3d91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "11 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "0 enlaces externos"
+        }
+      },
+      "pais": "Sin precisar",
+      "resumen": "Comprueba el tipo de cambio que te ofrecen contra el tipo oficial del BCE del día, país por país. 6 países cubiertos, cada uno con su fuente oficial.",
+      "vistaPrevia": "negocios/cambio-confuso-global/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "cumplimiento-normativo-global",
+      "nombre": "Cumplimiento fiscal B2B global",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#0b3d91",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "11 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "JetBrains Mono"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "0 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Comprobador global de obligaciones de facturación electrónica y cumplimiento B2B: elige tu país y mira si te toca, con la fuente oficial citada. 8 países cub…",
+      "vistaPrevia": "negocios/cumplimiento-normativo-global/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f32",
+      "capaNombre": "Fase 3.2 · Aprendizaje",
+      "modificado": "2026-08-13"
+    },
+    {
+      "slug": "reclama",
+      "nombre": "Reclama",
+      "nota": 8,
+      "de10": "8/10",
+      "accent": "#0b7a4b",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "18 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "3/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "4 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Genera tu reclamación en 2 minutos: te decimos la vía oficial exacta (consumo, telecos o banca), los plazos legales y te preparamos el escrito. Tú lo present…",
+      "vistaPrevia": "negocios/reclama/",
+      "precioUSD": 319,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.8,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 319,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-16",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-16"
+    },
+    {
+      "slug": "privacy-fit-us",
+      "nombre": "Privacy Fit",
+      "nota": 7,
+      "de10": "7/10",
+      "accent": "#2f6df0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "18 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "3 enlaces externos"
+        }
+      },
+      "pais": "Unión Europea",
+      "resumen": "Answer 3 questions and find out which of the 20 US state consumer-privacy laws apply to your small business, your exposure, and what to do next. Free check;…",
+      "vistaPrevia": "negocios/privacy-fit-us/",
+      "precioUSD": 279,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.7,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 279,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-17",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-17"
+    },
+    {
+      "slug": "paca",
+      "nombre": "Paca",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#f6f4ee",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "31 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "6 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Reglamento (UE) 2025/40 (PPWR): desde el 12 de agosto de 2026 todo envase comercializado en la UE debe cumplir límites PFAS, metales pesados, declaración UE…",
+      "vistaPrevia": "negocios/paca/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-24",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "eu261",
+      "nombre": "EU261 vuelos",
+      "nota": 5,
+      "de10": "5/10",
+      "accent": "#0b7a4b",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 0,
+          "de": 2,
+          "detalle": "sin tipografía definida"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Vuelo retrasado o cancelado: te deben entre 250 € y 600 € según la distancia, y la mayoría no lo reclama. EU261 te dice en 3 preguntas si te correspon",
+      "vistaPrevia": "negocios/eu261/",
+      "precioUSD": 199,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.5,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 199,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-25",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "clickcancel",
+      "nombre": "Click-to-Cancel",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#1e5aa8",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "La regla de la FTC 'click to cancel' obliga a que darse de baja sea tan fácil como darse de alta. Si tu web vende suscripciones y el cancelar está esc",
+      "vistaPrevia": "negocios/clickcancel/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-24",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "csrd",
+      "nombre": "CSRD · Ómnibus",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#1e5aa8",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "El paquete Ómnibus cambió plazos y umbrales de la CSRD y dejó a miles de empresas sin saber si reportan este año. CSRD resuelve en 3 preguntas si te a",
+      "vistaPrevia": "negocios/csrd/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-25",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "maquinas",
+      "nombre": "Reglamento de Máquinas",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#8a3fa0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "El Reglamento (UE) 2023/1230 sustituye a la Directiva de Máquinas y se aplica desde el 20/01/2027. Si fabricas, importas o distribuyes maquinaria en l",
+      "vistaPrevia": "negocios/maquinas/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-23",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "comisiones",
+      "nombre": "MarketPlace",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#141008",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "28 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "usa emoji"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "sin estilo de foco explícito"
+        },
+        "geoTecnico": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "JSON-LD:sí llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "5 enlaces externos"
+        }
+      },
+      "pais": "Sin precisar",
+      "resumen": "MercadoLibre, Amazon y Shopify: compara comisiones, envíos y margen antes de elegir dónde vender. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/comisiones/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": false,
+      "fechaLiberacion": null,
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "luzjusta",
+      "nombre": "Luz justa",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#b26a00",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "El precio de la luz cambia cada hora y el 90% del recibo se decide en las horas que eliges. Luz justa cruza tu potencia y tus horas de consumo con el",
+      "vistaPrevia": "negocios/luzjusta/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-24",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "hipoteca",
+      "nombre": "Hipoteca justa",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#b26a00",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Cada décima de TAE en una hipoteca son miles de euros. Hipoteca justa cruza el Euríbor, el TIN/TAE oficial de las entidades (Banco de España) y tu per",
+      "vistaPrevia": "negocios/hipoteca/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-24",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "aranceles",
+      "nombre": "Aranceles",
+      "nota": 6,
+      "de10": "6/10",
+      "accent": "#8a3fa0",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 1,
+          "de": 2,
+          "detalle": "Inter (sin pareja display)"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "Compras fuera de la UE y el arancel te sorprende en aduanas. Aranceles calcula en 3 preguntas el derecho de importación, el IVA y las tasas que pagará",
+      "vistaPrevia": "negocios/aranceles/",
+      "precioUSD": 239,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.6,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 239,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-23",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "salariominimo",
+      "nombre": "Salario mínimo",
+      "nota": 5,
+      "de10": "5/10",
+      "accent": "#0b7a4b",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 0,
+          "de": 2,
+          "detalle": "sin tipografía definida"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "¿Te están pagando por debajo del mínimo legal de tu país? Salario mínimo cruza el salario mínimo oficial (OIT) con tu jornada para decirte si tu nómin",
+      "vistaPrevia": "negocios/salariominimo/",
+      "precioUSD": 199,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.5,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 199,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-26",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "bonosocial",
+      "nombre": "Bono social",
+      "nota": 5,
+      "de10": "5/10",
+      "accent": "#0b7a4b",
+      "desglose": {
+        "paletaPropia": {
+          "puntos": 2,
+          "de": 2,
+          "detalle": "10 tokens en :root"
+        },
+        "tipografia": {
+          "puntos": 0,
+          "de": 2,
+          "detalle": "sin tipografía definida"
+        },
+        "sinEmojis": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "limpio"
+        },
+        "firmaVisual": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "SVG propio en la marca"
+        },
+        "estados": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "2/6 señales de estado encontradas"
+        },
+        "accesibilidad": {
+          "puntos": 1,
+          "de": 1,
+          "detalle": "focus-visible con outline"
+        },
+        "geoTecnico": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "JSON-LD:no llms.txt:sí robots.txt:sí"
+        },
+        "fuentesCitadas": {
+          "puntos": 0,
+          "de": 1,
+          "detalle": "1 enlaces externos"
+        }
+      },
+      "pais": "España",
+      "resumen": "El bono social descuenta entre el 25% y el 65% de tu factura de luz y mucha gente con derecho no lo pide. Bono social comprueba en 3 preguntas si te c",
+      "vistaPrevia": "negocios/bonosocial/",
+      "precioUSD": 199,
+      "precioManual": false,
+      "precioDesglose": {
+        "valorPorConsultaUSD": 83,
+        "consultasAnualesAsumidas": 40,
+        "valorAnualEstimadoUSD": 3320,
+        "tasaLicencia": 0.12,
+        "factorCalidad": 0.5,
+        "ventasProConfirmadas": 0,
+        "factorTraccion": 1,
+        "sugeridoUSD": 199,
+        "precioMinimoUSD": 99,
+        "nota": "Estimación razonada: 1.5h evitadas × 55$/h de gestoría × 40 consultas/año asumidas × 12% de licencia. No es una medición exacta — corregible a mano (precioManualUSD)."
+      },
+      "liberado": true,
+      "fechaLiberacion": "2026-08-25",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "modificado": "2026-08-23"
+    },
+    {
+      "slug": "velas",
+      "nombre": "Velas",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#B5451F",
+      "pais": "LATAM",
+      "resumen": "Cada veladora tiene su propósito (miel: dulzura; 7 potencias: protección; morada: hogar) y su fecha (Día de Muertos: 01-02/11). Velas te dice cuál encender, cuándo y con qué oración. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/velas/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "cartanatal",
+      "nombre": "Carta Natal",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#B45CFF",
+      "pais": "LATAM",
+      "resumen": "Tu ascendente necesita la hora de nacimiento, y la mayoría no la sabe. Carta Natal te dice cómo recuperarla (acta de nacimiento del Registro Civil) y calcula tu carta: Sol, Luna y ascendente. Temporada de Aries: 20/03/2027. Gratis + Pro 7 $ pago único en cripto.",
+      "vistaPrevia": "negocios/cartanatal/",
+      "precioUSD": 199,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 7 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 7
+      },
+      "micropagoUSD": 7,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "angeles",
+      "nombre": "Ángeles",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "El 29/09 la Iglesia celebra a los arcángeles Miguel, Gabriel y Rafael. Ángeles te dice cuál invocar según tu necesidad y cómo rezar. Fiesta: 29/09/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/angeles/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "tarotamor",
+      "nombre": "Tarot Amor",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E85CB8",
+      "pais": "LATAM",
+      "resumen": "La tirada de 3 cartas del amor (pasado, presente, futuro) con método y honestidad. Tarot Amor te da tu lectura y el mensaje de cada posición. Viernes 13: 13/11/2026. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/tarotamor/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "horoscopodia",
+      "nombre": "Horóscopo Día",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4FD1C5",
+      "pais": "LATAM",
+      "resumen": "El horóscopo diario que dice qué dice y qué no dice. Horóscopo Día te da tu energía del día con la posición real del Sol y la fecha de verificación. Sol en Libra: 22/09/2026. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/horoscopodia/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "tarotsino",
+      "nombre": "Tarot Sí/No",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85CB8",
+      "pais": "LATAM",
+      "resumen": "¿Sí o no? La tirada de 1 arcano mayor con método, lectura y disclaimer. Tarot Sí/No te da tu carta con su mensaje y su matiz — no una bola de cristal. Luna llena del cazador: 26/10/2026. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/tarotsino/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "tarotsemana",
+      "nombre": "Tarot Semana",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85CB8",
+      "pais": "LATAM",
+      "resumen": "Cada domingo, una tirada de 3 cartas para tu semana: intención, reto y consejo. Tarot Semana te da tu lectura semanal con método. Nueva tirada: cada domingo. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/tarotsemana/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "runas",
+      "nombre": "Runas",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#4FD1C5",
+      "pais": "LATAM",
+      "resumen": "El Futhark antiguo son 24 runas con su significado. Runas te da tu tirada de 3 y la lectura de cada símbolo. Solsticio de invierno (Yule): 21/12/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/runas/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "numerologia",
+      "nombre": "Numerología",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#B45CFF",
+      "pais": "LATAM",
+      "resumen": "Tu número de vida (fecha de nacimiento) y tu año personal 2027 se calculan reduciendo dígitos. Numerología te muestra la operación, no solo el resultado. Año personal 2027: se calcula desde el 01/01/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/numerologia/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "suenos",
+      "nombre": "Sueños",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85CB8",
+      "pais": "LATAM",
+      "resumen": "Se olvida el 50% de un sueño en los primeros 5 minutos. Sueños te ayuda a anotarlo, interpretar sus símbolos y llevar tu diario onírico. Luna nueva: 11/09/2026. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/suenos/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "fe-estrellas",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "packinglist",
+      "nombre": "PackingList",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#35C3E6",
+      "pais": "LATAM",
+      "resumen": "Mercancía, bultos, pesos y medidas: genera tu lista de empaque profesional para aduanas y clientes. El documento que acompaña toda exportación. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/packinglist/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "calculaexport",
+      "nombre": "CalcExport",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Mercancía + flete + seguros + aduana: el costo real de exportar desde LATAM antes de cotizar. Incoterms claros. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/calculaexport/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "valtransfer",
+      "nombre": "ValidaTransfer",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "LATAM",
+      "resumen": "Clabe, cuenta, nombre y banco: comprueba los datos antes de transferir. Un dígito mal es un pago perdido. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/valtransfer/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "calculafx",
+      "nombre": "CalcFX",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E8B34A",
+      "pais": "LATAM",
+      "resumen": "Tipo de cambio, spread y comisión: cuánto pierdes de verdad al cambiar divisas. Compara antes de cambiar. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/calculafx/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "recibos",
+      "nombre": "ReciboPago",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#F2689B",
+      "pais": "LATAM",
+      "resumen": "Servicio o producto: genera tu recibo de pago profesional en segundos. El documento que tu cliente espera y tu contabilidad agradece. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/recibos/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "gastos",
+      "nombre": "GastoOK",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "LATAM",
+      "resumen": "De tu extracto a categorías de gasto: comida, renta, proveedores, marketing. Sin teclear nada. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/gastos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "anomalias",
+      "nombre": "AlertaGasto",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Gastos raros, montos fuera de rango, proveedores nuevos: detecta la anomalía contable antes de que duela. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/anomalias/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "direcciones",
+      "nombre": "DirOK",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E8B34A",
+      "pais": "México",
+      "resumen": "Calle, número, colonia, ciudad y código postal: normaliza tus direcciones a formato estructurado. Sin errores de entrega. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/direcciones/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "moneda",
+      "nombre": "MonoIdent",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "México",
+      "resumen": "De «$1.234,56» a MXN: identifica la moneda de tu texto o dato, con su formato. Sin confundir pesos con dólares. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/moneda/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "codigopostal",
+      "nombre": "CPValida",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8B8BFF",
+      "pais": "México",
+      "resumen": "País y código postal: valida antes de usar. Un CP mal escrito es una entrega perdida y una factura con error. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/codigopostal/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "aduana",
+      "nombre": "DocAduana",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Proforma, factura comercial, lista de empaque y más: genera los documentos de tu operación de comercio exterior. Sin empezar de cero. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/aduana/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "apidatos",
+      "nombre": "DataAPI",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#35C3E6",
+      "pais": "LATAM",
+      "resumen": "Moneda, CP, direcciones y clasificaciones: normaliza y valida la información empresarial en un solo lugar. Tu base de datos, limpia. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/apidatos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "costototal",
+      "nombre": "CostoTotal",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#F2689B",
+      "pais": "LATAM",
+      "resumen": "Producto, logística e impuestos: el costo total de tu producto, calculado antes de ponerle precio. Sin márgenes fantasma. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/costototal/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "validadocs",
+      "nombre": "ValidaDocs",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Facturas, proformas y documentos de comercio exterior: comprueba los campos antes de enviar. Un campo mal puede costar la operación. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/validadocs/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "fabrica-de-horas",
+      "nombre": "Fábrica de horas",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#0f2d5c",
+      "pais": "LATAM",
+      "resumen": "La fábrica a demanda de attenciona: automatización · tareas en Mundo deja de hacerse a mano. Presupuesto automático solo si el catálogo de conectores cubre la tarea; si no, cola manual honesta.",
+      "vistaPrevia": "negocios/fabrica-de-horas/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "pila",
+      "nombre": "Pila",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#C8F04E",
+      "pais": "LATAM",
+      "resumen": "EU Batteries Regulation (2023/1542): from 18 February 2027, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital battery passport, linked by QR code. Pila checks your readiness — in your browser, no account.",
+      "vistaPrevia": "negocios/pila/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 8 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 8
+      },
+      "micropagoUSD": 8,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "factu",
+      "nombre": "Factu",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#12C48B",
+      "pais": "España",
+      "resumen": "VeriFactu (RD 1007/2023): desde el 01/01/2027 (sociedades) y el 01/07/2027 (autónomos y pymes) solo podrás facturar con software de registro inalterable, hash encadenado y código QR. Multa de hasta 50.000 €. Factu comprueba tu brecha en 3 preguntas — en el navegador, sin cuenta.",
+      "vistaPrevia": "negocios/factu/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 12 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 12
+      },
+      "micropagoUSD": 12,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "bitacora",
+      "nombre": "Bitácora",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#F5A623",
+      "pais": "LATAM",
+      "resumen": "El 96,55% de las páginas reciben 0 visitas de Google (Ahrefs, ~14.000 millones de páginas). Bitácora genera en tu navegador lo que tu web necesita para ser encontrada: verificación DNS TXT (Search Console + GA4), robots.txt, sitemap.xml y llms.txt para las IA, con la guía exacta de dónde pegarlos. 5 $ pago único, sin cuenta.",
+      "vistaPrevia": "negocios/bitacora/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "freelance",
+      "nombre": "FreelanceNet",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#35C3E6",
+      "pais": "LATAM",
+      "resumen": "Tarifa, impuestos, comisiones y cambio de divisa: cuánto te queda de verdad por cada proyecto freelance. Cotiza con número. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/freelance/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "novena",
+      "nombre": "Novena",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "La novena clásica dura 9 días y se reza en fechas fijas (Adviento, Navidad, santos). Novena te arma la tuya: intención, oraciones de los 9 días y recordatorio diario, todo en el navegador. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/novena/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "santoral",
+      "nombre": "Santoral",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "Cada día del año celebra uno o varios santos. Santoral te dice el santo del día, su historia breve y los nombres que se celebran — para elegir nombre de bebé, patrono o fiesta patronal. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/santoral/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "salmos",
+      "nombre": "Salmos",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#B5451F",
+      "pais": "LATAM",
+      "resumen": "Cuando duele algo, hay un salmo. Salmos te dice cuál rezar según tu momento (miedo, duelo, gratitud, trabajo) con un plan de 30 días. Fecha límite: Domingo de la Palabra de Dios (24/01/2027). Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/salmos/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "rosario",
+      "nombre": "Rosario",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "El rosario se reza con los misterios del día: gozosos (lun/sáb), dolorosos (mar/vie), gloriosos (mié/dom) y luminosos (jue). Rosario te guía los 5 misterios paso a paso con la cuenta y las oraciones. Fiesta de Nuestra Señora del Rosario: 07/10/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/rosario/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "ceniza",
+      "nombre": "Ceniza",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "La Cuaresma 2027 va del Miércoles de Ceniza (10/02/2027) al Domingo de Resurrección (28/03/2027): 40 días de ayuno, abstinencia, oración y limosna. Ceniza te arma el plan de Cuaresma en 3 preguntas. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/ceniza/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "guadalupe",
+      "nombre": "Guadalupe",
+      "nota": 9.7,
+      "de10": "9.7/10",
+      "accent": "#E6B84C",
+      "pais": "México",
+      "resumen": "El 12/12 millones de peregrinos llegan a la Basílica de Guadalupe en CDMX; el novenario va del 3 al 12/12/2026. Guadalupe te arma el plan: novena, misa, peregrinación o acompañamiento desde tu casa. Gratis + Pro 6 $ pago único en cripto.",
+      "vistaPrevia": "negocios/guadalupe/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "biblia",
+      "nombre": "Biblia",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#B5451F",
+      "pais": "LATAM",
+      "resumen": "Leer la Biblia completa toma 365 días a 10 minutos diarios. El 90% abandona en el primer mes. Biblia te arma el plan con progreso, versículo del día y lecturas del año litúrgico. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/biblia/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "promesas",
+      "nombre": "Promesas",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E6B84C",
+      "pais": "LATAM",
+      "resumen": "En LATAM millones hacen mandas y promesas a un santo (San Judas, la Virgen, San Expedito) y las olvidan. Promesas te ayuda a fijarlas, cumplirlas y cerrarlas antes del Domingo de Ramos 2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/promesas/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "fiestas",
+      "nombre": "Fiestas",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#B5451F",
+      "pais": "LATAM",
+      "resumen": "Pascua 2027 cae el 28/03: Semana Santa del 27/03 al 03/04. Las fiestas móviles (Ceniza, Corpus, Pentecostés) cambian cada año y confunden vacaciones. Fiestas te da las fechas exactas 2026-2027 por país LATAM. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/fiestas/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "compatibilidad",
+      "nombre": "Compatibilidad",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#B45CFF",
+      "pais": "LATAM",
+      "resumen": "¿Eres compatible con tu pareja? Compatibilidad calcula tu score por elementos (fuego, tierra, aire, agua) y aspectos, con el método a la vista. Día clave: San Valentín 14/02/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/compatibilidad/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "retrogrado",
+      "nombre": "Retrógrados",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4FD1C5",
+      "pais": "LATAM",
+      "resumen": "Mercurio retrógrado: 24/10 al 13/11/2026 en Escorpio (verificado). Retrógrados te da las fechas reales 2026-2027, la fase de sombra y qué hacer y qué no hacer en cada retrógrado. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/retrogrado/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "fases",
+      "nombre": "Fases",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4FD1C5",
+      "pais": "LATAM",
+      "resumen": "Luna nueva, creciente, llena y menguante: cada fase con su intención. Fases te da el calendario lunar real 2026-2027 (timeanddate) con qué hacer en cada fase. Próxima llena: 26/09/2026. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/fases/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "eclipse",
+      "nombre": "Eclipse",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#B45CFF",
+      "pais": "LATAM",
+      "resumen": "El 06/02/2027 un eclipse solar anular (anillo de fuego) cruza Chile, Argentina, Uruguay y Brasil. Eclipse te dice si lo verás, cómo verlo seguro y qué significa. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/eclipse/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "chino",
+      "nombre": "Chino",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E85D3F",
+      "pais": "LATAM",
+      "resumen": "El 06/02/2027 empieza el Año de la Cabra de Fuego (Smithsonian). Chino te dice tu animal del zodiaco chino, tu elemento y qué te trae el año. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/chino/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "biorritmo",
+      "nombre": "Biorritmo",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#4FD1C5",
+      "pais": "LATAM",
+      "resumen": "Físico (23), emocional (28) e intelectual (33): el biorritmo clásico calcula tus ciclos desde el nacimiento y avisa tus días críticos. Biorritmo te da tu curva y tu próximo día crítico. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/biorritmo/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "astrotrabajo",
+      "nombre": "Astro Trabajo",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#B45CFF",
+      "pais": "LATAM",
+      "resumen": "¿Cuándo pedir aumento, enviar tu CV o firmar? Astro Trabajo cruza tu signo con la luna y los retrógrados para darte los días favorables del mes. Mercurio sale de la sombra: 29/11/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/astrotrabajo/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "espanolas",
+      "nombre": "Baraja Española",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85D3F",
+      "pais": "LATAM",
+      "resumen": "Oros, copas, espadas y bastos: la baraja española de 48 cartas con su tirada de 4. Baraja Española te da tu lectura mensual con el método de cada palo. Nueva tirada: cada mes. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/espanolas/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "iching",
+      "nombre": "I Ching",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85D3F",
+      "pais": "LATAM",
+      "resumen": "El I Ching («Libro de los Cambios») responde con 64 hexagramas. I Ching te enseña el método de las 3 monedas y lee tu hexagrama. El hexagrama del año: 06/02/2027 (Año Nuevo Lunar). Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/iching/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "cafe",
+      "nombre": "Café",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#B5451F",
+      "pais": "LATAM",
+      "resumen": "La lectura de la borra del café (tasseografía) tiene símbolos clásicos: pájaro (noticia), montaña (reto), llave (solución). Café te guía a leer tu taza. La taza del año: 06/01/2027 (Epifanía). Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/cafe/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "manos",
+      "nombre": "Manos",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#E85D3F",
+      "pais": "LATAM",
+      "resumen": "La quiromancia lee tres líneas: vida, corazón y cabeza. Manos te explica cómo mirarlas y qué dicen. Noche de San Juan: 24/06/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/manos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "orisha",
+      "nombre": "Orisha",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#F2A93B",
+      "pais": "Cuba",
+      "resumen": "En la Regla de Ocha cada persona tiene un orisha que «manda en su cabeza» (orí), y descubrirlo requiere iniciación y adivinación de un babalawo u oriate. Orisha te explica el sistema documentado (sin fingir que te inicia): los orishas principales, sus caminos y sus fiestas. Fiestas de Yemayá: 07/09/2026. Gratis + Pro 6 $ pago único en cripto.",
+      "vistaPrevia": "negocios/orisha/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "eleggua",
+      "nombre": "Elegguá",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#F2A93B",
+      "pais": "Cuba",
+      "resumen": "Elegguá es el primer orisha: abre y cierra caminos, y en la Regla de Ocha se le saluda primero en todo ritual. Sus 21 caminos (avatars) y la ofrenda de apertura del año se documentan aquí. Elegguá abre el año: 01/01/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/eleggua/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "yemaya",
+      "nombre": "Yemayá",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#4FC3E8",
+      "pais": "Cuba",
+      "resumen": "Yemayá es la orisha de las aguas saladas y la maternidad, sincretizada con la Virgen de Regla (07/09). Su número es el 7, sus colores azul y blanco, y se le ofrecen sandías, melones y 7 faldas de olas. Yemayá te guía en el mar de tu vida. Fiesta: 07/09/2026. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/yemaya/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "oshun",
+      "nombre": "Oshún",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#F2A93B",
+      "pais": "Cuba",
+      "resumen": "Oshún es la orisha de las aguas dulces, el amor y el oro, sincretizada con la Virgen de la Caridad del Cobre, patrona de Cuba (08/09). Su número es el 5, sus colores el amarillo y el dorado, y se le ofrecen miel, flores y espejos. Oshún te guía en el amor y la dulzura. Fiesta: 08/09/2026. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/oshun/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "shango",
+      "nombre": "Shangó",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#E84A2F",
+      "pais": "Cuba",
+      "resumen": "Shangó es el rey de los orishas: dueño del tambor, el fuego, el rayo y la justicia, sincretizado con Santa Bárbara (04/12). Su número es el 6 (y 4), sus colores el rojo y el blanco, y su baile es el del tambor. Shangó te enseña el rey que hay en ti. Fiesta: 04/12/2026. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/shango/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "sanlazaro",
+      "nombre": "San Lázaro",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#C77DFF",
+      "pais": "Cuba",
+      "resumen": "San Lázaro (Babalú Ayé) es el santo de la salud y la sanación: en la Regla de Ocha se sincretiza con el orisha de las enfermedades y la curación. Su santuario de El Rincón, en La Habana, recibe a cientos de miles cada 17/12. San Lázaro te acompaña en la salud y la promesa. Peregrinación: 17/12/2026. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/sanlazaro/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "orula",
+      "nombre": "Orula",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#8FBF5F",
+      "pais": "Cuba",
+      "resumen": "Orula (Orúnmila) es el orisha de la sabiduría y la adivinación: dueño del oráculo de Ifá, el más antiguo de la tradición yoruba. Su festejo se sincretiza con San Francisco de Asís (04/10). Orula te explica el oráculo, sus 256 signos y cómo se consulta con respeto. Fiesta: 04/10/2026. Gratis + Pro 7 $ pago único en cripto.",
+      "vistaPrevia": "negocios/orula/",
+      "precioUSD": 199,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 7 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 7
+      },
+      "micropagoUSD": 7,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "santamuerte",
+      "nombre": "Santa Muerte",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#C77DFF",
+      "pais": "México",
+      "resumen": "La Santa Muerte es una devoción popular mexicana documentada académicamente: su culto en Tepito (CDMX) festeja del 31/10 al 02/11 y sus colores (blanca, roja, dorada, verde…) responden a peticiones distintas. Santa Muerte te orienta con respeto y fuentes serias. Festejo principal: 02/11/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/santamuerte/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "candomble",
+      "nombre": "Orixás Brasil",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4FC3E8",
+      "pais": "Brasil",
+      "resumen": "El Candomblé y la Umbanda son las religiones afrobrasileñas con millones de fieles. El orixá que rige 2027 es Iemanjá (01/01/2027 cae en viernes) y su gran fiesta es el 02/02 en Salvador, Bahía. Orixás Brasil te explica el panteón, los terreiros y la fiesta del año. Festa de Iemanjá: 02/02/2027. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/candomble/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "vudu",
+      "nombre": "Vudú",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E84A2F",
+      "pais": "Haití",
+      "resumen": "El vudú (vodú) es una religión documentada de Haití y la República Dominicana: sus espíritus (lwa) incluyen a los Guedé, dueños de la vida y la muerte, festejados el 01-02/11 (Fèt Gédé). Vudú te lo explica con respeto y sin mitos de Hollywood. Fèt Gédé: 01-02/11/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/vudu/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "pachamama",
+      "nombre": "Pachamama",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "Bolivia",
+      "resumen": "La Pachamama (Madre Tierra) se celebra el 01/08 en Argentina, Bolivia, Perú y Chile: la corpachada, ceremonia en la que se entierra una olla con comida, coca y alcohol para agradecer y pedir. Pachamama te arma tu corpachada con respeto. Próxima corpachada: 01/08/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/pachamama/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "intiraymi",
+      "nombre": "Inti Raymi",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "Perú",
+      "resumen": "El Inti Raymi (Fiesta del Sol) se celebra cada 24/06 en Cusco, Perú: la ceremonia inca recreada en Sacsayhuamán que revive el solsticio de invierno. Miles de asistentes cada año. Inti Raymi te guía: fechas, entradas, ceremonias y respeto. Próximo: 24/06/2027. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/intiraymi/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "anoneandino",
+      "nombre": "Año Nuevo Andino",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "Bolivia",
+      "resumen": "El Año Nuevo Andino (Willka Kuti, «retorno del sol») se celebra cada 21/06 en Tiwanaku, Bolivia, con el solsticio de invierno: miles de personas reciben el primer amanecer del año 5.533. En 2019 la ONU declaró el 21/06 Día Internacional del Solsticio. Próximo: 21/06/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/anoneandino/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "despacho",
+      "nombre": "Despacho",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#D96C3B",
+      "pais": "Bolivia",
+      "resumen": "El despacho es la ofrenda ceremonial andina: un paquete de papel blanco con hojas de coca, dulces, grasa, semillas y k’intus que un paqo (sacerdote andino) ofrece a la Pachamama y los apus. Despacho te guía: elementos, momentos y respeto. Despacho mensual: primer día del mes. Gratis + Pro 6 $ pago único en cripto.",
+      "vistaPrevia": "negocios/despacho/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "coca",
+      "nombre": "Lectura de Coca",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8FBF5F",
+      "pais": "Bolivia",
+      "resumen": "La lectura de la hoja de coca es la adivinación tradicional de los Andes: el yatiri (sabio andino) lee 3 hojas (k’intu) para orientar salud, trabajo y decisiones. Bolivia celebra el Día Nacional del Acullico el 11/01 (Ley 864, 2016). Coca te explica el método con respeto. Próximo: 11/01/2027. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/coca/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "illas",
+      "nombre": "Illas",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8FBF5F",
+      "pais": "Bolivia",
+      "resumen": "Las illas son los amuletos andinos de la abundancia: pequeñas figuras de llama (y otros animales) que atraen prosperidad a la casa y el ganado. Se «alimentan» con ofrendas y se renuevan en las Alasitas. Illas te guía: cuál elegir, cómo cuidarla y cuándo ofrendarle. Ofrenda mensual: primer día del mes. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/illas/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "alasitas",
+      "nombre": "Alasitas",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#8FBF5F",
+      "pais": "Bolivia",
+      "resumen": "Las Alasitas es la feria andina de la abundancia: cada 24/01 en La Paz, Bolivia, se compran miniaturas (casas, autos, billetes) para que el Ekeko, dios de la abundancia, las haga realidad. Práctica tradicional viva y documentada. Próxima feria: 24/01/2027. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/alasitas/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "todosantos",
+      "nombre": "Todos Santos",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "Bolivia",
+      "resumen": "Todos Santos (01-02/11) es la fiesta andina de los difuntos en Bolivia y Perú: la mesa de ofrendas con tantawawas (panes con forma humana), escaleras de pan, flores y la comida favorita del alma. Todos Santos te arma tu mesa con respeto. Próximo: 01-02/11/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/todosantos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "qhapaqraymi",
+      "nombre": "Qhapaq Raymi",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "Bolivia",
+      "resumen": "El Qhapaq Raymi es la ceremonia inca del solsticio de verano (21/12): cuando el sol alcanza su punto más alto en el sur. En Cusco se celebra la renovación del año andino. Qhapaq Raymi te guía: fecha, ceremonia y significado. Próximo: 21/12/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/qhapaqraymi/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "challa",
+      "nombre": "Ch'alla",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8FBF5F",
+      "pais": "Bolivia",
+      "resumen": "La ch'alla es el ritual andino del Carnaval: rociar alcohol (y confeti) a la casa, el auto, el negocio y la Pachamama para bendecir y agradecer. Martes de Carnaval 2027: 09/02. Ch'alla te guía: qué rociar, qué pedir y cómo. Próximo Carnaval: 09/02/2027. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/challa/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "amuletos",
+      "nombre": "Amuletos",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#C77DFF",
+      "pais": "LATAM",
+      "resumen": "Herradura, ojo turco, cinta roja, pata de conejo, imán, ojo de venado: cada amuleto tiene su historia y su propósito. Amuletos te dice cuál elegir según lo que quieras proteger, con la tradición documentada. Carga mensual del amuleto: primer día del mes. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/amuletos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "limpia",
+      "nombre": "Limpia",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#C77DFF",
+      "pais": "LATAM",
+      "resumen": "La limpia es la práctica de limpieza energética del curanderismo: se pasa un huevo (o hierbas) por el cuerpo para absorber la energía pesada, y luego se lee. Limpia te guía: cuándo hacerla, cómo y qué significan los resultados. Limpia de inicio de mes: primer día del mes. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/limpia/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "huevo",
+      "nombre": "Lectura de Huevo",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#C77DFF",
+      "pais": "LATAM",
+      "resumen": "Tras la limpia, el huevo se rompe en un vaso de agua y su lectura orienta: burbujas (energía), hilos (caminos), figuras (mensajes). Lectura de Huevo te guía: cómo leerlo, qué significa cada forma y qué hacer después. Lectura del domingo: cada semana. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/huevo/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "sahumerio",
+      "nombre": "Sahumerio",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#D96C3B",
+      "pais": "LATAM",
+      "resumen": "Sahumar es limpiar con humo: el copal, la ruda y el romero queman la energía pesada de la casa y los espacios. El 06/01 (Reyes) es la fecha tradicional de sahumar con incienso y mirra, como los Reyes Magos. Sahumerio te guía: qué quemar, cómo y cuándo. Próximo: 06/01/2027. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/sahumerio/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "bano",
+      "nombre": "Baño de Descarga",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#4FC3E8",
+      "pais": "LATAM",
+      "resumen": "El baño de descarga es la práctica de bañarse con hierbas (ruda, albahaca, romero) y agua florida para soltar lo pesado y renovar. La Noche de San Juan (24/06) es la cita clásica de los baños de hierbas en LATAM. Baño te guía: qué hierbas, cómo y cuándo. Próximo: 24/06/2027. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/bano/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "quemanoia",
+      "nombre": "Quema de Año Viejo",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E84A2F",
+      "pais": "LATAM",
+      "resumen": "El 31/12 se quema al Año Viejo: un muñeco que carga lo malo del año, con un testamento humorístico y 12 deseos. Tradición viva en Ecuador, Colombia, México y más. Quema te guía: qué escribir, cómo armar el muñeco y cómo quemarlo con seguridad. Próximo: 31/12/2026. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/quemanoia/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "quitapenas",
+      "nombre": "Muñecas Quitapenas",
+      "nota": 8.7,
+      "de10": "8.7/10",
+      "accent": "#C77DFF",
+      "pais": "Guatemala",
+      "resumen": "Las muñecas quitapenas son la tradición maya de Guatemala: se les cuenta una pena antes de dormir, se colocan bajo la almohada y al despertar la pena se fue. Origen: la princesa Ixmucané y el Popol Vuh. Quitapenas te guía: cómo usarlas, cuántas tener y el rito de la noche. Noche de domingo: cada semana. Gratis + Pro 3 $ pago único en cripto.",
+      "vistaPrevia": "negocios/quitapenas/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "altar",
+      "nombre": "Altar de Muertos",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#D96C3B",
+      "pais": "LATAM",
+      "resumen": "El altar de muertos es la ofrenda mexicana por excelencia (UNESCO 2008): niveles, papel picado, velas, flores de cempasúchil, comida y la foto del difunto. Altar te guía: cuántos niveles, qué va en cada uno y cuándo se monta. Próximo: 02/11/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/altar/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "exvoto",
+      "nombre": "Exvotos",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#F2A93B",
+      "pais": "LATAM",
+      "resumen": "Los exvotos son las ofrendas de agradecimiento: milagritos (figuritas de metal), retablos pintados y cabellos que se dejan al santo tras el milagro. Exvoto te guía: qué ofrecer, a quién y cómo. Cita: Basílica de Guadalupe 12/12/2026. Gratis + Pro 4 $ pago único en cripto.",
+      "vistaPrevia": "negocios/exvoto/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "curandera",
+      "nombre": "Curandera",
+      "nota": 9.3,
+      "de10": "9.3/10",
+      "accent": "#8FBF5F",
+      "pais": "LATAM",
+      "resumen": "El curanderismo es la medicina tradicional latinoamericana: ruda, manzanilla, árnica, sábila y sus usos para sustos, empachos y mal de ojo. Curandera te guía: qué hierba para qué, con la tradición documentada y sin sustituir al médico. Candelaria: 02/02/2027. Gratis + Pro 5 $ pago único en cripto.",
+      "vistaPrevia": "negocios/curandera/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "reconciliacion",
+      "nombre": "Reconcilia",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Carteras, exchanges y cobros: la conciliación de criptomonedas hecha simple. Importa, cruza y detecta diferencias antes de cerrar tu mes. Última declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/reconciliacion/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 9 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 9
+      },
+      "micropagoUSD": 9,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "clasificador",
+      "nombre": "Clasifica",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "LATAM",
+      "resumen": "Del producto a su clasificación: sistema armonizado (HS), cuenta contable o categoría de gasto. Evita rechazos en aduanas y errores de contabilidad. Última actualización del arancel: 01/01/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/clasificador/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "calculadoraimpo",
+      "nombre": "CalcImport",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E8B34A",
+      "pais": "México",
+      "resumen": "Producto + flete + arancel + impuestos: el costo real de importar a LATAM antes de comprar. Evita sorpresas de 19% de IGI y más. Actualización arancelaria: 01/01/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/calculadoraimpo/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "facturacrypto",
+      "nombre": "FacturaCrypto",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#35C3E6",
+      "pais": "LATAM",
+      "resumen": "Facturas limpias para cobrar en USDT, USDC o BTC: datos del receptor, monto y tus wallets. La factura electrónica obligatoria desde 2023 (CFDI 4.0). Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/facturacrypto/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "monitorpagos",
+      "nombre": "PayWatch",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8B8BFF",
+      "pais": "LATAM",
+      "resumen": "Monitorea tu billetera y detecta pagos recibidos en tiempo real: notificación por cobro, sin abrir el explorador. Última declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/monitorpagos/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 6 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 6
+      },
+      "micropagoUSD": 6,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "conciliador",
+      "nombre": "Conciliador",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "LATAM",
+      "resumen": "Estado de cuenta vs facturas y movimientos: detecta lo que falta, lo que sobra y lo que no cuadra. Cierre mensual sin sustos. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/conciliador/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 8 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 8
+      },
+      "micropagoUSD": 8,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "calculamel",
+      "nombre": "CalcMEL",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E8B34A",
+      "pais": "LATAM",
+      "resumen": "Comisión, envío, impuestos y publicidad: cuánto te queda de verdad por cada venta en MercadoLibre. Comisiones 2026: 10,75%–17,14%. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/calculamel/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "duplicados",
+      "nombre": "DupliCheck",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#8B8BFF",
+      "pais": "LATAM",
+      "resumen": "Facturas pagadas dos veces, movimientos duplicados, CFDI repetidos: detecta antes de que duela. Cierre mensual limpio. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/duplicados/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "validatx",
+      "nombre": "ValidaTX",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "LATAM",
+      "resumen": "Comprueba una transacción cripto antes de entregar: TX hash, red y confirmaciones. El vendedor que verifica no regala mercancía. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/validatx/",
+      "precioUSD": 99,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 3 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 3
+      },
+      "micropagoUSD": 3,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "extractor",
+      "nombre": "ExtraePDF",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#F2689B",
+      "pais": "LATAM",
+      "resumen": "PDF de tu banco → CSV/Excel con movimientos estructurados: fecha, monto, descripción. Sin transcribir a mano. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/extractor/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "xml2csv",
+      "nombre": "XML2Data",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#2FCF9F",
+      "pais": "LATAM",
+      "resumen": "Convierte tus XML de CFDI a CSV, JSON o Excel: emisor, montos, impuestos y folios estructurados. La base de tu contabilidad. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/xml2csv/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "validadorcfdi",
+      "nombre": "ValidaCFDI",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#4F8CFF",
+      "pais": "México",
+      "resumen": "RFC, régimen, montos y complementos: detecta errores en tu factura antes de presentarla. Un CFDI mal emitido se cancela o se rechaza. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/validadorcfdi/",
+      "precioUSD": 149,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 5 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 5
+      },
+      "micropagoUSD": 5,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "extractorfacturas",
+      "nombre": "FacturaData",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#F2689B",
+      "pais": "LATAM",
+      "resumen": "De la factura (PDF o XML) a los datos: emisor, montos, impuestos y folio. Sin teclear nada. Declaración anual: 30/04/2027. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/extractorfacturas/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    },
+    {
+      "slug": "proforma",
+      "nombre": "Proforma",
+      "nota": 9,
+      "de10": "9/10",
+      "accent": "#E8B34A",
+      "pais": "LATAM",
+      "resumen": "Datos del cliente, tus productos y precios: genera tu factura proforma profesional en segundos. La puerta de entrada de toda venta B2B. Gratis + Pro anual en cripto.",
+      "vistaPrevia": "negocios/proforma/",
+      "precioUSD": 129,
+      "precioManual": true,
+      "precioDesglose": {
+        "nota": "Estimación de lanzamiento (test de mercado). Producto B2C: micropago Pro de 4 $. Revisar antes de fijar el precio de licencia.",
+        "micropagoUSD": 4
+      },
+      "micropagoUSD": 4,
+      "liberado": true,
+      "fechaLiberacion": "2026-08-28",
+      "capa": "f31",
+      "capaNombre": "Fase 3.1 · Incubadora",
+      "cohorte": "testeados",
+      "modificado": "2026-08-28"
+    }
+  ]
+}

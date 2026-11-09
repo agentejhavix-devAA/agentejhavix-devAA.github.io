@@ -1,0 +1,23 @@
+# FacturaData
+
+FacturaData — tu factura a datos estructurados, sin teclear. en LATAM — Escribir facturas a mano es perder tiempo y meter errores. Dato duro: error manual 1-2%; declaración anual 30/04/2027. Herramienta en el navegador contra la carpeta que no deduce. Gratis 10/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fiscal · Extracción.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/Factura/solicita_requisitos.htm (SAT — Requisitos de la factura)
+2. https://facturama.mx/blog/factura-4-0-cfdi-cambios-sat/ (Facturama — Estructura del CFDI 4.0)
+3. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+4. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+5. https://www.upseller.com/es/blog-article-642 (UpSeller — CFDI 4.0)
+
+## Precio
+- Gratis: 10 extracciones al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Extracciones ilimitadas; Lotes de facturas; Exportación contable; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Verifica la extracción contra el original: el comprobante oficial es tu factura. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

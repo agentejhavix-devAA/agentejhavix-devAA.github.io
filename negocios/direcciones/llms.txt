@@ -1,0 +1,23 @@
+# DirOK
+
+DirOK — tu dirección a formato estructurado. en LATAM — La misma calle escrita de 5 formas es 5 direcciones. Dato duro: seis campos universales (calle, número, colonia, ciudad, estado, CP); formatos locales por país. Herramienta en el navegador contra el campo libre. Gratis 50/mes + Pro anual (3 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Datos · Normalización.
+- Fecha límite / cita: Etiquetas de tu próxima entrega.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.correosdemexico.gob.mx/ (Correos de México — Códigos postales)
+2. https://www.correos.cl/ (Correos de Chile)
+3. https://www.4-72.com.co/ (4-72 — Colombia)
+4. https://www.correoargentino.com.ar/ (Correo Argentino)
+5. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+
+## Precio
+- Gratis: 50 direcciones al mes.
+- Pro (3 USD pago único, cripto vía NOWPayments): Direcciones ilimitadas; Base completa de una vez; Exportación limpia; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La dirección definitiva la confirma el cliente: normaliza, pero verifica antes de enviar. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

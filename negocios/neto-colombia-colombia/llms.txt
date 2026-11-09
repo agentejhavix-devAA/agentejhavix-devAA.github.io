@@ -1,0 +1,25 @@
+# CajaClara · Colombia
+
+> En Colombia un independiente no se queda con lo que factura: aporta salud (12,5%) y pensión (16%) sobre la base IBC —mínimo el 40% de sus ingresos— y cada movimiento bancario paga GMF 4×1000. Introduce tus ingresos y calcula el líquido real antes de aceptar un contrato.
+
+- **Mercado:** Colombia
+- **Fuente de datos viva:** UGPP — Seguridad social para trabajadores independientes (salud 12,5%, pensión 16%, base IBC 40%)
+
+- **Sistema de diseño:** Específico (de la investigación del spec) (Fraunces (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+La calculadora separa ingresos, base IBC, aportes de salud y pensión, y el GMF, para mostrar cuánto queda disponible de verdad cada mes. También resuelve cuánto debes facturar para que, tras los aportes obligatorios, te quede el líquido que necesitas. Es una simulación con las tarifas publicadas por la UGPP y el GMF de la DIAN: no sustituye la planilla PILA ni el consejo de un contador.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- UGPP — Seguridad social para trabajadores independientes (salud 12,5%, pensión 16%, base IBC 40%) (https://www.ugpp.gov.co/seguridad-social-trabajadores-independientes/)
+- UGPP — Calculadora oficial del Ingreso Base de Cotización (IBC) (https://www.ugpp.gov.co/calculadora-ibc)
+- DIAN — Gravamen a los Movimientos Financieros (GMF 4×1000) (https://www.dian.gov.co/impuestos/personas/Paginas/gravamen_movimientos_financieros.aspx)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: UGPP — Seguridad social para trabajadores independientes (salud 12,5%, pensión 16%, base IBC 40%). (https://www.ugpp.gov.co/seguridad-social-trabajadores-independientes/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la calculadora + Pro pago único (19,90 USD) — sin coste oculto ni letra pequeña.

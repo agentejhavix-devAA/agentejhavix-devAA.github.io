@@ -1,0 +1,30 @@
+# Beleg — E-Rechnung Deutschland
+
+> Deine E-Rechnung-Pflicht, auf den Tag genau. Educational tool (not tax advice).
+> URL: https://beleg.attenciona.com/
+> Language: German (de) · Audience: German businesses, freelancers, Kleinunternehmer
+> Verified: 13 August 2026
+
+## What this tool does
+A 3-question browser-only checker that returns your exact German E-Rechnung obligations:
+- Receive e-invoices: mandatory since 01.01.2025 (in force, no exceptions, incl. Kleinunternehmer §19 UStG)
+- Issue e-invoices: from 01.01.2027 for businesses with prior-year turnover > EUR 800,000; from 01.01.2028 for all others
+- Kleinunternehmer (§19 UStG): exempt from issuing, still must receive
+- Formats: XRechnung, ZUGFeRD 2.0.1+, Peppol BIS Billing 3.0 (all EN 16931)
+- Checklist: format choice, validation, GoBD archiving (8 years, unaltered XML)
+- Risks: loss of input VAT deduction for the recipient; fines up to EUR 5,000 (incl. §26a UStG); §379 AO up to EUR 25,000
+
+## Facts with sources
+- Receive obligation since 01.01.2025; issue 01.01.2027 (>800k) / 01.01.2028 (all): https://www.vatupdate.com/2026/07/21/germany-e-invoicing-b2b-mandate-timeline-and-compliance/
+- European Commission overview: https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/467108886/eInvoicing+in+Germany
+- SME deadlines: https://www.hamburger-software.de/blog/artikel/e-rechnung-2027-was-kmu-jetzt-wissen-und-tun-sollten
+- Fines §26a UStG up to EUR 5,000: https://www.ihp-media.com/ratgeber/e-rechnung-pflicht-2027-unternehmen-800000-euro/
+- Formats & exceptions: https://www.cleartax.com/de/e-rechnung
+
+## Gates (Fase 3 · attenciona incubator)
+P1 ✅ research (5 real sources, primary/official, all verified HTTP 200)
+P2 ✅ design (Técnico-geométrico: Space Grotesk + Inter, self-hosted; Frist-Stempel functional signature; palette from German SME tooling language DATEV/Finanzamt red)
+P3 ✅ monetization (freemium + Pro $7 one-time crypto via ProWidget, real checkout)
+P4 ✅ legal (consent, editorial responsibility AI Act 50.4, not-tax-advice, verification date)
+P5 ✅ fiscal (Spain · IVA 21% · registrations documented)
+P6 ✅ vigencia (deadline active 13/08/2026; receive obligation already in force since 01/01/2025)

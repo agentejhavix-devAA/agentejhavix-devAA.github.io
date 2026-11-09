@@ -1,0 +1,20 @@
+# Luz justa
+
+El precio de la luz cambia cada hora y el 90% del recibo se decide en las horas que eliges. Luz justa cruza tu potencia y tus horas de consumo con el PVPC hora a hora (dato oficial REData/REE) para decirte cuándo te sale más barato enchufar.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · PVPC hora a hora: El Precio Voluntario para el Pequeño Consumidor se publica cada día, hora a hora, por REData (REE). Dato oficial, sin inventar.
+- En vigor · Dolor #1 del hogar: El precio de la luz es el dolor energético más repetido del hogar europeo: la diferencia entre enchufar a las 14:00 y a las 22:00 se ve en el recibo.
+
+## Fuentes citadas
+
+- https://www.ree.es/es/datos/mercados
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 9.9 € pago único en cripto.

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/sahih/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sahih · ¿Ese precio en dólares está actualizado, o es viejo?</title>
+<meta name="description" content="Sahih te dice el tipo de cambio real EGP/USD de hoy, para saber si un precio en dólares en Egipto está actualizado o inflado. Sin registro." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- PROTOTIPO LOCAL — noindex a propósito: no está publicado, es una prueba de concepto Fase 3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Negocio Fase 3 nº4 (tras Zafra, Padala, Sejuta). Sistema de diseño: pareja y técnica DISTINTAS a los
+    3 anteriores (Cálido-redondeado+Pictograma literal / Editorial-serif+Monograma-badge /
+    Técnico-geométrico+Espacio negativo).
+    Pareja: Mono-crypto (JetBrains Mono para titulares + Inter cuerpo) — "dato duro", encaja con un
+    negocio que vende precisamente eso: el dato oficial frente a la ambigüedad.
+    Técnica de logo: Sustracción — una etiqueta de precio sólida con un "$" recortado en negativo dentro,
+    mostrando que lo que hay debajo del precio en dólares no siempre es lo que parece.
+    Investigación de audiencia real: Fawry, el mayor fintech/e-payment de Egipto, usa amarillo + azul
+    (fuente citada al pie). Paleta INSPIRADA en esa referencia real, no clonada.
+  */
+  :root{
+    --bg:#fffdf5; --card:#ffffff; --line:#ece4c9; --line2:#dfd4a8;
+    --txt:#1a1710; --muted:#615a45; --soft:#928a6c;
+    --azul:#0b3d91; --azul-d:#072a66; --sol:#f2b705; --sol-l:#fff6dc;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp{font-family:'JetBrains Mono','Inter',monospace}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{max-width:100%}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:18px}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px;font-weight:600;font-family:'Inter',sans-serif}
+  nav a:hover{color:var(--azul)}
+
+  .badge-fase{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--azul-d);background:var(--sol-l);border:1px solid #f0dd97;
+    border-radius:999px;padding:6px 13px;margin-bottom:20px;font-family:'Inter',sans-serif}
+
+  .hero{padding:56px 0 30px;max-width:700px}
+  h1{font-size:clamp(26px,4.4vw,40px);line-height:1.2;margin:0 0 18px;font-weight:700;letter-spacing:-.01em}
+  h1 span{color:var(--azul)}
+  .lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px;max-width:560px;font-family:'Inter',sans-serif}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--azul);color:var(--sol);font-weight:700;
+    font-size:15px;padding:14px 22px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:.15s;font-family:'JetBrains Mono',monospace}
+  .btn:hover{background:var(--azul-d)}
+  .fud{font-size:13.5px;color:var(--soft);font-family:'Inter',sans-serif}
+
+  section{padding:38px 0}
+  .section-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azul);margin:0 0 10px;font-family:'Inter',sans-serif}
+  h2{font-size:clamp(20px,2.8vw,26px);margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
+
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pas .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;font-family:'Inter',sans-serif}
+  .pas .card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--azul);margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+  .pas .card p{margin:0;color:var(--txt);font-size:14.5px}
+  @media(max-width:760px){.pas{grid-template-columns:1fr}}
+
+  .demo{background:var(--azul-d);color:#eaf1ff;border-radius:18px;padding:30px 28px;margin-top:8px}
+  .demo .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.12);border-radius:999px;padding:5px 11px;margin-bottom:14px;font-family:'Inter',sans-serif}
+  .demo h3{margin:0 0 14px;font-size:18px;font-family:'JetBrains Mono',monospace}
+  .rate-box{display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  .rate-box .n{font-size:30px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--sol)}
+  .rate-box .l{font-size:12.5px;color:rgba(234,241,255,.7);font-family:'Inter',sans-serif}
+  .check{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;font-family:'Inter',sans-serif}
+  .check input{font:inherit;font-size:16px;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff;width:140px;font-family:'JetBrains Mono',monospace}
+  .check .res{font-size:14px;color:var(--sol);font-weight:600}
+  .demo-note{font-size:12px;color:rgba(234,241,255,.6);margin-top:14px;line-height:1.55;font-family:'Inter',sans-serif}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;font-family:'Inter',sans-serif}
+  .box h3{margin:0 0 12px;font-size:16px;font-family:'JetBrains Mono',monospace}
+  .box ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .box li{margin:6px 0}
+  .box table{width:100%;font-size:13.5px;border-collapse:collapse;margin-top:6px}
+  .box td{padding:6px 4px;border-top:1px solid var(--line)}
+
+  .honest{background:var(--sol-l);border:1px solid #f0dd97;border-radius:var(--radius);padding:20px 22px;font-size:14px;color:#4a3a05;font-family:'Inter',sans-serif}
+  .honest b{color:#2e2400}
+
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0;font-family:'Inter',sans-serif}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+  .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-family:'Inter',sans-serif}
+  @media(max-width:760px){.gates{grid-template-columns:1fr 1fr}}
+  .gate{border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:12.5px;text-align:center}
+  .gate .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px;font-family:'Inter',sans-serif}
+  .gate.ok .st{color:#0f8a45} .gate.pend .st{color:#a06a00}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 50px;color:var(--soft);font-size:12.5px;font-family:'Inter',sans-serif}
+  footer a{color:var(--azul);text-decoration:underline}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <!-- Sustracción: etiqueta de precio sólida con un "$" recortado en negativo dentro -->
+        <path d="M6 6 H22 L27 16 L22 26 H6 Z" fill="#0b3d91"/>
+        <circle cx="10" cy="10" r="1.6" fill="#fff6dc"/>
+        <path d="M17.2 11.5 c0-1.3-1.1-2-2.4-2s-2.2.7-2.2 1.7c0 2.6 5.2 1.2 5.2 4 0 1.1-1 1.9-2.4 1.9s-2.6-.8-2.6-2.1M15 8.6v1M15 18.4v1"
+          stroke="#fff6dc" stroke-width="1.4" fill="none" stroke-linecap="round" transform="translate(0,0)"/>
+      </svg>
+      Sahih
+    </div>
+    <nav><a href="#como">Cómo funciona</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge-fase">◈ Attenciona · Fase 3 · prototipo</span>
+    <h1>¿Ese precio en dólares está <span>actualizado</span>, o es de hace 3 meses?</h1>
+    <p class="lead">La libra egipcia se mueve todo el año. Sahih te da el tipo de cambio real de hoy en
+      2 segundos, para que sepas si el "$X" que te están cobrando ya lo tiene en cuenta — o no.</p>
+    <div class="cta-row">
+      <a class="btn" href="#como">Ver tipo de cambio de hoy →</a>
+      <span class="fud">Sin registro · tipo de cambio real · no pide tus datos de pago</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">El problema</p>
+    <div class="pas">
+      <div class="card"><b>Problema</b><p>Muchos precios turísticos en Egipto se cotizan en dólares — pero algunos se actualizan con el tipo de cambio del día y otros se quedan fijos durante meses.</p></div>
+      <div class="card"><b>Se agrava</b><p>La libra egipcia perdió más del 70% de su valor desde 2022, bajo un esquema de cambio más flexible respaldado por el FMI — el tipo de cambio real cambia más de lo que cambian los carteles de precios.</p></div>
+      <div class="card"><b>Solución</b><p>El tipo de cambio oficial de hoy, al segundo, para comparar contra lo que te están cotizando — sin adivinar.</p></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <p class="section-tag">Cómo funciona</p>
+    <h2>El dato duro, no el cartel</h2>
+    <div class="demo">
+      <span class="tag">Vista previa ilustrativa</span>
+      <h3>Tipo de cambio de referencia</h3>
+      <div class="rate-box">
+        <div><span class="n">1 USD ≈ 49 EGP</span></div>
+        <div class="l">ejemplo — el real varía según el día, banco oficial vs. mercado</div>
+      </div>
+      <div class="check">
+        <div><label style="display:block;font-size:12px;color:rgba(234,241,255,.7);margin-bottom:6px">Te cotizan (USD)</label>
+          <input id="usd" type="number" value="20" /></div>
+        <span class="res" id="res">≈ 980 EGP con el tipo de hoy</span>
+      </div>
+      <p class="demo-note">Esta caja es una <b>maqueta ilustrativa</b> para revisar el concepto en local: usa
+        un tipo de cambio de ejemplo fijo, no una llamada real a ninguna API (los navegadores bloquean
+        <code>fetch</code> a APIs externas desde un archivo local <code>file://</code>). La integración real
+        usaría <b>Frankfurter</b> o <b>exchangerate.host</b> (gratis, sin clave, mismo patrón que Zafra,
+        Padala y Sejuta) para el tipo EGP/USD del día.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="box">
+        <h3>La brecha turista/local, documentada</h3>
+        <table>
+          <tr><td>Koshari en puesto local</td><td>≈ 2 USD</td></tr>
+          <tr><td>Mismo plato en restaurante turístico</td><td>≈ 12 USD</td></tr>
+        </table>
+        <p style="font-size:12.5px;color:var(--soft);margin-top:8px">La diferencia, según viajeros que documentan su gasto real, es básicamente "el mantel". No es una estafa ilegal — es una brecha de precio conocida, y Sahih no la inventa: la muestra con fuente.</p>
+      </div>
+      <div class="box">
+        <h3>Beneficios / características</h3>
+        <ul>
+          <li>Tipo de cambio oficial de hoy, al instante</li>
+          <li>Contexto real de la brecha turista/local, con fuente</li>
+          <li>Sin registro, sin guardar tu ubicación ni tus pagos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="honest">
+    <b>Aviso honesto:</b> Sahih da el tipo de cambio oficial de referencia, no negocia precios por vos ni
+    garantiza que un comercio concreto vaya a cobrarte "bien" — el regateo en zocos como Jan el-Khalili es
+    parte normal de la cultura, no algo que una app deba eliminar.
+  </section>
+
+  <section id="precios">
+    <p class="section-tag">Precios</p>
+    <h2>Gratis para consultar, cripto para guardar el histórico</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Tipo de cambio EGP/USD de hoy, ilimitado</li>
+          <li>La brecha turista/local, siempre visible con fuente</li>
+          <li>Sin registro</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Pro (boceto — no conectado en este prototipo)</h3>
+        <ul>
+          <li>Historial del tipo de cambio durante tu viaje</li>
+          <li>Alerta si el tipo de cambio se mueve fuerte</li>
+          <li>Pago único en cripto (USDT/USDC/BTC/ETH — sin Solana, misma regla que el resto del holding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <p class="section-tag">Preguntas</p>
+    <h2>Antes de que preguntes</h2>
+    <details><summary>¿Es el tipo de cambio en vivo al segundo?</summary><p>No, es el dato oficial de referencia del día — suficiente para comparar contra un precio cotizado en dólares, no para especular con el tipo de cambio.</p></details>
+    <details><summary>¿Me dice si me están timando?</summary><p>No decide eso por vos. Te da el número real para que decidas si un precio en dólares tiene sentido con el tipo de cambio de hoy.</p></details>
+    <details><summary>¿Por qué cripto y no libras egipcias?</summary><p>Para que la versión Pro no dependa de tarjetas internacionales ni bancos locales, igual que el resto de negocios de Attenciona.</p></details>
+    <details><summary>¿Guardáis mi ubicación o mis pagos?</summary><p>No. La consulta es de un tipo de cambio público, no pide ni guarda dónde estás ni cuánto pagaste.</p></details>
+  </section>
+
+  <section>
+    <p class="section-tag">Estado real (5 puertas de Fase 3)</p>
+    <div class="gates">
+      <div class="gate ok"><span class="st">✓ hecho</span>Investigación<br>(devaluación EGP + brecha turista/local, con fuente)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Diseño<br>(audiencia investigada — referencia Fawry citada)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Monetización<br>(freemium: check gratis + Pro — especificación construible)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Legal<br>(consentimiento + privacidad + aviso legal enlazados)</div>
+    </div>
+  </section>
+
+  <footer>
+    Prototipo local de Fase 3 — no publicado, no indexado, no conectado a producción.
+    Fuentes: <a href="https://internationalbanker.com/brokerage/weak-pound-proving-a-distinct-hurdle-for-egypts-struggling-economy/" target="_blank" rel="noopener">International Banker — libra egipcia</a> ·
+    <a href="https://semelegantvoyage.com/en-us/egypt-currency-guide-egyptian-pound-exchange/" target="_blank" rel="noopener">SEV — guía de moneda Egipto</a> ·
+    <a href="https://www.neverendingfootsteps.com/cost-of-travel-egypt-budget/" target="_blank" rel="noopener">Never Ending Footsteps — coste real de viajar</a> ·
+    paleta inspirada en <a href="https://www.fawry.com/" target="_blank" rel="noopener">Fawry</a> (fintech líder en Egipto).
+    <br><br>
+    Legal: <a href="../privacidad.html" rel="noopener">Privacidad</a> · <a href="../aviso-legal.html" rel="noopener">Aviso legal · Responsable editorial (Art. 50(4) AI Act)</a>.
+    <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=0a15475c71" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+<script>
+  // Solo ilustrativo: tipo de cambio de ejemplo fijo, para revisar el concepto sin llamar a ninguna API real.
+  const TC_EJEMPLO = 49; // ejemplo: 1 USD ~ 49 EGP
+  function actualizar(){
+    const usd = parseFloat(document.getElementById('usd').value) || 0;
+    document.getElementById('res').textContent = `≈ ${Math.round(usd * TC_EJEMPLO)} EGP con el tipo de hoy`;
+  }
+  document.getElementById('usd').addEventListener('input', actualizar);
+  actualizar();
+</script>
+<div id="consent" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:99;max-width:640px;margin:0 auto;background:#1c1714;color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.32);font-family:inherit;font-size:13px;line-height:1.5">
+  <p style="margin:0 0 10px;color:rgba(255,255,255,.78)">Este prototipo no carga servicios de terceros (analítica, enlaces de afiliado) hasta que consientas. Tu elección se guarda en este navegador. Más en <a href="../privacidad.html" style="color:#f2b705;text-decoration:underline">privacidad</a> y <a href="../aviso-legal.html" style="color:#f2b705;text-decoration:underline">aviso legal</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="consent-ok" style="background:#e8590c;color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Aceptar</button>
+    <button id="consent-no" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Solo lo necesario</button>
+  </div>
+</div>
+<script>
+  (function(){ var k='attenciona_consent'; var el=document.getElementById('consent'); var estado=null; try{estado=localStorage.getItem(k);}catch(e){}
+    function cerrar(v){ try{localStorage.setItem(k,v);}catch(e){} el.remove(); }
+    var ok=document.getElementById('consent-ok'), no=document.getElementById('consent-no');
+    if(ok) ok.addEventListener('click',function(){cerrar('ok');});
+    if(no) no.addEventListener('click',function(){cerrar('no');});
+    if(estado) el.remove();
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Ksefa — landing de comprobación de obligación KSeF (Polonia)
+# Generado por la Incubadora de attenciona. Sin contenido oculto.

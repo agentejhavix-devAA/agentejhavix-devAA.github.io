@@ -1,0 +1,3 @@
+# Cripto-fiscal global
+Comprobador de la obligación fiscal de criptoactivos por país. Cubre: Brasil, Colombia, Argentina, Chile, Estados Unidos, India, Reino Unido, Alemania, Emiratos Árabes Unidos, Nigeria, Australia, España, Canadá, México, Japón, Italia, Países Bajos, Portugal, Nueva Zelanda, Sudáfrica, Francia.
+Cada país cita su autoridad fiscal oficial. No es asesoría.

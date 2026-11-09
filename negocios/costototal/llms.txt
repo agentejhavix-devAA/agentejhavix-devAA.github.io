@@ -1,0 +1,23 @@
+# CostoTotal
+
+CostoTotal — producto + logística + impuestos = tu costo de verdad. en LATAM — El costo no es lo que pagaste: son tres capas. Dato duro: un importado «barato» cuesta 30-60% más en tu almacén (IGI+IVA+agente). Herramienta en el navegador contra el margen fantasma. Gratis 10/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Comercio · Costos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://horizonteaduanal.com.mx/guia-practica-como-calcular-aranceles-para-importaciones-en-mexico/ (Horizonte Aduanal — Aranceles)
+2. https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf (SAT — RGCE 2026)
+3. https://app.spomsolutions.com/blog/comisiones-mercadolibre-guia-2026 (SpomBridge — Comisiones MEL 2026)
+4. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+5. https://www.datasur.com/requisitos-para-importar-a-mexico-2026/ (DataSur — Requisitos 2026)
+
+## Precio
+- Gratis: 10 productos al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Productos ilimitados; Costos por importación; Exportación de precios; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Los impuestos y aranceles dependen de tu operación: verifica con tu contador y tu agente. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

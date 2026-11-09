@@ -1,0 +1,26 @@
+# Reclama
+
+Reclama (attenciona) es una herramienta de autoservicio que ayuda a reclamar en España sin ceder comisión a una gestora. Responde 3 preguntas y te da la vía oficial exacta (consumo, telecomunicaciones o banca), los plazos legales y te prepara el escrito de reclamación para que lo presentes tú y te quedes el 100% de lo reclamado. El diagnóstico corre en el navegador; el escrito redactado es de pago único en cripto.
+
+## Datos clave (verificado 16 de agosto de 2026)
+
+- Consumo: la hoja de reclamaciones obliga a la empresa a responder en 10 días hábiles. Si no hay acuerdo, el Sistema Arbitral de Consumo (RD 713/2024) es gratuito y voluntario y termina en un laudo vinculante (máx. 6 meses).
+- Telecomunicaciones: hay que reclamar al SAC del operador en 1 mes desde el hecho; si no responde o no resuelve, se acude a la Oficina de Atención al Usuario de Telecomunicaciones en 3 meses (gratuito, telemático; resuelve en máx. 6 meses).
+- Banca: el SAC de la entidad responde en 15 días hábiles (servicios de pago) o 1 mes (resto); después se reclama al Banco de España por el Portal del Cliente Bancario (informe en ~4 meses).
+- Ley 10/2025 de atención a la clientela: las empresas tienen hasta el 28 de diciembre de 2026 para adaptarse.
+
+## Precio
+
+- Gratis: la vía que te aplica, los plazos y el paso a paso, con fuentes oficiales.
+- Pro (3 USD, pago único en cripto USDT/USDC): el escrito de reclamación redactado con tu caso y la base legal citada, listo para presentar.
+
+## Fuentes oficiales
+
+1. https://www.dsca.gob.es/es/consumo/como-reclamar-conflicto-consumo/sistema-arbitral-consumo (Sistema Arbitral de Consumo, RD 713/2024)
+2. https://usuariosteleco.digital.gob.es/reclamaciones (Oficina de Atención al Usuario de Telecomunicaciones)
+3. https://clientebancario.bde.es/pcb/es/blog/quiero_reclamar_contra_banco_plazos.html (Banco de España — plazos para reclamar)
+4. https://www.consumoresponde.es/actualidad/noticias/hoja-quejas-reclamaciones-arbitraje-principales-recursos-solucionar-conflictos-consumo (hoja de reclamaciones y Ley 10/2025)
+
+## No es asesoramiento
+
+Reclama es una herramienta divulgativa basada en las vías oficiales del Estado español. Para casos complejos o de mucho importe, consulta con un profesional. Contenido asistido por IA verificado antes de publicar (art. 50.4 del Reglamento de IA de la UE). Responsable editorial: attenciona (Holding), España.

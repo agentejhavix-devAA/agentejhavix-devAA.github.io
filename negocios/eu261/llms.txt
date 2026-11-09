@@ -1,0 +1,20 @@
+# EU261 vuelos
+
+Vuelo retrasado o cancelado: te deben entre 250 € y 600 € según la distancia, y la mayoría no lo reclama. EU261 te dice en 3 preguntas si te corresponde y cuánto, contra el Reglamento (CE) 261/2004.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · 250–600 €: Compensación según distancia del vuelo: 250 € (≤1.500 km), 400 € (1.500–3.500 km), 600 € (>3.500 km).
+- Reglamento (CE) 261/2004 · Derecho del pasajero: Retrasos de 3+ horas, cancelaciones y denegación de embarque generan derecho a compensación, salvo causas extraordinarias.
+
+## Fuentes citadas
+
+- https://eur-lex.europa.eu/eli/reg/2004/261/oj
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 4 $ pago único en cripto.

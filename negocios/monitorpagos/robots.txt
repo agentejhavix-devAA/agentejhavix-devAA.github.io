@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monitorpagos.attenciona.com/llms.txt

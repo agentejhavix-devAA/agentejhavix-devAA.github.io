@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Italia
+
+> Traduce la norma oficial de cripto · impuestos en Italia a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Italia
+- **Fuente de datos viva:** Agenzia delle Entrate (Italia) — Regolarizzazione e quadro RW cripto-attività
+
+- **Sistema de diseño:** Técnico-geométrico (Space Grotesk (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Agenzia delle Entrate (Italia) — Regolarizzazione e quadro RW cripto-attività (https://www.agenziaentrate.gov.it/portale/web/guest/)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Agenzia delle Entrate (Italia) — Regolarizzazione e quadro RW cripto-attività. (https://www.agenziaentrate.gov.it/portale/web/guest/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

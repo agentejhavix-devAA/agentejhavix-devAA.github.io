@@ -1,0 +1,23 @@
+# ReciboPago
+
+ReciboPago — tu recibo profesional, listo en segundos. en LATAM — Cobrar sin recibo es dejar a medias la venta. Dato duro: cuatro datos innegociables (quién, cuánto, por qué, cuándo); declaración 30/04/2027. Herramienta en el navegador contra el pago sin registro. Gratis 10/mes + Pro anual (3 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Recibos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/Factura/solicita_requisitos.htm (SAT — Requisitos de la factura)
+2. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+3. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto LATAM)
+4. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+5. https://www.gob.mx/sat/acciones-y-programas/personas-fisicas-144637 (SAT — Personas físicas)
+
+## Precio
+- Gratis: 10 recibos al mes.
+- Pro (3 USD pago único, cripto vía NOWPayments): Recibos ilimitados; Tu logo y datos; Historial de cobros; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. El recibo no es comprobante fiscal: donde aplique, emite tu factura con tu PAC. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

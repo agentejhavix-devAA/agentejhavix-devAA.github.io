@@ -1,0 +1,23 @@
+# ExtraePDF
+
+ExtraePDF — tu estado de cuenta en datos estructurados, listo para usar. en LATAM — Transcribir 200 movimientos a mano es perder la tarde y meter errores. Dato duro: error manual 1-2%; declaración anual 30/04/2027. Herramienta en el navegador contra la transcripción. Gratis 2/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Datos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+2. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+3. https://blog.alegra.com/colombia/plazos-para-emitir-facturas-electronicas/ (Alegra — Facturación electrónica)
+4. https://www.bbva.com/es/mx/empresas/calendario-fiscal-2026-para-personas-morales-en-mexico-y-fechas-esenciales-del-sat/ (BBVA — Calendario fiscal)
+5. https://facturama.mx/blog/factura-4-0-cfdi-cambios-sat/ (Facturama — CFDI 4.0)
+
+## Precio
+- Gratis: 2 extracciones al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Extracciones ilimitadas; Archivos largos; Exportación Excel; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Verifica siempre la extracción contra tu saldo original: los datos que uses son tu responsabilidad. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

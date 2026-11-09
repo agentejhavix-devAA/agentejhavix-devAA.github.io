@@ -1,0 +1,30 @@
+# Quartly
+
+> Making Tax Digital for Income Tax is live since 6 April 2026. If your qualifying income is over £50,000 you must send HMRC quarterly updates (5 August, 5 November, 5 February, 5 May). Quartly checks if you're in scope and stamps your four deadlines + final declaration. Everything runs in the browser.
+
+- **Market:** United Kingdom · sole traders, freelancers and landlords
+- **Source of live data:** HMRC guidance (gov.uk) verified 12/08/2026
+- **Design system:** Cálido-redondeado (Baloo 2 + Inter, self-hosted) · modular 2x2 quarter logo · warm paper + ink navy + FreeAgent orange
+
+## What it solves
+MTD for Income Tax replaces paper self-assessment for in-scope sole traders and landlords: digital records + 4 quarterly updates per year + a final declaration. Thresholds: £50,000 from 6 April 2026, £30,000 from 6 April 2027, £20,000 from 6 April 2028. Penalties are points-based (1 point per missed update, £200 at 4 points), with a 2026-27 tolerance for late quarterly updates — but not for late final declarations.
+
+## Comparison
+- Quartly · Free + Pro $6 · 1 minute · In your browser
+- GOV.UK step-by-step · Free · 30-60 min · Reading
+- Accountant / MTD software (FreeAgent, Xero) · Subscription · Setup · Ongoing filing
+
+## Cited sources
+- GOV.UK — MTD for Income Tax step by step (HMRC) (https://www.gov.uk/government/collections/making-tax-digital-for-income-tax-for-businesses-step-by-step)
+- GOV.UK — Find out if and when you need to use MTD (https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax)
+- QuickBooks UK — MTD penalties explained (https://quickbooks.intuit.com/uk/blog/making-tax-digital-compliance-penalties/)
+- Acctek — MTD quarterly reporting deadlines (https://www.acctek.co.uk/mtd-guide/mtd-quarterly-reporting/)
+- Propertymark — 14 days remain to prepare (https://www.propertymark.co.uk/resource/14-days-remain-to-prepare-for-new-tax-rules.html)
+
+## Gate status
+P1 ✅ research (primary HMRC sources cited, verified 12/08/2026)
+P2 ✅ design (cálido-redondeado identity, functional quarter card, no template, no emojis)
+P3 ✅ monetization (freemium + Pro $6 one-time crypto via ProWidget, real checkout)
+P4 ✅ legal (consent, editorial responsibility AI Act 50.4, not-tax-advice, verification date)
+P5 ✅ fiscal (Spain · IVA 21% · registrations documented)
+P6 ✅ vigencia (MTD live since 06/04/2026 — obligation in force, Q1 deadline 05/08/2026 just passed, Q2 05/11/2026 upcoming)

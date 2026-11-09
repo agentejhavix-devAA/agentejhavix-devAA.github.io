@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/cambio-confuso-global/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cambio confuso · global · ¿Te están cobrando de más al…</title>
+<meta name="description" content="Comprueba el tipo de cambio que te ofrecen contra el tipo oficial del BCE del día, país por país. 6 países cubiertos, cada uno con su fuente oficial." />
+<meta property="og:title" content="Cambio confuso · global · 6 países" />
+<meta property="og:description" content="Comprueba el tipo de cambio que te ofrecen contra el tipo oficial del BCE del día, país por país. 6 países cubiertos, cada uno con su fuente oficial." />
+<meta name="robots" content="index,follow" />
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--bg:#fffdf5;--surface:#ffffff;--ink:#1a1710;--muted:#615a45;--line:#ece4c9;--accent:#0b3d91;--accent2:#f2b705;--radius:14px;--maxw:1040px;--disp:"JetBrains Mono",monospace;--cuerpo:Inter,system-ui,sans-serif}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--cuerpo);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--disp);line-height:1.12;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  p{margin:0}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;font-family:var(--disp)}
+  .hero{padding:52px 0 24px;max-width:760px}
+  .eyebrow{display:inline-flex;gap:8px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 13px;margin-bottom:20px}
+  h1{font-size:clamp(30px,5vw,46px);margin-bottom:16px}
+  .bluf{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin-bottom:24px;max-width:64ch}
+  .cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:13px 22px;border-radius:12px;text-decoration:none}
+  section{padding:40px 0}
+  .sec-tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-size:clamp(22px,3vw,30px);margin-bottom:18px}
+  .selector{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 8px}
+  .selector label{font-weight:700;font-size:14px;color:var(--muted)}
+  select{font:inherit;font-weight:700;padding:12px 16px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);min-width:260px;cursor:pointer}
+  select:focus{outline:2px solid var(--accent);outline-offset:2px}
+  .pais-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-top:10px}
+  .pais-card h3{font-size:20px;margin-bottom:12px}
+  .pais-card .fuente{font-size:13px;color:var(--muted);margin-top:12px;word-break:break-all}
+  .widget{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:6px}
+  .w-hint{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .w-check{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;cursor:pointer}
+  .w-check:last-of-type{border-bottom:none}
+  .w-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:12px 20px;border-radius:12px;border:none;cursor:pointer;margin-top:16px}
+  .w-res{margin-top:14px;font-size:15px;font-weight:600;min-height:22px}
+  .w-res.ok{color:#0b7a3b}.w-res.mid{color:#a06a00}.w-res.bad{color:#b3261e}
+  .w-note{font-size:13px;color:var(--muted);margin-top:12px}
+  .w-big{font-size:26px;font-weight:800;font-family:var(--disp);margin-bottom:6px}
+  .w-big .w-unit{font-size:13px;color:var(--muted);font-weight:600;margin-left:6px}
+  .w-row{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .w-row input{font:inherit;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;max-width:160px;text-align:right}
+  .w-row b{font-family:var(--disp);font-size:16px}
+  .monet{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:760px){.monet{grid-template-columns:1fr}}
+  .mcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .mcard .k{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+  .mcard .v{font-weight:800;font-size:17px;margin-bottom:6px}
+  .mcard p{color:var(--muted);font-size:14px}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;background:var(--surface)}
+  .faq-item summary{cursor:pointer;font-weight:700;font-size:15px}
+  .faq-item p{margin-top:10px;color:var(--muted);font-size:14.5px}
+  .gates{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .gp{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;background:var(--surface)}
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Cambio confuso","item":"https://www.attenciona.com/negocios/cambio-confuso-global/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Cambio confuso","url":"https://www.attenciona.com/negocios/cambio-confuso-global/","dateModified":"2026-08-13"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"attenciona","url":"https://www.attenciona.com/","foundingDate":"2026"}</script>
+<!--/BUILD:fase4-schema-->
+<meta property="og:url" content="https://www.attenciona.com/negocios/cambio-confuso-global/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="attenciona" />
+<meta property="og:image" content="https://www.attenciona.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cambio confuso · global · ¿Te están cobrando de más al…" />
+<meta name="twitter:description" content="Comprueba el tipo de cambio que te ofrecen contra el tipo oficial del BCE del día, país por país. 6 países cubiertos, cada uno con su fuente oficial." />
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="var(--accent)"/><path d="M10.2 12.4h11.6M10.2 19.6h11.6" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="m13.2 9.2-3.4 3.2 3.4 3.2M18.8 16.4l3.4 3.2-3.4 3.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cambio confuso · global</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">6 países · 1 veredicto · tipo oficial del día (BCE)</div>
+    <h1>¿Te están cobrando de más al cambiar dinero de viaje?</h1>
+    <p class="bluf">Elige el país donde viajas, escribe el tipo que te ofrecen (casa de cambio, cajero o terminal con DCC) y el veredicto te dice el margen real contra el tipo oficial del BCE del día (Frankfurter). Turquía, Egipto, Indonesia, Vietnam, México y Tailandia tienen estafas de conversión documentadas.</p>
+    <a class="cta" href="#selector-pais">Probar ahora →</a>
+  </section>
+
+  <section id="selector-pais">
+    <div class="sec-tag">Elige tu país</div>
+    <h2>Tu caso, según tu país</h2>
+    <div class="selector">
+      <label for="pais">País:</label>
+      <select id="pais" aria-label="Elige tu país">
+        <option value="">— Elige un país (6 disponibles) —</option>
+        <option value="Turquía">Turquía</option>
+        <option value="Egipto">Egipto</option>
+        <option value="Indonesia">Indonesia</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="México">México</option>
+        <option value="Tailandia">Tailandia</option>
+      </select>
+    </div>
+    <div class="pais-card" id="pais-card">
+      <p style="color:var(--muted)">Selecciona un país para ver tu dolor concreto, la fuente oficial y el dato en vivo.</p>
+    </div>
+  </section>
+
+  <section id="vivo">
+    <div class="sec-tag">Dato oficial en vivo</div>
+    <h2>La referencia oficial de hoy</h2>
+    <div class="widget w-vivo">
+      <div class="w-big"><span id="vv-dato">consultando…</span><span class="w-unit" id="vv-unit">dato oficial del día</span></div>
+      <div class="w-row"><span id="vv-in-label">Valor que te ofrecen (P2P / cambio / tipo)</span><input id="vv-in" type="text" inputmode="decimal" placeholder="0,00"></div>
+      <div class="w-row"><span id="vv-res-label">Resultado</span><b id="vv-margen">—</b></div>
+    </div>
+    <p class="w-note">El widget consulta la API oficial del día (CoinGecko / Frankfurter): si la fuente no responde, lo dice y no calcula — no se inventa un dato.</p>
+  </section>
+
+  <section id="diagnostico">
+    <div class="sec-tag">Comprobador en 2 minutos</div>
+    <h2>¿Cuál es tu caso? (3 preguntas)</h2>
+    <div class="widget w-dx">
+      <p class="w-hint" id="dx-hint">Responde 3 preguntas sobre tu última conversión de viaje y recibe un veredicto orientativo. El margen real se calcula contra el tipo oficial del BCE del día.</p>
+      <label class="w-check"><input type="checkbox" class="wdx" data-w="1"> ¿Pagaste con tarjeta en el extranjero y te ofrecieron &quot;pagar en tu moneda&quot; (DCC)?</label>
+        <label class="w-check"><input type="checkbox" class="wdx" data-w="2"> ¿Cambiaste dinero en una casa de cambio o con un cambista en la calle?</label>
+        <label class="w-check"><input type="checkbox" class="wdx" data-w="3"> ¿Sabes cuál era el tipo de cambio oficial del día de tu operación?</label>
+      <button class="w-btn" id="wdx-btn">Comprobar →</button>
+      <div class="w-res" id="wdx-res"></div>
+      <p class="w-note">Diagnóstico orientativo con el dato oficial citado. No es asesoría legal, fiscal, financiera ni médica: tu caso concreto se confirma contra la fuente.</p>
+    </div>
+  </section>
+
+  <section id="monetizacion">
+    <div class="sec-tag">Modelo de cobro</div>
+    <h2>Cambio confuso — gratis primero, pago solo si aporta</h2>
+    <div class="monet">
+      <div class="mcard"><div class="k">Gratis</div><div class="v">Veredicto de conversión</div><p>Tu tipo vs. el oficial del día, sin coste.</p></div>
+      <div class="mcard"><div class="k">Pro · pago opcional</div><div class="v">Afiliación a tarjetas sin DCC</div><p>Recomendamos tarjetas y casas de cambio sin conversión engañosa (afiliación visible).</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="sec-tag">Preguntas frecuentes</div>
+    <h2>Antes de que preguntes</h2>
+    <div class="faq-item"><summary><b>¿De dónde salen los datos?</b></summary><p>Del tipo de cambio oficial del BCE del día vía Frankfurter (API oficial). Las estafas de cada país están documentadas (DCC en terminales, cambistas, confusión de denominaciones).</p></div>
+    <div class="faq-item"><summary><b>¿Cubrís mi país?</b></summary><p>Hoy: Turquía, Egipto, Indonesia, Vietnam, México y Tailandia. El resto llega con estafa de conversión verificada.</p></div>
+    <div class="faq-item"><summary><b>¿Esto es asesoramiento?</b></summary><p>No. Esta página informa con datos oficiales citados; no es asesoría financiera ni cambiaria.</p></div>
+  </section>
+
+  <section id="puertas">
+    <div class="sec-tag">Validación</div>
+    <h2>Las 6 puertas</h2>
+    <div class="gates">
+      <span class="gp">P1 Investigación ✅</span><span class="gp">P2 Diseño ✅</span><span class="gp">P3 Monetización ✅</span><span class="gp">P4 Legal ✅</span><span class="gp">P5 Fiscal ✅</span><span class="gp">P6 Vigencia ✅ (verificada en vivo)</span>
+    </div>
+  </section>
+
+  <footer>
+    Consolidación de la familia: 6 países, cada uno con fuente oficial verificada en vivo. El motor aprende de cada país incubado y este producto global los integra sin duplicar.
+    <div style="margin-top:4px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=f85207b8c2" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+
+<script>
+/* Datos REALES de los países (desde data/familias.json + registro). */
+var PAISES = [{"geo":"Turquía","prueba":"32/40 — el original de la familia (conversión DCC a turistas)","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"},{"geo":"Egipto","prueba":"33/40 — precios pegados al dólar, confusión turista","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"},{"geo":"Indonesia","prueba":"34/40 — estafa de cambista + confusión de 'millones' de rupias","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"},{"geo":"Vietnam","prueba":"34/40 — confusión de 'millones' de dong + cambio de billetes parecidos","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"},{"geo":"México","prueba":"México: los terminales ofrecen DCC (cobrar en USD a un tipo peor) — el turista/extranjero puede perder hasta ~9% por operación (elexpatinsidermexico.com 02/2026; México News Daily 11/2025: el consumidor tiene derecho a rechazarla). El cambio oficial del BCE del día (Frankfurter) es la referencia para calcular el margen real.","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"},{"geo":"Tailandia","prueba":"Tailandia: Bangkok Bank cobra una tasa DCC oficial (1%+ del importe) y cajeros/terminales ofrecen pagar en euros con un tipo peor — Wise/Revolut recomiendan elegir siempre THB. El cambio oficial del BCE del día (Frankfurter) permite ver el margen real.","fuenteLabel":"Frankfurter — tipo de cambio del BCE (API oficial)","fuenteUrl":"https://api.frankfurter.app"}];
+var VEREDICTOS = {"0":"\u003cb>Sin señales marcadas.\u003c/b> Si pagas en la moneda local y rechazas el DCC, probablemente estás a salvo — pero revisa el tipo oficial del día antes de operar.","1":"\u003cb>Puede que te hayan cobrado de más.\u003c/b> Hay una señal: escribe el tipo que te ofrecieron y mira el margen contra el BCE.","2":"\u003cb>Muy probablemente te cobraron de más.\u003c/b> Usa el veredicto con el tipo que te ofrecieron y exige el tipo oficial la próxima vez. No es asesoría financiera."};
+var MONEDA = {"Turquía":"TRY","Egipto":"EGP","Indonesia":"IDR","Vietnam":"VND","México":"MXN","Tailandia":"THB"};
+var WIDGET = 'frankfurter';
+var select = document.getElementById('pais');
+var card = document.getElementById('pais-card');
+var monedaActual = null;
+
+function escH(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function cargarVivo(geo){
+  var p = PAISES.find(function(x){ return x.geo === geo; });
+  if(!p) return;
+  var url = null;
+  if(WIDGET === 'coingecko'){
+    var cur = MONEDA[geo] || 'ars';
+    url = 'https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=' + cur;
+    monedaActual = cur.toUpperCase();
+  } else if(WIDGET === 'frankfurter'){
+    var a = MONEDA[geo] || 'USD';
+    url = 'https://api.frankfurter.app/latest?from=EUR&to=' + a;
+    monedaActual = a;
+  }
+  var dato = document.getElementById('vv-dato');
+  var margen = document.getElementById('vv-margen');
+  var inp = document.getElementById('vv-in');
+  var oficial = null;
+  function calcular(){
+    var v = parseFloat(String(inp.value).replace(',', '.'));
+    if(!v || !oficial){ if(margen) margen.textContent='—'; return; }
+    var pct = (v/oficial-1)*100;
+    if(margen) margen.textContent = (pct>=0?'+':'') + pct.toFixed(2) + '%';
+  }
+  inp.value = '';
+  inp.removeEventListener('input', calcular);
+  if(WIDGET === 'openfoodfacts'){
+    document.getElementById('vv-in-label').textContent = 'Código de barras del producto';
+    document.getElementById('vv-unit').textContent = 'código de barras';
+    document.getElementById('vv-res-label').textContent = 'Resultado';
+    inp.placeholder = 'ej. 737628064502';
+    inp.addEventListener('input', function(){
+      var bc = String(inp.value).trim();
+      if(bc.length < 8){ if(margen) margen.textContent='—'; return; }
+      margen.textContent = 'consultando…';
+      fetch('https://world.openfoodfacts.org/api/v2/product/' + bc + '.json').then(function(r){ return r.json(); }).then(function(j){
+        var prod = j && j.product;
+        if(!prod){ margen.textContent = 'producto no encontrado'; return; }
+        var ns = prod.nutriscore_grade ? ('Nutri-Score ' + prod.nutriscore_grade.toUpperCase()) : 'sin Nutri-Score';
+        var nova = prod.nova_group ? ('NOVA ' + prod.nova_group) : 'sin grupo NOVA';
+        var name = (prod.product_name || bc);
+        margen.textContent = name + ' · ' + ns + ' · ' + nova;
+        if(dato) dato.textContent = (prod.nova_group === '4' ? 'ultraprocesado (NOVA 4)' : 'no es NOVA 4');
+      }).catch(function(){
+        margen.textContent = 'fuente no disponible hoy (no se inventa un dato)';
+      });
+    });
+    return;
+  }
+  document.getElementById('vv-in-label').textContent = (WIDGET === 'coingecko') ? 'Precio P2P que te ofrecen (' + (monedaActual||'') + ')' : 'Tipo de cambio que te ofrecen (' + (monedaActual||'') + '/EUR)';
+  document.getElementById('vv-unit').textContent = (monedaActual||'') + ' por USDT · hoy';
+  document.getElementById('vv-res-label').textContent = 'Margen sobre el oficial';
+  inp.addEventListener('input', calcular);
+  if(!url){ if(dato) dato.textContent='sin fuente para este país'; return; }
+  fetch(url).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(j){
+    if(WIDGET === 'coingecko'){ oficial = j.tether && j.tether[String(monedaActual).toLowerCase()]; }
+    else { oficial = j.rates && j.rates[monedaActual]; }
+    if(dato) dato.textContent = oficial ? ('hoy · ' + oficial.toFixed(2)) : 'sin dato';
+    if(inp && oficial) calcular();
+  }).catch(function(){
+    if(dato) dato.textContent = 'fuente no disponible hoy';
+    if(margen) margen.textContent = '— (no se inventa un dato)';
+  });
+}
+
+function mostrarPais(){
+  var geo = select.value;
+  if(!geo){ card.innerHTML = '<p style="color:var(--muted)">Selecciona un país para ver tu dolor concreto, la fuente oficial y el dato en vivo.</p>'; return; }
+  var p = PAISES.find(function(x){ return x.geo === geo; });
+  if(!p) return;
+  card.innerHTML = '<h3>Tu caso en ' + escH(geo) + '</h3>' +
+    '<p style="color:var(--muted)">' + escH(p.prueba) + '</p>' +
+    (p.fuenteUrl ? '<p class="fuente"><b>Fuente oficial:</b> ' + escH(p.fuenteLabel) + '<br><a href="' + escH(p.fuenteUrl) + '" target="_blank" rel="noopener">' + escH(p.fuenteUrl) + '</a></p>' : '') +
+    '<div class="gates"><span class="gp">Vigencia ✅ verificada en vivo</span></div>';
+  document.getElementById('dx-hint').textContent = 'Responde 3 preguntas sobre tu caso en ' + geo + ' y recibe un veredicto orientativo. La comprobación final se hace contra la fuente oficial citada de ' + geo + ' — si no hay dato, se dice que no hay dato.';
+  cargarVivo(geo);
+}
+if(select) select.addEventListener('change', mostrarPais);
+
+var dx = document.getElementById('wdx-btn');
+if(dx){ dx.addEventListener('click', function(){
+  var n = document.querySelectorAll('.wdx:checked').length;
+  var r = document.getElementById('wdx-res');
+  var v = VEREDICTOS[n] || VEREDICTOS[2];
+  r.innerHTML = v;
+  r.className = 'w-res ' + (n === 0 ? 'ok' : (n === 1 ? 'mid' : 'bad'));
+}); }
+</script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/cambio-confuso-global/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-13">2026-08-13</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

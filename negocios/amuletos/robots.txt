@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amuletos.attenciona.com/llms.txt

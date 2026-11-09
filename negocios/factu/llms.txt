@@ -1,0 +1,30 @@
+# Factu
+
+Factu is a free browser tool that checks whether your invoicing is ready for VeriFactu (the Spanish invoicing-system regulation, RD 1007/2023). It runs entirely in the browser (no data leaves the device).
+
+## Key facts (verified 14 August 2026)
+
+- VeriFactu is regulated by Real Decreto 1007/2023 (BOE-A-2023-24840); deadlines were extended by Real Decreto-ley 15/2025 (2 December 2025).
+- Entities that file Impuesto de Sociedades (corporate income tax) must have their invoicing system (SIF) adapted before 1 January 2027.
+- All other taxpayers (autónomos and SMEs) must adapt before 1 July 2027.
+- Required features: unalterable billing record, chained hash (digital signature), verifiable QR code and traceability.
+- From your deadline you cannot issue invoices with non-adapted software; the Tax Agency (AEAT) foresees fines of up to 50,000 EUR (Ley Antifraude).
+- VeriFactu (SIF) is not the same as mandatory B2B e-invoicing (Ley 18/2022, Crea y Crece), which still awaits its implementing regulation.
+- Context: ATA reports that autónomos spend 226 hours a year on administrative procedures, costing 3,390 EUR per autónomo (10/08/2026).
+
+## Sources
+
+1. https://sede.agenciatributaria.gob.es/Sede/todas-noticias/2025/diciembre/3/ampliacion-plazo-adaptacion-sistemas-informaticos-facturacion.html (AEAT — SIF adaptation deadline extension)
+2. https://www.boe.es/buscar/doc.php?id=BOE-A-2023-24840 (BOE — Real Decreto 1007/2023)
+3. https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html (AEAT — SIF y VERI*FACTU)
+4. https://www.elperiodico.com/es/economia/20260316/verifactu-hacienda-fecha-factura-electronica-autonomos-pymes-multas-dv-128018652 (El Periódico — dates and fines)
+5. https://ata.es/noticias/crecen-las-trabas-los-autonomos-226-horas/ (ATA — 226 hours / 3,390 EUR)
+
+## Pricing
+
+- Free: VeriFactu gap check + deadline (IS or autónomo) + fine exposure + interactive checklist.
+- Pro (12 USD one-time, crypto via NOWPayments): printable Recibo Stamp PDF, step-by-step SIF adaptation plan, supplier conformity template, permanent unlock.
+
+## Not advice
+
+Factu is an educational tool based on Real Decreto 1007/2023 and Real Decreto-ley 15/2025. It is not tax or legal advice. Editorial responsibility: attenciona (Holding), Spain.

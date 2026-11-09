@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /negomazon/
+
+Sitemap: https://www.attenciona.com/negomazon/sitemap.xml

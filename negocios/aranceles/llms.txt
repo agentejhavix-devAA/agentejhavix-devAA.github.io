@@ -1,0 +1,20 @@
+# Aranceles
+
+Compras fuera de la UE y el arancel te sorprende en aduanas. Aranceles calcula en 3 preguntas el derecho de importación, el IVA y las tasas que pagarás por tu producto, contra el arancel integrado TARIC de la UE.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vivo · TARIC: El arancel integrado de la UE (TARIC) publica el derecho de importación por código de producto y origen.
+- En vigor · IVA y tasas: Al arancel se suman el IVA a la importación y las posibles tasas de gestión del transportista.
+
+## Fuentes citadas
+
+- https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 7.99 € pago único en cripto.

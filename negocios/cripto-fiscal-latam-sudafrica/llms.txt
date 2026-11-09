@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Sudáfrica
+
+> Traduce la norma oficial de cripto · impuestos en Sudáfrica a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Sudáfrica
+- **Fuente de datos viva:** South African Revenue Service (SARS) — Crypto Assets & Tax
+
+- **Sistema de diseño:** Corporativo-limpio (Inter (titulares y cuerpo, pesos fuertes))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- South African Revenue Service (SARS) — Crypto Assets & Tax (https://www.sars.gov.za/individuals/crypto-assets-tax/)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: South African Revenue Service (SARS) — Crypto Assets & Tax. (https://www.sars.gov.za/individuals/crypto-assets-tax/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.

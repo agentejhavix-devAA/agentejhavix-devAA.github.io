@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/sejuta/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sejuta · ¿1.500.000 rupias es mucho o poco?</title>
+<meta name="description" content="Sejuta convierte rupias a dólares o euros al instante, para que sepas si un precio en Bali es justo antes de pagar. Sin registro." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- PROTOTIPO LOCAL — noindex a propósito: no está publicado, es una prueba de concepto Fase 3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Negocio Fase 3 nº3 (tras Zafra y Padala). Sistema de diseño: pareja tipográfica y técnica de logo
+    DISTINTAS a las de los 2 anteriores (Zafra=Cálido-redondeado+Pictograma literal,
+    Padala=Editorial-serif+Monograma/badge).
+    Pareja: Técnico-geométrico (Space Grotesk + Inter) — calculadora rápida, con carácter, no plano.
+    Técnica de logo: Espacio negativo — dos monedas (rupia/dólar) cuyo hueco central forma una flecha de
+    conversión; el símbolo nace de lo que NO está pintado, no de un objeto literal.
+    Investigación de audiencia real (regla obligatoria): el turista/mochilero que usa Bali no adopta la
+    fintech local — ya confía en apps internacionales de conversión de moneda. Referencia real citada:
+    Wise (antes TransferWise), verde bosque #163300 + verde lima #9FE870 (rebrand real, ver fuentes al pie).
+    Paleta INSPIRADA en esa referencia, con un coral de contraste propio (no es una copia literal de Wise).
+  */
+  :root{
+    --bg:#fafcf8; --card:#ffffff; --line:#dfe8d8; --line2:#cddcc2;
+    --txt:#111a0d; --muted:#5c6b55; --soft:#8b9682;
+    --bosque:#163300; --lima:#8fd94a; --lima-d:#6cb52e; --coral:#ff6b52; --coral-l:#fff0ec;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp{font-family:'Space Grotesk','Inter',sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{max-width:100%}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px;font-weight:600}
+  nav a:hover{color:var(--bosque)}
+
+  .badge-fase{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--bosque);background:var(--coral-l);border:1px solid #ffd9cd;
+    border-radius:999px;padding:6px 13px;margin-bottom:20px}
+
+  .hero{padding:56px 0 30px;max-width:700px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.08;margin:0 0 18px;font-weight:700;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--lima-d);background:var(--bosque);padding:0 6px;border-radius:6px}
+  .lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px;max-width:560px}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--bosque);color:var(--lima);font-weight:700;
+    font-size:15.5px;padding:14px 24px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:.15s}
+  .btn:hover{background:#0d2200}
+  .fud{font-size:13.5px;color:var(--soft)}
+
+  section{padding:38px 0}
+  .section-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin:0 0 10px}
+  h2{font-size:clamp(21px,3vw,28px);margin:0 0 16px;font-weight:700;letter-spacing:-.015em}
+
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pas .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .pas .card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:8px}
+  .pas .card p{margin:0;color:var(--txt);font-size:14.5px}
+  @media(max-width:760px){.pas{grid-template-columns:1fr}}
+
+  .demo{background:var(--bosque);color:#eafbe0;border-radius:20px;padding:30px 28px;margin-top:8px}
+  .demo .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.12);border-radius:999px;padding:5px 11px;margin-bottom:14px}
+  .demo h3{margin:0 0 14px;font-size:19px}
+  .flip{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .flip input{font:inherit;font-size:22px;font-weight:700;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff;width:220px;font-family:'Space Grotesk',sans-serif}
+  .flip .eq{font-size:20px;color:var(--lima)}
+  .flip .out{font-size:22px;font-weight:700;color:var(--lima);font-family:'Space Grotesk',sans-serif}
+  .demo-note{font-size:12px;color:rgba(234,251,224,.65);margin-top:12px;line-height:1.55}
+
+  .scams{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  @media(max-width:760px){.scams{grid-template-columns:1fr}}
+  .scam{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+  .scam .n{font-size:11px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;display:block}
+  .scam p{margin:0;font-size:13.5px;color:var(--muted)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .box h3{margin:0 0 12px;font-size:16px}
+  .box ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .box li{margin:6px 0}
+
+  .honest{background:var(--coral-l);border:1px solid #ffd9cd;border-radius:var(--radius);padding:20px 22px;font-size:14px;color:#5c2415}
+  .honest b{color:#3c1509}
+
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+  .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:760px){.gates{grid-template-columns:1fr 1fr}}
+  .gate{border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:12.5px;text-align:center}
+  .gate .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+  .gate.ok .st{color:#0f8a45} .gate.pend .st{color:#c04a2f}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 50px;color:var(--soft);font-size:12.5px}
+  footer a{color:var(--bosque);text-decoration:underline}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <!-- Espacio negativo: 2 monedas (Rp / $) cuyo hueco central dibuja una flecha de conversión -->
+        <circle cx="13" cy="17" r="12" fill="#163300"/>
+        <circle cx="21" cy="17" r="12" fill="none" stroke="#163300" stroke-width="1.6"/>
+        <path d="M13 17 L21 11 V14.5 L26 14.5 V19.5 L21 19.5 V23 Z" fill="#8fd94a"/>
+      </svg>
+      Sejuta
+    </div>
+    <nav><a href="#como">Cómo funciona</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge-fase">◈ Attenciona · Fase 3 · prototipo</span>
+    <h1>¿1.500.000 rupias es <em>mucho o poco</em>?</h1>
+    <p class="lead">Sejuta convierte rupias indonesias a dólares o euros al instante, para que sepas si un
+      precio en Bali es justo antes de pagar — sin hacer la cuenta de cabeza con seis ceros de por medio.</p>
+    <div class="cta-row">
+      <a class="btn" href="#como">Convertir ahora →</a>
+      <span class="fud">Sin registro · tipo de cambio real · no pide tus datos de pago</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">El problema</p>
+    <div class="pas">
+      <div class="card"><b>Problema</b><p>100 USD son cerca de 1,5 millones de rupias — con tantos ceros, es fácil no notar si te están cobrando de más.</p></div>
+      <div class="card"><b>Se agrava</b><p>2026 es probablemente el último año con estas cifras: Indonesia prepara una redenominación de la rupia, justo cuando la confusión está en su punto más alto.</p></div>
+      <div class="card"><b>Solución</b><p>Una conversión instantánea, pensada para números grandes, con el tipo de cambio real — no la calculadora mental bajo presión en el momento de pagar.</p></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <p class="section-tag">Cómo funciona</p>
+    <h2>Metés rupias, ves dólares — al segundo</h2>
+    <div class="demo">
+      <span class="tag">Vista previa ilustrativa</span>
+      <h3>Probá la conversión</h3>
+      <div class="flip">
+        <input id="rp" type="text" value="1.500.000" inputmode="numeric" />
+        <span class="eq">IDR ≈</span>
+        <span class="out" id="out">100 USD</span>
+      </div>
+      <p class="demo-note">Este flip es una <b>maqueta ilustrativa</b> para revisar el concepto en local: usa
+        un tipo de cambio de ejemplo fijo, no una llamada real a ninguna API (los navegadores bloquean
+        <code>fetch</code> a APIs externas desde un archivo local <code>file://</code>). La integración real
+        usaría <b>Frankfurter</b> o <b>exchangerate.host</b> (gratis, sin clave, ya vetadas — mismo patrón
+        que Zafra y Padala) para el tipo IDR↔USD/EUR del día.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">3 estafas documentadas en Bali (con fuente)</p>
+    <div class="scams">
+      <div class="scam"><span class="n">Cambista "kop"</span><p>En cambistas no oficiales, el vendedor golpea el fajo de billetes para "alinearlos" y deja caer varios billetes de 100.000 IDR detrás del mostrador — recibís hasta un 30% menos de lo pagado.</p></div>
+      <div class="scam"><span class="n">Taxi falso en el aeropuerto</span><p>Un circuito de "falsos Grab" en Ngurah Rai está tan organizado que la Agencia de Turismo de Bali lo identificó por rango de matrícula.</p></div>
+      <div class="scam"><span class="n">"Rayón" en la moto alquilada</span><p>Al devolver una moto de alquiler, aparece un "rayón" que de repente cuesta 1 millón de rupias — con el pasaporte retenido como garantía.</p></div>
+    </div>
+  </section>
+
+  <section class="honest">
+    <b>Aviso honesto:</b> Sejuta convierte moneda con el tipo de cambio real — no verifica si un cambista
+    concreto es legítimo ni sustituye usar canales oficiales (bancos, ATM, casas de cambio con cartel "PVA
+    Berizin"). Es una ayuda para el cálculo, no un detector de estafas en vivo.
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="box">
+        <h3>Beneficios (para el usuario)</h3>
+        <ul>
+          <li>Saber si un precio es razonable antes de pagar, no después</li>
+          <li>Dejar de hacer la cuenta de cabeza con seis ceros bajo presión</li>
+          <li>Conocer las 3 estafas más documentadas antes de viajar</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Características (qué hace)</h3>
+        <ul>
+          <li>Conversión IDR↔USD/EUR con tipo de cambio real</li>
+          <li>Pensado para números grandes (formato claro, sin errores de ceros)</li>
+          <li>Sin registro, sin guardar tu ubicación ni tus pagos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Quién lo construye</p>
+    <h2>Autoridad, en honesto</h2>
+    <p style="color:var(--muted);max-width:640px">Sejuta no tiene un fundador humano que haya vivido en Bali
+      años — nace del motor de venture-building autónomo de <b>Attenciona (Fase 3)</b>, que exige pasar 5
+      puertas de calidad (investigación real, diseño no genérico, monetización implementable, legal y fiscal)
+      antes de operar en producción. Es un producto nuevo: <b>todavía no tiene usuarios ni cifras que
+      mostrar</b> — en cuanto las tenga, aparecerán aquí con enlace verificable, nunca inventadas.</p>
+  </section>
+
+  <section id="precios">
+    <p class="section-tag">Precios</p>
+    <h2>Gratis para convertir, cripto para guardar tus gastos</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Conversión IDR↔USD/EUR ilimitada</li>
+          <li>Las 3 estafas documentadas, siempre visibles</li>
+          <li>Sin registro</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Pro (boceto — no conectado en este prototipo)</h3>
+        <ul>
+          <li>Historial de gastos del viaje, convertidos</li>
+          <li>Alertas cuando el tipo de cambio se mueve fuerte</li>
+          <li>Pago único en cripto (USDT/USDC/BTC/ETH — sin Solana, misma regla que el resto del holding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <p class="section-tag">Preguntas</p>
+    <h2>Antes de que preguntes</h2>
+    <details><summary>¿Detecta si un cambista es una estafa?</summary><p>No. Convierte moneda con el tipo de cambio real — la legitimidad del cambista hay que verificarla en persona (cartel oficial "PVA Berizin", banco o ATM).</p></details>
+    <details><summary>¿Sirve también para Vietnam u otros países con números grandes?</summary><p>El mismo patrón técnico (conversión + números grandes) se podría reutilizar, pero cada país necesita su propia investigación de estafas reales antes de construirse — no se copia sin más.</p></details>
+    <details><summary>¿Por qué cripto y no rupias?</summary><p>Para que la versión Pro no dependa de tarjetas internacionales ni bancos locales, igual que el resto de negocios de Attenciona.</p></details>
+    <details><summary>¿Guardáis mi ubicación o mis pagos?</summary><p>No. La conversión es de moneda pública, no pide ni guarda dónde estás ni cuánto pagaste.</p></details>
+  </section>
+
+  <section>
+    <p class="section-tag">Estado real (5 puertas de Fase 3)</p>
+    <div class="gates">
+      <div class="gate ok"><span class="st">✓ hecho</span>Investigación<br>(estafas documentadas + Frankfurter/exchangerate.host)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Diseño<br>(audiencia investigada — referencia Wise citada)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Monetización<br>(freemium: conversor gratis + Pro — especificación construible)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Legal<br>(consentimiento + privacidad + aviso legal enlazados)</div>
+    </div>
+  </section>
+
+  <footer>
+    Prototipo local de Fase 3 — no publicado, no indexado, no conectado a producción.
+    Fuentes: <a href="https://www.baliholidaysecrets.com/bali-scams/" target="_blank" rel="noopener">Bali Holiday Secrets — estafas 2026</a> ·
+    <a href="https://www.nomadlawyer.org/bali-tourist-payments-indonesia-rupiah-rules-2026" target="_blank" rel="noopener">Nomad Lawyer — reglas de pago Bali 2026</a> ·
+    <a href="https://english.pravda.ru/news/world/164885-indonesia-rupiah-redenomination-bali-tourist-guide/" target="_blank" rel="noopener">Pravda — redenominación rupia</a> ·
+    paleta inspirada en <a href="https://tearsheet.co/marketing/from-safe-blue-to-citrus-green-how-wise-rebranded-to-an-identity-that-is-exciting-and-good-for-its-bottom-line/" target="_blank" rel="noopener">rebrand real de Wise</a>.
+    <br><br>
+    Legal: <a href="../privacidad.html" rel="noopener">Privacidad</a> · <a href="../aviso-legal.html" rel="noopener">Aviso legal · Responsable editorial (Art. 50(4) AI Act)</a>.
+    <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=eecd80f1cb" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+<script>
+  // Solo ilustrativo: tipo de cambio de ejemplo fijo, para revisar el concepto sin llamar a ninguna API real.
+  const TC_EJEMPLO = 1500000 / 100; // ejemplo: 1.5M IDR ~ 100 USD
+  function fmt(n){ return new Intl.NumberFormat('es-ES').format(Math.round(n)); }
+  document.getElementById('rp').addEventListener('input', (e) => {
+    const raw = e.target.value.replace(/[^\d]/g, '');
+    const idr = parseInt(raw || '0', 10);
+    const usd = idr / TC_EJEMPLO;
+    document.getElementById('out').textContent = fmt(usd) + ' USD (ejemplo)';
+  });
+</script>
+<div id="consent" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:99;max-width:640px;margin:0 auto;background:#1c1714;color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.32);font-family:inherit;font-size:13px;line-height:1.5">
+  <p style="margin:0 0 10px;color:rgba(255,255,255,.78)">Este prototipo no carga servicios de terceros (analítica, enlaces de afiliado) hasta que consientas. Tu elección se guarda en este navegador. Más en <a href="../privacidad.html" style="color:#f2b705;text-decoration:underline">privacidad</a> y <a href="../aviso-legal.html" style="color:#f2b705;text-decoration:underline">aviso legal</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="consent-ok" style="background:#e8590c;color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Aceptar</button>
+    <button id="consent-no" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Solo lo necesario</button>
+  </div>
+</div>
+<script>
+  (function(){ var k='attenciona_consent'; var el=document.getElementById('consent'); var estado=null; try{estado=localStorage.getItem(k);}catch(e){}
+    function cerrar(v){ try{localStorage.setItem(k,v);}catch(e){} el.remove(); }
+    var ok=document.getElementById('consent-ok'), no=document.getElementById('consent-no');
+    if(ok) ok.addEventListener('click',function(){cerrar('ok');});
+    if(no) no.addEventListener('click',function(){cerrar('no');});
+    if(estado) el.remove();
+  })();
+</script>
+</body>
+</html>

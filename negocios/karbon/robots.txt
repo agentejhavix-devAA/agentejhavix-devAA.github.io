@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Karbon — landing de comprobación de obligación CBAM (Unión Europea)
+# Generado por la Incubadora de attenciona. Sin contenido oculto.

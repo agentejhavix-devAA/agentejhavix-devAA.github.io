@@ -1,0 +1,4 @@
+# Hipoteca justa — robots.txt generado por el motor Fase 3
+# Prototipo: no indexar hasta verificar fuentes y pasar las 6 puertas.
+User-agent: *
+Disallow: /

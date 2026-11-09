@@ -1,0 +1,23 @@
+# DupliCheck
+
+DupliCheck — detecta facturas y movimientos duplicados antes de que duelan. en LATAM — Un pago doble es el error contable más silencioso. Dato duro: tres reglas de cruce (folio, monto, combo); declaración anual 30/04/2027. Herramienta en el navegador contra el pago doble. Gratis 1/mes + Pro anual (5 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Datos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 5 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+2. https://blog.alegra.com/colombia/plazos-para-emitir-facturas-electronicas/ (Alegra — Facturación electrónica)
+3. https://www.bbva.com/es/mx/empresas/calendario-fiscal-2026-para-personas-morales-en-mexico-y-fechas-esenciales-del-sat/ (BBVA — Calendario fiscal)
+4. https://facturama.mx/blog/factura-4-0-cfdi-cambios-sat/ (Facturama — CFDI 4.0)
+5. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+
+## Precio
+- Gratis: 1 revisión mensual.
+- Pro (5 USD pago único, cripto vía NOWPayments): Revisiones ilimitadas; Archivos sin límite; Reporte exportable; desbloqueo permanente.
+
+## Aviso
+Herramienta contable informativa. No sustituye la revisión de un contador: ante dudas, consulta. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

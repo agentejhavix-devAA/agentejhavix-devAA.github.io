@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://www.attenciona.com/negocios/zafra/">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zafra · El precio real de tu cosecha, en dólares y en tu moneda</title>
+<meta name="description" content="Zafra consulta los precios oficiales de la FAO y el tipo de cambio real para decirte cuánto vale de verdad tu cosecha antes de venderla al intermediario. Sin registro." />
+<meta name="robots" content="noindex,nofollow" />
+<!-- PROTOTIPO LOCAL — noindex a propósito: no está publicado, es una prueba de concepto Fase 3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    PALETA: inspirada en el registro visual de plataformas agro latinoamericanas
+    (referencia de investigación: Agrofy, marketplace agro de Argentina/LatAm — verde tierra + ámbar cosecha).
+    OJO honestidad: no se pudo extraer el HEX exacto de la fuente en esta sesión (búsqueda web sin acceso
+    a su hoja de estilos), así que es una paleta INSPIRADA, no una extracción verificada. Pendiente
+    verificar con captura real antes de dar esto por cerrado en el sistema de diseño.
+    Pareja tipográfica: Cálido-redondeado (Baloo 2 + Inter) — consumidor final, mercado emergente, confianza cercana.
+    Técnica de logo: Pictograma literal (espiga + flecha de tendencia) — el icono ES el objeto real, sin metáfora.
+  */
+  :root{
+    --bg:#fffdf8; --card:#ffffff; --line:#ecе2d0; --line2:#e7dcc3;
+    --txt:#20261f; --muted:#5b6357; --soft:#8a9184;
+    --verde:#1f6b45; --verde-d:#154f33; --ambar:#d98c1f; --ambar-l:#fdf1de;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',-apple-system,'Segoe UI',sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.disp{font-family:'Baloo 2','Inter',sans-serif}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img,svg{max-width:100%}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px}
+  nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px;font-weight:600}
+  nav a:hover{color:var(--verde-d)}
+
+  .badge-fase{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--verde-d);background:var(--ambar-l);border:1px solid #f0dcb0;
+    border-radius:999px;padding:6px 13px;margin-bottom:20px}
+
+  .hero{padding:56px 0 30px;max-width:700px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.1;margin:0 0 18px;font-weight:800;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:var(--verde)}
+  .lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px;max-width:560px}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--verde);color:#fff;font-weight:700;
+    font-size:15.5px;padding:14px 24px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;
+    transition:.15s}
+  .btn:hover{background:var(--verde-d)}
+  .fud{font-size:13.5px;color:var(--soft)}
+
+  section{padding:38px 0}
+  .section-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ambar);margin:0 0 10px}
+  h2{font-size:clamp(22px,3vw,30px);margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
+
+  .pas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pas .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .pas .card b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ambar);margin-bottom:8px}
+  .pas .card p{margin:0;color:var(--txt);font-size:14.5px}
+  @media(max-width:760px){.pas{grid-template-columns:1fr}}
+
+  .demo{background:var(--verde-d);color:#fff;border-radius:20px;padding:30px 28px;margin-top:8px}
+  .demo .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.14);border-radius:999px;padding:5px 11px;margin-bottom:14px}
+  .demo h3{margin:0 0 14px;font-size:19px}
+  .demo-row{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px}
+  .demo-field label{display:block;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:6px}
+  .demo-field select{font:inherit;font-size:14px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff}
+  .demo-field select option{color:#111}
+  .demo-btn{background:var(--ambar);color:#241a06;font-weight:700;border:none;border-radius:10px;padding:11px 18px;
+    cursor:pointer;font-size:14px}
+  .demo-out{background:rgba(255,255,255,.08);border:1px dashed rgba(255,255,255,.3);border-radius:12px;padding:16px 18px;font-size:14.5px}
+  .demo-out b{font-size:22px;display:block;margin-bottom:2px}
+  .demo-note{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;line-height:1.55}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .box h3{margin:0 0 12px;font-size:16px}
+  .box ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .box li{margin:6px 0}
+
+  .honest{background:var(--ambar-l);border:1px solid #f0dcb0;border-radius:var(--radius);padding:20px 22px;font-size:14px;color:#5b4a26}
+  .honest b{color:#3d310f}
+
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+  .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:760px){.gates{grid-template-columns:1fr 1fr}}
+  .gate{border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:12.5px;text-align:center}
+  .gate .st{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+  .gate.ok .st{color:#0f8a45} .gate.pend .st{color:#c05600}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:26px 0 50px;color:var(--soft);font-size:12.5px}
+  footer a{color:var(--verde-d);text-decoration:underline}
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <circle cx="17" cy="17" r="17" fill="#1f6b45"/>
+        <path d="M17 25V11" stroke="#fdf1de" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17 11c-2.5 0-4-1.6-4-4M17 11c2.5 0 4-1.6 4-4M17 15.5c-2.2 0-3.6-1.5-3.6-3.6M17 15.5c2.2 0 3.6-1.5 3.6-3.6M17 20c-1.9 0-3.1-1.3-3.1-3.1M17 20c1.9 0 3.1-1.3 3.1-3.1" stroke="#fdf1de" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M9 23l4.5-4 3 2.5L23 15" stroke="#d98c1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.5 14.6h3.6v3.6" stroke="#d98c1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Zafra
+    </div>
+    <nav><a href="#como">Cómo funciona</a><a href="#precios">Precios</a><a href="#faq">Preguntas</a></nav>
+  </header>
+
+  <section class="hero">
+    <span class="badge-fase">◈ Attenciona · Fase 3 · prototipo</span>
+    <h1>¿El acopiador te paga lo justo? <em>Compruébalo</em> antes de vender.</h1>
+    <p class="lead">Zafra cruza el precio oficial de la FAO para tu cultivo con el tipo de cambio real del día
+      y te dice cuánto vale tu cosecha en dólares — para que negocies con el dato en la mano, no a ciegas.</p>
+    <div class="cta-row">
+      <a class="btn" href="#como">Ver precio de referencia →</a>
+      <span class="fud">Sin registro · datos oficiales FAO · no pide tu cosecha ni tus datos personales</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">El problema</p>
+    <div class="pas">
+      <div class="card"><b>Problema</b><p>En cosecha, el precio que te ofrece el acopiador cambia según a quién le preguntes — y tú no tienes forma rápida de saber si es razonable.</p></div>
+      <div class="card"><b>Se agrava</b><p>Con inflación alta y el tipo de cambio moviéndose cada semana, "vender caro en pesos" puede seguir siendo vender barato en dólares reales.</p></div>
+      <div class="card"><b>Solución</b><p>Un precio de referencia oficial, en tu moneda y en dólares, gratis y en segundos — para llegar a la mesa de negociación informado.</p></div>
+    </div>
+  </section>
+
+  <section id="como">
+    <p class="section-tag">Cómo funciona</p>
+    <h2>Dos fuentes oficiales, un número claro</h2>
+    <div class="demo">
+      <span class="tag">Vista previa ilustrativa</span>
+      <h3>Elegí tu cultivo y tu país</h3>
+      <div class="demo-row">
+        <div class="demo-field"><label>Cultivo</label>
+          <select id="crop"><option>Soja</option><option>Maíz</option><option>Trigo</option></select>
+        </div>
+        <div class="demo-field"><label>País</label>
+          <select id="country"><option>Argentina</option><option>Venezuela</option><option>Brasil</option></select>
+        </div>
+        <button class="demo-btn" id="calc">Calcular precio de referencia</button>
+      </div>
+      <div class="demo-out" id="out">
+        <b>— USD / tonelada</b>
+        Elegí cultivo y país, y tocá "Calcular" para ver el ejemplo.
+      </div>
+      <p class="demo-note">Esta caja es una <b>maqueta ilustrativa</b> para revisar el concepto en local: los números
+        que muestra son de ejemplo, no una llamada real a ninguna API (los navegadores bloquean fetch a APIs externas
+        desde un archivo local <code>file://</code>). La integración real usaría <b>FAOSTAT API</b>
+        (<code>fenixservices.fao.org/faostat/api/v1</code>, gratis, sin clave, dominio de Precios al Productor) para
+        el precio oficial y <b>Frankfurter.dev</b> (tipo de cambio del BCE, gratis, sin clave) para la conversión —
+        pendiente validar en un entorno con servidor los parámetros exactos del dataset FAOSTAT antes de darla por cerrada.</p>
+    </div>
+  </section>
+
+  <section class="honest">
+    <b>Aviso honesto:</b> FAOSTAT publica precios oficiales de referencia, no una cotización de bolsa en vivo — según
+    la serie, los datos pueden tener meses de desfase. Zafra no es para hacer day-trading de commodities: es para
+    llegar a la negociación con un número serio en la mano, no para operar en tiempo real.
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div class="box">
+        <h3>Beneficios (para el usuario)</h3>
+        <ul>
+          <li>Negociar con un precio de referencia oficial, no "de oído"</li>
+          <li>Ver el valor en dólares aunque cobres en moneda local</li>
+          <li>No depender de que el acopiador te informe el precio internacional</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Características (qué hace)</h3>
+        <ul>
+          <li>Consulta precio oficial FAOSTAT por cultivo y país</li>
+          <li>Convierte a USD y a tu moneda con tipo de cambio real del día</li>
+          <li>Sin registro, sin guardar datos de tu cosecha</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="section-tag">Quién lo construye</p>
+    <h2>Autoridad, en honesto</h2>
+    <p style="color:var(--muted);max-width:640px">Zafra no tiene un fundador humano detrás con años en el agro —
+      nace del motor de venture-building autónomo de <b>Attenciona (Fase 3)</b>, que exige pasar 5 puertas de calidad
+      (investigación real, diseño no genérico, monetización implementable, legal y fiscal) antes de operar en producción.
+      Es un producto nuevo: <b>todavía no tiene clientes ni cifras que mostrar</b> — en cuanto las tenga, aparecerán aquí
+      con enlace verificable, nunca inventadas.</p>
+  </section>
+
+  <section id="precios">
+    <p class="section-tag">Precios</p>
+    <h2>Gratis para consultar, cripto para el histórico</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>Gratis</h3>
+        <ul>
+          <li>Precio de referencia de hoy, 1 cultivo</li>
+          <li>Conversión a USD y a tu moneda</li>
+          <li>Sin registro</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Pro (boceto — no conectado en este prototipo)</h3>
+        <ul>
+          <li>Watchlist de varios cultivos</li>
+          <li>Histórico y tendencia</li>
+          <li>Pago único en cripto (USDT/USDC/BTC/ETH — sin Solana, misma regla que el resto del holding)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <p class="section-tag">Preguntas</p>
+    <h2>Antes de que preguntes</h2>
+    <details><summary>¿Es una cotización en vivo, como la bolsa?</summary><p>No. Es el precio oficial de referencia de la FAO, que puede tener meses de desfase según el cultivo y el país. Sirve para negociar informado, no para operar en tiempo real.</p></details>
+    <details><summary>¿Qué cultivos y países cubre?</summary><p>En este prototipo: soja, maíz y trigo, para Argentina, Venezuela y Brasil — los que más piden los mercados de alta adopción cripto donde se enfoca Attenciona Fase 3. Ampliar cobertura es cuestión de sumar países al dataset de FAOSTAT.</p></details>
+    <details><summary>¿Por qué cobráis en cripto y no en pesos o reales?</summary><p>Porque el usuario objetivo a veces no tiene forma fácil de pagar con tarjeta internacional, y porque cobrar en USDT/USDC protege el ingreso de la devaluación local — la misma razón por la que este producto existe.</p></details>
+    <details><summary>¿Guardáis los datos de mi cosecha?</summary><p>No. La consulta es de precio público, no pide ni guarda información de tu producción.</p></details>
+  </section>
+
+  <section>
+    <p class="section-tag">Estado real (5 puertas de Fase 3)</p>
+    <div class="gates">
+      <div class="gate ok"><span class="st">✓ hecho</span>Investigación<br>(FAOSTAT + Frankfurter, APIs verificadas reales)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Diseño<br>(audiencia investigada, paleta inspirada — hex sin verificar)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Monetización<br>(afiliación + freemium — especificación construible)</div>
+      <div class="gate ok"><span class="st">✓ hecho</span>Legal<br>(consentimiento + privacidad + aviso legal enlazados)</div>
+    </div>
+  </section>
+
+  <footer>
+    Prototipo local de Fase 3 — no publicado, no indexado, no conectado a producción.
+    Fuentes: <a href="https://fenixservices.fao.org/faostat/api/v1" target="_blank" rel="noopener">FAOSTAT API</a> (FAO, gratis, sin clave) ·
+    <a href="https://www.frankfurter.dev" target="_blank" rel="noopener">Frankfurter.dev</a> (tipo de cambio BCE, gratis, sin clave).
+    <br><br>
+    Legal: <a href="../privacidad.html" rel="noopener">Privacidad</a> · <a href="../aviso-legal.html" rel="noopener">Aviso legal · Responsable editorial (Art. 50(4) AI Act)</a>.
+    <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=f47f854f57" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+</div>
+<script>
+  // Solo ilustrativo: números de ejemplo fijos por combinación, para revisar el concepto sin llamar a ninguna API real.
+  const EJEMPLO = {
+    'Soja-Argentina': {usd: 412, local: '≈ 495.000 ARS', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Maíz-Argentina': {usd: 198, local: '≈ 237.000 ARS', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Trigo-Argentina': {usd: 231, local: '≈ 277.000 ARS', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Soja-Venezuela': {usd: 412, local: '≈ 15.200 VES', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Maíz-Venezuela': {usd: 198, local: '≈ 7.300 VES', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Trigo-Venezuela': {usd: 231, local: '≈ 8.500 VES', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Soja-Brasil': {usd: 412, local: '≈ 2.270 BRL', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Maíz-Brasil': {usd: 198, local: '≈ 1.090 BRL', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'},
+    'Trigo-Brasil': {usd: 231, local: '≈ 1.270 BRL', nota:'ejemplo, dato de referencia FAOSTAT no en vivo'}
+  };
+  document.getElementById('calc').addEventListener('click', () => {
+    const crop = document.getElementById('crop').value;
+    const country = document.getElementById('country').value;
+    const r = EJEMPLO[crop + '-' + country];
+    document.getElementById('out').innerHTML = `<b>${r.usd} USD / tonelada</b>${r.local} · ${crop} en ${country} — ${r.nota}`;
+  });
+</script>
+<div id="consent" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:99;max-width:640px;margin:0 auto;background:#1c1714;color:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 18px 50px rgba(0,0,0,.32);font-family:inherit;font-size:13px;line-height:1.5">
+  <p style="margin:0 0 10px;color:rgba(255,255,255,.78)">Este prototipo no carga servicios de terceros (analítica, enlaces de afiliado) hasta que consientas. Tu elección se guarda en este navegador. Más en <a href="../privacidad.html" style="color:#f2b705;text-decoration:underline">privacidad</a> y <a href="../aviso-legal.html" style="color:#f2b705;text-decoration:underline">aviso legal</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="consent-ok" style="background:#e8590c;color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Aceptar</button>
+    <button id="consent-no" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer">Solo lo necesario</button>
+  </div>
+</div>
+<script>
+  (function(){ var k='attenciona_consent'; var el=document.getElementById('consent'); var estado=null; try{estado=localStorage.getItem(k);}catch(e){}
+    function cerrar(v){ try{localStorage.setItem(k,v);}catch(e){} el.remove(); }
+    var ok=document.getElementById('consent-ok'), no=document.getElementById('consent-no');
+    if(ok) ok.addEventListener('click',function(){cerrar('ok');});
+    if(no) no.addEventListener('click',function(){cerrar('no');});
+    if(estado) el.remove();
+  })();
+</script>
+</body>
+</html>

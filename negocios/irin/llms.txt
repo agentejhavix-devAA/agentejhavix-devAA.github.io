@@ -1,0 +1,23 @@
+# Irin — Is your invoice NRS-ready? Your IRN, stamped
+
+Irin es una herramienta educativa (sin asesoría fiscal) que comprueba si una empresa nigeriana debe emitir sus facturas a través del sistema nacional de facturación electrónica de la Nigeria Revenue Service (NRS) — el Merchant-Buyer Solution (MBS) — y desde cuándo.
+
+## Hechos clave (verificados 13.08.2026)
+
+- Base legal: Nigeria Tax Administration Act 2025 (NTAA), s.23 (las entregas gravables deben registrarse/reportarse vía el sistema fiscal electrónico), s.103 y s.104 (sanciones); Nigeria Tax Act s.158 (sistema de fiscalización aprobado).
+- Modelo de clearance: cada factura pasa validación fiscal en la plataforma MBS antes de llegar al comprador; emite un Invoice Reference Number (IRN) + Cryptographic Stamp + QR. Solo las facturas validadas con IRN tienen validez legal en Nigeria.
+- Fases:
+  - Grandes contribuyentes (facturación bruta anual ≥ ₦5.000 millones): go-live nov 2025; cumplimiento completo exigido el **31/07/2026 — PLAZO PASADO, monitoreo activo**. Aprox. 5.000 empresas.
+  - Medianos (₦1.000–5.000 millones): onboarding desde Q3 2026; **sanciones desde enero 2027**.
+  - Emergentes (< ₦1.000 millones): onboarding 2027, cumplimiento completo **2028**.
+- Alcance: facturas B2B, B2G y B2C de alto valor.
+- Sanciones (NTAA 2025): s.104 — procesar una entrega gravable fuera del sistema aprobado: ₦200.000 + 100% del impuesto debido + intereses al MPR del CBN. s.103 — negar acceso al NRS tras 30 días de aviso: ₦1.000.000 el primer día + ₦10.000 por día.
+- Portal oficial: einvoice.nrs.gov.ng (HTTP 200 el 13.08.2026).
+
+## Fuentes
+
+1. https://einvoice.nrs.gov.ng/ (portal oficial NRS)
+2. https://sovos.com/regulatory-updates/vat/nigeria-nrs-publishes-e-invoicing-timeline/ (timeline oficial, feb 2026)
+3. https://www.flick.network/en-ng/nrs-e-invoicing-2026 (checklist + sanciones, ago 2026)
+4. https://www.vatupdate.com/2026/02/19/briefing-document-podcast-e-invoicing-and-e-reporting-in-nigeria/ (sanciones)
+5. https://kpmg.com/us/en/taxnewsflash/news/2026/02/nigeria-phased-rollout-e-invoicing-electronic-fiscal-system.html (KPMG, feb 2026)

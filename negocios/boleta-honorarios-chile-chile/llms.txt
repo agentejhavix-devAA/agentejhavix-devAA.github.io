@@ -1,0 +1,25 @@
+# NetoClaro · Chile
+
+> En Chile la retención vigente de las boletas de honorarios es 15,25% durante 2026. Introduce tu bruto o el líquido que necesitas y calcula el importe correcto antes de cotizar, sin confundir precio con dinero disponible.
+
+- **Mercado:** Chile
+- **Fuente de datos viva:** SII Chile — Boleta de Honorarios 2026: retención vigente 15,25% y simulador oficial
+
+- **Sistema de diseño:** Específico (de la investigación del spec) (DM Sans (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+La calculadora separa honorario bruto, retención y líquido recibido. También resuelve la pregunta inversa: cuánto debes cobrar para que, después de la retención oficial de 2026, te queden los pesos que necesitas. No es asesoría tributaria: es una simulación basada en la tasa publicada por el SII.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- SII Chile — Boleta de Honorarios 2026: retención vigente 15,25% y simulador oficial (https://www.sii.cl/destacados/boletas_honorarios/)
+- SII Chile — calendario oficial de aumento gradual (Ley 21.133) (https://www.sii.cl/destacados/boletas_honorarios/aumento_gradual.html)
+- SII Chile — tasas de retención, actualización 01/04/2026 (https://www.sii.cl/preguntas_frecuentes/declaracion_renta/001_140_7297.htm)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: SII Chile — Boleta de Honorarios 2026: retención vigente 15,25% y simulador oficial. (https://www.sii.cl/destacados/boletas_honorarios/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la simulación + Pro pago único (7,90 USD) — sin coste oculto ni letra pequeña.

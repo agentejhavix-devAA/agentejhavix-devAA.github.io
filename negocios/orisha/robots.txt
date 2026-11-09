@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orisha.attenciona.com/llms.txt

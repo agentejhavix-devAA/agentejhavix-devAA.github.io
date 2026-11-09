@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head><script>try{location.replace("https://www.attenciona.com"+location.pathname+location.search+location.hash);}catch(e){location.href="https://www.attenciona.com/";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprar o vender ATTA · attenciona</title>
+<meta name="description" content="Compra o vende ATTA directamente en su curva de precio en Base, con tu cartera. Sin intermediarios: el contrato es público.">
+<meta name="theme-color" content="#071630">
+<link rel="canonical" href="https://www.attenciona.com/atta/comprar/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+:root{--n0:#040d1f;--n1:#071630;--n2:#0c2350;--ink:#eaf0fb;--muted:#9fb0cf;--line:rgba(255,255,255,.1);--gold:#e2b45a;--gold2:#f7dc9a;--gold3:#a87a2a;--good:#4fd08b;--bad:#ff7b88;
+--font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--display:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:radial-gradient(ellipse 70% 50% at 50% 0,rgba(226,180,90,.14),transparent 60%),linear-gradient(180deg,var(--n0),var(--n1));color:var(--ink);font-family:var(--font);line-height:1.55;min-height:100vh}
+a{color:var(--gold2)}
+.wrap{max-width:560px;margin:0 auto;padding:24px 16px 60px}
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:28px}
+.logo{font-family:var(--display);font-size:1.2rem;text-decoration:none;color:var(--ink)}.logo b{color:var(--gold);font-weight:500}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1}
+h1 em{font-style:italic;color:var(--gold2)}
+.sub{color:var(--muted);margin-top:.6rem;font-size:.95rem}
+.panel{margin-top:22px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:20px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin-top:22px}
+.st{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:.8rem;text-align:center;min-width:0}
+.st b{display:block;font-family:var(--mono);font-size:.95rem;color:var(--gold2);overflow-wrap:anywhere}
+.st span{font-size:.72rem;color:var(--muted)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;background:rgba(0,0,0,.25);border-radius:14px;padding:.3rem}
+.tabs button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:600;padding:.7rem;border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--n2);color:var(--ink)}
+label{display:block;font-size:.82rem;color:var(--muted);margin:18px 0 6px}
+.campo{display:flex;align-items:center;gap:.6rem;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:14px;padding:.4rem .4rem .4rem 1rem}
+.campo input{flex:1;min-width:0;background:transparent;border:0;color:var(--ink);font:500 1.4rem var(--mono);outline:none;padding:.4rem 0}
+.campo span{font-family:var(--mono);font-size:.8rem;color:var(--gold2);padding:.5rem .8rem;border-radius:10px;background:rgba(226,180,90,.1)}
+.max{background:none;border:0;color:var(--gold);font:inherit;font-size:.75rem;cursor:pointer;margin-top:6px}
+.res{margin-top:14px;display:grid;gap:.4rem;font-size:.88rem}
+.res div{display:flex;justify-content:space-between;gap:1rem}.res span{color:var(--muted)}.res b{font-family:var(--mono);font-weight:500;text-align:right}
+.chk{display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;color:var(--muted);margin-top:16px}
+.chk input{margin-top:.2rem;accent-color:var(--gold)}
+.btn{display:block;width:100%;margin-top:16px;border:0;border-radius:999px;padding:1rem;font:600 1rem var(--font);cursor:pointer;background:linear-gradient(120deg,var(--gold2),var(--gold) 50%,var(--gold3));color:#1b1203}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sec{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.25)}
+.msg{margin-top:14px;font-size:.88rem;min-height:1.3em;overflow-wrap:anywhere}
+.msg.ok{color:var(--good)}.msg.ko{color:var(--bad)}
+.cuenta{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.info{margin-top:22px;font-size:.8rem;color:var(--muted)}
+.info code{font-family:var(--mono);font-size:.72rem;color:var(--gold2);overflow-wrap:anywhere}
+.riesgo{margin-top:18px;padding:1rem 1.1rem;border-radius:14px;background:rgba(255,123,136,.07);border:1px solid rgba(255,123,136,.3);color:#ffd1d6;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="logo" href="/atta/">attenciona <b>· ATTA</b></a><span class="cuenta" id="cuenta">sin conectar</span></header>
+  <h1>Compra o vende <em>ATTA</em></h1>
+  <p class="sub">Directamente contra la curva del contrato, en la red Base. Sin intermediarios: tu cartera firma y el contrato ejecuta.</p>
+
+  <div class="stats">
+    <div class="st"><b id="sP">…</b><span>precio USDC</span></div>
+    <div class="st"><b id="sR">…</b><span>respaldo USDC</span></div>
+    <div class="st"><b id="sV">…</b><span>ATTA en manos</span></div>
+  </div>
+
+  <div class="panel">
+    <div class="tabs"><button id="tC" class="on">Comprar</button><button id="tV">Vender</button></div>
+    <label for="cant" id="lCant">Pagas (USDC, comisión incluida)</label>
+    <div class="campo"><input id="cant" inputmode="decimal" placeholder="0" autocomplete="off"><span id="uCant">USDC</span></div>
+    <button class="max" id="max">Usar todo mi saldo</button>
+    <div class="res">
+      <div><span id="lRes">Recibes</span><b id="rRes">—</b></div>
+      <div><span>Comisión (2 %)</span><b id="rCom">—</b></div>
+      <div><span>Protección de precio</span><b id="rTope">—</b></div>
+    </div>
+    <label class="chk"><input type="checkbox" id="acepto"> Entiendo que ATTA es un token de utilidad, no una inversión: su precio puede bajar, nadie garantiza que suba y puedo perder lo que pague.</label>
+    <button class="btn" id="b">Conectar cartera</button>
+    <p class="msg" id="m" aria-live="polite"></p>
+  </div>
+
+  <div class="riesgo">Comprar y vender seguido cuesta un 4 % (2 % en cada lado). El USDC que pagas queda en el contrato como respaldo y solo sale para recomprar ATTA. Revisa siempre en tu cartera que firmas en la red <b>Base</b> y con el contrato de abajo.</div>
+  <div class="info">
+    Token ATTA: <code>0x680f2D99a42AA4f3361c2ec3F96492775812d05B</code><br>
+    Curva: <code>0xFe4bC5131ffB17B1c1F957872120E2fCA0e359b2</code><br>
+    <a href="https://basescan.org/address/0xFe4bC5131ffB17B1c1F957872120E2fCA0e359b2" target="_blank" rel="noopener">Ver la curva en BaseScan</a> · <a href="/atta/#whitepaper">White paper</a>
+  </div>
+</div>
+
+<script src="/vendor/ethers-6.17.0.umd.min.js"></script>
+<script src="/cartera.js"></script>
+<script>
+const D = { ATTA: "0x680f2D99a42AA4f3361c2ec3F96492775812d05B", CURVA: "0xFe4bC5131ffB17B1c1F957872120E2fCA0e359b2", USDC: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913" };
+const ABI_C = ["function precioActual() view returns(uint256)", "function reserva() view returns(uint256)", "function vendidos() view returns(uint256)", "function capacidad() view returns(uint256)",
+  "function cotizaCompra(uint256) view returns(uint256,uint256)", "function cotizaVenta(uint256) view returns(uint256,uint256)", "function compra(uint256,uint256)", "function vende(uint256,uint256)"];
+const ABI_T = ["function balanceOf(address) view returns(uint256)", "function allowance(address,address) view returns(uint256)", "function approve(address,uint256) returns(bool)"];
+const $ = id => document.getElementById(id), E = ethers;
+const lector = new E.JsonRpcProvider("https://mainnet.base.org", 8453, { staticNetwork: true });
+let modo = "compra", firmante = null, yo = null, cot = null;
+const curvaL = new E.Contract(D.CURVA, ABI_C, lector);
+const num = (x, d, f = 4) => Number(E.formatUnits(x, d)).toLocaleString("es-ES", { maximumFractionDigits: f });
+const msg = (t, c = "") => { $("m").textContent = t; $("m").className = "msg " + c; };
+
+async function stats() {
+  try {
+    const [p, r, v] = await Promise.all([curvaL.precioActual(), curvaL.reserva(), curvaL.vendidos()]);
+    $("sP").textContent = num(p, 6, 6); $("sR").textContent = num(r, 6, 2); $("sV").textContent = num(v, 18, 0);
+  } catch (e) { $("sP").textContent = "—"; }
+}
+
+// compra: máximo de ATTA cuyo coste + comisión <= lo que pagas (fórmula de la curva + confirmación con el contrato)
+async function cotiza() {
+  cot = null; const v = parseFloat(($("cant").value || "").replace(",", "."));
+  ["rRes", "rCom", "rTope"].forEach(i => $(i).textContent = "—");
+  if (!(v > 0)) return;
+  try {
+    if (modo === "compra") {
+      const s = Number(E.formatEther(await curvaL.vendidos())), X = v / 1.02;
+      const a = 0.0005e-6, b = 0.001 + 0.001e-6 * s;
+      let tokens = E.parseEther(((-b + Math.sqrt(b * b + 4 * a * X)) / (2 * a) * 0.9995).toFixed(6));
+      const [c, f] = await curvaL.cotizaCompra(tokens);
+      const tope = c + f + (c + f) / 100n;
+      cot = { tokens, tope };
+      $("rRes").textContent = num(tokens, 18, 2) + " ATTA"; $("rCom").textContent = num(f, 6) + " USDC"; $("rTope").textContent = "máx. " + num(tope, 6) + " USDC";
+    } else {
+      const tokens = E.parseEther(String(v));
+      const [n, f] = await curvaL.cotizaVenta(tokens);
+      const minimo = n - n / 100n;
+      cot = { tokens, minimo };
+      $("rRes").textContent = num(n, 6) + " USDC"; $("rCom").textContent = num(f, 6) + " USDC"; $("rTope").textContent = "mín. " + num(minimo, 6) + " USDC";
+    }
+  } catch (e) { msg("No se pudo calcular: " + (e.shortMessage || e.message), "ko"); }
+}
+
+function cambia(m) {
+  modo = m; $("tC").classList.toggle("on", m === "compra"); $("tV").classList.toggle("on", m === "venta");
+  $("lCant").textContent = m === "compra" ? "Pagas (USDC, comisión incluida)" : "Vendes (ATTA)";
+  $("uCant").textContent = m === "compra" ? "USDC" : "ATTA"; $("lRes").textContent = m === "compra" ? "Recibes" : "Recibes (neto)";
+  $("cant").value = ""; cotiza(); boton();
+}
+function boton() { $("b").textContent = !firmante ? "Conectar cartera" : modo === "compra" ? "Comprar ATTA" : "Vender ATTA"; }
+
+async function conecta() {
+  if (!window.Cartera || !Cartera.hayCartera()) {
+    if (window.Cartera && Cartera.esMovil()) { msg("No veo cartera aquí; te llevo a la app de MetaMask…", "ko"); location.href = Cartera.deeplink("/atta/comprar/"); return; }
+    msg("Necesitas una cartera como MetaMask en este navegador.", "ko"); return;
+  }
+  try {
+    $("b").disabled = true; msg("Conectando tu cartera…");
+    const r = await Cartera.conectar();
+    firmante = await new E.BrowserProvider(r.provider).getSigner();
+    yo = r.cuenta || await firmante.getAddress();
+    $("cuenta").textContent = yo.slice(0, 6) + "…" + yo.slice(-4); boton(); msg("");
+  } catch (e) { msg(Cartera.mensajeError(e), "ko"); }
+  finally { $("b").disabled = false; }
+}
+
+async function maximo() {
+  if (!yo) return conecta();
+  const t = new E.Contract(modo === "compra" ? D.USDC : D.ATTA, ABI_T, lector);
+  const b = await t.balanceOf(yo);
+  $("cant").value = modo === "compra" ? (Math.floor(Number(E.formatUnits(b, 6)) * 0.99 * 100) / 100) : E.formatEther(b);
+  cotiza();
+}
+
+async function opera() {
+  if (!firmante) return conecta();
+  if (!$("acepto").checked) { msg("Marca la casilla de riesgo antes de seguir.", "ko"); return; }
+  await cotiza(); if (!cot) { msg("Escribe una cantidad.", "ko"); return; }
+  const curva = new E.Contract(D.CURVA, ABI_C, firmante);
+  try {
+    $("b").disabled = true;
+    if (modo === "compra") {
+      const usdc = new E.Contract(D.USDC, ABI_T, firmante);
+      if ((await usdc.balanceOf(yo)) < cot.tope) throw new Error("no tienes suficiente USDC en Base");
+      if ((await usdc.allowance(yo, D.CURVA)) < cot.tope) { msg("1/2 · Autoriza el USDC en tu cartera…"); await (await usdc.approve(D.CURVA, cot.tope)).wait(); }
+      msg("2/2 · Confirma la compra en tu cartera…");
+      const r = await (await curva.compra(cot.tokens, cot.tope)).wait();
+      msg("✅ Compra hecha. Transacción: " + r.hash, "ok");
+    } else {
+      const att = new E.Contract(D.ATTA, ABI_T, firmante);
+      if ((await att.balanceOf(yo)) < cot.tokens) throw new Error("no tienes tantos ATTA");
+      if ((await att.allowance(yo, D.CURVA)) < cot.tokens) { msg("1/2 · Autoriza tus ATTA en tu cartera…"); await (await att.approve(D.CURVA, cot.tokens)).wait(); }
+      msg("2/2 · Confirma la venta en tu cartera…");
+      const r = await (await curva.vende(cot.tokens, cot.minimo)).wait();
+      msg("✅ Venta hecha. Transacción: " + r.hash, "ok");
+    }
+    $("cant").value = ""; cotiza(); stats();
+  } catch (e) { msg("No se hizo: " + (e.shortMessage || e.reason || e.message), "ko"); }
+  finally { $("b").disabled = false; }
+}
+
+$("tC").onclick = () => cambia("compra"); $("tV").onclick = () => cambia("venta");
+$("cant").oninput = () => { clearTimeout(window._t); window._t = setTimeout(cotiza, 350); };
+$("max").onclick = maximo; $("b").onclick = opera;
+if (window.Cartera) Cartera.alCambiar(); else if (window.ethereum) window.ethereum.on?.("accountsChanged", () => location.reload());
+stats(); setInterval(stats, 20000);
+</script>
+</body>
+</html>

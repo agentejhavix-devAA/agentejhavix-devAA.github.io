@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Irin — landing de comprobación de obligación NRS e-invoicing (Nigeria)
+# Generado por la Incubadora de attenciona. Sin contenido oculto.

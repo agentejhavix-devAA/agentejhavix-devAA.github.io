@@ -1,0 +1,28 @@
+# Pantalla justa
+
+Pantalla justa te dice qué monitor (resolución, tasa de refresco, tamaño) necesitas según trabajes o juegues, y cuánto es razonable pagar.
+
+Datos verificados contra fuentes oficiales (https://www.osha.europa.eu/es/themes/work-related-diseases, https://www.ocu.org/). Actualizado: 31/08/2026.
+
+## La regla de compra (respuesta directa)
+
+- Resolución para tu uso: Para oficina y texto, la resolución y el tamaño importan más que la tasa de refresco; para gaming competitivo, la tasa marca la diferencia. Elegir contra el uso ahorra dinero.
+- Tasa de refresco real: 144 Hz es el punto dulce para jugar; 240 Hz solo aporta en esports de nivel. La tasa se aprovecha solo si la gráfica la alcanza.
+
+## Productos posicionados (catálogo Amazon.es)
+
+- MSI Optix G271 27" FHD 144Hz — 142.99 € (ASIN B083P7DRSK). 27" Full HD 144 Hz con FreeSync: para jugar sin pagar por 240 Hz que no aprovecharás.
+- MSI G274F 27" FHD 180Hz IPS — 109 € (ASIN B09XTRCCSS). 27" FHD 180 Hz IPS con 1 ms: nítido en trabajo y fluido en juego, sin elegir entre ambos.
+
+## Preguntas frecuentes
+
+- Q: ¿Cuántos Hz necesito? — A: Oficina: 60-100 Hz. Gaming casual: 144 Hz. Esports: 240 Hz o más, solo si tu gráfica los alcanza.
+- Q: ¿Vale la pena la pantalla curva? — A: Es cuestión de gusto, no de rendimiento: para texto plano, un panel IPS recto suele ser más nítido por el mismo precio.
+
+## Palabras clave de intención
+
+mejor monitor 144hz calidad precio, monitor para oficina 27 pulgadas, ips vs va monitor
+
+## Monetización
+
+Afiliado Amazon Associates (tag attenciona01-21): comisión solo por compra, sin recargo en el precio, con aviso en cada enlace.

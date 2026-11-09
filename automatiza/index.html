@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatiza · consultoría de IA a la carta · attenciona</title>
+<meta name="description" content="Cuéntanos qué haces a mano hoy y te decimos qué se puede automatizar con IA: WhatsApp, negocios enteros o gestiones y papeleo.">
+<meta name="theme-color" content="#0f2d5c">
+<link rel="canonical" href="https://www.attenciona.com/automatiza/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="Automatiza · consultoría de IA a la carta">
+<meta property="og:description" content="Cuéntanos qué haces a mano hoy y te decimos qué se puede automatizar con IA: WhatsApp, negocios enteros o gestiones y papeleo.">
+<meta property="og:url" content="https://www.attenciona.com/automatiza/">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automatiza · consultoría de IA a la carta · attenciona">
+<meta name="twitter:description" content="Cuéntanos qué haces a mano hoy y te decimos qué se puede automatizar con IA: WhatsApp, negocios enteros o gestiones y papeleo.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/nav-fase4.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Automatiza","description":"Consultoría de attenciona: analizamos tu caso y te decimos qué se puede automatizar con IA — WhatsApp, negocios completos o gestiones y papeleo.","url":"https://www.attenciona.com/automatiza/"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es Automatiza exactamente?","acceptedAnswer":{"@type":"Answer","text":"Es la consultoría de attenciona: nos cuentas qué haces a mano hoy y te decimos, con honestidad, qué de eso se puede automatizar con IA y qué producto de attenciona (o solución a medida) encaja mejor con tu caso."}},{"@type":"Question","name":"¿Cuánto cuesta la consulta?","acceptedAnswer":{"@type":"Answer","text":"La consulta inicial es gratuita y sin compromiso. Si de ahí sale un proyecto concreto (un agente de WhatsApp, una automatización de Fábrica de horas, o algo a medida), el presupuesto se acuerda después y siempre a medida."}},{"@type":"Question","name":"¿Qué tipo de cosas se pueden automatizar?","acceptedAnswer":{"@type":"Answer","text":"Tres grandes vías: atención por WhatsApp (agentes que responden, agendan y venden), negocios completos gestionados con IA, y gestiones o papeleo repetitivo (formularios, informes, seguimientos). Si tu caso no encaja en ninguna, también te lo decimos."}}]}]}</script>
+<style>
+:root{
+  --bg:#fbfbfd; --surface:#f4f5fa; --surface-2:#eceef5; --ink:#131a2b; --muted:#5b6478; --faint:#8b93a7;
+  --line:#e3e6ee; --line-strong:#d3d8e5; --accent:#0f2d5c; --accent-deep:#0a1f42; --accent-tint:#eef1f9;
+  --accent-soft:#7fa6e8; --good:#2f8f5b; --good-tint:#e8f3ec; --bad:#b23b47; --bad-tint:#fbeced;
+  --gold:#c9973e; --gold-deep:#a9772c; --gold-tint:#fbf3e4; --warm:#ffb066; --warm-tint:#ffe6d6;
+  --whats:#25D366; --whats-deep:#128C4A;
+  --shadow:0 1px 2px rgba(19,26,43,.04), 0 8px 28px rgba(19,26,43,.06);
+  --shadow-lift:0 2px 6px rgba(19,26,43,.06), 0 18px 48px rgba(10,31,66,.12);
+  --radius:16px; --maxw:1160px;
+  --font:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ===== HERO ===== */
+.hero{padding-top:22px}
+.hero-banner{position:relative;border-radius:26px;overflow:hidden;background:linear-gradient(150deg,#0a1f42 0%,#0f2d5c 52%,#173a6e 100%);box-shadow:var(--shadow-lift);padding:64px 48px}
+.hero-bg{position:absolute;inset:0}
+.hero-net{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse 95% 85% at 50% 42%,#000 18%,transparent 76%)}
+.glow{position:absolute;border-radius:50%;filter:blur(85px)}
+.g1{width:400px;height:400px;background:#7fa6e8;opacity:.35;top:-150px;left:-70px}
+.g2{width:300px;height:300px;background:var(--warm);opacity:.2;bottom:-110px;right:16%}
+.g3{width:230px;height:230px;background:#25D366;opacity:.18;top:30%;right:40%}
+.hero-grain{position:absolute;inset:0;opacity:.45;mix-blend-mode:overlay;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.15) 1px,transparent 0);background-size:3px 3px}
+.hero-in{position:relative;z-index:3;max-width:720px;margin:0 auto;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);color:#cfdaee;padding:6px 14px 6px 9px;border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:22px;backdrop-filter:blur(8px)}
+.pill .live{width:6px;height:6px;border-radius:50%;background:#6fd39c;animation:beat 1.9s infinite}
+@keyframes beat{0%,100%{box-shadow:0 0 0 3px rgba(111,211,156,.24)}50%{box-shadow:0 0 0 7px rgba(111,211,156,0)}}
+.hero-h1{font-family:var(--display);font-size:46px;line-height:1.08;font-weight:600;letter-spacing:-.025em;color:#fff;margin-bottom:18px}
+.hero-h1 .em{font-style:italic;font-weight:500;background:linear-gradient(94deg,#ffd9bd,#ffb066 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:#9fb0cc;font-size:16px;line-height:1.64;margin-bottom:30px}
+.hero-ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{padding:13px 22px;border-radius:11px;font-size:14.5px;font-weight:600;border:none;cursor:pointer;font-family:var(--font);transition:transform .14s var(--ease),box-shadow .2s,background .16s}
+.btn:active{transform:scale(.975)}
+.btn-white{background:#fff;color:var(--accent-deep)}
+.btn-glass{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-glass:hover{background:rgba(255,255,255,.18)}
+
+/* ===== SECCIONES ===== */
+.section{padding:58px 0 0}
+.shead{max-width:62ch;margin:0 auto 32px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.11em;margin-bottom:10px}
+.eyebrow::before{content:"";width:15px;height:1.5px;background:var(--gold)}
+.shead h2{font-family:var(--display);font-size:30px;font-weight:600;letter-spacing:-.022em}
+.shead .sd{color:var(--faint);font-size:14px;margin-top:8px}
+
+/* ===== 3 VÍAS ===== */
+.vias{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.vias{grid-template-columns:1fr}}
+.via{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .15s var(--ease),box-shadow .15s}
+.via:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.via .vico{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+.via .vico svg{width:26px;height:26px;color:#fff}
+.via.wa .vico{background:linear-gradient(150deg,var(--whats),var(--whats-deep))}
+.via.ne .vico{background:linear-gradient(150deg,var(--gold),var(--gold-deep))}
+.via.ge .vico{background:linear-gradient(150deg,var(--accent-soft),var(--accent))}
+.via h3{font-size:19px;font-weight:700;letter-spacing:-.015em;margin-bottom:10px}
+.via p{color:var(--muted);font-size:13.5px;line-height:1.62;margin-bottom:18px;flex:1}
+.via ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.via li{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--muted)}
+.via li svg{width:14px;height:14px;color:var(--good);flex:none;margin-top:2px}
+.via .vlink{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;color:var(--accent)}
+.via .vlink svg{width:14px;height:14px}
+
+/* ===== ejemplos ===== */
+.examples{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.ex{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+
+/* ===== FORMULARIO ===== */
+.forge{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;align-items:stretch}
+@media(max-width:960px){.forge{grid-template-columns:1fr}}
+.forge-l{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.forge-l h3{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.forge-l p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:20px}
+.forge-list{display:flex;flex-direction:column;gap:0;margin-top:auto}
+.forge-item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);align-items:flex-start}
+.forge-item:first-child{border-top:none}
+.forge-item svg{width:15px;height:15px;color:var(--good);flex:none;margin-top:2px}
+.forge-item .ft{font-size:12.5px;color:var(--muted);line-height:1.5}
+.forge-item .ft b{color:var(--ink);font-weight:700}
+
+.forge-r{background:linear-gradient(150deg,#0a1f42,#0f2d5c);border-radius:var(--radius);padding:26px 24px;color:#fff;position:relative;overflow:hidden}
+.forge-r .hero-net{mask-image:radial-gradient(ellipse 90% 90% at 50% 30%,#000 18%,transparent 76%)}
+.forge-r > *{position:relative}
+.f-label{font-size:12.5px;font-weight:700;color:#cfdaee;margin-bottom:8px;display:block}
+.f-hint{color:#7788a8;font-size:11.5px;margin-bottom:12px;line-height:1.5}
+.f-input,.f-textarea,.f-select{width:100%;font:inherit;font-size:13.5px;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;margin-bottom:18px}
+.f-textarea{min-height:110px;resize:vertical}
+.f-input::placeholder,.f-textarea::placeholder{color:#6d7ea3}
+.f-input:focus,.f-textarea:focus,.f-select:focus{outline:2px solid var(--gold);outline-offset:1px;background:rgba(255,255,255,.09)}
+.f-select option{background:#0f2d5c;color:#fff}
+.f-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.f-chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:9px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;cursor:pointer;background:rgba(255,255,255,.05);color:#cfdaee;user-select:none;transition:.15s}
+.f-chip input{display:none}
+.f-chip.on{background:var(--gold);color:var(--accent-deep);border-color:var(--gold);font-weight:700}
+.f-btn{width:100%;background:#fff;color:var(--accent-deep);font-weight:700;padding:14px 0;border-radius:12px;border:none;cursor:pointer;font-size:14.5px;transition:.15s}
+.f-btn:hover{background:var(--warm-tint)}
+.f-btn:disabled{opacity:.55;cursor:default}
+.f-res{margin-top:14px;font-size:13px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);display:none;color:#cfdaee;line-height:1.5}
+.f-res.show{display:block}
+.f-res.bad{color:#ffb0b6;background:rgba(178,59,71,.18);border-color:rgba(178,59,71,.4)}
+.f-res.ok{color:#a8ecc4;background:rgba(37,211,102,.14);border-color:rgba(37,211,102,.4)}
+
+.gates-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;justify-content:center}
+.gate{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:9px 14px;font-size:12.5px;font-weight:600;color:var(--ink);box-shadow:var(--shadow)}
+.gate svg{width:14px;height:14px;color:var(--good);flex:none}
+
+.faq-item{border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;background:#fff;box-shadow:var(--shadow)}
+.faq-item summary{cursor:pointer;font-weight:700;font-size:14.5px;letter-spacing:-.01em}
+.faq-item p{margin-top:10px;color:var(--muted);font-size:13.5px;line-height:1.6}
+
+.origen-box{display:flex;gap:12px;background:var(--accent-tint);border:1px solid #d8e0f0;border-radius:var(--radius);padding:16px 20px;margin-top:16px;align-items:flex-start}
+.origen-box svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:1px}
+.origen-box .ot{font-size:12.5px;color:var(--muted);line-height:1.6}
+.origen-box .ot b{color:var(--ink);font-weight:700}
+
+.mia{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;padding:4px 9px 4px 6px;border-radius:7px;font-size:9.5px;font-weight:700;letter-spacing:.02em;box-shadow:0 2px 6px rgba(15,45,92,.22)}
+.mia svg{width:11px;height:11px;flex:none}
+
+footer{border-top:1px solid var(--line);padding:34px 0 40px;color:var(--muted);font-size:13px;margin-top:60px}
+.foot-in{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+.foot-legal{display:flex;flex-direction:column;gap:8px;font-size:12px;border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.foot-legal a{color:var(--muted)}
+
+@media(max-width:820px){
+  .hero-banner{padding:44px 22px}
+  .hero-h1{font-size:31px}
+  .hero-sub{font-size:14px}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<nav class="af-nav" aria-label="Principal"><div class="af-in">
+  <a class="af-brand" href="/"><span class="af-mk"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5 L6 12 L12 12 Z" fill="#fff" opacity=".95"/><path d="M12 5 L18 12 L12 12 Z" fill="#ffe6d6" opacity=".9"/><path d="M12 12 L6 12 L12 19 Z" fill="#fff" opacity=".45"/><path d="M12 12 L12 19 L18 12 Z" fill="#fff" opacity=".68"/></svg></span>attenciona<span class="af-sub">Negocios</span></a>
+  <div class="af-links">
+    <div class="af-item">
+      <button class="af-btn" aria-haspopup="true">Explorar <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 8l3-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="af-mega">
+        <a class="af-mlink" href="/automatiza/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2c2 2.4 2 9.6 0 12M8 2c-2 2.4-2 9.6 0 12" stroke="currentColor" stroke-width="1.3"/><path d="M8 2v12" stroke="currentColor" stroke-width="1.3"/></svg></span><span><span class="af-mt">Automatiza</span><span class="af-md">Consultoría de IA a la carta · consulta gratis</span></span></a>
+        <a class="af-mlink" href="/negocios/atiende-ia/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C4.4 1.5 1.5 4 1.5 7c0 1.6.8 3 2 4L3 13.5l3-1.2c.6.14 1.3.2 2 .2 3.6 0 6.5-2.5 6.5-5.5S11.6 1.5 8 1.5z" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">AtiendeIA</span><span class="af-md">Agentes de WhatsApp a medida</span></span></a>
+        <a class="af-mlink" href="/marketplace.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Destacados</span><span class="af-md">Los negocios mejor valorados</span></span></a>
+        <a class="af-mlink" href="/negocios/todos/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1.4" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="2" y="9" width="5" height="5" rx="1.4" fill="currentColor" opacity=".5"/><rect x="9" y="9" width="5" height="5" rx="1.4" fill="currentColor"/></svg></span><span><span class="af-mt">Todos los negocios</span><span class="af-md">El listado completo con buscador</span></span></a><a class="af-mlink" href="/negocios/fabrica-de-horas/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M8 4.5V8l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Fábrica de horas</span><span class="af-md">Motor: pide tu automatización, págala, recíbela</span></span></a>
+        <a class="af-mlink" href="/incubadora.html"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5c2.5 2.6 4 5 4 7a4 4 0 11-8 0c0-2 1.5-4.4 4-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span><span><span class="af-mt">Incubadora</span><span class="af-md">Lo último que sale del motor</span></span></a>
+        <a class="af-mlink" href="/negomazon/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M4 5.5h8l.8 8.5H3.2L4 5.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 5.5a2 2 0 0 1 4 0" stroke="currentColor" stroke-width="1.4"/></svg></span><span><span class="af-mt">Negomazon</span><span class="af-md">Guías de compra · afiliado Amazon</span></span></a>
+        <a class="af-mlink" href="/strategycheck/"><span class="af-mi"><svg viewBox="0 0 16 16" fill="none"><path d="M8 2v12M3 5h10M3 5l-2 4a2 2 0 0 0 4 0l-2-4zM13 5l-2 4a2 2 0 0 0 4 0l-2-4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></span><span><span class="af-mt">StrategyCheck</span><span class="af-md">Backtest honesto de bots de trading · gratis</span></span></a>
+      </div>
+    </div>
+    <a class="af-link" href="/historia.html">Historia</a>
+  </div>
+  <div class="af-right"><a class="af-cta" href="#consulta">Pedir consulta gratis</a></div>
+</div></nav>
+
+<div class="wrap hero">
+  <div class="hero-banner rv in">
+    <div class="hero-bg"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div><div class="hero-net"></div><div class="hero-grain"></div></div>
+    <div class="hero-in">
+      <div class="pill"><span class="live"></span> Consulta directa con attenciona · sin catálogo, sin bots de venta</div>
+      <h1 class="hero-h1">¿Qué puedes <span class="em">automatizar hoy</span> con IA?</h1>
+      <p class="hero-sub">Cuéntanos qué haces a mano en tu día a día — atender WhatsApp, gestionar tu negocio, papeleo repetitivo — y te decimos con honestidad qué se puede automatizar, cómo, y qué producto de attenciona (o solución a medida) encaja con tu caso. Consulta gratuita, sin compromiso.</p>
+      <div class="hero-ctas"><a class="btn btn-white" href="#consulta">Consultar mi caso →</a><a class="btn btn-glass" href="#vias">Ver qué se puede automatizar</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section" id="vias">
+  <div class="shead rv in">
+    <div class="eyebrow">Tres caminos</div>
+    <h2>Todo lo que puedes dejar de hacer a mano</h2>
+    <p class="sd">No hace falta que sepas cuál encaja con tu caso — para eso está la consulta. Esto es solo el mapa de posibilidades.</p>
+  </div>
+  <div class="vias rv in">
+    <div class="via wa">
+      <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 2.5C6.8 2.5 2.5 6.4 2.5 11c0 2.5 1.3 4.7 3.3 6.2L4.8 21l4-1.6c1 .3 2 .5 3.2.5 5.2 0 9.5-3.9 9.5-8.5S17.2 2.5 12 2.5z"/></svg></div>
+      <h3>WhatsApp que atiende solo</h3>
+      <p>Un agente en tu propio número que responde precios y horarios, agenda citas, toma pedidos y avisa a tu equipo solo cuando hace falta un humano de verdad.</p>
+      <ul>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Restaurantes, clínicas, tiendas, inmobiliarias</li>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sigue siendo tu número, tu cuenta, tu control</li>
+      </ul>
+      <a class="vlink" href="/negocios/atiende-ia/">Ver AtiendeIA <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="via ne">
+      <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 9l9-6 9 6v11H3V9z"/><path d="M9 20v-6h6v6"/></svg></div>
+      <h3>Negocios gestionados con IA</h3>
+      <p>Desde una guía de compra que se actualiza sola hasta un negocio completo que valida su nicho, se construye y se lanza sin intervención manual — el propio motor de attenciona.</p>
+      <ul>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>132 negocios ya en producción en el catálogo</li>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Compra licencia y te quedas el 70% de lo que genere</li>
+      </ul>
+      <a class="vlink" href="/negocios/todos/">Ver el catálogo <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="via ge">
+      <div class="vico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <h3>Gestiones y papeleo repetitivo</h3>
+      <p>Describes una tarea manual concreta (facturas, hojas de cálculo, informes, seguimientos) y recibes el flujo real (n8n) que la automatiza, validado antes de entregarte nada.</p>
+      <ul>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Desde 25 USDT, señal + entrega validada</li>
+        <li><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin conocimientos técnicos necesarios</li>
+      </ul>
+      <a class="vlink" href="/negocios/fabrica-de-horas/">Ver Fábrica de horas <svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="shead rv in">
+    <div class="eyebrow">Por si no sabes por dónde empezar</div>
+    <h2>Preguntas que ya hemos resuelto</h2>
+  </div>
+  <div class="examples rv in">
+    <span class="ex">"Recibo 50 WhatsApp al día preguntando lo mismo"</span>
+    <span class="ex">"Quiero un negocio que se gestione solo"</span>
+    <span class="ex">"Paso facturas a mano a una hoja de cálculo cada semana"</span>
+    <span class="ex">"No sé si mi idea se puede automatizar"</span>
+    <span class="ex">"Quiero agendar citas sin estar pendiente del móvil"</span>
+  </div>
+</div>
+
+<div class="wrap section" id="consulta">
+  <div class="shead rv in">
+    <div class="eyebrow">Pide tu consulta</div>
+    <h2>Cuéntanos tu caso, te aconsejamos gratis</h2>
+    <p class="sd">No hay un precio publicado a propósito: primero entendemos qué necesitas, luego te decimos qué encaja y cuánto costaría.</p>
+  </div>
+  <div class="forge rv in">
+    <div class="forge-l">
+      <h3>Lo que recibirás</h3>
+      <p>Una respuesta personal de attenciona, no un email automático. Te decimos con honestidad si tu caso tiene sentido automatizarlo y por dónde empezar.</p>
+      <div class="forge-list">
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Consulta gratuita</b>, sin compromiso de compra</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Recomendación honesta</b> — a veces la respuesta es "no lo automatices"</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Sin permanencia forzosa</b> ni letra pequeña</span></div>
+        <div class="forge-item"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ft"><b>Respuesta directa</b> de attenciona</span></div>
+      </div>
+    </div>
+    <div class="forge-r">
+      <div class="hero-net"></div>
+      <span class="f-label">¿Qué tipo de automatización crees que necesitas?</span>
+      <div class="f-chips" id="acTipo">
+        <label class="f-chip"><input type="radio" name="tipo" value="WhatsApp"> WhatsApp</label>
+        <label class="f-chip"><input type="radio" name="tipo" value="Negocio completo"> Negocio completo</label>
+        <label class="f-chip"><input type="radio" name="tipo" value="Gestiones y papeleo"> Gestiones y papeleo</label>
+        <label class="f-chip"><input type="radio" name="tipo" value="No lo se"> No lo sé todavía</label>
+      </div>
+
+      <label class="f-label" for="acNecesidad">Cuéntanos tu caso</label>
+      <textarea id="acNecesidad" class="f-textarea" placeholder="Ej: Tengo una tienda online y paso horas al día respondiendo lo mismo por WhatsApp e Instagram. Quiero saber si se puede automatizar sin perder el trato cercano con los clientes." maxlength="2000"></textarea>
+
+      <label class="f-label" for="acContacto">Tu email o número de WhatsApp para responderte</label>
+      <input type="text" id="acContacto" class="f-input" placeholder="tu@email.com o +34 600 000 000">
+
+      <button class="f-btn" id="acBtn" type="button">Enviar mi consulta gratis →</button>
+      <div class="f-res" id="acRes"></div>
+    </div>
+  </div>
+  <div class="gates-row rv in">
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin precio fijo publicado</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Consulta 100% gratuita</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin compromiso</div>
+    <div class="gate"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Respuesta personal</div>
+  </div>
+</div>
+
+<div class="wrap section" id="faq">
+  <div class="shead rv in"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que la gente pregunta</h2></div>
+  <div class="rv in">
+    <details class="faq-item"><summary>¿Qué es Automatiza exactamente?</summary><p>Es la consultoría de attenciona: nos cuentas qué haces a mano hoy y te decimos, con honestidad, qué de eso se puede automatizar con IA y qué producto de attenciona (o solución a medida) encaja mejor con tu caso.</p></details>
+    <details class="faq-item"><summary>¿Cuánto cuesta la consulta?</summary><p>La consulta inicial es gratuita y sin compromiso. Si de ahí sale un proyecto concreto (un agente de WhatsApp, una automatización de Fábrica de horas, o algo a medida), el presupuesto se acuerda después y siempre a medida.</p></details>
+    <details class="faq-item"><summary>¿Qué tipo de cosas se pueden automatizar?</summary><p>Tres grandes vías: atención por WhatsApp (agentes que responden, agendan y venden), negocios completos gestionados con IA, y gestiones o papeleo repetitivo (formularios, informes, seguimientos). Si tu caso no encaja en ninguna, también te lo decimos.</p></details>
+    <details class="faq-item"><summary>¿Y si mi caso no tiene sentido automatizarlo?</summary><p>Te lo decimos igual, con honestidad. No todo merece la pena automatizarse, y preferimos decírtelo gratis antes que venderte algo que no necesitas.</p></details>
+  </div>
+</div>
+
+<div class="wrap section">
+  <div class="shead rv in"><div class="eyebrow">Origen</div><h2>Por qué existe Automatiza</h2></div>
+  <div class="origen-box rv in">
+    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5M12 16v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <div class="ot">Attenciona es el holding: el motor y la experiencia acumulada de cuatro fases de negocios generados por IA (ver <a href="/historia.html">historia</a>). <b>Automatiza</b> es la puerta de entrada a esa experiencia para quien no sabe todavía qué producto necesita — <b>AtiendeIA</b> (WhatsApp) y <b>Fábrica de horas</b> (gestiones) son negocios propios del catálogo, y esta página te ayuda a decidir cuál encaja con tu caso, o si necesitas algo distinto a medida. Todo el proceso lleva el sello MarcaIA de transparencia (art. 50 del Reglamento de IA de la UE).</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <span><b>Automatiza</b> · consultoría de attenciona</span>
+    <span class="mia"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.4"/></svg>Creado con IA · art. 50 UE</span>
+  </div>
+  <div class="wrap foot-legal">
+    <span><b>Responsable editorial:</b> attenciona (holding). Contenido asistido por IA y revisado antes de publicar (Reglamento de IA de la UE, art. 50.4).</span>
+    <span><b>No es asesoría legal ni fiscal.</b> Consulta gratuita, propuesta y presupuesto siempre a medida tras hablar contigo.</span>
+    <span><b>Privacidad:</b> sin cookies de terceros ni rastreadores publicitarios. <a href="/privacidad.html">Política de privacidad</a> · <a href="/aviso-legal.html">Aviso legal</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chipsWrap = document.getElementById('acTipo');
+  chipsWrap.addEventListener('change', function(e){
+    if (e.target && e.target.type === 'radio') {
+      chipsWrap.querySelectorAll('.f-chip').forEach(function(c){ c.classList.remove('on'); });
+      e.target.closest('.f-chip').classList.add('on');
+    }
+  });
+
+  function tipoElegido(){
+    var checked = chipsWrap.querySelector('input:checked');
+    return checked ? checked.value : '';
+  }
+
+  var btn = document.getElementById('acBtn');
+  var res = document.getElementById('acRes');
+  var textoOriginal = btn.innerHTML;
+
+  function mostrar(msg, tipo){
+    res.textContent = msg;
+    res.className = 'f-res show' + (tipo ? ' ' + tipo : '');
+  }
+
+  btn.addEventListener('click', function(){
+    var tipo = tipoElegido();
+    var necesidad = document.getElementById('acNecesidad').value.trim();
+    var contacto = document.getElementById('acContacto').value.trim();
+
+    if (necesidad.length < 15) { mostrar('Cuéntanos un poco más de tu caso (al menos una frase con detalle).', 'bad'); return; }
+    if (!contacto) { mostrar('Déjanos un email o un WhatsApp donde podamos responderte.', 'bad'); return; }
+
+    btn.disabled = true; btn.innerHTML = 'Enviando...';
+    mostrar('');
+
+    fetch('/api/automatiza/consulta', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipo: tipo, necesidad: necesidad, contacto: contacto })
+    }).then(function(r){ return r.json().then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(result){
+        if (!result.ok) { throw new Error((result.d && result.d.error) || 'no se pudo enviar'); }
+        btn.innerHTML = '¡Consulta enviada!';
+        mostrar('Gracias — hemos recibido tu consulta. Te responderemos personalmente en cuanto la revisemos, normalmente en menos de 24-48h.', 'ok');
+      })
+      .catch(function(err){
+        btn.disabled = false; btn.innerHTML = textoOriginal;
+        mostrar(err.message || 'Algo falló al enviar. Inténtalo de nuevo en unos minutos.', 'bad');
+      });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.1});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

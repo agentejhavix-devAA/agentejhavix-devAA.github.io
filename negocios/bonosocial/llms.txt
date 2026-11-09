@@ -1,0 +1,20 @@
+# Bono social
+
+El bono social descuenta entre el 25% y el 65% de tu factura de luz y mucha gente con derecho no lo pide. Bono social comprueba en 3 preguntas si te corresponde por renta y situación y cuánto te ahorrarías al año.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · Descuento 25–65%: El bono social eléctrico aplica un descuento sobre el PVPC según la categoría de consumidor vulnerable o vulnerable severo.
+- En vigor · Por renta y situación: El umbral depende de la renta del hogar, el número de miembros y situaciones especiales (familia numerosa, discapacidad).
+
+## Fuentes citadas
+
+- https://www.miteco.gob.es/es/ministerio/servicios/bono-social.html
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 2.99 € pago único en cripto.

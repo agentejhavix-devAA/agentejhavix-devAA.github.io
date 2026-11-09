@@ -1,0 +1,23 @@
+# Clasifica
+
+Clasifica — tu producto se clasifica solo: HS, cuentas y categorías. en LATAM — El HS tiene 5.000+ fracciones y una mala clasificación cuesta rechazos y multas en aduana. Dato duro: la LIGIE 2026-2027 actualizó el arancel con efectos al 01/01/2027 (DOF/SAT). Herramienta en el navegador contra la clasificación al tanteo. Gratis 10/mes + Pro anual (6 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Automatización.
+- Fecha límite / cita: Nuevo arancel LIGIE · 01/01/2027.
+- Precio Pro: 6 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.wcoomd.org/en/topics/nomenclature/instrument-and-tools/hs-nomenclature-2027-edition.aspx (OMD — Sistema Armonizado)
+2. https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf (SAT — RGCE 2026)
+3. https://dof.gob.mx/nota_detalle_popup.php?codigo=5777199 (DOF — RGCE 2026)
+4. https://www.datasur.com/requisitos-para-importar-a-mexico-2026/ (DataSur — Requisitos para importar 2026)
+5. https://www.garciayasociados.net/proceso-de-importacion-en-mexico-2026-guia-paso-a-paso-para-pymes (García y Asociados — Importar en 2026)
+
+## Precio
+- Gratis: 10 clasificaciones al mes.
+- Pro (6 USD pago único, cripto vía NOWPayments): Clasificaciones ilimitadas; Todas las categorías; Exportación de clasificación; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La clasificación arancelaria definitiva la determina la autoridad aduanera: confirma con tu agente o un especialista. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

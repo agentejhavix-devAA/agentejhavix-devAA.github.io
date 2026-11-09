@@ -1,0 +1,20 @@
+# Salario mínimo
+
+¿Te están pagando por debajo del mínimo legal de tu país? Salario mínimo cruza el salario mínimo oficial (OIT) con tu jornada para decirte si tu nómina respeta la ley y cuánto te deben.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · Dato OIT: La OIT publica el salario mínimo legal por país y su evolución.
+- En vigor · Jornada y horas extra: El mínimo se compara con tu jornada real y las horas extra para detectar diferencias.
+
+## Fuentes citadas
+
+- https://ilostat.ilo.org
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 4.99 $ pago único en cripto.

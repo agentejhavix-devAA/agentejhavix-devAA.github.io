@@ -1,0 +1,20 @@
+# CSRD · Ómnibus
+
+El paquete Ómnibus cambió plazos y umbrales de la CSRD y dejó a miles de empresas sin saber si reportan este año. CSRD resuelve en 3 preguntas si te aplica el reporte de sostenibilidad y en qué ejercicio te toca.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- Stop-the-clock · Retraso de plazos: El Ómnibus pospuso las olas de reporte y revisó los umbrales: la confusión de plazos es el dolor real.
+- Umbrales · ¿Me aplica?: La obligación depende de facturación, balance y plantilla según la ola y el tamaño.
+
+## Fuentes citadas
+
+- https://eur-lex.europa.eu/eli/dir/2022/2464/oj
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 18 $ pago único en cripto.

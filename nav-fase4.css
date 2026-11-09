@@ -1,0 +1,40 @@
+/* nav-fase4.css — barra de navegación UNIFICADA de attenciona (Fase 4).
+   Autónoma y prefijada af- para no chocar con el CSS propio de cada página.
+   Sin JS: los desplegables abren en :hover y :focus-within (funciona con teclado y tap).
+   Usa los tokens del sitio si existen (modo oscuro incluido), con fallback claro. */
+/* El menú lleva SIEMPRE el acento navy de marca, no el de la página (Historia es naranja):
+   así la barra se ve idéntica en todo el sitio. El fondo/tinta sí se adaptan (claro/oscuro). */
+.af-nav{--af-accent:#0f2d5c;--af-accent-deep:#0a1f42;--af-accent-tint:rgba(15,45,92,.10);
+  position:sticky;top:0;z-index:200;background:color-mix(in srgb, var(--bg,#fbfbfd) 88%, transparent);backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid var(--line,#e3e6ee);font-family:var(--font,'Inter',system-ui,sans-serif);}
+:root[data-theme="dark"] .af-nav{--af-accent:#5d8bd8;--af-accent-deep:#7fa6e8;--af-accent-tint:rgba(93,139,216,.16);}
+.af-in{display:flex;align-items:center;gap:14px;max-width:var(--maxw,1160px);margin:0 auto;padding:11px 24px;}
+.af-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;color:var(--ink,#131a2b);text-decoration:none;flex:none;}
+.af-brand .af-mk{width:28px;height:28px;border-radius:9px;background:linear-gradient(150deg,#ffb066 0%,#0f2d5c 38%,#0a1f42 100%);display:grid;place-items:center;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.4),0 3px 7px rgba(201,58,5,.28);}
+.af-brand .af-sub{font-weight:600;font-size:12px;color:#fff;background:var(--af-accent);padding:2px 8px;border-radius:999px;letter-spacing:.02em;}
+.af-links{display:flex;align-items:center;gap:2px;margin-left:6px;flex:1;overflow:visible;}
+.af-link,.af-btn{display:inline-flex;align-items:center;gap:6px;color:var(--muted,#5b6478);font-size:14px;font-weight:500;padding:9px 14px;border-radius:999px;text-decoration:none;background:none;border:0;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .12s ease,color .12s ease;}
+.af-link:hover,.af-btn:hover{color:var(--ink,#131a2b);background:var(--surface,#f4f5fa);}
+.af-link.af-active{color:var(--ink,#131a2b);font-weight:700;background:var(--af-accent-tint);}
+.af-btn svg{width:11px;height:11px;transition:transform .15s ease;}
+.af-item{position:relative;}
+.af-item:hover .af-btn svg,.af-item:focus-within .af-btn svg{transform:rotate(180deg);}
+.af-mega{position:absolute;top:calc(100% + 8px);left:0;min-width:300px;background:var(--bg,#fff);border:1px solid var(--line,#e3e6ee);border-radius:16px;box-shadow:0 2px 6px rgba(19,26,43,.06),0 18px 48px rgba(10,31,66,.14);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s ease,transform .16s ease,visibility .16s;}
+.af-item:hover .af-mega,.af-item:focus-within .af-mega{opacity:1;visibility:visible;transform:none;}
+.af-mlink{display:flex;gap:11px;align-items:flex-start;padding:11px 12px;border-radius:11px;text-decoration:none;color:var(--ink,#131a2b);}
+.af-mlink:hover{background:var(--surface,#f4f5fa);}
+.af-mlink .af-mt{display:block;font-weight:700;font-size:14px;}
+.af-mlink .af-md{display:block;font-size:12.5px;color:var(--muted,#5b6478);margin-top:1px;}
+.af-mlink .af-mi{flex:none;width:30px;height:30px;border-radius:8px;background:var(--af-accent-tint);color:var(--af-accent);display:grid;place-items:center;}
+.af-mlink .af-mi svg{width:16px;height:16px;}
+.af-right{flex:none;display:flex;align-items:center;gap:10px;}
+.af-cta{display:inline-flex;align-items:center;gap:7px;background:var(--af-accent);color:#fff;font-weight:600;font-size:14px;padding:9px 17px;border-radius:999px;text-decoration:none;box-shadow:0 1px 2px rgba(15,45,92,.3),0 6px 18px rgba(15,45,92,.22);white-space:nowrap;}
+.af-cta:hover{background:var(--af-accent-deep);}
+:root[data-theme="dark"] .af-mega{background:var(--surface,#141c30);}
+@media (max-width:900px){
+  .af-links{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .af-links::-webkit-scrollbar{display:none;}
+  .af-brand .af-sub{display:none;}
+  .af-mega{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0;min-width:0;display:none;}
+  .af-item:focus-within .af-mega{display:block;}
+}
+@media (max-width:560px){ .af-right .af-cta span{display:none;} }

@@ -1,0 +1,23 @@
+# MonoIdent
+
+MonoIdent — identifica la moneda de tu texto o dato. en LATAM — «$1.234,56» es MXN en México y CLP en Chile. Dato duro: ISO 4217 y el formato numérico deciden; el símbolo solo no basta. Herramienta en el navegador contra el «creí que eran dólares». Gratis 100/mes + Pro anual (3 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Datos · Identificación.
+- Fecha límite / cita: Cierre de tu próximo mes.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.iso.org/iso-4217-currency-codes.html (ISO 4217 — Códigos de moneda)
+2. https://www.banxico.org.mx/ (Banxico — Tipo de cambio)
+3. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+4. https://www.condusef.gob.mx/ (Condusef — Finanzas)
+5. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto LATAM)
+
+## Precio
+- Gratis: 100 identificaciones al mes.
+- Pro (3 USD pago único, cripto vía NOWPayments): Identificaciones ilimitadas; Normalización por lote; Reporte de ambigüedades; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La moneda definitiva la define el contexto de la operación: confirma antes de registrar. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

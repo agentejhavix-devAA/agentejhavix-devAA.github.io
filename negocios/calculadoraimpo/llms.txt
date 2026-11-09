@@ -1,0 +1,23 @@
+# CalcImport
+
+CalcImport — el costo real de tu importación, antes de comprar. en LATAM — El 90% calcula solo el producto y olvida IGI (hasta 19%+), IVA, flete y agente. Dato duro: LIGIE 2026-2027 actualiza fracciones al 01/01/2027 (DOF). Herramienta en el navegador contra las sorpresas de aduana. Gratis 3/mes + Pro anual (5 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Comercio · Importación.
+- Fecha límite / cita: Nuevo arancel LIGIE · 01/01/2027.
+- Precio Pro: 5 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/NormatividadRMFyRGCE/documentos2026/rgce/rgce/ReglasGeneralesComercioExteriorpara2026.pdf (SAT — RGCE 2026)
+2. https://horizonteaduanal.com.mx/guia-practica-como-calcular-aranceles-para-importaciones-en-mexico/ (Horizonte Aduanal — Calcular aranceles 2026)
+3. https://www.camtomx.com/guia/guia-importar-mexico-paso-a-paso (Camtom — Guía para importar a México)
+4. https://www.datasur.com/requisitos-para-importar-a-mexico-2026/ (DataSur — Requisitos 2026)
+5. https://dof.gob.mx/nota_detalle_popup.php?codigo=5777199 (DOF — RGCE 2026)
+
+## Precio
+- Gratis: 3 cálculos al mes.
+- Pro (5 USD pago único, cripto vía NOWPayments): Cálculos ilimitados; Fracciones detalladas; Exportación de cotización; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Los aranceles y reglas cambian con cada reforma: verifica tu fracción con tu agente aduanal. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

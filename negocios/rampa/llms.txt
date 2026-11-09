@@ -1,0 +1,30 @@
+# Rampa
+
+> La Ley 11/2023 (transposición del Acta Europea de Accesibilidad, Directiva UE 2019/882) obliga desde el 28 de junio de 2025 a que el comercio electrónico y los servicios digitales dirigidos a consumidores sean accesibles para personas con discapacidad. Rampa comprueba si te aplica, desde cuándo (28/06/2025 o transitorio hasta 28/06/2030) y qué requisitos WCAG AA revisar, con el riesgo de sanción de hasta 1.000.000 €. Todo funciona en el navegador.
+
+- **Mercado:** España · tiendas online, servicios digitales y agencias web
+- **Fuente de datos en vivo:** BOE — Ley 11/2023 (BOE-A-2023-11022) y EUR-Lex Directiva (UE) 2019/882, verificado el 12/08/2026
+- **Sistema de diseño:** Cálido-redondeado (Baloo 2 + Inter, auto-alojadas) · pictograma de rampa de acceso · azul accesible + ámbar de aviso · alto contraste WCAG AA
+
+## Qué resuelve
+La Ley 11/2023 exige que los servicios de comercio electrónico cumplan los requisitos de accesibilidad de la norma EN 301 549 (basada en las WCAG, nivel AA): contraste, navegación por teclado y lector de pantalla, textos alternativos, formularios etiquetados y una declaración de accesibilidad. Se aplica desde el 28/06/2025 a las webs y apps nuevas o renovadas; los servicios preexistentes disponen de un periodo transitorio hasta el 28/06/2030. Las microempresas (menos de 10 personas y menos de 2 M€) están exentas de los requisitos aplicables a los servicios. El incumplimiento puede sancionarse, alcanzando 1.000.000 € en los casos más graves.
+
+## Comparación
+- Rampa · Gratis + Pro 6 € · 1 minuto · En tu navegador (diagnóstico legal + checklist)
+- BOE / EUR-Lex · Gratis · 1-2 h · Lectura normativa
+- Auditoría de accesibilidad / agencia · Presupuesto · Revisión técnica completa
+
+## Fuentes citadas
+- BOE — Ley 11/2023, de 8 de mayo (https://www.boe.es/buscar/act.php?id=BOE-A-2023-11022)
+- EUR-Lex — Directiva (UE) 2019/882, Acta Europea de Accesibilidad (https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019L0882)
+- Cuatrecasas — Claves de la entrada en vigor de la Ley de Accesibilidad (https://www.cuatrecasas.com/es/spain/propiedad-intelectual/art/claves-proxima-entrada-vigor-ley-accesibilidad-espana)
+- Legalitas — La EAA y el comercio online (https://www.legalitas.com/actualidad/european-accessibility-act)
+- CEDDD — Qué cambia a partir del 28 de junio (https://ceddd.org/actualidad/acta-europea-de-la-accesibilidad-que-cambia-a-partir-del-28-de-junio/)
+
+## Estado de las puertas
+P1 ✅ investigación (fuentes primarias BOE + EUR-Lex citadas y verificadas 12/08/2026)
+P2 ✅ diseño (identidad cálido-redondeado propia distinta de CNOta, tarjeta de accesibilidad funcional, sin plantilla genérica, sin emojis, alto contraste)
+P3 ✅ monetización (freemium + Pro 6 € pago único en cripto vía ProWidget, checkout real)
+P4 ✅ legal (consentimiento, responsable editorial art. 50.4 Reglamento IA, no-asesoría, fecha de verificación)
+P5 ✅ fiscal (España · IVA 21% · altas documentadas)
+P6 ✅ vigencia (Ley 11/2023 en vigor desde el 28/06/2025; obligación viva y en fase de enforcement a 12/08/2026, con transitorio hasta 2030 para servicios preexistentes)

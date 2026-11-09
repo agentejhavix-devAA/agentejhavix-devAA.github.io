@@ -1,0 +1,23 @@
+# Biorritmo
+
+Biorritmo — tus ciclos de 23, 28 y 33 días con días críticos. en LATAM — El sistema de Fliess (1897) con fórmula matemática a la vista (sen de días vividos ÷ periodo) y la honestidad de decirlo: no tiene validación científica. Dolor: las apps de biorritmo dan curvas sin explicar el método ni el día crítico. Herramienta en el navegador contra el método documentado (Britannica). Gratis la curva + Pro pago único (3 $).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Horóscopo · Ciclos.
+- Fecha límite / cita: Tu próximo día crítico · calculado con tu fecha.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 26/30 (8.7/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.britannica.com/science/biorhythm (Britannica — Biorritmo)
+2. https://journals.sagepub.com/doi/10.2466/pms.1998.86.2.579 (Hines, T. (1998) — Comprehensive review of biorhythms)
+3. https://www.timeanddate.com/date/biorhythm.html (Time and Date — Calculadoras de biorritmo)
+4. https://www.britannica.com/biography/Wilhelm-Fliess (Britannica — Wilhelm Fliess)
+5. https://skepdic.com/biorhyth.html (Skepdic — Biorhythms)
+
+## Precio
+- Gratis: Tus 3 ciclos y tu próximo día crítico.
+- Pro (3 USD pago único, cripto vía NOWPayments): Curva del mes imprimible (PDF); Calendario de días críticos del año; Guía de planificación por picos; desbloqueo permanente.
+
+## Aviso
+Entretenimiento y reflexión. Biorritmo no es ciencia ni consejo médico: no tomes decisiones de salud o riesgo por un día crítico. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

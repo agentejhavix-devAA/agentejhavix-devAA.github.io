@@ -1,0 +1,156 @@
+<title>Verificar sello — MarcaIA</title>
+<meta name="description" content="Comprueba si un sello MarcaIA es válido para el sitio que lo muestra. La comprobación ocurre en tu navegador, sin servidor.">
+<meta name="robots" content="noindex,follow">
+<style>
+  :root{
+    --paper:#F6F8FC; --surface:#FFFFFF; --surface-2:#EEF2FA;
+    --ink:#0B1B33; --ink-2:#42506B; --line:#DCE3EF; --line-2:#C7D2E6;
+    --brand:#17408B; --brand-wash:#EAF0FF;
+    --seal:#B08D2A; --seal-wash:#FBF4E2;
+    --ok:#159A6C; --ok-wash:#E7F6EF;
+    --warn:#B4541E; --warn-wash:#FBEEE4;
+    --shadow:0 1px 2px rgba(11,27,51,.05), 0 10px 30px rgba(11,27,51,.07);
+    --r:14px; --r-sm:10px;
+    --serif:'Fraunces','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased}
+  h1{margin:0; font-family:var(--serif); font-weight:600; font-size:1.6rem; letter-spacing:-.01em}
+  p{margin:0}
+  a{color:var(--brand)}
+  .wrap{max-width:560px; margin:0 auto; padding:56px 24px 80px}
+  .brand{display:inline-flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:1.05rem; color:var(--ink); text-decoration:none; margin-bottom:40px}
+  .seal{width:30px; height:30px; color:var(--seal); position:relative; flex:none}
+  .seal svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 44s linear infinite}
+  .seal b{position:relative; left:9px; top:8px; font-size:10px; font-family:var(--serif)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.seal svg{animation:none}}
+
+  .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:32px; text-align:center}
+  .ring{width:56px; height:56px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:18px}
+  .ring svg{width:28px; height:28px}
+  .ok .ring{background:var(--ok-wash); color:var(--ok)}
+  .bad .ring{background:var(--warn-wash); color:var(--warn)}
+  .unk .ring{background:var(--surface-2); color:var(--ink-2)}
+  .ok h1{color:var(--ok)} .bad h1{color:var(--warn)} .unk h1{color:var(--ink-2)}
+  .msg{color:var(--ink-2); font-size:.96rem; margin-top:10px; max-width:44ch; margin-inline:auto}
+
+  dl{margin:26px 0 0; border-top:1px solid var(--line); text-align:left}
+  .row{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); font-size:.9rem}
+  .row dt{color:var(--ink-2); margin:0}
+  .row dd{margin:0; font-weight:600; text-align:right; word-break:break-word}
+  .row dd.mono{font-family:var(--mono); font-size:.8rem; font-weight:500}
+
+  .honesty{margin-top:24px; padding:16px 18px; border-radius:var(--r-sm); background:var(--brand-wash); color:var(--ink-2); font-size:.86rem; text-align:left}
+  .honesty strong{color:var(--ink)}
+  .loading{color:var(--ink-2); font-size:.9rem}
+</style>
+
+<div class="wrap">
+  <a class="brand" href="./">
+    <span class="seal" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/></svg>
+      <b>IA</b>
+    </span>
+    MarcaIA
+  </a>
+
+  <div id="resultado" class="panel unk">
+    <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg></div>
+    <h1 id="titulo">Comprobando…</h1>
+    <p class="msg loading" id="msg">Consultando el registro de sellos emitidos.</p>
+    <dl id="datos" hidden></dl>
+  </div>
+
+  <p class="honesty"><strong>Cómo funciona:</strong> el sello queda firmado al dominio del negocio que lo emite. Esta página compara ese registro contra la página desde la que llegaste (tu navegador se lo dice a través de la referencia del enlace). Copiar la imagen del sello no copia esa firma — solo pasa la comprobación el sitio para el que se emitió.</p>
+</div>
+
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var id = params.get('id');
+  var elResultado = document.getElementById('resultado');
+  var elTitulo = document.getElementById('titulo');
+  var elMsg = document.getElementById('msg');
+  var elDatos = document.getElementById('datos');
+
+  // El dominio canónico (attenciona.com) aún no tiene certificado emitido
+  // (DNS pendiente, ver docs). Mientras tanto el sitio real vive en este
+  // alias — se acepta como equivalente al dominio registrado sin relajar
+  // la comprobación de ruta (sigue exigiendo que el negocio coincida).
+  // Quitar 'ALIAS_HOST' de aquí en cuanto attenciona.com esté verificado.
+  var ALIAS_HOST = 'attenciona-fase3-production.up.railway.app';
+
+  function normalizar(url){
+    try{
+      var u = new URL(url);
+      var s = (u.hostname.replace(/^www\./,'') + u.pathname).toLowerCase();
+      return s.replace(/\/+$/,'') || '';
+    }catch(e){ return ''; }
+  }
+
+  function partes(hostAndPath){
+    var i = String(hostAndPath || '').indexOf('/');
+    if (i === -1) return { host: hostAndPath || '', path: '' };
+    return { host: hostAndPath.slice(0, i), path: hostAndPath.slice(i).replace(/\/+$/, '') };
+  }
+
+  function fila(k,v,cls){
+    var row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = '<dt></dt><dd' + (cls ? ' class="'+cls+'"' : '') + '></dd>';
+    row.querySelector('dt').textContent = k;
+    row.querySelector('dd').textContent = v;
+    return row;
+  }
+
+  function estado(clase, titulo, msg){
+    elResultado.className = 'panel ' + clase;
+    elTitulo.textContent = titulo;
+    elMsg.textContent = msg;
+  }
+
+  if(!id){
+    estado('unk', 'Falta el identificador', 'Este enlace no trae el parámetro ?id= del sello. No hay nada que comprobar.');
+    return;
+  }
+
+  fetch('./registro.json', { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : {}; })
+    .catch(function(){ return {}; })
+    .then(function(registro){
+      var entrada = registro[id];
+      if(!entrada){
+        estado('bad', 'No verificado', 'No hay ningún sello emitido con este identificador. Puede ser un enlace inventado o mal copiado.');
+        return;
+      }
+
+      var refCompleta = document.referrer;
+      var refNormalizada = refCompleta ? normalizar(refCompleta) : '';
+
+      elDatos.hidden = false;
+      elDatos.appendChild(fila('Negocio', entrada.negocio || entrada.dominio));
+      elDatos.appendChild(fila('Dominio registrado', entrada.dominio));
+      elDatos.appendChild(fila('Emitido', entrada.fecha || '—'));
+      elDatos.appendChild(fila('Firma', id, 'mono'));
+
+      if(!refCompleta){
+        estado('unk', 'Sin referencia de origen', 'Tu navegador no envió desde qué página llegaste, así que no se puede confirmar el dominio. Abre el sello directamente desde el pie del sitio, no desde un enlace suelto.');
+      } else {
+        var registrado = partes(entrada.dominio);
+        var llegada = partes(refNormalizada);
+        var hostOk = (llegada.host === registrado.host) ||
+          (registrado.host === 'attenciona.com' && llegada.host === ALIAS_HOST);
+        var pathOk = llegada.path === registrado.path;
+
+        if (hostOk && pathOk) {
+          estado('ok', 'Verificado', 'El dominio desde el que llegaste coincide con el registrado para esta firma.');
+        } else {
+          estado('bad', 'No verificado', 'Esta firma se emitió para "' + entrada.dominio + '", no para el sitio desde el que llegaste. Es una copia del sello, no una firma válida para ese dominio.');
+        }
+      }
+    });
+})();
+</script>

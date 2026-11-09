@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarcaIA — El sello de transparencia de IA que exige el art.</title>
+<meta name="description" content="Desde el 2 de agosto de 2026 el artículo 50 del Reglamento de IA de la UE obliga a informar del contenido generado con IA.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://www.attenciona.com/negocios/marcaia/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%2317408B' stroke-width='7'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='36' fill='%23B08D2A'%3EIA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MarcaIA — el sello de transparencia del art. 50 del Reglamento de IA">
+<meta property="og:description" content="Desde el 2 de agosto de 2026 el artículo 50 del Reglamento de IA de la UE obliga a informar del contenido generado con IA.">
+<meta property="og:url" content="https://www.attenciona.com/negocios/marcaia/">
+
+<style>
+  /* ============================================================
+     MarcaIA — identidad Fase 3
+     Audiencia (ref. en vivo): compliance/legaltech UE (iubenda,
+     Usercentrics/Cookiebot) → navy institucional = confianza.
+     Tipografía: Editorial-serif (Fraunces display + Inter cuerpo).
+     Logo/firma: sello de transparencia (monograma/badge) — el
+     producto ESTAMPA una marca; el sello es el output real.
+     Escala tipográfica modular (ratio 1.25) · grid base 8px.
+     ============================================================ */
+  :root{
+    /* tokens semánticos por función */
+    --paper:#F6F8FC; --surface:#FFFFFF; --surface-2:#EEF2FA;
+    --ink:#0B1B33; --ink-2:#42506B; --line:#DCE3EF; --line-2:#C7D2E6;
+    --brand:#17408B;        /* navy institucional */
+    --brand-2:#2E6BFF;      /* azul interactivo */
+    --brand-wash:#EAF0FF;
+    --seal:#B08D2A;         /* dorado del sello (firma) */
+    --seal-wash:#FBF4E2;
+    --ok:#159A6C; --ok-wash:#E7F6EF;
+    --warn:#B4541E; --warn-wash:#FBEEE4;
+    --shadow:0 1px 2px rgba(11,27,51,.05), 0 10px 30px rgba(11,27,51,.07);
+    --shadow-seal:0 6px 22px rgba(176,141,42,.22);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    /* escala tipográfica modular (base 17px · 1.25) */
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --serif:'Fraunces','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+  }
+  :root[data-theme="dark"]{ color-scheme:light; } /* diseño comprometido en claro; se pinta todo explícito */
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--serif); font-weight:600; line-height:1.12; letter-spacing:-.015em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2.1rem,4.6vw,3.4rem)}
+  h2{font-size:clamp(1.7rem,3.1vw,2.4rem)}
+  h3{font-size:1.28rem; letter-spacing:-.01em}
+  h4{margin:0; font-family:var(--sans); font-weight:600; font-size:1.02rem}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  .container{max-width:var(--maxw); margin-inline:auto; padding-inline:32px}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6}
+  .muted{color:var(--ink-2)}
+  svg.i{width:20px;height:20px; stroke:currentColor; stroke-width:1.9; fill:none; stroke-linecap:round; stroke-linejoin:round; flex:none}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); padding:7px 13px; border-radius:999px}
+
+  /* --- sello de transparencia: la firma visual --- */
+  .seal{position:relative; display:inline-flex; align-items:center; justify-content:center; border-radius:50%;
+    background:radial-gradient(circle at 30% 28%, #FBF6E6, #F1E4BF); color:var(--seal);
+    border:2px solid var(--seal); box-shadow:var(--shadow-seal)}
+  .seal svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 40s linear infinite}
+  .seal .core{position:relative; font-family:var(--serif); font-weight:600; line-height:1}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.seal svg{animation:none}}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-family:inherit; font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s}
+  .btn:focus-visible{outline:3px solid var(--brand-2); outline-offset:3px}
+  .btn-primary{background:var(--brand); color:#fff}
+  .btn-primary:hover{background:#102f66; transform:translateY(-1px); box-shadow:0 8px 20px rgba(23,64,139,.25)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand); color:var(--brand)}
+  .btn svg.i{width:19px;height:19px}
+
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(246,248,252,.86); backdrop-filter:saturate(1.3) blur(10px); border-bottom:1px solid var(--line)}
+  .nav-row{display:flex; align-items:center; gap:28px; height:70px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--serif); font-weight:600; font-size:1.24rem; letter-spacing:-.01em}
+  .brand .seal{width:34px;height:34px}
+  .brand .seal .core{font-size:.62rem}
+  .nav-links{display:flex; gap:26px; margin-left:auto; align-items:center}
+  .nav-links a{font-size:var(--t-sm); font-weight:500; color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+
+  .hero{padding:80px 0 92px}
+  .hero-grid{display:grid; grid-template-columns:1.04fr .96fr; gap:56px; align-items:center}
+  .hero h1{margin-top:20px}
+  .hero .lead{margin-top:22px; max-width:33ch}
+  .hero-actions{display:flex; gap:12px; margin-top:32px; flex-wrap:wrap}
+  .hero-trust{display:flex; gap:22px; margin-top:28px; flex-wrap:wrap; color:var(--ink-2); font-size:var(--t-sm)}
+  .hero-trust span{display:inline-flex; align-items:center; gap:8px}
+  .hero-trust svg.i{width:17px;height:17px; color:var(--ok)}
+
+  /* mockup: el checker que estampa el sello */
+  .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden}
+  .panel-bar{display:flex; align-items:center; gap:8px; padding:13px 16px; border-bottom:1px solid var(--line); background:var(--surface-2)}
+  .panel-bar .dot{width:10px;height:10px;border-radius:50%}
+  .panel-url{margin-left:8px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); background:var(--surface); border:1px solid var(--line); border-radius:7px; padding:4px 10px; flex:1}
+  .panel-body{padding:24px}
+  .panel-label{font-size:var(--t-xs); font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:11px}
+  .chips{display:flex; flex-wrap:wrap; gap:8px}
+  .chip{font-size:var(--t-sm); font-weight:500; padding:8px 13px; border:1px solid var(--line-2); border-radius:999px; color:var(--ink-2); background:var(--surface)}
+  .chip.on{border-color:var(--brand); background:var(--brand-wash); color:var(--brand); font-weight:600}
+  .stamp{margin-top:22px; display:flex; gap:18px; align-items:center; padding:18px; border:1px solid var(--seal); background:var(--seal-wash); border-radius:var(--r)}
+  .stamp .seal{width:76px;height:76px; flex:none}
+  .stamp .seal .core{font-size:.66rem; text-align:center}
+  .stamp .txt h5{margin:0 0 4px; font-family:var(--sans); font-size:var(--t-sm); font-weight:700; color:var(--warn); text-transform:uppercase; letter-spacing:.04em}
+  .stamp .txt p{font-size:var(--t-sm); color:var(--ink-2)}
+  .stamp .snippet{margin-top:8px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink); background:var(--surface); border:1px dashed var(--line-2); border-radius:8px; padding:9px 11px}
+
+  section.band{padding:110px 0}
+  section.tint{background:var(--surface); border-block:1px solid var(--line)}
+  .sec-head{max-width:660px; margin-bottom:56px}
+  .sec-head h2{margin-top:16px}
+  .sec-head p{margin-top:18px}
+  .center{margin-inline:auto; text-align:center}
+
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:32px}
+  section.tint .card{background:var(--paper)}
+  .card .ico{display:inline-flex; align-items:center; justify-content:center; width:46px;height:46px; border-radius:12px; background:var(--brand-wash); color:var(--brand); margin-bottom:20px}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--ink-2); font-size:var(--t-md)}
+  .card .big{font-family:var(--serif); font-size:2.3rem; font-weight:600; letter-spacing:-.02em; color:var(--brand); font-variant-numeric:tabular-nums; display:block; margin-bottom:8px}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s}
+  .step{padding:32px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r); position:relative}
+  .step .num{counter-increment:s; font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--seal)}
+  .step .num::before{content:counter(s,decimal-leading-zero)}
+  .step h3{margin:12px 0 8px; font-size:1.16rem}
+  .step p{color:var(--ink-2); font-size:var(--t-sm)}
+
+  .tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--surface)}
+  table{width:100%; border-collapse:collapse; min-width:600px}
+  thead th{text-align:left; font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); font-weight:600; padding:16px 20px; background:var(--surface-2); border-bottom:1px solid var(--line)}
+  tbody td{padding:16px 20px; border-bottom:1px solid var(--line); font-size:var(--t-sm); vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  .pill{display:inline-flex; align-items:center; gap:6px; font-size:var(--t-xs); font-weight:600; padding:4px 10px; border-radius:999px}
+  .pill.yes{background:var(--warn-wash); color:var(--warn)}
+  .pill.cond{background:var(--surface-2); color:var(--ink-2)}
+  td small{color:var(--ink-2)}
+
+  .price-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:740px; margin-inline:auto}
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:36px; display:flex; flex-direction:column}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand)}
+  .plan .badge{align-self:flex-start; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--brand); padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .plan h3{font-family:var(--sans); font-size:1.02rem; color:var(--ink-2); font-weight:600}
+  .plan .amt{font-family:var(--serif); font-size:2.8rem; font-weight:600; letter-spacing:-.02em; margin:8px 0 4px}
+  .plan .amt small{font-family:var(--sans); font-size:1rem; font-weight:500; color:var(--ink-2)}
+  .plan ul{list-style:none; padding:0; margin:22px 0 28px; display:flex; flex-direction:column; gap:13px}
+  .plan li{display:flex; gap:11px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink-2)}
+  .plan li svg.i{width:18px;height:18px;margin-top:2px}
+  .plan li.y svg.i{color:var(--ok)} .plan li.n{color:#9aa6ba} .plan li.n svg.i{color:#c0c8d6}
+  .plan .btn{margin-top:auto; width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); margin-top:13px; text-align:center}
+
+  .faq{max-width:800px; margin-inline:auto}
+  details{border-bottom:1px solid var(--line); padding:4px 0}
+  summary{display:flex; align-items:center; gap:14px; padding:19px 4px; cursor:pointer; font-weight:600; font-size:1.06rem; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{margin-left:auto; transition:transform .2s; color:var(--ink-2)}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details .a{padding:0 4px 22px 4px; color:var(--ink-2); font-size:var(--t-md)}
+  details .a a{color:var(--brand-2); text-decoration:underline; text-underline-offset:2px}
+
+  .sources{display:grid; grid-template-columns:1fr 1fr; gap:0 32px; max-width:940px}
+  .source{display:flex; gap:12px; padding:17px 0; border-top:1px solid var(--line); font-size:var(--t-sm)}
+  .source .n{flex:none; font-family:var(--serif); font-weight:600; color:var(--seal)}
+  .source a{color:var(--ink); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--line-2)}
+  .source a:hover{text-decoration-color:var(--brand)}
+  .source small{display:block; color:var(--ink-2); margin-top:3px}
+
+  .cta-final{background:var(--brand); color:#fff; border-radius:var(--r); padding:68px 48px; text-align:center; position:relative; overflow:hidden}
+  .cta-final .seal{position:absolute; right:-30px; top:-30px; width:180px;height:180px; opacity:.14}
+  .cta-final h2{color:#fff; max-width:22ch; margin-inline:auto; position:relative}
+  .cta-final p{color:#D6E0F5; margin:16px auto 0; max-width:52ch; position:relative}
+  .cta-final .btn{margin-top:30px; position:relative; background:#fff; color:var(--brand)}
+  .cta-final .btn:hover{background:var(--seal-wash)}
+
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:60px 0 42px}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:38px}
+  footer h4{font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:15px}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px}
+  footer a{color:var(--ink-2); font-size:var(--t-sm)}
+  footer a:hover{color:var(--ink)}
+  .foot-brand p{color:var(--ink-2); font-size:var(--t-sm); margin-top:14px; max-width:40ch}
+  .foot-legal{font-size:var(--t-xs); color:var(--ink-2); line-height:1.75; border-top:1px solid var(--line); padding-top:26px}
+  .foot-legal strong{color:var(--ink)}
+
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  .skip{position:absolute; left:-999px; top:0; background:var(--brand); color:#fff; padding:10px 16px; border-radius:8px; z-index:100}
+  .skip:focus{left:16px; top:12px}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s, transform .5s}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none} html{scroll-behavior:auto}}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:44px}
+    .hero{padding:52px 0 64px}
+    .grid-3,.steps{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr}
+    .sources{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr; gap:28px}
+    section.band{padding:74px 0}
+    .nav-links{display:none}
+  }
+  @media (max-width:520px){ .container{padding-inline:20px} .cta-final{padding:46px 26px} .stamp{flex-direction:column; text-align:center} }
+
+  /* --- #proteccion: demo de verificación anti-copia --- */
+  .foot-demo{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .foot-demo .seal-lockup{display:inline-flex; align-items:center; gap:10px; color:var(--ink)}
+  .foot-demo .seal-lockup .seal{width:44px; height:44px; color:var(--seal)}
+  .foot-demo .seal-lockup .txt{display:flex; flex-direction:column; font-size:12.5px; font-weight:600; line-height:1.2}
+  .foot-demo .seal-lockup .txt small{font-weight:500; color:var(--ink-2); font-size:11px}
+  .vstatus{display:flex; align-items:center; gap:10px; margin-bottom:16px}
+  .vstatus .ring{width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; flex:none}
+  .vstatus.ok .ring{background:var(--ok-wash); color:var(--ok)}
+  .vstatus.bad .ring{background:var(--warn-wash); color:var(--warn)}
+  .vstatus strong{font-size:1rem}
+  .vrow{display:flex; justify-content:space-between; gap:10px; padding:7px 0; font-size:var(--t-sm)}
+  .vrow+.vrow{border-top:1px solid var(--line)}
+  .vrow span:first-child{color:var(--ink-2)}
+  .vrow span:last-child{font-weight:600; text-align:right}
+  .vrow .match{color:var(--ok)}
+  .vrow .mismatch{color:var(--warn)}
+  .vrow .mono{font-family:var(--mono); font-size:var(--t-xs); font-weight:500}
+  .honesty-note{max-width:64ch; margin:32px auto 0; text-align:center; font-size:var(--t-sm); color:var(--ink-2)}
+  .honesty-note strong{color:var(--ink)}
+
+  /* --- medallón grande (demo a clientes) --- */
+  .medallion-wrap{display:flex; flex-direction:column; align-items:center; text-align:center}
+  .medallion{position:relative; width:272px; height:272px}
+  .medallion-stage::before{content:""; position:absolute; inset:-26px; border-radius:50%;
+    background:repeating-conic-gradient(from 0deg, rgba(176,141,42,.14) 0deg 1.1deg, transparent 1.1deg 4.2deg)}
+  .medallion-stage{position:relative}
+  .medallion svg{width:100%; height:100%; display:block}
+  .medallion .ring-spin{transform-origin:136px 136px; animation:sealspin 46s linear infinite}
+  @keyframes sealspin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.medallion .ring-spin{animation:none}}
+  .medallion-caption{max-width:46ch; font-size:var(--t-sm); color:var(--ink-2); margin-top:22px}
+  .medallion-caption b{color:var(--ink)}
+
+  /* --- "así lo ve tu cliente": mockup con negocio real --- */
+  .browser-frame{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow)}
+  .browser-chrome{display:flex; align-items:center; gap:8px; padding:11px 15px; background:var(--surface-2); border-bottom:1px solid var(--line)}
+  .browser-chrome .dot{width:8px;height:8px;border-radius:50%; background:var(--line-2)}
+  .browser-chrome .addr{margin-left:8px; font-family:var(--mono); font-size:.74rem; color:var(--ink-2); background:var(--surface); border:1px solid var(--line); border-radius:5px; padding:4px 11px; flex:1}
+  .mock-site{padding:34px 30px 0}
+  .mock-nav{display:flex; justify-content:space-between; align-items:center; margin-bottom:30px}
+  .mock-logo{font-family:var(--serif); font-weight:600; font-size:1.05rem}
+  .mock-links{display:flex; gap:20px; font-size:.8rem; color:var(--ink-2)}
+  .mock-hero h3{font-family:var(--serif); font-size:1.35rem; margin:0 0 8px; font-weight:600}
+  .mock-hero p{color:var(--ink-2); font-size:.9rem; max-width:42ch; margin:0}
+  .mock-btn{display:inline-block; margin-top:16px; padding:9px 18px; font-size:.8rem; background:var(--ink); color:#fff; border-radius:6px; font-weight:600}
+  .mock-footer{border-top:1px solid var(--line); margin-top:26px; padding:18px 0 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .mock-copy{font-size:.76rem; color:var(--ink-2)}
+
+  /* --- buscador real (lookup contra registro.json) --- */
+  .lookup{max-width:640px; margin-inline:auto}
+  .lookup-row{display:flex; gap:10px; flex-wrap:wrap}
+  .lookup input{flex:1; min-width:220px; height:50px; padding:0 16px; border-radius:var(--r-sm); border:1px solid var(--line-2); background:var(--surface); color:var(--ink); font:inherit; font-family:var(--mono); font-size:.92rem}
+  .lookup input:focus-visible{outline:3px solid var(--brand-2); outline-offset:1px}
+  .lookup-hint{margin-top:10px; font-size:var(--t-xs); color:var(--ink-2)}
+  .lookup-hint button{background:none; border:0; padding:0; color:var(--brand); font-weight:600; cursor:pointer; text-decoration:underline; font:inherit}
+  .lookup-result{margin-top:22px}
+  .lookup-result[hidden]{display:none}
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+
+<a class="skip" href="#app">Saltar al contenido</a>
+
+<!-- SVG del sello reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="sealRing">
+    <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/>
+    <path id="sealPath" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/>
+    <text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor">
+      <textPath href="#sealPath" startOffset="0">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath>
+    </text>
+    <polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/>
+    <text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text>
+    <text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text>
+  </g>
+</defs></svg>
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MarcaIA — El sello de transparencia de IA que exige el art.">
+<meta name="twitter:description" content="Desde el 2 de agosto de 2026 el artículo 50 del Reglamento de IA de la UE obliga a informar del contenido generado con IA.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="#top" aria-label="MarcaIA, inicio">
+      <span class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>
+      MarcaIA
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#cerca">El sello, de cerca</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#casos">Qué debes marcar</a>
+      <a href="#proteccion">Cómo lo protegemos</a>
+      <a href="#buscador">Compruébalo</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <a class="btn btn-primary" href="#app" style="height:44px">Comprobar mi contenido</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero container" id="app">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Reglamento de IA de la UE · art. 50 · desde el 2 ago 2026</span>
+        <h1>El sello que dice que tu contenido lo hizo una IA. Ahora es obligatorio.</h1>
+        <p class="lead">Desde el 2 de agosto de 2026, el artículo 50 obliga a informar de que un contenido se generó o manipuló con IA. Comprueba qué debes marcar y estampa el sello de transparencia, listo para tu web, tu imagen o tu chatbot.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#como"><svg class="i" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3"/><circle cx="11" cy="11" r="8"/></svg>Comprobar mi contenido</a>
+          <a class="btn btn-ghost" href="#casos">Qué obliga a marcar</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Incluido en cada negocio de attenciona</span>
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Se ejecuta en tu navegador</span>
+        </div>
+      </div>
+
+      <div class="panel reveal" role="img" aria-label="El comprobador: eliges el tipo de contenido con IA y estampa el sello de transparencia con el aviso ya redactado.">
+        <div class="panel-bar" aria-hidden="true">
+          <span class="dot" style="background:#E1574B"></span><span class="dot" style="background:#E3B23C"></span><span class="dot" style="background:#3FA46A"></span>
+          <span class="panel-url">attenciona.com/negocios/marcaia/</span>
+        </div>
+        <div class="panel-body">
+          <p class="panel-label">¿Qué has publicado con IA?</p>
+          <div class="chips" aria-hidden="true">
+            <span class="chip on">Imagen / deepfake</span><span class="chip">Texto de interés público</span><span class="chip">Chatbot</span>
+          </div>
+          <div class="stamp" aria-hidden="true">
+            <span class="seal"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>
+            <div class="txt">
+              <h5>Necesita marca</h5>
+              <p>Debes indicar que la imagen se generó o manipuló con IA.</p>
+              <div class="snippet">Imagen generada con inteligencia artificial.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="cerca">
+    <div class="container medallion-wrap">
+      <span class="eyebrow">El sello, de cerca</span>
+      <h2 style="margin-top:16px; max-width:16ch">Un sello que no se puede falsificar</h2>
+      <p class="lead" style="margin-top:16px; max-width:48ch">La imagen se puede copiar. La verificación, no. Cada sello queda firmado al dominio que lo emite — cualquier otro sitio que lo use nunca pasará la comprobación.</p>
+
+      <div class="medallion-stage reveal" style="margin-top:44px">
+        <div class="medallion">
+          <svg viewBox="0 0 272 272" role="img" aria-label="Sello MarcaIA">
+            <circle cx="136" cy="136" r="129" fill="none" stroke="var(--seal)" stroke-width="1.3"/>
+            <circle cx="136" cy="136" r="99" fill="none" stroke="var(--seal)" stroke-width="1" stroke-dasharray="1.4 4.2" opacity=".65"/>
+            <g class="ring-spin">
+              <path id="medRing" d="M136,26 a110,110 0 1,1 -0.1,0 z" fill="none"/>
+              <text font-family="var(--sans)" font-size="8.6" letter-spacing="2.6" fill="var(--seal)" font-weight="600">
+                <textPath href="#medRing" startOffset="0">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath>
+              </text>
+            </g>
+            <g transform="translate(136,112)">
+              <polygon points="0,-27 24,-8 15,24 -15,24 -24,-8" fill="none" stroke="var(--seal)" stroke-width="2" stroke-linejoin="round"/>
+              <polygon points="0,-13 11,-3.6 6.4,11 -6.4,11 -11,-3.6" fill="var(--seal)" fill-opacity=".85"/>
+            </g>
+            <text x="136" y="174" text-anchor="middle" font-family="var(--serif)" font-size="21" font-weight="600" fill="var(--ink)">MarcaIA</text>
+            <text x="136" y="190" text-anchor="middle" font-family="var(--sans)" font-size="7.8" letter-spacing="2" fill="var(--ink-2)">ATTENCIONA.COM</text>
+          </svg>
+        </div>
+      </div>
+      <p class="medallion-caption reveal">Neutro por diseño — <b>ningún color de veredicto va grabado en el sello</b>. El verde o el rojo solo aparecen al comprobarlo en vivo, más abajo.</p>
+    </div>
+  </section>
+
+  <section class="band tint">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Así lo ve tu cliente</span>
+        <h2>Discreto — no un cartel</h2>
+        <p class="lead">Tamaño y posición reales, tal cual está en producción ahora mismo en <a href="/negocios/padala/" target="_blank" rel="noopener" style="text-decoration:underline">Padala</a>, uno de nuestros negocios de Fase 3.</p>
+      </div>
+      <div class="browser-frame reveal">
+        <div class="browser-chrome" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="addr">attenciona.com/negocios/padala/</span>
+        </div>
+        <div class="mock-site">
+          <div class="mock-nav">
+            <div class="mock-logo">Padala</div>
+            <div class="mock-links"><span>Cómo funciona</span><span>Precios</span><span>FAQ</span></div>
+          </div>
+          <div class="mock-hero">
+            <h3>Cuánto se queda el intermediario de tu remesa, de verdad</h3>
+            <p>Un negocio de Fase 3, construido con ayuda de IA y datos oficiales del Banco Mundial.</p>
+            <span class="mock-btn">Comprobar mi remesa</span>
+          </div>
+          <div class="mock-footer">
+            <div class="mock-copy">© 2026 Padala · attenciona</div>
+            <a class="seal-lockup" href="https://attenciona-fase3-production.up.railway.app/negocios/padala/" target="_blank" rel="noopener" aria-label="Ver el sello real en Padala">
+              <span class="seal" style="width:40px;height:40px"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>
+              <span class="txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="problema">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">El problema real</span>
+        <h2>La transparencia de IA dejó de ser opcional</h2>
+        <p class="lead">El artículo 50 alcanza a cualquiera que ponga contenido con IA ante el público de la UE, sea cual sea su sede. Saber qué obliga a marcar —y redactar el aviso correcto— no es evidente.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="big">2 ago 2026</span>
+          <h3>En vigor y en aplicación</h3>
+          <p>La Comisión Europea confirmó que desde el 2 de agosto de 2026 empieza a aplicar las obligaciones de transparencia del artículo 50. <a href="#fuentes" class="muted">[1][2]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="big">15 M€ · 3%</span>
+          <h3>en sanciones</h3>
+          <p>El incumplimiento puede acarrear multas de hasta 15 millones de euros o el 3% de la facturación mundial anual, lo que sea mayor. <a href="#fuentes" class="muted">[2]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+          <h3>La excepción tiene letra pequeña</h3>
+          <p>El texto de interés público se libra del aviso solo si hubo revisión editorial humana sustantiva con un responsable editorial. Es fácil creerse cubierto sin estarlo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="como">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>De tu tipo de contenido al sello correcto</h2>
+        <p class="lead">Sin cuenta y sin servidor: la comprobación ocurre entera en tu navegador.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num"></span><h3>Marca qué publicaste con IA</h3><p>Imágenes o deepfakes, texto de interés público, chatbots que hablan con clientes, contenido decorativo…</p></div>
+        <div class="step reveal"><span class="num"></span><h3>Sabe si te obliga el art. 50</h3><p>Por cada tipo: si debes informar, si aplica una excepción y qué condición tendrías que cumplir para acogerte a ella.</p></div>
+        <div class="step reveal"><span class="num"></span><h3>Estampa el sello y el aviso</h3><p>Con Pro, el texto del aviso para web, pie de imagen o chatbot, más una checklist de cumplimiento exportable.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="casos">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Qué debes marcar</span>
+        <h2>Los supuestos del artículo 50</h2>
+        <p class="lead">Resumen orientativo de las obligaciones de transparencia. El texto oficial del artículo se enlaza en Fuentes.</p>
+      </div>
+      <div class="tbl-wrap reveal">
+        <table>
+          <thead><tr><th>Tipo de contenido con IA</th><th>¿Aviso?</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td>Deepfake (imagen, audio o vídeo manipulado)</td><td><span class="pill yes">Sí</span></td><td><small>Debe indicarse que se ha generado o manipulado con IA.</small></td></tr>
+            <tr><td>Texto de interés público</td><td><span class="pill cond">Condicional</span></td><td><small>Salvo revisión editorial humana sustantiva con un responsable editorial.</small></td></tr>
+            <tr><td>Chatbot / sistema que habla con personas</td><td><span class="pill yes">Sí</span></td><td><small>El usuario debe saber que interactúa con una IA.</small></td></tr>
+            <tr><td>Contenido claramente artístico o decorativo</td><td><span class="pill cond">Matizado</span></td><td><small>La obligación se adapta para no estorbar la obra; revísalo caso a caso.</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:18px; font-size:var(--t-xs)">Resumen a partir de las fuentes citadas y del texto del art. 50. No sustituye la lectura del reglamento ni el asesoramiento legal.</p>
+    </div>
+  </section>
+
+  <section class="band" id="sello">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">El sello</span>
+        <h2>Nuestro estándar de transparencia</h2>
+        <p class="lead">En attenciona construimos con ayuda de IA — y lo decimos con el sello. Va en cada negocio que generamos: es la norma de la casa, no un extra. Da seriedad a lo que hacemos y confianza a quien lo usa.</p>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <span class="badge" style="background:var(--ok)">Incluido · gratis</span>
+          <h3>En nuestros negocios</h3>
+          <div class="amt">Siempre</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>El sello va en cada negocio de attenciona</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Declara que el contenido se creó con IA</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Alineado con el art. 50 del Reglamento de IA</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sin coste y sin opción de quitarlo</li>
+          </ul>
+          <span class="btn btn-ghost" style="cursor:default; pointer-events:none">Norma de attenciona</span>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge">Opcional · próximamente</span>
+          <h3>En tu propio contenido</h3>
+          <div class="amt">1&nbsp;$ <small>por marcar</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Estampa el sello en tu web, imagen o chatbot</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Con el aviso del art. 50 ya redactado</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Tú eliges: con sello o sin él</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Checklist de cumplimiento exportable</li>
+          </ul>
+          <span class="btn btn-primary" style="cursor:default; pointer-events:none">Dentro del constructor a la carta</span>
+          <p class="fiscal">Sin venta directa por ahora. Llegará como opción del constructor de attenciona; pago único en USDT/USDC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="proteccion">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Cómo lo protegemos</span>
+        <h2>La imagen se copia. La firma, no.</h2>
+        <p class="lead">Cada sello queda firmado al dominio del negocio que lo emite. Si alguien lo copia a otro sitio, el diseño es idéntico — pero la comprobación siempre falla.</p>
+      </div>
+
+      <div class="panel reveal" style="max-width:640px; margin-inline:auto; margin-bottom:32px">
+        <div class="panel-bar" aria-hidden="true">
+          <span class="dot" style="background:#E1574B"></span><span class="dot" style="background:#E3B23C"></span><span class="dot" style="background:#3FA46A"></span>
+          <span class="panel-url">tunegocio.com</span>
+        </div>
+        <div class="panel-body foot-demo">
+          <div>
+            <p class="panel-label" style="margin-bottom:4px">Así se ve en tu pie de página</p>
+            <p class="muted" style="font-size:var(--t-sm)">Discreto — no un cartel.</p>
+          </div>
+          <span class="seal-lockup" aria-hidden="true">
+            <span class="seal"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>
+            <span class="txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="steps" style="margin-top:8px">
+        <div class="step reveal"><span class="num"></span><h3>Firma al nacer el negocio</h3><p>El motor calcula un HMAC del dominio con una clave interna: un identificador único e irrepetible por dominio.</p></div>
+        <div class="step reveal"><span class="num"></span><h3>Verificación en vivo</h3><p>Cada clic consulta el servidor en ese instante — no es una imagen estática que se pueda capturar y reutilizar.</p></div>
+        <div class="step reveal"><span class="num"></span><h3>Contraste de dominio</h3><p>Si el dominio que aloja el sello no coincide con el firmado, el veredicto es negativo aunque el diseño sea idéntico.</p></div>
+      </div>
+
+      <p class="honesty-note reveal"><strong>Con honestidad:</strong> nadie puede impedir que alguien guarde la imagen. Lo que se protege no es el archivo — es que esa copia nunca pase la comprobación.</p>
+    </div>
+  </section>
+
+  <section class="band tint" id="buscador">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">El registro, en directo</span>
+        <h2>Compruébalo tú mismo</h2>
+        <p class="lead">Un buscador real contra nuestro registro de firmas — no una maqueta. Pega el identificador de cualquier sello y te decimos a qué negocio y dominio quedó firmado.</p>
+      </div>
+
+      <div class="lookup reveal">
+        <div class="lookup-row">
+          <input type="text" id="lkId" inputmode="text" autocomplete="off" spellcheck="false"
+            placeholder="Identificador del sello, p. ej. c8b4d6da3b" aria-label="Identificador del sello a buscar">
+          <button class="btn btn-primary" id="lkBtn" type="button" style="flex:none">Buscar en el registro</button>
+        </div>
+        <p class="lookup-hint">¿No tienes uno a mano? <button type="button" id="lkEjemplo">Prueba con el de Padala</button> — un negocio real de Fase 3.</p>
+
+        <div class="panel lookup-result" id="lkResult" hidden>
+          <div class="panel-bar" aria-hidden="true">
+            <span class="dot" style="background:#E1574B"></span><span class="dot" style="background:#E3B23C"></span><span class="dot" style="background:#3FA46A"></span>
+            <span class="panel-url" id="lkUrl">registro.json</span>
+          </div>
+          <div class="panel-body" id="lkBody"></div>
+        </div>
+      </div>
+      <p class="honesty-note reveal">Esto es una <strong>búsqueda</strong> en el registro público (qué dominio y negocio firmó ese identificador). El veredicto de <strong>Verificado / No verificado</strong> —que compara contra el sitio real desde el que llegaste— ocurre al pulsar el sello desde el propio negocio, en <a href="/negocios/marcaia/verificar.html" target="_blank" rel="noopener" style="text-decoration:underline">verificar.html</a>.</p>
+    </div>
+  </section>
+
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2>Lo que suele preguntar quien publica con IA</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>¿A quién obliga el artículo 50?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">A proveedores y a quienes despliegan sistemas de IA cuyo contenido llega al público de la UE, con independencia de dónde tengan su sede. Desde el 2 de agosto de 2026 deben divulgar el contenido generado o manipulado con IA en los supuestos del artículo. Fuentes: <a href="https://www.cooley.com/news/insight/2026/2026-08-03-eu-ai-act-transparency-obligations-take-effect-2-august-2026" target="_blank" rel="noopener">Cooley</a>, <a href="https://knowledge.dlapiper.com/dlapiperknowledge/globalemploymentlatestdevelopments/2026/deployer-obligations-under-the-ai-act-implications-for-employers-from-2-august-2026" target="_blank" rel="noopener">DLA Piper</a>.</div>
+        </details>
+        <details class="reveal">
+          <summary>Publico artículos redactados con IA, ¿tengo que avisarlo?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">El texto generado por IA sobre asuntos de interés público debe divulgarse, salvo que haya pasado por una revisión editorial humana sustantiva con una persona que asuma la responsabilidad editorial. MarcaIA te ayuda a documentar ese punto.</div>
+        </details>
+        <details class="reveal">
+          <summary>¿Cuánto arriesgo si no cumplo?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Las sanciones por incumplimiento pueden llegar a 15 millones de euros o al 3% de la facturación mundial anual, lo que sea mayor.</div>
+        </details>
+        <details class="reveal">
+          <summary>¿Esto es asesoramiento legal?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. MarcaIA da un resumen orientativo del artículo 50 y genera un borrador de aviso; no sustituye la lectura del reglamento ni el asesoramiento de un profesional. Existe además un Código de Práctica voluntario de la UE como vía estructurada de cumplimiento. <a href="#fuentes">[4]</a></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="fuentes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Fuentes</span>
+        <h2>De dónde sale cada dato</h2>
+        <p class="lead">Todo dato de esta página está enlazado a su fuente original. Verifícalo tú mismo.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="n">1</span><div><a href="https://www.cooley.com/news/insight/2026/2026-08-03-eu-ai-act-transparency-obligations-take-effect-2-august-2026" target="_blank" rel="noopener">Cooley — EU AI Act: Transparency Obligations Take Effect 2 August 2026</a><small>Fecha de aplicación y alcance del artículo 50.</small></div></div>
+        <div class="source"><span class="n">2</span><div><a href="https://www.legalnodes.com/article/eu-ai-act-2026-updates-compliance-requirements-and-business-risks" target="_blank" rel="noopener">Legal Nodes — EU AI Act 2026 Updates</a><small>Sanciones de hasta 15 M€ o el 3% de la facturación mundial.</small></div></div>
+        <div class="source"><span class="n">3</span><div><a href="https://knowledge.dlapiper.com/dlapiperknowledge/globalemploymentlatestdevelopments/2026/deployer-obligations-under-the-ai-act-implications-for-employers-from-2-august-2026" target="_blank" rel="noopener">DLA Piper — Deployer obligations under the AI Act</a><small>Obligaciones de quien despliega sistemas de IA (desde 2 ago 2026).</small></div></div>
+        <div class="source"><span class="n">4</span><div><a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content" target="_blank" rel="noopener">Comisión Europea — Code of Practice on Transparency of AI-generated Content</a><small>Vía voluntaria de cumplimiento del etiquetado.</small></div></div>
+        <div class="source"><span class="n">5</span><div><a href="https://artificialintelligenceact.eu/article/50/" target="_blank" rel="noopener">Texto oficial — Artículo 50 del Reglamento de IA</a><small>Obligaciones de transparencia para determinados sistemas de IA.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <span class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>
+        <h2>Estampa la transparencia antes de que la reclame la UE.</h2>
+        <p>Sabe qué debes marcar y ten el sello y el aviso en un minuto. Gratis para empezar.</p>
+        <a class="btn" href="#top"><svg class="i" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3"/><circle cx="11" cy="11" r="8"/></svg>Comprobar mi contenido</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#sealRing"/></svg></span>MarcaIA</a>
+        <p>El sello de transparencia de IA que exige el artículo 50 del Reglamento de IA de la UE, según tu tipo de contenido.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#como">Cómo funciona</a></li>
+          <li><a href="#casos">Qué debes marcar</a></li>
+          <li><a href="#sello">El sello</a></li>
+          <li><a href="#fuentes">Fuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#faq">Aviso legal</a></li>
+          <li><a href="#faq">Privacidad</a></li>
+          <li><a href="/marketplace.html">attenciona.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Responsable editorial:</strong> attenciona (holding). Contenido asistido por IA y revisado antes de publicar (Reglamento de IA de la UE, art. 50.4). &nbsp;·&nbsp; <strong>No es asesoramiento legal:</strong> MarcaIA ofrece un resumen orientativo del artículo 50 y un borrador de aviso; no sustituye la lectura del reglamento ni la revisión de un profesional. &nbsp;·&nbsp; <strong>Última verificación:</strong> agosto de 2026. &nbsp;·&nbsp; <strong>Privacidad:</strong> la comprobación ocurre en tu navegador y no se envían tus datos a ningún servidor. Sin cookies de terceros ni rastreadores. &nbsp;·&nbsp; © 2026 MarcaIA · attenciona.</p>
+    </div>
+  </div>
+  <div style="margin-top:4px"><a class="sello-ia" href="./verificar.html?id=2cea5b1c18" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <p><strong>Sin rastreo.</strong> Este sitio funciona entero en tu navegador: no usa cookies de terceros ni analítica publicitaria, y no envía tus datos a ningún servidor. Solo guardamos localmente si ya viste este aviso.</p>
+  <div class="row">
+    <button class="btn btn-primary" id="consentOk">Entendido</button>
+    <a class="btn btn-ghost" href="#faq">Más info</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"MarcaIA","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/marcaia/","description":"Comprueba qué contenido generado con IA debes etiquetar según el artículo 50 del Reglamento de IA de la UE y estampa el sello de transparencia. El análisis ocurre en el navegador.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Sello estándar (incluido en los negocios de attenciona)"},{"@type":"Offer","price":"1","priceCurrency":"USD","name":"Sello en tu propio contenido (opcional)"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿A quién obliga el artículo 50?","acceptedAnswer":{"@type":"Answer","text":"A proveedores y a quienes despliegan sistemas de IA cuyo contenido llega al público de la UE, con independencia de su sede. Desde el 2 de agosto de 2026 deben divulgar el contenido generado o manipulado con IA en los supuestos del artículo."}},
+      {"@type":"Question","name":"Publico artículos redactados con IA, ¿tengo que avisarlo?","acceptedAnswer":{"@type":"Answer","text":"El texto generado por IA sobre asuntos de interés público debe divulgarse, salvo revisión editorial humana sustantiva con una persona que asuma la responsabilidad editorial."}},
+      {"@type":"Question","name":"¿Cuánto arriesgo si no cumplo?","acceptedAnswer":{"@type":"Answer","text":"Las sanciones pueden llegar a 15 millones de euros o al 3% de la facturación mundial anual, lo que sea mayor."}},
+      {"@type":"Question","name":"¿Esto es asesoramiento legal?","acceptedAnswer":{"@type":"Answer","text":"No. Es un resumen orientativo del artículo 50 y un borrador de aviso; no sustituye la lectura del reglamento ni el asesoramiento profesional. Existe un Código de Práctica voluntario de la UE."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('marcaia_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('marcaia_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+
+  // --- buscador real: lookup contra el registro público de firmas (mismo origen, sin backend) ---
+  var EJEMPLO_ID = 'c8b4d6da3b'; // Padala — negocio real de Fase 3
+  var lkId=document.getElementById('lkId'), lkBtn=document.getElementById('lkBtn'),
+      lkEjemplo=document.getElementById('lkEjemplo'), lkResult=document.getElementById('lkResult'),
+      lkUrl=document.getElementById('lkUrl'), lkBody=document.getElementById('lkBody');
+
+  function fmtFecha(iso){
+    try{ return new Date(iso+'T00:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'}); }
+    catch(e){ return iso; }
+  }
+  function buscar(id){
+    id=(id||'').trim().toLowerCase().replace(/[^a-f0-9]/g,'');
+    lkResult.hidden=false;
+    lkUrl.textContent='registro.json?id='+(id||'…');
+    if(!id){
+      lkBody.innerHTML='<div class="vstatus bad"><span class="ring"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg></span><strong style="color:var(--warn)">Falta el identificador</strong></div><div class="vrow"><span>Pega un id de sello para buscarlo.</span></div>';
+      return;
+    }
+    lkBody.innerHTML='<p class="muted" style="font-size:var(--t-sm)">Consultando el registro…</p>';
+    fetch('./registro.json',{cache:'no-store'}).then(function(r){ return r.json(); }).then(function(reg){
+      var entrada=reg[id];
+      if(!entrada){
+        lkBody.innerHTML='<div class="vstatus bad"><span class="ring"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg></span><strong style="color:var(--warn)">No está en el registro</strong></div><div class="vrow"><span>Identificador</span><span class="mono">'+id+'</span></div><div class="vrow"><span>Ese id no corresponde a ningún sello emitido por attenciona.</span></div>';
+        return;
+      }
+      lkBody.innerHTML=
+        '<div class="vstatus ok"><span class="ring"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M20 6 9 17l-5-5"/></svg></span><strong style="color:var(--ok)">Encontrado en el registro</strong></div>'+
+        '<div class="vrow"><span>Negocio</span><span>'+(entrada.negocio||'—')+'</span></div>'+
+        '<div class="vrow"><span>Dominio firmado</span><span class="mono">'+(entrada.dominio||'—')+'</span></div>'+
+        '<div class="vrow"><span>Emitido</span><span>'+fmtFecha(entrada.fecha)+'</span></div>'+
+        '<div class="vrow"><span>Firma</span><span class="mono">'+id+'</span></div>';
+    }).catch(function(){
+      lkBody.innerHTML='<p class="muted" style="font-size:var(--t-sm)">No se pudo consultar el registro ahora mismo. Reintenta en un momento.</p>';
+    });
+  }
+  if(lkBtn){
+    lkBtn.addEventListener('click', function(){ buscar(lkId.value); });
+    lkId.addEventListener('keydown', function(e){ if(e.key==='Enter') buscar(lkId.value); });
+    lkEjemplo.addEventListener('click', function(){ lkId.value=EJEMPLO_ID; buscar(EJEMPLO_ID); });
+  }
+})();
+</script>
+</body>
+</html>

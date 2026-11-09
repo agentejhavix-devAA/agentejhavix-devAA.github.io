@@ -1,0 +1,20 @@
+# CNOta — robots.txt (attenciona Fase 3)
+# Crawlers de motores de IA explícitamente autorizados (GEO/AEO)
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: /sitemap.xml

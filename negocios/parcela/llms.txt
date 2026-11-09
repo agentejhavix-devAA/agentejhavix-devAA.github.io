@@ -1,0 +1,22 @@
+# Parcela — Your EUDR due-diligence date, stamped
+
+Parcela es una herramienta educativa (sin asesoría legal) que comprueba si un operador o comerciante está en el alcance del Reglamento (UE) 2023/1115 sobre productos libres de deforestación (EUDR) y desde cuándo debe presentar declaraciones de diligencia debida.
+
+## Hechos clave (verificados 13.08.2026)
+
+- Base legal: Reglamento (UE) 2023/1115 — prohíbe en el mercado de la UE los productos vinculados a deforestación o degradación forestal.
+- Alcance: 7 productos básicos y sus derivados (Anexo I): carne de bovino, cacao, café, aceite de palma, caucho, soja y madera.
+- Fechas de aplicación (pospuestas una vez más en 2026):
+  - Grandes y medianos operadores/comerciantes: **30.12.2026**.
+  - Micro y pequeñas empresas: **30.06.2027**.
+- Fecha de corte: la tierra debe estar libre de deforestación desde el **31.12.2020**.
+- Obligación: declaración de diligencia debida (DDS) en el Sistema de Información de la UE (TRACES); geolocalización de parcelas con coordenadas a 4 decimales; evaluación y mitigación de riesgos.
+- Sanciones (art. 25): multa máxima de al menos **4% de la facturación anual en la UE**, decomiso de productos e ingresos, prohibición de comercialización y exclusión temporal de contratación pública.
+
+## Fuentes
+
+1. https://environment.ec.europa.eu/topics/forests/deforestation/regulation-deforestation-free-products_en (Comisión Europea — primaria)
+2. https://green-forum.ec.europa.eu/nature-and-biodiversity/deforestation-regulation-implementation_en (hub oficial de implementación)
+3. https://www.coolset.com/academy/the-eu-deforestation-regulation-eudr-what-businesses-need-to-know-and-do (fechas tras la prórroga, mar 2026)
+4. https://www.coolset.com/academy/eudr-penalties-what-non-compliance-actually-costs-fines-bans-criminal-liability (sanciones art. 25, jun 2026)
+5. https://www.complir.io/resources/guides/eudr-compliance-guide (fechas confirmadas, jul 2026)

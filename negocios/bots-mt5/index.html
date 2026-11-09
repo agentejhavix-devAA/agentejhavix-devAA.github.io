@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>attenciona Bot · bot de trading para MT5 configurable al 100 %</title>
+<meta name="description" content="El motor de trading que usamos nosotros, para tu MetaTrader 5: instalador, asistente paso a paso y panel de configuración. Cuenta real o fondeadas. Pago único y descarga al momento.">
+<meta name="theme-color" content="#0f2d5c">
+<link rel="canonical" href="https://www.attenciona.com/negocios/bots-mt5/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="Bots MT5 a la carta · attenciona">
+<meta property="og:description" content="Tu forma de operar, convertida en un bot de MT5. Base y arquitectura nuestras; reglas tuyas. Real o fondeadas, pago único.">
+<meta property="og:url" content="https://www.attenciona.com/negocios/bots-mt5/">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/nav-fase4.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Bot MT5 a la carta","description":"Asesor experto (EA) para MetaTrader 5 construido sobre la arquitectura de attenciona y personalizado con las reglas de operativa del cliente.","url":"https://www.attenciona.com/negocios/bots-mt5/","offers":[{"@type":"Offer","name":"Cuenta real","price":950,"priceCurrency":"USD"},{"@type":"Offer","name":"Fondeadas","price":1250,"priceCurrency":"USD"}]}</script>
+<style>
+:root{--bg:#fbfbfd;--surface:#f4f5fa;--ink:#131a2b;--muted:#5b6478;--line:#e3e6ee;--accent:#0f2d5c;--accent-deep:#0a1f42;--accent-tint:#eef1f9;--gold:#c9973e;--gold-tint:#fbf3e4;--good:#2f8f5b;--bad:#b23b47;--bad-tint:#fbeced;
+--shadow:0 1px 2px rgba(19,26,43,.04),0 8px 28px rgba(19,26,43,.06);--radius:16px;--maxw:1120px;
+--font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--display:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+h1 em,h2 em{font-style:italic;color:var(--gold)}
+.k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+section{padding:56px 0}
+.lead{color:var(--muted);max-width:62ch;margin-top:.8rem}
+.hero{padding-top:22px}
+.hb{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(150deg,#0a1f42,#0f2d5c 55%,#173a6e);color:#fff;padding:56px 32px;box-shadow:var(--shadow)}
+.hb::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse 90% 80% at 25% 40%,#000 20%,transparent 75%)}
+.hb>*{position:relative}
+.hb h1{font-size:clamp(2rem,5vw,3.3rem);max-width:18ch;margin-top:.6rem}
+.hb p{color:#c9d3e6;max-width:56ch;margin-top:1rem}
+.cta{display:inline-block;margin-top:1.6rem;background:var(--gold);color:#0a1f42;font-weight:600;padding:.85em 1.4em;border-radius:999px;text-decoration:none}
+.cta.alt{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);margin-left:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.chips span{font-family:var(--mono);font-size:.7rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.35em .8em;color:#e6ecf7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;box-shadow:var(--shadow);min-width:0}
+.card h3{font-size:1.15rem;margin:.5rem 0 .4rem}
+.card p{color:var(--muted);font-size:.92rem}
+.n{font-family:var(--mono);font-size:.75rem;color:var(--accent);background:var(--accent-tint);border-radius:8px;padding:.2em .55em}
+.arch{display:grid;gap:.6rem;margin-top:2rem}
+.layer{display:grid;grid-template-columns:150px 1fr;gap:1rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+.layer>b{font-family:var(--mono);font-size:.78rem;color:var(--accent)}
+.layer.tuyo{border-color:var(--gold);background:var(--gold-tint)}
+.layer.tuyo>b{color:#8a5f1c}
+.layer span{font-size:.92rem;color:var(--muted)}
+.legend{font-size:.82rem;color:var(--muted);margin-top:.8rem}
+.legend i{display:inline-block;width:.8em;height:.8em;border-radius:3px;background:var(--gold-tint);border:1px solid var(--gold);vertical-align:-1px;margin-right:.3em}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2rem}
+.plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.8rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.6rem}
+.plan.dest{border:2px solid var(--gold)}
+.price{font-family:var(--display);font-size:2.6rem;color:var(--accent)}
+.price small{font-family:var(--font);font-size:.85rem;color:var(--muted)}
+.plan ul{list-style:none;display:grid;gap:.4rem;margin:.4rem 0 1rem}
+.plan li{font-size:.92rem;color:var(--muted);padding-left:1.3rem;position:relative}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--good);font-weight:700}
+.plan .cta{margin-top:auto;text-align:center}
+form{display:grid;gap:1rem;margin-top:2rem;background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.6rem;box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+label{display:grid;gap:.35rem;font-size:.86rem;font-weight:500}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:.95rem;border:1px solid var(--line);border-radius:10px;padding:.7em .8em;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:90px;resize:vertical}
+.planpick{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.planpick label{display:flex;gap:.6rem;align-items:center;border:1px solid var(--line);border-radius:12px;padding:.8rem;cursor:pointer}
+.planpick input{width:auto}
+.planpick label:has(input:checked){border-color:var(--gold);background:var(--gold-tint)}
+.fondeo-only{display:none}
+form.fondeo .fondeo-only{display:grid}
+.chk{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;color:var(--muted)}
+.chk input{width:auto;margin-top:.25rem}
+button{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:.95em 1.4em;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.msg{font-size:.9rem}
+.msg.err{color:var(--bad)}
+.ok{background:#e8f3ec;border:1px solid #bfe0cb;border-radius:14px;padding:1rem 1.2rem;margin-top:1.4rem;display:none}
+.warn{background:var(--bad-tint);border:1px solid #f0c9cd;border-radius:16px;padding:1.4rem}
+.warn h3{font-size:1.1rem;color:var(--bad);margin-bottom:.5rem}
+.warn li{font-size:.9rem;color:#5d2a30;margin-left:1.1rem;margin-top:.3rem}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin-top:.6rem}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);font-size:.92rem;margin-top:.6rem}
+footer{background:var(--accent-deep);color:#c9d3e6;padding:32px 0 8px;font-size:.85rem;margin-top:40px}
+footer .wrap{display:grid;gap:.5rem}
+footer a{color:#fff}
+@media(max-width:600px){.hb{padding:40px 20px}.layer{grid-template-columns:1fr;gap:.3rem}.planpick{grid-template-columns:1fr}.cta.alt{margin-left:0;margin-top:.6rem}}
+</style>
+</head>
+<body>
+
+<main>
+<div class="wrap hero"><div class="hb">
+  <span class="k">attenciona Bot · para MetaTrader 5</span>
+  <h1>El motor que usamos nosotros, <em>configurado por ti</em>.</h1>
+  <p>Te llevas la arquitectura con la que operan nuestros bots. Decide sola cada día, ajusta el tamaño al riesgo, pone stop a cada posición y tiene un guardián que protege la cuenta. Tú eliges mercados, estrategia y límites en un panel, paso a paso, sin programar.</p>
+  <a class="cta" href="#pedir">Conseguir mi bot</a><a class="cta alt" href="#como">Cómo funciona</a>
+  <div class="chips"><span>Asistente de 7 pasos</span><span>Panel de configuración</span><span>Cuenta real o fondeadas</span><span>Descarga al momento</span></div>
+</div></div>
+
+<section id="arquitectura"><div class="wrap">
+  <span class="k">La arquitectura</span>
+  <h2>Seis capas. <em>Tú las configuras</em>, el bot las cumple.</h2>
+  <p class="lead">Es el mismo esqueleto que hace funcionar nuestro bot en real. Lo que en el nuestro está fijado, en el tuyo se ajusta desde el panel.</p>
+  <div class="arch">
+    <div class="layer tuyo"><b>1 · Señal</b><span>Una estrategia por mercado, de la misma familia que usamos nosotros: ruptura de máximos, momentum, tendencia con media o reversión RSI(2). Puedes dejar nuestros números o poner los tuyos.</span></div>
+    <div class="layer tuyo"><b>2 · Horario</b><span>Decide una vez al día, con la vela diaria cerrada, a la hora y los días que elijas. Nada de operar a lo loco ni pegado a las noticias.</span></div>
+    <div class="layer tuyo"><b>3 · Riesgo</b><span>Tamaño según la volatilidad de cada mercado y de la cartera entera, con un control de agresividad y topes de lotes y de apalancamiento.</span></div>
+    <div class="layer"><b>4 · Gestión</b><span>Cada posición lleva su stop puesto en MetaTrader 5. Después de cada operación el bot comprueba que el stop está puesto; si falta alguno, cierra esa posición.</span></div>
+    <div class="layer"><b>5 · Guardián</b><span>Vigila la cuenta cada 30 segundos: pérdida máxima del día, suelo total, freno que reduce el tamaño si la cuenta cae y descanso del mercado tras un stop.</span></div>
+    <div class="layer"><b>6 · Modo</b><span><strong>Real</strong>, <strong>examen de fondeo</strong> (con objetivo y días mínimos; al llegar al objetivo deja de operar) o <strong>fondeada</strong> (lo primero es no perder la cuenta).</span></div>
+  </div>
+  <p class="legend"><i></i>En dorado, lo que eliges tú. Todas las capas se ajustan en el panel.</p>
+</div></section>
+
+<section id="como" style="background:var(--surface)"><div class="wrap">
+  <span class="k">Cómo funciona</span>
+  <h2>De la compra a tu <em>MT5</em>, en 10 minutos.</h2>
+  <div class="grid">
+    <div class="card"><span class="n">01</span><h3>Pagas y lo descargas</h3><p>Pago único en cripto. En cuanto se confirma el pago, la descarga aparece en esta misma página.</p></div>
+    <div class="card"><span class="n">02</span><h3>Lo instalas con la guía</h3><p>Doble clic en el instalador. Una guía paso a paso te dice qué tocar en MetaTrader 5.</p></div>
+    <div class="card"><span class="n">03</span><h3>Lo configuras en el panel</h3><p>Un asistente de 7 pasos: conectar MT5, tipo de cuenta, mercados, estrategia, riesgo, horario y prueba.</p></div>
+    <div class="card"><span class="n">04</span><h3>Lo pruebas y lo activas</h3><p>Primero en modo prueba: decide, pero no envía órdenes. Cuando lo tengas claro, activas las órdenes reales con un clic.</p></div>
+  </div>
+</div></section>
+
+<section id="precios"><div class="wrap">
+  <span class="k">Precio</span>
+  <h2>Pago único. <em>Sin cuotas.</em></h2>
+  <div class="plans">
+    <div class="plan">
+      <span class="k">Cuenta real</span>
+      <div class="price">950 USDC <small>pago único</small></div>
+      <ul>
+        <li>Edición Real: para operar tu propia cuenta</li>
+        <li>Motor completo con las 6 capas</li>
+        <li>Asistente paso a paso y panel de configuración</li>
+        <li>Instalador y guía de instalación</li>
+        <li>Modo prueba antes de operar de verdad</li>
+        <li>Descarga inmediata tras el pago</li>
+      </ul>
+      <a class="cta" href="#pedir" data-plan="real">Conseguir para real</a>
+    </div>
+    <div class="plan dest">
+      <span class="k">Fondeadas</span>
+      <div class="price">1.250 USDC <small>pago único</small></div>
+      <ul>
+        <li>Todo lo del plan real</li>
+        <li>Examen de 1 fase</li>
+        <li>Examen de 2 fases: fase 1 y fase 2</li>
+        <li>Cuenta fondeada: lo primero, no perderla</li>
+        <li>Objetivo de cada fase y días mínimos</li>
+        <li>Límites que saltan antes que los de tu firma</li>
+      </ul>
+      <a class="cta" href="#pedir" data-plan="fondeo">Conseguir para fondeo</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="pedir" style="background:var(--surface)"><div class="wrap">
+  <span class="k">Compra</span>
+  <h2>Tu bot, <em>en un minuto</em>.</h2>
+  <p class="lead">Elige el plan, deja tu correo y paga. La descarga aparece aquí en cuanto se confirma el pago.</p>
+  <div class="ok" id="ok"><b id="okT">Comprobando tu pago…</b><p id="okP" style="margin-top:.4rem">Las criptomonedas pueden tardar unos minutos en confirmarse. Esta página se actualiza sola.</p><a class="cta" id="okD" href="#" style="display:none">Descargar attenciona Bot</a></div>
+  <form id="f" novalidate>
+    <div class="planpick">
+      <label><input type="radio" name="plan" value="real" checked> Cuenta real · 950 USDC</label>
+      <label><input type="radio" name="plan" value="fondeo"> Fondeadas · 1.250 USDC</label>
+    </div>
+    <label>Tu correo <small>para el recibo y para ayudarte si lo necesitas</small><input type="email" name="email" required autocomplete="email"></label>
+    <label class="chk"><input type="checkbox" name="acepto" required> Entiendo que es un software que ejecuta la configuración que elijo yo, que no hay ganancias garantizadas y que el trading con apalancamiento puede hacerme perder todo lo que invierta.</label>
+    <button type="submit" id="b">Ir al pago</button>
+    <p class="msg" id="m" aria-live="polite"></p>
+  </form>
+</div></section>
+
+<section><div class="wrap">
+  <div class="warn">
+    <h3>Lo que tienes que saber antes de comprar</h3>
+    <ul>
+      <li>Vendemos software, no resultados. El bot ejecuta <b>tu</b> configuración: si la estrategia que eliges pierde, el bot también perderá.</li>
+      <li>No es asesoramiento financiero ni de inversión. No gestionamos tu dinero y nunca entramos en tu cuenta ni pedimos tus claves.</li>
+      <li>Una prueba con datos pasados no asegura resultados futuros. Úsalo semanas en una cuenta demo antes de poner dinero real.</li>
+      <li>Cada firma de fondeo tiene sus normas sobre bots; algunas prohíben usar el mismo bot en varias cuentas. Cumplirlas es responsabilidad tuya.</li>
+      <li>El trading con apalancamiento (CFD, divisas, índices, materias primas) tiene un riesgo alto de perder dinero.</li>
+    </ul>
+  </div>
+  <div class="card" style="margin-top:2rem"><span class="k">A medida</span><h3>¿Algo más grande o totalmente personalizado?</h3><p>Varios bots coordinados, carteras multi-cuenta, paneles de seguimiento o un sistema completo de trading con datos. <a href="/automatiza/#consulta" style="color:var(--gold)">Cuéntanos tu proyecto</a> y te respondemos con una propuesta.</p></div>
+  <h2 style="margin-top:3rem">Preguntas <em>frecuentes</em></h2>
+  <details><summary>¿Es vuestra estrategia?</summary><p>Es nuestra arquitectura y la misma familia de estrategias que usan nuestros bots, con nuestros números por defecto. No vendemos nuestra configuración exacta: la tuya la eliges tú en el panel.</p></details>
+  <details><summary>¿Necesito saber programar?</summary><p>No. Se instala con doble clic y se configura en un panel de 7 pasos. La guía explica qué tocar en MetaTrader 5.</p></details>
+  <details><summary>¿Sirve para cualquier bróker o firma?</summary><p>Para cualquiera que use MetaTrader 5 en Windows. El panel lee los mercados de tu cuenta con el nombre exacto de tu bróker.</p></details>
+  <details><summary>¿Tiene que estar el PC encendido?</summary><p>Sí: el bot corre en tu PC junto a MetaTrader 5. Decide una vez al día, y el guardián vigila la cuenta cada 30 segundos mientras el PC está encendido.</p></details>
+  <details><summary>¿Accedéis a mi cuenta?</summary><p>No. Todo corre en tu ordenador. No recibimos tus claves, ni los datos de tu cuenta, ni tus operaciones.</p></details>
+  <details><summary>¿Cómo se paga y cuándo lo recibo?</summary><p>Pago único en cripto a través de NOWPayments. Cuando el pago se confirma, la descarga aparece en esta página al momento.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <span><b>attenciona Bot</b> · para MetaTrader 5</span>
+  <span>Software. No es asesoramiento financiero. Trading con apalancamiento = riesgo alto de pérdida.</span>
+  <span><a href="/privacidad.html">Privacidad</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/marketplace.html">Más negocios</a></span>
+</div>
+</footer>
+<script>
+(function(){
+  var f=document.getElementById('f'),b=document.getElementById('b'),m=document.getElementById('m');
+  function plan(){return f.querySelector('input[name=plan]:checked').value;}
+  [].forEach.call(document.querySelectorAll('[data-plan]'),function(a){a.addEventListener('click',function(){f.querySelector('input[value="'+a.dataset.plan+'"]').checked=true;});});
+  var id=(location.search.match(/[?&]ok=([a-f0-9]+)/)||[])[1];
+  if(id){
+    document.getElementById('ok').style.display='block';f.style.display='none';location.hash='pedir';
+    var mira=function(){fetch('/api/bots-mt5/estado?id='+id,{cache:'no-store'}).then(function(r){return r.json();}).then(function(r){
+      if(r.pagado){document.getElementById('okT').textContent='Pago confirmado. ¡Ya es tuyo!';
+        document.getElementById('okP').textContent='Descárgalo, descomprímelo y abre GUIA.html: en 10 minutos lo tienes funcionando. Guarda esta página; el enlace sirve para volver a descargarlo.';
+        var d=document.getElementById('okD');d.href='/api/bots-mt5/descarga?id='+id;d.style.display='inline-block';}
+      else setTimeout(mira,15000);}).catch(function(){setTimeout(mira,15000);});};
+    mira();
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();m.className='msg';
+    if(!f.checkValidity()){m.className='msg err';m.textContent='Pon tu correo y marca la casilla de riesgo.';return;}
+    b.disabled=true;m.textContent='Creando el pago…';
+    fetch('/api/bots-mt5/pedido',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({plan:plan(),email:f.elements.email.value})})
+      .then(function(r){return r.json();}).then(function(r){
+        if(r.invoice_url){location.href=r.invoice_url;return;}
+        throw new Error(r.error||'error');
+      }).catch(function(){b.disabled=false;m.className='msg err';m.textContent='No se pudo crear el pago. Prueba de nuevo en un momento.';});
+  });
+})();
+</script>
+</body>
+</html>

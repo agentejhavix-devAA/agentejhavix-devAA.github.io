@@ -1,0 +1,29 @@
+# Vigil
+
+Vigil is a free browser tool that checks your readiness for the EU Cyber Resilience Act (CRA) Article 14 vulnerability and incident reporting obligations. It runs entirely in the browser (no data leaves the device).
+
+## Key facts (verified 13 August 2026)
+
+- Regulation (EU) 2024/2847 (Cyber Resilience Act).
+- From 11 September 2026, manufacturers of products with digital elements must report actively exploited vulnerabilities and severe incidents.
+- Reporting windows: early warning within 24 hours, full notification within 72 hours, final report within 14 days (within a month for severe incidents).
+- Report once via the CRA Single Reporting Platform (SRP), operated by ENISA, to the CSIRT of your main establishment.
+- Full conformity obligations (CE marking, essential requirements) follow on 11 December 2027.
+- Fines: up to EUR 15,000,000 or 2.5% of worldwide annual turnover (Art. 64).
+
+## Sources
+
+1. https://digital-strategy.ec.europa.eu/en/policies/cra-reporting (European Commission — CRA reporting obligations)
+2. https://www.hlc.com/en/publications/eu-cyber-resilience-act-preparing-for-vulnerability-and-incident-reporting (Hogan Lovells)
+3. https://craevidence.com/cra-compliance/manufacturer (CRA Evidence — manufacturer obligations)
+4. https://zealience.com/resource-hub/cyber-resilience-act-article-14-reporting/ (Zealience — Art. 14)
+5. https://continueops.com/cyber-resilience-act/timeline (ContinueOps — timeline)
+
+## Pricing
+
+- Free: readiness check + checklist + fine exposure.
+- Pro (15 USD one-time, crypto via NOWPayments): printable readiness stamp PDF, 24h/72h/14d notification runbook, Art. 14 checklist, permanent unlock.
+
+## Not advice
+
+Vigil is an educational tool based on Regulation (EU) 2024/2847. It is not legal or security advice. Editorial responsibility: attenciona (Holding), Spain.

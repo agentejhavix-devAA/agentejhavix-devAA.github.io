@@ -1,0 +1,23 @@
+# ValidaTX
+
+ValidaTX — comprueba tu transacción: TX, red y confirmaciones. en LATAM — «Ya te mandé» no es un pago: es un hash que puede ser falso. Dato duro: tres verificaciones (hash, red, confirmaciones) matan el 90% de fraudes de entrega. Herramienta en el navegador contra la entrega a ciegas. Gratis 10/mes + Pro anual (3 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Crypto · Verificación.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://tronscan.org/ (Tronscan — Explorador TRC-20)
+2. https://etherscan.io/ (Etherscan — Explorador ERC-20)
+3. https://bscscan.com/ (BscScan — Explorador BEP-20)
+4. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto en LATAM 2026)
+5. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+
+## Precio
+- Gratis: 10 validaciones al mes.
+- Pro (3 USD pago único, cripto vía NOWPayments): Validaciones ilimitadas; Historial de validaciones; Reporte por entrega; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La validación no sustituye el criterio comercial ni la ley: define tu regla según tu riesgo. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

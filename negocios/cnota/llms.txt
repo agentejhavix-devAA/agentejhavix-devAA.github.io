@@ -1,0 +1,30 @@
+# CNOta
+
+> El Real Decreto 643/2026 (BOE del 1 de agosto de 2026) obliga a todos los empresarios a comunicar a la Tesorería General de la Seguridad Social el código de ocupación (CNO) de sus trabajadores por cuenta ajena de alta, en un plazo de seis meses: antes del 1 de febrero de 2027. CNOta comprueba si te aplica, cuenta los días que quedan y te dice qué trabajadores revisar. Todo funciona en el navegador.
+
+- **Mercado:** España · empresarios y autónomos con empleados, gestorías y asesorías laborales
+- **Fuente de datos en vivo:** BOE — RD 643/2026 (BOE-A-2026-16557), verificado el 12/08/2026
+- **Sistema de diseño:** Editorial-serif (Fraunces + Inter, auto-alojadas) · pictograma de ficha de trabajador · papel cálido + verde Seguridad Social + rojo de vencimiento
+
+## Qué resuelve
+El RD 643/2026 añade, mediante su Disposición Adicional Única, la obligación de comunicar el código de ocupación (única o principal) del artículo 30.2.a) del Reglamento General aprobado por el RD 84/1996, conforme a la Clasificación Nacional de Ocupaciones (CNO) vigente, de todos los trabajadores por cuenta ajena de alta cuyo dato no se hubiera comunicado ya. El plazo es de seis meses desde la entrada en vigor (1/08/2026), es decir, hasta el 1 de febrero de 2027. El mismo real decreto amplía de 3 a 6 días naturales el plazo para comunicar bajas y variaciones de datos de los trabajadores.
+
+## Comparación
+- CNOta · Gratis + Pro 6 € · 1 minuto · En tu navegador
+- BOE / Seguridad Social · Gratis · 30-60 min · Lectura normativa
+- Gestoría / software de nóminas (A3, Sage) · Cuota · Gestión completa
+
+## Fuentes citadas
+- BOE — Real Decreto 643/2026, de 29 de julio (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16557)
+- Autónomos y Emprendedor — Seis meses para declarar la ocupación (https://www.autonomosyemprendedor.es/articulo/seguridad-social/nueva-obligacion-pymes-seguridad-social-da-6-meses-declarar-ocupacion-trabajadores/20260731144254055230.html)
+- ADSLZone — El BOE da seis meses a las empresas (https://www.adslzone.net/noticias/internet/real-decreto-643-2026-empresas-comunicar-ocupacion/)
+- AECTA — Modificación de los Reglamentos de la Seguridad Social (https://aecta.org/rd-643-2026-modificacion-reglamentos-de-la-seguridad-social/)
+- Fube — Código de ocupación CNO: nueva obligación con la SS (https://www.fube.es/noticias/codigo-ocupacion-cno-seguridad-social-empleados-2026)
+
+## Estado de las puertas
+P1 ✅ investigación (fuente primaria BOE citada, verificada 12/08/2026)
+P2 ✅ diseño (identidad editorial-serif propia, ficha de plantilla funcional, sin plantilla genérica, sin emojis)
+P3 ✅ monetización (freemium + Pro 6 € pago único en cripto vía ProWidget, checkout real)
+P4 ✅ legal (consentimiento, responsable editorial art. 50.4 Reglamento IA, no-asesoramiento, fecha de verificación)
+P5 ✅ fiscal (España · IVA 21% · altas documentadas)
+P6 ✅ vigencia (RD 643/2026 en vigor desde 01/08/2026; plazo abierto hasta 01/02/2027 — dolor vigente e inminente el 12/08/2026)

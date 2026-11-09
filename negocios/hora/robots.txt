@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Hora — landing de comprobación de deberes laborales ERA 2025 (Reino Unido)
+# Generado por la Incubadora de attenciona. Sin contenido oculto.

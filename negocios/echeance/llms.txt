@@ -1,0 +1,30 @@
+# Échéance
+
+> Votre date limite de facturation électronique en France : réception obligatoire le 1er septembre 2026 pour toutes les entreprises assujetties à la TVA, émission selon la taille (GE/ETI le 01/09/2026, PME/micro le 01/09/2027). Checklist de préparation en 1 minute, tout dans le navigateur.
+
+- **Marché:** France · TPE/PME/micro-entrepreneurs assujettis à la TVA
+- **Source de données viva:** réglementation officielle (economie.gouv.fr, service-public.gouv.fr, impots.gouv.fr) vérifiée le 12/08/2026
+- **Système de design:** Corporativo-limpio (Inter) · logo pictograma literal (tampon de date) · palette encre bleu nuit + rouge timbre
+
+## Ce qu'il résout
+Depuis le 1er septembre 2026, toute entreprise assujettie à la TVA établie en France doit pouvoir recevoir des factures électroniques via une plateforme agréée. Les grandes entreprises et ETI doivent aussi les émettre dès cette date ; les PME et micro-entreprises au 1er septembre 2027. Les entreprises qui n'ont pas préparé cette échéance risquent de ne plus pouvoir recevoir les factures de leurs fournisseurs, avec un régime de sanctions (50 €/facture, 500 €/e-reporting) encadré par une tolérance de démarrage de la DGFiP (mise en demeure de 3 mois pour la réception).
+
+## Comparaison
+- Échéance · Gratuit + Pro 5 $ · 1 minute · Dans le navigateur
+- Guide officiel economie.gouv.fr · Gratuit · 30-60 min · Lecture
+- Expert-comptable / plateforme agréée · Variable · Démarche · Selon logiciel
+
+## Sources citées
+- economie.gouv.fr — Tout savoir sur la facturation électronique (https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises)
+- Service-Public — Facturation électronique : c'est pour bientôt (https://entreprendre.service-public.gouv.fr/actualites/A15683)
+- impots.gouv.fr — Liste des plateformes agréées (https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees)
+- KPMG — Compliance expectations during e-invoicing start-up phase (https://kpmg.com/us/en/taxnewsflash/news/2026/07/france-compliance-e-invoicing-startup.html)
+- Innovate Tax — France softens Sept 2026 e-invoicing penalties (https://innovatetax.com/blog/france-softens-sept-2026-penalties/)
+
+## Ficha de puertas
+P1 ✅ investigación (fuentes oficiales citadas y enlazadas, verificadas 12/08/2026)
+P2 ✅ diseño (identidad corporativo-limpio propia, tampon de fecha funcional, sin plantilla, sin emojis)
+P3 ✅ monetización (freemium + Pro 5 $ pago único en cripto, cobro real via ProWidget)
+P4 ✅ legal (consentimiento sin terceros, responsable editorial AI Act 50.4, "no es asesoría", fecha de verificación)
+P5 ✅ fiscal (España · IVA 21% · plan de altas documentado)
+P6 ✅ vigencia (échéance du 01/09/2026 active — obligación en vigueur, pas caducada)

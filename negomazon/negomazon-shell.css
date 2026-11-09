@@ -1,0 +1,41 @@
+/* negomazon-shell.css — alinea Negomazon con la línea visual de attenciona (Fase 4 azul).
+   Se carga DESPUÉS del <style> propio de cada página, así que remapea sus variables
+   (--bg, --accent, --ink…) a la paleta navy+oro de attenciona sin tocar el markup.
+   La única excepción deliberada es el botón "Ver en Amazon", que se deja en ámbar
+   Amazon por convención de conversión. */
+
+:root{
+  --bg:#fbfbfd; --surface:#f4f5fa; --surface-2:#eceef5;
+  --line:#e3e6ee; --line-strong:#d3d8e5;
+  --ink:#131a2b; --muted:#5b6478; --faint:#8b93a7;
+  --accent:#0f2d5c; --accent2:#0a1f42; --accent-deep:#0a1f42;
+  --wash:#eef1f9; --accent-tint:#eef1f9; --gold:#c9973e;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e1424; --surface:#141c30; --surface-2:#1b2540;
+    --line:#232e4a; --line-strong:#31406a;
+    --ink:#eef1f8; --muted:#a6aec2; --faint:#6f7994;
+    --accent:#5d8bd8; --accent2:#7fa6e8; --accent-deep:#7fa6e8;
+    --wash:#17233f; --accent-tint:#17233f; --gold:#d9ac55;
+  }
+}
+
+/* Tipografía attenciona: Inter de base, Fraunces en titulares */
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,'Times New Roman',serif;letter-spacing:-.01em;}
+
+/* Marca de la nav: gradiente navy como el shell de attenciona */
+.mark{background:linear-gradient(150deg,#7fa6e8 0%,var(--accent) 45%,var(--accent2) 100%)!important;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.35),0 3px 7px rgba(15,45,92,.28)!important;}
+
+/* Barra de disclosure de afiliado con tokens (no colores sueltos) */
+.disclosure{background:var(--accent-tint)!important;border-color:var(--line)!important;color:var(--muted)!important;}
+.disclosure a{color:var(--accent)!important;}
+
+/* Chips/eyebrow y acentos varios al oro/navy */
+.eyebrow{background:var(--accent-tint)!important;color:var(--accent-deep)!important;}
+.regla-item .fecha,.card .cat,.p-badge{color:var(--gold)!important;}
+.p-amount{color:var(--accent-deep)!important;}
+
+/* El botón de compra sigue siendo Amazon (ámbar) a propósito, pero con foco navy */
+:focus-visible{outline:2px solid var(--accent)!important;}

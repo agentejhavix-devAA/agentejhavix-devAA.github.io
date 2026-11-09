@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="canonical" href="https://www.attenciona.com/negocios/reclama/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reclama — recupera lo que te deben, sin ceder comisión a…</title>
+<meta name="description" content="Genera tu reclamación en 2 minutos: te decimos la vía oficial exacta (consumo, telecos o banca), los plazos legales y te preparamos el escrito.">
+<meta name="theme-color" content="#0b3d2e">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reclama — recupera lo que te deben, sin ceder comisión">
+<meta property="og:description" content="Genera tu reclamación en 2 minutos: te decimos la vía oficial exacta (consumo, telecos o banca), los plazos legales y te preparamos el escrito.">
+<meta property="og:url" content="https://www.attenciona.com/negocios/reclama/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b3d2e'/%3E%3Cpath d='M20 9h-8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6' fill='none' stroke='%234ecb8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M23 8l-2.5 2.5M23 8l0 3M23 8l-3 0' fill='none' stroke='%234ecb8f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  :root{
+    --bg:#f6f8f7;--surface:#fff;--surface-2:#eef3f0;--ink:#12211b;--muted:#566b61;--faint:#8aa094;
+    --line:#e0e8e3;--line-strong:#cbd8d0;--accent:#0b7a4b;--accent-deep:#0b3d2e;--accent-tint:#e6f4ec;
+    --gold:#c9973e;--danger:#c0392b;--radius:16px;--maxw:1080px;
+    --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --display:Georgia,'Times New Roman',serif;
+    --shadow:0 1px 2px rgba(11,61,46,.05),0 10px 30px rgba(11,61,46,.08);
+  }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.01em;font-weight:700}
+  h1{font-family:var(--display);font-size:clamp(28px,5vw,44px);letter-spacing:-.02em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  svg{display:block}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:10px 14px;border-radius:8px;z-index:99;box-shadow:var(--shadow)}
+  nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px}
+  .mark{width:30px;height:30px;border-radius:9px;background:var(--accent-deep);display:grid;place-items:center;flex:none}
+  .nav-links{display:flex;gap:4px}
+  .nav-links a{color:var(--muted);font-size:14px;font-weight:600;padding:8px 12px;border-radius:999px}
+  .nav-links a:hover{background:var(--surface);color:var(--ink)}
+  @media(max-width:720px){.nav-links{display:none}}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .1s,background .1s;font-family:inherit}
+  .btn-brand{background:var(--accent);color:#fff;box-shadow:0 1px 2px rgba(11,122,75,.3),0 8px 20px rgba(11,122,75,.22)}
+  .btn-brand:hover{background:var(--accent-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;border:1px solid var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{background:var(--surface)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-tint);border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);padding:6px 13px;border-radius:999px;margin-bottom:16px}
+  .hero{padding:52px 0 20px;display:grid;grid-template-columns:1.3fr .9fr;gap:38px;align-items:center}
+  @media(max-width:820px){.hero{grid-template-columns:1fr;gap:26px}}
+  .hero p.lead{margin-top:16px;color:var(--muted);font-size:16.5px;max-width:56ch}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+  .chip{font-size:12.5px;font-weight:600;color:var(--accent-deep);background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+  /* Sello visual */
+  .stamp{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .stamp-ring{position:absolute;right:-30px;top:-30px;width:150px;height:150px;color:var(--accent-tint)}
+  .stamp .lbl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .stamp .big{font-family:var(--display);font-size:38px;color:var(--accent-deep);margin:6px 0}
+  .stamp .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:6px;animation:blink 1.6s infinite}
+  @keyframes blink{50%{opacity:.3}}
+  .stamp ul{list-style:none;padding:0;margin:14px 0 0;font-size:13px;color:var(--muted)}
+  .stamp li{display:flex;gap:8px;padding:3px 0}
+  .stamp li svg{flex:none;color:var(--accent)}
+  section.band{padding:44px 0;border-top:1px solid var(--line)}
+  .sec-h{margin-bottom:22px}
+  .sec-h .eyebrow{margin-bottom:10px}
+  .sec-h h2{font-size:clamp(20px,3vw,26px)}
+  .sec-h p{color:var(--muted);font-size:14.5px;margin-top:8px;max-width:62ch}
+  /* vias */
+  .vias{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:780px){.vias{grid-template-columns:1fr}}
+  .via{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .via h3{font-size:16px;display:flex;align-items:center;gap:9px}
+  .via .tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);background:var(--accent-tint);padding:3px 9px;border-radius:999px}
+  .via ol{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
+  .via ol li{margin:6px 0}
+  .via b{color:var(--ink)}
+  /* wizard */
+  .wiz{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+  .wiz-dots{display:flex;gap:8px;margin-bottom:20px}
+  .wiz-dots span{height:5px;flex:1;border-radius:3px;background:var(--surface-2)}
+  .wiz-dots span.on{background:var(--accent)}
+  .wiz-q{font-size:18px;font-weight:700;margin-bottom:16px}
+  .opt{display:flex;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font:inherit;color:inherit;transition:border-color .1s,background .1s}
+  .opt:hover{border-color:var(--accent);background:var(--accent-tint)}
+  .opt b{display:block;font-size:15px}
+  .opt small{color:var(--muted);font-size:13px}
+  .wiz input{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:12px;margin-bottom:10px;background:var(--surface);color:var(--ink)}
+  .wiz-res{border-top:1px solid var(--line);margin-top:6px;padding-top:18px}
+  .wiz-res .via-name{font-family:var(--display);font-size:22px;color:var(--accent-deep)}
+  .wiz-res .plazos{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .wiz-res .plazo{background:var(--surface-2);border-radius:10px;padding:10px 14px;font-size:13px}
+  .wiz-res .plazo b{display:block;font-size:18px;color:var(--accent-deep);font-family:var(--display)}
+  .muted-note{font-size:12.5px;color:var(--faint);margin-top:10px}
+  /* countdown */
+  .count{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:linear-gradient(120deg,var(--accent-deep),#0b5c3e);color:#fff;border-radius:20px;padding:26px 30px}
+  .count .cd{display:flex;gap:10px}
+  .count .cd div{background:rgba(255,255,255,.12);border-radius:10px;padding:10px 12px;text-align:center;min-width:64px}
+  .count .cd b{display:block;font-size:26px;font-variant-numeric:tabular-nums}
+  .count .cd span{font-size:11px;opacity:.8;text-transform:uppercase}
+  /* pricing */
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px}
+  @media(max-width:640px){.price-grid{grid-template-columns:1fr}}
+  .price{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .price.pro{border:2px solid var(--accent)}
+  .price h3{font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .price .amt{font-family:var(--display);font-size:34px;color:var(--accent-deep);margin:8px 0}
+  .price ul{list-style:none;padding:0;margin:14px 0 18px;font-size:13.5px;color:var(--muted)}
+  .price li{display:flex;gap:8px;padding:4px 0}
+  .price li svg{flex:none;color:var(--accent)}
+  .fiscal{font-size:12px;color:var(--faint);margin-top:10px}
+  /* faq */
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--accent);font-weight:800}
+  .faq details[open] summary::after{content:"−"}
+  .faq p{color:var(--muted);font-size:14px;margin-top:10px}
+  .sources{font-size:13px;color:var(--muted)}
+  .sources a{color:var(--accent-deep);text-decoration:underline}
+  .sources li{margin:7px 0}
+  footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0;margin-top:20px}
+  .foot-note{font-size:12px;color:var(--faint);margin-top:12px;line-height:1.7}
+  @media print{nav,.hero-cta,.wiz,.count,.price-grid{display:none}}
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Reclama","item":"https://www.attenciona.com/negocios/reclama/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Reclama","url":"https://www.attenciona.com/negocios/reclama/","datePublished":"2026-08-16","dateModified":"2026-08-16"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"attenciona","url":"https://www.attenciona.com/","foundingDate":"2026"}</script>
+<!--/BUILD:fase4-schema-->
+<link rel="stylesheet" href="/sello-ia.css">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reclama — recupera lo que te deben, sin ceder comisión a…">
+<meta name="twitter:description" content="Genera tu reclamación en 2 minutos: te decimos la vía oficial exacta (consumo, telecos o banca), los plazos legales y te preparamos el escrito.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body id="top">
+<a class="skip" href="#wizard">Saltar al asistente de reclamación</a>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Reclama — inicio">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#4ecb8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 10V8a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6"/><path d="M9 10h6M9 14h4"/><path d="M18 20a4 4 0 1 0-3.9-5"/><path d="M14 12v3h3"/></svg></span>
+      Reclama
+    </a>
+    <div class="nav-links">
+      <a href="#vias">Las 3 vías</a>
+      <a href="#wizard">Asistente</a>
+      <a href="#precio">Precio</a>
+      <a href="#faq">FAQ</a>
+      <a href="#fuentes">Fuentes</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <span class="eyebrow">Consumo · telecos · banca · España</span>
+    <h1>Recupera lo que te deben, sin ceder comisión a nadie.</h1>
+    <p class="lead">Te decimos la <b>vía oficial exacta</b>, los <b>plazos legales</b> y te preparamos el <b>escrito de reclamación</b> en 2 minutos. Tú lo presentas por la vía gratuita del Estado y te quedas el <b>100%</b> de lo reclamado — nada de gestoras que se llevan el 20-30%.</p>
+    <div class="hero-cta">
+      <a class="btn btn-brand" href="#wizard">Empezar mi reclamación</a>
+      <a class="btn btn-ghost" href="#vias">Ver cómo funciona</a>
+    </div>
+    <div class="chips">
+      <span class="chip">Gratis: tu vía y tus plazos</span>
+      <span class="chip">Sin comisión de éxito</span>
+      <span class="chip">Fuentes oficiales citadas</span>
+    </div>
+  </div>
+  <aside class="stamp" aria-label="Resumen del servicio">
+    <svg class="stamp-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="6"/></svg>
+    <div class="lbl"><span class="dot"></span>Reclamación asistida</div>
+    <div class="big">2 min</div>
+    <ul>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> La vía correcta según quién te deba</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Los plazos legales que debes cumplir</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> El escrito listo para presentar tú</li>
+    </ul>
+  </aside>
+</header>
+
+<section class="band" id="vias">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">La regla</span>
+      <h2>Cada problema tiene su vía oficial — y todas son gratuitas</h2>
+      <p>El error caro es pagar a una gestora por algo que el Estado resuelve gratis. Lo único que necesitas es presentar el escrito correcto en el sitio correcto y dentro de plazo.</p>
+    </div>
+    <div class="vias">
+      <div class="via">
+        <h3><span class="tag">Consumo</span></h3>
+        <p style="color:var(--muted);font-size:13.5px;margin-top:10px">Compras, servicios, comercios, suministros.</p>
+        <ol>
+          <li><b>Hoja de reclamaciones</b>: la empresa debe responder en <b>10 días hábiles</b>.</li>
+          <li>Si no hay acuerdo: <b>Sistema Arbitral de Consumo</b> (RD 713/2024), gratuito y voluntario.</li>
+          <li>Termina en <b>laudo</b> vinculante, como una sentencia. Máx. 6 meses.</li>
+        </ol>
+      </div>
+      <div class="via">
+        <h3><span class="tag">Telecos</span></h3>
+        <p style="color:var(--muted);font-size:13.5px;margin-top:10px">Teléfono, móvil, internet, TV.</p>
+        <ol>
+          <li>Reclama al <b>SAC del operador</b> en el plazo de <b>1 mes</b> desde el hecho. Guarda el nº de referencia.</li>
+          <li>Sin respuesta o insatisfactoria: <b>Oficina de Atención al Usuario de Telecomunicaciones</b>, dentro de <b>3 meses</b>.</li>
+          <li>Gratuito y telemático. Resuelve en máx. <b>6 meses</b>.</li>
+        </ol>
+      </div>
+      <div class="via">
+        <h3><span class="tag">Banca</span></h3>
+        <p style="color:var(--muted);font-size:13.5px;margin-top:10px">Comisiones, tarjetas, préstamos, seguros.</p>
+        <ol>
+          <li><b>SAC de la entidad</b>: responde en <b>15 días hábiles</b> (servicios de pago) o <b>1 mes</b> (resto).</li>
+          <li>Sin solución: <b>Banco de España</b>, por el Portal del Cliente Bancario.</li>
+          <li>El BdE emite su informe en unos <b>4 meses</b>.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="wizard">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">Asistente · 3 preguntas</span>
+      <h2>¿Contra quién reclamas?</h2>
+      <p>Responde 3 preguntas y te decimos tu vía, tus plazos y el siguiente paso. Todo en tu navegador, sin cuenta.</p>
+    </div>
+    <div class="wiz" id="wizbox">
+      <div class="wiz-dots"><span class="on" id="d1"></span><span id="d2"></span><span id="d3"></span></div>
+      <div id="wiz-step"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="count" role="group" aria-label="Cuenta atrás de la Ley 10/2025">
+      <div>
+        <div style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.85">Ley 10/2025 de atención a la clientela</div>
+        <div style="font-size:15px;margin-top:6px;max-width:44ch">Las empresas tienen hasta el <b>28 de diciembre de 2026</b> para adaptarse: respuestas más rápidas y atención sin robots que den largas. Cuenta atrás real:</div>
+      </div>
+      <div class="cd" id="cd" aria-live="polite">
+        <div><b id="cd-d">--</b><span>días</span></div>
+        <div><b id="cd-h">--</b><span>horas</span></div>
+        <div><b id="cd-m">--</b><span>min</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="precio">
+  <div class="wrap">
+    <div class="sec-h">
+      <span class="eyebrow">Precio</span>
+      <h2>Gratis para saber. Barato para tener el escrito.</h2>
+      <p>Pago único, sin suscripción y sin comisión sobre lo que recuperes. Lo que reclames es 100% tuyo.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price">
+        <h3>Gratis</h3>
+        <div class="amt">0 €</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tu vía oficial y tus plazos</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> El paso a paso de dónde presentar</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Enlaces a las fuentes oficiales</li>
+        </ul>
+        <a class="btn btn-ghost" href="#wizard">Empezar gratis</a>
+      </div>
+      <div class="price pro">
+        <h3>Pro · escrito listo</h3>
+        <div class="amt">3 $ <span style="font-size:14px;color:var(--faint);font-family:var(--font)">pago único</span></div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Escrito de reclamación redactado con tu caso</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Con la base legal citada de tu vía</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Listo para copiar, imprimir y presentar</li>
+        </ul>
+        <button class="btn btn-brand" onclick="ProWidget.checkout('reclama',3)">Desbloquear el escrito — 3 $</button>
+        <p class="fiscal">Pago único en USDT/USDC. Precio en USD; impuestos según tu país al pagar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-h"><span class="eyebrow">FAQ</span><h2>Dudas rápidas</h2></div>
+    <div class="faq">
+      <details><summary>¿En qué se diferencia de Reclamara o de una gestora?</summary><p>Las gestoras suelen trabajar a "éxito": no cobran por adelantado, pero se quedan un 20-30% de lo que recuperes. Aquí pagas 3 $ una vez, presentas tú por la vía gratuita del Estado y te quedas el 100%. Compensa sobre todo en importes pequeños y medianos, donde ceder un tercio duele.</p></details>
+      <details><summary>¿Esto es asesoramiento legal?</summary><p>No. Es una herramienta divulgativa que te orienta hacia la vía oficial y te prepara un escrito con la base legal citada. Para un caso complejo o de mucho importe, consulta con un profesional.</p></details>
+      <details><summary>¿Y si la empresa no me responde?</summary><p>Precisamente por eso existen las vías de segundo nivel: Sistema Arbitral de Consumo, la Oficina de Atención al Usuario de Telecomunicaciones o el Banco de España. El asistente te dice cuál te toca y en qué plazo.</p></details>
+      <details><summary>¿Necesito crear una cuenta?</summary><p>No. El diagnóstico corre en tu navegador. Solo pagas si quieres el escrito redactado, y el pago es en cripto sin registro.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="fuentes">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-h"><span class="eyebrow">Fuentes oficiales</span><h2>De dónde salen los plazos</h2><p>Verificado el 16 de agosto de 2026.</p></div>
+    <ol class="sources">
+      <li><a href="https://www.dsca.gob.es/es/consumo/como-reclamar-conflicto-consumo/sistema-arbitral-consumo" target="_blank" rel="noopener">Ministerio de Derechos Sociales, Consumo y Agenda 2030 — Sistema Arbitral de Consumo</a> (RD 713/2024).</li>
+      <li><a href="https://usuariosteleco.digital.gob.es/reclamaciones" target="_blank" rel="noopener">Oficina de Atención al Usuario de Telecomunicaciones</a> — reclamaciones de telefonía e internet.</li>
+      <li><a href="https://clientebancario.bde.es/pcb/es/blog/quiero_reclamar_contra_banco_plazos.html" target="_blank" rel="noopener">Banco de España — Cliente Bancario</a>: plazos para reclamar contra tu banco.</li>
+      <li><a href="https://www.consumoresponde.es/actualidad/noticias/hoja-quejas-reclamaciones-arbitraje-principales-recursos-solucionar-conflictos-consumo" target="_blank" rel="noopener">Consumo Responde</a> — hoja de quejas y reclamaciones y arbitraje. Ley 10/2025 (adaptación hasta 28/12/2026).</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4ecb8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 10V8a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h6"/><path d="M9 10h6M9 14h4"/><path d="M18 20a4 4 0 1 0-3.9-5"/><path d="M14 12v3h3"/></svg></span>Reclama</a>
+    <p class="foot-note">
+      <strong>Responsabilidad editorial:</strong> attenciona (Holding), España. &nbsp;·&nbsp;
+      <strong>Contenido asistido por IA</strong>, revisado por humanos antes de publicar — art. 50.4 del Reglamento de IA de la UE. &nbsp;·&nbsp;
+      <strong>No es asesoramiento jurídico:</strong> Reclama es una herramienta divulgativa basada en las vías oficiales del Estado; ejecuta tú la presentación o consulta con un profesional. &nbsp;·&nbsp;
+      <strong>Última verificación:</strong> 16 de agosto de 2026. &nbsp;·&nbsp;
+      <strong>Privacidad:</strong> el diagnóstico corre en tu navegador; pagos en cripto con identificación del comprador (AML). Sin cookies de terceros. &nbsp;·&nbsp;
+      <a href="../../aviso-legal.html" style="color:var(--muted);text-decoration:underline" target="_blank" rel="noopener">Aviso legal</a> ·
+      <a href="../../privacidad.html" style="color:var(--muted);text-decoration:underline" target="_blank" rel="noopener">Privacidad</a> ·
+      <a href="https://www.attenciona.com" style="color:var(--muted);text-decoration:underline" target="_blank" rel="noopener">attenciona.com</a>
+      &nbsp;·&nbsp; © 2026 Reclama · attenciona.
+    </p>
+  </div>
+
+<div style="text-align:center;padding:20px 24px"><a class="sello-ia" href="/negocios/marcaia/verificar.html?id=896758beb1" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="39" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/><path id="siaP" d="M50 13 a37 37 0 1 1 -0.1 0" fill="none"/><text font-size="7.3" font-weight="700" letter-spacing="1.5" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,38 62,45 58,63 42,63 38,45" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><polygon points="50,45 57,49 55,58 45,58 43,49" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<script>
+(function(){
+  // Cuenta atrás real a la Ley 10/2025 (adaptación 28/12/2026)
+  var target=new Date('2026-12-28T00:00:00').getTime();
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<0)diff=0;
+    var d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000);
+    var e=function(id,v){var el=document.getElementById(id);if(el)el.textContent=String(v).padStart(2,'0');};
+    e('cd-d',d);e('cd-h',h);e('cd-m',m);
+  }
+  tick();setInterval(tick,30000);
+
+  // Wizard de 3 preguntas
+  var VIAS={
+    consumo:{nombre:'Sistema Arbitral de Consumo',primero:'Presenta la hoja de reclamaciones. La empresa debe responder en 10 días hábiles.',plazos:[['10 días háb.','respuesta empresa'],['gratuito','arbitraje'],['máx. 6 meses','laudo']],sac:'Aún no has reclamado a la empresa: hazlo primero con la hoja de reclamaciones (guarda copia).'},
+    telecos:{nombre:'Oficina de Atención al Usuario de Telecomunicaciones',primero:'Reclama al SAC del operador en 1 mes desde el hecho y guarda el número de referencia.',plazos:[['1 mes','para reclamar al operador'],['3 meses','para acudir a la OAUT'],['máx. 6 meses','resolución']],sac:'Aún no has reclamado al operador: hazlo primero (tienes 1 mes) y guarda el nº de referencia.'},
+    banca:{nombre:'Banco de España',primero:'Reclama al SAC de tu entidad. Responde en 15 días hábiles (pagos) o 1 mes (resto).',plazos:[['15 días','pagos'],['1 mes','resto'],['~4 meses','informe BdE']],sac:'Aún no has reclamado a tu banco: presenta la queja al SAC de la entidad primero.'}
+  };
+  var estado={tipo:null,importe:'',fecha:'',sac:null};
+  var cont=document.getElementById('wiz-step');
+  function dots(n){for(var i=1;i<=3;i++){document.getElementById('d'+i).className=(i<=n?'on':'');}}
+  function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return{'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+  function step1(){
+    dots(1);
+    cont.innerHTML='<div class="wiz-q">¿Con quién es el problema?</div>'+
+      '<button class="opt" data-t="consumo"><span><b>Una compra o servicio</b><small>Comercio, tienda online, suministros, servicios</small></span></button>'+
+      '<button class="opt" data-t="telecos"><span><b>Teléfono o internet</b><small>Móvil, fibra, TV, tu operadora</small></span></button>'+
+      '<button class="opt" data-t="banca"><span><b>Banco o seguro</b><small>Comisiones, tarjetas, préstamos, pólizas</small></span></button>';
+    cont.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){estado.tipo=b.getAttribute('data-t');step2();};});
+  }
+  function step2(){
+    dots(2);
+    cont.innerHTML='<div class="wiz-q">¿Cuánto y cuándo?</div>'+
+      '<input id="w-imp" inputmode="decimal" placeholder="Importe aproximado en € (opcional)">'+
+      '<input id="w-fec" type="date" aria-label="Fecha del hecho">'+
+      '<button class="opt" id="w-next" style="justify-content:center;border-color:var(--accent);background:var(--accent-tint)"><b>Continuar</b></button>';
+    document.getElementById('w-next').onclick=function(){
+      estado.importe=(document.getElementById('w-imp')||{}).value||'';
+      estado.fecha=(document.getElementById('w-fec')||{}).value||'';
+      step3();
+    };
+  }
+  function step3(){
+    dots(3);
+    cont.innerHTML='<div class="wiz-q">¿Ya reclamaste al servicio de atención al cliente?</div>'+
+      '<button class="opt" data-s="si"><span><b>Sí, y no me resolvieron</b><small>O no me contestaron en plazo</small></span></button>'+
+      '<button class="opt" data-s="no"><span><b>No, o aún no</b><small>Es lo primero que hay que hacer</small></span></button>';
+    cont.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){estado.sac=b.getAttribute('data-s');resultado();};});
+  }
+  function resultado(){
+    dots(3);
+    var v=VIAS[estado.tipo];
+    var plazos=v.plazos.map(function(p){return '<div class="plazo"><b>'+esc(p[0])+'</b>'+esc(p[1])+'</div>';}).join('');
+    var siguiente = estado.sac==='no' ? v.sac : ('Tu siguiente paso: '+v.nombre+'.');
+    cont.innerHTML='<div class="wiz-res">'+
+      '<div style="font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)">Tu vía</div>'+
+      '<div class="via-name">'+esc(v.nombre)+'</div>'+
+      '<div class="plazos">'+plazos+'</div>'+
+      '<p style="color:var(--muted);font-size:14px">'+esc(siguiente)+'</p>'+
+      (estado.importe?('<p class="muted-note">Importe indicado: '+esc(estado.importe)+' € — recuérdalo en tu escrito.</p>'):'')+
+      '<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">'+
+        '<button class="btn btn-brand" onclick="ProWidget.checkout(\'reclama\',3)">Redactar mi escrito — 3 $</button>'+
+        '<button class="btn btn-ghost" id="w-reset">Empezar de nuevo</button>'+
+      '</div>'+
+      '<p class="muted-note">El escrito se genera con la base legal de tu vía. Herramienta divulgativa, no asesoramiento.</p>'+
+    '</div>';
+    document.getElementById('w-reset').onclick=step1;
+  }
+  step1();
+})();
+</script>
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/reclama/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/espana/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en España</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en España:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/rampa/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Rampa</a> <a href="/negocios/inflacion-real-por-pais-mundo/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Inflación real por país (Banco Mundial)</a> <a href="/negocios/neto-colombia-colombia/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">CajaClara</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-16">2026-08-16</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

@@ -1,0 +1,58 @@
+/* Imagen única attenciona (la de la portada): se inyecta desde server.js en todas las páginas.
+   Pisa los colores de los diseños anteriores (Fase 2 blanco/naranja, Fase 3/4 azul claro) con el tema oscuro navy + oro. */
+:root:root{
+  color-scheme:dark;
+  --bg:#060b14; --fg:#eef2f6; --ink:#eef2f6; --text:#eef2f6; --muted:#8d99a6; --faint:#6c7886;
+  --surface:#0c1628; --surface-2:#111e35; --card:#0c1628; --paper:#0c1628; --white:#0c1628;
+  --line:rgba(255,255,255,.09); --line-strong:rgba(143,179,217,.3); --border:rgba(255,255,255,.09);
+  --accent:#c9973e; --accent-deep:#a9772c; --accent-tint:rgba(201,151,62,.12); --accent-soft:#8fb3d9; --accent2:#8fb3d9;
+  --primary:#c9973e; --brand:#c9973e; --orange:#c9973e; --naranja:#c9973e;
+  --gold:#c9973e; --gold-tint:rgba(201,151,62,.12); --navy:#060b14;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+html{background:#060b14!important}
+body{background:transparent!important;color:#eef2f6;font-family:Inter,system-ui,sans-serif!important;-webkit-font-smoothing:antialiased}
+/* mismo fondo que la portada: cerebro 3D + viñeta + grano (lo crea tema-nuevo.js) */
+.an-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.an-fx canvas{position:absolute;inset:0;width:100vw;height:100vh;display:block}
+.an-vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(6,11,20,.35) 20%,rgba(6,11,20,.85) 100%)}
+.an-grain{position:absolute;inset:-50%;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* tipografía de la portada */
+h1,h2,h3,.h1,.h2,.title,.hero-title{font-family:Fraunces,Georgia,serif!important;font-weight:500!important;letter-spacing:-.015em}
+h1 em,h2 em,h3 em{font-style:italic}
+h1 em{color:transparent!important;-webkit-text-stroke:1px #c9973e;text-shadow:0 0 40px rgba(201,151,62,.25)}
+code,pre,kbd,.mono,.eyebrow,.kicker,.badge,.chip,.tag,.label{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace}
+.eyebrow,.kicker,.overline{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;color:#8fb3d9!important}
+::selection{background:rgba(201,151,62,.35)}
+a.btn,a.cta,button,.btn,.button{border-radius:999px!important}
+section,footer,header{background-color:transparent}
+footer{border-top:1px solid rgba(255,255,255,.07)}
+/* fondos blancos fijos de los diseños viejos */
+.card,.plan,form,details,.panel,.box,.tile,.item,.biz,.negocio,.feature,.faq-item,.pricing,.price-card,section.light{background-color:rgba(12,22,40,.6)!important;border-color:rgba(255,255,255,.09)!important;color:#eef2f6}
+input,select,textarea{background:#0a1322!important;color:#eef2f6!important;border-color:rgba(255,255,255,.12)!important}
+p,li,small,.muted,.lead,.sub{color:inherit}
+a{color:inherit}
+h1 em,h2 em,h3 em{color:#c9973e}
+/* menús antiguos fuera: manda el menú único */
+nav.af-nav,.af-nav,header.site-header>nav,.topnav,nav.nav-fase2,nav.top:not(.an-top){display:none!important}
+
+/* MENÚ ÚNICO */
+.an-top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:1rem;justify-content:space-between;
+  padding:12px max(16px,env(safe-area-inset-left,0px));background:rgba(6,11,20,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.07);font-family:Inter,system-ui,sans-serif}
+.an-top .an-logo{font-family:ui-monospace,Consolas,monospace;font-weight:500;letter-spacing:.3em;font-size:.78rem;color:#eef2f6;text-decoration:none;white-space:nowrap}
+.an-top .an-logo b{color:#c9973e;font-weight:500}
+.an-top .an-links{display:flex;gap:1.05rem;font-size:.8rem;overflow-x:auto;scrollbar-width:none}
+.an-top .an-links::-webkit-scrollbar{display:none}
+.an-top .an-links a{color:#8d99a6;text-decoration:none;white-space:nowrap}
+.an-top .an-links a:hover,.an-top .an-links a.on{color:#eef2f6}
+.an-top .an-links a.main{color:#c9973e}
+.an-top #an-m{display:none}
+.an-top label.an-b{display:none;cursor:pointer;background:none;border:1px solid rgba(255,255,255,.15);color:#eef2f6;border-radius:8px;padding:.35em .7em;font:inherit;font-size:.8rem}
+@media(max-width:860px){
+  .an-top label.an-b{display:block}
+  .an-top .an-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(6,11,20,.97);border-bottom:1px solid rgba(255,255,255,.08)}
+  .an-top #an-m:checked~.an-links{display:flex}
+  .an-top .an-links a{padding:.85rem 16px;border-top:1px solid rgba(255,255,255,.05);font-size:.95rem}
+}
+a.tag{text-decoration:none;color:inherit}a.tag:hover{border-color:rgba(201,151,62,.6)}

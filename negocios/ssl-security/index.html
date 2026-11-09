@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSL Security — Comprueba tu HTTPS y arréglalo paso a paso</title>
+<meta name="description" content="Diagnóstico SSL gratuito con motor real: certificado, cadena de intermedios, caducidad, redirección http→https, HSTS, contenido mixto y DNS de correo (SPF…">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B7A55">
+<link rel="canonical" href="https://www.attenciona.com/negocios/ssl-security/">
+<link rel="alternate" hreflang="es" href="https://www.attenciona.com/negocios/ssl-security/?lang=es">
+<link rel="alternate" hreflang="en" href="https://www.attenciona.com/negocios/ssl-security/?lang=en">
+<link rel="alternate" hreflang="fr" href="https://www.attenciona.com/negocios/ssl-security/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://www.attenciona.com/negocios/ssl-security/?lang=de">
+<link rel="alternate" hreflang="it" href="https://www.attenciona.com/negocios/ssl-security/?lang=it">
+<link rel="alternate" hreflang="pt" href="https://www.attenciona.com/negocios/ssl-security/?lang=pt">
+<link rel="alternate" hreflang="x-default" href="https://www.attenciona.com/negocios/ssl-security/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B7A55'/%3E%3Cpath d='M11 14v-2.5a5 5 0 0 1 10 0V14' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3Crect x='8.5' y='14' width='15' height='11' rx='2.5' fill='%23fff'/%3E%3Ccircle cx='16' cy='19' r='1.7' fill='%230B7A55'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   SSL Security · attenciona (Fase 3)
+   Identidad propia: "sala de máquinas" — papel técnico claro,
+   verde certificado #0B7A55 (el candado válido) y semáforo
+   ámbar/rojo. Tipografía IBM Plex Sans + IBM Plex Mono (OFL,
+   autohospedada, sin CDN): el lenguaje visual de la audiencia
+   son las consolas y los paneles de hosting, no el marketing.
+   Firma funcional: el PANEL DE VERIFICACIÓN — semáforo, puntos
+   y el reloj de caducidad con la regla de los 200 días.
+   Cero emojis. Un solo archivo + i18n.js.
+   ============================================================ */
+  @font-face{font-family:'Plex Sans';src:url('fonts/plexsans-var.woff2') format('woff2');font-weight:100 700;font-display:swap}
+  @font-face{font-family:'Plex Mono';src:url('fonts/plexmono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+  @font-face{font-family:'Plex Mono';src:url('fonts/plexmono-600.woff2') format('woff2');font-weight:600;font-display:swap}
+
+  :root{
+    --paper:#F6F7F5; --card:#FFFFFF; --card-2:#F0F2EE;
+    --ink:#131A1F; --ink-2:#5A666E; --ink-3:#8A959B;
+    --line:#DDE2DC; --line-2:#C6CEC5;
+    --brand:#0B7A55; --brand-2:#095F43; --brand-wash:#E4F2EC;
+    --warn:#A8600A; --warn-wash:#FBF0DF;
+    --bad:#B3261E; --bad-wash:#FBE9E7;
+    --shadow:0 1px 2px rgba(19,26,31,.06), 0 10px 28px rgba(19,26,31,.07);
+    --maxw:1120px; --r:14px; --r-sm:9px;
+    --sans:'Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#0E1316; --card:#161C20; --card-2:#1E262B;
+      --ink:#E8EDEA; --ink-2:#9AA7AD; --ink-3:#77848A;
+      --line:#26302F; --line-2:#36423F;
+      --brand:#3FBF8F; --brand-2:#2FA378; --brand-wash:#122A22;
+      --warn:#E0A44A; --warn-wash:#2A2113;
+      --bad:#F0857C; --bad-wash:#2C1614;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.015em;text-wrap:balance}
+  h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:600}
+  h2{font-size:clamp(1.45rem,2.6vw,2rem);font-weight:600}
+  h3{font-size:1.1rem;font-weight:600}
+  p{margin:0 0 12px}
+  a{color:var(--brand)}
+  img,svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--brand);background:var(--brand-wash);border:1px solid var(--line-2);padding:6px 12px;border-radius:999px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:50px;padding:0 24px;border-radius:var(--r-sm);font-size:1rem;font-weight:600;font-family:var(--sans);cursor:pointer;border:1px solid transparent;text-decoration:none;transition:background .15s,border-color .15s,transform .1s}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand);color:#fff}
+  .btn-brand:hover{background:var(--brand-2)}
+  .btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .btn-sm{height:38px;padding:0 14px;font-size:.86rem}
+  .btn[disabled]{opacity:.55;cursor:progress}
+
+  header.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:600;font-size:1.05rem;text-decoration:none;color:var(--ink)}
+  .brand .mk{width:28px;height:28px;border-radius:7px;background:var(--brand);display:grid;place-items:center}
+  .brand .mk svg{width:17px;height:17px}
+  nav.links{display:flex;align-items:center;gap:2px}
+  nav.links a{color:var(--ink-2);text-decoration:none;font-size:.9rem;padding:7px 11px;border-radius:999px}
+  nav.links a:hover{color:var(--ink);background:var(--card-2)}
+  select.lang{font-family:var(--mono);font-size:.82rem;background:var(--card);color:var(--ink);border:1px solid var(--line-2);border-radius:999px;padding:7px 10px;cursor:pointer}
+  @media (max-width:820px){ nav.links a{display:none} }
+
+  .hero{padding:56px 0 34px}
+  .hero h1{margin:16px 0 14px}
+  .hero .lead{font-size:1.14rem;color:var(--ink-2);max-width:60ch}
+  form.check{display:flex;gap:10px;margin:26px 0 12px;max-width:620px;flex-wrap:wrap}
+  form.check input{flex:1 1 280px;height:50px;padding:0 15px;font-family:var(--mono);font-size:1rem;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-sm)}
+  form.check input:focus{outline:2px solid var(--brand);outline-offset:1px;border-color:var(--brand)}
+  .nota{font-size:.87rem;color:var(--ink-3)}
+  .bullets{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px;font-size:.92rem;color:var(--ink-2)}
+  .bullets span{display:inline-flex;align-items:center;gap:7px}
+  .bullets i{width:7px;height:7px;border-radius:50%;background:var(--brand);flex:none}
+
+  section{padding:34px 0}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .panel-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:20px 22px;border-bottom:1px solid var(--line)}
+  .sem{display:flex;align-items:center;gap:14px}
+  .luz{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;font-family:var(--mono);font-weight:600;color:#fff}
+  .luz.verde{background:var(--brand)} .luz.naranja{background:var(--warn)} .luz.rojo{background:var(--bad)}
+  .sem b{display:block;font-size:1.05rem}
+  .sem small{color:var(--ink-2)}
+  .puntos{font-family:var(--mono);font-size:1.9rem;font-weight:600;line-height:1}
+  .puntos small{font-size:.8rem;color:var(--ink-2);font-weight:400}
+  .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line)}
+  .cardx{background:var(--card);padding:18px 22px}
+  .cardx h3{font-size:.78rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .kv{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:.92rem;border-bottom:1px dotted var(--line)}
+  .kv:last-child{border-bottom:0}
+  .kv span:first-child{color:var(--ink-2)}
+  .kv span:last-child{font-family:var(--mono);text-align:right;word-break:break-word}
+  .ok{color:var(--brand)} .no{color:var(--bad)} .med{color:var(--warn)}
+  .barra{height:7px;border-radius:99px;background:var(--card-2);overflow:hidden;margin:10px 0 6px}
+  .barra i{display:block;height:100%;background:var(--brand)}
+  .barra.med i{background:var(--warn)} .barra.mal i{background:var(--bad)}
+
+  .lista{padding:6px 22px 20px}
+  .hz{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .hz:last-child{border-bottom:0}
+  .chip{flex:none;font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:6px;height:fit-content;margin-top:2px}
+  .chip.critico{background:var(--bad-wash);color:var(--bad)}
+  .chip.alerta{background:var(--warn-wash);color:var(--warn)}
+  .chip.info{background:var(--card-2);color:var(--ink-2)}
+  .hz b{display:block;font-weight:600}
+  .hz p{margin:2px 0 0;color:var(--ink-2);font-size:.94rem}
+
+  .venta{margin-top:18px;padding:24px 22px;border:1px solid var(--brand);border-radius:var(--r);background:var(--brand-wash)}
+  .venta h3{font-size:1.25rem;margin-bottom:8px}
+  .venta p{color:var(--ink-2)}
+  .venta .btn{margin-top:8px}
+
+  .paso{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:18px 20px;margin-bottom:14px}
+  .paso-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .paso-n{font-family:var(--mono);font-size:.78rem;color:var(--ink-3)}
+  pre{margin:12px 0 0;padding:14px;background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-sm);overflow-x:auto;font-family:var(--mono);font-size:.85rem;line-height:1.5;white-space:pre}
+  .archivo{margin-top:12px;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .archivo-h{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:9px 12px;background:var(--card-2);font-family:var(--mono);font-size:.83rem}
+  .archivo pre{margin:0;border:0;border-radius:0;background:var(--card)}
+  .aviso-revisar{margin-top:10px;padding:10px 12px;border-left:3px solid var(--warn);background:var(--warn-wash);font-size:.9rem}
+
+  .pasos5{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:22px}
+  .p5{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+  .p5 .n{font-family:var(--mono);color:var(--brand);font-weight:600;font-size:.85rem}
+  .p5 h3{margin:6px 0 6px}
+  .p5 p{color:var(--ink-2);font-size:.93rem;margin:0}
+
+  .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+  .dato{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:var(--r);padding:18px}
+  .dato p{margin:0;font-size:.96rem}
+  .fuentes{margin-top:18px;font-size:.86rem;color:var(--ink-2)}
+  .fuentes a{word-break:break-all}
+
+  details.faq{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-bottom:10px}
+  details.faq summary{cursor:pointer;font-weight:600;list-style:none}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:'+';float:right;color:var(--brand);font-family:var(--mono)}
+  details.faq[open] summary::after{content:'–'}
+  details.faq p{margin:10px 0 0;color:var(--ink-2);font-size:.95rem}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 40px;color:var(--ink-2);font-size:.9rem}
+  footer a{color:var(--ink-2)}
+  .oculto{display:none}
+  .cargando{font-family:var(--mono);font-size:.9rem;color:var(--ink-2)}
+  .error{padding:12px 14px;border-radius:var(--r-sm);background:var(--bad-wash);color:var(--bad);font-size:.94rem}
+</style>
+<meta property="og:title" content="SSL Security — Comprueba tu HTTPS y arréglalo paso a paso">
+<meta property="og:description" content="Diagnóstico SSL gratuito con motor real: certificado, cadena de intermedios, caducidad, redirección http→https, HSTS, contenido mixto y DNS de correo (SPF…">
+<meta property="og:url" content="https://www.attenciona.com/negocios/ssl-security/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SSL Security — Comprueba tu HTTPS y arréglalo paso a paso">
+<meta name="twitter:description" content="Diagnóstico SSL gratuito con motor real: certificado, cadena de intermedios, caducidad, redirección http→https, HSTS, contenido mixto y DNS de correo (SPF…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./">
+      <span class="mk"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 14v-2.5a5 5 0 0 1 10 0V14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><rect x="8.5" y="14" width="15" height="11" rx="2.5" fill="#fff"/></svg></span>
+      SSL Security
+    </a>
+    <nav class="links">
+      <a href="#analizar" data-i18n="nav_analizar">Analizar</a>
+      <a href="#como" data-i18n="nav_como">Cómo funciona</a>
+      <a href="#por-que" data-i18n="nav_precio">Precio</a>
+      <a href="#faq" data-i18n="nav_faq">Preguntas</a>
+    </nav>
+    <select class="lang" id="lang" aria-label="Idioma"></select>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" id="analizar">
+    <span class="eyebrow" data-i18n="hero_eyebrow">Certificado · HTTPS · DNS</span>
+    <h1 data-i18n="hero_h1">Tu HTTPS, comprobado de verdad. Y arreglado.</h1>
+    <p class="lead" data-i18n="hero_lead"></p>
+    <form class="check" id="form">
+      <input id="dominio" type="text" inputmode="url" autocomplete="off" spellcheck="false" required>
+      <button class="btn btn-brand" id="btnCheck" type="submit" data-i18n="form_cta">Analizar gratis</button>
+    </form>
+    <p class="nota" data-i18n="form_nota"></p>
+    <div class="bullets">
+      <span><i></i><em data-i18n="hero_b1"></em></span>
+      <span><i></i><em data-i18n="hero_b2"></em></span>
+      <span><i></i><em data-i18n="hero_b3"></em></span>
+    </div>
+    <div id="estado" class="oculto" style="margin-top:20px"></div>
+  </div>
+
+  <div class="wrap"><div id="resultado" class="oculto"></div></div>
+  <div class="wrap"><div id="zonaPlan" class="oculto"></div></div>
+
+  <section id="como" class="wrap">
+    <h2 data-i18n="como_t">Cómo funciona</h2>
+    <div class="pasos5">
+      <div class="p5"><div class="n">01</div><h3 data-i18n="como_1_t"></h3><p data-i18n="como_1_d"></p></div>
+      <div class="p5"><div class="n">02</div><h3 data-i18n="como_2_t"></h3><p data-i18n="como_2_d"></p></div>
+      <div class="p5"><div class="n">03</div><h3 data-i18n="como_3_t"></h3><p data-i18n="como_3_d"></p></div>
+      <div class="p5"><div class="n">04</div><h3 data-i18n="como_4_t"></h3><p data-i18n="como_4_d"></p></div>
+      <div class="p5"><div class="n">05</div><h3 data-i18n="como_5_t"></h3><p data-i18n="como_5_d"></p></div>
+    </div>
+  </section>
+
+  <section id="por-que" class="wrap">
+    <h2 data-i18n="por_t"></h2>
+    <div class="datos">
+      <div class="dato"><p data-i18n="por_1"></p></div>
+      <div class="dato"><p data-i18n="por_2"></p></div>
+      <div class="dato"><p data-i18n="por_3"></p></div>
+    </div>
+    <p class="fuentes"><b data-i18n="fuentes">Fuentes</b>:
+      <a href="https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/" target="_blank" rel="noopener">CA/Browser Forum · Ballot SC-081v3</a> ·
+      <a href="https://www.sectigo.com/blog/200-day-ssl-certificate-expiration-risk" target="_blank" rel="noopener">Sectigo · 200-day validity (15/03/2026)</a> ·
+      <a href="https://www.cscglobal.com/service/press/csc-research-finds-enterprises-at-risk-ssl-expiration/" target="_blank" rel="noopener">CSC Research (07/2025)</a>
+    </p>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2 data-i18n="faq_t">Preguntas</h2>
+    <details class="faq"><summary data-i18n="faq1_q"></summary><p data-i18n="faq1_a"></p></details>
+    <details class="faq"><summary data-i18n="faq2_q"></summary><p data-i18n="faq2_a"></p></details>
+    <details class="faq"><summary data-i18n="faq3_q"></summary><p data-i18n="faq3_a"></p></details>
+    <details class="faq"><summary data-i18n="faq4_q"></summary><p data-i18n="faq4_a"></p></details>
+    <details class="faq"><summary data-i18n="faq5_q"></summary><p data-i18n="faq5_a"></p></details>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p data-i18n="pie_t"></p>
+    <p>
+      <a href="/negocios/aviso-legal.html" data-i18n="pie_aviso">Aviso legal</a> ·
+      <a href="/negocios/privacidad.html" data-i18n="pie_priv">Privacidad</a> ·
+      <a href="https://www.attenciona.com" target="_blank" rel="noopener" data-i18n="pie_holding">Un negocio de attenciona.com</a>
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SSL Security","applicationCategory":"SecurityApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/ssl-security/","inLanguage":["es","en","fr","de","it","pt"],"description":"Free SSL/HTTPS diagnostic with a real engine: TLS handshake, certificate and intermediate chain, expiry, http to https redirect, HSTS, mixed content and mail DNS (SPF, DKIM, DMARC, CAA). Paid fix plan tailored to the detected stack (Cloudflare, WordPress, Apache, Nginx, IIS, cPanel, Plesk) with 30 days of re-checks.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Diagnostic"},{"@type":"Offer","price":"1","priceCurrency":"USD","name":"Fix plan"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}}</script>
+
+<script src="i18n.js"></script>
+<script>
+(function () {
+  'use strict';
+  // El orderId hay que leerlo ANTES de que pro.js limpie la URL al confirmar el pago.
+  var ORDEN = new URLSearchParams(location.search).get('o') || '';
+  var IDIOMAS = ['es', 'en', 'fr', 'de', 'it', 'pt'];
+  var PRECIO = 1;
+  var informeActual = null, planActual = null, hallazgosPrevios = null;
+
+  // ---------- idioma ----------
+  function detectarIdioma() {
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q && IDIOMAS.indexOf(q) !== -1) return q;
+    try { var g = localStorage.getItem('ssl_lang'); if (g && IDIOMAS.indexOf(g) !== -1) return g; } catch (e) {}
+    var nav = (navigator.languages || [navigator.language || 'en'])[0].slice(0, 2).toLowerCase();
+    return IDIOMAS.indexOf(nav) !== -1 ? nav : 'en';
+  }
+  var LANG = detectarIdioma();
+  function L() { return window.SSLI18N[LANG] || window.SSLI18N.en; }
+  function t(clave, params) { return fmt((L().ui[clave] !== undefined ? L().ui[clave] : clave), params); }
+  function fmt(txt, params) {
+    if (!params) return txt;
+    return String(txt).replace(/\{(\w+)\}/g, function (m, k) {
+      return params[k] === undefined || params[k] === null || params[k] === '' ? m : params[k];
+    });
+  }
+  function aplicarIdioma() {
+    document.documentElement.lang = LANG;
+    var ui = L().ui;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var v = ui[el.getAttribute('data-i18n')];
+      if (v !== undefined) el.textContent = fmt(v, { precio: PRECIO });
+    });
+    document.getElementById('dominio').placeholder = ui.form_ph;
+    var sel = document.getElementById('lang');
+    sel.innerHTML = IDIOMAS.map(function (i) {
+      return '<option value="' + i + '"' + (i === LANG ? ' selected' : '') + '>' + window.SSLI18N[i].nombre + '</option>';
+    }).join('');
+    if (informeActual) pintarInforme(informeActual);
+    if (planActual) pintarPlan(planActual);
+  }
+  document.getElementById('lang').addEventListener('change', function (e) {
+    LANG = e.target.value;
+    try { localStorage.setItem('ssl_lang', LANG); } catch (er) {}
+    aplicarIdioma();
+  });
+
+  // ---------- utilidades ----------
+  function esc(s) {
+    return String(s === undefined || s === null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function fecha(iso) {
+    if (!iso) return '—';
+    var d = new Date(iso);
+    if (isNaN(d)) return iso;
+    try { return d.toLocaleDateString(LANG, { year: 'numeric', month: 'short', day: 'numeric' }); }
+    catch (e) { return d.toISOString().slice(0, 10); }
+  }
+  function estado(html, clase) {
+    var el = document.getElementById('estado');
+    el.className = clase || 'cargando';
+    el.innerHTML = html;
+    el.classList.remove('oculto');
+  }
+  function limpiarEstado() { document.getElementById('estado').classList.add('oculto'); }
+
+  // ---------- diagnóstico ----------
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    analizar(document.getElementById('dominio').value);
+  });
+
+  async function analizar(valor) {
+    var dominio = String(valor || '').trim();
+    if (!dominio || dominio.indexOf('.') === -1) { estado(esc(t('err_dominio')), 'error'); return; }
+    var btn = document.getElementById('btnCheck');
+    btn.disabled = true;
+    estado(esc(t('form_analizando')));
+    document.getElementById('resultado').classList.add('oculto');
+    document.getElementById('zonaPlan').classList.add('oculto');
+    try {
+      var r = await fetch('/api/ssl/check', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ dominio: dominio })
+      });
+      var d = await r.json();
+      if (r.status === 429) { estado(esc(t('err_limite')), 'error'); return; }
+      if (!r.ok || !d.informe) { estado(esc(t(d.error === 'dominio_invalido' ? 'err_dominio' : 'err_fallo')), 'error'); return; }
+      if (d.precioPlan) PRECIO = d.precioPlan;
+      informeActual = d.informe;
+      try { localStorage.setItem('ssl_dominio', d.informe.dominio); } catch (er) {}
+      limpiarEstado();
+      pintarInforme(d.informe);
+      document.getElementById('resultado').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      estado(esc(t('err_fallo')), 'error');
+    } finally { btn.disabled = false; }
+  }
+
+  function paramsHallazgo(hz, inf) {
+    var p = Object.assign({}, hz.params || {});
+    if (p.caduca) p.caduca = fecha(p.caduca);
+    if (Array.isArray(p.san)) p.san = p.san.slice(0, 6).join(', ');
+    if (Array.isArray(p.ejemplos)) p.ejemplos = p.ejemplos.slice(0, 3).join(' · ');
+    if (Array.isArray(p.mx)) p.mx = p.mx.slice(0, 2).join(', ');
+    if (!p.dominio && inf) p.dominio = inf.dominio;
+    if (!p.zona && inf && inf.dns) p.zona = inf.dns.zona;
+    return p;
+  }
+
+  function pintarInforme(inf) {
+    var ui = L().ui, dic = L().hallazgos;
+    var cont = document.getElementById('resultado');
+    var sem = inf.semaforo || 'rojo';
+    var cert = inf.certificado, https = inf.https || {}, cab = inf.cabeceras || {}, dns = inf.dns || {}, ent = inf.entorno || {};
+    var dias = cert && cert.diasRestantes !== null && cert.diasRestantes !== undefined ? cert.diasRestantes : null;
+    // Reloj de caducidad sobre la regla vigente (200 días desde el 15/03/2026)
+    var pct = dias === null ? 0 : Math.max(0, Math.min(100, Math.round((dias / 200) * 100)));
+    var claseBarra = dias === null ? '' : (dias < 8 ? 'mal' : (dias < 22 ? 'med' : ''));
+
+    function kv(k, v, clase) { return '<div class="kv"><span>' + esc(k) + '</span><span class="' + (clase || '') + '">' + esc(v) + '</span></div>'; }
+    var sino = function (b) { return b ? ui.l_si : ui.l_no; };
+    var claseSino = function (b) { return b ? 'ok' : 'no'; };
+
+    var tarjetas = '';
+    if (cert) {
+      tarjetas += '<div class="cardx"><h3>' + esc(ui.c_cert) + '</h3>' +
+        kv(ui.l_emisor, cert.emisor || '—') +
+        kv(ui.l_caduca, fecha(cert.hasta)) +
+        kv(ui.l_dias, dias === null ? '—' : dias, dias === null ? '' : (dias < 8 ? 'no' : (dias < 22 ? 'med' : 'ok'))) +
+        kv(ui.l_cadena, fmt(ui.l_certs, { n: (cert.cadena || []).length })) +
+        '<div class="barra ' + claseBarra + '"><i style="width:' + pct + '%"></i></div></div>';
+    }
+    tarjetas += '<div class="cardx"><h3>' + esc(ui.c_https) + '</h3>' +
+      kv(ui.l_protocolo, https.activo ? https.protocolo : ui.l_no, claseSino(!!https.activo)) +
+      kv(ui.l_cubre, https.activo ? sino(https.cubreDominio) : ui.l_no, claseSino(!!https.cubreDominio)) +
+      kv('TLS 1.0/1.1', https.aceptaTls10 || https.aceptaTls11 ? ui.l_si : ui.l_no, https.aceptaTls10 || https.aceptaTls11 ? 'med' : 'ok') +
+      kv(ui.l_redir, inf.http && inf.http.alcanzable ? sino(inf.http.terminaEnHttps) : ui.l_nd, inf.http && inf.http.terminaEnHttps ? 'ok' : 'no') +
+      '</div>';
+    tarjetas += '<div class="cardx"><h3>' + esc(ui.c_cab) + '</h3>' +
+      kv(ui.l_hsts, cab.hsts && cab.hsts.presente ? 'max-age=' + cab.hsts.maxAge : ui.l_no, cab.hsts && cab.hsts.presente ? 'ok' : 'med') +
+      kv('Mixed content', inf.contenidoMixto && inf.contenidoMixto.detectado ? ui.l_si : ui.l_no, inf.contenidoMixto && inf.contenidoMixto.detectado ? 'no' : 'ok') +
+      kv('Server', cab.server || ui.l_nd) +
+      '</div>';
+    tarjetas += '<div class="cardx"><h3>' + esc(ui.c_correo) + '</h3>' +
+      kv('MX', (dns.mx || []).length || ui.l_ninguno) +
+      kv(ui.l_spf, dns.spf ? ui.l_si : ui.l_no, dns.spf ? 'ok' : 'med') +
+      kv(ui.l_dkim, (dns.dkim || []).length ? (dns.dkim[0] === '*comodin' ? ui.l_si : dns.dkim.join(', ')) : ui.l_nd, (dns.dkim || []).length ? 'ok' : 'med') +
+      kv(ui.l_dmarc, dns.dmarc ? ui.l_si : ui.l_no, dns.dmarc ? 'ok' : 'med') +
+      kv(ui.l_caa, (dns.caa || []).length || ui.l_ninguno) +
+      '</div>';
+    tarjetas += '<div class="cardx"><h3>' + esc(ui.c_entorno) + '</h3>' +
+      kv(ui.l_cdn, ent.cdn || ui.l_nd) + kv(ui.l_servidor, ent.servidor || ui.l_nd) +
+      kv(ui.l_cms, ent.cms || ui.l_nd) + kv(ui.l_dns, ent.dnsProveedor || ui.l_nd) +
+      kv(ui.l_panel, ent.panel || ui.l_nd) + '</div>';
+
+    var lista = (inf.hallazgos || []).map(function (hz) {
+      var d = dic[hz.id] || { t: hz.id, d: '' };
+      var p = paramsHallazgo(hz, inf);
+      return '<div class="hz"><span class="chip ' + hz.gravedad + '">' + esc(ui['g_' + hz.gravedad] || hz.gravedad) + '</span>' +
+        '<div><b>' + esc(fmt(d.t, p)) + '</b><p>' + esc(fmt(d.d, p)) + '</p></div></div>';
+    }).join('');
+    if (!lista) lista = '<div class="hz"><span class="chip info">OK</span><div><b>' + esc(ui.hallazgos_0) + '</b></div></div>';
+
+    var arreglables = (inf.hallazgos || []).filter(function (h) { return h.gravedad !== 'info'; }).length;
+    var venta = arreglables ? '<div class="venta"><h3>' + esc(ui.bloq_t) + '</h3>' +
+      '<p>' + esc(fmt(ui.bloq_d, { precio: PRECIO, entorno: entornoLegible(ent) })) + '</p>' +
+      '<button class="btn btn-brand" id="btnPagar">' + esc(fmt(ui.bloq_cta, { precio: PRECIO })) + '</button>' +
+      '<p class="nota" style="margin-top:10px">' + esc(ui.bloq_nota) + '</p></div>' : '';
+
+    cont.innerHTML = '<div class="panel"><div class="panel-h">' +
+      '<div class="sem"><div class="luz ' + sem + '">' + (sem === 'verde' ? '✓' : (sem === 'naranja' ? '!' : '×')) + '</div>' +
+      '<div><b>' + esc(ui['sem_' + sem]) + ' · ' + esc(inf.dominio) + '</b>' +
+      '<small>' + esc(ui['sem_' + sem + '_d']) + '</small></div></div>' +
+      '<div class="puntos">' + esc(inf.puntuacion) + ' <small>' + esc(ui.res_puntuacion) + '</small></div>' +
+      '</div><div class="grid-cards">' + tarjetas + '</div>' +
+      '<div class="lista"><h3 style="margin:16px 0 4px">' + esc(ui.hallazgos_t) + '</h3>' + lista + '</div></div>' + venta;
+    cont.classList.remove('oculto');
+
+    var bp = document.getElementById('btnPagar');
+    if (bp) bp.addEventListener('click', function () {
+      try { localStorage.setItem('ssl_dominio', inf.dominio); } catch (e) {}
+      if (window.ProWidget) window.ProWidget.checkout('sslsecurity', PRECIO);
+    });
+  }
+
+  function entornoLegible(ent) {
+    var partes = [ent.cdn, ent.cms, ent.servidor, ent.panel].filter(Boolean);
+    return partes.length ? partes.join(' + ') : 'genérico';
+  }
+
+  // ---------- plan de pago ----------
+  async function cargarPlan(primeraVez) {
+    var dominio = '';
+    try { dominio = localStorage.getItem('ssl_dominio') || ''; } catch (e) {}
+    if (!ORDEN || !dominio) return;
+    var zona = document.getElementById('zonaPlan');
+    zona.classList.remove('oculto');
+    zona.innerHTML = '<p class="cargando">' + esc(t(primeraVez ? 'plan_generando' : 'rev_analizando')) + '</p>';
+    try {
+      var r = await fetch('/api/ssl/plan', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ o: ORDEN, dominio: dominio })
+      });
+      var d = await r.json();
+      if (r.status === 402) { zona.innerHTML = '<p class="cargando">' + esc(t('plan_generando')) + '</p>'; return setTimeout(function () { cargarPlan(primeraVez); }, 4000); }
+      if (r.status === 409) { zona.innerHTML = '<div class="error">' + esc(fmt(t('rev_otro'), { n: d.dominio })) + '</div>'; return; }
+      if (r.status === 410) { zona.innerHTML = '<div class="error">' + esc(t('rev_caducado')) + '</div>'; return; }
+      if (!r.ok || !d.plan) { zona.innerHTML = '<div class="error">' + esc(t('err_fallo')) + '</div>'; return; }
+      if (!primeraVez && informeActual) hallazgosPrevios = (informeActual.hallazgos || []).map(function (h) { return h.id; });
+      informeActual = d.informe;
+      planActual = d.plan;
+      pintarInforme(d.informe);
+      pintarPlan(d.plan);
+    } catch (e) {
+      zona.innerHTML = '<div class="error">' + esc(t('err_fallo')) + '</div>';
+    }
+  }
+
+  function pintarPlan(plan) {
+    var ui = L().ui, dic = L().recetas, donde = L().donde;
+    var zona = document.getElementById('zonaPlan');
+    var vistos = {};
+    var pasos = plan.pasos.map(function (p, i) {
+      var rec = dic[p.receta] || { t: p.receta, d: '' };
+      var par = paramsHallazgo({ params: p.params }, informeActual);
+      var html = '<div class="paso"><div class="paso-h"><span class="paso-n">' + esc(ui.plan_paso) + ' ' + (i + 1) + '</span>' +
+        '<span class="chip ' + p.gravedad + '">' + esc(ui['g_' + p.gravedad]) + '</span></div>' +
+        '<h3 style="margin-top:6px">' + esc(fmt(rec.t, par)) + '</h3>' +
+        '<p style="color:var(--ink-2);margin-top:6px">' + esc(fmt(rec.d, par)) + '</p>';
+      if (p.comandos && p.comandos.length) {
+        html += '<pre>' + esc(p.comandos.join('\n')) + '</pre>';
+      }
+      (p.archivos || []).forEach(function (a) {
+        if (vistos[a.nombre]) return; // un archivo se muestra una vez, con todo su contenido
+        vistos[a.nombre] = true;
+        html += bloqueArchivo(a, donde);
+      });
+      if (p.dns) {
+        var linea = p.dns.tipo + '  ' + p.dns.nombre + '  ' + p.dns.valor + (p.dns.extra ? '\n' + p.dns.tipo + '  ' + p.dns.nombre + '  ' + p.dns.extra : '');
+        html += '<pre>' + esc(linea) + '</pre>';
+        if (p.dns.revisar) html += '<div class="aviso-revisar">' + esc(ui.plan_revisar) + '</div>';
+      }
+      return html + '</div>';
+    }).join('');
+
+    // Archivos que no se han mostrado dentro de ningún paso (p. ej. dns-registros.txt)
+    var sueltos = (plan.archivos || []).filter(function (a) { return !vistos[a.nombre]; })
+      .map(function (a) { return bloqueArchivo(a, donde); }).join('');
+
+    var diff = '';
+    if (hallazgosPrevios) {
+      var ahora = (informeActual.hallazgos || []).map(function (h) { return h.id; });
+      var resueltos = hallazgosPrevios.filter(function (id) { return ahora.indexOf(id) === -1; });
+      var dicH = L().hallazgos;
+      if (!ahora.filter(function (id) { return (informeActual.hallazgos.find(function (h) { return h.id === id; }) || {}).gravedad !== 'info'; }).length) {
+        diff = '<div class="venta"><h3>' + esc(ui.rev_todo) + '</h3></div>';
+      } else if (resueltos.length) {
+        diff = '<div class="venta"><h3>' + esc(ui.rev_resueltos) + '</h3><p>' +
+          esc(resueltos.map(function (id) { return (dicH[id] || { t: id }).t; }).join(' · ')) + '</p></div>';
+      }
+    }
+
+    zona.innerHTML = '<h2 style="margin-top:26px">' + esc(ui.plan_t) + '</h2>' +
+      '<p class="nota" style="margin-bottom:16px">' + esc(ui.plan_entorno) + ': <b class="mono">' + esc(plan.entorno) + '</b> · ' + esc(plan.base) + '</p>' +
+      diff + pasos + sueltos +
+      '<div class="venta" style="margin-top:20px"><h3>' + esc(ui.rev_t) + '</h3><p>' + esc(ui.rev_d) + '</p>' +
+      '<button class="btn btn-brand" id="btnRever">' + esc(ui.rev_cta) + '</button></div>';
+    zona.classList.remove('oculto');
+    document.getElementById('btnRever').addEventListener('click', function () { cargarPlan(false); });
+    zona.querySelectorAll('[data-descargar]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var pre = b.closest('.archivo').querySelector('pre');
+        var blob = new Blob([pre.textContent], { type: 'text/plain;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = b.getAttribute('data-descargar');
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+      });
+    });
+    zona.querySelectorAll('[data-copiar]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var pre = b.closest('.archivo').querySelector('pre');
+        navigator.clipboard.writeText(pre.textContent).then(function () {
+          b.textContent = L().ui.plan_copiado;
+          setTimeout(function () { b.textContent = L().ui.plan_copiar; }, 1800);
+        });
+      });
+    });
+  }
+
+  function bloqueArchivo(a, donde) {
+    return '<div class="archivo"><div class="archivo-h"><span>' + esc(a.nombre) + ' — ' + esc(donde[a.donde] || a.donde) + '</span>' +
+      '<span><button class="btn btn-ghost btn-sm" data-copiar="1">' + esc(L().ui.plan_copiar) + '</button> ' +
+      '<button class="btn btn-ghost btn-sm" data-descargar="' + esc(a.nombre) + '">' + esc(L().ui.plan_descargar) + '</button></span></div>' +
+      '<pre>' + esc(a.contenido) + '</pre></div>';
+  }
+
+  // ---------- arranque ----------
+  fetch('/api/ssl/precio').then(function (r) { return r.json(); }).then(function (d) {
+    if (d && d.precio) { PRECIO = d.precio; aplicarIdioma(); }
+  }).catch(function () {});
+  aplicarIdioma();
+
+  var pre = new URLSearchParams(location.search).get('d');
+  if (pre) { document.getElementById('dominio').value = pre; analizar(pre); }
+  if (ORDEN) cargarPlan(true);
+})();
+</script>
+<script src="/pro.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# AlertaGasto
+
+AlertaGasto — detecta la operación sospechosa antes de que duela. en LATAM — El fraude interno entra donde nadie mira. Dato duro: tres reglas (duplicado, rango, proveedor nuevo) cazan el 90%; declaración 30/04/2027. Herramienta en el navegador contra la confianza ciega. Gratis 1/mes + Pro anual (6 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Detección.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 6 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+2. https://www.condusef.gob.mx/ (Condusef — Protección financiera)
+3. https://www.bbva.com/es/mx/empresas/calendario-fiscal-2026-para-personas-morales-en-mexico-y-fechas-esenciales-del-sat/ (BBVA — Calendario fiscal)
+4. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+5. https://blog.alegra.com/colombia/plazos-para-emitir-facturas-electronicas/ (Alegra — Facturación)
+
+## Precio
+- Gratis: 1 revisión mensual.
+- Pro (6 USD pago único, cripto vía NOWPayments): Revisiones ilimitadas; Archivos sin límite; Reporte exportable; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La detección automática no sustituye el control interno ni la auditoría: revisa lo marcado. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

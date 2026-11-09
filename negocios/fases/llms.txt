@@ -1,0 +1,23 @@
+# Fases
+
+Fases — tu calendario lunar 2026-2027 con rituales por fase. en LATAM — Nueva (sembrar), creciente (impulsar), llena (cosechar), menguante (soltar): la gente quiere trabajar con la luna pero no sabe en qué fase está ni qué hacer. Fechas reales verificadas (timeanddate/RMG): llena de la cosecha 26/09/2026, llena del cazador 26/10/2026, nueva 11/10/2026. Herramienta en el navegador contra el calendario astronómico. Gratis la fase del día + Pro pago único (3 $).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Horóscopo · Luna.
+- Fecha límite / cita: Luna llena de la cosecha · 26/09/2026.
+- Precio Pro: 3 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.timeanddate.com/moon/phases/ (Time and Date — Fases lunares 2026)
+2. https://www.rmg.co.uk/stories/space-astronomy/full-moon-calendar-2026 (Royal Museums Greenwich — Calendario de lunas llenas 2026)
+3. https://moon.nasa.gov/moon-in-motion/phases/ (NASA — Fases de la Luna)
+4. https://griffithobservatory.lacity.gov/explore/observing-the-sky/whats-in-the-sky/the-moon/2026-phases-of-the-moon/ (Griffith Observatory — Fases lunares 2026)
+5. https://theskylive.com/full-moon-september-2026 (The Sky Live — Luna llena de septiembre 2026)
+
+## Precio
+- Gratis: La fase de hoy y su intención.
+- Pro (3 USD pago único, cripto vía NOWPayments): Calendario lunar imprimible (PDF); Rituales por fase; Aviso de cada fase en tu correo; desbloqueo permanente.
+
+## Aviso
+Entretenimiento y reflexión. Fases no es ciencia ni consejo médico: las fechas son astronómicas y verificadas; las intenciones, tradición. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

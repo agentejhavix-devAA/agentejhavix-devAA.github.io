@@ -1,0 +1,29 @@
+# Pila
+
+Pila is a free browser tool that checks whether your batteries are ready for the EU digital battery passport under the Batteries Regulation (Regulation (EU) 2023/1542), mandatory from 18 February 2027. It runs entirely in the browser (no data leaves the device).
+
+## Key facts (verified 14 August 2026)
+
+- Regulation (EU) 2023/1542 entered into force on 17 February 2024 and applies to all batteries placed on the EU market: portable, LMT (light means of transport), SLI, EV and industrial batteries.
+- From 18 February 2027 (Art. 77), every EV battery, LMT battery above 2 kWh and industrial battery above 2 kWh placed on the EU market or put into service must have a battery passport linked by QR code — no passport, no placement.
+- The passport record includes manufacturer identity, model, capacity, chemistry and materials, carbon footprint, performance and durability, and state-of-health history.
+- Carbon footprint declaration for EV batteries applies since 18 February 2025; performance class labelling since 18 February 2026.
+- From 18 August 2028, passports must document recycled content (cobalt, lithium, nickel, lead).
+- Enforcement: market surveillance can block, restrict or withdraw non-compliant batteries; penalties are set by each Member State.
+
+## Sources
+
+1. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542 (EUR-Lex — Regulation (EU) 2023/1542)
+2. https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en (European Commission — Digital Product Passport: Batteries)
+3. https://www.tuv.com/landingpage/en/eu-new-battery-regulation-eu-2023-1542/ (TÜV Rheinland — deadline overview)
+4. https://www.circularise.com/blogs/eu-battery-passport-regulation-requirements/ (Circularise — EU Battery Passport requirements)
+5. https://www.compliancegate.com/batteries-regulation-european-union/ (Compliance Gate — EU Batteries Regulation guide)
+
+## Pricing
+
+- Free: passport gap check + checklist + market-access exposure.
+- Pro (8 USD one-time, crypto): printable passport stamp PDF, passport data-set template, Art. 77 readiness checklist, permanent unlock.
+
+## Not advice
+
+Pila is an educational tool based on Regulation (EU) 2023/1542. It is not legal or technical advice. Editorial responsibility: attenciona (Holding), Spain.

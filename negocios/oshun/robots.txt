@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oshun.attenciona.com/llms.txt

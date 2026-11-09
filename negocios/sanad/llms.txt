@@ -1,0 +1,45 @@
+# Sanad — UAE e-invoicing (EIS) phase checker
+
+URL: https://sanad.attenciona.com/
+Language: EN · Market: UAE (VAT-registered businesses)
+Category: Regulatory compliance checker
+Verified: 13 August 2026
+
+## What it does
+Checks which phase of the UAE Electronic Invoicing System (EIS) applies to a business and
+stamps its ASP-appointment deadline and mandatory e-invoicing date with a live countdown.
+Runs entirely in the browser (no server, no data collection).
+
+## The pain (active today)
+- Pilot + voluntary adoption live since 01/07/2026.
+- Phase 1 (annual revenue ≥ AED 50M): appoint an FTA-accredited ASP by 30/10/2026
+  (extended once from 31/07/2026); mandatory e-invoicing (B2B/B2G) from 01/01/2027.
+- Phase 2 (below AED 50M): ASP by 31/03/2027; mandatory from 01/07/2027. Government: 01/10/2027.
+- Penalties (Cabinet Decision 106/2025): AED 5,000/month without ASP; AED 100 per missing
+  e-invoice (cap AED 5,000/month); AED 1,000/day for unreported system failures or data changes.
+- PDFs, emails and scans are NOT e-invoices: only structured data via an accredited provider.
+
+## Gates
+P1 ✅ investigation: 5 sources cited and linked (Hawksford 14/07/2026, ClearTax 08/2026,
+    OSforBiz, e-invoice.app, FTA official) — all HTTP 200 on 13/08/2026.
+P2 ✅ identity: Índigo-emiratí (Syne + Inter, self-hosted, no CDN). Indigo #433BC4 extracted
+    from the real Wafeq app icon (audience: UAE accountants). Sand #E9C46A. Functional
+    signature: the EIS Stamp with live countdown. Zero emojis.
+P3 ✅ monetization: freemium + Pro $13 one-time crypto via ProWidget (real checkout).
+P4 ✅ legal/fiscal: consent, editorial responsibility (AI Act 50.4), "not advice",
+    Spain/VAT 21%/filing, transparency seal in footer.
+P5 ✅ vigencia: verified live 13/08/2026 — Phase 1 ASP deadline is 78 days away.
+P6 ✅ verified: routes 200, JS clean, decision logic tested 4/4, tool tested end-to-end.
+
+## Tool logic
+- Q1 VAT-registered? No → NOT IN SCOPE.
+- Q1 yes, Q3 B2B/B2G? No → B2C ONLY (out of scope for now).
+- Q1 yes, Q3 yes, Q2 revenue ≥ AED 50M → PHASE 1 (ASP 30.10.2026, e-invoicing 01.01.2027).
+- Q1 yes, Q3 yes, Q2 below AED 50M → PHASE 2 (ASP 31.03.2027, e-invoicing 01.07.2027).
+
+## Sources
+1. https://www.hawksford.com/insights-and-guides/uae-e-invoicing (updated 14/07/2026)
+2. https://www.cleartax.com/ae/e-invoicing-uae (08/2026)
+3. https://osforbiz.com/uae-einvoicing-2027
+4. https://www.e-invoice.app/guides/uae-e-invoicing
+5. https://www.tax.gov.ae (FTA official)

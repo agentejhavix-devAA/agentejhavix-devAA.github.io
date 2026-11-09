@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://comisiones.attenciona.com/llms.txt

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOCOBOT — Señales de trading algorítmico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #08090a;
+      --bg-panel: #0f1011;
+      --bg-surface: #191a1b;
+      --bg-elevated: #28282c;
+      --text-primary: #f7f8f8;
+      --text-secondary: #d0d6e0;
+      --text-muted: #8a8f98;
+      --text-dim: #62666d;
+      --brand: #5e6ad2;
+      --brand-bright: #7170ff;
+      --brand-hover: #828fff;
+      --success: #10b981;
+      --danger: #ef4444;
+      --border: rgba(255,255,255,0.08);
+      --border-subtle: rgba(255,255,255,0.05);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-feature-settings: "cv01", "ss03";
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .mono {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+    }
+    
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8, 9, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 24px;
+    }
+    
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-bright));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    
+    .nav-cta {
+      background: var(--brand);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    
+    .nav-cta:hover {
+      background: var(--brand-hover);
+    }
+    
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(94, 106, 210, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 6px 16px 6px 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+    
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 510;
+      line-height: 1.0;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+    
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--brand-bright), var(--brand-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text-primary);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.15);
+    }
+    
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+    }
+    
+    .stat-value.green { color: var(--success); }
+    .stat-value.brand { color: var(--brand-bright); }
+    
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* FEATURES */
+    .section {
+      padding: 100px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 510;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    
+    .section-header p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    
+    .feature-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-4px);
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(94, 106, 210, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 590;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    
+    .feature-card p {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    
+    /* PRICING */
+    .pricing-section {
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 24px;
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--brand);
+      background: linear-gradient(180deg, rgba(94, 106, 210, 0.1) 0%, var(--bg-surface) 100%);
+    }
+    
+    .pricing-card.featured::before {
+      content: 'MÁS POPULAR';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+    }
+    
+    .pricing-name {
+      font-size: 20px;
+      font-weight: 590;
+      margin-bottom: 8px;
+    }
+    
+    .pricing-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    
+    .pricing-price {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -2px;
+      margin-bottom: 4px;
+    }
+    
+    .pricing-period {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .check {
+      color: var(--success);
+      font-size: 16px;
+    }
+    
+    /* RESULTS */
+    .results-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 800px;
+      margin: 64px auto 0;
+    }
+    
+    .results-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .results-header h3 {
+      font-size: 24px;
+      font-weight: 590;
+      margin-bottom: 8px;
+    }
+    
+    .results-header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .results-table th,
+    .results-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .results-table th {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .results-table td {
+      font-size: 15px;
+    }
+    
+    .results-table .mono {
+      color: var(--success);
+    }
+    
+    /* TESTIMONIALS */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .testimonial {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--brand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .testimonial-name {
+      font-weight: 500;
+      font-size: 14px;
+    }
+    
+    .testimonial-role {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    
+    .faq-question {
+      font-size: 16px;
+      font-weight: 510;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    
+    /* CTA FINAL */
+    .final-cta {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+    }
+    
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, rgba(94, 106, 210, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .final-cta h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 510;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    
+    .final-cta p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    
+    footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    
+    footer a:hover {
+      color: var(--brand-bright);
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .stat-value {
+        font-size: 36px;
+      }
+      
+      .pricing-card {
+        padding: 32px;
+      }
+      
+      .results-card {
+        padding: 24px;
+        overflow-x: auto;
+      }
+    }
+    
+    /* LIVE TICKER */
+    .ticker {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 32px;
+      margin-top: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+    }
+    
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .ticker-label {
+      color: var(--text-muted);
+    }
+    
+    .ticker-value {
+      font-weight: 600;
+    }
+    
+    .ticker-value.up {
+      color: var(--success);
+    }
+  </style>
+<link rel="canonical" href="https://www.attenciona.com/locobot/">
+<meta name="description" content="Bot de señales en pruebas. Trading algorítmico con señales automáticas por Telegram. Sin promesas de rentabilidad: ninguna estrategia garantiza beneficios.">
+<meta property="og:title" content="LOCOBOT — Señales de trading algorítmico">
+<meta property="og:description" content="Bot de señales en pruebas. Trading algorítmico con señales automáticas por Telegram. Sin promesas de rentabilidad: ninguna estrategia garantiza beneficios.">
+<meta property="og:url" content="https://www.attenciona.com/locobot/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LOCOBOT — Señales de trading algorítmico">
+<meta name="twitter:description" content="Bot de señales en pruebas. Trading algorítmico con señales automáticas por Telegram. Sin promesas de rentabilidad: ninguna estrategia garantiza beneficios.">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-icon">🤖</div>
+        LOCOBOT
+      </div>
+      <a href="#pricing" class="nav-cta">Empezar Gratis →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Bot operando en tiempo real
+    </div>
+    <h1>Trading algorítmico, <span>contado con honestidad</span></h1>
+    <p>Señales automáticas por Telegram de una estrategia en pruebas. Sin cifras de rentabilidad: el resultado real todavía no está demostrado.</p>
+    <div class="cta-group">
+      <a href="#pricing" class="btn-primary">Ver Señales Gratis →</a>
+    </div>
+    <div class="ticker">
+      <div class="ticker-item">
+        <span class="ticker-label">Última señal:</span>
+        <span class="ticker-value">SVXY</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-label">RSI:</span>
+        <span class="ticker-value">11.3</span>
+      </div>
+      <div class="ticker-item">
+        <span class="ticker-label">Resultado:</span>
+        <span class="ticker-value up">+8.4%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-value brand">En pruebas</div>
+      <div class="stat-label">Sin rentabilidad garantizada</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value brand">130+</div>
+      <div class="stat-label">Experimentos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value brand">Telegram</div>
+      <div class="stat-label">Señales automáticas</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value brand">24/7</div>
+      <div class="stat-label">Bot Automático</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Por qué funciona</h2>
+      <p>No es magia. Es matemática y disciplina algorítmica.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>RSI Mean Reversion</h3>
+        <p>Entramos cuando el RSI(3) baja de 12 y el precio está sobre la SMA200. Salimos en RSI>70 o máximo 5 días.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Filtro VIXY</h3>
+        <p>Evitamos operar durante crashes de volatilidad extrema. El bot detecta automáticamente cuándo NO operar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚖️</div>
+        <h3>Portfolio Diversificado</h3>
+        <p>SVXY 40%, UPRO 20%, TNA 20%, FAS 20%. Pesos optimizados tras 130+ backtests.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h3>Pruebas antes que promesas</h3>
+        <p>La estrategia se sigue probando. Ninguna simulación del pasado asegura lo que pasará: puedes perder dinero.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Señales Telegram</h3>
+        <p>Recibe cada entrada y salida al instante. Con precio exacto, RSI, y sizing sugerido.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Curso Incluido</h3>
+        <p>Aprende exactamente cómo funciona la estrategia. Código fuente del bot disponible para miembros premium.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <h2>Elige tu plan</h2>
+      <p>Empieza gratis, escala cuando quieras · <span style="color:#f7931a;">₿</span> Aceptamos cripto</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Free</div>
+        <div class="pricing-desc">Para probar la estrategia</div>
+        <div class="pricing-price">0€</div>
+        <div class="pricing-period">para siempre</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Señales con 24h de retraso</li>
+          <li><span class="check">✓</span> Resumen semanal de resultados</li>
+          <li><span class="check">✓</span> Acceso canal público</li>
+          <li><span class="check">✓</span> Dashboard básico</li>
+        </ul>
+        <a href="https://t.me/locobot_signals" class="btn-secondary" style="width: 100%; display: block; text-align: center;">Unirme Gratis</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name">Pro</div>
+        <div class="pricing-desc">Para traders activos</div>
+        <div class="pricing-price">19€</div>
+        <div class="pricing-period">al mes</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Señales en tiempo real</li>
+          <li><span class="check">✓</span> Alertas instantáneas Telegram</li>
+          <li><span class="check">✓</span> Sizing recomendado</li>
+          <li><span class="check">✓</span> Dashboard completo</li>
+          <li><span class="check">✓</span> Soporte prioritario</li>
+        </ul>
+        <button onclick="openPayModal('pro')" class="btn-primary" style="width: 100%; display: block; text-align: center; border: none; cursor: pointer;">Empezar Pro</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Premium</div>
+        <div class="pricing-desc">Bot + Curso completo</div>
+        <div class="pricing-price">99€</div>
+        <div class="pricing-period">pago único</div>
+        <ul class="pricing-features">
+          <li><span class="check">✓</span> Todo lo de Pro (3 meses)</li>
+          <li><span class="check">✓</span> Curso completo en vídeo</li>
+          <li><span class="check">✓</span> Código fuente del bot</li>
+          <li><span class="check">✓</span> Setup guiado por Telegram</li>
+          <li><span class="check">✓</span> Actualizaciones de por vida</li>
+        </ul>
+        <button onclick="openPayModal('premium')" class="btn-secondary" style="width: 100%; display: block; text-align: center; border: none; cursor: pointer;">Comprar Premium</button>
+      </div>
+    </div>
+    <!-- Crypto badge -->
+    <div style="text-align:center;margin-top:32px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <span style="background:rgba(247,147,26,.1);color:#f7931a;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;">₿ Bitcoin</span>
+      <span style="background:rgba(98,126,234,.1);color:#627eea;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;">Ξ Ethereum</span>
+      <span style="background:rgba(38,161,123,.1);color:#26a17b;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;">₮ USDT</span>
+      <span style="background:rgba(255,255,255,.05);color:#8a8f98;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;">💳 Tarjeta (pronto)</span>
+    </div>
+  </section>
+
+  <!-- PAGO: cobro seguro de la casa (pago normal en cripto o ATTA -50 %), sin carteras escritas a mano -->
+  <script src="/pro.js"></script>
+  <script>
+    // Precios en USD (iguales a los que se mostraban en USDT)
+    function openPayModal(plan) {
+      var amount = plan === "premium" ? 109 : 21;
+      if (window.ProWidget) window.ProWidget.checkout("locobot-" + plan, amount);
+    }
+  </script>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="faq-item">
+        <div class="faq-question">¿Es legal?</div>
+        <div class="faq-answer">Sí. No gestionamos tu dinero. Tú operas en tu propia cuenta de broker. Nosotros solo enviamos señales de cuándo comprar y vender.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Qué broker necesito?</div>
+        <div class="faq-answer">Cualquier broker que permita operar ETFs americanos: Interactive Brokers, DEGIRO, Alpaca, etc. Recomendamos Alpaca por sus APIs gratuitas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Cuánto capital mínimo necesito?</div>
+        <div class="faq-answer">Recomendamos mínimo 500€ para que las comisiones no se coman los beneficios. El bot funciona igual con 500€ o 50.000€.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Y si el mercado cae?</div>
+        <div class="faq-answer">La estrategia incluye filtros VIXY que detectan crashes y pausan las operaciones. El máximo drawdown histórico fue -32%, recuperándose en todos los casos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">¿Garantizáis beneficios?</div>
+        <div class="faq-answer">No. Ninguna estrategia de inversión puede garantizar beneficios. La estrategia está en pruebas y el pasado no garantiza el futuro: puedes perder dinero.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Empieza hoy, gratis</h2>
+    <p>Únete al canal de señales y comprueba los resultados tú mismo</p>
+    <a href="https://t.me/locobot_signals" class="btn-primary">Unirme al Canal Gratis →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 LOCOBOT — Trading algorítmico. <a href="#">Términos</a> · <a href="#">Privacidad</a> · <a href="#">Disclaimer</a></p>
+    <p style="margin-top: 8px;">Este sitio no ofrece asesoramiento financiero. Opera bajo tu propio riesgo.</p>
+  </footer>
+</body>
+</html>

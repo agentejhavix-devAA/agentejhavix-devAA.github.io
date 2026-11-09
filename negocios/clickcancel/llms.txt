@@ -1,0 +1,20 @@
+# Click-to-Cancel
+
+La regla de la FTC 'click to cancel' obliga a que darse de baja sea tan fácil como darse de alta. Si tu web vende suscripciones y el cancelar está escondido, te arriesgas a multas por violación. ClickCancel comprueba tu embudo en 3 preguntas.
+
+## Estado
+
+PROTOTIPO Fase 3 — pendiente de verificación de fuentes antes de publicar. No es asesoramiento.
+
+## Hechos documentados (pendientes de verificación final)
+
+- En vigor · Regla de la FTC: La regla 'click to cancel' exige que cancelar sea tan sencillo como suscribirse, sin trampas ni llamadas obligatorias.
+- Multas · Violación sancionable: La FTC persigue las prácticas engañosas de suscripción con sanciones por violación.
+
+## Fuentes citadas
+
+- https://www.ftc.gov/news-events/news/press-releases
+
+## Precio
+
+Gratis: diagnóstico en el navegador. Pro: 7 $ pago único en cripto.

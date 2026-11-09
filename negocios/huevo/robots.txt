@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huevo.attenciona.com/llms.txt

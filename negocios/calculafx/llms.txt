@@ -1,0 +1,23 @@
+# CalcFX
+
+CalcFX — el costo real del cambio de divisas. en LATAM — El tipo de Google no es el que te pagan: entre spread y comisión se va 2-5%. Dato duro: Banxico publica el tipo oficial; la ganancia cambiaria se declara (30/04/2027). Herramienta en el navegador contra el cambio a ciegas. Gratis 10/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fintech · Divisas.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.banxico.org.mx/ (Banxico — Tipo de cambio)
+2. https://www.condusef.gob.mx/ (Condusef — Finanzas)
+3. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+4. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto LATAM)
+5. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+
+## Precio
+- Gratis: 10 cálculos al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Cálculos ilimitados; Historial de cambios; Exportación por operación; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Los tipos de cambio varían en tiempo real: la cotización por escrito de tu operación manda. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

@@ -1,0 +1,3 @@
+# Cambio confuso · global
+Comprueba el tipo de cambio que te ofrecen contra el tipo oficial del BCE del día, país por país. Cubre: Turquía, Egipto, Indonesia, Vietnam, México, Tailandia.
+Cada país cita su fuente oficial. No es asesoría.

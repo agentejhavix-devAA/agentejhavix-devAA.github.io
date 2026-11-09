@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://biorritmo.attenciona.com/llms.txt

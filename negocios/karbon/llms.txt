@@ -1,0 +1,22 @@
+# Karbon — Is your import CBAM-ready? Your certificate, stamped
+
+Karbon es una herramienta educativa (sin asesoría fiscal/aduanera/legal) que comprueba si un importador en la UE está en el alcance del Mecanismo de Ajuste en Frontera por Carbono (CBAM) y cuáles son sus obligaciones en el régimen definitivo.
+
+## Hechos clave (verificados 13.08.2026)
+
+- Base legal: Reglamento (UE) 2023/956. El **régimen definitivo está en vigor desde el 01.01.2026**; el período transitorio (2023–2025) terminó.
+- Desde 2026, **solo los declarantes CBAM autorizados** pueden importar mercancías CBAM a la UE (solicitud vía el portal CBAM AMM).
+- Mercancías cubiertas (códigos CN del Anexo I): hierro y acero, aluminio, cemento, fertilizantes, electricidad e hidrógeno.
+- **De minimis: 50 toneladas/año** — importadores por debajo quedan exentos de autorización, declaración anual y entrega de certificados.
+- Declaración anual CBAM **antes del 31 de mayo** de cada año (emisiones incorporadas verificadas, directas e indirectas, del año anterior). Primera: 31.05.2027 para importaciones de 2026.
+- Entrega de certificados: primera entrega **30.09.2027** cubriendo emisiones de 2026; precio ligado a la subasta semanal media del EU ETS.
+- Si no hay datos verificados se aplican valores por defecto, que pueden aumentar la obligación de certificados.
+- Sanciones (régimen definitivo): hasta ~100 €/t por emisiones no declaradas o sin cubrir (declarantes autorizados) y 300–500 €/t para importaciones sin autorización.
+
+## Fuentes
+
+1. https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en (Comisión Europea — primaria)
+2. https://carboncomplete.com/cbam-2026/ (guía del régimen definitivo)
+3. https://oneclicklca.com/en-us/resources/articles/cbam-a-guide-to-carbon-border-adjustment-mechanism (primera entrega de certificados 30.09.2027)
+4. https://cbamguide.com/compliance/penalties/ (sanciones régimen definitivo)
+5. https://icapcarbonaction.com/en/news/eu-adopts-simplifications-cbam-rules-ahead-compliance-phase-starting-2026 (simplificaciones y de minimis)

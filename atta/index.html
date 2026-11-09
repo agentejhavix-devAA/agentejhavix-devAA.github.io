@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head><script>try{location.replace("https://www.attenciona.com"+location.pathname+location.search+location.hash);}catch(e){location.href="https://www.attenciona.com/";}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATTA · la moneda del ecosistema attenciona</title>
+<meta name="description" content="ATTA, el token de utilidad de attenciona en Base: paga servicios, recibe regalos por familias y comprueba cada movimiento. Respaldo en USDC que nadie puede retirar, suministro fijo y parte del creador bloqueada. En desarrollo.">
+<meta name="theme-color" content="#071630">
+<link rel="canonical" href="https://www.attenciona.com/atta/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:title" content="ATTA · la moneda del ecosistema attenciona">
+<meta property="og:description" content="Respaldo en USDC intocable, suministro fijo, creador bloqueado y reglas públicas en el contrato.">
+<meta property="og:url" content="https://www.attenciona.com/atta/">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<link rel="stylesheet" href="/fonts.css">
+<style>
+:root{--n0:#040d1f;--n1:#071630;--n2:#0c2350;--n3:#143a78;--ink:#eaf0fb;--muted:#9fb0cf;--line:rgba(255,255,255,.09);
+--gold:#e2b45a;--gold2:#f7dc9a;--gold3:#a87a2a;--good:#4fd08b;--bad:#ff7b88;
+--font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--display:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;--maxw:1160px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--n1);color:var(--ink);font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+em{font-style:italic;background:linear-gradient(100deg,var(--gold2),var(--gold) 45%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.k{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.lead{color:var(--muted);max-width:60ch;margin-top:1rem;font-size:1.05rem}
+section{padding:96px 0;position:relative}
+.glass{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(8px)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.on{opacity:1;transform:none}
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s}
+nav.solid{background:rgba(7,22,48,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.logo{font-family:var(--display);font-size:1.25rem;text-decoration:none}
+.logo b{color:var(--gold);font-weight:500}
+.navl{display:flex;gap:1.4rem;font-size:.88rem;color:var(--muted)}
+.navl a{text-decoration:none}.navl a:hover{color:var(--ink)}
+@media(max-width:720px){.navl{display:none}}
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:grid;align-items:center;padding:110px 0 70px;overflow:hidden;
+background:radial-gradient(ellipse 70% 60% at 70% 40%,rgba(226,180,90,.16),transparent 60%),radial-gradient(ellipse 80% 70% at 10% 90%,rgba(20,58,120,.7),transparent 60%),linear-gradient(180deg,var(--n0),var(--n1))}
+#estrellas{position:absolute;inset:0;width:100%;height:100%;opacity:.7}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;position:relative}
+@media(max-width:880px){.hgrid{grid-template-columns:1fr;text-align:center}.hgrid .lead{margin-inline:auto}.chips{justify-content:center}}
+.hero h1{font-size:clamp(3rem,9vw,6.2rem);margin-top:.8rem}
+.estado{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-family:var(--mono);font-size:.72rem;color:var(--gold2);border:1px solid rgba(226,180,90,.45);background:rgba(226,180,90,.08);border-radius:999px;padding:.45em 1em}
+.estado i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(226,180,90,.7);animation:latido 2s infinite}
+@keyframes latido{70%{box-shadow:0 0 0 10px rgba(226,180,90,0)}100%{box-shadow:0 0 0 0 rgba(226,180,90,0)}}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+@media(max-width:880px){.btns{justify-content:center}}
+.btn{display:inline-block;padding:.95em 1.6em;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn.oro{background:linear-gradient(120deg,var(--gold2),var(--gold) 50%,var(--gold3));color:#1b1203;box-shadow:0 10px 30px -8px rgba(226,180,90,.6)}
+.btn.oro:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(226,180,90,.8)}
+.btn.vidrio{border:1px solid rgba(255,255,255,.22);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.chips span{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.4em .85em}
+/* moneda 3D */
+.escena{perspective:1200px;display:grid;place-items:center;min-height:380px}
+.moneda{width:min(340px,70vw);aspect-ratio:1;position:relative;transform-style:preserve-3d;animation:gira 9s linear infinite}
+@keyframes gira{from{transform:rotateY(0) rotateX(8deg)}to{transform:rotateY(360deg) rotateX(8deg)}}
+.cara{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;display:grid;place-items:center;
+background:radial-gradient(circle at 32% 28%,#fff6d6 0,var(--gold2) 14%,var(--gold) 42%,var(--gold3) 78%,#6d4c15 100%);
+box-shadow:inset 0 0 0 10px rgba(255,255,255,.18),inset 0 0 0 14px rgba(109,76,21,.55),inset 0 0 40px rgba(0,0,0,.35)}
+.cara{transform:translateZ(4px)}.cara.tras{transform:rotateY(180deg) translateZ(4px)}
+.cara svg{width:62%;height:62%}
+.canto{position:absolute;inset:2%;border-radius:50%;background:#7a5718}
+.halo{position:absolute;width:min(460px,90vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(226,180,90,.35),transparent 62%);filter:blur(10px);animation:respira 4s ease-in-out infinite}
+@keyframes respira{50%{transform:scale(1.08);opacity:.75}}
+.sombra{width:200px;height:24px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.55),transparent 70%);margin-top:-10px}
+@media (prefers-reduced-motion:reduce){.moneda,.halo,.estado i{animation:none}.reveal{opacity:1;transform:none}}
+/* ---------- cifras ---------- */
+.cifras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:-40px;position:relative;z-index:2}
+@media(max-width:820px){.cifras{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cifra{padding:1.4rem;text-align:center}
+.cifra b{display:block;font-family:var(--display);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:500;color:var(--gold2)}
+.cifra span{font-size:.82rem;color:var(--muted)}
+/* ---------- confianza ---------- */
+.garantias{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:3rem}
+.gar{padding:1.6rem;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.gar:hover{transform:translateY(-4px);border-color:rgba(226,180,90,.45)}
+.gar .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(226,180,90,.12);border:1px solid rgba(226,180,90,.35)}
+.gar h3{font-size:1.25rem;margin:1rem 0 .5rem}
+.gar p{color:var(--muted);font-size:.93rem}
+.gar code{font-family:var(--mono);font-size:.72rem;color:var(--gold2);display:block;margin-top:.9rem;opacity:.85}
+/* ---------- utilidad ---------- */
+.usos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:3rem}
+.uso{padding:1.6rem}
+.uso .num{font-family:var(--mono);font-size:.72rem;color:var(--gold)}
+.uso h3{font-size:1.2rem;margin:.6rem 0 .4rem}
+.uso p{color:var(--muted);font-size:.92rem}
+/* ---------- simulador ---------- */
+.sim{display:grid;grid-template-columns:1.3fr .7fr;gap:1.2rem;margin-top:3rem}
+@media(max-width:880px){.sim{grid-template-columns:1fr}}
+.graf{padding:1.2rem;min-width:0}
+.graf svg{width:100%;height:auto;display:block}
+.ctrl{padding:1.6rem;display:flex;flex-direction:column;gap:1rem}
+.ctrl label{font-size:.85rem;color:var(--muted)}
+.ctrl output{font-family:var(--display);font-size:1.6rem;color:var(--ink);display:block}
+input[type=range]{width:100%;accent-color:var(--gold);height:28px}
+.dato{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--line);padding-top:.8rem;font-size:.9rem}
+.dato span{color:var(--muted)}.dato b{font-family:var(--mono);font-weight:500;color:var(--gold2);text-align:right}
+.nota{font-size:.8rem;color:var(--muted)}
+/* ---------- reparto ---------- */
+.rep{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:center;margin-top:3rem}
+@media(max-width:880px){.rep{grid-template-columns:1fr}}
+.dona{max-width:340px;margin:auto;position:relative}
+.dona svg{width:100%;height:auto;transform:rotate(-90deg)}
+.dona .centro{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.dona .centro b{font-family:var(--display);font-size:2.2rem;font-weight:500;display:block}
+.dona .centro span{font-size:.8rem;color:var(--muted)}
+.leyenda{display:grid;gap:.7rem}
+.ley{display:grid;grid-template-columns:14px 1fr auto;gap:.9rem;align-items:start;padding:1rem 1.2rem}
+.ley i{width:14px;height:14px;border-radius:4px;margin-top:.3rem}
+.ley b{font-weight:600}.ley p{color:var(--muted);font-size:.88rem}
+.ley .pc{font-family:var(--display);font-size:1.5rem;color:var(--gold2)}
+/* ---------- bloqueo ---------- */
+.linea{margin-top:3rem;padding:1.8rem}
+.track{position:relative;height:14px;border-radius:999px;background:rgba(255,255,255,.07);margin:2.4rem 0 1rem;overflow:hidden}
+.track .cliff{position:absolute;inset:0 75% 0 0;background:repeating-linear-gradient(45deg,rgba(255,123,136,.35) 0 8px,rgba(255,123,136,.15) 8px 16px)}
+.track .vest{position:absolute;inset:0 0 0 25%;background:linear-gradient(90deg,rgba(226,180,90,.25),var(--gold))}
+.hitos{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:var(--muted);gap:.5rem}
+/* ---------- hoja de ruta ---------- */
+.ruta{display:grid;gap:1rem;margin-top:3rem;position:relative}
+.paso{display:grid;grid-template-columns:44px 1fr;gap:1rem;padding:1.2rem 1.4rem;align-items:start}
+.paso .p{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.8rem;border:1px solid var(--line)}
+.paso.hecho .p{background:var(--good);color:#04210f;border:0;font-weight:700}
+.paso.ahora .p{border-color:var(--gold);color:var(--gold2);box-shadow:0 0 0 6px rgba(226,180,90,.12)}
+.paso h3{font-size:1.1rem}.paso p{color:var(--muted);font-size:.9rem}
+/* ---------- white paper ---------- */
+details{border-bottom:1px solid var(--line)}
+details summary{cursor:pointer;list-style:none;padding:1.2rem 0;display:flex;justify-content:space-between;gap:1rem;font-family:var(--display);font-size:1.2rem}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--gold);font-family:var(--mono)}
+details[open] summary::after{content:"–"}
+details .c{padding:0 0 1.3rem;color:var(--muted);font-size:.95rem}
+details .c ul{padding-left:1.2rem;display:grid;gap:.35rem}
+.wp{padding:.4rem 1.6rem 1rem;margin-top:2.4rem}
+.riesgo{margin-top:2rem;padding:1.3rem 1.5rem;border-radius:18px;background:rgba(255,123,136,.07);border:1px solid rgba(255,123,136,.3);color:#ffd1d6;font-size:.9rem}
+/* ---------- cierre ---------- */
+.final{text-align:center;padding:120px 0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(226,180,90,.18),transparent 70%)}
+.final h2{font-size:clamp(2.4rem,7vw,4.6rem)}
+.final .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.8rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="/">attenciona <b>· ATTA</b></a>
+  <div class="navl"><a href="#confianza">Confianza</a><a href="#utilidad">Utilidad</a><a href="#curva">Precio</a><a href="#reparto">Reparto</a><a href="#whitepaper">White paper</a></div>
+</div></nav>
+
+<header class="hero">
+  <canvas id="estrellas" aria-hidden="true"></canvas>
+  <div class="wrap hgrid">
+    <div>
+      <span class="k">El token del ecosistema attenciona · red Base</span>
+      <h1>Una moneda <em>que se puede comprobar</em>.</h1>
+      <p class="lead">ATTA paga los servicios de attenciona, viaja como regalo entre familias de usuarios y deja cada movimiento a la vista. Sus reglas no las decide nadie a mano: están escritas en el contrato, y el contrato es público.</p>
+      <span class="estado"><i></i>Lanzada en Base · 01/11/2026 · contrato público</span>
+      <div class="btns"><a class="btn oro" href="/atta/comprar/">Comprar o vender ATTA</a><a class="btn vidrio" href="#directo">Ver en directo</a></div>
+      <div class="chips"><span>ERC-20 · Base</span><span>OpenZeppelin 5</span><span>respaldo USDC</span><span>suministro fijo</span></div>
+    </div>
+    <div class="escena" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="moneda">
+        <div class="canto"></div>
+        <div class="cara"><svg viewBox="0 0 100 100"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a3c0c"/><stop offset="1" stop-color="#2d1d04"/></linearGradient></defs>
+          <circle cx="50" cy="50" r="44" fill="none" stroke="url(#g1)" stroke-width="1.6" stroke-dasharray="2 3"/>
+          <text x="50" y="62" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="34" font-style="italic" fill="url(#g1)">A</text>
+          <text x="50" y="80" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" letter-spacing="2" fill="url(#g1)">ATTA</text></svg></div>
+        <div class="cara tras"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="#3d290a" stroke-width="1.6" stroke-dasharray="2 3"/>
+          <path d="M50 24 L70 34 V52 C70 64 61 72 50 76 C39 72 30 64 30 52 V34 Z" fill="none" stroke="#3d290a" stroke-width="2.4"/>
+          <path d="M41 51 l7 7 13-14" fill="none" stroke="#3d290a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="50" y="88" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5.5" letter-spacing="1.5" fill="#3d290a">ATTENCIONA</text></svg></div>
+      </div>
+      <div class="sombra"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap cifras">
+  <div class="cifra glass reveal"><b data-n="100000000">0</b><span>ATTA para siempre · ni uno más</span></div>
+  <div class="cifra glass reveal"><b>100 %</b><span>respaldo en USDC dentro del contrato</span></div>
+  <div class="cifra glass reveal"><b>6 + 18</b><span>meses de bloqueo del creador</span></div>
+  <div class="cifra glass reveal"><b>0</b><span>funciones para retirar el respaldo</span></div>
+</div>
+
+<section id="directo"><div class="wrap">
+  <span class="k reveal">En directo · leído de la blockchain de Base</span>
+  <h2 class="reveal">ATTA, <em>ahora mismo</em>.</h2>
+  <div class="cifras" style="margin-top:2rem">
+    <div class="cifra glass reveal"><b id="vP">…</b><span>precio en la curva (USDC)</span></div>
+    <div class="cifra glass reveal"><b id="vR">…</b><span>respaldo USDC en el contrato</span></div>
+    <div class="cifra glass reveal"><b id="vV">…</b><span>ATTA en manos de la gente</span></div>
+    <div class="cifra glass reveal"><b id="vQ">…</b><span>ATTA quemados</span></div>
+  </div>
+  <div class="garantias" style="margin-top:1.2rem">
+    <div class="gar glass reveal"><h3>Contratos</h3><p>Compruébalos tú mismo en BaseScan.</p>
+      <code>ATTA · <a href="https://basescan.org/token/0x680f2D99a42AA4f3361c2ec3F96492775812d05B" target="_blank" rel="noopener">0x680f…d05B</a></code>
+      <code>Curva · <a href="https://basescan.org/address/0xFe4bC5131ffB17B1c1F957872120E2fCA0e359b2" target="_blank" rel="noopener">0xFe4b…59b2</a></code>
+      <code>Bloqueo creador · <a href="https://basescan.org/address/0x68Dc811DA4b2450798d7Efd8ef6483Ab37062E16" target="_blank" rel="noopener">0x68Dc…2E16</a></code></div>
+    <div class="gar glass reveal"><h3>Poseedores</h3><p>La lista completa de quién tiene ATTA es pública.</p><code><a href="https://basescan.org/token/0x680f2D99a42AA4f3361c2ec3F96492775812d05B#balances" target="_blank" rel="noopener">Ver poseedores en BaseScan →</a></code></div>
+  </div>
+</div></section>
+
+<section id="historia" style="background:linear-gradient(180deg,transparent,rgba(12,35,80,.55),transparent)"><div class="wrap">
+  <span class="k reveal">La historia · dos meses de trabajo hasta la salida</span>
+  <h2 class="reveal">De la primera línea <em>al mercado</em>.</h2>
+  <div class="ruta">
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>Septiembre · el ecosistema</h3><p>Negocios attenciona de la Fase 1 a la 4, marketplace con pagos en cripto e infraestructura propia que se vigila y se repara sola.</p></div></div>
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>Septiembre–octubre · bots y datos</h3><p>Bots de trading en papel y en real, campeonatos por eliminación, laboratorios de estrategias y radares on-chain en Base, con resultados contados con números reales.</p></div></div>
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>Octubre · seguridad y producto</h3><p>Escudos contra estafas y carteras gemelas, attenciona Bot para MT5, servidor propio, chat interno privado y /adn, la identidad que protege a la persona.</p></div></div>
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>1 de noviembre · ATTA</h3><p>Diseño del token, white paper, contratos sobre OpenZeppelin 5, pruebas automáticas de cada garantía, despliegue en Base y primera compra del creador.</p></div></div>
+    <div class="paso glass ahora reveal"><span class="p">→</span><div><h3>Ahora · salida al mercado</h3><p>ATTA disponible para todo el mundo en su curva, con seguimiento en directo en esta página.</p></div></div>
+  </div>
+</div></section>
+
+<section id="confianza"><div class="wrap">
+  <span class="k reveal">Por qué fiarse</span>
+  <h2 class="reveal">No te pedimos confianza. <em>Te damos pruebas.</em></h2>
+  <p class="lead reveal">Cada promesa de ATTA es una línea de código que cualquiera puede leer en la blockchain. Si no está en el contrato, no lo prometemos.</p>
+  <div class="garantias">
+    <div class="gar glass reveal"><div class="ic">🏦</div><h3>Tu USDC no se puede tocar</h3><p>Lo que pagas por ATTA se queda dentro del contrato como respaldo. Solo sale para recomprarte tus ATTA. No existe ninguna función para retirarlo: ni el creador puede.</p><code>Curva.sol · sin retirar() · sin propietario</code></div>
+    <div class="gar glass reveal"><div class="ic">🔒</div><h3>El creador, bloqueado</h3><p>El 30 % del creador está en un contrato de bloqueo de OpenZeppelin: nada durante 6 meses y después, poco a poco, hasta los 24. Visible para todos.</p><code>BloqueoCreador.sol · VestingWalletCliff</code></div>
+    <div class="gar glass reveal"><div class="ic">💎</div><h3>Suministro fijo</h3><p>100 millones acuñados una sola vez al nacer. El contrato no sabe crear más. Con el uso solo puede haber menos, nunca más.</p><code>ATT.sol · sin mint() público</code></div>
+    <div class="gar glass reveal"><div class="ic">📐</div><h3>Precio por fórmula</h3><p>Nadie fija el precio a mano. Lo mueve una curva pública: cada compra lo sube, cada venta lo baja, siempre con la misma regla.</p><code>precio = 0,001 + 0,001 × millones vendidos</code></div>
+    <div class="gar glass reveal"><div class="ic">🛡️</div><h3>Piezas auditadas</h3><p>Construido sobre OpenZeppelin 5, la librería que usa media industria: ERC-20, transferencias seguras y protección contra reentradas.</p><code>SafeERC20 · ReentrancyGuard</code></div>
+    <div class="gar glass reveal"><div class="ic">🔥</div><h3>Comisiones fijas para siempre</h3><p>2 % por compra y por venta, escrito en el contrato como constante. No se puede subir mañana. Y el 1 % de cada recompra se quema.</p><code>COMISION_BPS = 200 · QUEMA_BPS = 100</code></div>
+  </div>
+</div></section>
+
+<section id="utilidad" style="background:linear-gradient(180deg,transparent,rgba(12,35,80,.55),transparent)"><div class="wrap">
+  <span class="k reveal">Para qué sirve</span>
+  <h2 class="reveal">Hecha para <em>usarse</em>, no para guardarse en un cajón.</h2>
+  <div class="usos">
+    <div class="uso glass reveal"><span class="num">01</span><h3>Pagar servicios</h3><p>Bots MT5, chat privado para empresas, demos y herramientas del ecosistema attenciona.</p></div>
+    <div class="uso glass reveal"><span class="num">02</span><h3>Regalos por familias</h3><p>Créditos ATTA para los usuarios de cada familia: trading, seguridad, negocios. Para estrenar servicios sin pagar de tu bolsillo.</p></div>
+    <div class="uso glass reveal"><span class="num">03</span><h3>Trazabilidad total</h3><p>Cada pago, regalo y quema queda registrado en Base. Lo compruebas tú, sin pedir permiso a nadie.</p></div>
+    <div class="uso glass reveal"><span class="num">04</span><h3>Un ecosistema que crece</h3><p>Cada servicio nuevo de attenciona es un uso nuevo para ATTA. Más uso, más gente que la necesita.</p></div>
+  </div>
+</div></section>
+
+<section id="curva"><div class="wrap">
+  <span class="k reveal">Simulador · la fórmula real del contrato</span>
+  <h2 class="reveal">Mueve la curva. <em>Mira qué pasa.</em></h2>
+  <p class="lead reveal">Cuanta más gente usa y compra ATTA, más arriba está el precio en la curva. Desliza para ver el precio y el respaldo con cada nivel de ventas.</p>
+  <div class="sim">
+    <div class="graf glass reveal">
+      <svg id="svg" viewBox="0 0 600 340" role="img" aria-label="Curva de precio de ATTA">
+        <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2b45a" stop-opacity=".45"/><stop offset="1" stop-color="#e2b45a" stop-opacity="0"/></linearGradient></defs>
+        <g id="ejes" font-family="JetBrains Mono,monospace" font-size="11" fill="#9fb0cf"></g>
+        <path id="relleno" fill="url(#area)"/>
+        <path id="recta" fill="none" stroke="#e2b45a" stroke-width="3" stroke-linecap="round"/>
+        <line id="guia" stroke="#f7dc9a" stroke-dasharray="4 4" stroke-width="1.4"/>
+        <circle id="punto" r="8" fill="#f7dc9a" stroke="#071630" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="ctrl glass reveal">
+      <label for="r">ATTA comprados por la comunidad<output id="o">10 M</output></label>
+      <input type="range" id="r" min="0" max="45" step="0.5" value="10">
+      <div class="dato"><span>Precio en la curva</span><b id="dP">—</b></div>
+      <div class="dato"><span>Respaldo USDC en el contrato</span><b id="dR">—</b></div>
+      <div class="dato"><span>Respecto al precio inicial</span><b id="dX">—</b></div>
+      <p class="nota">Ilustración de la fórmula, no una previsión. Si se vende, el punto baja por la misma recta.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="reparto" style="background:linear-gradient(180deg,transparent,rgba(12,35,80,.55),transparent)"><div class="wrap">
+  <span class="k reveal">Reparto · 100.000.000 ATTA</span>
+  <h2 class="reveal">Cada ATTA, <em>en su sitio</em>.</h2>
+  <div class="rep">
+    <div class="dona reveal">
+      <svg viewBox="0 0 42 42" id="dona"></svg>
+      <div class="centro"><div><b>100 M</b><span>suministro fijo</span></div></div>
+    </div>
+    <div class="leyenda">
+      <div class="ley glass reveal"><i style="background:#e2b45a"></i><div><b>Comunidad · curva de venta</b><p>Lo que compra la gente. El USDC se queda dentro como respaldo.</p></div><span class="pc">45 %</span></div>
+      <div class="ley glass reveal"><i style="background:#5b8fe6"></i><div><b>Creador</b><p>Bloqueado: 0 % en 6 meses, luego liberación lineal hasta los 24.</p></div><span class="pc">30 %</span></div>
+      <div class="ley glass reveal"><i style="background:#4fd08b"></i><div><b>Regalos por familias</b><p>Repartos a usuarios del ecosistema, con registro público.</p></div><span class="pc">15 %</span></div>
+      <div class="ley glass reveal"><i style="background:#b48cf0"></i><div><b>Equipo técnico y operaciones</b><p>Desarrollo, infraestructura y equipo, con uso explicado.</p></div><span class="pc">10 %</span></div>
+    </div>
+  </div>
+  <div class="linea glass reveal">
+    <span class="k">Bloqueo del creador</span>
+    <div class="track"><div class="cliff"></div><div class="vest"></div></div>
+    <div class="hitos"><span>Lanzamiento · 0 %</span><span>Mes 6 · empieza</span><span>Mes 15 · 50 %</span><span>Mes 24 · 100 %</span></div>
+  </div>
+</div></section>
+
+<section id="ruta"><div class="wrap">
+  <span class="k reveal">Hoja de ruta</span>
+  <h2 class="reveal">Paso a paso, <em>sin atajos</em>.</h2>
+  <div class="ruta">
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>Contratos y pruebas</h3><p>Token, curva de precio y bloqueo del creador sobre OpenZeppelin 5, con pruebas automáticas.</p></div></div>
+    <div class="paso glass hecho reveal"><span class="p">✓</span><div><h3>Lanzamiento en Base</h3><p>Contratos desplegados el 01/11/2026 y página de compra y venta.</p></div></div>
+    <div class="paso glass ahora reveal"><span class="p">03</span><div><h3>Código verificado y ficha en BaseScan</h3><p>Código fuente público en BaseScan y ficha del token con logo y web.</p></div></div>
+    <div class="paso glass reveal"><span class="p">04</span><div><h3>Pagar con ATTA y regalos por familias</h3><p>Servicios del ecosistema pagables en ATTA y primeros repartos a usuarios.</p></div></div>
+    <div class="paso glass reveal"><span class="p">05</span><div><h3>Pool en Uniswap y listados</h3><p>Liquidez en un mercado descentralizado para aparecer en DexScreener, CoinGecko y CoinMarketCap.</p></div></div>
+  </div>
+</div></section>
+
+<section id="whitepaper" style="background:linear-gradient(180deg,transparent,rgba(12,35,80,.55),transparent)"><div class="wrap">
+  <span class="k reveal">White paper · v0.1 · borrador · 01/11/2026</span>
+  <h2 class="reveal">El documento <em>completo</em>.</h2>
+  <div class="wp glass reveal">
+    <details open><summary>1. Qué es ATTA</summary><div class="c"><p>ATTA es un token ERC-20 de utilidad en la red Base, emitido por attenciona para pagar y premiar el uso de los servicios de su ecosistema. Da acceso a servicios que ya funcionan, como Bots MT5. No da derechos de propiedad, voto, dividendos ni participación en beneficios.</p></div></details>
+    <details><summary>2. Suministro</summary><div class="c"><ul><li>100.000.000 ATTA acuñados una sola vez al desplegar. El contrato no tiene función para crear más.</li><li>Cualquier titular puede quemar sus ATTA. La curva quema el 1 % de cada recompra.</li></ul></div></details>
+    <details><summary>3. Reparto y bloqueos</summary><div class="c"><ul><li>45 % curva de venta · 30 % creador · 15 % regalos y promoción · 10 % equipo y operaciones.</li><li>La parte del creador está en un contrato de bloqueo (VestingWalletCliff de OpenZeppelin): 0 % durante 6 meses y liberación lineal hasta los 24 meses. Nadie puede adelantarla.</li></ul></div></details>
+    <details><summary>4. Curva de precio</summary><div class="c"><ul><li>Precio = 0,001 USDC + 0,001 USDC por cada millón de ATTA vendidos por la curva.</li><li>Comprar sube el precio; vender lo baja. El coste de cada compra es el área bajo la recta, calculada por el contrato.</li><li>El USDC de las compras queda en el contrato como respaldo y solo sale para recomprar ATTA. No existe función de retirada.</li><li>La curva solo recompra hasta la cantidad que ella misma vendió.</li><li>Cada operación lleva protección de precio: máximo a pagar al comprar y mínimo a recibir al vender.</li></ul></div></details>
+    <details><summary>5. Comisiones</summary><div class="c"><p>2 % de cada compra y de cada venta en la curva, fijo en el contrato, para el creador. Así se financia el proyecto sin tocar el respaldo de los usuarios. Comprar y vender seguido cuesta, por tanto, un 4 %.</p></div></details>
+    <details><summary>6. Seguridad</summary><div class="c"><ul><li>Contratos basados en OpenZeppelin 5 (ERC-20, SafeERC20, ReentrancyGuard, VestingWalletCliff).</li><li>Código abierto y pruebas automáticas antes del despliegue. Se publicará y verificará la dirección de cada contrato.</li></ul></div></details>
+    <details><summary>7. Riesgos</summary><div class="c"><ul><li>El precio puede bajar y puedes perder lo pagado. Sin uso real, la demanda puede ser baja.</li><li>Riesgos técnicos: errores en contratos, en la red Base o en tu cartera. Si pierdes tu clave, pierdes tus ATTA.</li><li>Riesgo regulatorio: la normativa europea (MiCA) puede exigir cambios o limitar dónde se ofrece.</li></ul></div></details>
+    <details><summary>8. Marco legal</summary><div class="c"><p>attenciona está revisando la aplicación del Reglamento (UE) 2023/1114 (MiCA) antes de cualquier venta al público, incluida la notificación de este documento a la autoridad competente si corresponde. Esta página es informativa y no constituye una oferta ni un consejo de inversión.</p></div></details>
+  </div>
+  <div class="riesgo reveal">ATTA es un token de utilidad, no una inversión. Nadie garantiza que su precio suba y puedes perder lo que pagues. Nada de esta página es una oferta ni un consejo de inversión.</div>
+</div></section>
+
+<section class="final"><div class="wrap">
+  <span class="k reveal">attenciona · ATTA</span>
+  <h2 class="reveal">Reglas a la vista. <em>Siempre.</em></h2>
+  <p class="lead reveal" style="margin-inline:auto">Ya está en Base. Compruébalo en BaseScan y, si te encaja, consíguela directamente en su curva.</p>
+  <div class="btns reveal"><a class="btn oro" href="/atta/comprar/">Comprar o vender ATTA</a><a class="btn vidrio" href="#whitepaper">White paper</a></div>
+</div></section>
+
+<footer><div class="wrap">attenciona · ATTA en Base · token 0x680f2D99a42AA4f3361c2ec3F96492775812d05B · white paper v0.1 · 01/11/2026</div></footer>
+
+<script>
+// aparición al hacer scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+// barra fija
+const nav = document.getElementById("nav");
+addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), { passive: true });
+// contador 100.000.000
+const fmt = n => n.toLocaleString("es-ES");
+document.querySelectorAll("[data-n]").forEach(el => {
+  const fin = +el.dataset.n; let hecho = false;
+  new IntersectionObserver(([e]) => { if (!e.isIntersecting || hecho) return; hecho = true; const t0 = performance.now();
+    (function paso(t) { const k = Math.min(1, (t - t0) / 1600); el.textContent = fmt(Math.round(fin * (1 - Math.pow(1 - k, 3)))); if (k < 1) requestAnimationFrame(paso); })(t0); }).observe(el);
+});
+// cielo de partículas doradas
+(() => {
+  const c = document.getElementById("estrellas"), x = c.getContext("2d"); let W, H, ps;
+  const tam = () => { W = c.width = c.offsetWidth * devicePixelRatio; H = c.height = c.offsetHeight * devicePixelRatio;
+    ps = Array.from({ length: Math.min(110, Math.round(W * H / 22000)) }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.6 + .3, v: Math.random() * .25 + .05, a: Math.random() })); };
+  tam(); addEventListener("resize", tam);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  (function dib() { x.clearRect(0, 0, W, H);
+    for (const p of ps) { p.y -= p.v * devicePixelRatio; p.a += .01; if (p.y < 0) { p.y = H; p.x = Math.random() * W; }
+      x.globalAlpha = .35 + Math.sin(p.a) * .3; x.fillStyle = "#f7dc9a"; x.beginPath(); x.arc(p.x, p.y, p.r * devicePixelRatio, 0, 7); x.fill(); }
+    requestAnimationFrame(dib); })();
+})();
+// simulador: fórmula del contrato  precio = 0,001·(1+s)  ·  respaldo = 1000·s + 500·s²  (s en millones)
+(() => {
+  const L = 60, R = 580, T = 20, B = 300, SMAX = 45, PMAX = .05;
+  const X = s => L + (s / SMAX) * (R - L), Y = p => B - (p / PMAX) * (B - T), precio = s => .001 * (1 + s);
+  const ejes = document.getElementById("ejes"); let h = "";
+  for (let p = 0; p <= PMAX + 1e-9; p += .01) h += `<line x1="${L}" x2="${R}" y1="${Y(p)}" y2="${Y(p)}" stroke="rgba(255,255,255,.07)"/><text x="${L - 8}" y="${Y(p) + 4}" text-anchor="end">${p.toFixed(2)}</text>`;
+  for (let s = 0; s <= SMAX; s += 15) h += `<text x="${X(s)}" y="${B + 22}" text-anchor="middle">${s} M</text>`;
+  h += `<text x="${L}" y="12">USDC por ATTA</text>`;
+  ejes.innerHTML = h;
+  document.getElementById("recta").setAttribute("d", `M${X(0)} ${Y(precio(0))} L${X(SMAX)} ${Y(precio(SMAX))}`);
+  const r = document.getElementById("r"), $ = id => document.getElementById(id);
+  const usd = n => n.toLocaleString("es-ES", { maximumFractionDigits: 0 }) + " $";
+  const pinta = () => { const s = +r.value, p = precio(s);
+    $("relleno").setAttribute("d", `M${X(0)} ${B} L${X(0)} ${Y(precio(0))} L${X(s)} ${Y(p)} L${X(s)} ${B} Z`);
+    $("punto").setAttribute("cx", X(s)); $("punto").setAttribute("cy", Y(p));
+    const g = $("guia"); g.setAttribute("x1", X(s)); g.setAttribute("x2", X(s)); g.setAttribute("y1", Y(p)); g.setAttribute("y2", B);
+    $("o").textContent = s.toLocaleString("es-ES") + " M";
+    $("dP").textContent = p.toLocaleString("es-ES", { minimumFractionDigits: 4, maximumFractionDigits: 4 }) + " USDC";
+    $("dR").textContent = usd(1000 * s + 500 * s * s);
+    $("dX").textContent = "× " + (1 + s).toLocaleString("es-ES", { maximumFractionDigits: 1 });
+  };
+  r.addEventListener("input", pinta); pinta();
+})();
+// en directo: lee la curva y el token en Base
+(() => {
+  const llama = (to, data) => fetch("https://base-rpc.publicnode.com", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_call", params: [{ to, data }, "latest"] }) }).then(r => r.json()).then(j => BigInt(j.result));
+  const CURVA = "0xFe4bC5131ffB17B1c1F957872120E2fCA0e359b2", ATTA = "0x680f2D99a42AA4f3361c2ec3F96492775812d05B";
+  const f = (n, d) => n.toLocaleString("es-ES", { maximumFractionDigits: d });
+  const pinta = async () => { try {
+    const [p, r, v, t] = await Promise.all([llama(CURVA, "0x4c22ea72"), llama(CURVA, "0xaa2e93cc"), llama(CURVA, "0x66042fb3"), llama(ATTA, "0x18160ddd")]);
+    document.getElementById("vP").textContent = f(Number(p) / 1e6, 6);
+    document.getElementById("vR").textContent = f(Number(r) / 1e6, 2);
+    document.getElementById("vV").textContent = f(Number(v / 10n ** 18n), 0);
+    document.getElementById("vQ").textContent = f(Number((10n ** 26n - t) / 10n ** 18n), 0);
+  } catch (e) {} };
+  pinta(); setInterval(pinta, 30000);
+})();
+// dona del reparto
+(() => {
+  const partes = [[45, "#e2b45a"], [30, "#5b8fe6"], [15, "#4fd08b"], [10, "#b48cf0"]], C = 2 * Math.PI * 15.9155; let off = 0, h = "";
+  for (const [v, col] of partes) { h += `<circle cx="21" cy="21" r="15.9155" fill="none" stroke="${col}" stroke-width="6" stroke-dasharray="${v * C / 100 - .6} ${C}" stroke-dashoffset="${-off * C / 100}"/>`; off += v; }
+  document.getElementById("dona").innerHTML = `<circle cx="21" cy="21" r="15.9155" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="6"/>` + h;
+})();
+</script>
+</body>
+</html>

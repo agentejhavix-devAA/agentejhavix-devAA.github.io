@@ -1,0 +1,23 @@
+# XML2Data
+
+XML2Data — tu XML fiscal a CSV, JSON o Excel en segundos. en LATAM — La contabilidad trabaja con datos, no con XML. Dato duro: CFDI 4.0 vigente (SAT); declaración anual 30/04/2027. Herramienta en el navegador contra la transcripción manual. Gratis 20/mes + Pro anual (4 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fiscal · Convertidores.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 4 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://www.sat.gob.mx/minisitio/Factura/solicita_requisitos.htm (SAT — Requisitos de la factura)
+2. https://www.upseller.com/es/blog-article-642 (UpSeller — CFDI 4.0 en 2026)
+3. https://facturama.mx/blog/factura-4-0-cfdi-cambios-sat/ (Facturama — Cambios del CFDI 4.0)
+4. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+5. https://www.klar.mx/post/como-hacer-tu-declaracion-anual-sat-paso-a-paso (Klar — Declaración anual)
+
+## Precio
+- Gratis: 20 conversiones al mes.
+- Pro (4 USD pago único, cripto vía NOWPayments): Conversiones ilimitadas; Nómina y lotes; JSON y Excel; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. La conversión no altera tu comprobante: el XML original sigue siendo tu respaldo fiscal. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

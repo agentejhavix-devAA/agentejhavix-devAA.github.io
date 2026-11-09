@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanad — Your UAE e-invoicing phase, stamped · EIS</title>
+<meta name="description" content="UAE e-invoicing (EIS): businesses with revenue of AED 50M or more must appoint an Accredited Service Provider by 30 October 2026 and exchange e-invoices…">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#433BC4">
+<link rel="canonical" href="https://www.attenciona.com/negocios/sanad/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23433BC4'/%3E%3Cpath d='M10 12a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M14 16l2.2 2.2L21 14' stroke='%23E9C46A' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+/* ============================================================
+   Sanad · UAE e-invoicing (EIS) phase checker
+   Identität: Índigo-emiratí (Syne + Inter),
+   índigo #433BC4 (paleta real de Wafeq, audiencia contable EAU)
+   + arena #E9C46A + tinta nocturna. Firma funcional: el sello EIS
+   — tu fase + deadline de ASP + fecha de obligación con cuenta atrás.
+   Fuentes autohospedadas (sin CDN). Cero emojis.
+   ============================================================ */
+  @font-face{font-family:'Syne';font-style:normal;font-weight:500 700;font-display:swap;src:url('fonts/syne-latin.woff2') format('woff2');}
+  :root{
+    --paper:#FAF8F1; --surface:#FFFFFF; --surface-2:#F0EDE3;
+    --ink:#171A2E; --ink-2:#4C5168; --line:#E3DFD2; --line-2:#CBC5B4;
+    --brand:#433BC4;       /* índigo real Wafeq · autoridad / EIS */
+    --brand-2:#352F9E; --brand-wash:#ECEBFA;
+    --sand:#E9C46A;        /* arena emiratí · plazos / acción */
+    --sand-2:#C9A227; --sand-wash:#FBF4DF;
+    --ok:#15803D; --ok-wash:#E7F5EC; --warn:#A16207; --warn-wash:#FBF3DC;
+    --shadow:0 1px 2px rgba(23,26,46,.06), 0 10px 30px rgba(23,26,46,.09);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:'Syne','Segoe UI',system-ui,sans-serif;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.12; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2.1rem,4.6vw,3.2rem); letter-spacing:-.02em}
+  h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+  h3{font-size:1.2rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0 0 12px}
+  a{color:inherit}
+  img,svg{display:block}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--sand-2); background:var(--sand-wash); border:1px solid #EFE2BA; padding:7px 13px; border-radius:999px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s; text-decoration:none; font-family:var(--sans)}
+  .btn:active{transform:translateY(1px)}
+  .btn-brand{background:var(--brand); color:#fff; box-shadow:0 1px 2px rgba(53,47,158,.3), 0 8px 20px rgba(67,59,196,.28)}
+  .btn-brand:hover{background:var(--brand-2)}
+  .btn-steel{background:var(--brand); color:#fff}
+  .btn-steel:hover{background:var(--brand-2)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .btn-sm{height:40px; padding:0 16px; font-size:var(--t-sm)}
+  .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+  .skip:focus{position:fixed; left:12px; top:12px; width:auto; height:auto; z-index:100; background:#fff; padding:10px 14px; border-radius:8px; box-shadow:var(--shadow)}
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none} }
+
+  /* ---- Nav ---- */
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(250,248,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+  .nav-in{display:flex; align-items:center; justify-content:space-between; height:64px; gap:16px}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--disp); font-weight:700; font-size:19px; text-decoration:none; color:var(--ink)}
+  .brand .mark{width:30px; height:30px; border-radius:8px; background:var(--brand); display:grid; place-items:center; box-shadow:inset 0 1.5px 0 rgba(255,255,255,.2)}
+  .brand .mark svg{width:18px; height:18px}
+  nav.links{display:flex; align-items:center; gap:4px}
+  nav.links a{color:var(--ink-2); text-decoration:none; font-size:14px; font-weight:500; padding:8px 12px; border-radius:999px; transition:background .12s,color .12s}
+  nav.links a:hover{color:var(--ink); background:var(--surface-2)}
+  @media (max-width:760px){ nav.links a:not(.btn){display:none} }
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 0}
+  .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:44px; align-items:center}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} }
+  .hero h1{margin:18px 0 16px}
+  .hero h1 .rd{color:var(--brand-2)}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6; max-width:54ch}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+  .hero-meta{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:20px; font-size:var(--t-sm); color:var(--ink-2)}
+  .hero-meta .hm{display:inline-flex; align-items:center; gap:6px}
+  .hero-meta .dot{width:8px; height:8px; border-radius:50%; background:var(--ok); flex:none}
+  .hero-meta .dot.red{background:var(--sand-2)}
+
+  /* ---- Stamp visual ---- */
+  .stamp-wrap{display:grid; place-items:center; padding:8px 0}
+  .stamp{transform:rotate(-3deg); background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:18px 20px; max-width:330px; width:100%}
+  .stamp .top{display:flex; justify-content:space-between; align-items:center; font-size:var(--t-xs); color:var(--ink-2); letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px}
+  .stamp .ring{border:2.5px solid var(--brand); border-radius:10px; padding:14px 16px; text-align:center; background:var(--brand-wash)}
+  .stamp .ring .l1{font-family:var(--disp); font-weight:700; font-size:1.15rem; color:var(--brand); letter-spacing:.02em}
+  .stamp .ring .l2{font-family:var(--mono); font-size:1.4rem; font-weight:600; color:var(--ink); margin:6px 0 2px}
+  .stamp .ring .l3{font-size:var(--t-xs); color:var(--ink-2); text-transform:uppercase; letter-spacing:.1em}
+  .stamp .foot{display:flex; justify-content:space-between; margin-top:12px; font-size:var(--t-xs); color:var(--ink-2)}
+  .stamp .foot .chk{display:inline-flex; align-items:center; gap:5px}
+  .stamp .foot .chk.on{color:var(--ok); font-weight:600}
+
+  /* ---- Bands ---- */
+  .band{padding:72px 0}
+  .band.tint{background:var(--surface)}
+  .band.grey{background:var(--surface-2)}
+  .sec-head{margin-bottom:34px; max-width:760px}
+  .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
+  .sec-head h2{margin:12px 0 8px}
+  .sec-head .lead{font-size:var(--t-md); margin:0}
+
+  /* ---- Phases: timeline ---- */
+  .timeline{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  @media (max-width:860px){ .timeline{grid-template-columns:1fr} }
+  .t-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:18px}
+  .t-item .t-date{font-family:var(--mono); font-size:var(--t-sm); font-weight:600; color:var(--brand); letter-spacing:.02em}
+  .t-item.done .t-date{color:var(--ok)}
+  .t-item.next .t-date{color:var(--sand-2)}
+  .t-item h3{font-size:1.02rem; margin:10px 0 6px}
+  .t-item p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .t-item .tag{display:inline-block; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-top:12px; padding:4px 10px; border-radius:999px}
+  .tag.live{background:var(--ok-wash); color:var(--ok)}
+  .tag.warn{background:var(--sand-wash); color:var(--sand-2)}
+  .tag.soon{background:var(--brand-wash); color:var(--brand)}
+
+  /* ---- Tool ---- */
+  .toolbox{background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:30px; max-width:860px; margin:0 auto}
+  .steps-row{display:flex; align-items:center; gap:8px; margin-bottom:26px}
+  .step-dot{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-family:var(--disp); font-weight:700; font-size:var(--t-sm); background:var(--surface-2); color:var(--ink-2); transition:all .2s}
+  .step-dot.on{background:var(--brand); color:#fff}
+  .step-dot.ok{background:var(--ok); color:#fff}
+  .step-line{flex:1; height:2px; background:var(--line-2); border-radius:2px}
+  .step-line.ok{background:var(--ok)}
+  .qhead{margin-bottom:22px}
+  .qhead .qk{font-size:var(--t-xs); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-bottom:8px}
+  .qhead h3{font-size:1.35rem}
+  .toolstep{display:none}
+  .toolstep.on{display:block; animation:fade .25s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  .opts{display:grid; gap:10px; margin-top:6px}
+  .opt{display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border:1.5px solid var(--line-2); border-radius:var(--r-sm); cursor:pointer; background:var(--surface); transition:border-color .15s, background .15s; text-align:left; width:100%; font:inherit; color:var(--ink)}
+  .opt:hover{border-color:var(--brand)}
+  .opt.sel{border-color:var(--brand); background:var(--brand-wash)}
+  .opt .o-radio{width:18px; height:18px; border-radius:50%; border:2px solid var(--line-2); flex:none; margin-top:3px; display:grid; place-items:center; transition:border-color .15s}
+  .opt.sel .o-radio{border-color:var(--brand)}
+  .opt.sel .o-radio::after{content:''; width:8px; height:8px; border-radius:50%; background:var(--brand)}
+  .opt b{display:block; font-weight:600}
+  .opt small{color:var(--ink-2); font-size:var(--t-sm)}
+  .qnav{display:flex; justify-content:space-between; align-items:center; margin-top:26px; gap:12px}
+  .qnav .side{display:flex; gap:10px}
+  .hint{font-size:var(--t-sm); color:var(--ink-2)}
+  #restart{background:none; border:none; color:var(--ink-2); font-size:var(--t-sm); cursor:pointer; text-decoration:underline; padding:6px}
+
+  /* ---- Verdict ---- */
+  .verdict{border:1px solid var(--line); border-radius:var(--r); padding:24px; margin-top:20px; background:var(--paper)}
+  .vcat{display:inline-flex; align-items:center; gap:7px; font-size:var(--t-xs); font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .vcat.need{background:var(--sand-wash); color:var(--sand-2)}
+  .vcat.ok{background:var(--ok-wash); color:var(--ok)}
+  .vcat.soon{background:var(--brand-wash); color:var(--brand)}
+  .verdict h3{font-size:1.35rem; margin-bottom:8px}
+  .vtable{margin-top:14px; border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  .vrow{display:flex; justify-content:space-between; gap:14px; padding:13px 16px; border-top:1px solid var(--line); background:var(--surface)}
+  .vrow:first-child{border-top:0}
+  .vrow .k{color:var(--ink-2); font-size:var(--t-sm)}
+  .vrow .v{font-weight:600; text-align:right; font-size:var(--t-sm)}
+  .vrow.due .v{color:var(--sand-2)}
+  .vrow.ok .v{color:var(--ok)}
+  .vlist{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:9px}
+  .vlist li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink)}
+  .vlist li .i{width:17px; height:17px; flex:none; margin-top:3px; color:var(--ok); stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .vlist li.w .i{color:var(--sand-2)}
+  .vlist li.w{color:var(--sand-2)}
+  .vnote{background:var(--warn-wash); border:1px solid #EBDBA8; border-radius:var(--r-sm); padding:13px 15px; font-size:var(--t-sm); color:#6B5510; margin-top:16px}
+  .vprint{display:flex; justify-content:flex-end; margin-top:18px}
+  .footnote{font-size:var(--t-xs); color:var(--ink-2); margin-top:14px}
+
+  /* ---- Steps / pricing ---- */
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px}
+  .step .num-b{width:34px; height:34px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-family:var(--disp); font-weight:700; margin-bottom:16px}
+  .step h3{margin-bottom:8px; font-size:1.1rem}
+  .step p{font-size:var(--t-sm); color:var(--ink-2); margin:0}
+  .price-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:860px; margin:0 auto}
+  @media (max-width:760px){ .price-grid{grid-template-columns:1fr} }
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; position:relative}
+  .plan.feat{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand), var(--shadow)}
+  .plan .badge{position:absolute; top:-12px; left:24px; background:var(--brand); color:#fff; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:5px 12px; border-radius:999px}
+  .plan h3{margin-bottom:4px}
+  .plan .amt{font-family:var(--disp); font-size:2.3rem; font-weight:700; margin:10px 0 18px}
+  .plan .amt small{font-size:var(--t-sm); color:var(--ink-2); font-weight:500}
+  .plan ul{list-style:none; padding:0; margin:0 0 22px; display:grid; gap:10px}
+  .plan li{display:flex; gap:10px; align-items:flex-start; font-size:var(--t-sm)}
+  .plan li .i{width:17px; height:17px; flex:none; margin-top:3px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+  .plan li.y .i{color:var(--ok)}
+  .plan li.n .i{color:var(--line-2)}
+  .plan li.n{color:var(--ink-2)}
+  .plan .btn{width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); text-align:center; margin:12px 0 0}
+
+  /* ---- FAQ ---- */
+  .faq{max-width:820px; margin:0 auto; display:grid; gap:10px}
+  details.faq-item{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); overflow:hidden}
+  details.faq-item summary{list-style:none; cursor:pointer; padding:17px 20px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary .chev{width:18px; height:18px; flex:none; color:var(--ink-2); transition:transform .2s; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+  details.faq-item[open] summary .chev{transform:rotate(180deg)}
+  details.faq-item .a{padding:0 20px 18px; font-size:var(--t-sm); color:var(--ink-2)}
+  details.faq-item .a a{color:var(--brand); text-decoration:underline}
+
+  /* ---- Sources ---- */
+  .sources{display:grid; gap:12px}
+  .source{display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:16px 18px}
+  .source .sn{width:28px; height:28px; border-radius:8px; background:var(--brand); color:#fff; display:grid; place-items:center; font-family:var(--mono); font-size:var(--t-sm); font-weight:600; flex:none; margin-top:2px}
+  .source a{font-weight:600; color:var(--ink); text-decoration:underline; text-underline-offset:3px}
+  .source a:hover{color:var(--brand-2)}
+  .source small{display:block; color:var(--ink-2); font-size:var(--t-sm); margin-top:3px}
+
+  /* ---- CTA ---- */
+  .cta-final{background:var(--brand); border-radius:18px; padding:52px 40px; text-align:center; color:#fff; position:relative; overflow:hidden}
+  .cta-final::after{content:''; position:absolute; inset:auto -40px -70px auto; width:280px; height:280px; border:38px solid rgba(233,196,106,.14); border-radius:50%}
+  .cta-final h2{color:#fff; font-size:clamp(1.7rem,3.4vw,2.4rem); margin-bottom:12px; position:relative}
+  .cta-final p{color:rgba(255,255,255,.82); max-width:56ch; margin:0 auto 26px; position:relative}
+  .cta-final .btn{position:relative}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:52px 0 40px; margin-top:40px}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:34px}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr} }
+  .foot-brand p{font-size:var(--t-sm); color:var(--ink-2); margin-top:14px; max-width:38ch}
+  .foot-seal{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:600; color:var(--ink-2); background:var(--surface-2); border:1px solid var(--line); border-radius:999px; padding:6px 12px; margin-bottom:16px}
+  .foot-seal svg{width:15px; height:15px; color:var(--brand)}
+  footer h4{font-size:var(--t-sm); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-2); margin-bottom:14px}
+  footer ul{list-style:none; padding:0; margin:0; display:grid; gap:9px}
+  footer ul a{color:var(--ink); text-decoration:none; font-size:var(--t-sm); font-weight:500}
+  footer ul a:hover{text-decoration:underline}
+  .foot-legal{border-top:1px solid var(--line); padding-top:22px; font-size:var(--t-sm); color:var(--ink-2)}
+  .foot-legal strong{color:var(--ink)}
+
+  /* ---- Consent ---- */
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+  @media print{
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip,.vprint{display:none !important}
+    body{background:#fff}
+    .stamp{transform:none; box-shadow:none; border-color:#999}
+    .verdict,.vtable,.vrow{background:#fff; break-inside:avoid}
+  }
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"Sanad","item":"https://www.attenciona.com/negocios/sanad/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sanad","url":"https://www.attenciona.com/negocios/sanad/","datePublished":"2026-08-14","dateModified":"2026-08-13"}</script>
+<!--/BUILD:fase4-schema-->
+<meta property="og:title" content="Sanad — Your UAE e-invoicing phase, stamped · EIS">
+<meta property="og:description" content="UAE e-invoicing (EIS): businesses with revenue of AED 50M or more must appoint an Accredited Service Provider by 30 October 2026 and exchange e-invoices…">
+<meta property="og:url" content="https://www.attenciona.com/negocios/sanad/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sanad — Your UAE e-invoicing phase, stamped · EIS">
+<meta name="twitter:description" content="UAE e-invoicing (EIS): businesses with revenue of AED 50M or more must appoint an Accredited Service Provider by 30 October 2026 and exchange e-invoices…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+</head>
+<body>
+<a class="skip" href="#outil">Skip to the checker</a>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a class="brand" href="#top">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4z"/><path d="M10 12l1.7 1.7L15 10.5" stroke="#E9C46A"/></svg></span>
+      Sanad <span style="color:var(--ink-2); font-weight:500; font-size:14px">· سند</span>
+    </a>
+    <nav class="links">
+      <a href="#act">Phases</a>
+      <a href="#outil">Check my phase</a>
+      <a href="#pricing">Pro</a>
+      <a href="#faq">FAQ</a>
+      <a href="#sources">Sources</a>
+      <a class="btn btn-brand btn-sm" href="#outil">Check now</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>UAE Electronic Invoicing System · EIS</span>
+        <h1>Your UAE e-invoicing <span class="rd">phase, stamped.</span></h1>
+        <p class="lead">Businesses with AED 50M+ revenue must appoint an Accredited Service Provider by <b>30 October 2026</b> and exchange structured e-invoices from <b>1 January 2027</b>. Smaller businesses follow on 1 July 2027. Sanad checks your phase in 60 seconds — in your browser, no account.</p>
+        <div class="hero-actions">
+          <a class="btn btn-brand" href="#outil">Check my phase</a>
+          <a class="btn btn-ghost" href="#act">See the phases</a>
+        </div>
+        <div class="hero-meta">
+          <span class="hm"><span class="dot"></span>Pilot live since 01.07.2026</span>
+          <span class="hm"><span class="dot red"></span>Phase 1 ASP: 30.10.2026 · 78 days</span>
+          <span class="hm"><span class="dot red"></span>Phase 1 e-invoicing: 01.01.2027</span>
+        </div>
+      </div>
+      <div class="stamp-wrap reveal">
+        <div class="stamp">
+          <div class="top"><span>Sanad · EIS Stamp</span><span>MD 243/244-2025</span></div>
+          <div class="ring">
+            <div class="l1">PHASE 1 · ASP</div>
+            <div class="l2">30.10.2026</div>
+            <div class="l3">AED 50M+ · 78 days away</div>
+          </div>
+          <div class="foot">
+            <span class="chk on"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>E-invoicing: 01.01.2027</span>
+            <span class="num">Verified 13.08.2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE PHASES ================= -->
+<section class="band" id="act">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The mandate</span>
+      <h2>Three deadlines reset UAE invoicing</h2>
+      <p class="lead">Under Ministerial Decision No. 243 and 244 of 2025, VAT-registered businesses exchange invoices through a structured five-corner model: supplier, both service providers, buyer — and the Federal Tax Authority. PDFs no longer count as tax invoices.</p>
+    </div>
+    <div class="timeline">
+      <div class="t-item done reveal">
+        <div class="t-date">since 01.07.2026</div>
+        <h3>Pilot + voluntary</h3>
+        <p>The EIS pilot programme and voluntary adoption are <b>live now</b>. Any business can start exchanging structured e-invoices through an accredited provider.</p>
+        <span class="tag live">In force</span>
+      </div>
+      <div class="t-item next reveal">
+        <div class="t-date">30.10.2026</div>
+        <h3>Phase 1 · ASP deadline</h3>
+        <p>Businesses with annual revenue <b>≥ AED 50 million</b> must appoint an FTA-accredited Service Provider. Extended from 31 July 2026 — no more extensions announced.</p>
+        <span class="tag warn">Next · 78 days</span>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-date">01.01.2027</div>
+        <h3>Phase 1 · mandatory</h3>
+        <p>Large businesses must issue and receive e-invoices for B2B and B2G transactions through the EIS. PDF, email and scanned invoices are out.</p>
+        <span class="tag soon">141 days</span>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-date">31.03.2027</div>
+        <h3>Phase 2 · ASP deadline</h3>
+        <p>All other VAT-registered businesses (below AED 50M) and government entities appoint their ASP by this date.</p>
+        <span class="tag soon">230 days</span>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-date">01.07.2027</div>
+        <h3>Phase 2 · mandatory</h3>
+        <p>Remaining in-scope VAT-registered businesses go live on the EIS. Government entities follow on 1 October 2027.</p>
+        <span class="tag soon">322 days</span>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-date">Cabinet Dec. 106/2025</div>
+        <h3>Penalties</h3>
+        <p>AED 5,000 per month without an ASP; AED 100 per missing e-invoice (cap AED 5,000/month); AED 1,000 per day for unreported failures or data changes.</p>
+        <span class="tag warn">Enforced</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOL ================= -->
+<section class="band tint" id="outil">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Phase check</span>
+      <h2>3 questions, your EIS stamp</h2>
+      <p class="lead">Everything runs in your browser. No data leaves your device, no account needed.</p>
+    </div>
+    <div class="toolbox reveal">
+      <div class="steps-row" id="stepsrow" aria-hidden="true">
+        <span class="step-dot on" id="sd0">1</span><span class="step-line" id="sl1"></span>
+        <span class="step-dot" id="sd1">2</span><span class="step-line" id="sl2"></span>
+        <span class="step-dot" id="sd2">3</span><span class="step-line" id="sl3"></span>
+        <span class="step-dot" id="sd3">✓</span>
+      </div>
+
+      <div class="toolstep on" data-step="0">
+        <div class="qhead"><div class="qk">Question 1 of 3</div><h3>Is your business VAT-registered in the UAE?</h3></div>
+        <div class="opts">
+          <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>We are registered for UAE VAT and issue tax invoices.</small></span></button>
+          <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>Not VAT-registered — mandatory registration threshold is AED 375,000.</small></span></button>
+        </div>
+      </div>
+
+      <div class="toolstep" data-step="1">
+        <div class="qhead"><div class="qk">Question 2 of 3</div><h3>Annual revenue of AED 50 million or more?</h3></div>
+        <div class="opts">
+          <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>≥ AED 50M — you are a Phase 1 large business.</small></span></button>
+          <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>Below AED 50M — you are in Phase 2.</small></span></button>
+        </div>
+      </div>
+
+      <div class="toolstep" data-step="2">
+        <div class="qhead"><div class="qk">Question 3 of 3</div><h3>Do you issue tax invoices to other businesses or government (B2B / B2G)?</h3></div>
+        <div class="opts">
+          <button class="opt" data-val="yes"><span class="o-radio"></span><span><b>Yes</b><small>We invoice VAT-registered businesses or government entities.</small></span></button>
+          <button class="opt" data-val="no"><span class="o-radio"></span><span><b>No</b><small>Consumer (B2C) sales only — currently out of scope.</small></span></button>
+        </div>
+      </div>
+
+      <div class="qnav" id="qnav">
+        <button id="restart" type="button">Start over</button>
+        <div class="side">
+          <button class="btn btn-ghost" id="prev" type="button">Back</button>
+          <button class="btn btn-steel" id="next" type="button">Next</button>
+        </div>
+      </div>
+
+      <div id="verdict" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="band grey">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>From question to stamped phase</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num-b">1</span><h3>Answer 3 questions</h3><p>VAT status, revenue tier, and B2B/B2G activity. Sanad maps you against the official FTA rollout timeline.</p></div>
+      <div class="step reveal"><span class="num-b">2</span><span class="num-b" style="background:var(--sand-2)">2</span><h3>Get your EIS stamp</h3><p>The stamp shows your phase, your ASP deadline and your mandatory e-invoicing date — with a live countdown to each.</p></div>
+      <div class="step reveal"><span class="num-b">3</span><h3>Work the checklist</h3><p>Appoint the ASP, run the ERP gap analysis, fix your invoice fields, train the team — step by step against the FTA timeline.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="band" id="pricing">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>Check for free. Print your stamp for 13 $.</h2>
+    </div>
+    <div class="price-grid">
+      <div class="plan reveal">
+        <h3>Free</h3>
+        <div class="amt">0 $</div>
+        <ul>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Your EIS phase (1 or 2)</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>ASP deadline with countdown</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Penalty table for your phase</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Links to official sources</li>
+          <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Printable EIS stamp (PDF)</li>
+          <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Text for your finance team / adviser</li>
+        </ul>
+        <a class="btn btn-ghost" href="#outil">Check for free</a>
+      </div>
+      <div class="plan feat reveal">
+        <span class="badge">Recommended</span>
+        <h3>Pro</h3>
+        <div class="amt">13 $ <small>one-time</small></div>
+        <ul>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Everything in Free</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Printable EIS stamp (PDF)</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Plain-language readiness text for your team</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>ASP onboarding + gap analysis checklist</li>
+          <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Permanent unlock</li>
+        </ul>
+        <button class="btn btn-brand" onclick="ProWidget.checkout('sanad',13)">Unlock Pro — 13 $</button>
+        <p class="fiscal">One-time payment in USDT/USDC. Permanent unlock. Price in USD; taxes per your country at checkout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="band tint" id="faq">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Quick answers</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item reveal">
+        <summary>When is UAE e-invoicing mandatory?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">Phase 1 (revenue ≥ AED 50M): e-invoicing from 1 January 2027, with ASP appointment required by 30 October 2026. Phase 2 (everyone else): ASP by 31 March 2027, e-invoicing from 1 July 2027. Government entities: 1 October 2027.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What is an Accredited Service Provider (ASP)?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">An FTA-accredited company that validates your invoices against the UAE schema, transmits them to your buyer's provider, and reports the tax data to the FTA. Businesses remain accountable for the accuracy and timeliness of the data.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Does a PDF invoice count?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">No. Under the EIS, invoices in PDF, Word, scanned, image or email formats are not treated as e-invoices. The invoice must be exchanged as structured data through an accredited provider.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What are the penalties?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">Cabinet Decision No. 106 of 2025: AED 5,000 per month (or part) for failing to implement the system or appoint an ASP; AED 100 per invoice or credit note issued outside the system, capped at AED 5,000 per month; AED 1,000 per day for unreported system failures or for failing to notify the ASP of data changes.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Is B2C in scope?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">Not in the first phase. The initial mandate covers B2B and B2G transactions. A later phase for B2C has been announced for the future — monitor FTA guidance.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Who is excluded?<svg class="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="a">Sovereign activities of government entities that do not compete with the private sector, certain international air and sea passenger and goods transport, and VAT-exempt or zero-rated financial services. Check with your adviser if your activity is mixed.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section class="band" id="sources">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sources</span>
+      <h2>Every claim links to its source</h2>
+      <p class="lead">Verified on 13 August 2026. Sanad links directly to the official framework and to current practitioner guides.</p>
+    </div>
+    <div class="sources">
+      <div class="source reveal"><span class="sn">1</span><div><a href="https://www.hawksford.com/insights-and-guides/uae-e-invoicing" rel="noopener">Hawksford — UAE e-invoicing: timeline, actions and penalties</a><small>Updated 14 July 2026. Ministerial Decisions 243/244 of 2025, the five-corner model, full phase table, and Cabinet Decision 106 of 2025 penalties.</small></div></div>
+      <div class="source reveal"><span class="sn">2</span><div><a href="https://www.cleartax.com/ae/e-invoicing-uae" rel="noopener">ClearTax — e-Invoicing UAE: requirements and timeline</a><small>August 2026. Phase 1 deadline 1 January 2027 and the 30 October 2026 ASP appointment date for businesses at or above AED 50M.</small></div></div>
+      <div class="source reveal"><span class="sn">3</span><div><a href="https://osforbiz.com/uae-einvoicing-2027" rel="noopener">OSforBiz — UAE E-Invoicing 2027 mandate guide</a><small>Penalty detail: AED 100 per non-compliant invoice plus AED 5,000 per month per registered entity.</small></div></div>
+      <div class="source reveal"><span class="sn">4</span><div><a href="https://www.e-invoice.app/guides/uae-e-invoicing" rel="noopener">e-invoice.app — UAE e-invoicing guide</a><small>Large-business milestones (30 October 2026, 31 March 2027) and the technical framework.</small></div></div>
+      <div class="source reveal"><span class="sn">5</span><div><a href="https://www.tax.gov.ae" rel="noopener">Federal Tax Authority — official portal (UAE)</a><small>Official source of EIS announcements, Ministerial Decisions and accredited service provider guidance.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="band">
+  <div class="container">
+    <div class="cta-final reveal">
+      <h2>Your ASP deadline is 78 days away.</h2>
+      <p>If you are at or above AED 50M of revenue, 30 October 2026 is the date your provider must be appointed — no more extensions announced. Check your phase now and print your plan.</p>
+      <a class="btn btn-brand" style="background:#fff; color:var(--brand)" href="#outil">Check my phase</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5z"/><path d="M9 12l2 2 4-4"/></svg>attenciona · transparent stamp</span>
+        <p>Sanad is an educational tool: it checks your phase against the official FTA timeline and links every claim to its source. Runs entirely in your browser.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#act">Phases</a></li>
+          <li><a href="#outil">Phase check</a></li>
+          <li><a href="#pricing">Pro</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sources</h4>
+        <ul>
+          <li><a href="#sources">Hawksford · timeline</a></li>
+          <li><a href="#sources">ClearTax · deadlines</a></li>
+          <li><a href="#sources">FTA · official portal</a></li>
+          <li><a href="/">attenciona Incubadora</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Editorial responsibility:</strong> attenciona (Holding). AI-assisted content, humanly reviewed before publication (EU AI Act, Art. 50.4). &nbsp;·&nbsp; <strong>Not advice:</strong> Sanad is an educational tool based on official and practitioner sources; confirm your individual obligations with the FTA or your tax adviser. &nbsp;·&nbsp; <strong>Last verified:</strong> 13 August 2026. &nbsp;·&nbsp; <strong>Privacy:</strong> everything runs in your browser; no data is sent to any server. No third-party cookies or tracking. &nbsp;·&nbsp; crypto payments with buyer identification (AML). &nbsp;·&nbsp; © 2026 Sanad · attenciona.</p>
+    </div>
+  </div>
+  <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=f812838966" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Privacy notice">
+  <p><strong>No tracking.</strong> This page runs entirely in your browser: no third-party cookies, no analytics, your answers never leave your device. We only store locally whether you've seen this notice.</p>
+  <div class="row">
+    <button class="btn btn-brand" id="consentOk">Got it</button>
+    <a class="btn btn-ghost" href="#faq">More info</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"Sanad","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/sanad/","description":"Check which UAE e-invoicing (EIS) phase applies to your business: Phase 1 businesses (revenue AED 50M+) must appoint an Accredited Service Provider by 30 October 2026 and exchange e-invoices from 1 January 2027; Phase 2 from 1 July 2027. Runs entirely in the browser.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Free"},{"@type":"Offer","price":"13","priceCurrency":"USD","name":"Pro"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"When is UAE e-invoicing mandatory?","acceptedAnswer":{"@type":"Answer","text":"Phase 1 (revenue AED 50M+): 1 January 2027, with ASP appointment by 30 October 2026. Phase 2: 1 July 2027. Government: 1 October 2027."}},
+      {"@type":"Question","name":"Does a PDF invoice count as an e-invoice?","acceptedAnswer":{"@type":"Answer","text":"No. Under the EIS only structured data exchanged through an accredited service provider counts; PDFs, emails and scans do not."}},
+      {"@type":"Question","name":"What are the UAE e-invoicing penalties?","acceptedAnswer":{"@type":"Answer","text":"Cabinet Decision 106/2025: AED 5,000 per month without an ASP; AED 100 per missing e-invoice capped at AED 5,000/month; AED 1,000 per day for unreported system failures or data changes."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('sanad_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('sanad_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+})();
+
+/* ===== The Sanad tool ===== */
+(function(){
+  var STEP=0, answers={}, totalSteps=3;
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.toolstep'));
+  var dots=[document.getElementById('sd0'),document.getElementById('sd1'),document.getElementById('sd2'),document.getElementById('sd3')];
+  var lines=[document.getElementById('sl1'),document.getElementById('sl2'),document.getElementById('sl3')];
+  var next=document.getElementById('next'), prev=document.getElementById('prev');
+  var qnav=document.getElementById('qnav');
+
+  function selOpts(){
+    steps[STEP].querySelectorAll('.opt').forEach(function(o){
+      var on = o.dataset.val === answers[STEP];
+      o.classList.toggle('sel', !!on);
+    });
+  }
+  function refreshNav(){
+    prev.disabled = STEP===0;
+    prev.style.opacity = STEP===0 ? '.4' : '1';
+    if(STEP<totalSteps){ next.style.display=''; next.textContent = (STEP===totalSteps-1) ? 'Stamp my phase' : 'Next'; }
+  }
+  function go(i){
+    STEP = Math.max(0, Math.min(totalSteps, i));
+    steps.forEach(function(s,k){ s.classList.toggle('on', k===STEP); });
+    for(var k=0;k<3;k++){
+      dots[k].classList.toggle('on', k===STEP);
+      dots[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+      lines[k].classList.toggle('ok', answers[k]!==undefined && k<STEP);
+    }
+    dots[3].classList.toggle('ok', STEP===3);
+    var v=document.getElementById('verdict');
+    if(STEP===totalSteps){ qnav.style.display='none'; renderVerdict(); v.hidden=false; v.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+    else { v.hidden=true; qnav.style.display=''; }
+    selOpts(); refreshNav();
+  }
+  function skipToVerdict(){
+    go(totalSteps);
+  }
+  steps.forEach(function(s){
+    s.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click', function(){
+        answers[s.dataset.step]=o.dataset.val;
+        selOpts();
+        var i=Number(s.dataset.step);
+        if(i===0 && answers[0]==='no'){ skipToVerdict(); return; }
+        if(i < totalSteps-1) go(i+1);
+        else go(totalSteps);
+      });
+    });
+  });
+  next.addEventListener('click', function(){ if(answers[STEP]!==undefined) go(STEP+1); });
+  prev.addEventListener('click', function(){ go(STEP-1); });
+  document.getElementById('restart').addEventListener('click', function(){ answers={}; go(0); });
+
+  function daysUntil(d){
+    var now=new Date(); now.setHours(0,0,0,0);
+    return Math.round((d-now)/86400000);
+  }
+  function enD(d){
+    return d + (d===1 ? ' day' : ' days');
+  }
+
+  function renderVerdict(){
+    var v=document.getElementById('verdict');
+    var vat=answers[0], tier=answers[1], b2b=answers[2];
+    var cat, title, stampLabel, stampDate, stampSub, rows, checklist, note;
+
+    if(vat==='no'){
+      cat='<span class="vcat ok">Not in scope — today</span>';
+      title="The EIS mandate doesn't reach you yet";
+      stampLabel='NOT IN SCOPE';
+      stampDate='—';
+      stampSub='VAT not required';
+      rows='<div class="vrow ok"><span class="k">UAE VAT registration</span><span class="v">No</span></div>'+
+           '<div class="vrow"><span class="k">EIS mandate</span><span class="v">Not applicable</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Mandatory VAT registration applies at AED 375,000 of taxable supplies</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>If you register in future, re-check your EIS phase here</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Worth knowing:</b> e-invoicing applies to VAT-registered businesses. Below the AED 375,000 registration threshold you are outside the mandate for now — but watch for voluntary registration and future B2C phases.</div>';
+    } else if(b2b==='no'){
+      cat='<span class="vcat ok">Out of scope for now</span>';
+      title="B2C-only activity is not yet in the mandate";
+      stampLabel='B2C ONLY';
+      stampDate='—';
+      stampSub='Monitor FTA guidance';
+      rows='<div class="vrow ok"><span class="k">B2B / B2G invoices</span><span class="v">None</span></div>'+
+           '<div class="vrow"><span class="k">EIS mandate</span><span class="v">Later phase</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>The current mandate covers B2B and B2G only</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Re-check when the FTA announces the B2C phase</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Worth knowing:</b> if any part of your activity invoices businesses or government, that part is in scope — mixed businesses should confirm the split with their adviser.</div>';
+    } else if(tier==='yes'){
+      cat='<span class="vcat need">Phase 1 · act now</span>';
+      title='Your ASP must be appointed by 30 October 2026';
+      stampLabel='PHASE 1 · ASP';
+      stampDate='30.10.2026';
+      var d1=daysUntil(new Date(2026,9,30)), d2=daysUntil(new Date(2027,0,1));
+      stampSub=d1+' days away';
+      rows='<div class="vrow due"><span class="k">Appoint ASP (≥ AED 50M)</span><span class="v">30.10.2026 · '+enD(d1)+' away</span></div>'+
+           '<div class="vrow due"><span class="k">Mandatory e-invoicing</span><span class="v">01.01.2027 · '+enD(d2)+' away</span></div>'+
+           '<div class="vrow"><span class="k">Penalty without ASP</span><span class="v">AED 5,000 / month</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Shortlist and appoint an FTA-accredited ASP before 30.10.2026</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Run the ERP / accounting gap analysis — can it produce structured e-invoices?</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Verify tax invoice fields: TRN, dates, VAT rate and amount, gross in AED</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Train the finance team on the new issue / validation workflow</li>'+
+        '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>Risk: AED 100 per missing e-invoice (cap AED 5,000/month) after 01.01.2027</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Plan now:</b> the ASP deadline was already extended once (from 31 July 2026). With no further extension announced, start provider selection this month — integration and testing take time.</div>';
+    } else {
+      cat='<span class="vcat soon">Phase 2 · on the calendar</span>';
+      title='Your ASP appointment lands 31 March 2027';
+      stampLabel='PHASE 2 · ASP';
+      stampDate='31.03.2027';
+      var d3=daysUntil(new Date(2027,2,31)), d4=daysUntil(new Date(2027,6,1));
+      stampSub=d3+' days away';
+      rows='<div class="vrow due"><span class="k">Appoint ASP (&lt; AED 50M)</span><span class="v">31.03.2027 · '+enD(d3)+' away</span></div>'+
+           '<div class="vrow due"><span class="k">Mandatory e-invoicing</span><span class="v">01.07.2027 · '+enD(d4)+' away</span></div>'+
+           '<div class="vrow"><span class="k">Penalty without ASP</span><span class="v">AED 5,000 / month</span></div>';
+      checklist='<ul class="vlist">'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Use the coming months to compare accredited ASPs and pricing</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Check whether your accounting software already supports structured e-invoices</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Confirm your tax invoice fields (TRN, dates, VAT rate, gross in AED)</li>'+
+        '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Plan the ASP appointment for Q1 2027 — avoid the rush</li>'+
+        '</ul>';
+      note='<div class="vnote"><b>Plan ahead:</b> Phase 2 brings your ASP deadline on 31 March 2027. Waiting until the last quarter concentrates demand on providers — start the comparison now and appoint early in 2027.</div>';
+    }
+
+    v.innerHTML =
+      '<div class="stamp" style="transform:none; margin-bottom:18px; max-width:340px">'+
+        '<div class="top"><span>Sanad · EIS Stamp</span><span>MD 243/244-2025</span></div>'+
+        '<div class="ring">'+
+          '<div class="l1">'+stampLabel+'</div>'+
+          '<div class="l2">'+stampDate+'</div>'+
+          '<div class="l3">'+stampSub+' · Verified 13.08.2026</div>'+
+        '</div>'+
+      '</div>'+
+      cat+
+      '<h3>'+title+'</h3>'+
+      '<div class="vtable">'+rows+'</div>'+
+      checklist+
+      note+
+      '<div class="vprint"><button class="btn btn-brand" onclick="window.print()"><svg class="i" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Print / save PDF</button></div>'+
+      '<p class="footnote">An educational tool, not tax or legal advice. Sources: <a href="#sources">[1][2][3][4][5]</a>.</p>';
+  }
+})();
+
+/* Pro activation (called by ProWidget after payment) */
+window.activatePro = function(){
+  try{ localStorage.setItem('sanad_pro','1'); }catch(e){}
+  window.dispatchEvent(new CustomEvent('proActivated'));
+};
+</script>
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/sanad/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/union-europea/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en Unión Europea</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en Unión Europea:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/marea-real-vs-prevista-eeuu-costa-oeste/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Marea real vs prevista (NOAA)</a> <a href="/negocios/recall-alimentos-fda-estados-unidos/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Revisa FDA</a> <a href="/negocios/boleta-honorarios-chile-chile/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">NetoClaro</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-13">2026-08-13</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

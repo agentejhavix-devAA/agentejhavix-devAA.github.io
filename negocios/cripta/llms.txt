@@ -1,0 +1,30 @@
+# Cripta
+
+Cripta is a free browser tool that checks your readiness for EU DAC8 (Directive (EU) 2023/2226) crypto-asset tax reporting. It runs entirely in the browser (no data leaves the device).
+
+## Key facts (verified 13 August 2026)
+
+- DAC8 entered into force on 1 January 2026.
+- Reporting Crypto-Asset Service Providers (RCASPs) must collect reportable transaction data of EU-resident users from 1 January 2026.
+- First reporting period: the entire calendar year 2026.
+- Reporting due within 9 months of the first fiscal year — between 1 January and 30 September 2027 (member states set specific dates; NL: 31 January 2027).
+- First exchange of 2026 data between member states: by 30 September 2027.
+- Scope follows MiCA definitions, plus decentralised crypto-assets, stablecoins (incl. e-money tokens) and certain NFTs.
+- Penalties are set by member states (some have introduced fines from EUR 20,000 up to 900,000).
+
+## Sources
+
+1. https://taxation-customs.ec.europa.eu/taxation/tax-transparency-cooperation/administrative-co-operation-and-mutual-assistance/directive-administrative-cooperation-dac/dac8_en (European Commission)
+2. https://www.twobirds.com/en/insights/2026/dac8-implemented-in-the-netherlands-stay-ahead-of-the-curve (Bird & Bird)
+3. https://www.cointracker.io/blog/dac8-compliance (CoinTracker)
+4. https://www.legalnodes.com/article/carf-dac8-crypto-tax-reporting (LegalNodes)
+5. https://wag3s.io/blog/dac8-compliance-guide (Wag3s)
+
+## Pricing
+
+- Free: reporting check + checklist + first-report window.
+- Pro (16 USD one-time, crypto via NOWPayments): printable readiness stamp PDF, CY2026 data-collection checklist, DAC8/CARF field mapping reference, permanent unlock.
+
+## Not advice
+
+Cripta is an educational tool based on Directive (EU) 2023/2226. It is not tax or legal advice. Editorial responsibility: attenciona (Holding), Spain.

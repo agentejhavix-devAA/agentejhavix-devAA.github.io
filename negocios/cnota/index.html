@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CNOta — El código de ocupación (CNO) de tu plantilla…</title>
+<meta name="description" content="El Real Decreto 643/2026 obliga a todos los empresarios a comunicar a la Seguridad Social el código de ocupación (CNO) de sus trabajadores antes del 1 de…">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<link rel="canonical" href="https://www.attenciona.com/negocios/cnota/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CNOta — el código de ocupación (CNO) de tu plantilla, a tiempo">
+<meta property="og:description" content="El Real Decreto 643/2026 obliga a todos los empresarios a comunicar a la Seguridad Social el código de ocupación (CNO) de sus trabajadores antes del 1 de…">
+<meta property="og:url" content="https://www.attenciona.com/negocios/cnota/">
+
+<style>
+  /* ============================================================
+     CNOta — identidad Fase 3
+     Público (ref. en vivo): empresarios y autónomos con empleados
+     y gestorías/asesorías que operan el Sistema RED de la Seguridad
+     Social (Import@ss, SILTRA, software de nóminas A3/Sage). Mundo
+     administrativo-oficial: verde institucional, tono de confianza
+     y rigor legal.
+     Registro: "credibilidad, comparación, sector tradicional/legal"
+       → Editorial-serif: Fraunces (display) + Inter (cuerpo),
+       auto-alojadas, sin CDN. (Distinta de quartly, que usó Baloo 2.)
+     Logo/firma: pictograma editorial de una FICHA de trabajador con
+       una pestaña de código. La firma es FUNCIONAL: la herramienta
+       "sella" el estado del CNO (comunicado / pendiente) en cada
+       línea de la plantilla y cuenta los días hasta el plazo.
+     Paleta: papel cálido + tinta pizarra + verde Seguridad Social
+       (en orden) + rojo de VENCIMIENTO para el plazo/sanción.
+       Distinta de quartly (verde petróleo + naranja).
+     Escala tipográfica modular (base 17px · 1.25) · grid 8px.
+     ============================================================ */
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/fraunces-600.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/fraunces-700.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/inter-400.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/inter-500.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/inter-600.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/inter-700.woff2') format('woff2');}
+  :root{
+    --paper:#F7F5EF; --surface:#FFFFFF; --surface-2:#EFEBE0;
+    --ink:#232A2E; --ink-2:#59636A; --line:#E4DFD2; --line-2:#CFC7B4;
+    --brand:#12704A;         /* verde Seguridad Social: "en orden / comunicado" */
+    --brand-2:#0C5537; --brand-wash:#E4F0EA;
+    --due:#B3261E;           /* rojo vencimiento: el plazo y la sanción */
+    --due-wash:#FBE7E5;
+    --ok:#12704A; --ok-wash:#E4F0EA; --warn:#8A5A1A; --warn-wash:#F5EDDB;
+    --shadow:0 1px 2px rgba(35,42,46,.05), 0 10px 30px rgba(35,42,46,.07);
+    --maxw:1160px; --r:14px; --r-sm:10px;
+    --t-xs:.78rem; --t-sm:.9rem; --t-md:1rem; --t-lg:1.2rem;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --disp:'Fraunces',Georgia,'Times New Roman',serif;
+    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Segoe UI Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:700; line-height:1.13; letter-spacing:-.01em; text-wrap:balance; color:var(--ink)}
+  h1{font-size:clamp(2rem,4.4vw,3.05rem)}
+  h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+  h3{font-size:1.2rem}
+  h4{margin:0; font-weight:600; font-size:1rem}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  .container{max-width:var(--maxw); margin-inline:auto; padding-inline:32px}
+  .lead{font-size:var(--t-lg); color:var(--ink-2); line-height:1.6}
+  .muted{color:var(--ink-2)}
+  .num{font-family:var(--mono); font-variant-numeric:tabular-nums}
+  svg.i{width:20px;height:20px; stroke:currentColor; stroke-width:1.9; fill:none; stroke-linecap:round; stroke-linejoin:round; flex:none}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); padding:7px 13px; border-radius:999px}
+
+  /* --- logo: ficha de trabajador con pestaña de código --- */
+  .mark{display:inline-flex; width:34px;height:34px; color:var(--brand); align-items:center; justify-content:center}
+  .mark svg{width:32px;height:32px; display:block}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; height:50px; padding:0 24px; border-radius:var(--r-sm); font-size:var(--t-md); font-weight:600; cursor:pointer; border:1px solid transparent; transition:background .15s,border-color .15s,transform .15s,box-shadow .15s}
+  .btn:focus-visible{outline:3px solid var(--brand); outline-offset:3px}
+  .btn-primary{background:var(--brand); color:#fff}
+  .btn-primary:hover{background:var(--brand-2); transform:translateY(-1px); box-shadow:0 8px 20px rgba(18,112,74,.25)}
+  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--line-2)}
+  .btn-ghost:hover{border-color:var(--brand); color:var(--brand)}
+  .btn-due{background:var(--due); color:#fff}
+  .btn-due:hover{background:#8f1d17; transform:translateY(-1px); box-shadow:0 8px 20px rgba(179,38,30,.28)}
+
+  header.nav{position:sticky; top:0; z-index:40; background:rgba(247,245,239,.9); backdrop-filter:saturate(1.3) blur(10px); border-bottom:1px solid var(--line)}
+  .nav-row{display:flex; align-items:center; gap:28px; height:70px}
+  .brand{display:inline-flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:700; font-size:1.3rem; letter-spacing:-.01em}
+  .nav-links{display:flex; gap:26px; margin-left:auto; align-items:center}
+  .nav-links a{font-size:var(--t-sm); font-weight:500; color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+
+  .hero{padding:80px 0 92px}
+  .hero-grid{display:grid; grid-template-columns:1.04fr .96fr; gap:56px; align-items:center}
+  .hero h1{margin-top:20px}
+  .hero .lead{margin-top:22px; max-width:40ch}
+  .hero-actions{display:flex; gap:12px; margin-top:32px; flex-wrap:wrap}
+  .hero-trust{display:flex; gap:22px; margin-top:28px; flex-wrap:wrap; color:var(--ink-2); font-size:var(--t-sm)}
+  .hero-trust span{display:inline-flex; align-items:center; gap:8px}
+  .hero-trust svg.i{width:17px;height:17px; color:var(--ok)}
+
+  /* --- ficha de plantilla: la firma funcional --- */
+  .panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden}
+  .panel-bar{display:flex; align-items:center; gap:8px; padding:13px 16px; border-bottom:1px solid var(--line); background:var(--surface-2)}
+  .panel-bar .dot{width:10px;height:10px;border-radius:50%}
+  .panel-url{margin-left:8px; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:4px 10px; flex:1}
+  .panel-body{padding:22px}
+  .panel-label{font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); margin-bottom:14px}
+  .roster{display:flex; flex-direction:column; gap:8px}
+  .wrow{display:grid; grid-template-columns:1fr auto auto; gap:10px; align-items:center; border:1.5px solid var(--line-2); border-radius:11px; padding:11px 14px; background:var(--paper)}
+  .wrow .wn{font-weight:600; font-size:var(--t-sm)}
+  .wrow .wn small{display:block; font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2); font-weight:400}
+  .wrow .wc{font-family:var(--mono); font-size:var(--t-xs); color:var(--ink-2)}
+  .chip{font-size:var(--t-xs); font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:5px 10px; border-radius:999px; white-space:nowrap}
+  .chip.pend{color:var(--due); background:var(--due-wash)}
+  .chip.done{color:var(--brand); background:var(--brand-wash)}
+  .prow{margin-top:14px; display:flex; justify-content:space-between; gap:14px; align-items:center; font-size:var(--t-sm); padding:12px 15px; border:1px solid var(--due); background:var(--due-wash); border-radius:9px}
+  .prow .k{color:var(--ink-2)}
+  .prow .v{font-weight:700; color:var(--due)}
+
+  section.band{padding:110px 0}
+  section.tint{background:var(--surface); border-block:1px solid var(--line)}
+  .sec-head{max-width:700px; margin-bottom:56px}
+  .sec-head h2{margin-top:16px}
+  .sec-head p{margin-top:18px}
+  .center{margin-inline:auto; text-align:center}
+
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:30px}
+  section.tint .card{background:var(--paper)}
+  .card .ico{display:inline-flex; align-items:center; justify-content:center; width:44px;height:44px; border-radius:10px; background:var(--brand-wash); color:var(--brand); margin-bottom:18px}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--ink-2); font-size:var(--t-md)}
+  .card .big{font-family:var(--disp); font-size:2rem; font-weight:700; letter-spacing:-.01em; color:var(--due); display:block; margin-bottom:8px}
+
+  .tool{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:36px; max-width:760px; margin-inline:auto}
+  .tool .step-head{display:flex; align-items:center; gap:12px; margin-bottom:22px}
+  .tool .qnum{width:30px;height:30px; border-radius:9px; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:700; font-size:var(--t-sm); font-family:var(--disp)}
+  .tool .step-head h3{font-size:1.24rem}
+  .tool .qsub{color:var(--ink-2); font-size:var(--t-sm); margin-top:2px}
+  .opts{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .opt{border:1.5px solid var(--line-2); border-radius:11px; padding:15px 17px; background:var(--paper); cursor:pointer; text-align:left; font-size:var(--t-md); font-weight:500; transition:border-color .12s, background .12s}
+  .opt:hover{border-color:var(--brand)}
+  .opt.sel{border-color:var(--brand); background:var(--brand-wash); font-weight:600}
+  .opt small{display:block; font-size:var(--t-xs); color:var(--ink-2); font-weight:400; margin-top:3px}
+  .tool .nav-btns{display:flex; justify-content:space-between; gap:12px; margin-top:26px}
+  .tool .nav-btns .btn{height:44px; font-size:var(--t-sm)}
+  .tool .nav-btns .spacer{flex:1}
+  .progress{height:6px; background:var(--surface-2); border-radius:999px; overflow:hidden; margin-bottom:28px}
+  .progress i{display:block; height:100%; width:0; background:var(--due); transition:width .3s ease}
+  .toolstep{display:none}
+  .toolstep.on{display:block}
+
+  .verdict{border:1.5px solid var(--line-2); border-radius:var(--r); padding:28px; margin-top:6px}
+  .verdict .vcat{display:inline-flex; align-items:center; gap:8px; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--brand); background:var(--brand-wash); padding:6px 12px; border-radius:999px}
+  .verdict .vcat.due{color:var(--due); background:var(--due-wash)}
+  .verdict h3{margin-top:16px; font-size:1.35rem}
+  .vtable{margin-top:20px; border:1px solid var(--line); border-radius:11px; overflow:hidden}
+  .vrow{display:grid; grid-template-columns:1fr auto; gap:14px; padding:14px 18px; border-bottom:1px solid var(--line); font-size:var(--t-md)}
+  .vrow:last-child{border-bottom:0}
+  .vrow .k{color:var(--ink-2)}
+  .vrow .v{font-weight:700; text-align:right}
+  .vrow.due .v{color:var(--due)}
+  .vrow.ok .v{color:var(--ok)}
+  .vlist{margin-top:20px; display:flex; flex-direction:column; gap:11px; list-style:none; padding:0}
+  .vlist li{display:flex; gap:11px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink-2)}
+  .vlist li svg.i{width:17px;height:17px; margin-top:2px; color:var(--ok); flex:none}
+  .vlist li.w svg.i{color:var(--warn)}
+  .vnote{margin-top:18px; font-size:var(--t-xs); color:var(--ink-2); background:var(--warn-wash); border:1px solid var(--line); border-left:3px solid var(--warn); border-radius:9px; padding:13px 15px}
+  .vnote b{color:var(--warn)}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; counter-reset:s}
+  .step{padding:30px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r)}
+  .step .num-b{counter-increment:s; font-family:var(--mono); font-size:.86rem; font-weight:700; color:var(--brand)}
+  .step .num-b::before{content:"0" counter(s) " /"}
+  .step h3{margin:12px 0 8px; font-size:1.12rem}
+  .step p{color:var(--ink-2); font-size:var(--t-sm)}
+
+  .price-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; max-width:740px; margin-inline:auto}
+  .plan{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:34px; display:flex; flex-direction:column}
+  .plan.feat{border-color:var(--due); box-shadow:0 0 0 1px var(--due)}
+  .plan .badge{align-self:flex-start; font-size:var(--t-xs); font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--due); padding:5px 12px; border-radius:999px; margin-bottom:14px}
+  .plan h3{font-size:1rem; color:var(--ink-2); font-weight:600}
+  .plan .amt{font-size:2.8rem; font-weight:700; letter-spacing:-.02em; margin:8px 0 4px; font-family:var(--disp)}
+  .plan .amt small{font-size:1rem; font-weight:500; color:var(--ink-2)}
+  .plan ul{list-style:none; padding:0; margin:22px 0 28px; display:flex; flex-direction:column; gap:13px}
+  .plan li{display:flex; gap:11px; align-items:flex-start; font-size:var(--t-sm); color:var(--ink-2)}
+  .plan li svg.i{width:18px;height:18px;margin-top:2px}
+  .plan li.y svg.i{color:var(--ok)} .plan li.n{color:#9aa1ab} .plan li.n svg.i{color:#c3c8d0}
+  .plan .btn{margin-top:auto; width:100%}
+  .plan .fiscal{font-size:var(--t-xs); color:var(--ink-2); margin-top:13px; text-align:center}
+
+  .faq{max-width:800px; margin-inline:auto}
+  details{border-bottom:1px solid var(--line); padding:4px 0}
+  summary{display:flex; align-items:center; gap:14px; padding:19px 4px; cursor:pointer; font-weight:600; font-size:1.04rem; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary .chev{margin-left:auto; transition:transform .2s; color:var(--ink-2)}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details .a{padding:0 4px 22px 4px; color:var(--ink-2); font-size:var(--t-md)}
+  details .a a{color:var(--brand); text-decoration:underline; text-underline-offset:2px}
+
+  .sources{display:grid; grid-template-columns:1fr 1fr; gap:0 32px; max-width:940px}
+  .source{display:flex; gap:12px; padding:17px 0; border-top:1px solid var(--line); font-size:var(--t-sm)}
+  .source .sn{flex:none; font-family:var(--mono); font-weight:700; color:var(--brand)}
+  .source a{color:var(--ink); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--line-2)}
+  .source a:hover{text-decoration-color:var(--brand)}
+  .source small{display:block; color:var(--ink-2); margin-top:3px}
+
+  .cta-final{background:var(--ink); color:#fff; border-radius:var(--r); padding:66px 48px; text-align:center; position:relative; overflow:hidden}
+  .cta-final h2{color:#fff; max-width:28ch; margin-inline:auto}
+  .cta-final p{color:#B9C2CB; margin:16px auto 0; max-width:58ch}
+  .cta-final .btn{margin-top:30px}
+
+  footer{border-top:1px solid var(--line); background:var(--surface); padding:60px 0 42px}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:38px}
+  footer h4{font-size:var(--t-xs); text-transform:uppercase; letter-spacing:.05em; color:var(--ink-2); margin-bottom:15px}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px}
+  footer a{color:var(--ink-2); font-size:var(--t-sm)}
+  footer a:hover{color:var(--ink)}
+  .foot-brand p{color:var(--ink-2); font-size:var(--t-sm); margin-top:14px; max-width:44ch}
+  .foot-legal{font-size:var(--t-xs); color:var(--ink-2); line-height:1.75; border-top:1px solid var(--line); padding-top:26px}
+  .foot-legal strong{color:var(--ink)}
+  .foot-seal{display:inline-flex; align-items:center; gap:9px; margin-bottom:14px; font-size:var(--t-xs); font-weight:600; color:var(--warn); border:1.5px solid var(--warn); border-radius:8px; padding:8px 12px; background:var(--warn-wash)}
+
+  .consent{position:fixed; left:16px; right:16px; bottom:16px; z-index:60; max-width:520px; background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r); box-shadow:var(--shadow); padding:22px}
+  .consent p{font-size:var(--t-sm); color:var(--ink-2)}
+  .consent .row{display:flex; gap:10px; margin-top:14px}
+  .consent .btn{height:44px; font-size:var(--t-sm)}
+  .consent[hidden]{display:none}
+
+  .skip{position:absolute; left:-999px; top:0; background:var(--brand); color:#fff; padding:10px 16px; border-radius:8px; z-index:100}
+  .skip:focus{left:16px; top:12px}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s, transform .5s}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none} html{scroll-behavior:auto}}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr; gap:44px}
+    .hero{padding:52px 0 64px}
+    .grid-3,.steps{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr}
+    .sources{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr; gap:28px}
+    .opts{grid-template-columns:1fr}
+    section.band{padding:74px 0}
+    .nav-links{display:none}
+  }
+  @media (max-width:520px){ .container{padding-inline:20px} .cta-final{padding:46px 26px} .tool{padding:26px 20px} .wrow{grid-template-columns:1fr auto} .wrow .wc{display:none} }
+  @media print{
+    body{background:#fff}
+    header.nav,.consent,#qnav,.hero-actions,.cta-final,footer,.skip{display:none !important}
+    .hero{padding:0 0 24px}
+    .tool{box-shadow:none;border:1px solid #ccc;max-width:100%}
+    .toolstep{display:block !important}
+    .progress{display:none}
+    .verdict{border-color:#999}
+    a{color:#000;text-decoration:underline}
+    .chip.pend,.chip.done,.prow{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section.band{padding:24px 0;page-break-inside:avoid}
+    section.tint{background:#fff;border:0}
+    .reveal{opacity:1;transform:none}
+  }
+
+  .sello-ia{display:inline-flex;align-items:center;gap:10px;margin-top:16px;color:var(--ink,#1a1a1a);text-decoration:none}
+  .sello-ia__badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:60px; height:60px;color:var(--accent,var(--brand,#8a6d1a))}
+  .sello-ia__badge svg{position:absolute;inset:0;width:100%;height:100%;animation:selloSpin 44s linear infinite}
+  .sello-ia__badge b{position:relative;font-size:12px;font-weight:800;font-family:var(--disp,var(--serif,serif))}
+  .sello-ia__txt{display:flex;flex-direction:column;font-size:12.5px;font-weight:600;line-height:1.2}
+  .sello-ia__txt small{font-weight:500;color:var(--muted,var(--ink-2,#666));font-size:11px}
+  .sello-ia:hover .sello-ia__txt{color:var(--accent,var(--brand,#8a6d1a))}
+  @keyframes selloSpin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.sello-ia__badge svg{animation:none}}
+</style>
+
+<a class="skip" href="#tool">Ir a la herramienta</a>
+<!--BUILD:fase4-schema-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"attenciona","item":"https://www.attenciona.com/"},{"@type":"ListItem","position":2,"name":"Negocios","item":"https://www.attenciona.com/marketplace.html"},{"@type":"ListItem","position":3,"name":"CNOta","item":"https://www.attenciona.com/negocios/cnota/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CNOta","url":"https://www.attenciona.com/negocios/cnota/","datePublished":"2026-08-14","dateModified":"2026-08-13"}</script>
+<!--/BUILD:fase4-schema-->
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CNOta — El código de ocupación (CNO) de tu plantilla…">
+<meta name="twitter:description" content="El Real Decreto 643/2026 obliga a todos los empresarios a comunicar a la Seguridad Social el código de ocupación (CNO) de sus trabajadores antes del 1 de…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-row">
+    <a class="brand" href="#top" aria-label="CNOta, inicio">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M8 3h11l6 6v20a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 3v6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 17h10M11 21h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 13h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      CNOta
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#obligacion">La obligación</a>
+      <a href="#tool">Mi plazo</a>
+      <a href="#precio">Precio</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <a class="btn btn-primary" href="#tool" style="height:44px">Comprobar mi plazo</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" style="width:14px;height:14px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>RD 643/2026 · en vigor desde el 1 de agosto de 2026</span>
+        <h1>Tu plantilla necesita su código de ocupación antes del 1 de febrero de 2027.</h1>
+        <p class="lead">El Real Decreto 643/2026 obliga a <b>todos los empresarios</b> a comunicar a la Seguridad Social el código de ocupación (CNO) de sus trabajadores por cuenta ajena. CNOta te dice si te aplica, cuántos días te quedan y qué trabajadores te faltan.</p>
+        <div class="hero-actions">
+          <a class="btn btn-due" href="#tool"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Comprobar mi plazo</a>
+          <a class="btn btn-ghost" href="#obligacion">A quién obliga</a>
+        </div>
+        <div class="hero-trust">
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Funciona en tu navegador</span>
+          <span><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>BOE verificado el 12/08/2026</span>
+        </div>
+      </div>
+
+      <div class="panel reveal" role="img" aria-label="Ficha de plantilla: tres trabajadores con el estado de su código de ocupación (dos pendientes, uno comunicado) y el plazo del 1 de febrero de 2027.">
+        <div class="panel-bar" aria-hidden="true">
+          <span class="dot" style="background:#B3261E"></span><span class="dot" style="background:#D8B94A"></span><span class="dot" style="background:#12704A"></span>
+          <span class="panel-url">cnota.attenciona.com</span>
+        </div>
+        <div class="panel-body">
+          <p class="panel-label" aria-hidden="true"># ficha de plantilla — CNO (RD 643/2026)</p>
+          <div class="roster" aria-hidden="true">
+            <div class="wrow"><div class="wn">Trabajador A<small>alta 2019</small></div><span class="wc">CNO —</span><span class="chip pend">Pendiente</span></div>
+            <div class="wrow"><div class="wn">Trabajador B<small>alta 2021</small></div><span class="wc">CNO —</span><span class="chip pend">Pendiente</span></div>
+            <div class="wrow"><div class="wn">Trabajador C<small>alta 2024</small></div><span class="wc">CNO ✓</span><span class="chip done">Comunicado</span></div>
+          </div>
+          <div class="prow"><span class="k">Plazo para comunicar el CNO</span><span class="v"><span class="num">1 feb 2027</span> · quedan <span class="num daysleft">—</span> días</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="obligacion">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">La obligación</span>
+        <h2>Un dato nuevo por cada trabajador, antes de febrero</h2>
+        <p class="lead">El RD 643/2026 (BOE del 1 de agosto de 2026) cierra el hueco de la plantilla que ya estaba de alta antes de que el código de ocupación fuera obligatorio. Ahora hay que completarlo para todos.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="big">1 feb 2027</span>
+          <h3>Seis meses desde el 1 de agosto</h3>
+          <p>La Disposición Adicional Única da un plazo de seis meses desde la entrada en vigor para comunicar a la Tesorería General de la Seguridad Social el código de ocupación de tu plantilla. <a href="#fuentes" class="muted">[1]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <h3>Todos los empresarios con plantilla</h3>
+          <p>Afecta al código de ocupación, única o principal, de todos los trabajadores por cuenta ajena en alta en cualquiera de tus códigos de cuenta de cotización, según la Clasificación Nacional de Ocupaciones (CNO). <a href="#fuentes" class="muted">[1][4]</a></p>
+        </div>
+        <div class="card reveal">
+          <span class="ico" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Y las bajas, en 6 días</h3>
+          <p>El mismo real decreto amplía el plazo para comunicar las bajas y variaciones de datos de 3 a 6 días naturales desde el cese. Un cambio menos, pero cuenta desde ya. <a href="#fuentes" class="muted">[1][3]</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="tool">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Mi plazo</span>
+        <h2>Tu situación en 3 preguntas</h2>
+        <p class="lead">Responde y CNOta te dice si te aplica, cuántos días quedan y qué trabajadores revisar. Todo se queda en tu navegador.</p>
+      </div>
+
+      <div class="tool reveal" id="toolbox">
+        <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+
+        <div class="toolstep on" data-step="0">
+          <div class="step-head"><span class="qnum">1</span><div><h3>¿Tienes trabajadores por cuenta ajena de alta?</h3><p class="qsub">En cualquiera de tus códigos de cuenta de cotización (CCC).</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="si">Sí, tengo empleados<small>Uno o más trabajadores por cuenta ajena de alta</small></button>
+            <button class="opt" data-val="autonomo">Autónomo sin empleados<small>Solo yo, sin trabajadores a cargo</small></button>
+            <button class="opt" data-val="societario">Sociedad sin trabajadores<small>Administrador/socio, sin plantilla por cuenta ajena</small></button>
+            <button class="opt" data-val="nose">No estoy seguro<small>CNOta te indica qué comprobar</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="1">
+          <div class="step-head"><span class="qnum">2</span><div><h3>¿Desde cuándo tienes contratada a tu plantilla?</h3><p class="qsub">Las altas recientes ya suelen llevar el código de ocupación informado; las antiguas, no.</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="antiguos">Tengo empleados de antes de 2023<small>Probablemente sin CNO comunicado</small></button>
+            <button class="opt" data-val="recientes">Todos contratados en 2023 o después<small>Es posible que ya se informara al dar el alta</small></button>
+            <button class="opt" data-val="mezcla">Una mezcla de ambos<small>Antiguos y recientes conviviendo</small></button>
+            <button class="opt" data-val="nolose">No lo sé<small>Habrá que revisarlo trabajador por trabajador</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="2">
+          <div class="step-head"><span class="qnum">3</span><div><h3>¿Quién gestiona tus trámites con la Seguridad Social?</h3><p class="qsub">La comunicación se hace por el Sistema RED (o quien te lo gestione).</p></div></div>
+          <div class="opts">
+            <button class="opt" data-val="yo">Yo mismo, por Sistema RED<small>Tengo autorización RED propia</small></button>
+            <button class="opt" data-val="gestoria">Mi gestoría o asesoría<small>Ellos llevan mis altas y bajas</small></button>
+            <button class="opt" data-val="import">Import@ss / sin RED<small>Autónomo que tramita por la web de la Seguridad Social</small></button>
+            <button class="opt" data-val="nose2">No lo sé<small>CNOta te dice cómo averiguarlo</small></button>
+          </div>
+        </div>
+
+        <div class="toolstep" data-step="3">
+          <div class="step-head"><span class="qnum">★</span><div><h3>Tu plazo y tus pasos</h3><p class="qsub">Basado en el RD 643/2026. Confírmalo con tu gestoría o asesor laboral.</p></div></div>
+          <div id="verdict"></div>
+          <div class="nav-btns">
+            <button class="btn btn-ghost" id="restart">Empezar de nuevo</button>
+            <span class="spacer"></span>
+            <button class="btn btn-due" id="printV">Imprimir mi checklist (Pro)</button>
+          </div>
+        </div>
+
+        <div class="nav-btns" id="qnav">
+          <button class="btn btn-ghost" id="prev" hidden>← Atrás</button>
+          <span class="spacer"></span>
+          <button class="btn btn-primary" id="next" disabled>Continuar →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="como">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Tres pasos hasta tu checklist</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num-b"></span><h3>Responde 3 preguntas</h3><p>Plantilla, antigüedad de tus contratos y quién te lleva la Seguridad Social. CNOta determina si te aplica y qué revisar.</p></div>
+        <div class="step reveal"><span class="num-b"></span><h3>Cuenta atrás real</h3><p>Los días exactos que quedan hasta el 1 de febrero de 2027, calculados en tu navegador. Sin sustos de última hora.</p></div>
+        <div class="step reveal"><span class="num-b"></span><h3>Sigue el checklist</h3><p>Revisa en el Sistema RED qué trabajadores tienen el CNO informado, comunica los que falten y anota el nuevo plazo de bajas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="precio">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Precio</span>
+        <h2>Compruébalo gratis. Imprime tu checklist por 6 €.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan reveal">
+          <h3>Gratis</h3>
+          <div class="amt">0 €</div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Si la obligación te aplica o no</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Los días exactos que te quedan</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Qué trabajadores revisar primero</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Enlaces al BOE y a la Seguridad Social</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Checklist imprimible (PDF)</li>
+            <li class="n"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Nota lista para tu gestoría</li>
+          </ul>
+          <a class="btn btn-ghost" href="#tool">Comprobar gratis</a>
+        </div>
+        <div class="plan feat reveal">
+          <span class="badge">Recomendado</span>
+          <h3>Pro</h3>
+          <div class="amt">6 € <small>pago único</small></div>
+          <ul>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Todo lo del plan Gratis</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Checklist imprimible (PDF)</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Nota lista para pasar a tu gestoría</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Guía de dónde mirar el CNO en el Sistema RED</li>
+            <li class="y"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Desbloqueo permanente</li>
+          </ul>
+          <button class="btn btn-due" onclick="ProWidget.checkout('cnota',6)">Desbloquear Pro — 6 €</button>
+          <p class="fiscal">Pago único en USDT/USDC. Desbloqueo permanente. Precio con IVA incluido cuando proceda; impuestos según tu país en el pago.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint" id="faq">
+    <div class="container">
+      <div class="sec-head reveal center">
+        <span class="eyebrow">Preguntas</span>
+        <h2>Lo que preguntan empresarios y gestorías</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>¿Qué tengo que comunicar exactamente?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">El código de ocupación, única o principal, de cada trabajador por cuenta ajena que tengas de alta, conforme a la Clasificación Nacional de Ocupaciones (CNO) vigente. Es el dato del artículo 30.2.a) del Reglamento aprobado por el RD 84/1996, que el RD 643/2026 obliga a completar para toda la plantilla. <a href="#fuentes">[1]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Cuál es la fecha límite?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">La Disposición Adicional Única del RD 643/2026 da «un plazo de seis meses desde la entrada en vigor de este real decreto». El decreto entró en vigor el 1 de agosto de 2026, así que el plazo termina el <b>1 de febrero de 2027</b>. <a href="#fuentes">[1][2]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Me afecta si todos mis empleados son recientes?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">La obligación excluye a los trabajadores cuyo código de ocupación ya se hubiera comunicado a la Tesorería. En las altas de los últimos años ese dato ya suele informarse, así que el foco está en la plantilla más antigua. Aun así, conviene revisar en el Sistema RED que no falte ninguno. <a href="#fuentes">[4][5]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿Y si no lo comunico a tiempo?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">El incumplimiento de las obligaciones de comunicación de datos a la Seguridad Social está tipificado como infracción en la LISOS (Real Decreto Legislativo 5/2000). El RD 643/2026 no fija una sanción específica para este dato; el riesgo es el régimen general de infracciones. Consulta a tu asesor y no apures el plazo. <a href="#fuentes">[1]</a></div>
+        </details>
+        <details class="reveal">
+          <summary>¿CNOta se conecta con mi Sistema RED o mis nóminas?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">No. Respondes 3 preguntas y todo se calcula en tu navegador. No se envía ningún dato a ningún servidor y no hay conexión con tus sistemas ni con la Seguridad Social.</div>
+        </details>
+        <details class="reveal">
+          <summary>Soy autónomo sin empleados, ¿tengo que hacer algo?<svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="a">Esta obligación es sobre el código de ocupación de tus <b>trabajadores por cuenta ajena</b>. Si no tienes plantilla, no hay nada que comunicar por este concepto. Si contratas a alguien, tenlo en cuenta desde el alta.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="fuentes">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Fuentes</span>
+        <h2>De dónde salen las fechas</h2>
+        <p class="lead">Cada afirmación enlaza a su fuente. Verificado el 12 de agosto de 2026.</p>
+      </div>
+      <div class="sources reveal">
+        <div class="source"><span class="sn">1</span><div><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16557" target="_blank" rel="noopener">BOE — Real Decreto 643/2026, de 29 de julio (BOE-A-2026-16557)</a><small>Fuente primaria: Disposición Adicional Única (plazo de 6 meses para comunicar el CNO), modificación de plazos de bajas y entrada en vigor el 1/08/2026.</small></div></div>
+        <div class="source"><span class="sn">2</span><div><a href="https://www.autonomosyemprendedor.es/articulo/seguridad-social/nueva-obligacion-pymes-seguridad-social-da-6-meses-declarar-ocupacion-trabajadores/20260731144254055230.html" target="_blank" rel="noopener">Autónomos y Emprendedor — Seis meses para declarar la ocupación</a><small>Confirma el plazo hasta el 1 de febrero de 2027 y el alcance a autónomos y pymes con plantilla.</small></div></div>
+        <div class="source"><span class="sn">3</span><div><a href="https://www.adslzone.net/noticias/internet/real-decreto-643-2026-empresas-comunicar-ocupacion/" target="_blank" rel="noopener">ADSLZone — El BOE da seis meses a las empresas</a><small>Resumen del RD 643/2026 y del cambio del plazo de bajas de 3 a 6 días.</small></div></div>
+        <div class="source"><span class="sn">4</span><div><a href="https://aecta.org/rd-643-2026-modificacion-reglamentos-de-la-seguridad-social/" target="_blank" rel="noopener">AECTA — Modificación de los Reglamentos de la Seguridad Social</a><small>Análisis de consultoría: a quién obliga, dato a comunicar (CNO) y excepciones.</small></div></div>
+        <div class="source"><span class="sn">5</span><div><a href="https://www.fube.es/noticias/codigo-ocupacion-cno-seguridad-social-empleados-2026" target="_blank" rel="noopener">Fube — Código de ocupación CNO: nueva obligación con la SS</a><small>Guía de gestoría sobre el CNO y qué trabajadores hay que revisar.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <div class="cta-final reveal">
+        <h2>No dejes el CNO de tu plantilla para enero.</h2>
+        <p>Comprueba si te aplica y cuántos días te quedan en un minuto. Gratis, sin cuenta y sin que nada salga de tu equipo.</p>
+        <a class="btn btn-due" href="#tool"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Comprobar mi plazo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-seal"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z"/><path d="M9 12h.01M15 12h.01"/></svg>Contenido asistido por IA, revisado antes de publicar — Reglamento de IA (UE), art. 50.4</span>
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 3h11l6 6v20a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 3v6h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M11 17h10M11 21h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 13h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>CNOta</a>
+        <p>El código de ocupación (CNO) de tu plantilla, comunicado a tiempo. Una herramienta divulgativa — no es asesoramiento legal ni laboral.</p>
+      </div>
+      <div>
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#tool">Mi plazo</a></li>
+          <li><a href="#obligacion">La obligación</a></li>
+          <li><a href="#precio">Precio</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../../aviso-legal.html" target="_blank" rel="noopener">Aviso legal</a></li>
+          <li><a href="../../privacidad.html" target="_blank" rel="noopener">Privacidad</a></li>
+          <li><a href="https://www.attenciona.com" target="_blank" rel="noopener">attenciona.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p><strong>Responsable editorial:</strong> attenciona (holding). Contenido asistido por IA y revisado por una persona antes de publicar (Reglamento de IA de la UE, art. 50.4). &nbsp;·&nbsp; <strong>No es asesoramiento:</strong> CNOta es una herramienta divulgativa basada en el RD 643/2026 y en el BOE; confirma tu caso con tu gestoría o asesor laboral. &nbsp;·&nbsp; <strong>Última verificación:</strong> 12 de agosto de 2026. &nbsp;·&nbsp; <strong>Privacidad:</strong> todo funciona en tu navegador; no se envía ningún dato a un servidor. Sin cookies de terceros ni rastreadores publicitarios. &nbsp;·&nbsp; <strong>Fiscal:</strong> operación desde España · IVA 21% cuando proceda. &nbsp;·&nbsp; © 2026 CNOta · attenciona.</p>
+    </div>
+  </div>
+  <div style="margin-top:4px"><a class="sello-ia" href="https://www.attenciona.com/negocios/marcaia/verificar.html?id=581b01f3da" target="_blank" rel="noopener" aria-label="Contenido creado con IA — sello de transparencia MarcaIA (art. 50 del Reglamento de IA de la UE)">
+    <span class="sello-ia__badge" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.2 3.4" opacity=".7"/><path id="siaP" d="M50 9 a41 41 0 1 1 -0.1 0" fill="none"/><text font-size="3.6" font-weight="600" letter-spacing=".9" fill="currentColor"><textPath href="#siaP">TRANSPARENCIA · GENERADO CON IA · ART. 50 REGLAMENTO (UE) 2024/1689 · </textPath></text><polygon points="50,36 61,42.7 57.5,60 42.5,60 39,42.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polygon points="50,43 56.5,46.8 54.5,55 45.5,55 43.5,46.8" fill="currentColor" fill-opacity=".85"/><text x="50" y="71" text-anchor="middle" font-family="Georgia,serif" font-size="8.4" font-weight="700" fill="currentColor">MarcaIA</text><text x="50" y="78" text-anchor="middle" font-size="2.8" letter-spacing=".8" fill="currentColor" opacity=".85">ATTENCIONA.COM</text></svg>
+    </span>
+    <span class="sello-ia__txt">Creado con IA<small>Transparencia · art. 50 UE</small></span>
+  </a></div>
+</footer>
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+  <p><strong>Sin rastreo.</strong> Esta web funciona íntegramente en tu navegador: sin cookies de terceros, sin analítica publicitaria, y tus respuestas nunca salen de tu equipo. Solo guardamos en local si ya has visto este aviso.</p>
+  <div class="row">
+    <button class="btn btn-primary" id="consentOk">Entendido</button>
+    <a class="btn btn-ghost" href="#faq">Más información</a>
+  </div>
+</div>
+
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"CNOta","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.attenciona.com/negocios/cnota/","inLanguage":"es","description":"Comprueba si el Real Decreto 643/2026 te obliga a comunicar el código de ocupación (CNO) de tus trabajadores a la Seguridad Social antes del 1 de febrero de 2027, con cuenta atrás y checklist. Funciona en el navegador.","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","name":"Gratis"},{"@type":"Offer","price":"6","priceCurrency":"EUR","name":"Pro"}],"publisher":{"@type":"Organization","name":"attenciona","url":"https://www.attenciona.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿Qué obliga a comunicar el Real Decreto 643/2026?","acceptedAnswer":{"@type":"Answer","text":"El código de ocupación (única o principal) de cada trabajador por cuenta ajena de alta, conforme a la Clasificación Nacional de Ocupaciones (CNO), a la Tesorería General de la Seguridad Social."}},
+      {"@type":"Question","name":"¿Cuál es la fecha límite para comunicar el código de ocupación?","acceptedAnswer":{"@type":"Answer","text":"Seis meses desde la entrada en vigor del RD 643/2026 (1 de agosto de 2026), es decir, el 1 de febrero de 2027."}},
+      {"@type":"Question","name":"¿A quién afecta la obligación del código de ocupación?","acceptedAnswer":{"@type":"Answer","text":"A todos los empresarios con trabajadores por cuenta ajena de alta en sus códigos de cuenta de cotización cuyo código de ocupación no se hubiera comunicado ya."}},
+      {"@type":"Question","name":"¿Cambia algo más con el RD 643/2026?","acceptedAnswer":{"@type":"Answer","text":"Sí: el plazo para comunicar bajas y variaciones de datos de los trabajadores pasa de 3 a 6 días naturales desde el cese."}}
+    ]}
+  ]
+}</script>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+  } else {
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in'); io.unobserve(x.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }
+  try{
+    var c=document.getElementById('consent');
+    if(!localStorage.getItem('cnota_notice')){ c.hidden=false; }
+    document.getElementById('consentOk').addEventListener('click',function(){ try{localStorage.setItem('cnota_notice','1');}catch(e){} c.hidden=true; });
+  }catch(e){}
+
+  /* --- cuenta atrás real hasta el 1 de febrero de 2027 --- */
+  function daysLeft(){
+    var end=new Date(2027,1,1); /* 1 feb 2027 */
+    var now=new Date();
+    var d=Math.ceil((end - now)/86400000);
+    return d>0 ? d : 0;
+  }
+  function paintDays(){
+    var d=daysLeft();
+    Array.prototype.forEach.call(document.querySelectorAll('.daysleft'), function(el){ el.textContent=d; });
+    return d;
+  }
+  paintDays();
+})();
+
+/* ===== La herramienta CNOta ===== */
+(function(){
+  var STEP=0, answers={}, totalSteps=4;
+  var steps=Array.prototype.slice.call(document.querySelectorAll('.toolstep'));
+  var prog=document.getElementById('prog');
+  var next=document.getElementById('next'), prev=document.getElementById('prev');
+  var qnav=document.getElementById('qnav');
+
+  function dleft(){ var end=new Date(2027,1,1), now=new Date(); var d=Math.ceil((end-now)/86400000); return d>0?d:0; }
+
+  function selOpts(){
+    steps[STEP].querySelectorAll('.opt').forEach(function(o){
+      o.classList.toggle('sel', o.dataset.val === answers[STEP]);
+    });
+  }
+  function refreshNav(){
+    prog.style.width = (STEP/(totalSteps-1)*100)+'%';
+    prev.hidden = STEP===0;
+    next.disabled = answers[STEP]===undefined;
+    next.textContent = STEP===totalSteps-2 ? 'Ver mi plazo →' : 'Continuar →';
+    qnav.style.display = STEP===totalSteps-1 ? 'none' : 'flex';
+  }
+  function go(s){
+    STEP=Math.max(0,Math.min(totalSteps-1,s));
+    steps.forEach(function(el,i){ el.classList.toggle('on', i===STEP); });
+    selOpts(); refreshNav();
+    if(STEP===totalSteps-1) renderVerdict();
+  }
+  document.querySelectorAll('.opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      answers[STEP]=o.dataset.val;
+      selOpts(); refreshNav();
+      if(STEP<totalSteps-1){ setTimeout(function(){ go(STEP+1); },120); }
+      else go(STEP);
+    });
+  });
+  next.addEventListener('click', function(){ if(answers[STEP]!==undefined) go(STEP+1); });
+  prev.addEventListener('click', function(){ go(STEP-1); });
+  document.getElementById('restart').addEventListener('click', function(){ answers={}; go(0); });
+
+  function howLine(){
+    var v=answers[2];
+    if(v==='gestoria') return 'Pide a tu gestoría que revise en el Sistema RED qué trabajadores tienen el código de ocupación (CNO) informado y que comunique los que falten antes del plazo.';
+    if(v==='yo') return 'Entra en el Sistema RED, revisa el código de ocupación (CNO) de cada trabajador y comunica el que falte por los servicios de afiliación.';
+    if(v==='import') return 'Si no operas por Sistema RED, tramítalo desde la sede de la Seguridad Social (Import@ss) o encárgaselo a una gestoría; es la vía para comunicar el dato.';
+    return 'Averigua quién tiene tu autorización RED (tú o tu gestoría): esa es la vía para revisar y comunicar el código de ocupación de tu plantilla.';
+  }
+
+  function renderVerdict(){
+    var v=document.getElementById('verdict');
+    var plantilla=answers[0], antig=answers[1], d=dleft();
+
+    if(plantilla==='autonomo' || plantilla==='societario'){
+      v.innerHTML =
+        '<div class="verdict"><span class="vcat">No te aplica por ahora</span>'+
+        '<h3>Sin trabajadores por cuenta ajena, nada que comunicar</h3>'+
+        '<p class="muted" style="margin-top:10px">El RD 643/2026 obliga a comunicar el código de ocupación de los trabajadores por cuenta ajena de alta. Sin plantilla, esta obligación no te afecta por este concepto.</p>'+
+        '<ul class="vlist"><li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Si contratas a alguien, el código de ocupación se informa ya en el alta.</li></ul>'+
+        '<p style="font-size:var(--t-xs);color:var(--ink-2);margin-top:16px">Basado en el RD 643/2026 (12/08/2026). Confírmalo con tu asesor laboral.</p></div>';
+      return;
+    }
+
+    var foco;
+    if(antig==='recientes'){
+      foco='<div class="vrow ok"><span class="k">Foco</span><span class="v">Revisar que ninguno quede sin CNO</span></div>';
+    } else if(antig==='antiguos'){
+      foco='<div class="vrow due"><span class="k">Foco</span><span class="v">Plantilla anterior a 2023</span></div>';
+    } else {
+      foco='<div class="vrow due"><span class="k">Foco</span><span class="v">Empleados más antiguos primero</span></div>';
+    }
+
+    var checklist='<ul class="vlist">'+
+      '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>'+howLine()+'</li>'+
+      '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Localiza el código CNO de cada puesto en la Clasificación Nacional de Ocupaciones vigente.</li>'+
+      '<li><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Comunica el código de ocupación de los trabajadores que aún no lo tengan informado.</li>'+
+      '<li class="w"><svg class="i" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>Recuerda: las bajas pasan a comunicarse en 6 días naturales (antes 3).</li>'+
+      '</ul>';
+
+    var note='<div class="vnote">La obligación excluye a los trabajadores cuyo código de ocupación ya se hubiera comunicado. En las altas recientes suele estar informado; el trabajo real está en la plantilla antigua. <a href="#fuentes" style="color:var(--warn);text-decoration:underline">Fuentes</a></div>';
+
+    v.innerHTML =
+      '<div class="verdict">'+
+        '<span class="vcat due">Te aplica · quedan '+d+' días</span>'+
+        '<h3>Debes comunicar el CNO de tu plantilla</h3>'+
+        '<div class="vtable" style="margin-top:16px">'+
+          '<div class="vrow due"><span class="k">Fecha límite</span><span class="v">1 de febrero de 2027</span></div>'+
+          '<div class="vrow due"><span class="k">Días restantes</span><span class="v num">'+d+'</span></div>'+
+          '<div class="vrow"><span class="k">Qué comunicar</span><span class="v">Código de ocupación (CNO)</span></div>'+
+          foco+
+        '</div>'+
+        '<h3 style="font-size:1.15rem;margin-top:26px">Tu checklist</h3>'+
+        checklist+
+        note+
+        '<p style="font-size:var(--t-xs);color:var(--ink-2);margin-top:16px">Basado en el RD 643/2026 (12/08/2026). Confírmalo con tu gestoría o asesor laboral.</p>'+
+      '</div>';
+  }
+
+  /* ---- Pro: activación + impresión ---- */
+  var proKey='cnota_pro';
+  function proActive(){ try{ return localStorage.getItem(proKey)==='1'; }catch(e){ return false; } }
+  function showPro(){ try{ localStorage.setItem(proKey,'1'); }catch(e){} var b=document.getElementById('printV'); if(b){ b.textContent='Imprimir mi checklist (PDF)'; b.onclick=doPrint; } }
+  function doPrint(){ window.print(); }
+  window.activatePro=function(){ showPro(); doPrint(); };
+  window.addEventListener('proActivated', function(){ showPro(); });
+  window.addEventListener('proCodeReceived', function(){ showPro(); });
+  if(proActive()) showPro();
+
+  document.getElementById('printV').addEventListener('click', function(){
+    if(proActive()){ doPrint(); return; }
+    if(!window.ProWidget){ alert('El sistema de pago no se ha cargado. Recarga la página.'); return; }
+    ProWidget.checkout('cnota',6);
+  });
+
+  go(0);
+})();
+</script>
+
+<script src="/pro.js"></script>
+<!--BUILD:fase4-rel-->
+<section aria-label="Enlaces relacionados" style="max-width:1160px;margin:0 auto;padding:28px 24px;border-top:1px solid #e3e6ee;font-family:system-ui,'Inter',sans-serif;color:#131a2b">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px">
+    <a href="/problemas/cnota/" style="padding:8px 15px;background:#0f2d5c;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none">El problema que resuelve</a>
+    <a href="/negocios/pais/espana/" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Más negocios en España</a>
+    <a href="/marketplace.html" style="padding:8px 15px;border:1px solid #d3d8e5;border-radius:999px;font-size:13px;color:#0f2d5c;text-decoration:none">Todos los negocios</a>
+  </div>
+  <div style="font-size:12px;color:#8b93a7;margin-bottom:8px">Relacionados en España:</div><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/negocios/rampa/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Rampa</a> <a href="/negocios/inflacion-real-por-pais-mundo/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">Inflación real por país (Banco Mundial)</a> <a href="/negocios/neto-colombia-colombia/" style="display:inline-block;padding:7px 13px;border:1px solid #d3d8e5;border-radius:999px;color:#0f2d5c;font-size:13px;text-decoration:none">CajaClara</a></div>
+  <p style="font-size:12px;color:#8b93a7;margin-top:16px">Última actualización: <time datetime="2026-08-13">2026-08-13</time></p>
+</section>
+<!--/BUILD:fase4-rel-->
+</body>
+</html>

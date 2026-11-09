@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yemaya.attenciona.com/llms.txt

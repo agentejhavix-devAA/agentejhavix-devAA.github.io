@@ -1,0 +1,23 @@
+# PayWatch
+
+PayWatch — detecta cada pago que llega a tu billetera, al instante. en LATAM — Vender en cripto sin saber cuándo pagaron es vender a ciegas. Dato duro: cada red tiene su regla de confirmaciones (TRC-20/ERC-20/BEP-20); declaración anual 30/04/2027. Herramienta en el navegador contra el «ya te mandé». Gratis 1 wallet + Pro anual (6 $ en cripto).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Crypto · Pagos.
+- Fecha límite / cita: Declaración anual · 30/04/2027.
+- Precio Pro: 6 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 27/30 (9.0/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://tronscan.org/ (Tronscan — Explorador TRC-20)
+2. https://etherscan.io/ (Etherscan — Explorador ERC-20)
+3. https://bscscan.com/ (BscScan — Explorador BEP-20)
+4. https://www.riotimesonline.com/bitcoin-and-crypto-in-latin-america-2026-the-complete-guide/ (Rio Times — Cripto en LATAM 2026)
+5. https://www.sat.gob.mx/minisitio/DeclaracionAnual/index.html (SAT — Declaración Anual)
+
+## Precio
+- Gratis: 1 billetera vigilada.
+- Pro (6 USD pago único, cripto vía NOWPayments): Billeteras ilimitadas; Alertas por red; Exportación de pagos; desbloqueo permanente.
+
+## Aviso
+Herramienta informativa. Las reglas de confirmación varían por red y monto: define la tuya según tu riesgo. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

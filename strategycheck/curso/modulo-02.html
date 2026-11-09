@@ -1,0 +1,107 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modulo 02 — De la idea al codigo con IA · StrategyCheck</title>
+<style>
+:root { --bg:#0d1117; --panel:#161b22; --borde:#30363d; --texto:#c9d1d9; --acento:#58a6ff; }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--texto); font-family:'Segoe UI', Arial, sans-serif; margin:0; line-height:1.7; }
+a { color:var(--acento); }
+.wrap { max-width:820px; margin:0 auto; padding:40px 24px 80px; }
+header.top { text-align:center; padding:36px 24px; border-bottom:1px solid var(--borde);
+             background:radial-gradient(ellipse at top, rgba(88,166,255,0.08), transparent 60%); }
+header.top .logo { font-size:1.8em; font-weight:900; color:#fff; }
+header.top a.volver { display:inline-block; margin-top:10px; font-size:0.9em; }
+h1, h2, h3 { color:#fff; }
+h1 { font-size:1.9em; }
+h2 { font-size:1.4em; border-left:4px solid var(--acento); padding-left:12px; margin-top:2em; }
+h3 { font-size:1.15em; margin-top:1.6em; }
+pre { background:#0d1117; border:1px solid var(--borde); border-radius:8px; padding:16px; overflow-x:auto; }
+code { background:#1c2128; padding:2px 6px; border-radius:4px; font-size:0.92em; }
+pre code { background:none; padding:0; }
+table { width:100%; border-collapse:collapse; margin:16px 0; }
+th, td { padding:8px 10px; border:1px solid var(--borde); text-align:left; }
+th { background:#1c2128; }
+blockquote { border-left:3px solid var(--acento); margin:16px 0; padding:6px 16px; color:#8b949e; background:var(--panel); border-radius:0 8px 8px 0; }
+.nav-modulos { display:flex; justify-content:space-between; margin-top:50px; padding-top:20px; border-top:1px solid var(--borde); font-size:0.95em; }
+.indice { display:grid; gap:12px; margin-top:24px; }
+.indice a { display:block; background:var(--panel); border:1px solid var(--borde); border-radius:8px;
+            padding:16px 20px; text-decoration:none; color:var(--texto); }
+.indice a:hover { border-color:var(--acento); }
+.indice .num { color:var(--acento); font-weight:800; margin-right:10px; }
+.aviso { background:#2d1a1a; border:1px solid #e74c3c; border-radius:8px; padding:16px 20px; margin:24px 0; font-size:0.9em; color:#f0b3b3; }
+footer { text-align:center; padding:30px; color:#8b949e; font-size:0.85em; border-top:1px solid var(--borde); }
+</style>
+<link rel="canonical" href="https://www.attenciona.com/strategycheck/curso/modulo-02.html">
+<meta name="description" content="Modulo 02 — De la idea al codigo con IA Objetivo del modulo Aprender a describir una estrategia de trading con la precision suficiente para que una IA…">
+<meta property="og:title" content="Modulo 02 — De la idea al codigo con IA · StrategyCheck">
+<meta property="og:description" content="Modulo 02 — De la idea al codigo con IA Objetivo del modulo Aprender a describir una estrategia de trading con la precision suficiente para que una IA…">
+<meta property="og:url" content="https://www.attenciona.com/strategycheck/curso/modulo-02.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Modulo 02 — De la idea al codigo con IA · StrategyCheck">
+<meta name="twitter:description" content="Modulo 02 — De la idea al codigo con IA Objetivo del modulo Aprender a describir una estrategia de trading con la precision suficiente para que una IA…">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head><body>
+<header class="top"><div class="logo">⚖️ STRATEGYCHECK</div>
+<a class="volver" href="../index.html">&larr; Volver a la pagina principal</a></header>
+<div class="wrap"><h1>Modulo 02 — De la idea al codigo con IA</h1>
+<h2>Objetivo del modulo</h2>
+<p>Aprender a describir una estrategia de trading con la precision suficiente
+para que una IA (ChatGPT, Claude, Gemini...) te genere codigo que haga
+EXACTAMENTE lo que quieres decir — ni mas ni menos.</p>
+<h2>El problema real</h2>
+<p>Cuando le pides a una IA "hazme un bot que compre cuando el RSI este bajo",
+la IA tiene que adivinar: ¿que periodo de RSI? ¿que umbral es "bajo"? ¿vende
+cuando sube o mantiene para siempre? Cada ambigüedad es una decision que la
+IA toma por ti, casi siempre sin que te des cuenta, y esa decision cambia
+completamente el resultado del backtest.</p>
+<h2>Plantilla de descripcion "a prueba de ambigüedad"</h2>
+<p>Antes de pedirle nada a una IA (o de usar la herramienta Veredicto), rellena
+mentalmente estos 5 huecos:</p>
+<ol>
+<li><strong>Condicion de entrada exacta:</strong> "compro cuando [indicador] cruza/supera/
+   cae por debajo de [valor numerico]"</li>
+<li><strong>Condicion de salida exacta:</strong> "vendo cuando [indicador] hace [X], o tras
+   [N] velas, o si la perdida supera [Y]%"</li>
+<li><strong>Activo y timeframe:</strong> "sobre BTC/USDT, en velas de 1 dia" (no es lo
+   mismo una estrategia en 1h que en 1d — el numero de señales y ruido
+   cambia radicalmente)</li>
+<li><strong>Periodo de prueba:</strong> "quiero verla probada en los ultimos 2 años" (pide
+   SIEMPRE un periodo largo, minimo 1-2 años, para tener suficientes trades)</li>
+<li><strong>Que pasa con el capital fuera de mercado:</strong> ¿se queda en cash sin hacer
+   nada, o reinvierte en otra cosa? (en el MVP de Veredicto: se queda en
+   cash, sin apalancamiento, sin cortos)</li>
+</ol>
+<h2>Ejemplo de idea "buena" vs idea "vaga"</h2>
+<p>❌ Vaga: <em>"quiero un bot que compre bitcoin cuando este barato"</em>
+→ La IA no sabe que es "barato". Resultado: parametros inventados al azar.</p>
+<p>✅ Precisa: <em>"quiero comprar BTC cuando el RSI de 14 periodos baje de 30
+(sobreventa) y vender cuando suba de 60, en velas diarias, probado en los
+ultimos 2 años"</em>
+→ Esto es exactamente lo que interpreta <code>engine/interprete.py</code> en la
+herramienta Veredicto, y lo que un LLM bien instruido puede convertir en
+codigo sin ambigüedad.</p>
+<h2>Como lo hace el motor de Veredicto (v1, reglas simples)</h2>
+<p>La version actual del interprete (<code>engine/interprete.py</code>) usa deteccion de
+palabras clave, NO un LLM: es transparente y 100% predecible, aunque menos
+flexible. Reconoce menciones a "RSI", "EMA/cruce/tendencia" y "momentum/
+impulso" y las mapea a las 3 estrategias preset del motor.</p>
+<p><strong>Mejora futura (fuera del MVP):</strong> conectar un LLM real que traduzca
+descripciones libres en español a los mismos parametros estructurados,
+manteniendo siempre la regla de oro: la IA elige PARAMETROS, nunca inventa
+metricas de resultado — esas solo salen del backtest real.</p>
+<h2>Ejercicio del modulo</h2>
+<p>Escribe 3 ideas de estrategia tuyas usando la plantilla de 5 huecos de
+arriba. Pasalas por la herramienta Veredicto y compara el veredicto de
+las 3. ¿Cual sobrevive? ¿Por que crees que las otras no?</p>
+<hr />
+<p><em>Anterior: 01 — Fundamentos.</em> · <em>Siguiente: 03 — Backtesting honesto paso a paso.</em></p><div class="nav-modulos"><a href="modulo-01.html">&larr; Fundamentos: por que casi todos los bots fallan</a><a href="modulo-03.html">Backtesting honesto paso a paso &rarr;</a></div></div>
+<footer>StrategyCheck &middot; un proyecto de Attenciona &middot; curso gratuito, sin registro &middot;
+no es asesoramiento financiero</footer></body></html>

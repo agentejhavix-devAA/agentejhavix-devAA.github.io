@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pago Pro — attenciona.com</title>
+<style>
+  body{font-family:system-ui,Segoe UI,Roboto,sans-serif;background:#0f1115;color:#e8eaed;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;padding:24px}
+  .card{background:#191c22;border:1px solid #2a2e37;border-radius:14px;max-width:460px;width:100%;padding:28px;text-align:center}
+  h1{font-size:1.3rem;margin:0 0 8px}
+  .code{font-size:1.9rem;font-weight:700;letter-spacing:3px;background:#0f1115;border:1px dashed #3a4150;border-radius:10px;padding:14px;margin:16px 0;color:#7ee787;user-select:all}
+  .muted{color:#9aa0aa;font-size:.92rem;line-height:1.5}
+  button{background:#2f6feb;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:.95rem;cursor:pointer}
+  a{color:#79b8ff}
+</style>
+<link rel="canonical" href="https://www.attenciona.com/pro-ok.html">
+<meta property="og:title" content="Pago Pro — attenciona.com">
+<meta property="og:url" content="https://www.attenciona.com/pro-ok.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="attenciona">
+<meta property="og:image" content="https://www.attenciona.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pago Pro — attenciona.com">
+<meta name="twitter:image" content="https://www.attenciona.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Comprobando tu pago…</h1>
+    <p class="muted" id="msg">Un momento.</p>
+  </div>
+<script>
+(async function(){
+  var o = new URLSearchParams(location.search).get("o") || "";
+  var card = document.getElementById("card");
+  function render(html){ card.innerHTML = html; }
+  async function check(){
+    try{
+      var r = await fetch("/api/pro/verify?o="+encodeURIComponent(o));
+      var d = await r.json();
+      if(d && d.paid){
+        render('<h1>¡Pago confirmado! ✅</h1>'+
+          '<p class="muted">Tu código Pro para <b>'+ (d.email||"") +'</b>:</p>'+
+          '<div class="code">'+ d.code +'</div>'+
+          '<p class="muted">Vuelve al producto, escribe tu email y pega este código en "Código Pro" para activar la versión Pro.</p>');
+        return true;
+      }
+    }catch(e){}
+    return false;
+  }
+  if(!o){ render('<h1>Enlace incompleto</h1><p class="muted">Falta el identificador del pedido.</p>'); return; }
+  // El pago puede tardar unos segundos en confirmarse en la red: reintenta un rato.
+  var tries=0;
+  (function loop(){
+    check().then(function(ok){
+      if(ok) return;
+      tries++;
+      if(tries>40){ render('<h1>Pago aún no confirmado</h1><p class="muted">Si ya pagaste, la red puede tardar. Recarga esta página en un par de minutos. Si el problema sigue, contacta al soporte del producto.</p><p><button onclick="location.reload()">Reintentar</button></p>'); return; }
+      document.getElementById("msg") && (document.getElementById("msg").textContent = "Esperando confirmación de la red… ("+tries+")");
+      setTimeout(loop, 3000);
+    });
+  })();
+})();
+</script>
+</body>
+</html>

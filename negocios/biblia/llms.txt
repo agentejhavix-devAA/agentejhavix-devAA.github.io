@@ -1,0 +1,23 @@
+# Biblia
+
+Biblia — la Biblia en un año, sin abandonar en Génesis. en LATAM — 73 libros, 1.189 capítulos, 365 días a 10 minutos: la mayoría abandona en el primer mes por falta de plan, no de fe. Plan con progreso visible, versículo del día y lecturas del año litúrgico ciclo C (2026-2027, Lucas). Fecha dura: día 1 el 01/01/2027. Herramienta en el navegador contra el texto oficial (USCCB/Conferencias Episcopales). Gratis el plan + Pro pago único (5 $).
+
+## Datos clave (verificados 16 de agosto de 2026)
+- Sector: Fe · Lectura bíblica.
+- Fecha límite / cita: Día 1 del plan · Génesis 1 · 01/01/2027.
+- Precio Pro: 5 USD pago único en cripto.
+- Evaluación de las 6 puertas de la Incubadora: 28/30 (9.3/10) — pasa el umbral de 8/10.
+
+## Fuentes
+1. https://bible.usccb.org/es (USCCB — Biblia en español y lecturas del día)
+2. https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_sp.html (Vaticano — Dei Verbum (1965))
+3. https://www.cem.org.mx/ (Conferencia del Episcopado Mexicano (CEM))
+4. https://www.unitedbiblesocieties.org/ (Sociedades Bíblicas Unidas)
+5. https://www.usccb.org/prayer-and-worship/liturgical-year (USCCB — Ciclo litúrgico)
+
+## Precio
+- Gratis: Tu brecha (ritmo, formato, historial).
+- Pro (5 USD pago único, cripto vía NOWPayments): Plan de 365 días imprimible (PDF); Versículo del día + contexto; Lecturas del ciclo C enlazadas; desbloqueo permanente.
+
+## Aviso
+Herramienta de planificación de lectura. Biblia no sustituye la catequesis ni la guía de tu comunidad de fe. Contenido asistido por IA verificado antes de publicar (art. 50.4 Reglamento de IA UE). © 2026 attenciona.

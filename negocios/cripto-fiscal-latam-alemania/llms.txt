@@ -1,0 +1,23 @@
+# Cripto-fiscal global · Alemania
+
+> Traduce la norma oficial de cripto · impuestos en Alemania a una checklist accionable, con la fuente de cada requisito citada. Si un requisito no está en la fuente, no aparece.
+
+- **Mercado:** Alemania
+- **Fuente de datos viva:** Bundesministerium der Finanzen (BMF) — Besteuerung von Kryptowährungen
+
+- **Sistema de diseño:** Neo-orgánico (Sora (titulares) + Inter (cuerpo))
+
+## Qué resuelve
+Cada casilla de la checklist apunta a la fuente oficial que la respalda.
+
+## Comparativa
+
+
+
+## Fuentes citadas
+- Bundesministerium der Finanzen (BMF) — Besteuerung von Kryptowährungen (https://www.bundesfinanzministerium.de/)
+
+## Preguntas frecuentes
+- **¿De dónde salen los datos?** De la fuente oficial citada en esta página: Bundesministerium der Finanzen (BMF) — Besteuerung von Kryptowährungen. (https://www.bundesfinanzministerium.de/)
+- **¿Esto es asesoramiento?** No. Esta página informa y compara con datos oficiales citados; no es asesoría legal, fiscal ni financiera.
+- **¿Cuánto cuesta?** Gratis la comprobación + Pro pago único en USDT — sin coste oculto ni letra pequeña.
