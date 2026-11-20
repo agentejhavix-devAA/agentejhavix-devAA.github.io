@@ -143,6 +143,36 @@
   nav.top .links a:hover{color:var(--fg)}
   @media(max-width:620px){nav.top .links a:not(.main){display:none}}
   @media (prefers-reduced-motion:reduce){.card{opacity:1;translate:none;transition:none}.scrollhint i{animation:none}}
+
+  /* VIDA 20/11: identidad de holding por compañía */
+  #negocios{--c:#e7b65a}#bots{--c:#4fd1c5}#cripto{--c:#f3d48f}#data{--c:#8fb3d9}#investigaciones{--c:#b69cff}#calculos{--c:#7fd8a4}#formulas{--c:#ff9f7a}#jhavix{--c:#4fd1c5}
+  section[id]{position:relative}
+  section[id]::before{content:"";position:absolute;left:50%;top:12%;width:min(900px,90vw);height:60%;translate:-50% 0;z-index:-1;pointer-events:none;
+    background:radial-gradient(50% 50% at 30% 40%,color-mix(in srgb,var(--c,#c9973e) 14%,transparent),transparent 70%);filter:blur(10px)}
+  .shead{position:relative}
+  .shead .num{display:inline-flex;align-items:center;gap:.7em;color:var(--c,var(--accent))}
+  .shead .num::after{content:"";width:64px;height:1px;background:linear-gradient(90deg,var(--c,var(--accent)),transparent)}
+  .shead h2 em{color:var(--c,var(--accent));text-shadow:0 0 30px color-mix(in srgb,var(--c,#c9973e) 35%,transparent)}
+  .shead::after{content:"";display:block;width:120px;height:3px;margin-top:1.3rem;border-radius:3px;
+    background:linear-gradient(90deg,var(--c,var(--accent)),transparent);background-size:200% 100%;animation:barrido 3s ease-in-out infinite}
+  @keyframes barrido{0%{background-position:100% 0}100%{background-position:-100% 0}}
+  .card{overflow:hidden;background:linear-gradient(160deg,rgba(14,24,42,.82),rgba(7,12,22,.72))}
+  .card::after{content:"";position:absolute;left:0;top:0;height:2px;width:100%;transform:scaleX(.18);transform-origin:left;
+    background:linear-gradient(90deg,var(--c,var(--accent)),transparent);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .card:hover{border-color:color-mix(in srgb,var(--c,#c9973e) 55%,transparent);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 0 1px color-mix(in srgb,var(--c,#c9973e) 25%,transparent),0 0 40px color-mix(in srgb,var(--c,#c9973e) 18%,transparent)}
+  .card:hover::after{transform:scaleX(1)}
+  .card.in:hover{translate:0 -6px}
+  .card .k{color:var(--c,var(--accent2))}
+  .card .k::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:.55em;vertical-align:middle;background:var(--c,var(--accent2));box-shadow:0 0 10px var(--c,var(--accent2));animation:latido 2.4s ease-in-out infinite}
+  @keyframes latido{50%{opacity:.35;transform:scale(.7)}}
+  .card .feat b{color:var(--c,var(--accent))}
+  .card .go{color:var(--c,var(--accent));transition:letter-spacing .3s}
+  .card:hover .go{letter-spacing:.16em}
+  .grid .card:nth-child(2).in{transition-delay:.06s}.grid .card:nth-child(3).in{transition-delay:.12s}.grid .card:nth-child(4).in{transition-delay:.18s}.grid .card:nth-child(5).in{transition-delay:.24s}.grid .card:nth-child(6).in{transition-delay:.3s}
+  .stat{position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;inset:auto 0 0 0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:barrido 4s linear infinite;background-size:200% 100%}
+  .close h2 em{background:linear-gradient(90deg,#c9973e,#f3d48f,#4fd1c5,#c9973e);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:barrido 8s linear infinite}
+  @media (prefers-reduced-motion:reduce){.shead::after,.card .k::before,.stat::after,.close h2 em{animation:none}}
 </style>
 
 <canvas id="gl" aria-hidden="true"></canvas>
