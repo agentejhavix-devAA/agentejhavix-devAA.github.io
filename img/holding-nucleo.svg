@@ -33,6 +33,23 @@
       <circle r="42" fill="none" stroke="#4fd1c5" stroke-opacity=".25" stroke-width="1"/>
     </g>
   </defs>
+  <style>
+    .pulso{transform-origin:600px 285px;animation:pulso 4s ease-in-out infinite}
+    @keyframes pulso{50%{transform:scale(1.12);opacity:.75}}
+    .haces path{stroke-dasharray:7 9;animation:fluye 2.4s linear infinite}
+    @keyframes fluye{to{stroke-dashoffset:-32}}
+    .flota{animation:flota 6s ease-in-out infinite}
+    @keyframes flota{50%{transform:translateY(-7px)}}
+    .barras rect{transform-box:fill-box;transform-origin:50% 100%;animation:crece 3.5s ease-in-out infinite alternate}
+    .barras rect:nth-child(odd){animation-delay:-1.2s}.barras rect:nth-child(3n){animation-delay:-2.1s}
+    @keyframes crece{from{transform:scaleY(.82)}to{transform:scaleY(1.05)}}
+    .chispas circle{animation:brilla 2s ease-in-out infinite}
+    .chispas circle:nth-child(2n){animation-delay:-1s}
+    @keyframes brilla{50%{opacity:.15}}
+    .gira{transform-origin:600px 285px;animation:gira 30s linear infinite}
+    @keyframes gira{to{transform:rotate(360deg)}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
 
   <rect width="1200" height="600" fill="url(#cielo)"/>
 
@@ -44,7 +61,7 @@
   </g>
 
   <!-- base de crecimiento: barras que suben de izquierda a derecha -->
-  <g fill="url(#barra)">
+  <g class="barras" fill="url(#barra)">
     <rect x="60" y="520" width="26" height="80"/><rect x="100" y="505" width="26" height="95"/>
     <rect x="140" y="512" width="26" height="88"/><rect x="180" y="492" width="26" height="108"/>
     <rect x="220" y="480" width="26" height="120"/><rect x="260" y="486" width="26" height="114"/>
@@ -67,7 +84,7 @@
   </g>
 
   <!-- haces del núcleo a cada negocio -->
-  <g stroke="url(#haz)" stroke-width="1.6" fill="none" stroke-linecap="round">
+  <g class="haces" stroke="url(#haz)" stroke-width="1.6" fill="none" stroke-linecap="round">
     <path d="M600 285 Q520 200 420 170"/>
     <path d="M600 285 Q690 200 790 170"/>
     <path d="M600 285 Q470 300 300 290"/>
@@ -78,7 +95,8 @@
   </g>
 
   <!-- núcleo: el holding -->
-  <circle cx="600" cy="285" r="150" fill="url(#halo)"/>
+  <circle class="pulso" cx="600" cy="285" r="150" fill="url(#halo)"/>
+  <circle class="gira" cx="600" cy="285" r="100" fill="none" stroke="#e7b65a" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="3 14"/>
   <g transform="translate(600 285)">
     <polygon points="0,-62 54,-31 54,31 0,62 -54,31 -54,-31" fill="#0b1424" stroke="url(#oro)" stroke-width="3"/>
     <polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20" fill="url(#oro)" opacity=".92"/>
@@ -88,30 +106,30 @@
 
   <!-- negocios nicho alrededor del núcleo -->
   <g font-family="ui-sans-serif,system-ui,Segoe UI,Roboto,Arial" font-size="15" fill="#e8eef7" text-anchor="middle" letter-spacing=".04em">
-    <g transform="translate(420 170)"><use href="#sat"/>
+    <g transform="translate(420 170)"><g class="flota" style="animation-delay:-1s"><use href="#sat"/>
       <path d="M-15 8 L-7 -2 L1 4 L14 -12" stroke="#e7b65a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <text y="62">Bots de trading</text></g>
-    <g transform="translate(790 170)"><use href="#sat"/>
+      <text y="62">Bots de trading</text></g></g>
+    <g transform="translate(790 170)"><g class="flota" style="animation-delay:-2s"><use href="#sat"/>
       <circle r="13" fill="none" stroke="#e7b65a" stroke-width="3"/><path d="M-4 -6 L-4 6 M3 -6 L3 6 M-7 -3 L5 -3 Q9 -3 9 0 Q9 3 5 3 L-7 3" stroke="#e7b65a" stroke-width="2" fill="none"/>
-      <text y="62">Cripto</text></g>
-    <g transform="translate(300 290)"><use href="#sat"/>
+      <text y="62">Cripto</text></g></g>
+    <g transform="translate(300 290)"><g class="flota" style="animation-delay:-3s"><use href="#sat"/>
       <rect x="-14" y="-4" width="6" height="14" fill="#e7b65a"/><rect x="-3" y="-11" width="6" height="21" fill="#e7b65a"/><rect x="8" y="-16" width="6" height="26" fill="#e7b65a"/>
-      <text y="62">Datos</text></g>
-    <g transform="translate(905 290)"><use href="#sat"/>
+      <text y="62">Datos</text></g></g>
+    <g transform="translate(905 290)"><g class="flota" style="animation-delay:-4s"><use href="#sat"/>
       <rect x="-16" y="-12" width="32" height="24" rx="4" fill="none" stroke="#e7b65a" stroke-width="2.5"/><path d="M-16 -5 L16 -5" stroke="#e7b65a" stroke-width="2"/><circle cx="-11" cy="-8.5" r="1.4" fill="#e7b65a"/>
-      <text y="62">Webs</text></g>
-    <g transform="translate(430 420)"><use href="#sat"/>
+      <text y="62">Webs</text></g></g>
+    <g transform="translate(430 420)"><g class="flota" style="animation-delay:-5s"><use href="#sat"/>
       <circle cx="-3" cy="-3" r="10" fill="none" stroke="#e7b65a" stroke-width="3"/><path d="M5 5 L13 13" stroke="#e7b65a" stroke-width="3.5" stroke-linecap="round"/>
-      <text y="62">Investigación</text></g>
-    <g transform="translate(780 420)"><use href="#sat"/>
+      <text y="62">Investigación</text></g></g>
+    <g transform="translate(780 420)"><g class="flota" style="animation-delay:-6s"><use href="#sat"/>
       <circle r="13" fill="none" stroke="#e7b65a" stroke-width="3"/><path d="M0 -7 L0 0 L6 4" stroke="#e7b65a" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text y="62">Automatización</text></g>
-    <g transform="translate(600 90)"><use href="#sat"/>
+      <text y="62">Automatización</text></g></g>
+    <g transform="translate(600 90)"><g class="flota" style="animation-delay:-7s"><use href="#sat"/>
       <path d="M0 -14 L4 -4 L15 -4 L6 3 L9 14 L0 7 L-9 14 L-6 3 L-15 -4 L-4 -4 Z" fill="#e7b65a"/>
-      <text y="-48">Incubadora</text></g>
+      <text y="-48">Incubadora</text></g></g>
   </g>
 
-  <g fill="#4fd1c5">
+  <g class="chispas" fill="#4fd1c5">
     <circle cx="510" cy="225" r="3"/><circle cx="700" cy="230" r="3"/><circle cx="450" cy="296" r="3"/>
     <circle cx="760" cy="297" r="3"/><circle cx="520" cy="355" r="3"/><circle cx="690" cy="355" r="3"/><circle cx="600" cy="170" r="3"/>
   </g>

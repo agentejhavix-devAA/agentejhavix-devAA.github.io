@@ -153,6 +153,55 @@
 <div class="wrap">
 
   <header class="hero" data-scene="0">
+  <style>
+    header.hero{position:relative;justify-content:center;isolation:isolate}
+    header.hero::before{content:"";position:absolute;inset:-10% -20% auto -20%;height:90%;z-index:-1;pointer-events:none;
+      background:radial-gradient(40% 50% at 72% 40%,rgba(201,151,62,.22),transparent 70%),radial-gradient(35% 45% at 20% 30%,rgba(79,209,197,.12),transparent 70%),radial-gradient(30% 40% at 55% 85%,rgba(143,179,217,.12),transparent 70%);
+      animation:aurora 14s ease-in-out infinite alternate}
+    @keyframes aurora{to{transform:translate3d(-4%,3%,0) scale(1.08)}}
+    .hx-grid,.hx-cinta,.hx-dest{position:relative;z-index:3}
+    .hx-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+    .hx-grid .hero-h1{margin-top:1rem;font-size:clamp(2.4rem,5.2vw,4.6rem);max-width:15ch}
+    .hx-txt{padding:clamp(1rem,2.5vw,2rem);border-radius:24px;background:linear-gradient(135deg,rgba(6,11,20,.82),rgba(11,20,36,.6));border:1px solid rgba(143,179,217,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .hx-btn.linea{background:rgba(6,11,20,.85)!important}
+    .hx-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+    .hx-btn{display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.4em;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s}
+    .hx-btn.oro{background:linear-gradient(135deg,#f3d48f,#c9973e);color:#1a1405;box-shadow:0 10px 30px rgba(201,151,62,.35)}
+    .hx-btn.oro:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,151,62,.5)}
+    .hx-btn.linea{border:1px solid rgba(143,179,217,.45);color:var(--fg);background:rgba(143,179,217,.06)}
+    .hx-btn.linea:hover{border-color:var(--accent2);transform:translateY(-2px)}
+    .hx-viz{position:relative}
+    .hx-viz img{display:block;width:100%;height:auto;border-radius:22px;border:1px solid rgba(201,151,62,.35);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(201,151,62,.12);animation:levita 7s ease-in-out infinite}
+    @keyframes levita{50%{transform:translateY(-10px)}}
+    .hx-cinta{margin:2.4rem 0 0;overflow:hidden;border-block:1px solid var(--line);padding:.9rem 0;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+    .hx-cinta div{display:flex;gap:1.6rem;width:max-content;animation:cinta 38s linear infinite;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .hx-cinta i{color:var(--accent);font-style:normal}
+    @keyframes cinta{to{transform:translateX(-50%)}}
+    .hx-dest{display:grid;gap:.9rem;margin-top:2rem}
+    .hx-dest .promo,.hx-dest .atta-mini{margin:0}
+    @media(max-width:900px){.hx-grid{grid-template-columns:1fr}.hx-viz{order:-1;max-width:560px}}
+    @media (prefers-reduced-motion:reduce){header.hero::before,.hx-viz img,.hx-cinta div{animation:none}}
+  </style>
+  <div class="hx-grid">
+    <div class="hx-txt">
+    <span class="mono">attenciona · un ecosistema construido con IA</span>
+    <h1 class="hero-h1">Sistemas que <em>aprenden</em>, se reparan y se dicen la verdad.</h1>
+    <p class="lede">Negocios de la Fase 1 a la 4, bots de trading, criptomonedas, datos, investigación, cálculo y estrategias. Un ecosistema completo construido con IA y contado con números reales.</p>
+    <div class="hx-cta"><a class="hx-btn oro" href="#negocios">Ver nuestras compañías →</a><a class="hx-btn linea" href="/automatiza/#consulta">Hablemos de tu proyecto</a></div>
+    <div class="meta">
+      <a class="tag" href="#bots">attenciona Bots</a><a class="tag" href="#cripto">Criptomonedas</a><a class="tag" href="#data">Data</a><a class="tag" href="#investigaciones">Investigaciones</a><a class="tag" href="#calculos">Cálculos matemáticos</a><a class="tag" href="#formulas">Fórmulas y estrategias</a><a class="tag" href="/marketplace.html">Experimentos</a>
+    </div>
+    </div>
+    <div class="hx-viz"><img src="/img/holding-nucleo.svg" alt="attenciona como núcleo dorado que conecta sus negocios nicho: bots de trading, cripto, datos, webs, investigación, automatización e incubadora" width="1200" height="600" fetchpriority="high" decoding="async"></div>
+  </div>
+  <div class="hx-cinta" aria-hidden="true"><div><span>Bots de trading</span><i>◆</i><span>Criptomonedas</span><i>◆</i><span>Data</span><i>◆</i><span>Investigaciones</span><i>◆</i><span>Cálculos matemáticos</span><i>◆</i><span>Fórmulas y estrategias</span><i>◆</i><span>Creación de webs</span><i>◆</i><span>Automatización</span><i>◆</i><span>Incubadora</span><i>◆</i><span>Token ATTA</span><i>◆</i><span>Bots de trading</span><i>◆</i><span>Criptomonedas</span><i>◆</i><span>Data</span><i>◆</i><span>Investigaciones</span><i>◆</i><span>Cálculos matemáticos</span><i>◆</i><span>Fórmulas y estrategias</span><i>◆</i><span>Creación de webs</span><i>◆</i><span>Automatización</span><i>◆</i><span>Incubadora</span><i>◆</i><span>Token ATTA</span><i>◆</i></div></div>
+    <div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">áreas de trabajo</div></div>
+      <div class="stat"><div class="n">60+</div><div class="l">proyectos e iniciativas</div></div>
+      <div class="stat"><div class="n">24/7</div><div class="l">infra propia, ~0€ de nube</div></div>
+      <div class="stat"><div class="n">22€</div><div class="l">al mes: casi todo el coste es la IA</div></div>
+    </div>
+  <div class="hx-dest">
   <a class="promo promo-top" href="/negocios/bots-mt5/" aria-label="Bots de trading MT5 configurables al 100 %">
     <div class="promo-txt">
       <span class="promo-k"><i></i>Nuevo · attenciona Bots</span>
@@ -210,20 +259,7 @@
       <small>Elige «Con ATTA» al pagar · token de utilidad, no es una inversión · ver riesgos</small></span>
     <span class="go">Conocer ATTA →</span>
   </a>
-    <style>.hero-nucleo{display:block;width:100%;max-width:min(760px,100%);height:auto;margin:0 auto 1.2rem;border-radius:18px;border:1px solid rgba(201,151,62,.35);box-shadow:0 20px 60px rgba(0,0,0,.45)}</style>
-    <img class="hero-nucleo" src="/img/holding-nucleo.svg" alt="attenciona como núcleo dorado que conecta sus negocios nicho: bots de trading, cripto, datos, webs, investigación, automatización e incubadora" width="1200" height="600" fetchpriority="high" decoding="async">
-    <span class="mono">attenciona · un ecosistema construido con IA</span>
-    <h1 style="margin-top:1rem">Sistemas que <em>aprenden</em>, se reparan y se dicen la verdad.</h1>
-    <p class="lede">Negocios de la Fase 1 a la 4, bots de trading, criptomonedas, datos, investigación, cálculo y estrategias. Un ecosistema completo construido con IA y contado con números reales.</p>
-    <div class="meta">
-      <a class="tag" href="#bots">attenciona Bots</a><a class="tag" href="#cripto">Criptomonedas</a><a class="tag" href="#data">Data</a><a class="tag" href="#investigaciones">Investigaciones</a><a class="tag" href="#calculos">Cálculos matemáticos</a><a class="tag" href="#formulas">Fórmulas y estrategias</a><a class="tag" href="/marketplace.html">Experimentos</a>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="n">7</div><div class="l">áreas de trabajo</div></div>
-      <div class="stat"><div class="n">60+</div><div class="l">proyectos e iniciativas</div></div>
-      <div class="stat"><div class="n">24/7</div><div class="l">infra propia, ~0€ de nube</div></div>
-      <div class="stat"><div class="n">22€</div><div class="l">al mes: casi todo el coste es la IA</div></div>
-    </div>
+  </div>
     <div class="scrollhint"><i></i>DESLIZA · MUEVE EL RATÓN</div>
   </header>
 
